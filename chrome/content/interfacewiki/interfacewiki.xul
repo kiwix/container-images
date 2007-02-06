@@ -14,7 +14,7 @@
      height = "600"
      screenX="10"
      screenY="10"
-     onload="initRoot(); goTo('art/d/8.html');"
+     onload="initRoot(); gohome();"
      xmlns:html="http://www.w3.org/1999/xhtml"
      xmlns  = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 <script LANGUAGE="JavaScript" type="text/javascript" src="js/mybrowser.js"/>
@@ -26,9 +26,11 @@
 	<key id="paste-key" keycode="VK_RETURN" oncommand="enter()"/>
 	<key id="copy-key" key="C" modifiers="control" oncommand="copy()"/>
 	<key id="find-key" key="F" modifiers="control" oncommand="findin()"/>
+	<key id="home-key" key="H" modifiers="control" oncommand="gohome()"/>
 	<key id="search-key" key="L" modifiers="control" oncommand="textfocus()"/>
 	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
 	<key id="esc-key" keycode="VK_ESCAPE" oncommand="searchPopupClose();"/>
+	<key id="selectall-key" key="A" modifiers="control" oncommand="selectall();"/>
 </keyset>
 
 <popup id="wk-searchpopup">
@@ -47,6 +49,16 @@
   <listitem id="wk-searchpopuplistI11"/> 
   </listbox>
 </popup>
+<popupset>
+  <menupopup id="clipmenu">
+    <menuitem label="Copy" accesskey="C" key="copy-key" oncommand="copy();"/>
+    <menuitem label="Select All" accesskey="A" key="selectall-key" oncommand="selectall();"/>
+    <menuitem label="Find ..." accesskey="F" key="find-key" oncommand="findin();"/>
+    <menuseparator/>
+    <menuitem label="Home" accesskey="H" key="home-key" oncommand="gohome();"/>
+	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
+  </menupopup>
+</popupset>
 <grid id="wk-gridApplication" flex="1">
 <columns>
 	<column />
@@ -57,11 +69,11 @@
 	<row>
 		<hbox> </hbox>
 		<hbox>
-			<image id="wk-precedent" onclick="back()" tooltiptext="&mybrowser.back;"/>
-			<image id="wk-suivant"	onclick="forward()" tooltiptext="&mybrowser.forward;"/>
-			<image id="wk-home" onclick="goTo('art/d/8.html')" tooltiptext="&mybrowser.home;"/>
-			<image id="wk-search"	onclick="affichSearch()" tooltiptext="&mybrowser.showSearch;"/>
-			<image id="wk-favorit"	onclick="affichHisto()" tooltiptext="&mybrowser.showHisto;"/>
+			<image id="wk-precedent" onclick="back();" tooltiptext="&mybrowser.back;"/>
+			<image id="wk-suivant"	onclick="forward();" tooltiptext="&mybrowser.forward;"/>
+			<image id="wk-home" onclick="gohome();" tooltiptext="&mybrowser.home;"/>
+			<image id="wk-search"	onclick="affichSearch();" tooltiptext="&mybrowser.showSearch;"/>
+			<image id="wk-favorit"	onclick="affichHisto();" tooltiptext="&mybrowser.showHisto;"/>
 			<image id="wk-print"	onclick="print()" tooltiptext="&mybrowser.print;"/>
 			<spacer flex="1" />
 			<image id="wk-imageWikipedia" />
@@ -106,7 +118,7 @@
 					<richlistbox style="width:200px;" id="wk-history"/>
 					<spacer flex="1"/>
 				</vbox>
-		   		<browser flex="1" id="wk-browser" src="" type="content-primary" onclick="searchPopupClose();"/>
+		   		<browser flex="1" id="wk-browser" src="" type="content-primary" context="clipmenu"/>
 		   	</hbox>
 		</vbox>
 		<image id="wk-imageMilieuDroite" />
@@ -120,6 +132,7 @@
 		<hbox></hbox>
 		<hbox>
 		    <image id="wk-earth" collapsed="true"/>
+		    <image id="wk-book" collapsed="true"/>
                     <label id="wk-addressbar" width="70%"/>
 		    <spacer flex="1"/>
 		    <label value="Software developed by Linterweb"/>

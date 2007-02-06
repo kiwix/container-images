@@ -36,8 +36,10 @@ function MouseOver(aEvent) {
      document.getElementById("wk-addressbar").value = link.href;
      setVisible('wk-earth', false);
     }
-    if (link.href.indexOf("file://",0)==0)
+    if (link.href.indexOf("file://",0)==0) {
      document.getElementById("wk-addressbar").value = link.innerHTML;
+     setVisible('wk-book', false);
+    }
   }
 }
 
@@ -49,6 +51,7 @@ function MouseOut(aEvent) {
 
     document.getElementById("wk-addressbar").value = "";
     setVisible('wk-earth', true);
+    setVisible('wk-book', true);
   }
 }
 
@@ -378,12 +381,21 @@ function print(){
 }
 
 function searchPopupClose() {
-
   var popup = document.getElementById("wk-searchpopup");
   popup.hidePopup();
   focusPopup=false;
   popupIsOpen=false;
   textfocus();
+}
+
+function browserClick(which,x,y) {
+
+ searchPopupClose();
+  if ( which==3 ) {
+   var contextpopup = document.getElementById("wk-clickpopup");
+   alert(x+" "+y );
+   contextpopup.showPopup(null,x,y, "context", null,null );
+  }
 }
 
 function autoComplete(mot) {
@@ -474,6 +486,16 @@ function textkeydown(event) {
 function copy() {
 
   getBrowser().contentViewerEdit.copySelection();
+}
+
+function selectall() {
+
+  getBrowser().contentViewerEdit.selectAll();
+}
+
+function gohome() {
+
+  goTo('art/d/8.html');
 }
 
 function ajouterErreur(e){

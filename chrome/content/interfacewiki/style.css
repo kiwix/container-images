@@ -9,6 +9,11 @@
   list-style-image : url(chrome://interfacewiki/content/img/wiki/earth.png);
 }
 
+#wk-book {
+
+  list-style-image : url(chrome://interfacewiki/content/img/wiki/book.png);
+}
+
 #wk-search-button {
 
   list-style-image : url(chrome://interfacewiki/content/img/wiki/ok.png);
