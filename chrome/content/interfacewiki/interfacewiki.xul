@@ -30,7 +30,8 @@
 	<key id="search-key" key="L" modifiers="control" oncommand="textfocus()"/>
 	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
 	<key id="esc-key" keycode="VK_ESCAPE" oncommand="searchPopupClose();"/>
-	<key id="selectall-key" key="A" modifiers="control" oncommand="selectall();"/>
+	<key id="selectall-key" key="A" modifiers="control" oncommand="selectall();"/>
+
 </keyset>
 
 <popup id="wk-searchpopup">
@@ -59,15 +60,6 @@
 	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
   </menupopup>
 </popupset>
-<grid id="wk-gridApplication" flex="1">
-<columns>
-	<column />
-	<column flex="1"/>
-	<column />
-</columns>
-<rows>
-	<row>
-		<hbox> </hbox>
 		<hbox>
 			<image id="wk-precedent" onclick="back();" tooltiptext="&mybrowser.back;"/>
 			<image id="wk-suivant"	onclick="forward();" tooltiptext="&mybrowser.forward;"/>
@@ -78,8 +70,14 @@
 			<spacer flex="1" />
 			<image id="wk-imageWikipedia" />
 		</hbox>
-		<hbox> </hbox>
-	</row>
+
+<grid id="wk-gridApplication" flex="1">
+<columns>
+	<column />
+	<column flex="1"/>
+	<column />
+</columns>
+<rows>	
 	<row>
 		<image id="wk-imageHautGauche" />
 		<image id="wk-imageHautMilieu" />
@@ -89,13 +87,13 @@
 		<image id="wk-imageMilieuGauche" />	
 		<vbox>
 			<hbox id="wk-blockSearch">
-				<description id="wk-descriptionSearch" value="Search" style="padding-top:3px; font-weight: bold;" />
+				<description id="wk-descriptionSearch" value="Search" />
 				<textbox id="wk-recherche" flex="1" oninput="searchInput();" onkeydown="textkeydown(event);" tooltiptext="&mybrowser.searchBar;" />
 				<image id="wk-search-button" onclick="recherche();" tooltiptext="&mybrowser.searchButton;" />
                                 <image id="wk-searchin-button" onclick="findin();" tooltiptext="&mybrowser.findin;" />
 			</hbox>
 			<hbox flex="1">
-				<vbox  id="wk-blockResult" style="width:200px;" collapsed="true">
+				<vbox  id="wk-blockResult" collapsed="true">
 					<hbox flex="0">
 						<label flex="1" class="lab-titre" value="Related vocabulary"/>
 						<image flex="0" class="img-close" onclick="closeSearch()" /> 
@@ -107,15 +105,15 @@
 					</vbox>
 					</hbox>
 					<label id="wk-labelSearch" class="lab-titre" value="Results"/>
-					<richlistbox flex="1" style="width:200px;" id="wk-resultat"/>
+					<richlistbox flex="1" id="wk-resultat"/>
 					<spacer flex="1"/>
 				</vbox>
-				<vbox  id="wk-blockHistory" style="width:200px;" collapsed="true">
+				<vbox id="wk-blockHistory" collapsed="true">
 					<hbox>
 						<label flex="1" class="lab-titre" value="History"/>
 						<image class="img-close" onclick="closeHistory()" /> 
 					</hbox>
-					<richlistbox style="width:200px;" id="wk-history"/>
+					<richlistbox id="wk-history"/>
 					<spacer flex="1"/>
 				</vbox>
 		   		<browser flex="1" id="wk-browser" src="" type="content-primary" context="clipmenu"/>
@@ -128,18 +126,14 @@
 		<image id="wk-imageBasMilieu" />
 		<image id="wk-imageBasDroite" />
 	</row>
-	<row>
-		<hbox></hbox>
-		<hbox>
-		    <image id="wk-earth" collapsed="true"/>
-		    <image id="wk-book" collapsed="true"/>
-                    <label id="wk-addressbar" width="70%"/>
-		    <spacer flex="1"/>
-		    <label value="Software developed by Linterweb"/>
- 		</hbox>
-		
-		<hbox> </hbox>
-	</row>
 </rows>
 </grid>
+	
+<hbox>
+	<image id="wk-earth" collapsed="true"/>
+	<image id="wk-book" collapsed="true"/>
+	<label id="wk-addressbar" />
+	<spacer flex="1"/>
+	<label value="Software developed by Linterweb" style="margin-top: 3px;" />
+	</hbox>
 </window>
