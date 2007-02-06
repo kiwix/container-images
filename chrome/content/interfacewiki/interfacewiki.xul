@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE window [
+<!ENTITY % wikiDTD SYSTEM "chrome://interfacewiki/locale/mybrowser.dtd">
+%wikiDTD;
+<!ENTITY % findBarDTD SYSTEM "chrome://global/locale/findbar.dtd" >
+%findBarDTD;
+]>
+<window
+     id     = "mybrowser"
+     title  = "&mybrowser.title;"
+     width  = "800"
+     height = "600"
+     screenX="10"
+     screenY="10"
+     onload="initRoot(); goTo('art/d/8.html');"
+     xmlns:html="http://www.w3.org/1999/xhtml"
+     xmlns  = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<script LANGUAGE="JavaScript" type="text/javascript" src="js/mybrowser.js"/>
+<script LANGUAGE="JavaScript" type="text/javascript" src="js/search.js"/>
+<script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
+<script type="application/x-javascript" src="chrome://global/content/findUtils.js"/>
+<keyset>
+	<key id="paste-key" keycode="VK_ENTER" oncommand="enter()"/>
+	<key id="paste-key" keycode="VK_RETURN" oncommand="enter()"/>
+	<key id="copy-key" key="C" modifiers="control" oncommand="copy()"/>
+	<key id="find-key" key="F" modifiers="control" oncommand="findin()"/>
+	<key id="search-key" key="L" modifiers="control" oncommand="textfocus()"/>
+	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
+	<key id="esc-key" keycode="VK_ESCAPE" oncommand="searchPopupClose();"/>
+</keyset>
+
+<popup id="wk-searchpopup">
+ <listbox id="wk-searchpopuplist">
+  <listitem id="wk-searchpopuplistI0"/> 
+  <listitem id="wk-searchpopuplistI1"/> 
+  <listitem id="wk-searchpopuplistI2"/> 
+  <listitem id="wk-searchpopuplistI3"/> 
+  <listitem id="wk-searchpopuplistI4"/> 
+  <listitem id="wk-searchpopuplistI5"/> 
+  <listitem id="wk-searchpopuplistI6"/> 
+  <listitem id="wk-searchpopuplistI7"/> 
+  <listitem id="wk-searchpopuplistI8"/> 
+  <listitem id="wk-searchpopuplistI9"/> 
+  <listitem id="wk-searchpopuplistI10"/> 
+  <listitem id="wk-searchpopuplistI11"/> 
+  </listbox>
+</popup>
+<grid id="wk-gridApplication" flex="1">
+<columns>
+	<column />
+	<column flex="1"/>
+	<column />
+</columns>
+<rows>
+	<row>
+		<hbox> </hbox>
+		<hbox>
+			<image id="wk-precedent" onclick="back()" tooltiptext="&mybrowser.back;"/>
+			<image id="wk-suivant"	onclick="forward()" tooltiptext="&mybrowser.forward;"/>
+			<image id="wk-home" onclick="goTo('art/d/8.html')" tooltiptext="&mybrowser.home;"/>
+			<image id="wk-search"	onclick="affichSearch()" tooltiptext="&mybrowser.showSearch;"/>
+			<image id="wk-favorit"	onclick="affichHisto()" tooltiptext="&mybrowser.showHisto;"/>
+			<image id="wk-print"	onclick="print()" tooltiptext="&mybrowser.print;"/>
+			<spacer flex="1" />
+			<image id="wk-imageWikipedia" />
+		</hbox>
+		<hbox> </hbox>
+	</row>
+	<row>
+		<image id="wk-imageHautGauche" />
+		<image id="wk-imageHautMilieu" />
+		<image id="wk-imageHautDroite" />
+	</row>
+	<row flex="1">
+		<image id="wk-imageMilieuGauche" />	
+		<vbox>
+			<hbox id="wk-blockSearch">
+				<description id="wk-descriptionSearch" value="Search" style="padding-top:3px; font-weight: bold;" />
+				<textbox id="wk-recherche" flex="1" oninput="searchInput();" onkeydown="textkeydown(event);" tooltiptext="&mybrowser.searchBar;" />
+				<image id="wk-search-button" onclick="recherche();" tooltiptext="&mybrowser.searchButton;" />
+                                <image id="wk-searchin-button" onclick="findin();" tooltiptext="&mybrowser.findin;" />
+			</hbox>
+			<hbox flex="1">
+				<vbox  id="wk-blockResult" style="width:200px;" collapsed="true">
+					<hbox flex="0">
+						<label flex="1" class="lab-titre" value="Related vocabulary"/>
+						<image flex="0" class="img-close" onclick="closeSearch()" /> 
+					</hbox>
+					<hbox id="wk-vocspe">
+					<vbox id="wk-vocspe1" style="font-size:smaller; color:#024;">
+					</vbox>
+					<vbox id="wk-vocspe2" style="font-size:smaller; color:#024;">
+					</vbox>
+					</hbox>
+					<label id="wk-labelSearch" class="lab-titre" value="Results"/>
+					<richlistbox flex="1" style="width:200px;" id="wk-resultat"/>
+					<spacer flex="1"/>
+				</vbox>
+				<vbox  id="wk-blockHistory" style="width:200px;" collapsed="true">
+					<hbox>
+						<label flex="1" class="lab-titre" value="History"/>
+						<image class="img-close" onclick="closeHistory()" /> 
+					</hbox>
+					<richlistbox style="width:200px;" id="wk-history"/>
+					<spacer flex="1"/>
+				</vbox>
+		   		<browser flex="1" id="wk-browser" src="" type="content-primary" onclick="searchPopupClose();"/>
+		   	</hbox>
+		</vbox>
+		<image id="wk-imageMilieuDroite" />
+	</row>
+	<row>
+		<image id="wk-imageBasGauche" />
+		<image id="wk-imageBasMilieu" />
+		<image id="wk-imageBasDroite" />
+	</row>
+	<row>
+		<hbox></hbox>
+		<hbox>
+		    <image id="wk-earth" collapsed="true"/>
+                    <label id="wk-addressbar" width="70%"/>
+		    <spacer flex="1"/>
+		    <label value="Software developed by Linterweb"/>
+ 		</hbox>
+		
+		<hbox> </hbox>
+	</row>
+</rows>
+</grid>
+</window>

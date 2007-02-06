@@ -1,0 +1,14 @@
+#include "nsISupports.idl"
+
+[scriptable, uuid(d60c4196-1f36-43bc-9957-240bd0392837)]
+interface iWikiSearch : nsISupports
+{
+ PRUint32 search(in string word);
+ string   getResult(in PRUint32 idx);
+ string   getTitle(in PRUint32 idx);
+ PRUint32 getScore(in PRUint32 idx);
+ string   getRootPath();
+ string   getVocSpe(in PRUint32 idx);
+ PRUint32 completionStart(in string word);
+ string   getCompletion(in PRUint32 idx);
+};

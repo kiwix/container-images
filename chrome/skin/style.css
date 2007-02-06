@@ -1,0 +1,12 @@
+#wiki-home {
+	list-style-image : url(chrome://interfacewiki/content/img/wiki/bouttons/accueil.png);
+}
+#wiki-search {
+	list-style-image : url(chrome://interfacewiki/content/img/wiki/bouttons/search.png);
+}
+#wiki-favorit {
+	list-style-image : url(chrome://interfacewiki/content/img/wiki/bouttons/fav.png);
+}
+#wiki-tabpanel1 {
+	background-image : url(chrome://interfacewiki/content/img/wiki/fondbarrnavwhite.png);
+}
