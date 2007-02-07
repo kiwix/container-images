@@ -1,13 +1,13 @@
 
-// Nombre maximal de résultats affichés lors d'une recherche
+// Nombre maximal de rï¿½ultats affichï¿½ lors d'une recherche
 var NB_SEARCH_RETURN = 25;
-// Score au delà duquel la page s'ouvre automatiquement
+// Score au delï¿½duquel la page s'ouvre automatiquement
 var AUTO_OPEN_SCORE = 100;
-// Liste des mots recherchés
+// Liste des mots recherchï¿½
 var listHisto = new Array;
-// Si l'historique est à l'écran
+// Si l'historique est ï¿½l'ï¿½ran
 var isHistoAffich = false;
-// Si recherche est à l'écran
+// Si recherche est ï¿½l'ï¿½ran
 var isSearchAffich = false;
 // Is the completion popup open
 var popupIsOpen = false;
@@ -84,7 +84,8 @@ function Activate(aEvent)
       extps.loadURI(resolvedURI, null);
       aEvent.preventDefault();
       aEvent.stopPropagation();
-    }
+    }
+
   }
 }
 
@@ -147,7 +148,7 @@ function setVisible(idVisible, booleanVisible){
 	document.getElementById("wk-recherche").focus();
 }
 
-// Retour en arrière dans le navigateur
+// Retour en arriï¿½e dans le navigateur
 function back() {
 	try{
 		var browser = document.getElementById("wk-browser");
@@ -161,7 +162,7 @@ function back() {
 	return true;
 }
 
-// Page précédente du navigateur
+// Page prï¿½ï¿½ente du navigateur
 function forward() {
 	try{
 		var browser = document.getElementById("wk-browser");
@@ -211,44 +212,52 @@ function deleteList(){
 
 // Adds an entry in the history list (page is the title, chemin is the command to execute)
 function addListHistory(page, chemin){
+	// get the richlist
+	var l = document.getElementById("wk-history");
 
-  var l = document.getElementById("wk-history");
-  var li = document.createElement("richlistitem");
-  var label = document.createElement("label");
-  label.setAttribute( "value", page );
-  li.setAttribute( "onclick", chemin );
-  li.appendChild( label );
-  l.appendChild( li );
+	// create a new richlist item
+	var li = document.createElement("richlistitem");
+	
+	// set label of the richlist item
+	var titre = document.createElement("description");
+	titre.setAttribute("style", "color:#000; cursor:pointer; paddin-top: 3px; font-size: 15px;");
+	titre.setAttribute("value", page);	
+	li.setAttribute( "onclick", chemin );
+	li.appendChild( titre );
+	l.appendChild( li );
 }
 
 // Adds an entry in the result list (page is the title, chemin is the command to execute, score ...
 function addList(page, chemin, score){
 	try{
+		// get the richlist
 		var l = document.getElementById("wk-resultat");
-		var li = document.createElement("richlistitem");
-		var lab = document.createElement("vbox");
-		var titrescore = document.createElement("stack");
+		
+		// create the scoreslide
 		var scoreslide = document.createElement("hbox");
-                var scoreslidef = document.createElement("box");
-                var scoreslideb = document.createElement("box");
-		var slideWidth = score*2;
-		if ( slideWidth > 180 ) slideWidth = 180;
-		scoreslideb.setAttribute( "flex", 1 );
-                scoreslidef.setAttribute("style", "width:"+slideWidth+"px; margin:1px; height:10px; background-color:#ddf;");
-//		var sstext="";
-//		for ( var i = 0 ; i < score ; i++ ) sstext += ' ';
-//              scoreslidef.setAttribute("value", sstext );
-		scoreslide.appendChild(scoreslidef);
-		scoreslide.appendChild(scoreslideb);
-		titrescore.appendChild(scoreslide);
+		var scoreslidef = document.createElement("box");
+		var slideWidth = score*2; if ( slideWidth > 180 ) slideWidth = 180;
+		scoreslidef.setAttribute("style", 
+			"cursor:pointer; width:"+slideWidth+"px; margin:0px 0px 1px 0px; height:10px; background-color:#bfd8ee;");
+ 		scoreslide.appendChild(scoreslidef);
+
+		// set label of the richlist item
 		var titre = document.createElement("description");
-                titrescore.appendChild(titre);
-                titre.setAttribute("style", "color:#000;");
-		titre.setAttribute("value", ' '+page);
-		lab.appendChild(titrescore);
+		titre.setAttribute("style", "color:#000; cursor:pointer; paddin-top: 3px; font-size: 15px;");
+		titre.setAttribute("value", page);
+
+		// create the stack
+		var titrescore = document.createElement("stack");
+		titrescore.appendChild(scoreslide);
+		titrescore.appendChild(titre);
+
+		// create a new richlist item
+		var li = document.createElement("richlistitem");
 		li.setAttribute("onclick", chemin);
-                li.setAttribute( "style", "cursor:pointer;" );
-		li.appendChild(lab);
+		li.setAttribute("style", "cursor:pointer");
+		li.appendChild(titrescore);
+
+		// add the item to the list
 		l.appendChild(li);
 	}catch(e){
 		ajouterErreur(e);
