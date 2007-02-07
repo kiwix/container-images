@@ -57,7 +57,8 @@
     <menuitem label="Find ..." accesskey="F" key="find-key" oncommand="findin();"/>
     <menuseparator/>
     <menuitem label="Home" accesskey="H" key="home-key" oncommand="gohome();"/>
-	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
+    <menuseparator/>
+    <menuitem label="External browser" accesskey="E" key="external-key" oncommand="openexternal();"/>
   </menupopup>
 </popupset>
 		<hbox>

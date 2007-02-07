@@ -498,6 +498,16 @@ function gohome() {
   goTo('art/d/8.html');
 }
 
+
+function openexternal() {
+  
+      var extps = Components.
+        classes["@mozilla.org/uriloader/external-protocol-service;1"].
+        getService(Components.interfaces.nsIExternalProtocolService);
+
+      extps.loadURI(getBrowser().currentURI, null);
+}
+
 function ajouterErreur(e){
 	afficher(e);
 }
