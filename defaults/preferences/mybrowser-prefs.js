@@ -1,0 +1,1 @@
+pref("toolkit.defaultChromeURI", "chrome://interfacewiki/content/interfacewiki.xul");

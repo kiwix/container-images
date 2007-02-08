@@ -24,8 +24,8 @@ clean:
 	rm IWikiComponent.so IWikiComponent.xpt xlist.o xindex.o xengine.o
 
 install: IWikiComponent.so IWikiComponent.xpt
-	cp IWikiComponent.so ../../kiwix-cd/components
-	cp IWikiComponent.xpt ../../kiwix-cd/components
+	cp IWikiComponent.so ../components
+	cp IWikiComponent.xpt ../components
 	
 xindex.o: index.cpp index.h list.h common.h
 	$(CXX) index.cpp -c -o xindex.o -DXPCOM_BUILD $(GECKO_INCLUDES) $(CPPFLAGS)
