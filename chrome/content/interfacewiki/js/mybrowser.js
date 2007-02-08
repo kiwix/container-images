@@ -235,6 +235,7 @@ function addList(page, chemin, score){
 		
 		// create the scoreslide
 		var scoreslide = document.createElement("hbox");
+		scoreslide.setAttribute("flex", "0");
 		var scoreslidef = document.createElement("box");
 		var slideWidth = score*2; if ( slideWidth > 180 ) slideWidth = 180;
 		scoreslidef.setAttribute("style", 
@@ -242,19 +243,23 @@ function addList(page, chemin, score){
  		scoreslide.appendChild(scoreslidef);
 
 		// set label of the richlist item
-		var titre = document.createElement("description");
-		titre.setAttribute("style", "color:#000; cursor:pointer; paddin-top: 3px; font-size: 15px;");
+		var titre = document.createElement("label");
+		titre.setAttribute("style", "color:#000; width:170px; cursor:pointer; paddin-top: 3px; font-size: 15px;");
 		titre.setAttribute("value", page);
+		titre.setAttribute("flex", "0");
+		titre.setAttribute("crop", "end");
 
 		// create the stack
 		var titrescore = document.createElement("stack");
+		titrescore.setAttribute("flex", "0");
 		titrescore.appendChild(scoreslide);
 		titrescore.appendChild(titre);
 
 		// create a new richlist item
 		var li = document.createElement("richlistitem");
 		li.setAttribute("onclick", chemin);
-		li.setAttribute("style", "cursor:pointer");
+		li.setAttribute("flex", "0");
+		li.setAttribute("style", "cursor:pointer;");
 		li.appendChild(titrescore);
 
 		// add the item to the list
@@ -395,16 +400,6 @@ function searchPopupClose() {
   focusPopup=false;
   popupIsOpen=false;
   textfocus();
-}
-
-function browserClick(which,x,y) {
-
- searchPopupClose();
-  if ( which==3 ) {
-   var contextpopup = document.getElementById("wk-clickpopup");
-   alert(x+" "+y );
-   contextpopup.showPopup(null,x,y, "context", null,null );
-  }
 }
 
 function autoComplete(mot) {
