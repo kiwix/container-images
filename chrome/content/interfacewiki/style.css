@@ -7,7 +7,7 @@
 }
 
 .sidebar-title {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #wk-addressbar {
@@ -36,7 +36,6 @@
 #wk-blockHistory {
   border-right: 1px solid #000000;
   margin-right: 5px;
-  -moz-appearance: none; 
 }
 
 #wk-resultat {
@@ -48,9 +47,10 @@
 }
 
 #wk-recherche {
-  font-size: 16px;
+  font-size: 14px;
   -moz-appearance: none; 
   -moz-border-radius: 3px;
+  padding-top: 3px;
   border-size: 1px;
   border-style: solid;
   border-color: black;
@@ -97,16 +97,16 @@
 .img-close {
   margin-top:3px;
   margin-right:4px;
-  margin-bottom:3px;
-  height:24px;
-  width:24px;
+  margin-bottom:10px;
+  height:14px;
+  width:14px;
   cursor:pointer;
   list-style-image : url(chrome://interfacewiki/content/img/wiki/close.png);
 }
 
 .lab-titre {
-  font-size: 16px;	
-  padding-top: 5px;
+  font-size: 14px;	
+  padding-top: 6px;
   margin-left: 0px;
   padding-left: 0px;
   font-weight: bold; 
@@ -121,8 +121,8 @@
 }
 
 #wk-descriptionSearch{
-  font-size: 16px;	
-  padding-top: 5px;
+  font-size: 14px;	
+  padding-top: 6px;
   margin-left: 0px;
   padding-left: 0px;
   font-weight: bold; 

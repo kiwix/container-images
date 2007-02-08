@@ -54,7 +54,7 @@
 	<menupopup id="clipmenu">
 		<menuitem label="Copy" accesskey="C" key="copy-key" oncommand="copy();"/>
 		<menuitem label="Select All" accesskey="A" key="selectall-key" oncommand="selectall();"/>
-		<menuitem label="Find ..." accesskey="F" key="find-key" oncommand="findin();"/>
+		<menuitem label="Find..." accesskey="F" key="find-key" oncommand="findin();"/>
 		<menuseparator/>
 		<menuitem label="Home" accesskey="H" key="home-key" oncommand="gohome();"/>
 		<menuseparator/>

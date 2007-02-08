@@ -219,10 +219,16 @@ function addListHistory(page, chemin){
 	var li = document.createElement("richlistitem");
 	
 	// set label of the richlist item
-	var titre = document.createElement("description");
+	var titre = document.createElement("label");
 	titre.setAttribute("style", "color:#000; cursor:pointer; paddin-top: 3px; font-size: 15px;");
-	titre.setAttribute("value", page);	
-	li.setAttribute( "onclick", chemin );
+	titre.setAttribute("value", page);
+	titre.setAttribute("flex", "0");
+	titre.setAttribute("crop", "end");	
+	
+	li.setAttribute("onclick", chemin );
+	li.setAttribute("flex", "0");
+	li.setAttribute("style", "cursor:pointer;");
+
 	li.appendChild( titre );
 	l.appendChild( li );
 }
@@ -239,12 +245,12 @@ function addList(page, chemin, score){
 		var scoreslidef = document.createElement("box");
 		var slideWidth = score*2; if ( slideWidth > 180 ) slideWidth = 180;
 		scoreslidef.setAttribute("style", 
-			"cursor:pointer; width:"+slideWidth+"px; margin:0px 0px 1px 0px; height:10px; background-color:#bfd8ee;");
- 		scoreslide.appendChild(scoreslidef);
+			"cursor:pointer; width:"+slideWidth+"px; margin:0.5px 0px 0.5px 0px; height:10px; background-color:#bfd8ee;");
+		scoreslide.appendChild(scoreslidef);
 
 		// set label of the richlist item
 		var titre = document.createElement("label");
-		titre.setAttribute("style", "color:#000; width:170px; cursor:pointer; paddin-top: 3px; font-size: 15px;");
+		titre.setAttribute("style", "color:#000; width:170px; cursor:pointer; padding-top: 3px; font-size: 15px;");
 		titre.setAttribute("value", page);
 		titre.setAttribute("flex", "0");
 		titre.setAttribute("crop", "end");
