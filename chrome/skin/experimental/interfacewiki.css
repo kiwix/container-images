@@ -10,6 +10,23 @@
   font-size: 14px;
 }
 
+/* Score colored bar behind answers. Do not specify the width field ! */
+.score-slide {
+ margin:0.5px 0px 0.5px 0px; 
+ height:10px; 
+ background-color:#bfd8ee;
+}
+
+/* Text of answers */
+.answer-label {
+ color:#00F; width:170px; cursor:pointer; padding-top: 3px; font-size: 15px;
+}
+
+/* Related vocabulary text */
+.vocspe-label {
+  cursor:pointer;
+}
+
 #wk-addressbar {
   margin-top: 3px;
   width: 70%;
@@ -57,15 +74,15 @@
 }
 
 #wk-earth {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/earth.png);
+  list-style-image : url(img/wiki/earth.png);
 }
 
 #wk-book {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/book.png);
+  list-style-image : url(img/wiki/book.png);
 }
 
 #wk-search-button {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/ok.png);
+  list-style-image : url(img/wiki/ok.png);
   width : 51px;
   height : 32px;
   padding : 2px;
@@ -73,7 +90,7 @@
 }
 
 #wk-searchin-button {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/searchalph02.png);
+  list-style-image : url(img/wiki/searchalph02.png);
   width : 51px;
   height : 32px;
   padding : 2px;
@@ -81,7 +98,7 @@
 }
 
 #wk-searchinside-button {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/ok.png);
+  list-style-image : url(img/wiki/ok.png);
   cursor:pointer;
 }
 
@@ -90,7 +107,7 @@
   padding: 0;
   width:30px;
   height:20px;
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_coin_bas_ga.png);
+  list-style-image : url(img/wiki/txt_coin_bas_ga.png);
   cursor:pointer;
 }
 
@@ -101,7 +118,7 @@
   height:14px;
   width:14px;
   cursor:pointer;
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/close.png);
+  list-style-image : url(img/wiki/close.png);
 }
 
 .lab-titre {
@@ -129,100 +146,100 @@
 }
 
 #wk-imageWikipedia{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/logowiki.png)
+  list-style-image : url(img/wiki/logowiki.png)
 }
 
 /* Images des contours de l'applications. */
 #wk-imageHautGauche{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_coin_haut_ga.png);
+  list-style-image : url(img/wiki/txt_coin_haut_ga.png);
 }
 
 #wk-imageHautMilieu{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_haut_milieu.png);
+  list-style-image : url(img/wiki/txt_haut_milieu.png);
 }
 
 #wk-imageHautDroite{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_coin_haut_dr.png);
+  list-style-image : url(img/wiki/txt_coin_haut_dr.png);
 }
 
 #wk-imageMilieuGauche{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_milieu_ga.png);
+  list-style-image : url(img/wiki/txt_milieu_ga.png);
 }
 
 #wk-imageMilieuDroite{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_milieu_dr.png);
+  list-style-image : url(img/wiki/txt_milieu_dr.png);
 }
 
 #wk-imageBasGauche{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_coin_bas_ga.png);
+  list-style-image : url(img/wiki/txt_coin_bas_ga.png);
 }
 
 #wk-imageBasMilieu{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_bas_milieu.png);
+  list-style-image : url(img/wiki/txt_bas_milieu.png);
 }
 
 #wk-imageBasDroite{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/txt_coin_bas_dr.png);
+  list-style-image : url(img/wiki/txt_coin_bas_dr.png);
 }
 
 /* Images des boutons de navigations de l'applications. */
 #wk-precedent{
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/precedent01.png);
+  list-style-image : url(img/wiki/precedent01.png);
   cursor:pointer;
 }
 
 #wk-precedent:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/precedent02.png);
+  list-style-image : url(img/wiki/precedent02.png);
   cursor:pointer;
 }
 
 #wk-suivant {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/suivant01.png);
+  list-style-image : url(img/wiki/suivant01.png);
   cursor:pointer;
 }
 
 #wk-suivant:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/suivant02.png);
+  list-style-image : url(img/wiki/suivant02.png);
   cursor:pointer;
 }
 
 #wk-home {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/home01.png);
+  list-style-image : url(img/wiki/home01.png);
   cursor:pointer;
 }
 
 #wk-home:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/home02.png);
+  list-style-image : url(img/wiki/home02.png);
   cursor:pointer;
 }
 
 #wk-search {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/search01.png);
+  list-style-image : url(img/wiki/search01.png);
   cursor:pointer;
 }
 
 #wk-search:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/search02.png);
+  list-style-image : url(img/wiki/search02.png);
   cursor:pointer;
 }
 
 #wk-favorit {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/favori01.png);
+  list-style-image : url(img/wiki/favori01.png);
   cursor:pointer;
 }
 
 #wk-favorit:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/favori02.png);
+  list-style-image : url(img/wiki/favori02.png);
   cursor:pointer;
 }
 
 #wk-print {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/print01.png);
+  list-style-image : url(img/wiki/print01.png);
   cursor:pointer;
 }
 
 #wk-print:hover {
-  list-style-image : url(chrome://interfacewiki/content/img/wiki/print02.png);
+  list-style-image : url(img/wiki/print02.png);
   cursor:pointer;
 }
 

@@ -1,22 +1,32 @@
 
-// Nombre maximal de r�ultats affich� lors d'une recherche
+var homeUrl = "art/d/8.html";
+
+// Maximal number of search results returned
 var NB_SEARCH_RETURN = 25;
-// Score au del�duquel la page s'ouvre automatiquement
+// Score upon which the first search result is opened automatically
 var AUTO_OPEN_SCORE = 100;
-// Liste des mots recherch�
+// List of past search queries
 var listHisto = new Array;
-// Si l'historique est �l'�ran
+// Is the history side bar shown ?
 var isHistoAffich = false;
-// Si recherche est �l'�ran
+// Is the search side bar shown ?
 var isSearchAffich = false;
-// Is the completion popup open
+// Is the completion popup shown ?
 var popupIsOpen = false;
-// Le chemin absolu vers la racine html
+// Absolute path to the html directory
 var rootPath;
-// does the completion popup have the focus
+// does the completion popup have the focus ?
 var focusPopup=false;
 // structure for the find in page dialog
 var findInstData=null;
+
+function selectSkin( name ) {
+
+  var prefs = Components.classes["@mozilla.org/preferences-service;1"].
+      getService(Components.interfaces.nsIPrefBranch);
+  prefs.setCharPref('general.skins.selectedSkin', name);
+  document.getElementById("clipmenu").hidePopup();
+}
 
 function getBrowser() {
 
@@ -38,6 +48,11 @@ function MouseOver(aEvent) {
     }
     if (link.href.indexOf("file://",0)==0) {
      document.getElementById("wk-addressbar").value = link.innerHTML;
+     setVisible('wk-book', false);
+    }
+    if (link.href.indexOf("license://",0)==0) {
+     document.getElementById("wk-addressbar").value = 
+        "Full text of license : "+link.href.substring(10,link.href.length);
      setVisible('wk-book', false);
     }
   }
@@ -68,6 +83,12 @@ function Activate(aEvent)
       aEvent.preventDefault();
       aEvent.stopPropagation();
     } else 
+    if (link.href.indexOf("license://",0)==0) {
+
+      openLicensePage(link.href.substring(10,link.href.length));
+      aEvent.preventDefault();
+      aEvent.stopPropagation();
+    }
     if (link.href.indexOf("http://",0)==0) {
 
       // We don't want to open external links in this process: do so in the
@@ -148,7 +169,7 @@ function setVisible(idVisible, booleanVisible){
 	document.getElementById("wk-recherche").focus();
 }
 
-// Retour en arri�e dans le navigateur
+// Retour en arriere dans le navigateur
 function back() {
 	try{
 		var browser = document.getElementById("wk-browser");
@@ -162,7 +183,7 @@ function back() {
 	return true;
 }
 
-// Page pr��ente du navigateur
+// Page precedente du navigateur
 function forward() {
 	try{
 		var browser = document.getElementById("wk-browser");
@@ -186,6 +207,12 @@ function goTo(url){
 		return false;
 		dump(e);
 	}
+}
+
+function openLicensePage(name) {
+
+  var browser = document.getElementById("wk-browser");
+  browser.loadURI("chrome://interfacewiki/locale/licenses/"+name+"/index.html", null, null); 
 }
 
 function deleteListHistory() {
@@ -244,13 +271,14 @@ function addList(page, chemin, score){
 		scoreslide.setAttribute("flex", "0");
 		var scoreslidef = document.createElement("box");
 		var slideWidth = score*2; if ( slideWidth > 180 ) slideWidth = 180;
+                scoreslidef.setAttribute("class", "score-slide" );
 		scoreslidef.setAttribute("style", 
-			"cursor:pointer; width:"+slideWidth+"px; margin:0.5px 0px 0.5px 0px; height:10px; background-color:#bfd8ee;");
+			"cursor:pointer; width:"+slideWidth+"px;");
 		scoreslide.appendChild(scoreslidef);
 
 		// set label of the richlist item
 		var titre = document.createElement("label");
-		titre.setAttribute("style", "color:#000; width:170px; cursor:pointer; padding-top: 3px; font-size: 15px;");
+		titre.setAttribute("class", "answer-label");
 		titre.setAttribute("value", page);
 		titre.setAttribute("flex", "0");
 		titre.setAttribute("crop", "end");
@@ -294,7 +322,7 @@ function addVocSpe( mot ) {
   var entry = document.createElement( "label" );
   entry.setAttribute( "value", '> '+mot );
   entry.setAttribute( "onclick", "javascript:addword('"+mot+"')" );
-  entry.setAttribute( "style", "cursor:pointer;" );
+  entry.setAttribute( "class", "vocspe-label" );
   if ( desc1.childNodes.length > desc2.childNodes.length ) 
     desc2.appendChild(entry);
   else desc1.appendChild(entry);
@@ -505,9 +533,8 @@ function selectall() {
 
 function gohome() {
 
-  goTo('art/d/8.html');
+  goTo(homeUrl);
 }
-
 
 function openexternal() {
   
