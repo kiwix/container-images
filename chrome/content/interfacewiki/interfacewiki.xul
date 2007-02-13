@@ -28,6 +28,8 @@
 	<key id="home-key" key="H" modifiers="control" oncommand="gohome()"/>
 	<key id="search-key" key="L" modifiers="control" oncommand="textfocus()"/>
 	<key id="search-key" key="K" modifiers="control" oncommand="textfocus()"/>
+	<key id="zoomin-key" key="+" modifiers="control" oncommand="zoomin()"/>
+	<key id="zoomout-key" key="-" modifiers="control" oncommand="zoomout()"/>
 	<key id="esc-key" keycode="VK_ESCAPE" oncommand="searchPopupClose();"/>
 	<key id="selectall-key" key="A" modifiers="control" oncommand="selectall();"/>
 </keyset>
@@ -56,13 +58,18 @@
 		<menuitem label="Find..." accesskey="F" key="find-key" oncommand="findin();"/>
 		<menuseparator/>
 		<menuitem label="Home" accesskey="H" key="home-key" oncommand="gohome();"/>
-		<menuseparator/>
 		<menuitem label="External browser" accesskey="E" key="external-key" oncommand="openexternal();"/>
 		<menuseparator/>
                 <menu label="Select skins">
                 <menupopup id="skinmenu">
                    <menuitem label="Classic Blue" oncommand="selectSkin('classicBlue');"/>
                    <menuitem label="Experimental" oncommand="selectSkin('experimental');"/>
+                </menupopup>
+                </menu>
+                <menu label="Zoom">
+                <menupopup id="zoommenu">
+                   <menuitem label="Zoom in" key="zoomin-key" oncommand="zoomin();"/>
+                   <menuitem label="Zoom out" key="zoomout-key" oncommand="zoomout();"/>
                 </menupopup>
                 </menu>
 	</menupopup>

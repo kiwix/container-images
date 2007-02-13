@@ -1,6 +1,9 @@
 
-var homeUrl = "art/d/8.html";
 
+// Factor by which font is magnified by pressing ctrl+'+'
+var zoomFactor = 1.3;
+// Home url
+var homeUrl = "art/d/8.html";
 // Maximal number of search results returned
 var NB_SEARCH_RETURN = 25;
 // Score upon which the first search result is opened automatically
@@ -70,6 +73,16 @@ function MouseOut(aEvent) {
   }
 }
 
+function MouseScroll(aEvent) {
+
+  if ( aEvent.ctrlKey ) {
+    if ( aEvent.detail > 0 ) zoomin();
+    if ( aEvent.detail < 0 ) zoomout();
+    aEvent.preventDefault();
+    aEvent.stopPropagation();
+  }
+}
+
 function Activate(aEvent)
 {
   var link = aEvent.target;
@@ -124,6 +137,7 @@ const listener = {
       var myDocument = aWP.DOMWindow.document;
       myDocument.addEventListener("mouseover", MouseOver, true);
       myDocument.addEventListener("mouseout", MouseOut, true);
+      myDocument.addEventListener("DOMMouseScroll", MouseScroll, true);
       myDocument.addEventListener("DOMActivate", Activate, true);
       myDocument.addEventListener("unload", RemoveListener, false);
     }
@@ -543,6 +557,16 @@ function openexternal() {
         getService(Components.interfaces.nsIExternalProtocolService);
 
       extps.loadURI(getBrowser().currentURI, null);
+}
+
+function zoomin() {
+
+  getBrowser().markupDocumentViewer.textZoom *= zoomFactor;
+}
+
+function zoomout() {
+
+  getBrowser().markupDocumentViewer.textZoom /= zoomFactor;
 }
 
 function ajouterErreur(e){
