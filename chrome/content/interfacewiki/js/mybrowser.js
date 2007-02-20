@@ -25,10 +25,17 @@ var findInstData=null;
 
 function selectSkin( name ) {
 
-  var prefs = Components.classes["@mozilla.org/preferences-service;1"].
+ if (confirm("To change the skin, the application has to be restarted. Shall I restart ?")) {
+
+ var prefs = Components.classes["@mozilla.org/preferences-service;1"].
       getService(Components.interfaces.nsIPrefBranch);
-  prefs.setCharPref('general.skins.selectedSkin', name);
-  document.getElementById("clipmenu").hidePopup();
+ prefs.setCharPref('general.skins.selectedSkin', name);
+ document.getElementById("clipmenu").hidePopup();
+ var window = document.getElementById("mybrowser");
+ Components.classes["@mozilla.org/chrome/chrome-registry;1"]
+           .getService(Components.interfaces.nsIXULChromeRegistry)
+           .reloadChrome();
+ }
 }
 
 function getBrowser() {
@@ -125,6 +132,7 @@ function Activate(aEvent)
 
 function RemoveListener(aEvent) {
   aEvent.target.ownerDocument.removeEventListener("mouseover", MouseOver, true);
+  aEvent.target.ownerDocument.removeEventListener("DOMMouseScroll", Activate, true);
   aEvent.target.ownerDocument.removeEventListener("DOMActivate", Activate, true);
   aEvent.target.ownerDocument.removeEventListener("unload", RemoveListener, false);
 }

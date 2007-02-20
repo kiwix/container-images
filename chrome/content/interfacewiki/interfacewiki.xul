@@ -63,7 +63,8 @@
                 <menu label="Select skins">
                 <menupopup id="skinmenu">
                    <menuitem label="Classic Blue" oncommand="selectSkin('classicBlue');"/>
-                   <menuitem label="Experimental" oncommand="selectSkin('experimental');"/>
+                   <menuitem label="Toon" oncommand="selectSkin('toon');"/>
+                   <menuitem label="B&amp;W" oncommand="selectSkin('BnW');"/>
                 </menupopup>
                 </menu>
                 <menu label="Zoom">
