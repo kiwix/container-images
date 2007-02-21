@@ -3,4 +3,6 @@ locale interfacewiki en-US locale/en-US/interfacewiki/
 skin interfacewiki classicBlue skin/classicBlue/
 skin interfacewiki toon skin/toon/
 skin interfacewiki BnW skin/BnW/
+skin interfacewiki bidule skin/bidule/
+skin interfacewiki explorer skin/explorer/
 

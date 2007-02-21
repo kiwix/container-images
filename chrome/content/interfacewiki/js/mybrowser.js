@@ -7,9 +7,13 @@ var homeUrl = "art/d/8.html";
 // Maximal number of search results returned
 var NB_SEARCH_RETURN = 25;
 // Score upon which the first search result is opened automatically
-var AUTO_OPEN_SCORE = 100;
+var AUTO_OPEN_SCORE = 20;
 // List of past search queries
 var listHisto = new Array;
+// List of vocspe words
+var vocSpeList = new Array;
+// index in listVocSpe
+var iVocSpeList = 0;
 // Is the history side bar shown ?
 var isHistoAffich = false;
 // Is the search side bar shown ?
@@ -108,7 +112,7 @@ function Activate(aEvent)
       openLicensePage(link.href.substring(10,link.href.length));
       aEvent.preventDefault();
       aEvent.stopPropagation();
-    }
+    } else
     if (link.href.indexOf("http://",0)==0) {
 
       // We don't want to open external links in this process: do so in the
@@ -125,8 +129,13 @@ function Activate(aEvent)
       extps.loadURI(resolvedURI, null);
       aEvent.preventDefault();
       aEvent.stopPropagation();
+    } else {
+      if ((link.href.indexOf("file://",0)==0)&&
+          (link.href.indexOf("#",0)<0)) {
+        document.getElementById("wk-recherche").value = link.innerHTML;
+        recherche();
+      }
     }
-
   }
 }
 
@@ -140,6 +149,13 @@ function RemoveListener(aEvent) {
 const listener = {
   
   onStateChange: function osc(aWP, aRequest, aStateFlags, aStatus) {
+
+  for ( var i = 0 ; i < iVocSpeList ; i++ ) {
+
+    var label = document.getElementById( "vocspelink_"+vocSpeList[i] );
+    label.setAttribute( "class", "vocspe-label" );
+  } 
+
     if (aStateFlags & nsIWebProgressListener.STATE_STOP) {
       Components.utils.reportError("STATE_STOP");
       var myDocument = aWP.DOMWindow.document;
@@ -147,10 +163,12 @@ const listener = {
       myDocument.addEventListener("mouseout", MouseOut, true);
       myDocument.addEventListener("DOMMouseScroll", MouseScroll, true);
       myDocument.addEventListener("DOMActivate", Activate, true);
+      myDocument.addEventListener("onchange", Transition, true);
       myDocument.addEventListener("unload", RemoveListener, false);
     }
   },
-
+  onLocationChange: function olc(wp,request,location) {
+  },
   QueryInterface: function qi(aIID) {
     if (aIID.equals(nsIWebProgressListener) ||
         aIID.equals(Components.interfaces.nsISupports) ||
@@ -171,6 +189,7 @@ function initRoot() {
   var dls = Components.classes["@mozilla.org/docloaderservice;1"].
   getService(Components.interfaces.nsIWebProgress);
   dls.addProgressListener(listener,
+                          nsIWebProgress.NOTIFY_LOCATION_DOCUMENT |
                           nsIWebProgress.NOTIFY_STATE |
                           nsIWebProgress.NOTIFY_STATE_DOCUMENT);
   searchPopupClose();
@@ -246,6 +265,9 @@ function deleteListHistory() {
 
 // Efface le contenu de la liste
 function deleteList(){
+
+        iVocSpeList = 0;
+
         var desc = document.getElementById("wk-vocspe1");
         while ( desc.hasChildNodes() )        
           desc.removeChild( desc.lastChild );
@@ -336,15 +358,36 @@ function addword( mot ) {
   recherche();
 }
 
+function searchword( mot ) {
+
+  var label = document.getElementById( "vocspelink_"+mot );
+  var finder = getBrowser().webBrowserFind;
+  finder.searchString = mot;
+  finder.wrapFind = true;
+  if ( ! finder.findNext() )
+    label.setAttribute( "class", "vocspe-label-greyed" );
+  else label.setAttribute( "class", "vocspe-label" );
+}
+
 // adds the word <mot> in the list of related vocabulary
 function addVocSpe( mot ) {
 
+  vocSpeList[iVocSpeList++] = mot;
   var desc1 = document.getElementById("wk-vocspe1");
   var desc2 = document.getElementById("wk-vocspe2");
-  var entry = document.createElement( "label" );
-  entry.setAttribute( "value", '> '+mot );
-  entry.setAttribute( "onclick", "javascript:addword('"+mot+"')" );
-  entry.setAttribute( "class", "vocspe-label" );
+  var entry = document.createElement( "hbox" );
+  var label = document.createElement( "label" );
+  label.setAttribute( "value", mot );
+  label.setAttribute( "onclick", "javascript:addword('"+mot+"');" );
+  label.setAttribute( "class", "vocspe-label" );
+
+  entry.appendChild( label );
+  var button = document.createElement( "label" );
+  button.setAttribute( "value", ">" );
+  button.setAttribute( "onclick", "javascript:searchword('"+mot+"');" );
+  button.setAttribute( "id", "vocspelink_"+mot );
+  button.setAttribute( "class", "vocspe-label" );
+  entry.appendChild( button );
   if ( desc1.childNodes.length > desc2.childNodes.length ) 
     desc2.appendChild(entry);
   else desc1.appendChild(entry);

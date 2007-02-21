@@ -3,7 +3,7 @@
   height: 600px;
   margin: 1em 1em 0.5em 1em;
   -moz-appearance: none; 
-  background-color: #D2D2D2;
+  background-color: #b3b3b3;
 }
 
 .sidebar-title {
@@ -14,7 +14,7 @@
 .score-slide {
  margin:0.5px 0px 0.5px 0px; 
  height:10px; 
- background-color:#bfd8ee;
+ background-color:#888;
 }
 
 /* Text of answers */
