@@ -27,3 +27,4 @@ function rechercheXpcom(motR){
         } 
 	return true;
 }
+

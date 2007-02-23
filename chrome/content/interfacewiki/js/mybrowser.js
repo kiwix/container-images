@@ -450,7 +450,7 @@ function rechercheHistory(mot){
 function recherche(){
   searchPopupClose();
   var mot = document.getElementById("wk-recherche").value;
-  mot = mot.toLowerCase();
+//  mot = mot.toLowerCase();
 	
   deleteList();
   rechercheXpcom(mot);
@@ -603,11 +603,11 @@ function gohome() {
 
 function openexternal() {
   
-      var extps = Components.
-        classes["@mozilla.org/uriloader/external-protocol-service;1"].
-        getService(Components.interfaces.nsIExternalProtocolService);
-
-      extps.loadURI(getBrowser().currentURI, null);
+  var extps = Components.
+      classes["@mozilla.org/uriloader/external-protocol-service;1"].
+      getService(Components.interfaces.nsIExternalProtocolService);
+  if ( ! extps.externalProtocolHandlerExists("http")) setbrowser();
+  extps.loadURI(getBrowser().currentURI, null);
 }
 
 function zoomin() {
@@ -628,3 +628,22 @@ function afficher(a){
 	alert(a);
 }
 
+function openlinterweb() {
+
+  var extps = Components.
+      classes["@mozilla.org/uriloader/external-protocol-service;1"].
+      getService(Components.interfaces.nsIExternalProtocolService);
+  var ioService = Components.classes["@mozilla.org/network/io-service;1"].
+                  getService(Components.interfaces.nsIIOService);
+  extps.loadURI(ioService.newURI("http://www.linterweb.fr/", null, null),null);
+}
+
+function setbrowser() {
+
+ var prefs = Components.classes["@mozilla.org/preferences-service;1"].
+      getService(Components.interfaces.nsIPrefBranch);
+ var name = prefs.getCharPref("network.protocol-handler.app.http" );
+ var newname = prompt('Enter the path to your external browser',name);
+ if ( newname != null ) 
+   prefs.setCharPref("network.protocol-handler.app.http", newname );
+}

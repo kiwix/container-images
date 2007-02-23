@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://interfacewiki/skin/interfacewiki.css" type="text/css"?>
 <!DOCTYPE window [
@@ -19,7 +19,6 @@
 <script LANGUAGE="JavaScript" type="text/javascript" src="js/search.js"/>
 <script type="application/x-javascript" src="chrome://global/content/printUtils.js"/>
 <script type="application/x-javascript" src="chrome://global/content/findUtils.js"/>
-
 <keyset>
 	<key id="paste-key" keycode="VK_ENTER" oncommand="enter()"/>
 	<key id="paste-key" keycode="VK_RETURN" oncommand="enter()"/>
@@ -58,7 +57,7 @@
 		<menuitem label="Find..." accesskey="F" key="find-key" oncommand="findin();"/>
 		<menuseparator/>
 		<menuitem label="Home" accesskey="H" key="home-key" oncommand="gohome();"/>
-		<menuitem label="External browser" accesskey="E" key="external-key" oncommand="openexternal();"/>
+		<menuitem label="Open in external browser" accesskey="E" key="external-key" oncommand="openexternal();"/>
 		<menuseparator/>
                 <menu label="Select skins">
                 <menupopup id="skinmenu">
@@ -75,6 +74,7 @@
                    <menuitem label="Zoom out" key="zoomout-key" oncommand="zoomout();"/>
                 </menupopup>
                 </menu>
+		<menuitem label="Configure external browser" oncommand="setbrowser();"/>
 	</menupopup>
 </popupset>
 
@@ -129,8 +129,7 @@
 				<vbox flex="1">
 					<hbox id="wk-blockSearch">
 						<description id="wk-descriptionSearch" value="Search"/>
-						<textbox id="wk-recherche" flex="1" oninput="searchInput();"
-							onkeydown="textkeydown(event);" tooltiptext="&mybrowser.searchBar;"/>
+						<textbox id="wk-recherche" flex="1" oninput="searchInput();" onkeydown="textkeydown(event);" tooltiptext="&mybrowser.searchBar;"/>
 						<image id="wk-search-button" onclick="recherche();" tooltiptext="&mybrowser.searchButton;"/>
 						<image id="wk-searchin-button" onclick="findin();" tooltiptext="&mybrowser.findin;"/>
 					</hbox>
@@ -152,7 +151,8 @@
 	<image id="wk-book" collapsed="true"/>
 	<label id="wk-addressbar"/>
 	<spacer flex="1"/>
-	<label value="Software developed by Linterweb" style="margin-top: 3px;"/>
+	<label value="Software developed by" style="margin-top: 3px;"/>
+        <label value="Linterweb" style="cursor:pointer; text-decoration:underline; margin-top: 3px;" onclick="openlinterweb();"/>
 </hbox>
 	
 </window>

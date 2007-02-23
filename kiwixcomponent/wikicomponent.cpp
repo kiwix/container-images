@@ -56,7 +56,8 @@ protected:
   engine *searchEngine;
   listElements *res;
   char   rootPath[512];
-  char   completions[512];
+  char   completions[1024];
+  char  *completionEntry[128];
 };
 
 void *gg_malloc( long size ) {
@@ -140,15 +141,22 @@ NS_IMETHODIMP WikiSearch::GetRootPath(char **_retval) {
   return NS_OK;
 }
 
-NS_IMETHODIMP WikiSearch::Search(const char *word, PRUint32 *_retval) {
+NS_IMETHODIMP WikiSearch::Search(const nsACString & word, PRUint32 *_retval) {
  /* search query for the phrase <word> - returns the number of results */
 
   if ( !searchEngine->bValid ) {
   	*_retval = 1;
   	return NS_OK;
   }
+
+  char query[256];
+  int  len = word.EndReading() - word.BeginReading();
+  if ( len > 256 ) len = 256;
+  memcpy( query, word.BeginReading(), len );
+  query[len]=0;
+
   if ( res ) delete res;
-  res = searchEngine->search( word );
+  res = searchEngine->search( query );
   *_retval = res->length();
     
   return NS_OK;
@@ -202,16 +210,31 @@ NS_IMETHODIMP WikiSearch::GetVocSpe(PRUint32 idx, char **_retval) {
   return NS_OK;
 }
 
-NS_IMETHODIMP WikiSearch::CompletionStart(const char *word, PRUint32 *_retval) {
+static int completionCompare( char **s1, char **s2 ) {
+
+  return (strlen( *s1 ) > strlen( *s2 ))? +1 : -1;
+}
+
+NS_IMETHODIMP WikiSearch::CompletionStart(const nsACString & word, PRUint32 *_retval) {
  /* Start a completion query for word <word> - returns the number of completions found */
 
-    searchEngine->wordCompletion( word, completions, 512 );
+  char query[256];
+  int  len = word.EndReading() - word.BeginReading();
+  if ( len > 256 ) len = 256;
+  memcpy( query, word.BeginReading(), len );
+  query[len]=0;
+
+    searchEngine->wordCompletion( query, completions, 1024 );
     char *c = completions;
     nCompletion = 0;
     while ( *c ) {
+      completionEntry[ nCompletion ] = c;  
       c+=strlen(c)+1;
       nCompletion++;
     }
+    qsort( completionEntry, nCompletion, sizeof( char* ), 
+           (int(*) (const void*, const void*))completionCompare );
+
     *_retval = nCompletion;
     return NS_OK;
 }
@@ -223,9 +246,7 @@ NS_IMETHODIMP WikiSearch::GetCompletion(PRUint32 idx, char **_retval) {
       *_retval = allocEmptyStr();
       return NS_OK;
     }
-    char *c = completions;
-    for ( int ct = 0 ; ct < idx ; ct++, c+=strlen(c)+1 ) ;
-    *_retval = allocStr( c );
+    *_retval = allocStr( completionEntry[idx] );
     return NS_OK;
 }
 

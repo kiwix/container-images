@@ -27,8 +27,8 @@ class NS_NO_VTABLE iWikiSearch : public nsISupports {
 
   NS_DEFINE_STATIC_IID_ACCESSOR(IWIKISEARCH_IID)
 
-  /* PRUint32 search (in string word); */
-  NS_IMETHOD Search(const char *word, PRUint32 *_retval) = 0;
+  /* PRUint32 search (in AUTF8String word); */
+  NS_IMETHOD Search(const nsACString & word, PRUint32 *_retval) = 0;
 
   /* string getResult (in PRUint32 idx); */
   NS_IMETHOD GetResult(PRUint32 idx, char **_retval) = 0;
@@ -45,8 +45,8 @@ class NS_NO_VTABLE iWikiSearch : public nsISupports {
   /* string getVocSpe (in PRUint32 idx); */
   NS_IMETHOD GetVocSpe(PRUint32 idx, char **_retval) = 0;
 
-  /* PRUint32 completionStart (in string word); */
-  NS_IMETHOD CompletionStart(const char *word, PRUint32 *_retval) = 0;
+  /* PRUint32 completionStart (in AUTF8String word); */
+  NS_IMETHOD CompletionStart(const nsACString & word, PRUint32 *_retval) = 0;
 
   /* string getCompletion (in PRUint32 idx); */
   NS_IMETHOD GetCompletion(PRUint32 idx, char **_retval) = 0;
@@ -55,35 +55,35 @@ class NS_NO_VTABLE iWikiSearch : public nsISupports {
 
 /* Use this macro when declaring classes that implement this interface. */
 #define NS_DECL_IWIKISEARCH \
-  NS_IMETHOD Search(const char *word, PRUint32 *_retval); \
+  NS_IMETHOD Search(const nsACString & word, PRUint32 *_retval); \
   NS_IMETHOD GetResult(PRUint32 idx, char **_retval); \
   NS_IMETHOD GetTitle(PRUint32 idx, char **_retval); \
   NS_IMETHOD GetScore(PRUint32 idx, PRUint32 *_retval); \
   NS_IMETHOD GetRootPath(char **_retval); \
   NS_IMETHOD GetVocSpe(PRUint32 idx, char **_retval); \
-  NS_IMETHOD CompletionStart(const char *word, PRUint32 *_retval); \
+  NS_IMETHOD CompletionStart(const nsACString & word, PRUint32 *_retval); \
   NS_IMETHOD GetCompletion(PRUint32 idx, char **_retval); 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object. */
 #define NS_FORWARD_IWIKISEARCH(_to) \
-  NS_IMETHOD Search(const char *word, PRUint32 *_retval) { return _to Search(word, _retval); } \
+  NS_IMETHOD Search(const nsACString & word, PRUint32 *_retval) { return _to Search(word, _retval); } \
   NS_IMETHOD GetResult(PRUint32 idx, char **_retval) { return _to GetResult(idx, _retval); } \
   NS_IMETHOD GetTitle(PRUint32 idx, char **_retval) { return _to GetTitle(idx, _retval); } \
   NS_IMETHOD GetScore(PRUint32 idx, PRUint32 *_retval) { return _to GetScore(idx, _retval); } \
   NS_IMETHOD GetRootPath(char **_retval) { return _to GetRootPath(_retval); } \
   NS_IMETHOD GetVocSpe(PRUint32 idx, char **_retval) { return _to GetVocSpe(idx, _retval); } \
-  NS_IMETHOD CompletionStart(const char *word, PRUint32 *_retval) { return _to CompletionStart(word, _retval); } \
+  NS_IMETHOD CompletionStart(const nsACString & word, PRUint32 *_retval) { return _to CompletionStart(word, _retval); } \
   NS_IMETHOD GetCompletion(PRUint32 idx, char **_retval) { return _to GetCompletion(idx, _retval); } 
 
 /* Use this macro to declare functions that forward the behavior of this interface to another object in a safe way. */
 #define NS_FORWARD_SAFE_IWIKISEARCH(_to) \
-  NS_IMETHOD Search(const char *word, PRUint32 *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->Search(word, _retval); } \
+  NS_IMETHOD Search(const nsACString & word, PRUint32 *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->Search(word, _retval); } \
   NS_IMETHOD GetResult(PRUint32 idx, char **_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetResult(idx, _retval); } \
   NS_IMETHOD GetTitle(PRUint32 idx, char **_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetTitle(idx, _retval); } \
   NS_IMETHOD GetScore(PRUint32 idx, PRUint32 *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetScore(idx, _retval); } \
   NS_IMETHOD GetRootPath(char **_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetRootPath(_retval); } \
   NS_IMETHOD GetVocSpe(PRUint32 idx, char **_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetVocSpe(idx, _retval); } \
-  NS_IMETHOD CompletionStart(const char *word, PRUint32 *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->CompletionStart(word, _retval); } \
+  NS_IMETHOD CompletionStart(const nsACString & word, PRUint32 *_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->CompletionStart(word, _retval); } \
   NS_IMETHOD GetCompletion(PRUint32 idx, char **_retval) { return !_to ? NS_ERROR_NULL_POINTER : _to->GetCompletion(idx, _retval); } 
 
 #if 0
@@ -118,8 +118,8 @@ _MYCLASS_::~_MYCLASS_()
   /* destructor code */
 }
 
-/* PRUint32 search (in string word); */
-NS_IMETHODIMP _MYCLASS_::Search(const char *word, PRUint32 *_retval)
+/* PRUint32 search (in AUTF8String word); */
+NS_IMETHODIMP _MYCLASS_::Search(const nsACString & word, PRUint32 *_retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }
@@ -154,8 +154,8 @@ NS_IMETHODIMP _MYCLASS_::GetVocSpe(PRUint32 idx, char **_retval)
     return NS_ERROR_NOT_IMPLEMENTED;
 }
 
-/* PRUint32 completionStart (in string word); */
-NS_IMETHODIMP _MYCLASS_::CompletionStart(const char *word, PRUint32 *_retval)
+/* PRUint32 completionStart (in AUTF8String word); */
+NS_IMETHODIMP _MYCLASS_::CompletionStart(const nsACString & word, PRUint32 *_retval)
 {
     return NS_ERROR_NOT_IMPLEMENTED;
 }

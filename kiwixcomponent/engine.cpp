@@ -1,5 +1,5 @@
 /*  KiwixComponent - XP-COM component for Kiwix, offline reader of Wikipedia
-    Copyright (C) 2007, Fabien Coulon for LinterWeb (France)
+    Copyright (C) 2006, Fabien Coulon for LinterWeb (France)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -72,12 +72,38 @@ static void Utf8toAscii( unsigned char *c ) {
     else if (( 192 <= *s )&&( *s <= 223 )) {
       if ( !*(s+1) ) break;
       int car = (*s-192)*64+(*(s+1)-128);
-      if (( 0xE0 <= car )&&( car <= 0xE5 )) *(d++) = 'a';
+      if (( 0xC0 <= car )&&( car <= 0xDF )) car += 0x20;
+      if (( 0xE0 <= car )&&( car <= 0xE6 )) *(d++) = 'a';
       if (( 0xE7 == car )) *(d++) = 'c';
       if (( 0xE8 <= car )&&( car <= 0xEB )) *(d++) = 'e';
       if (( 0xEC <= car )&&( car <= 0xEF )) *(d++) = 'i';
+      if (( 0xF1 == car )) *(d++) = 'n';
       if (( 0xF2 <= car )&&( car <= 0xF6 )) *(d++) = 'o';
       if (( 0xF9 <= car )&&( car <= 0xFC )) *(d++) = 'u';
+      if ( 0x100 & car ) {
+
+        if ( car <= 0x105 ) *(d++) = 'a';
+        else if ( car <= 0x10D ) *(d++) = 'c';
+        else if ( car <= 0x111 ) *(d++) = 'd';
+        else if ( car <= 0x11B ) *(d++) = 'e';
+        else if ( car <= 0x123 ) *(d++) = 'g';
+        else if ( car <= 0x127 ) *(d++) = 'h';
+        else if ( car <= 0x131 ) *(d++) = 'i';
+        else if ( car <= 0x133 ) { *(d++) = 'i'; *(d++) = 'j'; }
+        else if ( car <= 0x135 ) *(d++) = 'j';
+        else if ( car <= 0x138 ) *(d++) = 'k';
+        else if ( car <= 0x142 ) *(d++) = 'l';
+        else if ( car <= 0x14B ) *(d++) = 'n';
+        else if ( car <= 0x151 ) *(d++) = 'o';
+        else if ( car <= 0x153 ) { *(d++) = 'o'; *(d++) = 'e'; }
+        else if ( car <= 0x159 ) *(d++) = 'r';
+        else if ( car <= 0x161 ) *(d++) = 's';
+        else if ( car <= 0x167 ) *(d++) = 't';
+        else if ( car <= 0x173 ) *(d++) = 'u';
+        else if ( car <= 0x175 ) *(d++) = 'w';
+        else if ( car <= 0x178 ) *(d++) = 'y';
+        else if ( car <= 0x17E ) *(d++) = 'z';
+      }
       s+=2;
     } else s++;
   }
@@ -171,6 +197,7 @@ listElements * engine::search( const char *query ) {
 
 void engine::wordCompletion( const char *word, char *buf, int maxlen ) {
 
+  Utf8toAscii( (unsigned char *)word );
   wm.wordCompletion( word, buf, maxlen );
 }
 
