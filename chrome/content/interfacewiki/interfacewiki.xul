@@ -151,8 +151,8 @@
 	<image id="wk-book" collapsed="true"/>
 	<label id="wk-addressbar"/>
 	<spacer flex="1"/>
-	<label value="Software developed by" style="margin-top: 3px;"/>
-        <label value="Linterweb" style="cursor:pointer; text-decoration:underline; margin-top: 3px;" onclick="openlinterweb();"/>
+	<label value="Software developed by " style="margin-top: 3px; margin-right:0px; "/>
+        <label value="Linterweb" style="margin-left:0px; cursor:pointer; text-decoration:underline; margin-top: 3px;" onclick="openlinterweb();"/>
 </hbox>
 	
 </window>
