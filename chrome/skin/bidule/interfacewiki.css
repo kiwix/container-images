@@ -1,9 +1,17 @@
 #mybrowser {
-  width: 800px;
-  height: 600px;
-  margin: 1em 1em 0.5em 1em;
-  -moz-appearance: none; 
   background-color: #87aade;
+}
+
+#wk-buttontopbox {
+  margin: 12px 15px 0 15px;
+}
+
+#wk-gridApplication{
+  margin: 10px 15px 0 15px;
+}
+
+#wk-statusbar {
+  margin: 3px 20px 10px 20px;
 }
 
 .sidebar-title {
@@ -14,7 +22,7 @@
 .score-slide {
  margin:0.5px 0px 0.5px 0px; 
  height:10px; 
- background-color:#888;
+ background-color:#88A;
 }
 
 /* Text of answers */

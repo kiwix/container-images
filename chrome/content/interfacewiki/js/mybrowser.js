@@ -26,6 +26,8 @@ var rootPath;
 var focusPopup=false;
 // structure for the find in page dialog
 var findInstData=null;
+// Do we do automatic search while clicking on links ?
+var bAutomaticSearch=true;
 
 function selectSkin( name ) {
 
@@ -133,7 +135,8 @@ function Activate(aEvent)
 //  alert( document.getElementById( "wk-blockSearch" ).collapsed );
       if ((link.href.indexOf("file://",0)==0)&&
           (link.href.indexOf("#",0)<0)&&
-          ( ! document.getElementById( "wk-blockResult" ).collapsed )) {
+          ( ! document.getElementById( "wk-blockResult" ).collapsed )&&
+          bAutomaticSearch ) {
         document.getElementById("wk-recherche").value = link.innerHTML;
         recherche();
       }
@@ -195,6 +198,7 @@ function initRoot() {
                           nsIWebProgress.NOTIFY_STATE |
                           nsIWebProgress.NOTIFY_STATE_DOCUMENT);
   searchPopupClose();
+  getBrowser().setAttribute( "homepage", "file://"+rootPath+'/'+homeUrl );
 }
 
 // Rend visible ou invisible un block
@@ -601,7 +605,7 @@ function selectall() {
 
 function gohome() {
 
-  goTo(homeUrl);
+  getBrowser().goHome();
 }
 
 function openexternal() {
@@ -649,4 +653,16 @@ function setbrowser() {
  var newname = prompt('Enter the path to your external browser',name);
  if ( newname != null ) 
    prefs.setCharPref("network.protocol-handler.app.http", newname );
+}
+
+
+function setautomatic() {
+ 
+  bAutomaticSearch = ! bAutomaticSearch;
+}
+
+function checkautomatic() {
+
+  item = document.getElementById( "itemautomatic" );
+  item.setAttribute( "checked", bAutomaticSearch );
 }

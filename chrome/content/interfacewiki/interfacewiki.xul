@@ -63,10 +63,9 @@
 		<menuseparator/>
                 <menu label="Select skins">
                 <menupopup id="skinmenu">
+                   <menuitem label="Ocean Blue" oncommand="selectSkin('bidule');"/>
                    <menuitem label="Classic Blue" oncommand="selectSkin('classicBlue');"/>
                    <menuitem label="Toon" oncommand="selectSkin('toon');"/>
-                   <menuitem label="B&amp;W" oncommand="selectSkin('BnW');"/>
-                   <menuitem label="Blue Stuff" oncommand="selectSkin('bidule');"/>
                    <menuitem label="Explorer" oncommand="selectSkin('explorer');"/>
                 </menupopup>
                 </menu>
@@ -76,7 +75,12 @@
                    <menuitem label="Zoom out" key="zoomout-key" oncommand="zoomout();"/>
                 </menupopup>
                 </menu>
-		<menuitem label="Configure external browser" oncommand="setbrowser();"/>
+                <menu label="Settings" >
+                <menupopup id="settingsmenu" onpopupshown="checkautomatic();">
+ 		   <menuitem label="Configure external browser" oncommand="setbrowser();"/>
+ 		   <menuitem id="itemautomatic" label="Automatic search (by clicking on links)" oncommand="setautomatic();"/>
+                </menupopup>
+                </menu>
 	</menupopup>
 </popupset>
 
