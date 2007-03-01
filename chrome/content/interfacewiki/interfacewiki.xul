@@ -15,6 +15,7 @@
 	height  = "600"
 	screenX ="10"
 	screenY ="10"
+        context="clipmenu"
 	onload  = "initRoot(); gohome();">
 <script LANGUAGE="JavaScript" type="text/javascript" src="js/mybrowser.js"/>
 <script LANGUAGE="JavaScript" type="text/javascript" src="js/search.js"/>
@@ -79,7 +80,7 @@
 	</menupopup>
 </popupset>
 
-<hbox>
+<hbox id="wk-buttontopbox">
 	<image id="wk-precedent" onclick="back();" tooltiptext="&mybrowser.back;"/>
 	<image id="wk-suivant"	onclick="forward();" tooltiptext="&mybrowser.forward;"/>
 	<image id="wk-home" onclick="gohome();" tooltiptext="&mybrowser.home;"/>
@@ -135,7 +136,7 @@
 						<image id="wk-search-button" onclick="recherche();" tooltiptext="&mybrowser.searchButton;"/>
 						<image id="wk-searchin-button" onclick="findin();" tooltiptext="&mybrowser.findin;"/>
 					</hbox>
-					<browser flex="1" id="wk-browser" src="" type="content-primary" context="clipmenu"/>
+					<browser flex="1" id="wk-browser" src="" type="content-primary"/>
 				</vbox>
 			</hbox>
 			<image id="wk-imageMilieuDroite"/>
@@ -148,15 +149,13 @@
 	</rows>
 </grid>
 	
-<hbox>
+<hbox id="wk-statusbar">
 	<image id="wk-earth" collapsed="true"/>
 	<image id="wk-book" collapsed="true"/>
 	<label id="wk-addressbar"/>
 	<spacer flex="1"/>
 	<label value="Software developed by" style="margin-top: 3px;"/>
         <image style="cursor:pointer; list-style-image : url(img/logo.png); margin:0; border:outset 1px; margin-bottom:2px;" onclick="openlinterweb();"/>
-	<label value="Software developed by " style="margin-top: 3px; margin-right:0px; "/>
-        <label value="Linterweb" style="margin-left:0px; cursor:pointer; text-decoration:underline; margin-top: 3px;" onclick="openlinterweb();"/>
 </hbox>
 	
 </window>

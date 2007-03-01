@@ -130,8 +130,10 @@ function Activate(aEvent)
       aEvent.preventDefault();
       aEvent.stopPropagation();
     } else {
+//  alert( document.getElementById( "wk-blockSearch" ).collapsed );
       if ((link.href.indexOf("file://",0)==0)&&
-          (link.href.indexOf("#",0)<0)) {
+          (link.href.indexOf("#",0)<0)&&
+          ( ! document.getElementById( "wk-blockResult" ).collapsed )) {
         document.getElementById("wk-recherche").value = link.innerHTML;
         recherche();
       }
