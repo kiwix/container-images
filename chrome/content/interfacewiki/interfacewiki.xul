@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://interfacewiki/content/default.css" type="text/css"?>
 <?xml-stylesheet href="chrome://interfacewiki/skin/interfacewiki.css" type="text/css"?>
 <!DOCTYPE window [
 <!ENTITY % wikiDTD SYSTEM "chrome://interfacewiki/locale/mybrowser.dtd">
@@ -117,6 +118,7 @@
 						<label flex="1" class="lab-titre" value="Results"/>
 						<image class="img-close" onclick="closeSearch()" style="display:none;"/> 
 					</hbox>
+                                        <label value="No results" collapsed="TRUE" id="wk-noresult"/>
 					<richlistbox flex="1" id="wk-resultat"/>
 				</vbox>
 				<vbox id="wk-blockHistory" collapsed="true">
@@ -151,6 +153,8 @@
 	<image id="wk-book" collapsed="true"/>
 	<label id="wk-addressbar"/>
 	<spacer flex="1"/>
+	<label value="Software developed by" style="margin-top: 3px;"/>
+        <image style="cursor:pointer; list-style-image : url(img/logo.png); margin:0; border:outset 1px; margin-bottom:2px;" onclick="openlinterweb();"/>
 	<label value="Software developed by " style="margin-top: 3px; margin-right:0px; "/>
         <label value="Linterweb" style="margin-left:0px; cursor:pointer; text-decoration:underline; margin-top: 3px;" onclick="openlinterweb();"/>
 </hbox>

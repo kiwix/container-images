@@ -307,6 +307,7 @@ function addListHistory(page, chemin){
 // Adds an entry in the result list (page is the title, chemin is the command to execute, score ...
 function addList(page, chemin, score){
 	try{
+                setVisible( "wk-noresult", true );
 		// get the richlist
 		var l = document.getElementById("wk-resultat");
 		

@@ -7,6 +7,7 @@ function rechercheXpcom(motR){
 	wikisearch = wikisearch.QueryInterface(Components.interfaces.iWikiSearch);
 	resCount = wikisearch.search(motR);
         if ( resCount > NB_SEARCH_RETURN ) resCount = NB_SEARCH_RETURN;
+        if ( resCount == 0 ) setVisible( "wk-noresult", false );
         for ( var i = 0 ; i < resCount ; i++ ) {
          var score = wikisearch.getScore(i);
          if (( i == 0 )&&( score > AUTO_OPEN_SCORE )) goTo(wikisearch.getResult(i));
