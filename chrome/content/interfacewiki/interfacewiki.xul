@@ -63,7 +63,7 @@
 		<menuseparator/>
                 <menu label="Select skins">
                 <menupopup id="skinmenu">
-                   <menuitem label="Ocean Blue" oncommand="selectSkin('bidule');"/>
+                   <menuitem label="Ocean Blue" oncommand="selectSkin('oceanBlue');"/>
                    <menuitem label="Classic Blue" oncommand="selectSkin('classicBlue');"/>
                    <menuitem label="Toon" oncommand="selectSkin('toon');"/>
                    <menuitem label="Explorer" oncommand="selectSkin('explorer');"/>
