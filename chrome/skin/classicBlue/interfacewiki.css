@@ -1,13 +1,11 @@
+/* Give the back-ground color here -- try to keep margin/padding at 0 */
 #mybrowser {
   background-color: #D2D2D2;
 }
 
 /* These three following elements give the global alignments */
-
 #wk-buttontopbox {
-  margin: 15px 10px 0 10px;
-  padding-left: 5px;
-  padding-right: 10px;
+  margin: 12px 15px 0 15px;
 }
 
 #wk-gridApplication{
@@ -15,14 +13,29 @@
 }
 
 #wk-statusbar {
-  margin: 10px 30px 10px 30px;
+  margin: 10px 13px 10px 30px;
+}
+
+/* Sidebar title */
+.sidebar-title {
+  font-size: 14px;
 }
 
 /* Score colored bar behind answers. Do not specify the width field ! */
 .score-slide {
- background-color:#bfd8ee;
+  background-color:#bfd8ee;
 }
 
+/* Text of answers */
+.answer-label {
+  color: #008;
+  width: 170px;
+  cursor: pointer;
+  padding-top: 3px;
+  font-size: 15px;
+}
+
+/* Image related elements */
 #wk-earth {
   list-style-image : url(img/wiki/earth.png);
 }
@@ -71,6 +84,7 @@
   list-style-image : url(img/wiki/close.png);
 }
 
+/* logo */
 #wk-imageWikipedia{
   list-style-image : url(img/wiki/logowiki.png)
 }
@@ -168,4 +182,3 @@
   list-style-image : url(img/wiki/print02.png);
   cursor:pointer;
 }
-
