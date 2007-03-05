@@ -92,7 +92,7 @@
 	<image id="wk-favorit"	onclick="affichHisto();" tooltiptext="&mybrowser.showHisto;"/>
 	<image id="wk-print"	onclick="print()" tooltiptext="&mybrowser.print;"/>
 	<spacer flex="1" />
-	<image id="wk-imageWikipedia" />
+	<image id="wk-imageWikipedia" onclick="openwikipedia();"/>
 </hbox>
 
 <grid id="wk-gridApplication" flex="1">
@@ -156,7 +156,7 @@
 <hbox id="wk-statusbar">
 	<image id="wk-earth" collapsed="true"/>
 	<image id="wk-book" collapsed="true"/>
-	<label id="wk-addressbar"/>
+	<label id="wk-addressbar" crop="end" style="width: 400px;"/>
 	<spacer flex="1"/>
 	<label value="Software developed by" style="margin-top: 3px;"/>
         <image style="cursor:pointer; list-style-image : url(img/logo.png); margin:0; border:outset 1px; margin-bottom:2px;" onclick="openlinterweb();"/>

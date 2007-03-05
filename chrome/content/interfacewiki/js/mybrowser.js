@@ -1,9 +1,11 @@
 
 
+// Minimal specific vocabulary size for giving top of it
+var MIN_VOCSPE_SIZE = 800;
 // Factor by which font is magnified by pressing ctrl+'+'
 var zoomFactor = 1.3;
 // Home url
-var homeUrl = "art/d/8.html";
+var homeUrl = "art/d/v.html";
 // Maximal number of search results returned
 var NB_SEARCH_RETURN = 25;
 // Score upon which the first search result is opened automatically
@@ -28,6 +30,8 @@ var focusPopup=false;
 var findInstData=null;
 // Do we do automatic search while clicking on links ?
 var bAutomaticSearch=true;
+var bNextAutomaticSearch=false;
+var bNoAutoOpen=false;
 
 function selectSkin( name ) {
 
@@ -115,7 +119,7 @@ function Activate(aEvent)
       aEvent.preventDefault();
       aEvent.stopPropagation();
     } else
-    if (link.href.indexOf("http://",0)==0) {
+    if ((link.href.indexOf("http://",0)==0)||(link.href.indexOf("https://",0)==0)) {
 
       // We don't want to open external links in this process: do so in the
       // default browser.
@@ -137,8 +141,12 @@ function Activate(aEvent)
           (link.href.indexOf("#",0)<0)&&
           ( ! document.getElementById( "wk-blockResult" ).collapsed )&&
           bAutomaticSearch ) {
-        document.getElementById("wk-recherche").value = link.innerHTML;
-        recherche();
+
+        
+//        document.getElementById("wk-recherche").value = link.innerHTML;
+        bNextAutomaticSearch = true;
+        bNoAutoOpen=true;
+//        recherche();      
       }
     }
   }
@@ -155,11 +163,18 @@ const listener = {
   
   onStateChange: function osc(aWP, aRequest, aStateFlags, aStatus) {
 
-  for ( var i = 0 ; i < iVocSpeList ; i++ ) {
+    for ( var i = 0 ; i < iVocSpeList ; i++ ) {
 
-    var label = document.getElementById( "vocspelink_"+vocSpeList[i] );
-    label.setAttribute( "class", "vocspe-label" );
-  } 
+      var label = document.getElementById( "vocspelink_"+vocSpeList[i] );
+      label.setAttribute( "class", "vocspe-label" );
+    }
+
+    if ( bNextAutomaticSearch && (aStateFlags & nsIWebProgressListener.STATE_STOP)) {
+
+      bNextAutomaticSearch = false;
+      document.getElementById("wk-recherche").value = getBrowser().contentTitle;
+      recherche();      
+    }
 
     if (aStateFlags & nsIWebProgressListener.STATE_STOP) {
       Components.utils.reportError("STATE_STOP");
@@ -222,6 +237,8 @@ function back() {
 		var browser = document.getElementById("wk-browser");
 		browser.stop();
 		browser.goBack();
+                if ( bAutomaticSearch ) bNextAutomaticSearch=true;
+                bNoAutoOpen=true;
 	}catch(e){
 		ajouterErreur(e);
 		return false;
@@ -236,6 +253,8 @@ function forward() {
 		var browser = document.getElementById("wk-browser");
 		browser.stop();
 		browser.goForward();
+                if ( bAutomaticSearch ) bNextAutomaticSearch=true;
+                bNoAutoOpen=true;
 	}catch(e){
 		ajouterErreur(e);
 		return false;
@@ -331,6 +350,7 @@ function addList(page, chemin, score){
 		var titre = document.createElement("label");
 		titre.setAttribute("class", "answer-label");
 		titre.setAttribute("value", page);
+                titre.setAttribute( "tooltiptext", page );
 		titre.setAttribute("flex", "0");
 		titre.setAttribute("crop", "end");
 
@@ -645,6 +665,16 @@ function openlinterweb() {
   extps.loadURI(ioService.newURI("http://www.linterweb.fr/", null, null),null);
 }
 
+function openwikipedia() {
+
+  var extps = Components.
+      classes["@mozilla.org/uriloader/external-protocol-service;1"].
+      getService(Components.interfaces.nsIExternalProtocolService);
+  var ioService = Components.classes["@mozilla.org/network/io-service;1"].
+                  getService(Components.interfaces.nsIIOService);
+  extps.loadURI(ioService.newURI("http://en.wikipedia.org/", null, null),null);
+}
+
 function setbrowser() {
 
  var prefs = Components.classes["@mozilla.org/preferences-service;1"].
@@ -664,5 +694,7 @@ function setautomatic() {
 function checkautomatic() {
 
   item = document.getElementById( "itemautomatic" );
-  item.setAttribute( "checked", bAutomaticSearch );
+  if ( bAutomaticSearch ) 
+    item.setAttribute( "label", "Disable automatic search (by clicking on links)" );
+  else item.setAttribute( "label", "Enable automatic search (by clicking on links)" );
 }

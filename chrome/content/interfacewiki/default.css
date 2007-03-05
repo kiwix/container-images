@@ -102,6 +102,10 @@
   padding-left: 0px;
   font-weight: bold; 
 }
+#wk-imageWikipedia {
+  cursor: pointer;
+}
+
 vbox {
   -moz-appearance: none; 
   background-color: white;
