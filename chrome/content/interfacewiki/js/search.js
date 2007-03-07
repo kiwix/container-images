@@ -10,7 +10,9 @@ function rechercheXpcom(motR){
         if ( resCount == 0 ) setVisible( "wk-noresult", false );
         for ( var i = 0 ; i < resCount ; i++ ) {
          var score = wikisearch.getScore(i);
-         if (( i == 0 )&&( score > AUTO_OPEN_SCORE )) goTo(wikisearch.getResult(i));
+         if (( i == 0 )&&( score > AUTO_OPEN_SCORE )&&( !bNoAutoOpen )) 
+               goTo(wikisearch.getResult(i));
+         bNoAutoOpen = false;
          if ( score < 2 ) break;
          var page = wikisearch.getTitle(i);
          var chemin = "javascript:goTo('"+wikisearch.getResult(i)+"')";

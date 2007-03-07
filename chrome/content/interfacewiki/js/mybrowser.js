@@ -5,7 +5,7 @@ var MIN_VOCSPE_SIZE = 800;
 // Factor by which font is magnified by pressing ctrl+'+'
 var zoomFactor = 1.3;
 // Home url
-var homeUrl = "art/d/v.html";
+var homeUrl = "art/d/w.html";
 // Maximal number of search results returned
 var NB_SEARCH_RETURN = 25;
 // Score upon which the first search result is opened automatically
@@ -633,8 +633,7 @@ function openexternal() {
   var extps = Components.
       classes["@mozilla.org/uriloader/external-protocol-service;1"].
       getService(Components.interfaces.nsIExternalProtocolService);
-  if ( ! extps.externalProtocolHandlerExists("http")) setbrowser();
-  extps.loadURI(getBrowser().currentURI, null);
+  extps.loadUrl(getBrowser().currentURI );
 }
 
 function zoomin() {
@@ -662,23 +661,23 @@ function openlinterweb() {
       getService(Components.interfaces.nsIExternalProtocolService);
   var ioService = Components.classes["@mozilla.org/network/io-service;1"].
                   getService(Components.interfaces.nsIIOService);
-  extps.loadURI(ioService.newURI("http://www.linterweb.fr/", null, null),null);
+  extps.loadUrl(ioService.newURI("http://www.linterweb.fr/", null, null) );
 }
 
 function openwikipedia() {
 
   var extps = Components.
       classes["@mozilla.org/uriloader/external-protocol-service;1"].
-      getService(Components.interfaces.nsIExternalProtocolService);
+      getService().QueryInterface(Components.interfaces.nsIExternalProtocolService);
   var ioService = Components.classes["@mozilla.org/network/io-service;1"].
-                  getService(Components.interfaces.nsIIOService);
-  extps.loadURI(ioService.newURI("http://en.wikipedia.org/", null, null),null);
+                  getService().QueryInterface(Components.interfaces.nsIIOService);
+  extps.loadUrl(ioService.newURI("http://en.wikipedia.org/", null, null) );
 }
 
 function setbrowser() {
 
  var prefs = Components.classes["@mozilla.org/preferences-service;1"].
-      getService(Components.interfaces.nsIPrefBranch);
+      getService().QueryInterface(Components.interfaces.nsIPrefBranch);
  var name = prefs.getCharPref("network.protocol-handler.app.http" );
  var newname = prompt('Enter the path to your external browser',name);
  if ( newname != null ) 
