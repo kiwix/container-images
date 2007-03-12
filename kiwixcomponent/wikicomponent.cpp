@@ -1,5 +1,5 @@
 /*  KiwixComponent - XP-COM component for Kiwix, offline reader of Wikipedia
-    Copyright (C) 2006, Fabien Coulon for LinterWeb (France)
+    Copyright (C) 2007, LinterWeb (France), Fabien Coulon
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
