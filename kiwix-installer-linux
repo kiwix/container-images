@@ -87,8 +87,7 @@ if [ -d $HOME/Desktop ]; then
  echo "Icon=$HOME/kiwix-0.5/wiki.png" >> $HOME/Desktop/kiwix.desktop
  echo 'Categories=GNOME;GTK;Application;Accesories' >> $HOME/Desktop/kiwix.desktop
  echo ----- I have placed a shortcut on your desktop -----
-else
- echo ----- To launch kiwix : $bold~/kiwix-0.5/kiwix.sh$reset ------
 fi
+ echo ----- To launch kiwix : $bold~/kiwix-0.5/kiwix.sh$reset ------
 echo \<press any key to exit\>
 read dummy
