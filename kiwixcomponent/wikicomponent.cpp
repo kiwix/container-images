@@ -87,7 +87,7 @@ WikiSearch::WikiSearch() {
     if (NS_FAILED(rv)) return ;
 
     nsIFile *theFile;
-    rv = directoryService->Get(NS_XPCOM_CURRENT_PROCESS_DIR,
+    rv = directoryService->Get("resource:app",
                           NS_GET_IID(nsIFile),
                           (void**)&theFile);
     if (NS_FAILED(rv)) return ;
@@ -101,12 +101,13 @@ WikiSearch::WikiSearch() {
   /* Translate <path> to get absolute path to root (the 'html' directory) */
 
     strcpy( rootPath, path.get() );
-//    printf( "%s\n", rootPath );
-    char* c = rootPath;
+    printf( "%s\n", rootPath );
+/*  char* c = rootPath;
     char* lastSlash;
-    for ( ; *c ; c++ ) if ( *c == SLASH_CHAR ) lastSlash = c;
-    strcpy( lastSlash, SLASH_HTML );
-//    printf( "root = %s\n", rootPath );
+    for ( ; *c ; c++ ) if ( *c == SLASH_CHAR ) lastSlash = c; */
+    strcat( rootPath, SLASH_HTML );
+//  strcpy( lastSlash, SLASH_HTML );
+    printf( "root = %s\n", rootPath );
 
     searchEngine = new engine();
     searchEngine->load( rootPath );

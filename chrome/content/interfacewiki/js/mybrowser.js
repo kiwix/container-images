@@ -253,8 +253,9 @@ function back() {
 		var browser = document.getElementById("wk-browser");
 		browser.stop();
 		browser.goBack();
-                if ( bAutomaticSearch ) bNextAutomaticSearch=true;
-                bNoAutoOpen=true;
+  if (( bAutomaticSearch )&&( ! document.getElementById( "wk-blockResult" ).collapsed ))
+    bNextAutomaticSearch=true;
+  bNoAutoOpen=true;
 	}catch(e){
 		ajouterErreur(e);
 		return false;
@@ -269,8 +270,9 @@ function forward() {
 		var browser = document.getElementById("wk-browser");
 		browser.stop();
 		browser.goForward();
-                if ( bAutomaticSearch ) bNextAutomaticSearch=true;
-                bNoAutoOpen=true;
+  if (( bAutomaticSearch )&&( ! document.getElementById( "wk-blockResult" ).collapsed ))
+    bNextAutomaticSearch=true;
+  bNoAutoOpen=true;
 	}catch(e){
 		ajouterErreur(e);
 		return false;
