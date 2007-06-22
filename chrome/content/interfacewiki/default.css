@@ -19,14 +19,14 @@
 
 /* Score colored bar behind answers. Do not specify the width field ! */
 .score-slide {
- margin:0.5px 0px 0.5px 0px; 
- height:10px; 
- background-color:#bfd8ee;
+  margin:0.5px 0px 0.5px 0px; 
+  height:10px; 
+  background-color:#bfd8ee;
 }
 
 /* Text of answers */
 .answer-label {
- color:#000; width:170px; cursor:pointer; padding-top: 3px; font-size: 15px;
+  color:#000; width:170px; cursor:pointer; padding-top: 3px; font-size: 15px;
 }
 
 /* Related vocabulary text */
@@ -75,9 +75,7 @@
   -moz-appearance: none; 
   -moz-border-radius: 3px;
   padding-top: 3px;
-  border-size: 1px;
-  border-style: solid;
-  border-color: black;
+  border: solid 1px #000000;
 }
 
 .lab-titre {
@@ -102,6 +100,7 @@
   padding-left: 0px;
   font-weight: bold; 
 }
+
 #wk-imageWikipedia {
   cursor: pointer;
 }
