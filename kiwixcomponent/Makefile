@@ -21,7 +21,7 @@ IWikiComponent.so: wikicomponent.cpp IWikiComponent.h xengine.o xlist.o xindex.o
 build: IWikiComponent.so IWikiComponent.xpt
 
 clean:
-	rm -f *.o *.xpt *.so
+	rm -f *.o *.xpt *.so test
 
 xindex.o: index.cpp index.h list.h common.h
 	$(CXX) index.cpp -c -o xindex.o -DXPCOM_BUILD $(GECKO_INCLUDES) $(CPPFLAGS)
