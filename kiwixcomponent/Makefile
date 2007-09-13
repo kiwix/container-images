@@ -2,7 +2,7 @@ all: build
 CXX    = c++
 CPPFLAGS += -fno-rtti -fno-exceptions -shared -D_POSIX_ -O3
 TEST_DEFINES = -D_POSIX_
-GECKO_SDK_PATH =  ../../gecko_sdk/1.8
+GECKO_SDK_PATH = ../gecko-sdk
 GECKO_DEFINES   = -DXPCOM_GLUE -DMOZILLA_STRICT_API
 GECKO_IDL_INCLUDES = -I $(GECKO_SDK_PATH)/idl
 GECKO_INCLUDES = -I  $(GECKO_SDK_PATH)/include
@@ -13,16 +13,20 @@ IWikiComponent.h: IWikiComponent.idl
 
 IWikiComponent.xpt: IWikiComponent.idl
 	$(GECKO_SDK_PATH)/bin/xpidl -m typelib $(GECKO_IDL_INCLUDES) IWikiComponent.idl
-
+	
 IWikiComponent.so: wikicomponent.cpp IWikiComponent.h xengine.o xlist.o xindex.o
 	$(CXX) -o IWikiComponent.so -DXPCOM_BUILD $(GECKO_DEFINES) $(GECKO_INCLUDES) $(GECKO_LDFLAGS) $(CPPFLAGS) $(CXXFLAGS) wikicomponent.cpp xengine.o xlist.o xindex.o
 	chmod +x IWikiComponent.so
 
 build: IWikiComponent.so IWikiComponent.xpt
-
+	
 clean:
-	rm -f *.o *.xpt *.so test
+	rm IWikiComponent.so IWikiComponent.xpt xlist.o xindex.o xengine.o
 
+install: IWikiComponent.so IWikiComponent.xpt
+	cp IWikiComponent.so ../components
+	cp IWikiComponent.xpt ../components
+	
 xindex.o: index.cpp index.h list.h common.h
 	$(CXX) index.cpp -c -o xindex.o -DXPCOM_BUILD $(GECKO_INCLUDES) $(CPPFLAGS)
 
