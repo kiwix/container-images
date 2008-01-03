@@ -219,9 +219,9 @@ const listener = {
 // listener for catching external links
 function initRoot() {
 
-  var wikisearch = Components.classes["@linterweb.com/wikicomponent"].getService();
-  wikisearch = wikisearch.QueryInterface(Components.interfaces.iWikiSearch);
-  rootPath = wikisearch.getRootPath();
+  var root = Components.classes["@mozilla.org/file/directory_service;1"].getService(Components.interfaces.nsIProperties).get("resource:app", Components.interfaces.nsIFile);
+  root.append("html");
+  var rootPath = root.path;
   var dls = Components.classes["@mozilla.org/docloaderservice;1"].
   getService(Components.interfaces.nsIWebProgress);
   dls.addProgressListener(listener,
