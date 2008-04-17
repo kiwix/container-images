@@ -86,7 +86,7 @@ sub setup
 		if($mw->_cfg("wiki", "has_query"));
 
 	my $user = $mw->_cfg("bot", "user");
-	my $ret = $mw->login($user, $mw->_cfg("bot", "pass"), $mw->_cfg("bot", "realm"))
+	my $ret = $mw->login()
 		if($user);
 
 	$mw->{msgcache_path} = $mw->_cfg("tmp", "msgcache");
@@ -188,13 +188,19 @@ sub DESTROY
 }
 sub login
 {
-	my($mw, $user, $pass, $realm) = @_;
+	my($mw, $user, $pass, $http_user, $http_pass, $http_realm) = @_;
 	$user = $mw->_cfg("bot", "user")
 		unless $user;
 	$pass = $mw->_cfg("bot", "pass")
 		unless $pass;
-	$realm = $mw->_cfg("bot", "realm")
-		unless $realm;
+	$http_user = $mw->_cfg("http", "user")
+		unless $http_user;
+	$http_pass = $mw->_cfg("http", "pass")
+		unless $http_pass;
+	$http_realm = $mw->_cfg("http", "realm")
+		unless $http_realm;
+
+
 	return $mw->_error(ERR_NO_AUTHINFO)
 		unless($user && $pass);
 	return 1 if($mw->{logged_in}->{$mw->{index}, $user});
@@ -202,11 +208,11 @@ sub login
 	$mw->{ini}->{bot}->{user} = $user;
 	$mw->{ini}->{bot}->{pass} = $pass;
 
-	if($realm)
+	if($http_user)
 	{
-		$mw->{ua}->credentials($mw->_cfg("wiki", "host").':'.($mw->_cfg("wiki", "ssl") ? "443" : "80"), $realm, $user, $pass );
-		$mw->{logged_in}->{$mw->{index}, $user} = 1;
-		return 1;
+		$mw->{ua}->credentials($mw->_cfg("wiki", "host").':'.($mw->_cfg("wiki", "ssl") ? "443" : "80"), $http_realm, $http_user, $http_pass );
+		#$mw->{logged_in}->{$mw->{index}, $user} = 1;
+		#return 1;
 	}
 
 	my $res = $mw->{ua}->request(
@@ -214,6 +220,7 @@ sub login
 		Content_Type  => 'application/x-www-form-urlencoded',
 		Content       => [ ( 'wpName' => $user, 'wpPassword' => $pass, 'wpLoginattempt' => 'Log in' ) ]
 	);
+
 	if($res->code == 302 || $res->header("Set-Cookie"))
 	{
 		$mw->{logged_in}->{$mw->{index}, $user} = 1;

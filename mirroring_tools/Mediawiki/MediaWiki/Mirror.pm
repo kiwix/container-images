@@ -12,12 +12,18 @@ my $sourceMediawikiHost : shared = undef;
 my $sourceMediawikiPath : shared = undef;
 my $sourceMediawikiUsername : shared = undef;
 my $sourceMediawikiPassword : shared = undef;
-    
+my $sourceHttpRealm : shared = undef;
+my $sourceHttpUsername : shared = undef;
+my $sourceHttpPassword : shared = undef;    
+
 my $destinationMediawiki : shared = undef;
 my $destinationMediawikiHost : shared = undef;
 my $destinationMediawikiPath : shared = undef;
 my $destinationMediawikiUsername : shared = undef;
 my $destinationMediawikiPassword : shared = undef;
+my $destinationHttpRealm : shared = undef;
+my $destinationHttpUsername : shared = undef;
+my $destinationHttpPassword : shared = undef;
     
 my $followRedirects : shared = 1;
 my $checkTemplateDependences : shared = 1;
@@ -171,7 +177,7 @@ sub wait {
 	next if (@templateDependenceQueue);
 
 	unless ($self->currentTaskCount()) {
-	    if ($lastImageDependenceCheck) {
+	    if ($lastImageDependenceCheck && $self->checkImageDependences()) {
 		lock(@pageDoneQueue);
 		foreach my $page (@pageDoneQueue) {
 		    $self->addPageToCheckImageDependence($page);
@@ -193,7 +199,11 @@ sub downloadImages {
     my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
 					 $self->sourceMediawikiPassword(),
 					 $self->sourceMediawikiHost(),
-					 $self->sourceMediawikiPath());
+					 $self->sourceMediawikiPath(),
+					 $self->sourceHttpUsername(),
+                                         $self->sourceHttpPassword(),
+                                         $self->sourceHttpRealm(),
+					 );
 
     while ($self->isRunnable() && $site) {
 	my $image = $self->getImageToDownload();
@@ -259,7 +269,10 @@ sub uploadImages {
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(),
 					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath());
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+                                         $self->destinationHttpPassword(),
+                                         $self->destinationHttpRealm());
 
     while ($self->isRunnable() && $site) {
 	my ($image, $content, $summary) = $self->getImageToUpload();
@@ -320,7 +333,10 @@ sub checkTemplates {
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(), 
 					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath());
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+                                         $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
     
     while ($self->isRunnable() && $site) {
 	my $title = $self->getPageToCheckTemplateDependence();
@@ -369,7 +385,7 @@ sub getPageToCheckTemplateDependence {
 sub checkTemplateDependences {
     my $self = shift;
     lock($checkTemplateDependences);
-    if (@_) { $checkTemplateDependences = shift }
+    if (scalar(@_)) { $checkTemplateDependences = shift }
     return $checkTemplateDependences;
 }
 
@@ -379,7 +395,10 @@ sub checkImages {
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(), 
 					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath());
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+                                         $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
     
     while ($self->isRunnable() && $site) {
 	my $title = $self->getPageToCheckImageDependence();
@@ -424,7 +443,7 @@ sub getPageToCheckImageDependence {
 sub checkImageDependences {
     my $self = shift;
     lock($checkImageDependences);
-    if (@_) { $checkImageDependences = shift }
+    if (scalar(@_)) { $checkImageDependences = shift }
     return $checkImageDependences;
 }
 
@@ -435,7 +454,11 @@ sub downloadPages {
     my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
 					 $self->sourceMediawikiPassword(),
 					 $self->sourceMediawikiHost(),
-					 $self->sourceMediawikiPath());
+					 $self->sourceMediawikiPath(),
+					 $self->sourceHttpUsername(),
+                                         $self->sourceHttpPassword(),
+					 $self->sourceHttpRealm());
+
     my $revisionCallback = $self->revisionCallback();
 
     while ($self->isRunnable() && $site) {
@@ -532,7 +555,10 @@ sub uploadPages {
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(),
 					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath());
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+                                         $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
 
     while ($self->isRunnable() && $site) {
 	my ($title, $content, $summary) = $self->getPageToUpload();
@@ -562,6 +588,7 @@ sub uploadPages {
 	    if ($self->checkImageDependences()) {
 		$self->addPageToCheckImageDependence($title);
 	    }
+
 	    $self->decrementCurrentTaskCount();
 	} else {
 	    sleep($self->delay());
@@ -603,10 +630,14 @@ sub connectToMediawiki {
     my $user = shift;
     my $pass = shift;
     my $host = shift;
-    my $path = shift; 
+    my $path = shift;
+    my $httpUser = shift;
+    my $httpPass = shift || ''; 
+    my $httpRealm = shift || ''; 
 
     my $site = MediaWiki->new();
-    $site->setup({  'bot' => { 'user' => $user, 'pass' => $pass }, 
+    $site->setup({  'bot' => { 'user' => $user, 'pass' => $pass },
+		    'http' => { 'user' => $httpUser, 'pass' => $httpPass, 'realm' => $httpRealm },
 		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => 1 } } );
 
     if ($site->{error}) {
@@ -646,6 +677,27 @@ sub sourceMediawikiPassword {
     return $sourceMediawikiPassword;
 }
 
+sub sourceHttpRealm {
+    my $self = shift;
+    lock($sourceHttpRealm);
+    if (@_) { $sourceHttpRealm = shift }
+    return $sourceHttpRealm;
+}
+
+sub sourceHttpUsername {
+    my $self = shift;
+    lock($sourceHttpUsername);
+    if (@_) { $sourceHttpUsername = shift }
+    return $sourceHttpUsername;
+}
+
+sub sourceHttpPassword {
+    my $self = shift;
+    lock($sourceHttpPassword);
+    if (@_) { $sourceHttpPassword = shift }
+    return $sourceHttpPassword;
+}
+
 sub destinationMediawikiHost { 
     my $self = shift; 
     lock($destinationMediawikiHost);
@@ -672,6 +724,27 @@ sub destinationMediawikiPassword {
     lock($destinationMediawikiPassword);
     if (@_) { $destinationMediawikiPassword = shift }
     return $destinationMediawikiPassword;
+}
+
+sub destinationHttpRealm {
+    my $self = shift;
+    lock($destinationHttpRealm);
+    if (@_) { $destinationHttpRealm = shift }
+    return $destinationHttpRealm;
+}
+
+sub destinationHttpUsername {
+    my $self = shift;
+    lock($destinationHttpUsername);
+    if (@_) { $destinationHttpUsername = shift }
+    return $destinationHttpUsername;
+}
+
+sub destinationHttpPassword {
+    my $self = shift;
+    lock($destinationHttpPassword);
+    if (@_) { $destinationHttpPassword = shift }
+    return $destinationHttpPassword;
 }
 
 # mirroring stuff
