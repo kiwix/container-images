@@ -233,7 +233,8 @@ sub addImageToDownload {
     lock(@imageDoneQueue);
     if (@_) {
 	my $image = ucfirst(shift);
-	unless ( grep(/^$image$/, @imageDoneQueue) || grep(/^$image$/, @imageDownloadQueue) ) {
+	my $regexp = quotemeta($image);
+	unless ( grep(/^$regexp$/, @imageDoneQueue) || grep(/^$regexp$/, @imageDownloadQueue) ) {
 	    push(@imageDownloadQueue, $image);
 	}
     }
@@ -495,7 +496,8 @@ sub addPageToDownload {
     lock(@pageDoneQueue);
     if (@_) {
 	my $page = ucfirst(shift);
-	unless ( grep(/^$page$/, @pageDoneQueue) || grep(/^$page$/, @pageDownloadQueue) ) {
+	my $regexp = quotemeta($page);
+	unless ( grep(/^$regexp$/, @pageDoneQueue) || grep(/^$regexp$/, @pageDownloadQueue) ) {
 	    push(@pageDownloadQueue, $page);
 	}
     }
