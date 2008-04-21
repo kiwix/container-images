@@ -153,7 +153,8 @@ sub stopMirroring {
 
 sub wait {
     my $self = shift;
-    my $lastImageDependenceCheck = 1;
+    my $imageDoneCount = -1;
+    my $pageDoneCount = -1;
 
     while ($self->isRunnable()) {
 	sleep($self->delay() * 5);
@@ -177,14 +178,26 @@ sub wait {
 	next if (@templateDependenceQueue);
 
 	unless ($self->currentTaskCount()) {
-	    if ($lastImageDependenceCheck && $self->checkImageDependences()) {
-		lock(@pageDoneQueue);
+	    lock(@pageDoneQueue);
+	    lock(@imageDoneQueue);
+
+	    if ($imageDoneCount == scalar(@imageDoneQueue) && $pageDoneCount == scalar(@pageDoneQueue)) {
+		last;
+	    } else {
+		$imageDoneCount = scalar(@imageDoneQueue);
+		$pageDoneCount = scalar(@pageDoneQueue);
+	    }
+
+	    if ($self->checkImageDependences()) {
 		foreach my $page (@pageDoneQueue) {
 		    $self->addPageToCheckImageDependence($page);
 		}
-		$lastImageDependenceCheck = 0;
-	    } else {
-		last;
+	    }
+
+	    if ($self->checkTemplateDependences()) {
+		foreach my $page (@pageDoneQueue) {
+		    $self->addPageToCheckTemplateDependence($page);
+		}
 	    }
 	}
     }
