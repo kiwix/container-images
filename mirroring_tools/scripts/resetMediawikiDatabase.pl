@@ -1,8 +1,12 @@
 #!/usr/bin/perl
 
+use lib "../";
+use lib "../Mediawiki/";
+
 use Config;
 use strict;
 use warnings;
+use MediaWiki::Reset;
 use Getopt::Long;
 use Data::Dumper;
 use DBI;
@@ -44,16 +48,11 @@ while (!$password) {
     $password = query("Password:", "");
 }
 
-# connection
-my $dsn = "DBI:mysql:$database;host=$host:$port";
-my $dbh;
-my $req;
-my $sth;
-
-$dbh = DBI->connect($dsn, $username, $password) or die ("Unable to connect to the database.");
-
-foreach my $table ("archive", "categorylinks", "externallinks", "filearchive", "hitcounter", "image", "imagelinks", "interwiki", "langlinks", "logging", "math", "objectcache", "oldimage", "oldimage", "redirect", "page", "pagelinks", "revision", "text", "recentchanges", "searchindex", "templatelinks") {
-    $req = "TRUNCATE $table";
-    $sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
-    $sth->execute() or die ("Unable to execute request.");
-}
+my $reset = MediaWiki::Reset->new();
+$reset->logger($logger);
+$reset->host($host);
+$reset->port($port);
+$reset->database($database);
+$reset->username($username);
+$reset->password($password);
+$reset->do();
