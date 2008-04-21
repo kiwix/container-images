@@ -46,17 +46,14 @@ while (!$password) {
 
 # connection
 my $dsn = "DBI:mysql:$database;host=$host:$port";
-my $dbh = DBI->connect($dsn, $username, $password);
+my $dbh;
 my $req;
 my $sth;
 
-unless ($dbh) {
-    $logger->error("Unable to connect to the database.");
-    exit;
-}
+$dbh = DBI->connect($dsn, $username, $password) or die ("Unable to connect to the database.");
 
 foreach my $table ("archive", "categorylinks", "externallinks", "filearchive", "hitcounter", "image", "imagelinks", "interwiki", "langlinks", "logging", "math", "objectcache", "oldimage", "oldimage", "redirect", "page", "pagelinks", "revision", "text", "recentchanges", "searchindex", "templatelinks") {
     $req = "TRUNCATE $table";
-    $sth = $dbh->prepare($req);
-    $sth->execute();
+    $sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
+    $sth->execute() or die ("Unable to execute request.");
 }
