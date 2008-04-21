@@ -9,7 +9,6 @@ use warnings;
 use MediaWiki::Reset;
 use Getopt::Long;
 use Data::Dumper;
-use DBI;
 use Term::Query qw( query query_table query_table_set_defaults query_table_process );
 
 # log
