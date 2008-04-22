@@ -36,13 +36,12 @@ GetOptions('sourceHost=s' => \$sourceHost,
 	   'destinationPassword=s' => \$destinationPassword
 	   );
 
-print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --destinationDatabase [--sourcePath=w] [--destinationHost=localhost] [--destinationPort=3306] [--destinationUsername=tom] [--destinationPassword=fff]\n";
-
 if (!$sourceHost || !$destinationDatabase) {
+    print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --destinationDatabase [--sourcePath=w] [--destinationHost=localhost] [--destinationPort=3306] [--destinationUsername=tom] [--destinationPassword=fff]\n";
     exit;
 }
 
-while ($destinationUsername && !$destinationPassword) {
+if ($destinationUsername && !$destinationPassword) {
     $destinationPassword = query("Destination password:", "");
 }
 

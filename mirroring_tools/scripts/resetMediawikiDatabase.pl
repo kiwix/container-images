@@ -31,19 +31,15 @@ GetOptions('host=s' => \$host,
 	   'password=s' => \$password
 	   );
 
-if (!$database || !$username || !$password ) {
+if (!$database || !$username ) {
     print "usage: ./resetMediawikiDatabase.pl --database=my_wiki_db [--username=my_user] [--password=my_password] [--host=localhost] [--port=3306]\n";
 }
 
-while (!$database) {
-    $database = query("Database:", "");
-}
-
-while (!$username) {
+if (!$username) {
     $username = query("Username:", "");
 }
 
-while (!$password) {
+if (!$password) {
     $password = query("Password:", "");
 }
 
