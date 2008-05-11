@@ -29,6 +29,7 @@ GetOptions('host=s' => \$host,
 
 if (!$host) {
     print "usage: ./mirorMediawikiInstall.pl --host=my_wiki_host [--path=w] [--action=printAll]\n";
+    exit;
 }
 
 my $install = MediaWiki::Install->new();

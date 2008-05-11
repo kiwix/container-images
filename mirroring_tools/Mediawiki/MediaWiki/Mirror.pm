@@ -30,6 +30,7 @@ my $checkTemplateDependences : shared = 1;
 my $checkImageDependences : shared = 1;
 my $checkCompletedPages : shared = 0;
 my $checkCompletedImages : shared = 0;
+my $noTextMirroring : shared = 0;
     
 my @pageDownloadQueue : shared;
 my @pageUploadQueue : shared;
@@ -296,7 +297,7 @@ sub uploadImages {
 	    my $currentContent = $site->download($image);
 
 	    if ($currentContent && $currentContent eq $content) {
-		$self->log("info", "Image '$image' has already an uptodate content.");
+		$self->log("info", "Image '$image' is already an uptodate content.");
 	    } else {
 		if ($site->upload($image, $content, $summary, 1)) {
 		    $self->log("info", "Image '$image' successfuly uploaded.");
@@ -617,7 +618,7 @@ sub addPageToUpload {
     my $content = shift || "";
     my $summary = shift || "";
     lock(@pageUploadQueue);
-    if ($title) { push(@pageUploadQueue, $title, $content, $summary) }
+    if ($title && !$self->noTextMirroring()) { push(@pageUploadQueue, $title, $content, $summary) }
 }
 
 sub getPageToUpload {
@@ -777,9 +778,42 @@ sub delay {
     return $delay;
 }
 
+sub noTextMirroring {
+    my $self = shift;
+    lock($noTextMirroring);
+    if (@_) { $noTextMirroring = shift }
+    return $noTextMirroring;
+}
+
 sub addPagesToMirror {
     my $self = shift;
-    foreach my $page (@_) { $self->addPageToDownload($page) }
+    
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+                                         $self->destinationMediawikiPassword(),
+                                         $self->destinationMediawikiHost(),
+                                         $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+                                         $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
+
+    foreach my $page (@_) { 
+	if (!$self->checkCompletedPages() || $site->exists()) {
+	    $self->addPageToDownload($page);
+	}
+
+	if (my $imageName = $self->extractImageNameFromPageName($page)) {
+	    $self->addImageToDownload($imageName);
+	}
+    }
+}
+
+sub extractImageNameFromPageName {
+   my $self = shift;
+   my $page = shift;
+
+   if ($page =~ /(image\:)(.*)/i ) {
+       return $2;
+   }
 }
 
 # current task
