@@ -19,20 +19,30 @@ my $logger = Log::Log4perl->get_logger("mirrorMediawikiInstall.pl");
 # get the params
 my $host;
 my $path;
-my $action;
+my $action="print";
+my $filter=".*";
+my $mediawikiDirectory="";
+my $extensionDirectory="";
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
 	   'path=s' => \$path,
-	   'action=s' => \$action
+	   'action=s' => \$action,
+	   'filter=s' => \$filter,
+	   'extensionDirectory=s' => \$extensionDirectory,
+	   'mediawikiDirectory=s' => \$mediawikiDirectory,
 	   );
 
-if (!$host) {
-    print "usage: ./mirorMediawikiInstall.pl --host=my_wiki_host [--path=w] [--action=printAll]\n";
+if (!$host || ($action eq "svn" && (!$mediawikiDirectory || !$extensionDirectory) )) {
+    print "usage: ./mirrorMediawikiInstall.pl --host=my_wiki_host [--path=w] [--action=print|svn] [--filter=*] [--mediawikiDirectory=./] [--extensionDirectory=./]\n";
     exit;
 }
 
 my $install = MediaWiki::Install->new();
 $install->logger($logger);
+$install->mediawikiDirectory($mediawikiDirectory);
+$install->extensionDirectory($extensionDirectory);
 $install->get($host, $path);
-$install->printAll();
+$install->filter($filter);
+$install->go($action);
+
