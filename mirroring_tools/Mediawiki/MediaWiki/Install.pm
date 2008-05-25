@@ -8,8 +8,7 @@ use LWP::UserAgent;
 use XML::DOM;
 use HTML::Entities qw(decode_entities);
 
-my $mediawikiDirectory;
-my $extensionDirectory;
+my $directory;
 my $logger;
 my $doc;
 my $mediawikiRevision = "";
@@ -30,16 +29,13 @@ sub get {
     my $host = shift || "";
     my $path = shift || "";
 
-    my $ua = LWP::UserAgent->new();
-    my $parser = new XML::DOM::Parser (LWP_UserAgent => $ua);
     my $url = "http://".$host."/".($path ? $path."/" : "")."index.php?title=Special:Version";
-    $doc = $parser->parsefile($url);
+    my $html = $self->downloadTextFromUrl($url);
 
-    my $html = $doc->toString();
-    utf8::encode($html);
-
-    if ($html =~ /<td>.*www\.mediawiki\.org.*<\/td>.*[\n]*[\t]*.*<td>.*r([\d]+).*<\/td>/m ) {
-	$mediawikiRevision = $1;
+    if ("Mediawiki" =~ /$filter/i ) {
+	if ($html =~ /<td>.*www\.mediawiki\.org.*<\/td>.*[\n]*[\t]*.*<td>.*r([\d]+).*<\/td>/m ) {
+	    $mediawikiRevision = $1;
+	}
     }
 
     while ($html =~ /<td>.*(http.*mediawiki.*xtension:[^\"]+)[^>]+>([^>]+)<\/a>.* (\d{4}-\d{2}-\d{2}|\d+\.*\d*\.*\d*|r\d+|).*<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>/mg ) {
@@ -47,102 +43,136 @@ sub get {
 
 	$extension{url} = $1;
 	$extension{title} = $2;
-
 	$extension{version} = $3 || "head ";
-
 	$extension{description} = $4;
 	$extension{author} = $5;
+
+	next unless ($extension{title} =~ /$filter/i );
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
 
 	$extension{version} =~ s/r// ;
-	
+	if ($extension{version} =~ /\./) {
+	    #$extension{version} = $self->getRevisionForBranch($extension{version});
+	    $extension{version} = "head";
+	}
+
+	my $path = $self->getPathForExtension($extension{url}) || $self->getPathForExtension($extension{url}."/installation");
+
+	my $firstSlash = index($path, "/");
+	$extension{path} = substr($path, 0, $firstSlash);
+	$extension{file} = substr($path, $firstSlash + 1);
+
+	unless ($extension{path}) {
+	    $self->log("error", "Unable to find a path for the extension '".$extension{title}."'");	
+	    next;
+	}
+
 	push(@extensions, \%extension);
     }
 }
 
-sub getRequireOnce {
+sub php {
+    my $self = shift;
+    my $php = "";
+
+
+    foreach my $extension (@extensions) {
+	print "require_once( \"\$IP/extensions/".$extension->{path}."/".$extension->{file}."\" );\n";
+    }
+
+    return $php;
+}
+
+sub getPathForExtension {
+    my $self = shift;
+    my $url = shift;
+
+    my $html = $self->downloadTextFromUrl($url);
+
+    my $require_once = "";
+
+    if ($html =~ /(require_once|include).*extensions\/(\S*\.php).*/ ) {
+        $require_once = $2;
+	$require_once =~ s/\<[^>]+\>//g;
+    } 
+
+    return $require_once;
+}
+
+sub informations {
+    my $self = shift;
+    my $action = shift;
+    my $informations = "";
+
+    if ("Mediawiki" =~ /$filter/i ) {
+	$informations .= "[Mediawiki]\n";
+	$informations .= "revision: $mediawikiRevision\n\n";
+    }
+
+    foreach my $extension (@extensions) {
+	print "[Extension]\n";
+	print "title: ".$extension->{title}."\n";
+	print "description: ".$extension->{description}."\n";
+	print "url: ".$extension->{url}."\n";
+	print "version: ".$extension->{version}."\n";
+	print "author: ".$extension->{author}."\n";
+	print "path:".$extension->{path}."\n";
+	print "\n";
+    }
+}
+
+sub getSvnCommands {
+    my $self = shift;
+    my $svnCommands = "";
+
+    if ("Mediawiki" =~ /$filter/i ) {
+	$svnCommands .= "svn co -r ".$mediawikiRevision." http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3 ".$self->directory()."\n";
+    }
+
+    foreach my $extension (@extensions) {
+	$svnCommands .= "svn co -r ".$extension->{version}." http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/".$extension->{path}." ".$self->directory()."/extensions/".$extension->{path}."\n";
+    }
+
+    return $svnCommands;
+}
+
+sub getRevisionForBranch {
+    my $self = shift;
+    my $branch = shift;
+
+    my $revision = $branch;
+    $revision =~ s/\./\_/gm;
+
+    if (length($revision) == 3) {
+	$revision .= "_0";
+    }
+
+    $revision = "REL".$revision;
+                    my $command = "svn info --xml http://svn.wikimedia.org/svnroot/mediawiki/tags/".$revision." | grep \"revision\" | sed -n \"2p\" | sed -e \"s/.*=\\\"//\" | sed -e \"s/\\\".*//\"";
+    $revision  = `$command`;
+    $revision =~ s/\n//g;
+
+    return $revision;
+}
+
+sub downloadTextFromUrl {
     my $self = shift;
     my $url = shift;
 
     my $ua = LWP::UserAgent->new();
-    my $parser = new XML::DOM::Parser (LWP_UserAgent => $ua);
+    my $response = $ua->get($url);
 
-    $doc = $parser->parsefile($url);
+    my $data = $response->content;
+    my $encoding = $response->header('Content-Encoding');
 
-    my $html = $doc->toString();
-    utf8::encode($html);
-
-    if ($html =~ /(require_once|include).*extensions(\S*\.php).*/ ) {
-        my $require_once = $2;
-	$require_once =~ s/\<[^>]+\>//g;
-	return $require_once;
-    } 
-
-    unless ($url =~ /installation/ ) {
-	my $require_once = $self->getRequireOnce($url."/installation");
-	if ($require_once) { return $require_once }
+    if ($encoding && $encoding =~ /gzip/i) {
+	$data = Compress::Zlib::memGunzip($data);
     }
-
-    return "";
-
-}
-
-sub go {
-    my $self = shift;
-    my $action = shift;
-
-    return unless ($doc);
-
-    if ("Mediawiki" =~ /$filter/i ) {
-	if ($action eq "print") {
-	    print "[Mediawiki]\n";
-	    print "revision: $mediawikiRevision\n\n";
-	} elsif ($action eq "svn" ) {
-	    print "svn co -r ".$mediawikiRevision." http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3 ".$self->mediawikiDirectory()."\n";
-	}
-    }
-
-    foreach my $extension (@extensions) {
-
-	next unless ($extension->{title} =~ /$filter/i );
-
-	my $require_once = $self->getRequireOnce($extension->{url});
-
-	if ($action eq "print") {
-	    print "[Extension]\n";
-	    print "title: ".$extension->{title}."\n";
-	    print "description: ".$extension->{description}."\n";
-	    print "url: ".$extension->{url}."\n";
-	    print "version: ".$extension->{version}."\n";
-	    print "author: ".$extension->{author}."\n";
-	    print "require:".$require_once."\n";
-	    print "\n";
-	} elsif ($action eq "svn" ) {
-
-	    if ($require_once) {
-		if ( $extension->{version} =~ /\./) {
-		    my $revision = $extension->{version};
-		    $revision =~ s/\./\_/gm;
-
-		    if (length($revision) == 3) {
-			$revision .= "_0";
-		    }
-
-		    $revision = "REL".$revision;
-		    my $command = "svn info --xml http://svn.wikimedia.org/svnroot/mediawiki/tags/".$revision." | grep \"revision\" | sed -n \"2p\" | sed -e \"s/.*=\\\"//\" | sed -e \"s/\\\".*//\"";
-		    $revision  = `$command`;
-		    $revision =~ s/\n//g; 
-		    $extension->{version} = $revision;
-		}
-		print "svn co -r ".$extension->{version}." http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions".$require_once." ".$self->extensionDirectory()."\n";
-	    } else {
-		$self->log("error", "Unable to find a path for the extension '".$extension->{title}."'");
-	    }
-
-	}
-    }
+    
+    #utf8::encode($data);
+    return $data;
 }
 
 sub logger {
@@ -157,16 +187,10 @@ sub filter {
     return $filter;
 }
 
-sub mediawikiDirectory {
+sub directory {
     my $self = shift;
-    if (@_) { $mediawikiDirectory = shift }
-    return $mediawikiDirectory;
-}
-
-sub extensionDirectory {
-    my $self = shift;
-    if (@_) { $extensionDirectory = shift }
-    return $extensionDirectory;
+    if (@_) { $directory = shift }
+    return $directory;
 }
 
 sub log {
