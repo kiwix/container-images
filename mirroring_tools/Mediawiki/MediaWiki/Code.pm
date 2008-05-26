@@ -74,6 +74,8 @@ sub get {
 
 	push(@extensions, \%extension);
     }
+    
+    return 1;
 }
 
 sub php {
