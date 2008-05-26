@@ -39,10 +39,12 @@ if (!$host || ($action eq "svn" && !$directory) ) {
 my $code = MediaWiki::Code->new();
 $code->filter($filter);
 
-
 $code->logger($logger);
 $code->directory($directory);
-$code->get($host, $path);
+
+unless ($code->get($host, $path)) {
+    exit;
+}
 
 if ($action eq "info") {
     print $code->informations();
