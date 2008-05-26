@@ -33,8 +33,11 @@ sub get {
     my $html = $self->downloadTextFromUrl($url);
 
     if ("Mediawiki" =~ /$filter/i ) {
-	if ($html =~ /<td>.*www\.mediawiki\.org.*<\/td>.*[\n]*[\t]*.*<td>.*r([\d]+).*<\/td>/m ) {
+	if ($html =~ /<td>.*www\.mediawiki\.org.*<\/td>.*[\s]*.*<td>.*r([\d]+).*<\/td>/m ) {
 	    $mediawikiRevision = $1;
+	} else {
+	    $self->log("error", "The website does not seems to be a Mediawiki installation.\n");
+	    return;
 	}
     }
 
@@ -77,9 +80,8 @@ sub php {
     my $self = shift;
     my $php = "";
 
-
     foreach my $extension (@extensions) {
-	print "require_once( \"\$IP/extensions/".$extension->{path}."/".$extension->{file}."\" );\n";
+	$php .= "require_once( \"\$IP/extensions/".$extension->{path}."/".$extension->{file}."\" );\n";
     }
 
     return $php;

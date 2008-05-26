@@ -53,6 +53,13 @@ if ($action eq "info") {
     foreach my $command (split("\n", $svn)) {
 	`$command`;
     }
+    
+    my $code = "<?php\n".$code->php()."\n?>\n";
+    my $filename = "$directory/extensions.php";
+    open (FILE, ">>$filename");
+    print FILE $code;
+    close (FILE);
+
 } elsif ($action eq "php") {
     print $code->php();
 }
