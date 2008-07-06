@@ -139,6 +139,9 @@ sub getSvnCommands {
 	$svnCommands .= "svn co -r ".$extension->{version}." http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/".$extension->{path}." ".$self->directory()."/extensions/".$extension->{path}."\n";
     }
 
+    # download in addtion ExtensionFunctions.php
+    $svnCommands .= " wget -O ".$self->directory()."/extensions/ExtensionFunctions.php /var/www/mirror/fr/extensions/ExtensionFunctions.php http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/ExtensionFunctions.php\n";
+
     return $svnCommands;
 }
 
