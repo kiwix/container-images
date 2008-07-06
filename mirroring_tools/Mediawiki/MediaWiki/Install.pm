@@ -15,6 +15,7 @@ my $sysopUser;
 my $sysopPassword;
 my $dbUser;
 my $dbPassword;
+my @confIncludes;
 
 sub new {
     my $class = shift;
@@ -82,6 +83,25 @@ sub install {
     else {
 	$self->log("error", "Mediawiki mirror '".$self->code()."' failed to install.");
     }
+
+    # add the conf includes
+    my $confIncludeString="";
+    foreach my $confInclude ($self->confIncludes()) {
+	$confIncludeString .= "require_once('".$confInclude."');\n";
+    }
+    $confIncludeString .= "?>\n" ;
+    my $conf = "";
+    open FILE, "$directory/LocalSettings.php" or die $!; 
+    while (my $line = <FILE>) {
+	$conf .= $line;
+    }
+    close(FILE); 
+
+    $conf =~ s/\?\>//mg ;
+    $conf .= $confIncludeString;
+    open FILE, ">$directory/LocalSettings.php" or die $!; 
+    print FILE $conf; 
+    close(FILE); 
 }
 
 
@@ -143,6 +163,12 @@ sub dbPassword {
     my $self = shift;
     if (@_) { $dbPassword = shift }
     return $dbPassword;
+}
+
+sub confIncludes {
+    my $self = shift;
+    if (@_) { @confIncludes = @_ }
+    return @confIncludes;
 }
 
 sub logger {
