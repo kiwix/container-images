@@ -107,10 +107,13 @@ unless ($noLog) {
 $mirror->sourceMediawikiHost($sourceHost);
 $mirror->sourceMediawikiPath($sourcePath);
 
+$mirror->sourceMediawikiUsername(ucfirst($sourceUsername));
+$mirror->sourceMediawikiPassword($sourcePassword);
+
 $mirror->destinationMediawikiHost($destinationHost);
 $mirror->destinationMediawikiPath($destinationPath);
 
-$mirror->destinationMediawikiUsername($destinationUsername);
+$mirror->destinationMediawikiUsername(ucfirst($destinationUsername));
 $mirror->destinationMediawikiPassword($destinationPassword);
 
 $mirror->checkCompletedPages($checkCompletedPages);
