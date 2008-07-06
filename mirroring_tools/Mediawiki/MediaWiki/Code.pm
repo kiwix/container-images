@@ -51,6 +51,9 @@ sub get {
 	$extension{author} = $5;
 
 	next unless ($extension{title} =~ /$filter/i );
+	
+	# remove centralAuth
+	next if ($extension{title} =~ /Central.*Auth/i );
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
@@ -141,6 +144,9 @@ sub getSvnCommands {
 
     # download in addtion ExtensionFunctions.php
     $svnCommands .= " wget -O ".$self->directory()."/extensions/ExtensionFunctions.php /var/www/mirror/fr/extensions/ExtensionFunctions.php http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/ExtensionFunctions.php\n";
+
+    # tidy
+    $svnCommands .= "svn co http://svn.wikimedia.org/svnroot/mediawiki/trunk/extensions/tidy ".$self->directory()."/extensions/tidy\n";
 
     return $svnCommands;
 }
