@@ -55,6 +55,12 @@ sub get {
 	# remove centralAuth
 	next if ($extension{title} =~ /Central.*Auth/i );
 
+	# remove TitleKey
+	next if ($extension{title} =~ /TitleKey/i );
+
+	# remove CheckUser
+	next if ($extension{title} =~ /CheckUser/i );
+
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
 
