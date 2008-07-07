@@ -484,12 +484,16 @@ sub downloadPages {
 	    my $page = $site->get($title, "r");
 
 	    if ($page->{exists}) {
-		my ($id, $summary) = @{$page->history(\&$revisionCallback)};
+		my ($id, $summary);
+		my $history = $page->history(\&$revisionCallback);
+		if (ref($history) eq 'ARRAY') {
+		    ($id, $summary) = @{$history};
+		}
 		my $content = $id ? $page->oldid($id) : $page->content();
 		$self->addPageToUpload($title, $content, $summary);
 		$self->log("info", "'$title' successfuly downloaded.");
 		
-		if ($self->followRedirects() && $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/ ) {
+		if ($self->followRedirects() && $content && $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/ ) {
 		    $self->log("info", "'$title' is a redirect to '$1'.");
 		    $self->addPageToDownload($1);
 		}
