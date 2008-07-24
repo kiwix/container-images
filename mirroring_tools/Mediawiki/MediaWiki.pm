@@ -506,24 +506,29 @@ sub dependences {
 
     if ($mw->{query})
     {
-	my $res = $mw->{ua}->get($mw->{query} . "?action=query&titles=$page&format=xml&prop=info&generator=$type");
-
-	if(!$res->is_success)
-	{
-	    delete $mw->{query} if($res->code == 404);
-	}
-	else
-	{
-	    my $xml = XMLin( $res->content );
-
-	    if (exists($xml->{query}->{pages}->{page})) {
-		if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
-		    push(@deps, @{$xml->{query}->{pages}->{page}});
-		} else {
-		    push(@deps, $xml->{query}->{pages}->{page});
+	my $continue_property = $type eq "templates" ? "gtlcontinue" : "gimcontinue";
+	my $continue;
+	my $xml;
+	do {
+	    my $res = $mw->{ua}->get($mw->{query} . "?action=query&titles=$page&format=xml&prop=info&generator=$type".($continue ? "&".$continue_property."=".$continue : "") );
+	    
+	    if(!$res->is_success)
+	    {
+		delete $mw->{query} if($res->code == 404);
+	    }
+	    else
+	    {
+		$xml = XMLin( $res->content );
+		
+		if (exists($xml->{query}->{pages}->{page})) {
+		    if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
+			push(@deps, @{$xml->{query}->{pages}->{page}});
+		    } else {
+			push(@deps, $xml->{query}->{pages}->{page});
+		    }
 		}
 	    }
-	}
+	} while ($continue = $xml->{"query-continue"}->{$type}->{$continue_property} );
     }
 
     return(\@deps);
