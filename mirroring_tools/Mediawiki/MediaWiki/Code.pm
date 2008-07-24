@@ -61,8 +61,11 @@ sub get {
 	# remove CheckUser
 	next if ($extension{title} =~ /CheckUser/i );
 
-	#remove Cross namespace links
+	# remove Cross namespace links
 	next if ($extension{title} =~ /Cross.*namespace/i );
+
+	# remove OAIRepository
+	next if ($extension{title} =~ /OAIRepository/i );
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
