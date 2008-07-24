@@ -52,7 +52,7 @@ GetOptions(
            'noResume' => \$noResume,
            'noLog' => \$noLog,
            'ignoreTemplateDependences' => \$ignoreTemplateDependences,
-           'ignoreImageDepedences' => \$ignoreImageDependences,
+           'ignoreImageDependences' => \$ignoreImageDependences,
            'noTextMirroring' => \$noTextMirroring,
            );
 
