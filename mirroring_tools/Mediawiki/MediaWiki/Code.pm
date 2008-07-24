@@ -61,6 +61,49 @@ sub get {
 	# remove CheckUser
 	next if ($extension{title} =~ /CheckUser/i );
 
+	#remove Cross namespace links
+	next if ($extension{title} =~ /Cross.*namespace/i );
+
+	$extension{description} =~ s/\<[^>]+\>//g;
+	$extension{description} = decode_entities($extension{description});
+
+	$extension{version} =~ s/r// ;
+	if ($extension{version} =~ /\./) {
+	    #$extension{version} = $self->getRevisionForBranch($extension{version});
+	    $extension{version} = "head";
+	}
+
+	my $path = $self->getPathForExtension($extension{url}) || $self->getPathForExtension($extension{url}."/installation");
+
+	my $firstSlash = index($path, "/");
+	$extension{path} = substr($path, 0, $firstSlash);
+	$extension{file} = substr($path, $firstSlash + 1);
+
+	unless ($extension{path}) {
+	    $self->log("error", "Unable to find a path for the extension '".$extension{title}."'");	
+	    next;
+	}
+
+	push(@extensions, \%extension);
+    }
+
+    while ($html =~ /<td>.*(http.*meta\.wikimedia\.org.*wiki\/[^\"]+)[^>]+>([^>]+)<\/a>.* (\d{4}-\d{2}-\d{2}|\d+\.*\d*\.*\d*|r\d+|).*<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>/mg ) {
+	my %extension;
+
+	$extension{url} = $1;
+	$extension{title} = $2;
+	$extension{version} = $3 || "head ";
+	$extension{description} = $4;
+	$extension{author} = $5;
+
+	# remove MergeAccount
+	next if ($extension{title} =~ /MergeAccount/i );
+
+	# parserFunction
+	if ($extension{title} =~ /ParserFunctions/i ) {
+	    $extension{url} = "http://www.mediawiki.org/wiki/Extension:ParserFunctions"
+	}
+
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
 
