@@ -32,6 +32,9 @@ GetOptions('host=s' => \$host,
 	   );
 
 if (!$host || ($action eq "svn" && !$directory) ) {
+    if ($action eq "svn" && !$directory) {
+	print "error: please specify a directory argument\n";
+    }
     print "usage: ./mirrorMediawikiCode.pl --host=my_wiki_host [--path=w] [--action=info|svn|checkout|php] [--filter=*] [--directory=./]\n";
     exit;
 }
