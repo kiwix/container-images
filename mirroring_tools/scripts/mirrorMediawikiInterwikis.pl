@@ -37,7 +37,7 @@ GetOptions('sourceHost=s' => \$sourceHost,
 	   );
 
 if (!$sourceHost || !$destinationDatabase) {
-    print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --destinationDatabase [--sourcePath=w] [--destinationHost=localhost] [--destinationPort=3306] [--destinationUsername=tom] [--destinationPassword=fff]\n";
+    print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --destinationDatabase=MYDB [--sourcePath=w] [--destinationHost=localhost] [--destinationPort=3306] [--destinationUsername=tom] [--destinationPassword=fff]\n";
     exit;
 }
 
