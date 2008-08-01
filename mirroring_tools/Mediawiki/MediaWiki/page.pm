@@ -70,7 +70,7 @@ BEGIN
 	$li_regex = qr/(?<=<li>).*?(?=<\/li>)/;
 	$link_regex1 = qr/<a href=["']\/wiki\/(.*?)["'].*?title=["'](?:.*?)['"]>(.*?)<\/a>/;
 
-	$filepath_regex = qr/(?<=<div class=["']fullImageLink["'] id=["']file["']>)[.\n]*?(?=<\/div>)/;
+	$filepath_regex = qr/(?<=<div class=["']fullImageLink["'] id=["']file["']>).*?(?=<\/div>)/;
 	$src_regex = qr/(?<=src=['"]).*?(?=['"])/;
 
 	$oldid_regex = qr/(?<=&amp;oldid=)[0-9]+(?=["'])/;
