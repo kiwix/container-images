@@ -534,6 +534,40 @@ sub dependences {
     return(\@deps);
 }
 
+sub allPages {
+    my($mw) = @_;
+    my @pages;
+
+    if ($mw->{query})
+    {
+        my $continue;
+        my $xml;
+        do {
+            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=allpages&format=xml".($continue ? "&apfrom=".$continue : "") );
+
+            if(!$res->is_success)
+            {
+                delete $mw->{query} if($res->code == 404);
+            }
+            else
+            {
+                $xml = XMLin( $res->content );
+
+                if (exists($xml->{query}->{allpages}->{p})) {
+                    if(ref($xml->{query}->{allpages}->{p}) eq 'ARRAY') {
+			foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
+			    push(@pages, $page->{title}) if ($page->{title});
+			}
+                    } else {
+                        push(@pages, $xml->{allpages}->{p}->{title}) if ($xml->{allpages}->{p}->{title});
+                    }
+                }
+            }
+        } while ($continue = $xml->{"query-continue"}->{"allpages"}->{"apfrom"} );
+    }
+
+    return(\@pages);
+}
 
 
 
