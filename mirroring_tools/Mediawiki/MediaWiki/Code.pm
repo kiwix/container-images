@@ -11,7 +11,7 @@ use HTML::Entities qw(decode_entities);
 my $directory;
 my $logger;
 my $doc;
-my $mediawikiRevision = "";
+my $mediawikiRevision = "head";
 my @extensions;
 my $filter=".*";
 
@@ -30,14 +30,14 @@ sub get {
     my $path = shift || "";
 
     my $url = "http://".$host."/".($path ? $path."/" : "")."index.php?title=Special:Version";
+    $self->log("info", "Download Mediawiki version informations from : $url\n");
     my $html = $self->downloadTextFromUrl($url);
 
     if ("Mediawiki" =~ /$filter/i ) {
 	if ($html =~ /<td>.*www\.mediawiki\.org.*<\/td>.*[\s]*.*<td>.*r([\d]+).*<\/td>/m ) {
 	    $mediawikiRevision = $1;
 	} else {
-	    $self->log("error", "The website does not seems to be a Mediawiki installation.\n");
-	    return;
+	    $self->log("warn", "The website does not seems to be a Mediawiki installation.\n");
 	}
     }
 
