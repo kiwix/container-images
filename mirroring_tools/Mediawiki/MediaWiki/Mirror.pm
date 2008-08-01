@@ -2,6 +2,7 @@ package MediaWiki::Mirror;
 
 use strict;
 use warnings;
+use LWP::UserAgent;
 use Data::Dumper;
 use MediaWiki;
 
@@ -66,6 +67,8 @@ my $currentTaskCount : shared = 0;
 
 my $logger;
 my $loggerMutex : shared = 1;
+
+my %hasFilePathCache : shared;
 
 sub new {
     my $class = shift;
@@ -658,7 +661,7 @@ sub connectToMediawiki {
     my $site = MediaWiki->new();
     $site->setup({  'bot' => { 'user' => $user, 'pass' => $pass },
 		    'http' => { 'user' => $httpUser, 'pass' => $httpPass, 'realm' => $httpRealm },
-		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => 1 } } );
+		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => $self->hasFilePath($host, $path) } } );
 
     if ($site->{error}) {
 	$self->isRunnable(0);
@@ -668,6 +671,49 @@ sub connectToMediawiki {
 
     return $site;
 }
+
+sub hasFilePath {
+    my $self = shift;
+    my ($host, $path) = @_;
+    my $hasFilePath = 0;
+
+    lock(%hasFilePathCache);
+    if (exists($hasFilePathCache{$host})) {
+	return $hasFilePathCache{$host};
+    }
+
+    my $url = "http://".$host."/".($path ? $path."/" : "")."index.php?title=Special:Version";
+    my $html = $self->downloadTextFromUrl($url);
+
+    if ($html =~ /filepath/i ) {
+	$self->log("info", "Site $host has the FilePath extension\n");
+	$hasFilePath = 1;
+    } else {
+	$self->log("info", "Site $host does not have the FilePath extension\n");
+    }
+
+    $hasFilePathCache{$host} = $hasFilePath;
+
+    return $hasFilePath;
+}
+
+sub downloadTextFromUrl {
+    my $self = shift;
+    my $url = shift;
+
+    my $ua = LWP::UserAgent->new();
+    my $response = $ua->get($url);
+
+    my $data = $response->content;
+    my $encoding = $response->header('Content-Encoding');
+
+    if ($encoding && $encoding =~ /gzip/i) {
+	$data = Compress::Zlib::memGunzip($data);
+    }
+
+    return $data;
+}
+
 
 sub sourceMediawikiHost { 
     my $self = shift; 
