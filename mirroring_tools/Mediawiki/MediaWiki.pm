@@ -510,7 +510,7 @@ sub dependences {
 	my $continue;
 	my $xml;
 	do {
-	    my $res = $mw->{ua}->get($mw->{query} . "?action=query&titles=$page&format=xml&prop=info&generator=$type".($continue ? "&".$continue_property."=".$continue : "") );
+	    my $res = $mw->{ua}->get($mw->{query} . "?action=query&titles=$page&format=xml&prop=info&gtllimit=500&generator=$type".($continue ? "&".$continue_property."=".$continue : "") );
 	    
 	    if(!$res->is_success)
 	    {
@@ -543,7 +543,7 @@ sub allPages {
         my $continue;
         my $xml;
         do {
-            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=allpages&format=xml".($continue ? "&apfrom=".$continue : "") );
+            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=allpages&format=xml&aplimit=500&".($continue ? "&apfrom=".$continue : "") );
 
             if(!$res->is_success)
             {
@@ -569,7 +569,42 @@ sub allPages {
     return(\@pages);
 }
 
+sub redirects {
+    my($mw, $page) = @_;
+    my @redirects;
 
+    if ($mw->{query})
+    {
+        my $continue;
+        my $xml;
+        do {
+            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=backlinks&bltitle=".$page."&blfilterredir=redirects&bllimit=500&format=xml&".($continue ? "&blcontinue=".$continue : "") );
+
+	    print Dumper ($res);
+
+            if(!$res->is_success)
+            {
+                delete $mw->{query} if($res->code == 404);
+            }
+            else
+            {
+                $xml = XMLin( $res->content );
+
+                if (exists($xml->{query}->{backlinks}->{bl})) {
+                    if(ref($xml->{query}->{backlinks}->{bl}) eq 'ARRAY') {
+			foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
+			    push(@redirects, $redirect->{title}) if ($redirect->{title});
+			}
+                    } else {
+                        push(@redirects, $xml->{backlinks}->{bl}->{title}) if ($xml->{backlinks}->{bl}->{title});
+                    }
+                }
+            }
+        } while ($continue = $xml->{"query-continue"}->{"backlinks"}->{"blcontinue"} );
+    }
+
+    return(\@redirects);
+}
 
 __END__
 
