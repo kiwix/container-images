@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+binmode(STDOUT, ":utf8");
 
 use lib "../";
 use lib "../Mediawiki/";

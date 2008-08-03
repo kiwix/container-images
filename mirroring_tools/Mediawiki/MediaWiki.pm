@@ -535,7 +535,7 @@ sub dependences {
 }
 
 sub allPages {
-    my($mw) = @_;
+    my($mw, $namespace) = @_;
     my @pages;
 
     if ($mw->{query})
@@ -543,7 +543,7 @@ sub allPages {
         my $continue;
         my $xml;
         do {
-            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=allpages&format=xml&aplimit=500&".($continue ? "&apfrom=".$continue : "") );
+            my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=allpages&format=xml&aplimit=500&".(defined($namespace) ? "&apnamespace=".$namespace : "").($continue ? "&apfrom=".$continue : "") );
 
             if(!$res->is_success)
             {
