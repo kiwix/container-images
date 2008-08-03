@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+binmode(STDOUT, ":utf8");
 
 use lib "../";
 use lib "../Mediawiki/";
@@ -18,7 +19,7 @@ my $logger = Log::Log4perl->get_logger("listAllPages.pl");
 # get the params
 my $host = "";
 my $path = "";
-my $namespace = "0";
+my $namespace;
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
