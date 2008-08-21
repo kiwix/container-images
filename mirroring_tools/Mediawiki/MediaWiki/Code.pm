@@ -130,6 +130,17 @@ sub get {
 	push(@extensions, \%extension);
     }
     
+    # add dumpHTML
+    my %extension;
+    $extension{url} = "http://www.mediawiki.org/wiki/Extension:DumpHTML";
+    $extension{title} ="DumpHTML";
+    $extension{version} = "head ";
+    $extension{description} = "To dump HTML pages form a live web mediawiki instance.";
+    $extension{author} = "";
+    $extension{path} = "DumpHTML";
+    $extension{file} = "";
+    push(@extensions, \%extension);
+    
     return 1;
 }
 
@@ -138,7 +149,9 @@ sub php {
     my $php = "";
 
     foreach my $extension (@extensions) {
-	$php .= "require_once( \"\$IP/extensions/".$extension->{path}."/".$extension->{file}."\" );\n";
+	if ($extension->{path} && $extension->{file}) {
+	    $php .= "require_once( \"\$IP/extensions/".$extension->{path}."/".$extension->{file}."\" );\n";
+	}
     }
 
     return $php;
