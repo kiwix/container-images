@@ -39,6 +39,7 @@ my @imageDownloadQueue : shared;
 my @imageUploadQueue : shared;
 my @imageDependenceQueue : shared;
 my @templateDependenceQueue : shared;
+my @redirectQueue : shared;
 
 my @pageErrorQueue : shared;
 my @imageErrorQueue : shared;
@@ -52,6 +53,7 @@ my @imageDownloadThreads;
 my @imageUploadThreads;
 my @imageDependenceThreads;
 my @templateDependenceThreads;
+my @redirectThreads;
 
 my $pageDownloadThreadCount = 1;
 my $pageUploadThreadCount = 3;
@@ -59,7 +61,8 @@ my $imageDownloadThreadCount = 1;
 my $imageUploadThreadCount = 3;
 my $imageDependenceThreadCount = 5;
 my $templateDependenceThreadCount = 3;
-    
+my $redirectThreadCount = 1;
+
 my $isRunnable : shared = 1;
 my $delay : shared = 1;
 my $revisionCallback : shared = "getLastNonAnonymousEdit";
@@ -115,6 +118,11 @@ sub startMirroring {
     $self->log("info", $imageUploadThreadCount." image upload thread(s) start");
     for (my $i=0; $i<$imageUploadThreadCount; $i++) {
 	$imageUploadThreads[$i] = threads->new(\&uploadImages, $self);
+    }
+
+    $self->log("info", $redirectThreadCount." redirect check thread(s) start");
+    for (my $i=0; $i<$redirectThreadCount; $i++) {
+	$redirectThreads[$i] = threads->new(\&checkRedirects, $self);
     }
 
     $self->log("info", "All threads are now started.");
@@ -180,6 +188,9 @@ sub wait {
 
 	lock(@templateDependenceQueue);
 	next if (@templateDependenceQueue);
+
+	lock(@redirectQueue);
+	next if (@redirectQueue);
 
 	unless ($self->currentTaskCount()) {
 	    lock(@pageDoneQueue);
@@ -407,6 +418,53 @@ sub checkTemplateDependences {
     return $checkTemplateDependences;
 }
 
+# check redirects
+sub checkRedirects {
+    my $self = shift;
+    my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+					 $self->sourceMediawikiPassword(), 
+					 $self->sourceMediawikiHost(),
+					 $self->sourceMediawikiPath(),
+					 $self->sourceHttpUsername(),
+                                         $self->sourceHttpPassword(),
+					 $self->sourceHttpRealm());
+    
+    while ($self->isRunnable() && $site) {
+	my $title = $self->getPageToCheckRedirects();
+
+	if ($title) {
+	    $self->incrementCurrentTaskCount();
+
+	    my $redirects = $site->redirects($title);
+	    my $toMirrorCount = 0;
+
+	    foreach my $redirect (@$redirects) {
+		$toMirrorCount++;
+		utf8::encode($redirect);
+		$self->addPageToDownload($redirect);
+	    }
+	    $self->log("info", "$toMirrorCount redirects found for '$title'");
+
+	    $self->decrementCurrentTaskCount();
+	} else {
+	    sleep($self->delay());
+	}
+    }
+}
+
+sub addPageToCheckRedirects {
+    my $self = shift;
+    lock(@redirectQueue);
+    if (@_) { push(@redirectQueue, shift) };
+}
+
+sub getPageToCheckRedirects {
+    my $self = shift;
+    lock(@redirectQueue);
+    if (scalar(@redirectQueue)>0) { return pop(@redirectQueue) }
+    return undef;
+}
+
 # check image dependences
 sub checkImages {
     my $self = shift;
@@ -611,6 +669,8 @@ sub uploadPages {
 	    if ($self->checkImageDependences()) {
 		$self->addPageToCheckImageDependence($title);
 	    }
+
+	    $self->addPageToCheckRedirects($title);
 
 	    $self->decrementCurrentTaskCount();
 	} else {
