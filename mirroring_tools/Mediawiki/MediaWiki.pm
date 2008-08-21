@@ -569,6 +569,51 @@ sub allPages {
     return(\@pages);
 }
 
+sub allImages {
+    my($mw) = @_;
+    my @images;
+
+    if ($mw->{query})
+    {
+        my $continue;
+        my $xml;
+        do {
+            my $res = $mw->{ua}->get($mw->{query} . "?action=query&generator=allimages&format=xml&gailimit=500&".($continue ? "&gaifrom=".$continue : "") );
+
+            if(!$res->is_success)
+            {
+                delete $mw->{query} if($res->code == 404);
+            }
+            else
+            {
+                $xml = XMLin( $res->content );
+
+                if (exists($xml->{query}->{pages}->{page})) {
+                    if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
+			foreach my $page (@{$xml->{query}->{pages}->{page}}) {
+			    if ($page->{title}) {
+				my $image = $page->{title};
+				$image =~ s/Image:// ;
+				$image =~ s/\ /_/ ;
+				push(@images, $image);
+			    }
+			}
+                    } else {
+                        if ($xml->{pages}->{page}->{title}) {
+			    my $image = $xml->{pages}->{page}->{title};
+			    $image =~ s/\ /_/ ;
+			    $image =~ s/Image://;
+			    push(@images, $image);
+			}
+                    }
+                }
+            }
+        } while ($continue = $xml->{"query-continue"}->{"allimages"}->{"gaifrom"} );
+    }
+
+    return(\@images);
+}
+
 sub redirects {
     my($mw, $page) = @_;
     my @redirects;
