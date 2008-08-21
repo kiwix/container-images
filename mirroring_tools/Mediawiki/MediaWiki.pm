@@ -580,8 +580,6 @@ sub redirects {
         do {
             my $res = $mw->{ua}->get($mw->{query} . "?action=query&list=backlinks&bltitle=".$page."&blfilterredir=redirects&bllimit=500&format=xml&".($continue ? "&blcontinue=".$continue : "") );
 
-	    print Dumper ($res);
-
             if(!$res->is_success)
             {
                 delete $mw->{query} if($res->code == 404);
