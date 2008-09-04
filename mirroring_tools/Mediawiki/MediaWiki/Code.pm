@@ -64,8 +64,15 @@ sub get {
 	# remove Cross namespace links
 	next if ($extension{title} =~ /Cross.*namespace/i );
 
+	# next if GlobalBlocking
+	next if ($extension{title} =~ /GlobalBlocking/i );
+
 	# remove OAIRepository
 	next if ($extension{title} =~ /OAIRepository/i );
+
+	# remove spam extension
+	next if ($extension{title} =~ /SimpleAntiSpam/i );
+	next if ($extension{title} =~ /SpamBlacklist/i );
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
