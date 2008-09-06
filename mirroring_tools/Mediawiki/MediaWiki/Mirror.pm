@@ -67,6 +67,7 @@ my $isRunnable : shared = 1;
 my $delay : shared = 1;
 my $revisionCallback : shared = "getLastNonAnonymousEdit";
 my $currentTaskCount : shared = 0;
+my $uploadQueueMaxSize : shared = 42;
 
 my $logger;
 my $loggerMutex : shared = 1;
@@ -332,6 +333,12 @@ sub addImageToUpload {
     my $image = shift || "";
     my $content = shift || "";
     my $summary = shift || "";
+
+    while ($self->getImageUploadQueueSize() > $self->uploadQueueMaxSize()) {
+	sleep($self->delay());
+#	$self->log("info", "Full image upload queue, waiting ".$self->delay()." s. before adding a image.");
+    }
+
     lock(@imageUploadQueue);
     if ($image) { push(@imageUploadQueue, $image, $content, $summary) }
 }
@@ -346,6 +353,12 @@ sub getImageToUpload {
 	return ($image, $content, $summary);
     }
     return undef;
+}
+
+sub getImageUploadQueueSize {
+    my$self = shift;
+    lock(@imageUploadQueue);
+    return scalar(@imageUploadQueue);
 }
 
 sub checkCompletedImages {
@@ -649,13 +662,13 @@ sub uploadPages {
 	    my $page = $site->get($title, "rw");
 
 	    if ($page->content() && $page->content() eq $content."\n") {
-		$self->log("info", "'$title' has already an uptodate content.");
+		$self->log("info", "Page '$title' has already an uptodate content.");
 	    } else {
 		$page->{content} = $content;
 		$page->{summary} = $summary;
 
 		if ($page->save()) {
-		    $self->log("info", "'$title' successfuly uploaded");
+		    $self->log("info", "Page '$title' successfuly uploaded");
 		} else {
 		    $self->addPageError($title);
 		    $self->log("error", "Unable to write the page '$title'.");
@@ -684,6 +697,12 @@ sub addPageToUpload {
     my $title = shift || "";
     my $content = shift || "";
     my $summary = shift || "";
+
+    while ($self->getPageUploadQueueSize() > $self->uploadQueueMaxSize()) {
+	sleep($self->delay());
+#	$self->log("info", "Full page upload queue, waiting ".$self->delay()." s. before adding a page.");
+    }
+
     lock(@pageUploadQueue);
     if ($title && !$self->noTextMirroring()) { push(@pageUploadQueue, $title, $content, $summary) }
 }
@@ -698,6 +717,12 @@ sub getPageToUpload {
 	return ($title, $content, $summary);
     }
     return undef;
+}
+
+sub getPageUploadQueueSize {
+    my $self = shift;
+    lock(@pageUploadQueue);
+    return scalar(@pageUploadQueue);
 }
 
 sub checkCompletedPages {
@@ -886,6 +911,13 @@ sub delay {
     lock($delay);
     if (@_) { $delay = shift }
     return $delay;
+}
+
+sub uploadQueueMaxSize {
+    my $self = shift;
+    lock($uploadQueueMaxSize);
+    if (@_) { $uploadQueueMaxSize = shift }
+    return $uploadQueueMaxSize;
 }
 
 sub noTextMirroring {
