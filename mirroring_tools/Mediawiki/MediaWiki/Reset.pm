@@ -3,6 +3,7 @@ package MediaWiki::Reset;
 use strict;
 use warnings;
 use Data::Dumper;
+use DBI;
 
 my $host = "localhost";
 my $port = "3306";
