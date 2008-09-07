@@ -73,6 +73,7 @@ sub get {
 	# remove spam extension
 	next if ($extension{title} =~ /SimpleAntiSpam/i );
 	next if ($extension{title} =~ /SpamBlacklist/i );
+	next if ($extension{title} =~ /ConfirmEdit/i );
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
