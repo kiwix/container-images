@@ -56,12 +56,12 @@ my @templateDependenceThreads;
 my @redirectThreads;
 
 my $pageDownloadThreadCount = 1;
-my $pageUploadThreadCount = 3;
+my $pageUploadThreadCount = 2;
 my $imageDownloadThreadCount = 1;
-my $imageUploadThreadCount = 3;
-my $imageDependenceThreadCount = 5;
-my $templateDependenceThreadCount = 3;
-my $redirectThreadCount = 1;
+my $imageUploadThreadCount = 2;
+my $imageDependenceThreadCount = 2;
+my $templateDependenceThreadCount = 2;
+my $redirectThreadCount = 2;
 
 my $isRunnable : shared = 1;
 my $delay : shared = 1;
@@ -565,10 +565,10 @@ sub downloadPages {
 		}
 		my $content = $id ? $page->oldid($id) : $page->content();
 		$self->addPageToUpload($title, $content, $summary);
-		$self->log("info", "'$title' successfuly downloaded.");
+		$self->log("info", "Page '$title' successfuly downloaded.");
 		
 		if ($self->followRedirects() && $content && $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/ ) {
-		    $self->log("info", "'$title' is a redirect to '$1'.");
+		    $self->log("info", "Page '$title' is a redirect to '$1'.");
 		    $self->addPageToDownload($1);
 		}
 	    } else {
@@ -584,11 +584,12 @@ sub downloadPages {
 
 sub addPageToDownload {
     my $self = shift;
-    lock(@pageDownloadQueue);
-    lock(@pageDoneQueue);
     if (@_) {
 	my $page = ucfirst(shift);
 	my $regexp = quotemeta($page);
+
+	lock(@pageDownloadQueue);
+	lock(@pageDoneQueue);
 	unless ( grep(/^$regexp$/, @pageDoneQueue) || grep(/^$regexp$/, @pageDownloadQueue) ) {
 	    push(@pageDownloadQueue, $page);
 	}
@@ -700,7 +701,6 @@ sub addPageToUpload {
 
     while ($self->getPageUploadQueueSize() > $self->uploadQueueMaxSize()) {
 	sleep($self->delay());
-#	$self->log("info", "Full page upload queue, waiting ".$self->delay()." s. before adding a page.");
     }
 
     lock(@pageUploadQueue);
