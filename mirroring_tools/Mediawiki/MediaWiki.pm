@@ -38,7 +38,7 @@ sub new
 
 	$ref->{ua} = LWP::UserAgent->new(
 		'agent' => __PACKAGE__ . "/$VERSION",
-		'cookie_jar' => { file => ($ENV{HOME} ? "$ENV{HOME}/" : "") . ".lwpcookies.txt", autosave => 1 }
+		'cookie_jar' => { "/tmp/lwpcookies.txt", autosave => 1 }
 	);
 	$ref->{error} = 0;
 
@@ -518,9 +518,13 @@ sub dependences {
 	    }
 	    else
 	    {
-		$xml = XMLin( $res->content );
+		$xml = eval { XMLin( $res->content ); };
 		
-		if (exists($xml->{query}->{pages}->{page})) {
+#		if ($@) {
+#		    $self->log("error", $@);
+#		}
+		
+		if ($xml && exists($xml->{query}->{pages}->{page})) {
 		    if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
 			push(@deps, @{$xml->{query}->{pages}->{page}});
 		    } else {
@@ -551,9 +555,13 @@ sub allPages {
             }
             else
             {
-                $xml = XMLin( $res->content );
+		$xml = eval { XMLin( $res->content ); };
+		
+#		if ($@) {
+#		    $self->log("error", $@);
+#		}
 
-                if (exists($xml->{query}->{allpages}->{p})) {
+                if ($xml && exists($xml->{query}->{allpages}->{p})) {
                     if(ref($xml->{query}->{allpages}->{p}) eq 'ARRAY') {
 			foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
 			    push(@pages, $page->{title}) if ($page->{title});
@@ -586,9 +594,13 @@ sub allImages {
             }
             else
             {
-                $xml = XMLin( $res->content );
+		$xml = eval { XMLin( $res->content ); };
+		
+#		if ($@) {
+#		    $self->log("error", $@);
+#		}
 
-                if (exists($xml->{query}->{pages}->{page})) {
+                if ($xml && exists($xml->{query}->{pages}->{page})) {
                     if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
 			foreach my $page (@{$xml->{query}->{pages}->{page}}) {
 			    if ($page->{title}) {
@@ -631,9 +643,13 @@ sub redirects {
             }
             else
             {
-                $xml = XMLin( $res->content );
+		$xml = eval { XMLin( $res->content ); };
+		
+#		if ($@) {
+#		    $self->log("error", $@);
+#		}
 
-                if (exists($xml->{query}->{backlinks}->{bl})) {
+                if ($xml && exists($xml->{query}->{backlinks}->{bl})) {
                     if(ref($xml->{query}->{backlinks}->{bl}) eq 'ARRAY') {
 			foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
 			    push(@redirects, $redirect->{title}) if ($redirect->{title});
