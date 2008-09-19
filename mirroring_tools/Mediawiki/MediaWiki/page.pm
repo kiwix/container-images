@@ -92,7 +92,7 @@ sub new
 	$ref->{loaded} = 0;
 	$ref->{ua} = $ref->{client}->{ua};
 
-	$ref->{title} =~ tr/_/ /;
+	$ref->{title} =~ tr/ /_/;
 
 	bless $ref, $class;
 	$ref->load()
@@ -139,7 +139,7 @@ sub load
 
 		$obj->{exists} = $t->code == 404 ? 0 : 1;
 	}
-	$obj->{title} =~ tr/_/ /;
+	$obj->{title} =~ tr/ /_/;
 	$obj->{loaded} = 1;
 
 	return 1;
