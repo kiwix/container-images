@@ -33,19 +33,19 @@ my $checkCompletedPages : shared = 0;
 my $checkCompletedImages : shared = 0;
 my $noTextMirroring : shared = 0;
     
-my @pageDownloadQueue : shared;
+my %pageDownloadQueue : shared;
 my @pageUploadQueue : shared;
-my @imageDownloadQueue : shared;
+my %imageDownloadQueue : shared;
 my @imageUploadQueue : shared;
-my @imageDependenceQueue : shared;
-my @templateDependenceQueue : shared;
-my @redirectQueue : shared;
+my %imageDependenceQueue : shared;
+my %templateDependenceQueue : shared;
+my %redirectQueue : shared;
 
-my @pageErrorQueue : shared;
-my @imageErrorQueue : shared;
+my %pageErrorQueue : shared;
+my %imageErrorQueue : shared;
 
-my @pageDoneQueue : shared;
-my @imageDoneQueue : shared;
+my %pageDoneQueue : shared;
+my %imageDoneQueue : shared;
 
 my @pageDownloadThreads;
 my @pageUploadThreads;
@@ -71,6 +71,12 @@ my $uploadQueueMaxSize : shared = 42;
 
 my $logger;
 my $loggerMutex : shared = 1;
+
+my $imageDownloadMutex : shared = 1;
+my $pageDownloadMutex : shared = 1;
+my $redirectMutex : shared = 1;
+my $templateDependenceMutex : shared = 1;
+my $imageDependenceMutex : shared = 1;
 
 my %hasFilePathCache : shared;
 
@@ -172,46 +178,46 @@ sub wait {
     while ($self->isRunnable()) {
 	sleep($self->delay() * 5);
 
-	lock(@pageDownloadQueue);
-	next if (@pageDownloadQueue);
+	lock($pageDownloadMutex);
+	next if (%pageDownloadQueue);
 
 	lock(@pageUploadQueue);
 	next if (@pageUploadQueue);
 
-	lock(@imageDownloadQueue);
-	next if (@imageDownloadQueue);
+	lock($imageDownloadMutex);
+	next if (%imageDownloadQueue);
 
 	lock(@imageUploadQueue);
 	next if (@imageUploadQueue);
 
-	lock(@imageDependenceQueue);
-	next if (@imageDependenceQueue);
+	lock($imageDependenceMutex);
+	next if (%imageDependenceQueue);
 
-	lock(@templateDependenceQueue);
-	next if (@templateDependenceQueue);
+	lock($templateDependenceMutex);
+	next if (%templateDependenceQueue);
 
-	lock(@redirectQueue);
-	next if (@redirectQueue);
+	lock($redirectMutex);
+	next if (%redirectQueue);
 
 	unless ($self->currentTaskCount()) {
-	    lock(@pageDoneQueue);
-	    lock(@imageDoneQueue);
+	    lock($pageDownloadMutex);
+	    lock($imageDownloadMutex);
 
-	    if ($imageDoneCount == scalar(@imageDoneQueue) && $pageDoneCount == scalar(@pageDoneQueue)) {
+	    if ($imageDoneCount == keys(%imageDoneQueue) && $pageDoneCount == keys(%pageDoneQueue)) {
 		last;
 	    } else {
-		$imageDoneCount = scalar(@imageDoneQueue);
-		$pageDoneCount = scalar(@pageDoneQueue);
+		$imageDoneCount = keys(%imageDoneQueue);
+		$pageDoneCount = keys(%pageDoneQueue);
 	    }
 
 	    if ($self->checkImageDependences()) {
-		foreach my $page (@pageDoneQueue) {
+		foreach my $page (keys(%pageDoneQueue)) {
 		    $self->addPageToCheckImageDependence($page);
 		}
 	    }
 
 	    if ($self->checkTemplateDependences()) {
-		foreach my $page (@pageDoneQueue) {
+		foreach my $page (keys(%pageDoneQueue)) {
 		    $self->addPageToCheckTemplateDependence($page);
 		}
 	    }
@@ -258,38 +264,52 @@ sub downloadImages {
 
 sub addImageToDownload {
     my $self = shift;
-    lock(@imageDownloadQueue);
-    lock(@imageDoneQueue);
+
     if (@_) {
 	my $image = ucfirst(shift);
-	my $regexp = quotemeta($image);
-	unless ( grep(/^$regexp$/, @imageDoneQueue) || grep(/^$regexp$/, @imageDownloadQueue) ) {
-	    push(@imageDownloadQueue, $image);
+	$image =~ tr/ /_/;
+
+	lock($imageDownloadMutex);
+	unless ( exists($imageDoneQueue{$image}) || exists($imageDownloadQueue{$image}) ) {
+	    $imageDownloadQueue{$image} = 1;
 	}
     }
 }
 
 sub getImageToDownload {
     my $self = shift;
-    lock(@imageDownloadQueue);
-    if (scalar(@imageDownloadQueue)>0) { 
-	my $image = pop(@imageDownloadQueue);
-	$self->addImageDone($image);
-	return $image;
+    my $image;
+    
+    lock($imageDownloadMutex);
+
+    if (keys(%imageDownloadQueue)) {
+	($image) = keys(%imageDownloadQueue);
+
+	if ($image) { 
+	    $self->addImageDone($image);
+	    delete($imageDownloadQueue{$image});
+	} else {
+	    $self->log("error", "empty image title found in getImageToDownload()");
+	}
     }
-    return undef;
+
+    return $image;
 }
 
 sub addImageDone {
     my $self = shift;
-    lock(@imageDoneQueue);
-    if (@_) { push(@imageDoneQueue, shift) };
+    my $image = shift;
+
+    lock($imageDownloadMutex);
+    $imageDoneQueue{$image} = 1;
 }
 
 sub addImageError {
     my $self = shift;
-    lock(@imageErrorQueue);
-    if (@_) { push(@imageErrorQueue, shift) };
+    my $image = shift;
+
+    lock(%imageErrorQueue);
+    $imageErrorQueue{$image} = 1;
 }
 
 # upload images
@@ -340,29 +360,34 @@ sub addImageToUpload {
     }
 
     lock(@imageUploadQueue);
-    if ($image) { push(@imageUploadQueue, $image, $content, $summary) }
+    if ($image) { 
+	push(@imageUploadQueue, $image, $content, $summary) ;
+    }
 }
 
 sub getImageToUpload {
     my $self = shift;
+
     lock(@imageUploadQueue);
+
     if (scalar(@imageUploadQueue)>=3) {
 	my $summary = pop(@imageUploadQueue) || "";
 	my $content = pop(@imageUploadQueue) || "";
 	my $image = pop(@imageUploadQueue) || "";
 	return ($image, $content, $summary);
     }
-    return undef;
 }
 
 sub getImageUploadQueueSize {
     my$self = shift;
+
     lock(@imageUploadQueue);
     return scalar(@imageUploadQueue);
 }
 
 sub checkCompletedImages {
     my $self = shift;
+
     lock($checkCompletedImages);
     if (@_) { $checkCompletedImages = shift };
     return $checkCompletedImages;
@@ -413,15 +438,28 @@ sub checkTemplates {
 
 sub addPageToCheckTemplateDependence {
     my $self = shift;
-    lock(@templateDependenceQueue);
-    if (@_) { push(@templateDependenceQueue, shift) };
+    my $page = shift;
+
+    return unless $page;
+
+    lock($templateDependenceMutex);
+    $templateDependenceQueue{$page} = 1;
 }
 
 sub getPageToCheckTemplateDependence {
     my $self = shift;
-    lock(@templateDependenceQueue);
-    if (scalar(@templateDependenceQueue)>0) { return pop(@templateDependenceQueue) }
-    return undef;
+    my $page;
+
+    lock($templateDependenceMutex);
+    if (%templateDependenceQueue)
+    { 
+	($page) = keys(%templateDependenceQueue);
+	if ($page) {
+	    delete($templateDependenceQueue{$page});
+	}
+    }
+
+    return $page;
 }
 
 sub checkTemplateDependences {
@@ -467,15 +505,28 @@ sub checkRedirects {
 
 sub addPageToCheckRedirects {
     my $self = shift;
-    lock(@redirectQueue);
-    if (@_) { push(@redirectQueue, shift) };
+    my $page = shift;
+
+    return unless ($page);
+
+    lock($redirectMutex);
+    $redirectQueue{$page} = 1;
 }
 
 sub getPageToCheckRedirects {
     my $self = shift;
-    lock(@redirectQueue);
-    if (scalar(@redirectQueue)>0) { return pop(@redirectQueue) }
-    return undef;
+    my $page;
+
+    lock($redirectMutex);
+
+    if (%redirectQueue) { 
+	($page) = keys(%redirectQueue);
+	if ($page) {
+	    delete($redirectQueue{$page});
+	}
+    }
+
+    return $page;
 }
 
 # check image dependences
@@ -518,15 +569,28 @@ sub checkImages {
 
 sub addPageToCheckImageDependence {
     my $self = shift;
-    lock(@imageDependenceQueue);
-    if (@_) { push(@imageDependenceQueue, shift) };
+    my $page = shift;
+
+    return unless ($page);
+
+    lock($imageDependenceMutex);
+    $imageDependenceQueue{$page} = 1;
 }
 
 sub getPageToCheckImageDependence {
     my $self = shift;
-    lock(@imageDependenceQueue);
-    if (scalar(@imageDependenceQueue)>0) { return pop(@imageDependenceQueue) }
-    return undef;
+    my $page;
+
+    lock($imageDependenceMutex);
+    if (%imageDependenceQueue)
+    { 
+	($page) = keys(%imageDependenceQueue);
+	if ($page) {
+	    delete($imageDependenceQueue{$page});
+	}
+    }
+
+    return $page;
 }
 
 sub checkImageDependences {
@@ -539,6 +603,13 @@ sub checkImageDependences {
 # download pages
 sub downloadPages {
     my $self = shift;
+    my $title;
+    my $page;
+    my $id;
+    my $summary;
+    my $history;
+    my $content;
+    my $redirectTarget;
 
     my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
 					 $self->sourceMediawikiPassword(),
@@ -551,25 +622,29 @@ sub downloadPages {
     my $revisionCallback = $self->revisionCallback();
 
     while ($self->isRunnable() && $site) {
-	my $title = $self->getPageToDownload();
+	$title = $self->getPageToDownload();
 	
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-	    my $page = $site->get($title, "r");
+	    $page = $site->get($title, "r");
 
 	    if ($page->{exists}) {
-		my ($id, $summary);
-		my $history = $page->history(\&$revisionCallback);
+		$history = $page->history(\&$revisionCallback);
+		
 		if (ref($history) eq 'ARRAY') {
 		    ($id, $summary) = @{$history};
 		}
-		my $content = $id ? $page->oldid($id) : $page->content();
+		
+		$content = $id ? $page->oldid($id) : $page->content();
 		$self->addPageToUpload($title, $content, $summary);
 		$self->log("info", "Page '$title' successfuly downloaded.");
 		
-		if ($self->followRedirects() && $content && $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/ ) {
-		    $self->log("info", "Page '$title' is a redirect to '$1'.");
-		    $self->addPageToDownload($1);
+		if ($self->followRedirects()) {
+		    $redirectTarget = $self->isRedirectContent(\$content);
+		    if ($redirectTarget) {
+			$self->log("info", "Page '$title' is a redirect to '$redirectTarget'.");
+			$self->addPageToDownload($redirectTarget);
+		    }
 		}
 	    } else {
 		$self->log("info", "The page '$title' does not exist.");
@@ -584,44 +659,60 @@ sub downloadPages {
 
 sub addPageToDownload {
     my $self = shift;
-    if (@_) {
-	my $page = ucfirst(shift);
-	my $regexp = quotemeta($page);
+    my $page = shift;
 
-	lock(@pageDownloadQueue);
-	lock(@pageDoneQueue);
-	unless ( grep(/^$regexp$/, @pageDoneQueue) || grep(/^$regexp$/, @pageDownloadQueue) ) {
-	    push(@pageDownloadQueue, $page);
+    if ($page) {
+	$page = ucfirst($page);
+	$page =~ tr/ /_/;
+
+	lock($pageDownloadMutex);
+	unless ( exists($pageDoneQueue{$page}) || exists($pageDownloadQueue{$page})) {
+	    $pageDownloadQueue{$page} = 1;
 	}
+    } else {
+	$self->log("error", "empty page title given to addPageToDownload()");
     }
 }
 
 sub getPageToDownload {
     my $self = shift;
-    lock(@pageDownloadQueue);
-    if (scalar(@pageDownloadQueue)>0) { 
-	my $page = pop(@pageDownloadQueue);
-	$self->addPageDone($page);
-	return $page;
+    my $page;
+
+    lock($pageDownloadMutex);
+
+    if (scalar(%pageDownloadQueue)) {
+	($page) = keys(%pageDownloadQueue);
+
+	if ($page) { 
+	    $self->addPageDone($page);
+	    delete($pageDownloadQueue{$page});
+	} else {
+	    $self->log("error", "empty page title found in getPageToDownload()");
+	}
     }
-    return undef;
+
+    return $page;
 }
 
 sub addPageDone {
     my $self = shift;
-    lock(@pageDoneQueue);
-    if (@_) { push(@pageDoneQueue, shift) };
+    my $page = shift;
+
+    lock($pageDownloadMutex);
+    $pageDoneQueue{$page} = 1;
 }
 
 sub addPageError {
     my $self = shift;
-    lock(@pageErrorQueue);
-    if (@_) { push(@pageErrorQueue, shift) };
+    my $page = shift;
+
+    lock(%pageErrorQueue);
+    $pageErrorQueue{$page} = 1;
 }
 
 sub getLastNonAnonymousEdit {
     my $hash = shift;
-
+    
     if ($hash->{anon}) {
         return undef;
     } else {
@@ -676,12 +767,14 @@ sub uploadPages {
 		}
 	    }
 
-	    if ($self->checkTemplateDependences()) {
-		$self->addPageToCheckTemplateDependence($title);
-	    }
-
-	    if ($self->checkImageDependences()) {
-		$self->addPageToCheckImageDependence($title);
+	    unless ($self->isRedirectContent(\$content)) {
+		if ($self->checkTemplateDependences()) {
+		    $self->addPageToCheckTemplateDependence($title);
+		}
+		
+		if ($self->checkImageDependences()) {
+		    $self->addPageToCheckImageDependence($title);
+		}
 	    }
 
 	    $self->addPageToCheckRedirects($title);
@@ -716,7 +809,6 @@ sub getPageToUpload {
 	my $title = pop(@pageUploadQueue) || "";
 	return ($title, $content, $summary);
     }
-    return undef;
 }
 
 sub getPageUploadQueueSize {
@@ -899,6 +991,15 @@ sub destinationHttpPassword {
 }
 
 # mirroring stuff
+sub isRedirectContent {
+    my $self = shift;
+    my $content = shift;
+    if ( $$content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/ ) {
+	return $1;
+    }
+    return "";
+}
+
 sub isRunnable {
     my $self = shift;
     lock($isRunnable);
@@ -999,7 +1100,9 @@ sub getQueueStatus {
     my $self = shift;
     my $statusString = "";
 
-    sub queueToString {
+    return;
+
+    sub queueListToString {
 	my $queue = shift;
 	my $step = shift;
 	my $string = "";
@@ -1012,45 +1115,62 @@ sub getQueueStatus {
 	return $string;
     }
 
-    lock(@pageDownloadQueue);
+    sub queueHashToString {
+	my $queue = shift;
+	my $step = shift;
+	my $string = "";
+	for (my $i=0; $i<scalar(@$queue); $i++) {
+	    unless ($i % $step) {
+		$string .= $queue->[$i*2]."\n";
+	    }
+	}
+	$string .= "\n";
+	return $string;
+    }
+
+    lock($pageDownloadMutex);
     $statusString .= "[pageDownloadQueue]\n";
-    $statusString .= queueToString(\@pageDownloadQueue, 1);
+    $statusString .= queueHashToString(\%pageDownloadQueue, 1);
 
     lock(@pageUploadQueue);
     $statusString .= "[pageUploadQueue]\n";
-    $statusString .= queueToString(\@pageUploadQueue, 3);
+    $statusString .= queueListToString(\@pageUploadQueue, 3);
 
-    lock(@imageDownloadQueue);
+    lock(%imageDownloadQueue);
     $statusString .= "[imageDownloadQueue]\n";
-    $statusString .= queueToString(\@imageDownloadQueue, 1);
+    $statusString .= queueHashToString(\%imageDownloadQueue, 1);
 
     lock(@imageUploadQueue);
     $statusString .= "[imageUploadQueue]\n";
-    $statusString .= queueToString(\@imageUploadQueue, 3);
+    $statusString .= queueListToString(\@imageUploadQueue, 3);
 
-    lock(@imageDependenceQueue);
+    lock($imageDependenceMutex);
     $statusString .= "[imageDependenceQueue]\n";
-    $statusString .= queueToString(\@imageDependenceQueue, 1);
+    $statusString .= queueHashToString(\%imageDependenceQueue, 1);
 
-    lock(@templateDependenceQueue);
+    lock($templateDependenceMutex);
     $statusString .= "[templateDependenceQueue]\n";
-    $statusString .= queueToString(\@templateDependenceQueue, 1);
+    $statusString .= queueHashToString(\%templateDependenceQueue, 1);
 
-    lock(@pageErrorQueue);
+    lock($redirectMutex);
+    $statusString .= "[redirectQueue]\n";
+    $statusString .= queueHashToString(\%redirectQueue, 1);
+
+    lock(%pageErrorQueue);
     $statusString .= "[pageErrorQueue]\n";
-    $statusString .= queueToString(\@pageErrorQueue, 1);
+    $statusString .= queueHashToString(\%pageErrorQueue, 1);
 
-    lock(@imageErrorQueue);
+    lock(%imageErrorQueue);
     $statusString .= "[imageErrorQueue]\n";
-    $statusString .= queueToString(\@imageErrorQueue, 1);
+    $statusString .= queueHashToString(\%imageErrorQueue, 1);
 
-    lock(@pageDoneQueue);
+    lock($pageDownloadMutex);
     $statusString .= "[pageDoneQueue]\n";
-    $statusString .= queueToString(\@pageDoneQueue, 1);
+    $statusString .= queueHashToString(\%pageDoneQueue, 1);
 
-    lock(@imageDoneQueue);
+    lock(%imageDoneQueue);
     $statusString .= "[imageDoneQueue]\n";
-    $statusString .= queueToString(\@imageDoneQueue, 1);
+    $statusString .= queueHashToString(\%imageDoneQueue, 1);
 
     $statusString .= "[currentTaskCount]\n";
     $statusString .= $self->currentTaskCount()."\n";
