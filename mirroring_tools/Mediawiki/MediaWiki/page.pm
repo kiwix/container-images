@@ -33,6 +33,7 @@ use vars qw(
 	$offset_regex
 	$permission_error_regex
 	$numbersonly_regex
+	$edit_token
 );
 our @protection = ("", "autoconfirmed", "sysop");
 
@@ -152,27 +153,55 @@ sub save
 		if(!$obj->{prepared});
 	$obj->{prepared} = 0;
 
-	my $res = $obj->{client}->{ua}->request(
-		POST $obj->_wiki_url . "&action=edit",
-		Content_Type  => 'application/x-www-form-urlencoded',
-		Content       => [(
-			'wpTextbox1' => $obj->{content},
-			'wpEdittime' => $obj->{edittime},
-			'wpSave' => 'Save page',
-			'wpSection' => '',
-			'wpSummary' => $obj->_summary(),
-			'wpEditToken' => $obj->{edittoken},
-			'title' => $obj->{title},
-			'action' => 'submit',
-			'wpMinoredit' => $obj->{minor},
-			'wpAutoSummary' => $obj->{autosumm},
-			'wpRecreate' => 1
-		)]
-	);
-	if($res->code == 302)
+	my $res;
+
+	if($obj->{client}->_cfg("wiki", "has_writeapi"))
 	{
+	    unless ($obj->{client}->{edit_token}) {
+		$obj->{client}->load_edit_token();
+	    }
+
+	    $res = $obj->{client}->{ua}->request(
+						 POST $obj->_api_url(),
+						 Content_Type  => 'application/x-www-form-urlencoded',
+						 Content       => [(
+								    'action' => 'edit',
+								    'prop' => 'info',
+								    'token' => $obj->{client}->{edit_token},
+								    'text' => $obj->{content},
+								    'summary' => $obj->_summary(),
+								    'title' => $obj->{title},
+								    'format' => 'xml'
+								    )]
+						 );
+
+	    if ($res->content =~ /success/i ) {
+		return 1;
+	    }
+	} else {
+	    $res= $obj->{client}->{ua}->request(
+						POST $obj->_wiki_url . "&action=edit",
+						Content_Type  => 'application/x-www-form-urlencoded',
+						Content       => [(
+								   'wpTextbox1' => $obj->{content},
+								   'wpEdittime' => $obj->{edittime},
+								   'wpSave' => 'Save page',
+								   'wpSection' => '',
+								   'wpSummary' => $obj->_summary(),
+								   'wpEditToken' => $obj->{edittoken},
+								   'title' => $obj->{title},
+								   'action' => 'submit',
+								   'wpMinoredit' => $obj->{minor},
+								   'wpAutoSummary' => $obj->{autosumm},
+								   'wpRecreate' => 1
+								   )]
+						);
+
+	    if($res->code == 302)
+	    {
 		$obj->history_clear();
 		return 1;
+	    }
 	}
 
 	# Handle size warning or forced preview
@@ -286,6 +315,13 @@ sub _wiki_url
 	my($obj, $title) = @_;
 	return $obj->{client}->{index} . "?title=" . uri_escape($title || $obj->{title});
 }
+
+sub _api_url
+{
+	my($obj, $title) = @_;
+	return $obj->{client}->{api};
+}
+
 sub _summary
 {
 	my $obj = shift;

@@ -58,10 +58,10 @@ my @redirectThreads;
 my $pageDownloadThreadCount = 1;
 my $pageUploadThreadCount = 2;
 my $imageDownloadThreadCount = 1;
-my $imageUploadThreadCount = 2;
-my $imageDependenceThreadCount = 2;
-my $templateDependenceThreadCount = 2;
-my $redirectThreadCount = 2;
+my $imageUploadThreadCount = 1;
+my $imageDependenceThreadCount = 1;
+my $templateDependenceThreadCount = 1;
+my $redirectThreadCount = 1;
 
 my $isRunnable : shared = 1;
 my $delay : shared = 1;
@@ -79,6 +79,7 @@ my $templateDependenceMutex : shared = 1;
 my $imageDependenceMutex : shared = 1;
 
 my %hasFilePathCache : shared;
+my %hasWriteApiCache : shared;
 
 sub new {
     my $class = shift;
@@ -753,9 +754,9 @@ sub uploadPages {
 	    $self->incrementCurrentTaskCount();
 	    my $page = $site->get($title, "rw");
 
-	    if ($page->content() && $page->content() eq $content."\n") {
-		$self->log("info", "Page '$title' has already an uptodate content.");
-	    } else {
+#	    if ($page->content() && $page->content() eq $content."\n") {
+#		$self->log("info", "Page '$title' has already an uptodate content.");
+#	    } else {
 		$page->{content} = $content;
 		$page->{summary} = $summary;
 
@@ -765,7 +766,7 @@ sub uploadPages {
 		    $self->addPageError($title);
 		    $self->log("error", "Unable to write the page '$title'.");
 		}
-	    }
+#	    }
 
 	    unless ($self->isRedirectContent(\$content)) {
 		if ($self->checkTemplateDependences()) {
@@ -838,7 +839,9 @@ sub connectToMediawiki {
     my $site = MediaWiki->new();
     $site->setup({  'bot' => { 'user' => $user, 'pass' => $pass },
 		    'http' => { 'user' => $httpUser, 'pass' => $httpPass, 'realm' => $httpRealm },
-		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => $self->hasFilePath($host, $path) } } );
+		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 
+		    'has_filepath' => $self->hasFilePath($host, $path), 
+		    'has_writeapi' => $self->hasWriteApi($host, $path) } } );
 
     if ($site->{error}) {
 	$self->isRunnable(0);
@@ -874,12 +877,38 @@ sub hasFilePath {
     return $hasFilePath;
 }
 
+sub hasWriteApi {
+    my $self = shift;
+    my ($host, $path) = @_;
+    my $hasWriteApi = 0;
+
+    lock(%hasWriteApiCache);
+    if (exists($hasWriteApiCache{$host})) {
+	return $hasWriteApiCache{$host};
+    }
+
+    my $url = "http://".$host."/".($path ? $path."/" : "")."api.php?action=edit&format=xml";
+    my $html = $self->downloadTextFromUrl($url, "post");
+
+    if ($html =~ /notitle/i ) {
+	$self->log("info", "Site $host has the Write API available.\n");
+	$hasWriteApi = 1;
+    } else {
+	$self->log("info", "Site $host does not have the Write API available.\n");
+    }
+
+    $hasWriteApiCache{$host} = $hasWriteApi;
+
+    return $hasWriteApi;
+}
+
 sub downloadTextFromUrl {
     my $self = shift;
     my $url = shift;
+    my $method = shift || "get";
 
     my $ua = LWP::UserAgent->new();
-    my $response = $ua->get($url);
+    my $response = $ua->$method($url);
 
     my $data = $response->content;
     my $encoding = $response->header('Content-Encoding');

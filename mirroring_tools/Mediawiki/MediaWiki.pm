@@ -82,6 +82,8 @@ sub setup
 
 	$mw->{index} = $proto . "//" . $mw->_cfg("wiki", "host") . ( $mw->_cfg("wiki", "path") ? "/".$mw->_cfg("wiki", "path") : "") . "/index.php";
 
+	$mw->{api} = $proto . "//" . $mw->_cfg("wiki", "host") . ( $mw->_cfg("wiki", "path") ? "/".$mw->_cfg("wiki", "path") : "") . "/api.php";
+
 	$mw->{query} =  $proto . "//" . $mw->_cfg("wiki", "host") . "/" . $mw->_cfg("wiki", "path") . "/api.php"
 		if($mw->_cfg("wiki", "has_query"));
 
@@ -229,6 +231,28 @@ sub login
 
 	return $mw->_error(ERR_LOGIN_FAILED);
 }
+
+sub load_edit_token
+{
+    my $mw = shift;
+    my $res = $mw->{ua}->request(
+				POST $mw->{api},
+				Content_Type  => 'application/x-www-form-urlencoded',
+				Content       => [(
+						   'action' => 'query',
+						   'prop' => 'info',
+						   'intoken' => 'edit',
+						   'format' => 'xml',
+						   'titles' => '42'
+						   )]
+				);
+    if ($res->content =~ /edittoken=\"(.*)\"/ ) {
+	$mw->{edit_token} = $1;
+    }
+    
+    return $mw->{edit_token};
+}
+
 sub logout
 {
 	my($mw, $host) = @_;
