@@ -149,10 +149,6 @@ sub save
 {
 	my $obj = shift;
 
-	$obj->prepare()
-		if(!$obj->{prepared});
-	$obj->{prepared} = 0;
-
 	my $res;
 
 	if($obj->{client}->_cfg("wiki", "has_writeapi"))
@@ -179,6 +175,10 @@ sub save
 		return 1;
 	    }
 	} else {
+	    $obj->prepare()
+		if(!$obj->{prepared});
+	    $obj->{prepared} = 0;
+
 	    $res= $obj->{client}->{ua}->request(
 						POST $obj->_wiki_url . "&action=edit",
 						Content_Type  => 'application/x-www-form-urlencoded',
