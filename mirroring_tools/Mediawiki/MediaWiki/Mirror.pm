@@ -56,7 +56,7 @@ my @templateDependenceThreads;
 my @redirectThreads;
 
 my $pageDownloadThreadCount = 1;
-my $pageUploadThreadCount = 2;
+my $pageUploadThreadCount = 1;
 my $imageDownloadThreadCount = 1;
 my $imageUploadThreadCount = 1;
 my $imageDependenceThreadCount = 1;
@@ -316,7 +316,8 @@ sub addImageError {
 # upload images
 sub uploadImages {
     my $self = shift;
-
+    my $timeOffset;
+    
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(),
 					 $self->destinationMediawikiHost(),
@@ -326,6 +327,7 @@ sub uploadImages {
                                          $self->destinationHttpRealm());
 
     while ($self->isRunnable() && $site) {
+	$timeOffset = time();
 	my ($image, $content, $summary) = $self->getImageToUpload();
 
 	if ($image) {
@@ -336,7 +338,7 @@ sub uploadImages {
 		$self->log("info", "Image '$image' is already an uptodate content.");
 	    } else {
 		if ($site->upload($image, $content, $summary, 1)) {
-		    $self->log("info", "Image '$image' successfuly uploaded.");
+		    $self->log("info", "Image '$image' successfuly uploaded in ".(time() - $timeOffset)."s.");
 		} else {
 		    $self->addImageError($image);
 		    $self->log("error", "Unable to write the image '$image'.");
@@ -738,6 +740,7 @@ sub followRedirects {
 # upload pages
 sub uploadPages {
     my $self = shift;
+    my $timeOffset;
 
     my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					 $self->destinationMediawikiPassword(),
@@ -748,6 +751,7 @@ sub uploadPages {
 					 $self->destinationHttpRealm());
 
     while ($self->isRunnable() && $site) {
+	$timeOffset = time();
 	my ($title, $content, $summary) = $self->getPageToUpload();
 
 	if ($title) {
@@ -761,7 +765,7 @@ sub uploadPages {
 		$page->{summary} = $summary;
 
 		if ($page->save()) {
-		    $self->log("info", "Page '$title' successfuly uploaded");
+		    $self->log("info", "Page '$title' successfuly uploaded in ".(time() - $timeOffset)."s.");
 		} else {
 		    $self->addPageError($title);
 		    $self->log("error", "Unable to write the page '$title'.");
