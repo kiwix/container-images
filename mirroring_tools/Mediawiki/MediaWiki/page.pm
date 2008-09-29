@@ -3,6 +3,8 @@ require Exporter;
 @ISA = qw(Exporter);
 @EXPORT = qw();
 
+use Data::Dumper;
+use XML::Simple;
 use strict;
 use vars qw(
 	$edittime_regex
@@ -96,8 +98,9 @@ sub new
 	$ref->{title} =~ tr/ /_/;
 
 	bless $ref, $class;
+
 	$ref->load()
-		if(!defined $params{-mode} || $params{-mode} =~ /r/ || $ref->{prepared});
+		if(!defined $params{-mode} || $params{-mode} =~ /r/ || !$ref->{prepared});
 	return $ref;
 }
 
@@ -109,39 +112,62 @@ sub oldid
 }
 sub load
 {
-	my $obj = shift;
+        my $obj = shift;
 	$obj->{loaded} = 0;
+	
+	if ( $obj->{client}->_cfg("wiki", "has_query") && $obj->{client}->{query} ) {
+            my $res = $obj->{client}->{ua}->get($obj->{client}->{query} . "?action=query&prop=revisions&titles=".$obj->{title}."&format=xml&rvprop=content" );
 
-	if($obj->{prepared})
-	{
+            if(!$res->is_success)
+            {
+                delete $obj->{client}->{query} if ($res->code == 404);
+            }
+            else
+            {
+		my $xml = eval { XMLin( $res->content ); };
+
+                if ($xml && exists($xml->{query}->{pages}->{page}->{revisions}->{rev})) {
+                    if(ref($xml->{query}->{pages}->{page}->{revisions}->{rev}) eq 'ARRAY') {
+			($obj->{content}) = (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}});
+                    } else {
+			$obj->{content} = $xml->{query}->{pages}->{page}->{revisions}->{rev};
+                    }
+		    $obj->{loaded} = 1;
+		    $obj->{exists} = 1;
+               }
+            }
+	} else {
+	    if($obj->{prepared})
+	    {
 		$obj->prepare();
-	}
-	else
-	{
+	    }
+	    else
+	    {
 		my $t = $obj->{ua}->get($obj->_wiki_url . "&action=raw");
 		if(!$t->is_success())
 		{
-			if($t->code == 404 || $t->code =~ /^3/)
-			{
-				$obj->{exists} = $t->code == 404 ? 0 : 1;
-				$obj->{loaded} = 1;
-			}
-			return if($t->code !~ /^3/);
+		    if($t->code == 404 || $t->code =~ /^3/)
+		    {
+			$obj->{exists} = $t->code == 404 ? 0 : 1;
+			$obj->{loaded} = 1;
+		    }
+		    return if($t->code !~ /^3/);
 		}
-
+		
 		$obj->{content} = $t->content;
 		if($obj->{title} eq 'Special:Random')
 		{
-			my $title = $t->header("Title");
-			$title =~ s/\s*(—|-)(.*?)$//;
-			$obj->{title} = $title;
-			return $obj->load();
+		    my $title = $t->header("Title");
+		    $title =~ s/\s*(—|-)(.*?)$//;
+		    $obj->{title} = $title;
+		    return $obj->load();
 		}
-
+		
 		$obj->{exists} = $t->code == 404 ? 0 : 1;
+	    }
+	    $obj->{title} =~ tr/ /_/;
+	    $obj->{loaded} = 1;
 	}
-	$obj->{title} =~ tr/ /_/;
-	$obj->{loaded} = 1;
 
 	return 1;
 }

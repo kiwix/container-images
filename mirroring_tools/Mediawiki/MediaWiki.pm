@@ -471,17 +471,13 @@ done:
 sub upload
 {
 	my($mw, $page, $content, $note, $force) = @_;
-	return $mw->get("Image:$page", "")->upload($content, $note, $force);
+	return $mw->get("Image:$page", "w")->upload($content, $note, $force);
 }
-sub filepath
-{
-	my($mw, $page) = @_;
-	return $mw->get("Image:$page", "")->filepath();
-}
+
 sub download
 {
 	my($mw, $page) = @_;
-	return $mw->get("Image:$page", "")->download();
+	return $mw->get("Image:$page", "r")->download();
 }
 sub text
 {
