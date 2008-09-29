@@ -65,7 +65,8 @@ sub install {
     $content .= getParamString('RootUser', $self->dbUser());
     $content .= getParamString('RootPW', $self->dbPassword());
     $content .= getParamString('DBprefix', '');
-    $content .= getParamString('DBengine', 'MyISAM');
+#    $content .= getParamString('DBengine', 'MyISAM');
+    $content .= getParamString('DBengine', 'InnoDB');
     $content .= getParamString('DBschema', 'mysql4');
     
     $req->content($content);
@@ -73,16 +74,22 @@ sub install {
     # Pass request to the user agent and get a response back
     my $res = $ua->request($req);
 
+    my @errors = ($res->content =~ /<span class='error'>(.+)<\/span>/ );
+
     # Check the outcome of the response
-    if ($res->is_success) {
+    if ($res->is_success && !@errors) {
 	$self->log("info", "Mediawiki mirror '".$self->code()."' successfuly installed.");
-    
-	# move config file
-	rename($directory."/config/LocalSettings.php", $directory."/LocalSettings.php");
     }
     else {
 	$self->log("error", "Mediawiki mirror '".$self->code()."' failed to install.");
+	foreach my $error (@errors) {
+	    $self->log("error", $error);
+	}
+	return;
     }
+
+    # move config file
+    rename($directory."/config/LocalSettings.php", $directory."/LocalSettings.php");
 
     # add the conf includes
     my $confIncludeString="";
@@ -91,7 +98,8 @@ sub install {
     }
     $confIncludeString .= "?>\n" ;
     my $conf = "";
-    open FILE, "$directory/LocalSettings.php" or die $!; 
+    my $localSettingsFile = "$directory/LocalSettings.php";
+    open FILE, $localSettingsFile or die $!." - unable to open ".$localSettingsFile; 
     while (my $line = <FILE>) {
 	$conf .= $line;
     }
