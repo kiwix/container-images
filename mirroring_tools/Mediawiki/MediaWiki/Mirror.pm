@@ -56,9 +56,9 @@ my @templateDependenceThreads;
 my @redirectThreads;
 
 my $pageDownloadThreadCount = 1;
-my $pageUploadThreadCount = 1;
+my $pageUploadThreadCount = 2;
 my $imageDownloadThreadCount = 1;
-my $imageUploadThreadCount = 1;
+my $imageUploadThreadCount = 2;
 my $imageDependenceThreadCount = 1;
 my $templateDependenceThreadCount = 1;
 my $redirectThreadCount = 1;
@@ -231,6 +231,7 @@ sub wait {
 # download images
 sub downloadImages {
     my $self = shift;
+    my $timeOffset;
 
     my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
 					 $self->sourceMediawikiPassword(),
@@ -242,6 +243,7 @@ sub downloadImages {
 					 );
 
     while ($self->isRunnable() && $site) {
+	$timeOffset = time();
 	my $image = $self->getImageToDownload();
 	
 	if ($image) {
@@ -251,7 +253,7 @@ sub downloadImages {
 	    if ( $content ) {
 		my $summary = "mirror image";
 		$self->addImageToUpload($image, $content, $summary);
-		$self->log("info", "Image '$image' successfuly downloaded.");
+		$self->log("info", "Image '$image' successfuly downloaded in ".(time() - $timeOffset)."s.");
 	    } else {
 		$self->log("info", "The image '$image' does not exist.");
 		$self->addImageError($image);
@@ -613,6 +615,7 @@ sub downloadPages {
     my $history;
     my $content;
     my $redirectTarget;
+    my $timeOffset;
 
     my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
 					 $self->sourceMediawikiPassword(),
@@ -625,6 +628,7 @@ sub downloadPages {
     my $revisionCallback = $self->revisionCallback();
 
     while ($self->isRunnable() && $site) {
+	$timeOffset = time();
 	$title = $self->getPageToDownload();
 	
 	if ($title) {
@@ -640,7 +644,7 @@ sub downloadPages {
 		
 		$content = $id ? $page->oldid($id) : $page->content();
 		$self->addPageToUpload($title, $content, $summary);
-		$self->log("info", "Page '$title' successfuly downloaded.");
+		$self->log("info", "Page '$title' successfuly downloaded in ".(time() - $timeOffset)."s.");
 		
 		if ($self->followRedirects()) {
 		    $redirectTarget = $self->isRedirectContent(\$content);
