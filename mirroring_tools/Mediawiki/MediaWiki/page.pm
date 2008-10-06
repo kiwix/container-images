@@ -126,7 +126,7 @@ sub load
             {
 		my $xml = eval { XMLin( $res->content ); };
 
-                if ($xml && exists($xml->{query}->{pages}->{page}->{revisions}->{rev})) {
+                if ($xml && exists($xml->{query}->{pages}->{page}->{revisions}) && exists($xml->{query}->{pages}->{page}->{revisions}->{rev})) {
                     if(ref($xml->{query}->{pages}->{page}->{revisions}->{rev}) eq 'ARRAY') {
 			($obj->{content}) = (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}});
                     } else {
@@ -174,6 +174,7 @@ sub load
 sub save
 {
 	my $obj = shift;
+	my $createOnly = shift;
 
 	my $res;
 
@@ -183,21 +184,30 @@ sub save
 		$obj->{client}->load_edit_token();
 	    }
 
+	    my $content = ({
+		'action' => 'edit',
+		'prop' => 'info',
+		'token' => $obj->{client}->{edit_token},
+		'text' => $obj->{content},
+		'summary' => $obj->_summary(),
+		'title' => $obj->{title},
+		'format' => 'xml'
+	    });
+	    
+	    if ($createOnly) {
+		$content->{'createonly'} = '1';
+	    }
+
 	    $res = $obj->{client}->{ua}->request(
 						 POST $obj->_api_url(),
 						 Content_Type  => 'application/x-www-form-urlencoded',
-						 Content       => [(
-								    'action' => 'edit',
-								    'prop' => 'info',
-								    'token' => $obj->{client}->{edit_token},
-								    'text' => $obj->{content},
-								    'summary' => $obj->_summary(),
-								    'title' => $obj->{title},
-								    'format' => 'xml'
-								    )]
+						 Content       => $content
 						 );
 
 	    if ($res->content =~ /success/i ) {
+		if ($res->content =~ /nochange=\"\"/i ) {
+		    return 2;
+		}
 		return 1;
 	    }
 	} else {
@@ -258,7 +268,8 @@ sub save
 			return 1;
 		}
 	}
-	return;
+
+	return 0;
 }
 
 sub prepare_update_tokens
