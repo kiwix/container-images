@@ -14,6 +14,7 @@ my $doc;
 my $mediawikiRevision = "head";
 my @extensions;
 my $filter=".*";
+my @extensionsToIgnore = ('MakeBot', 'SiteMatrix', 'FixedImage', 'OggHandler', 'BoardVote', 'CentralNotice', 'TorBlock', 'Central.*Auth', 'TitleKey', 'CheckUser', 'Cross.*namespace.*', 'GlobalBlocking', 'OAIRepository', 'SimpleAntiSpam', 'SpamBlacklist', 'ConfirmEdit', 'MakeBot', 'AntiBot', 'AntiSpoof', 'Oversight', 'Makesysop', 'Title.*Blacklist', 'DismissableSiteNotice', 'Username.*Blacklist', 'MWSearch' );
 
 sub new {
     my $class = shift;
@@ -50,30 +51,28 @@ sub get {
 	$extension{description} = $4;
 	$extension{author} = $5;
 
-	next unless ($extension{title} =~ /$filter/i );
-	
-	# remove centralAuth
-	next if ($extension{title} =~ /Central.*Auth/i );
+	my $ignoreExtension = 0;
 
-	# remove TitleKey
-	next if ($extension{title} =~ /TitleKey/i );
+	# check if the extension title match (or not) the filter
+	unless ($extension{title} =~ /$filter/i ) {
+	    $ignoreExtension = 1;
+	}
 
-	# remove CheckUser
-	next if ($extension{title} =~ /CheckUser/i );
+	# check if the extension is in the ignore list
+	foreach my $extensionToIgnore (@extensionsToIgnore) {
+	    if ($extension{title} =~ /$extensionToIgnore/i ) {
+		$ignoreExtension = 1;
+		last;
+	    }
+	}
 
-	# remove Cross namespace links
-	next if ($extension{title} =~ /Cross.*namespace/i );
-
-	# next if GlobalBlocking
-	next if ($extension{title} =~ /GlobalBlocking/i );
-
-	# remove OAIRepository
-	next if ($extension{title} =~ /OAIRepository/i );
-
-	# remove spam extension
-	next if ($extension{title} =~ /SimpleAntiSpam/i );
-	next if ($extension{title} =~ /SpamBlacklist/i );
-	next if ($extension{title} =~ /ConfirmEdit/i );
+	# handle with the $ignoreExtension value
+	if ($ignoreExtension) {
+	    $self->log("info", "Ignore extension : ".$extension{title}."\n");
+	    next;
+	} else {
+	    $self->log("info", "Will install extension : ".$extension{title}."\n");
+	}
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
