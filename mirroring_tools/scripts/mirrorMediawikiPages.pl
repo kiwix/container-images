@@ -104,6 +104,7 @@ unless ($noLog) {
     $mirror->logger($logger);
 }
 
+# add configuration parameters to the mirroring module
 $mirror->sourceMediawikiHost($sourceHost);
 $mirror->sourceMediawikiPath($sourcePath);
 
@@ -124,14 +125,16 @@ $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
 
 $mirror->noTextMirroring($noTextMirroring);
 
+# start the mirroring threads
 $mirror->startMirroring();
 
-foreach my $page (@pages) {
-    $mirror->addPagesToMirror($page);
-}
+# fill the queue of page to mirror
+$mirror->addPagesToMirror(@pages);
 
+# wait untile nothing is to do
 $mirror->wait();
 
+# print on STDOU a small report of queue status
 unless ($noResume) {
     print $mirror->getQueueStatus();
 }
