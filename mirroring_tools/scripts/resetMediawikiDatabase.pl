@@ -22,17 +22,19 @@ my $port = "3306";
 my $database = "";
 my $username = "";
 my $password = "";
+my $dropDatabase;
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
 	   'port=s' => \$port,
 	   'database=s' => \$database,
 	   'username=s' => \$username,
-	   'password=s' => \$password
+	   'password=s' => \$password,
+	   'dropDatabase' => \$dropDatabase
 	   );
 
 if (!$database || !$username ) {
-    print "usage: ./resetMediawikiDatabase.pl --database=my_wiki_db [--username=my_user] [--password=my_password] [--host=localhost] [--port=3306]\n";
+    print "usage: ./resetMediawikiDatabase.pl --database=my_wiki_db [--username=my_user] [--password=my_password] [--host=localhost] [--port=3306] [--dropDatabase]\n";
 }
 
 if (!$username) {
@@ -50,4 +52,9 @@ $reset->port($port);
 $reset->database($database);
 $reset->username($username);
 $reset->password($password);
-$reset->do();
+
+if ($dropDatabase) {
+    $reset->drop();
+} else {
+    $reset->reset();
+}

@@ -21,7 +21,7 @@ sub new {
     return $self;
 }
 
-sub do {
+sub reset {
     my $self = shift;
     
     my $dsn = "DBI:mysql:$database;host=$host:$port";
@@ -36,6 +36,21 @@ sub do {
 	$sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
 	$sth->execute() or die ("Unable to execute request.");
     }
+}
+
+sub drop {
+    my $self = shift;
+    
+    my $dsn = "DBI:mysql:$database;host=$host:$port";
+    my $dbh;
+    my $req;
+    my $sth;
+    
+    $dbh = DBI->connect($dsn, $username, $password) or die ("Unable to connect to the database.");
+
+    $req = "DROP DATABASE `$database`";
+    $sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
+    $sth->execute() or die ("Unable to execute request.");
 }
 
 sub host {
