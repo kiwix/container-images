@@ -116,7 +116,7 @@ sub load
 	$obj->{loaded} = 0;
 	
 	if ( $obj->{client}->_cfg("wiki", "has_query") && $obj->{client}->{query} ) {
-            my $res = $obj->{client}->{ua}->get($obj->{client}->{query} . "?action=query&prop=revisions&titles=".$obj->{title}."&format=xml&rvprop=content" );
+            my $res = $obj->{client}->{ua}->get($obj->{client}->{query} . "?action=query&prop=revisions&titles=".$obj->{title}."&format=xml&rvprop=content");
 
             if(!$res->is_success)
             {

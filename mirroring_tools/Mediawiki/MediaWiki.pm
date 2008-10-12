@@ -5,6 +5,9 @@ require Exporter;
 
 use strict;
 use XML::Simple;
+use URI::Escape qw(uri_escape);
+use Search::Tools::XML;
+use Data::Dumper;
 
 our($VERSION) = "1.13";
 our($has_ini, $has_dumper);
@@ -38,9 +41,11 @@ sub new
 
 	$ref->{ua} = LWP::UserAgent->new(
 		'agent' => __PACKAGE__ . "/$VERSION",
-		'cookie_jar' => { "/tmp/lwpcookies.txt", autosave => 1 }
+		'cookie_jar' => { "/tmp/lwpcookies.txt", autosave => 0 }
 	);
 	$ref->{error} = 0;
+	
+	$ref->{xmlTool} = Search::Tools::XML->new();
 
 	return bless $ref, $class;
 }
@@ -178,6 +183,116 @@ sub user
 	my $e = $obj->last_edit;
 	return $e->{user};
 }
+
+sub downloadPage
+{
+    my ($self, $page) = @_;
+    my $content;
+
+    if ( $self->_cfg("wiki", "has_query") && $self->{query} ) {
+
+	my $res = $self->{ua}->get($self->{query} . "?action=query&prop=revisions&titles=".uri_escape($page)."&format=xml&rvprop=content");
+	
+	if(!$res->is_success)
+	{
+	    delete $self->{query} if ($res->code == 404);
+	}
+	else
+	{
+	    my $xml = eval { XMLin( $res->content ); };
+	    
+	    if ($xml && exists($xml->{query}->{pages}->{page}->{revisions}) && exists($xml->{query}->{pages}->{page}->{revisions}->{rev})) {
+		if(ref($xml->{query}->{pages}->{page}->{revisions}->{rev}) eq 'ARRAY') {
+		    ($content) = (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}});
+		} else {
+		    $content = $xml->{query}->{pages}->{page}->{revisions}->{rev};
+		}
+	    }
+	}
+    } else {
+	my $t = $self->{ua}->get($self->_wiki_url . "&action=raw");
+	if(!$t->is_success())
+	{
+	    if($t->code == 404 || $t->code =~ /^3/)
+	    {
+		$self->{exists} = $t->code == 404 ? 0 : 1;
+		$self->{loaded} = 1;
+	    }
+	    return if($t->code !~ /^3/);
+	}
+	
+	$content = $t->content;
+    }
+    
+    return $content;
+}
+
+sub uploadPage {
+    my ($self, $title, $content, $summary, $createOnly) = @_;
+    
+    my $res;
+    
+    if($self->_cfg("wiki", "has_writeapi"))
+    {
+	unless ($self->{edit_token}) {
+	    $self->load_edit_token();
+	}
+	
+	my $postValues = ({
+	    'action' => 'edit',
+	    'prop' => 'info',
+	    'token' => $self->{edit_token},
+	    'text' => $content,
+	    'summary' => $summary,
+	    'title' => $title,
+	    'format' => 'xml'
+		       });
+	
+	if ($createOnly) {
+	    $postValues->{'createonly'} = '1';
+	}
+	
+	$res = $self->{ua}->request(
+	    POST $self->{query},
+	    Content_Type  => 'application/x-www-form-urlencoded',
+	    Content       => $postValues
+	    );
+	
+	if ($res->content =~ /success/i ) {
+	    if ($res->content =~ /nochange=\"\"/i ) {
+		return 2;
+	    }
+	    return 1;
+	}
+    } else {
+	die ("Error, work only with write api");
+    }
+    
+    return 0;
+}
+
+sub uploadImage {
+    my($self, $title, $content, $summary) = @_;
+
+    my $url = $self->{index}.'/Special:Upload';
+
+    my $res = $self->{ua}->request(
+	POST $url,
+	Content_Type  => 'multipart/form-data',
+	Content       => [(
+	    'wpUploadFile' => [ undef, $title, Content => $content ],
+	    'wpDestFile' => $title,
+	    'wpUploadDescription' => $summary ? $summary : "",
+	    'wpUpload' => 'upload',
+	    'wpIgnoreWarning' => 'true'
+			  )]
+	);
+
+    my $status = $res->code == 302;
+
+    return $status;
+}
+
 sub DESTROY
 {
 	my $mw = shift;
@@ -538,24 +653,50 @@ sub dependences {
 	    }
 	    else
 	    {
-		$xml = eval { XMLin( $res->content ); };
+		$xml = eval { XMLin( $res->content, ForceArray => [('page')] ); };
 		
 #		if ($@) {
 #		    $self->log("error", $@);
 #		}
 		
 		if ($xml && exists($xml->{query}->{pages}->{page})) {
-		    if(ref($xml->{query}->{pages}->{page}) eq 'ARRAY') {
-			push(@deps, @{$xml->{query}->{pages}->{page}});
-		    } else {
-			push(@deps, $xml->{query}->{pages}->{page});
-		    }
+		    foreach my $dep (@{$xml->{query}->{pages}->{page}}) {
+			$dep->{title} = $mw->{xmlTool}->unescape( $dep->{title} );
+			push(@deps, $dep);
+		    } 
 		}
 	    }
 	} while ($continue = $xml->{"query-continue"}->{$type}->{$continue_property} );
     }
 
     return(\@deps);
+}
+
+sub embeddedIn {
+    my ($self, $title) = @_;
+    my @links;
+
+    my $continue;
+    my $xml;
+
+    do {
+	my $res = $self->{ua}->get($self->{query}."?action=query&format=xml&eifilterredir=nonredirects&list=embeddedin&eilimit=500&eititle=".uri_escape($title).($continue ? "&eicontinue=".$continue : "") );
+
+	if(!$res->is_success)
+	{
+	    delete $self->{query} if($res->code == 404);
+	}
+	else
+	{
+	    $xml = eval { XMLin( $res->content , ForceArray => [('ei')]  ) };
+	    
+	    foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
+		push( @links, $hash->{title} );
+	    }
+	} 
+    } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue} );
+
+    return \@links;
 }
 
 sub allPages {
@@ -685,574 +826,4 @@ sub redirects {
     return(\@redirects);
 }
 
-__END__
-
-=head1 NAME
-
-MediaWiki - OOP MediaWiki engine client
-
-=head1 SYNOPSIS
-
- use MediaWiki;
-
- $c = MediaWiki->new;
- $is_ok = $c->setup("config.ini");
- $is_ok = $c->setup({
- 	'bot' => { 'user' => 'Vasya', 'pass' => '123456' },
- 	'wiki' => {
- 		'host => 'en.wikipedia.org',
- 		'path' => 'w'
- 	}})
- $is_ok = $c->switch('starwars.wikia.com');
- $is_ok = $c->switch('en.wikipedia.org', 'w', { 'has_query' => 1, 'has_filepath' => 1 });
- $whoami = $c->user();
-
- $text = $c->text("page_name_here");
- $is_ok = $c->text("page_name_here", "some new text");
-
- $c->refresh_messages();
- $msg = $c->message("MediaWiki_message_name");
-
- die unless $c->exists("page_name");
-
- my($articles_p, $subcats_p) = $c->readcat("category_name");
-
- $is_ok = $c->upload("image_name", `cat myfoto.jpg`, "some notes", $force);
-
- $is_ok = $c->block("VasyaPupkin", "2 days");
- $is_ok = $c->xblock("SomeBadBot", "2 weeks", 0, 1, 0);
- $is_ok = $c->unblock("VasyaPupkin");
-
- $c->{summary} = "Automatic auto-replacements 1.2";
- $c->{minor} = 1;
- $c->{watch} = 1;
-
- if(!$is_ok)
- {
-    $err = $c->{error};
-    # do something
- }
-
- $pg = $c->random();
- $pg = $c->get("page_name");
- $pg = $c->get("page_name", "");
- $pg = $c->get("page_name", "rw");
-
- $is_ok = $pg->load();
- $is_ok = $pg->save();
- $text = $pg->oldid($old_version_id);
- $text = $pg->content();
- $title = $pg->title();
-
- $is_ok = $pg->delete();
- $is_ok = $pg->restore();
- $is_ok = $pg->protect();
- $is_ok = $pg->protect($edit_protection);
- $is_ok = $pg->protect($edit_protection, $move_protection);
-
- $is_ok = $pg->move("new_name");
- $is_ok = $pg->watch();
- $is_ok = $pg->unwatch();
-
- $is_ok = $pg->upload(`cat myfoto.jpg`, "some notes", $force);
-
- $is_ok = $pg->block("2 days");
- $is_ok = $pg->xblock("3 days", 0, 1, 0);
- $is_ok = $pg->unblock();
-
- $pg->history(sub { my $edit_p = shift; } );
- $pg->history_clear();
- my $edit_p = $pg->last_edit;
- my $edit_p = $pg->find_diff(qr/some_regex/);
- $is_ok = $pg->markpatrolled();
- $is_ok = $pg->revert();
-
- $pg->{history_step} = 10;
-
- $is_ok = $pg->replace(sub { my $text_p = shift; } );
- $is_ok = $pg->remove("some_regex_here");
- $is_ok = $pg->remove_template("template_name");
-
- $pg->{content} = "new text";
- $pg->{summary} = "do something strange";
- $pg->{minor} = 0;
- $pg->{watch} = 1;
-
-=head1 Functions and options
-
-=head2 Client object (MediaWiki) functions
-
-=head3 MediaWiki->new()
-
-Performs basic initialization of the client structure. Returns client object.
-
-=head3 $c->setup([ $ini_file_name | $config_hash_pointer ])
-
-Reads configuration file in INI format; also performs login if username and
-password are specified. If file name is omited, "~/.bot.ini is used.
-
-Configuration file can use [bot], [wiki] and [tmp] sections. Keys 'user' and
-'pass' in 'bot' section specify login information, additionally the key 'realm'
-will trigger basic http authentication instead of a wiki login. 'wiki' section
-B<must> have 'host' and 'path' keys (for example, host may be 'en.wikipedia.org'
-and path may be 'w') which specify path to I<index.php> script. Also, the
-'wiki' section may specify the 'ssl' key (boolean 0/1) if the server uses an
-SSL connection. Section 'tmp' and key 'msgcache' specify path to the MediaWiki
-messages cache.
-
-Options 'has_query' and 'has_filepath' in 'wiki' section enable experimental
-optimized interfaces. Set has_query to 1 if there is query.php extension
-(this should reduce traffic usage and servers load). Set has_filepath to 1
-if there is Special:Filepath page in target wiki (affects only filepath() and
-download() functions).
-
-You may specify configuration in hash array (pass pointer to it instead of
-string with file name). It should contain something like
- {
-    'wiki' => { 'host' => ..., 'path' => ... },
-    'bot' => { 'user' => ..., 'pass' => ... }
- }
- (key of global hash is section and keys of sub-hashes are keys).
-
-=head3 $c->login([$user [, $password [, $realm]]])
-
-Performs login if no login information was specified in configuration. Called
-automatically from setup().
-
-=head3 $c->logout([$host])
-
-Removes all HTTP cookies. All following edits will be anonymous until next login() call.
-If $host parameter is specified, only cookies for selected served (as in 'wiki'->'host'
-configuration key) are cleared.
-
-=head3 $c->switch(($wiki_hash_pointer | $wiki_host [, $wiki_path] [, $wiki_hash_pointer]))
-
-Reconfigures client with specified configuration (this is pointer to hash
-array describing _only_ 'wiki' section). Tries login with the same username
-and password if auth info specified. If you have already switched to this
-wiki (or this is initial wiki, set with I<$c->setup()>), login attempt will
-be ommited.
-
-First parameter is either hash pointer ({ 'host' => ..., 'path' => ... }) or
-host in first parameter and path in second optional parameter. You may add
-hash array pointer as second or third parameter to set other keys, something
-like 'has_query'. Call to switch() preserves keys not specified in parameters.
-
-Primary use of this function should be in interwiki bots.
-
-=head3 $c->user()
-
-Returns username from configuration file or makes a dummy edit in wiki sandbox to get
-client IP from page history. Note: no result caching is done.
-
-=head3 $c->text( $page_name [, $new_text ])
-
-If $new_text is specified, replaces content of $page_name article with $new_text.
-Returns current revision text otherwise. Errors: ERR_NOT_FOUND (article not exists).
-
-=head3 $c->refresh_messages()
-
-Downloads all MediaWiki messages and saves to messages cache.
-
-=head3 $c->message($message_name)
-
-Returns message from cache or undef it cache entry not exists. When no cache is
-present at all this functions downloads only one message.
-
-=head3 $c->exists($page_name)
-
-Returns true value if page exists.
-
-=head3 $c->readcat($category_name);
-
-Returns two array references, first with names of all articles, second with names
-of all subcategories (without 'Category:' namespace prefix).
-
-=head3 $c->upload($image_name, $content [, $description [, $force]]);
-
-Uploads an image with name 'Image:$image_name' and with content $content. If
-description is not specified, empty string will be used. Force flag may be set
-to 1 to disable warnings. Currently warnings are not handled properly (see
-L</LIMITATIONS>), so force=1 is recommended. That's not default because each rewriting
-of the image creates new version, no matter are there any differences or not.
-If you never rewrite image, feel free to set $force to 1.
-
-=head3 $c->filepath($image_name)
-
-Returns direct URL for downloading raw image $image_name or undef if image not exists.
-
-=head3 $c->download($image_name)
-
-Returns content of $image_name image or undef if not exists.
-
-=head3 $c->block($user_name, $block_time)
-
-Blocks specified user from editing. Block time should be in format
- [0-9]+ (seconds|minutes|hours|days|months|years)
-or in L<ctime> format.
-
-Equal to $c->xblock($user_name, $block_time, 1, 1, 1) call (see below).
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $c->xblock($user_name, $block_time, $anonOnly, $createAccount, $enableAutoblock)
-
-Extended blocking, does the same as block() except for the following:
-1. if anonOnly is 1 and we're blocking an IP, registered users who edit from this IP
-aren't affected
-2. if createAccount is 0, it's not allowed to register new accounts from this IP
-3. if enableAutoblock is 1 and we're blocking a registered user, the IP used by
-this user is also blocked (it remains hidden in blocks log, however).
-See http://meta.wikimedia.org/wiki/Help:Block_and_unblock for more info.
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $c->unblock($user_name)
-
-Unblocks specified user.
-
-B<Note>: this operation requires sysop rights.
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $c->random()
-
-Returns I<page handle> for random article (page in namespace 0).
-
-=head3 $c->get($page [, $mode])
-
-Returns page handle for specified article. Mode parameter may be
-"", "r", "w" or "rw" (default "r"). If there is no 'r' in mode,
-no page content will be fetched.
-
-If there is 'w' flag, page is loaded in I<Prepared Load Mode>.
-There're some options in edit form required for saving page.
-When using prepared loading, text is fetched from edit form (not
-from raw page) with this values. This reduces traffic usage.
-For normal editing, edit form is loaded before saving.
-
-B<Note>: prepared mode is toggled off after first saving.
-
-=head2 Client object (MediaWiki) options
-
-=head3 $c->{minor}
-
-If not set, default value for account will be used. If set to 0,
-major edits are made, it set to 1 - minor edits.
-
-=head3 $c->{watch}
-
-If set to 1, edited pages will be included to watch list. If not
-set, account default will be used; 0 disables adding to list.
-
-=head3 $c->{summary}
-
-Short description used by default for all edits.
-
-=head3 $c->{error}
-
-Contains advanced error code or 0 if no error/unknown error occured.
-See also L</ERRORS HANDLING>
-
-=head3 $c->{on_error}
-
-Callback used each time the error occured.
-
-=head2 Page object (MediaWiki::page) functions
-
-=head3 $pg->load()
-
-Loads page content.
-
-=head3 $pg->save()
-
-Saves changes to this page.
-
-=head3 $pg->prepare()
-
-Performs prepared load (B<do not use this function directly>).
-
-=head3 $pg->content()
-
-Returns page content.
-
-=head3 $pg->oldid($id)
-
-Returns content of an old revision.
-
-=head3 $pg->title()
-
-Returns page title.
-
-=head3 $pg->delete()
-
-Deletes this page.
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $pg->restore()
-
-Restores recently deleted page.
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $pg->protect([$edit_mode [, $move_mode]])
-
-Protects page from edits and/or moves. Protection modes:
-2 - for sysop only, 1 - for registered users only, 0 - default,
-means no protection. If no parameters specified, protects
-against anonymous edits. If only first parameter specified,
-move mode will be set to same value.
-
-In order to unprotect page, use C<$pg->protect(0)>.
-
-=head3 $pg->move($new_name)
-
-Renames page setting new title to $new_name and creating redirect
-in place of old article. This is only possible if target article
-not exists or is redirect without non-redirect versions.
-
-=head3 $pg->watch([$unwatch])
-
-Adds page to watch list. If $unwatch is set, removes page from watch list
-
-=head3 $pg->unwatch()
-
-Synonym for $pg->watch(1)
-
-=head3 $pg->upload($content, [, $description [, $force]])
-
-See $c->upload
-
-=head3 $pg->filepath()
-
-See $c->filepath
-
-=head3 $pg->download()
-
-See $c->download()
-
-=head3 $pg->block($block_time)
-
-See $c->block
-
-=head3 $pg->block($block_time)
-
-See $c->xblock
-
-=head3 $pg->unblock($block_time, $anonOnly, $createAccount, $enableAutoblock)
-
-See $c->unblock
-
-=head3 $pg->history(&cb)
-
-Iterates callback through page history. One parameter is passed, edit info
-(this is hash reference). Callback should return undef to continue listing
-of true value to stop it. Returns this true value or undef if all edits listed
-without interrupting.
-
-Hash reference has the following keys:
- page - pointer to page handler ($pg)
- oldid - revision identifier (may be used in call to $pg->oldid())
- user - username or ip
- anon - is 1 if 'user' contains IP address
- minor - is 1 if this is minor edit
- comment - contains short comment
- section - contains section name (so-called autocomment)
- time - edit time (in format 'HH:MM')
- date - edit date (in format 'D MONTH YYYY')
- datetime - contains time and date separated by ', '
-
-B<Note>: this function used the same history cache as last_edit(), revert() etc.
-
-=head3 $pg->history_clear()
-
-Clear history cache. This is done automatically when page is modified.
-
-=head3 $pg->last_edit()
-
-Return structure of the last edit
-
-=head3 $pg->find_diff($regex)
-
-Finds latest edit in which text matched against $regex added and returns it's structure.
-
-=head3 $pg->markpatrolled()
-
-Mark latest revision of this page as checked by administrator. This is experimental
-option and may not present in many MediaWiki installations.
-
-B<Note>: this operation requires sysop rights.
-
-=head3 $pg->revert([$user])
-
-Reverts all changes made by last user who edited this page. This functions B<not>
-uses admin quick-revert interface and can be run by anybody. If $user parameter
-specified, revert() will do nothing if this user's edits were already reverted
-(something already reverted it). Usage of this optional parameter is recommended.
-
-B<Note>: MediaWiki message 'Revertpage' will be used as summary.
-
-=head3 $pg->replace(&cb)
-
-This is most common implementation of replacements bot. It splits wiki-code to
-parts which I<may> and which I<should not> be affected (for example, inside pre/nowiki/math
-tags) and runs callback for each allowed part. Callback gets pointer to text as parameter
-and may change it (and may not change). If text was not change after work of all callbacks,
-it will not be saved (this is checked at client-side - that reduces traffic usage).
-
-B<Note>: If page has '{{NO_BOT_TEXT_PROCESSING}}' template, no changes will be done.
-
-=head3 $pg->remove($regex)
-
-This function removes all matches against regex specified.
-
-=head3 $pg->remove_template($template_name)
-
-This function is wrapper for remove. It removes all matches of template specified.
-
-=head2 Page object (MediaWiki::page) options
-
-=head3 $pg->{content}
-
-Raw page content. This is needed to set new content for article.
-
-=head3 $pg->{minor}
-
-See $c->{minor} - local setting (only for this page handle).
-
-=head3 $pg->{watch}
-
-See $c->{watch} - local setting (only for this page handle).
-
-=head3 $pg->{summary}
-
-See $c->{summary} - local setting (only for this page handle).
-
-=head3 $pg->{history_step}
-
-Number of edits fetched in one time. This field can be used for task-related optimization
-(increasing it decrease traffic usage and servers load). Default 50.
-
-=head1 ERRORS HANDLING
-
-Currently all methods where return value isn't documented return 1 for success and undef
-for failure. You may check advanced error code in $c->{error}, but now not all errors are
-properly handled (0 in $c->{error} can mean both success and unknown error).
-
-Also callback may be specified: if there is pointer to subroutine in $c->{on_error} when
-error occures, it will be called (with no parameters - error code in $c->{error}).
-
-=head2 ERR_NO_ERROR = 0
-
-No error or unknown error.
-
-=head2 ERR_NO_INIHASH
-
-$c->setup() called with configuration file name but module Config::IniHash not found.
-
-=head2 ERR_PARSE_INI
-
-Parser Config::IniHash found fatal error in configuration file.
-
-=head2 ERR_NO_AUTHINFO
-
-$c->login() called but no auth info known (bot's username & password)
-
-=head2 ERR_NO_MSGCACHE
-
-$c->refresh_messages() called but no path specified in configuration (or Data::Dumper
-module not found).
-
-=head2 ERR_LOGIN_FAILED
-
-Login returned something unexpected (maybe password is incorrect).
-
-=head2 ERR_LOOP
-
-Endless loop in some of modules (internal module error or error in wiki engine).
-
-=head2 ERR_NOT_FOUND
-
-$c->text() called but page not exists.
-
-=head1 EXAMPLE
-
-All examples start with
-
- use MediaWiki;
- my $c = MediaWiki->new();
- $c->setup();
-
-=head2 Very easy example: creating prepared articles
-
- opendir D, "articles";
- while(defined ($file = readdir(D)))
- {
-   if(($file =~ s/\.txt$//) == 1)
-   {
-      my $text;
-      open F, "$file.txt";
-      read F, $text, -s F;
-      close F;
-
-      $c->text($file, $text);
-   }
- }
- closedir D;
-
-=head2 Easy example: replacements bot
-
- for(my $i = 0; $i < 10000; $i ++)
- {
-    my $pg = $c->random();
-    $pg->replace(\&my_replacements);
- }
-
-=head2 More complex example: anti-vandalism bot
-
- $c->{summary} = "Vandalism: blanking more than 5 times";
-
- my %users = (); my %articles = ();
- while(1)
- {
-    my $pg = $c->random();
-    if($pg->content() eq '')
-    {
-      my $e = $pg->last_edit;
-      $blanker = $e->{user};
-
-      $pg->revert();
-      $e = $pg->last_edit;
-
-      if($e->{user} eq $blanker) # Only author
-      {
-         $pg->{content} .= "{{db-author}}"; # Delete note for admins
-	 $pg->{summary} = "+ {{db-author}}";
-	 $pg->save();
-      }
-      else
-      {
-        $users{$blanker} = 1 + (exists $users{$blanker} ? $users{$blanker} : 0);
-	if($users{$blanker} > 5)
-	{
-	  $c->block($blanker, "1 hour");
-	  delete $users{$blanker};
-	}
-      }
-    }
- }
-
-=head1 AUTHOR
-
-Edward Chernenko <edwardspec@gmail.com>
-
-=head1 COPYRIGHT
-
-Copyright (C) 2006 Edward Chernenko.
-This program is protected by Artistic License and can be used and/or
-distributed by the same rules as perl. All right reserved.
-
-=head1 SEE ALSO
-
-L<CMS::MediaWiki>, L<WWW::Wikipedia>, L<WWW:Mediawiki::Client>
+1;
