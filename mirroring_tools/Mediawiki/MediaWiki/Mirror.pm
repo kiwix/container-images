@@ -254,41 +254,48 @@ sub checkEmbeddedInPages {
 					 $self->destinationHttpUsername(),
                                          $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
+
+    my %pagesToCheckDependences;
     
     while ($self->isRunnable() && $site) {
 
 	my $counter = 0;
-	while ($counter < $self->embeddedInDelay() && $self->isRunnable()) {
+	do {
 	    $counter += $self->delay();
 	    sleep($self->delay());
-	}
+	} while ($counter < $self->embeddedInDelay() && $self->isRunnable());
+
+	$self->incrementCurrentTaskCount();
 
 	my $titles = $self->getAllPageToCheckEmbeddedInPages();
 
 	foreach my $title (@$titles) {
-	    $self->incrementCurrentTaskCount();
-
 	    my $pages = $site->embeddedIn($title);
-
-	    my $embeddedInCount = 0;
 	    
 	    foreach my $page (@$pages) {
-		
 		next if ($self->isTemplate($page));
-
-		# make a null-edit to refresh the dependences
-		my $content = $site->downloadPage($page);
-		$site->uploadPage($page, $content, "null-edit");
-		
-		$self->addPageToCheckTemplateDependence($page);
-		$self->addPageToCheckImageDependence($page);
-		
-		$embeddedInCount++;
+		$pagesToCheckDependences{$page} = 1;
 	    }
-	    $self->log("info", "$embeddedInCount 'embedded in' pages to check again template dependences for $title.");
-	    
-	    $self->decrementCurrentTaskCount();
 	}
+
+	my $count = scalar(keys(%pagesToCheckDependences));
+
+	if ($count) {
+	    $self->log("info", $count." 'embedded in' pages to check again template & image dependences.");
+	    
+	    foreach my $pageToCheckDependences (keys(%pagesToCheckDependences)) {
+		# make a null-edit to refresh the dependences
+		my $content = $site->downloadPage($pageToCheckDependences);
+		$site->uploadPage($pageToCheckDependences, $content, "null-edit");
+		
+		$self->addPageToCheckTemplateDependence($pageToCheckDependences);
+		$self->addPageToCheckImageDependence($pageToCheckDependences);
+	    }
+	}
+
+	%pagesToCheckDependences = ();
+
+	$self->decrementCurrentTaskCount();
     }
 }
 
