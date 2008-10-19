@@ -2,7 +2,6 @@ package MediaWiki::Mirror;
 
 use strict;
 use warnings;
-use LWP::UserAgent;
 use Data::Dumper;
 use MediaWiki;
 
@@ -31,6 +30,7 @@ my $checkTemplateDependences : shared = 1;
 my $checkImageDependences : shared = 1;
 my $checkCompletedPages : shared = 0;
 my $checkCompletedImages : shared = 0;
+my $checkIncomingRedirects : shared = 0;
 my $noTextMirroring : shared = 0;
     
 my %pageDownloadQueue : shared;
@@ -45,8 +45,8 @@ my %redirectQueue : shared;
 my %pageErrorQueue : shared;
 my %imageErrorQueue : shared;
 
-#my %pageDoneQueue : shared;
-#my %imageDoneQueue : shared;
+#my %pageDoneQueue : shared;#
+my %imageDoneQueue : shared;
 
 my @pageDownloadThreads;
 my @pageUploadThreads;
@@ -62,13 +62,13 @@ my $pageUploadThreadCount = 2;
 my $imageDownloadThreadCount = 1;
 my $imageUploadThreadCount = 2;
 my $imageDependenceThreadCount = 2;
-my $templateDependenceThreadCount = 1;
+my $templateDependenceThreadCount = 2;
 my $redirectThreadCount = 1;
-my $embeddedInThreadCount = 3;
+my $embeddedInThreadCount = 1;
 
 my $isRunnable : shared = 1;
 my $delay : shared = 1;
-my $embeddedInDelay : shared = 3600;
+my $embeddedInDelay : shared = 60;
 my $revisionCallback : shared = "getLastNonAnonymousEdit";
 my $currentTaskCount : shared = 0;
 
@@ -84,10 +84,7 @@ my $templateDependenceMutex : shared = 1;
 my $imageDependenceMutex : shared = 1;
 my $imageErrorMutex : shared = 1;
 my $pageErrorMutex : shared = 1;
-my $embeddedInMutex : shared = 3;
-
-my %hasFilePathCache : shared;
-my %hasWriteApiCache : shared;
+my $embeddedInMutex : shared = 1;
 
 sub new {
     my $class = shift;
@@ -146,8 +143,6 @@ sub startMirroring {
 	$embeddedInThreads[$i] = threads->new(\&checkEmbeddedInPages, $self);
     }
 
-#    threads->new(\&checkMutexes, $self);
-
     $self->log("info", "All threads are now started.");
 }
 
@@ -190,26 +185,6 @@ sub stopMirroring {
     $self->log("info", "================================================================");
 }
 
-sub checkMutexes {
-    my $self = shift;
-
-    while ($self->isRunnable()) {
-	sleep($self->delay() * 5);
-
-	$self->log("warning", "Check Mutex...................");
-	lock($imageDownloadMutex);
-	lock($pageDownloadMutex);
-	lock($imageUploadMutex);
-	lock($pageUploadMutex);
-	lock($redirectMutex);
-	lock($templateDependenceMutex);
-	lock($imageDependenceMutex);
-	lock($imageErrorMutex);
-	lock($pageErrorMutex);
-	lock($loggerMutex);
-    }
-}
-
 sub wait {
     my $self = shift;
 #    my $imageDoneCount = -1;
@@ -222,19 +197,9 @@ sub wait {
 	next if ($self->getPageUploadQueueSize());
 	next if ($self->getImageDownloadQueueSize());
 	next if ($self->getImageUploadQueueSize());
-
-	lock($imageDependenceMutex);
-	next if (scalar(keys(%imageDependenceQueue)));
-
-	lock($templateDependenceMutex);
-	next if (scalar(keys(%templateDependenceQueue)));
-
-	lock($redirectMutex);
-	next if (scalar(keys(%redirectQueue)));
-
-	$self->embeddedInDelay(0);
-	sleep($self->delay() * 5);
-	$self->embeddedInDelay(3600);
+	next if ($self->getTemplateDependenceQueueSize());
+	next if ($self->getImageDependenceQueueSize());
+	next if ($self->getRedirectQueueSize());
 
 	unless ($self->currentTaskCount()) {
 	    last;
@@ -259,6 +224,7 @@ sub checkEmbeddedInPages {
     
     while ($self->isRunnable() && $site) {
 
+	# wait embeddedInDelay() seconds
 	my $counter = 0;
 	do {
 	    $counter += $self->delay();
@@ -267,27 +233,47 @@ sub checkEmbeddedInPages {
 
 	$self->incrementCurrentTaskCount();
 
-	my $titles = $self->getAllPageToCheckEmbeddedInPages();
+	# get all pages (templates) to get embeddedin pages
+	my @titles = $self->getAllPageToCheckEmbeddedInPages();
 
-	foreach my $title (@$titles) {
-	    my $pages = $site->embeddedIn($title);
+	# build the list of embeddedin pages
+	# this is essential to avoid n-uplet of embeddedin pages
+	foreach my $title (@titles) {
+	    my @pages = $site->embeddedIn($title);
 	    
-	    foreach my $page (@$pages) {
+	    foreach my $page (@pages) {
 		next if ($self->isTemplate($page));
 		$pagesToCheckDependences{$page} = 1;
 	    }
 	}
 
+	# the number of embeddedin pages
 	my $count = scalar(keys(%pagesToCheckDependences));
 
+	$self->log("info", "========================================================================");
+	$self->log("info", $count." 'embedded in' pages to check again template & image dependences.");
+
+	$self->log("info", "pageDownloadQueue size: ".$self->getPageDownloadQueueSize());
+	$self->log("info", "pageUploadQueue size: ".$self->getPageUploadQueueSize());
+	$self->log("info", "imageDownloadQueue size: ".$self->getImageDownloadQueueSize());
+	$self->log("info", "imageUploadQueue size: ".$self->getImageUploadQueueSize());
+	$self->log("info", "imageDependenceQueue size: ".$self->getImageDependenceQueueSize());
+	$self->log("info", "templateDependenceQueue size: ".$self->getTemplateDependenceQueueSize());
+	$self->log("info", "embeddedInQueue size: ".$self->getEmbeddedInQueueSize());
+	$self->log("info", "redirectQueue size: ".$self->getRedirectQueueSize());
+
+	$self->log("info", "========================================================================");
+
 	if ($count) {
-	    $self->log("info", $count." 'embedded in' pages to check again template & image dependences.");
 	    
+	    # foreach of this page recheck the dependences
 	    foreach my $pageToCheckDependences (keys(%pagesToCheckDependences)) {
-		# make a null-edit to refresh the dependences
+
+		# make a null-edit to refresh the dependences, otherwise the result does not change
 		my $content = $site->downloadPage($pageToCheckDependences);
 		$site->uploadPage($pageToCheckDependences, $content, "null-edit");
 		
+		# add page to check dependences
 		$self->addPageToCheckTemplateDependence($pageToCheckDependences);
 		$self->addPageToCheckImageDependence($pageToCheckDependences);
 	    }
@@ -323,34 +309,43 @@ sub getAllPageToCheckEmbeddedInPages {
     my @pages = keys(%embeddedInQueue);
     %embeddedInQueue = ();
 
-    return \@pages;
+    return @pages;
 }
 
 # download images
 sub downloadImages {
     my $self = shift;
     my $timeOffset;
+    my $content;
+    my $image;
+    my $processCount = 0;
+    my $site;
 
-    my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
-					 $self->sourceMediawikiPassword(),
-					 $self->sourceMediawikiHost(),
-					 $self->sourceMediawikiPath(),
-					 $self->sourceHttpUsername(),
-                                         $self->sourceHttpPassword(),
-                                         $self->sourceHttpRealm(),
-					 );
-
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable()) {
 	$timeOffset = time();
-	my $image = $self->getImageToDownload();
+	$image = $self->getImageToDownload();
 
 	if ($image) {
 	    $self->incrementCurrentTaskCount();
-	    my $content = $site->download($image);
 
-	    if ( $content ) {
-		my $summary = "";
-		$self->addImageToUpload($image, $content, $summary);
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+						     $self->sourceMediawikiPassword(),
+						     $self->sourceMediawikiHost(),
+						     $self->sourceMediawikiPath(),
+						     $self->sourceHttpUsername(),
+						     $self->sourceHttpPassword(),
+						     $self->sourceHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
+
+	    $content = $site->downloadImage($image);
+
+	    if ($content) {
+		$self->addImageToUpload($image, $content, "");
 		$self->log("info", "Image '$image' successfuly downloaded in ".(time() - $timeOffset)."s.");
 	    } else {
 		$self->log("info", "The image '$image' does not exist.");
@@ -402,7 +397,7 @@ sub getImageDownloadQueueSize {
     my$self = shift;
 
     lock($imageDownloadMutex);
-    return scalar(%imageDownloadQueue);
+    return scalar(keys(%imageDownloadQueue));
 }
 
 #sub addImageDone {
@@ -433,34 +428,38 @@ sub existsImageError {
 sub uploadImages {
     my $self = shift;
     my $timeOffset;
-    
-    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-					 $self->destinationMediawikiPassword(),
-					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath(),
-					 $self->destinationHttpUsername(),
-                                         $self->destinationHttpPassword(),
-                                         $self->destinationHttpRealm());
+    my $processCount = 0;
+    my $site;
 
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable()) {
 	$timeOffset = time();
 	my ($image, $content, $summary) = $self->getImageToUpload();
 
 	if ($image) {
-
 	    $self->incrementCurrentTaskCount();
-#	    my $currentContent = $site->download($image);
 
-#	    if ($currentContent && $currentContent eq $content) {
-#		$self->log("info", "Image '$image' is already an uptodate content.");
-#	    } else {
-		if ($site->uploadImage($image, $content, $summary)) {
-		    $self->log("info", "Image '$image' successfuly uploaded in ".(time() - $timeOffset)."s.");
-		} else {
-		    $self->addImageError($image);
-		    $self->log("error", "Unable to write the image '$image'.");
-		}
-	#    }
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+						  $self->destinationMediawikiPassword(),
+						  $self->destinationMediawikiHost(),
+						  $self->destinationMediawikiPath(),
+						  $self->destinationHttpUsername(),
+						  $self->destinationHttpPassword(),
+						  $self->destinationHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
+	    
+
+	    if ($site->uploadImage($image, $content, $summary)) {
+		$self->log("info", "Image '$image' successfuly uploaded in ".(time() - $timeOffset)."s.");
+	    } else {
+		$self->addImageError($image);
+		$self->log("error", "Unable to write the image '$image'.");
+	    }
+
 	    $self->decrementCurrentTaskCount();
 	} else {
 	    sleep($self->delay());
@@ -485,7 +484,7 @@ sub getImageToUpload {
 
     lock($imageUploadMutex);
 
-    if (scalar(@imageUploadQueue)>=3) {
+    if ($self->getImageUploadQueueSize()) {
 	my $summary = pop(@imageUploadQueue) || "";
 	my $content = pop(@imageUploadQueue) || "";
 	my $image = pop(@imageUploadQueue) || "";
@@ -497,7 +496,7 @@ sub getImageUploadQueueSize {
     my$self = shift;
 
     lock($imageUploadMutex);
-    return scalar(@imageUploadQueue);
+    return (scalar(@imageUploadQueue) / 3);
 }
 
 sub checkCompletedImages {
@@ -511,24 +510,33 @@ sub checkCompletedImages {
 # check template dependences
 sub checkTemplates {
     my $self = shift;
+    my $processCount = 0;
+    my $site;
 
-    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-					 $self->destinationMediawikiPassword(), 
-					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath(),
-					 $self->destinationHttpUsername(),
-                                         $self->destinationHttpPassword(),
-					 $self->destinationHttpRealm());
-    
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable()) {
 	my $title = $self->getPageToCheckTemplateDependence();
 
 	if ($title) {
+
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+						  $self->destinationMediawikiPassword(),
+						  $self->destinationMediawikiHost(),
+						  $self->destinationMediawikiPath(),
+						  $self->destinationHttpUsername(),
+						  $self->destinationHttpPassword(),
+						  $self->destinationHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
+
 	    $self->incrementCurrentTaskCount();
-	    my $deps = $site->templateDependences($title);
+	    my @deps = $site->templateDependences($title);
 	    my $toMirrorCount = 0;
 	    
-	    foreach my $dep (@$deps) {
+	    foreach my $dep (@deps) {
 		if (exists($dep->{"missing"}) || $self->checkCompletedPages()) {
 		    $toMirrorCount++;
 		    my $template = $dep->{"title"};
@@ -546,7 +554,7 @@ sub checkTemplates {
 		}
 	    }
 
-	    $self->log("info", "$toMirrorCount/".scalar(@$deps)." template dependence(s) found for '$title'");
+	    $self->log("info", "$toMirrorCount/".scalar(@deps)." template dependence(s) found for '$title'");
 
 	    $self->decrementCurrentTaskCount();
 	} else {
@@ -586,6 +594,12 @@ sub checkTemplateDependences {
     lock($checkTemplateDependences);
     if (scalar(@_)) { $checkTemplateDependences = shift }
     return $checkTemplateDependences;
+}
+
+sub getTemplateDependenceQueueSize {
+    my $self = shift;
+    lock($templateDependenceMutex);
+    return scalar(keys(%templateDependenceQueue));
 }
 
 # check redirects
@@ -649,27 +663,49 @@ sub getPageToCheckRedirects {
     return $page;
 }
 
+sub getRedirectQueueSize {
+    my $self = shift;
+    lock($redirectMutex);
+    return scalar(keys(%redirectQueue));
+}
+
+sub checkIncomingRedirects {
+    my $self = shift;
+    lock($checkIncomingRedirects);
+    if (@_) { $checkIncomingRedirects = shift; }
+    return $checkIncomingRedirects;
+}
+
 # check image dependences
 sub checkImages {
     my $self = shift;
-    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-					 $self->destinationMediawikiPassword(), 
-					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath(),
-					 $self->destinationHttpUsername(),
-                                         $self->destinationHttpPassword(),
-					 $self->destinationHttpRealm());
-    
-    while ($self->isRunnable() && $site) {
+    my $site;    
+    my $processCount = 0;
+
+    while ($self->isRunnable()) {
 	my $title = $self->getPageToCheckImageDependence();
 
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
 
-	    my $deps = $site->imageDependences($title);
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+						  $self->destinationMediawikiPassword(),
+						  $self->destinationMediawikiHost(),
+						  $self->destinationMediawikiPath(),
+						  $self->destinationHttpUsername(),
+						  $self->destinationHttpPassword(),
+						  $self->destinationHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
+
+	    my @deps = $site->imageDependences($title);
 	    my $toMirrorCount = 0;
 
-	    foreach my $dep (@$deps) {
+	    foreach my $dep (@deps) {
 		if (exists($dep->{"missing"}) || $self->checkCompletedImages()) {
 		    $toMirrorCount++;
 		    my $image = $dep->{"title"};
@@ -683,7 +719,7 @@ sub checkImages {
 		    }
 		}
 	    }
-	    $self->log("info", "$toMirrorCount/".scalar(@$deps)." image dependence(s) found for '$title'");
+	    $self->log("info", "$toMirrorCount/".scalar(@deps)." image dependence(s) found for '$title'");
 
 	    $self->decrementCurrentTaskCount();
 	} else {
@@ -725,6 +761,12 @@ sub checkImageDependences {
     return $checkImageDependences;
 }
 
+sub getImageDependenceQueueSize {
+    my $self = shift;
+    lock($imageDependenceMutex);
+    return scalar(keys(%imageDependenceQueue));
+}
+
 # download pages
 sub downloadPages {
     my $self = shift;
@@ -735,25 +777,33 @@ sub downloadPages {
     my $history;
     my $content;
     my $timeOffset;
-
-    my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
-					 $self->sourceMediawikiPassword(),
-					 $self->sourceMediawikiHost(),
-					 $self->sourceMediawikiPath(),
-					 $self->sourceHttpUsername(),
-                                         $self->sourceHttpPassword(),
-					 $self->sourceHttpRealm());
+    my $processCount = 0;
+    my $site;
 
     my $revisionCallback = $self->revisionCallback();
 
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable()) {
 	$id = "";
 	$timeOffset = time();
 	$title = $self->getPageToDownload();
 	
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-#	    $page = $site->get($title, "r");
+
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+						     $self->sourceMediawikiPassword(),
+						     $self->sourceMediawikiHost(),
+						     $self->sourceMediawikiPath(),
+						     $self->sourceHttpUsername(),
+						     $self->sourceHttpPassword(),
+						     $self->sourceHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
+
 	    $content = $site->downloadPage($title);
 
 	    if ($content) {
@@ -872,35 +922,42 @@ sub uploadPages {
     my $timeOffset;
     my $redirectTarget;
     my $status;
+    my $site;
+    my $processCount = 0;
 
-    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-					 $self->destinationMediawikiPassword(),
-					 $self->destinationMediawikiHost(),
-					 $self->destinationMediawikiPath(),
-					 $self->destinationHttpUsername(),
-                                         $self->destinationHttpPassword(),
-					 $self->destinationHttpRealm());
-
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable()) {
 	$timeOffset = time();
 	my ($title, $content, $summary, $ignoreRedirect) = $self->getPageToUpload();
 
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-#	    my $page = $site->get($title, "w");
-	    
-	    $redirectTarget = $self->isRedirectContent(\$content);
 
-#	    $page->{content} = $content;
-#	    $page->{summary} = $summary;
+	    # reconnect every 42 processes (cause memory leak)
+	    unless ($processCount % 42) {
+		undef($site);
+		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+						  $self->destinationMediawikiPassword(),
+						  $self->destinationMediawikiHost(),
+						  $self->destinationMediawikiPath(),
+						  $self->destinationHttpUsername(),
+						  $self->destinationHttpPassword(),
+						  $self->destinationHttpRealm());
+		return unless ($site);
+	    }
+	    $processCount++;
 	    
-#	    $status = $page->save($redirectTarget);
+	    # ist the page a redirection page
+	    $redirectTarget = $self->isRedirectContent($content);
+
+	    # upload the page
 	    $status = $site->uploadPage($title, $content, $summary, $redirectTarget);
+
+	    # display the correct log message, depending of $status and $redirectTarget
 	    if ($status eq "1") {
 		$self->log("info", "Page '$title' successfuly uploaded in ".(time() - $timeOffset)."s.");
 	    } elsif ($status eq "2") {
 		$self->log("info", "Page '$title' already up to date. Uploaded in ".(time() - $timeOffset)."s.");
-	    } else {
+	    } elsif (!$redirectTarget) {
 		$self->addPageError($title);
 		$self->log("error", "Unable to write the page '$title'.");
 	    }
@@ -919,13 +976,14 @@ sub uploadPages {
 		    if ($self->checkImageDependences()) {
 			$self->addPageToCheckImageDependence($title);
 		    }
-		
 
 		    if ($self->isTemplate($title) && $status eq "1") {
 			$self->addPageToCheckEmbeddedInPages($title);
 		    }
 
-		    #$self->addPageToCheckRedirects($title);
+		    if ($self->checkIncomingRedirects()) {
+			$self->addPageToCheckRedirects($title);
+		    }
 		}
 	    }
 
@@ -969,7 +1027,7 @@ sub getPageToUpload {
 sub getPageUploadQueueSize {
     my $self = shift;
     lock($pageUploadMutex);
-    return scalar(@pageUploadQueue);
+    return (scalar(@pageUploadQueue) / 4);
 }
 
 sub checkCompletedPages {
@@ -991,11 +1049,19 @@ sub connectToMediawiki {
     my $httpRealm = shift || ''; 
 
     my $site = MediaWiki->new();
-    $site->setup({  'bot' => { 'user' => $user, 'pass' => $pass },
-		    'http' => { 'user' => $httpUser, 'pass' => $httpPass, 'realm' => $httpRealm },
-		    'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 
-		    'has_filepath' => $self->hasFilePath($host, $path), 
-		    'has_writeapi' => $self->hasWriteApi($host, $path) } } );
+    $site->logger($self->logger);
+
+    $site->user($user);
+    $site->password($pass);
+    $site->hostname($host);
+    $site->path($path);
+    $site->httpUser($httpUser);
+    $site->httpPassword($httpPass);
+    $site->httpRealm($httpRealm);
+
+    if ($user) {
+	$site->login();
+    }
 
     if ($site->{error}) {
 	$self->isRunnable(0);
@@ -1005,75 +1071,6 @@ sub connectToMediawiki {
 
     return $site;
 }
-
-sub hasFilePath {
-    my $self = shift;
-    my ($host, $path) = @_;
-    my $hasFilePath = 0;
-
-    lock(%hasFilePathCache);
-    if (exists($hasFilePathCache{$host})) {
-	return $hasFilePathCache{$host};
-    }
-
-    my $url = "http://".$host."/".($path ? $path."/" : "")."index.php?title=Special:Version";
-    my $html = $self->downloadTextFromUrl($url);
-
-    if ($html =~ /filepath/i ) {
-	$self->log("info", "Site $host has the FilePath extension\n");
-	$hasFilePath = 1;
-    } else {
-	$self->log("info", "Site $host does not have the FilePath extension\n");
-    }
-
-    $hasFilePathCache{$host} = $hasFilePath;
-
-    return $hasFilePath;
-}
-
-sub hasWriteApi {
-    my $self = shift;
-    my ($host, $path) = @_;
-    my $hasWriteApi = 0;
-
-    lock(%hasWriteApiCache);
-    if (exists($hasWriteApiCache{$host})) {
-	return $hasWriteApiCache{$host};
-    }
-
-    my $url = "http://".$host."/".($path ? $path."/" : "")."api.php?action=edit&format=xml";
-    my $html = $self->downloadTextFromUrl($url, "post");
-
-    if ($html =~ /notitle/i ) {
-	$self->log("info", "Site $host has the Write API available.\n");
-	$hasWriteApi = 1;
-    } else {
-	$self->log("info", "Site $host does not have the Write API available.\n");
-    }
-
-    $hasWriteApiCache{$host} = $hasWriteApi;
-
-    return $hasWriteApi;
-}
-
-sub downloadTextFromUrl {
-    my $self = shift;
-    my $url = shift;
-    my $method = shift || "get";
-
-    my $ua = LWP::UserAgent->new();
-    my $response = $ua->$method($url);
-
-    my $data = $response->content;
-    my $encoding = $response->header('Content-Encoding');
-
-    if ($encoding && $encoding =~ /gzip/i) {
-	$data = Compress::Zlib::memGunzip($data);
-    }
-
-    return $data;
-}
-
 
 sub sourceMediawikiHost { 
     my $self = shift; 
@@ -1177,10 +1174,8 @@ sub destinationHttpPassword {
 sub isRedirectContent {
     my $self = shift;
     my $content = shift;
-    if ( $$content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/i ) {
-	my $title = $1;
-	$title =~ tr/ /_/;
-	$$content = "#REDIRECT[[$title]]";
+
+    if ( $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/i ) {
 	return $1;
     }
     return "";
@@ -1229,22 +1224,17 @@ sub noTextMirroring {
 
 sub addPagesToMirror {
     my $self = shift;
-    
- #   my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
- #                                        $self->destinationMediawikiPassword(),
- #                                        $self->destinationMediawikiHost(),
- #                                        $self->destinationMediawikiPath(),
-#					 $self->destinationHttpUsername(),
-#                                         $self->destinationHttpPassword(),
-#					 $self->destinationHttpRealm());
 
     foreach my $page (@_) { 
-#	if (!$self->checkCompletedPages() || $site->exists()) {
-	
-	while ($self->getPageDownloadQueueSize()) {
-	    sleep($self->delay() * 5);
+	while ($self->getPageDownloadQueueSize() > 2 || 
+	       $self->getImageDownloadQueueSize() > 2 ||
+	       $self->getTemplateDependenceQueueSize() > 42 ||
+	       $self->getImageDependenceQueueSize() > 42 ||
+	       $self->getPageUploadQueueSize() > 42 ||
+	       $self->getImageUploadQueueSize() > 42
+	    ) {
+	    sleep($self->delay());
 	}
-
 
 	if (my $imageName = $self->extractImageNameFromPageName($page)) {
 	    $self->addImageToDownload($imageName);
@@ -1284,7 +1274,7 @@ sub decrementCurrentTaskCount {
    return $currentTaskCount;
 }
 
-# loggin
+# logging
 sub logger {
     my $self = shift;
     lock($loggerMutex);

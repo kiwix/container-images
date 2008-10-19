@@ -33,8 +33,10 @@ if (!$host) {
 }
 
 my $site = MediaWiki->new();
-$site->setup({ 'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => 1 } } );
-foreach my $page (@{$site->allPages()}) {
+$site->hostname($host);
+$site->path($path);
+
+foreach my $page ($site->allPages()) {
     print $page."\n";
 }
 

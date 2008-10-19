@@ -31,8 +31,10 @@ if (!$host) {
 }
 
 my $site = MediaWiki->new();
-$site->setup({ 'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => 1 } } );
-foreach my $image (@{$site->allImages()}) {
+$site->hostname($host);
+$site->path($path);
+
+foreach my $image ($site->allImages()) {
     print $image."\n";
 }
 

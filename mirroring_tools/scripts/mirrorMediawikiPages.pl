@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 
 #use encoding 'utf8'; 
+
 use lib "../";
 use lib "../Mediawiki/";
 
@@ -28,6 +29,8 @@ my $ignoreImageDependences;
 my $checkCompletedPages;
 my $checkCompletedImages;
 
+my $checkIncomingRedirects;
+
 my $noTextMirroring;
 
 my @pages;
@@ -54,6 +57,7 @@ GetOptions(
            'ignoreTemplateDependences' => \$ignoreTemplateDependences,
            'ignoreImageDependences' => \$ignoreImageDependences,
            'noTextMirroring' => \$noTextMirroring,
+           'checkIncomingRedirects' => \$checkIncomingRedirects,
            );
 
 if (!$sourceHost || !$destinationHost ) {
@@ -70,7 +74,8 @@ if (!$sourceHost || !$destinationHost ) {
     print "--page=[page] (for example:Paris)\n\t\tPage name of the article you want to mirror. Can be used many time.\n\t";
     print "--readFromStdin\n\t\tThe page names will be read as a carriage return separated list from STDIN.\n\t\tBe careful, you have to set the necessary passowrds in the command line if you want to use this option.\n\t";
     print "--checkCompletedPages\n\t\tPages and templates which are already present in the destination Mediawiki will be mirrored.\n\t";
-    print "--checkCompletedImages\n\t\tImage which are alreadz present in the destination Mediawiki will be mirrored.\n\t";
+    print "--checkCompletedImages\n\t\tImage which are already present in the destination Mediawiki will be mirrored.\n\t";
+    print "--checkIncomingRedirects\n\t\tUpload pages which have redirects pointing on it will have their redirect mirrored.\n\t";
     print "--noResume\n\t\tDo not print on STDOUT a resume of the queue status.\n\t";
     print "--noLog\n\t\tDo not start a logging process.\n\t";
     print "--ignoreTemplateDependences\n\t\tDo not check for each downloaded page the text dependences (templates).\n\t";
@@ -119,6 +124,7 @@ $mirror->destinationMediawikiPassword($destinationPassword);
 
 $mirror->checkCompletedPages($checkCompletedPages);
 $mirror->checkCompletedImages($checkCompletedImages);
+$mirror->checkIncomingRedirects($checkIncomingRedirects);
 
 $mirror->checkImageDependences( $ignoreImageDependences ? 0 : 1);
 $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
