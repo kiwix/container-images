@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Contributors</title>
+  </head>
+  <body>
+    <table style="width: 100%;">
+      <tr height="100" valign="middle">
+	<td>
+	  <center>
+	    <TMPL_LOOP NAME="LETTERS">
+	      <a href="./<TMPL_VAR NAME="FILENAME">"><TMPL_VAR NAME="LETTER"></a>, 
+            </TMPL_LOOP>
+	    <a href="./others.html">Others</a>
+	    </center>
+	</td>
+      </tr>
+      <td>
+	<TMPL_VAR NAME="CONTRIBUTORS">
+      </td>
+      <tr>
+      </tr>
+    </table>
+  </body>
+</html>
