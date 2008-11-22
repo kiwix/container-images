@@ -3,7 +3,7 @@ package MediaWiki;
 use strict;
 use XML::Simple;
 use URI::Escape qw(uri_escape);
-use Search::Tools::XML;
+#use Search::Tools::XML;
 use Data::Dumper;
 use LWP::UserAgent;
 use threads;
@@ -17,7 +17,7 @@ my $hostname;
 my $user;
 my $password;
 my $userAgent;
-my $xmlTool;
+#my $xmlTool;
 my $protocol;
 
 my $httpUser;
@@ -31,6 +31,8 @@ my $hasFilePath;
 my $hasWriteApi;
 my $editToken;
 
+my $lastRequestTimestamp = 0;
+
 sub new
 {
     my $class = shift;
@@ -40,7 +42,8 @@ sub new
 
     # create third parth tools
     $self->userAgent(LWP::UserAgent->new());
-    $self->xmlTool(Search::Tools::XML->new());
+    $self->userAgent()->cookie_jar( {} );
+#    $self->xmlTool(Search::Tools::XML->new());
 
     # set default protocol
     unless ($self->protocol()) {
@@ -61,44 +64,65 @@ sub computeUrls {
     $self->apiUrl($self->protocol().'://'.$self->hostname().($self->path() ? '/'.$self->path() : '')."/api.php?");
 }
 
-sub login {
+sub setup {
     my $self= shift;
+    my $ok = 1;
 
-    # return unless a username is specified
-    if (!$self->user()) {
-	$self->log("info", "Unable to log in to the mediawiki '".$self->hostname()."', no user is specified.");
-	return;
-    }
-    
     # set the http auth. info if necessary
     if($self->httpUser()) {
 	$self->userAgent->credentials($self->hostname().':'.($self->protocol() eq 'https' ? "443" : "80"), 
 				      $self->httpRealm(), $self->httpUser(), $self->httpPassword() );
     }
 
-    # make the login http request
-    my $httpResponse = $self->makeHttpPostRequest(
-	$self->indexUrl()."title=Special:Userlogin&action=submitlogin",
+    if ($self->user()) {
+	# make the login http request
+	my $httpResponse = $self->makeHttpPostRequest(
+	    $self->indexUrl()."title=Special:Userlogin&action=submitlogin",
+	    {
+		'wpName' => $self->user(),
+		'wpPassword' => $self->password(),
+		'wpLoginattempt' => 'Log in',
+	    },
+	    );
+	
+	# check the http response
+	if($httpResponse->code == 302 || $httpResponse->header("Set-Cookie"))
 	{
-	    'wpName' => $self->user(),
-	    'wpPassword' => $self->password(),
-	    'wpLoginattempt' => 'Log in',
-	},
-	);
+	    $self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
+	    $ok = 1;
+	} else {
+	    $self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."'.");
+	    $ok = 0;
+	}
+    }
 
     # check filepath & api
     $self->hasFilePath(1);
     $self->hasWriteApi(1);
+
+    # edit token
+    $self->loadEditToken();
     
-    # check the http response
-    if($httpResponse->code == 302 || $httpResponse->header("Set-Cookie"))
-    {
-	$self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
-	return 1;
-    } else {
-	$self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."'.");
+    return $ok;
+}
+
+sub deletePage {
+    my ($self, $page) = @_;
+
+    my $httpResponse = $self->makeHttpPostRequest(
+	$self->apiUrl(),
+	{
+	    "action" => "delete",
+	    "title" => $page,
+	    "token" => $self->editToken(),
+	    "format"=> "xml",
+	},
+	);
+
+    if ( $httpResponse->content() =~ /\<error\ /) {
 	return 0;
     }
+    return 1;
 }
 
 sub hasFilePath {
@@ -177,11 +201,11 @@ sub userAgent {
     return $userAgent;
 }
 
-sub xmlTool {
-    my $self = shift;
-    if (@_) { $xmlTool = shift; }
-    return $xmlTool;
-}
+#sub xmlTool {
+#    my $self = shift;
+#    if (@_) { $xmlTool = shift; }
+#    return $xmlTool;
+#}
 
 sub apiUrl {
     my $self = shift;
@@ -227,23 +251,36 @@ sub password {
 
 sub downloadPage {
     my ($self, $page) = @_;
-    my $content;
-    
-    my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&prop=revisions&titles=".uri_escape($page)."&format=xml&rvprop=content");
-    
-    if(!$httpResponse->is_success()) {
-	$self->log("info", "Unable to download page $page.");
+    my $xml;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'prop' => 'revisions',
+	'titles' => $page,
+	'format' => 'xml',
+	'rvprop' => 'content',
+    };
+ 
+    # make the http request                                                                                                                       
+    my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+    $xml = $self->makeHashFromXml($httpResponse->content());
+
+#    print Dumper($xml->{query}->{pages}->{page});
+#    exit;
+
+    if (exists($xml->{query}->{pages}->{page}->{missing})) {
+	return;
     } else {
-	my $xml = eval { XMLin( $httpResponse->content, ForceArray => [('rev')] ); };
-	
-	if ($xml && 
-	    exists($xml->{query}->{pages}->{page}->{revisions}) 
-	    && exists($xml->{query}->{pages}->{page}->{revisions}->{rev})) {
-	    ($content) = (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}});
-	}
+	my $content = $xml->{query}->{pages}->{page}->{revisions}->{rev};
+	return ref($content) eq "HASH" ? "" : $content;
     }
     
-    return $content;
+    return "";
+}
+
+sub touchPage {
+    my ($self, $page) = @_;
+    my $content = $self->downloadPage($page);
+    $self->uploadPage($page, $content, "null-edit");
 }
 
 sub uploadPage {
@@ -288,6 +325,7 @@ sub makeHttpRequest {
     my ($self, $method, $url, $httpHeaders, $formValues) = @_;
     
     my $httpResponse;
+    my $loopCount = 0;
 
     if ($method eq "POST") {
 	$httpResponse= $self->userAgent()->post(
@@ -301,7 +339,7 @@ sub makeHttpRequest {
 	    %$httpHeaders,
 	    );
     } else {
-	die("$method is not a valide method for makeHttpRequest().");
+	die("'$method' is not a valid method for makeHttpRequest().");
     }
 
     return $httpResponse;
@@ -309,8 +347,23 @@ sub makeHttpRequest {
 
 sub makeHttpPostRequest {
     my ($self, $url, $formValues, $httpHeaders) = @_;
-    
-    return $self->makeHttpRequest("POST", $url, $httpHeaders || { Content_Type  => 'multipart/form-data' }, $formValues || {});
+    my $httpResponse;
+    my $continue;
+
+    do {
+	$httpResponse = eval { $self->makeHttpRequest("POST", $url, $httpHeaders || { Content_Type  => 'multipart/form-data' }, $formValues || {}); };
+
+	if ($@) {
+	    $continue += 1;
+	    $self->log("info", "Unable to make makeHttpPostRequest, will try again in $continue second(s).");
+	    sleep($continue);
+	} else {
+	    $continue = 0;
+	}
+
+    } while ($continue);
+
+    return $httpResponse;
 }
 
 sub makeHttpGetRequest {
@@ -319,35 +372,44 @@ sub makeHttpGetRequest {
     return $self->makeHttpRequest("GET", $url, $httpHeaders || {});
 }
 
-sub filepath {
-	my ($obj, $image) = shift;
-	my $path;
+sub makeApiRequest {
+    my ($self, $values) = @_;
+    my $httpResponse;
+    my $count=0;
 
-	if($obj->_cfg("wiki", "has_filepath")) {
-	    my $filepath_url = $obj->{index}."/Special:Filepath/" . uri_escape($image);
-	    my $loop = 0;
-	  first_try_or_redir:
-	    $obj->{ua}->{requests_redirectable} = [];
-	    my $res = $obj->{ua}->get($filepath_url);
-	    $obj->{ua}->{requests_redirectable} = [ "GET", "HEAD" ];
-	    
-	    if($res->code == 301 && $loop < 5)
-	    {
-		$filepath_url = $res->header("Location");
-		$loop ++;
-		
-		goto first_try_or_redir;
-	    }
-	    $obj->_error(ERR_LOOP()) if($loop == 5);
-	    return unless $res->code == 302;
-	    
-	    $path = $res->header("Location");
+    do {
+	if ($httpResponse) {
+	    $count++;
+	    $self->log("info", "Unable to make the following API request ($count time) on '".$self->apiUrl()."':\n".Dumper($values));
+	    sleep($count);
 	}
-	
-	$path = $obj->{proto} . "//" . $obj->_cfg("wiki", "host") . $path
-	    if($path =~ /^\//);
 
-	return $path;
+	$httpResponse = $self->makeHttpPostRequest(
+	    $self->apiUrl(),
+	    $values,
+	    );
+    } while($httpResponse->code != 200);
+
+    return $httpResponse;
+}
+
+sub makeHashFromXml {
+    my ($self, $xml, $forceArray) = @_;
+
+    my @params;
+    push(@params, $xml);
+
+    if ($forceArray) {
+	push(@params, ForceArray => [($forceArray)] );
+    }
+    
+    my $hash = XMLin( @params);
+    
+    if ($@ || !$hash) {
+	die("Unable to parse the following XML:\n".Dumper($xml));
+    }
+
+    return $hash;
 }
 
 sub downloadImage {
@@ -392,6 +454,35 @@ sub loadEditToken {
     return 0;
 }
 
+sub isIncompletePage {
+    my $self = shift;
+    my $page = shift;
+    my $incomplete = 0;
+    
+    # check image dependences
+    my @deps = $self->imageDependences($page);
+    
+    foreach my $dep (@deps) {
+	if (exists($dep->{"missing"})) {
+	    $incomplete = 1;
+	    last;
+	}
+    }
+    
+    # check template dependences (if necessary)
+    unless ($incomplete) {
+	my @deps = $self->templateDependences($page);
+	foreach my $dep (@deps) {
+	    if (exists($dep->{"missing"})) {
+		$incomplete = 1;
+		last;
+	    }
+	}
+    }
+
+    return $incomplete;
+}
+
 sub templateDependences {
     my $self = shift;
     return $self->dependences(@_, "templates");
@@ -407,33 +498,36 @@ sub dependences {
     my @deps;
 
     my $continueProperty = $type eq "templates" ? "gtlcontinue" : "gimcontinue";
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'titles' => $page,
+	'format' => 'xml',
+	'prop' => 'info',
+	'gtllimit'=> '500',
+	'generator' => $type,
+    };
     my $continue;
     my $xml;
 
     do {
-	my $httpResponse = $self->makeHttpGetRequest($self->apiUrl(). "action=query&titles=".uri_escape($page)."&format=xml&prop=info&gtllimit=500&generator=$type".($continue ? "&".$continueProperty."=".$continue : "") );
-	
-	if(!$httpResponse->is_success())
-	{
-	    $self->log("info", "Unable to get the dependences for '".$page."' by '".$self->hostname()."'.");
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{$continueProperty} = $continue;
 	}
-	else
-	{
-	    $xml = XMLin( $httpResponse->content(), ForceArray => [('page')] );
-	    
-	    if ($@) {
-		$self->log("error", "Unable to parse the XML.");
-	    }
-	    
-	    if ($xml && exists($xml->{query}->{pages}->{page})) {
-		foreach my $dep (@{$xml->{query}->{pages}->{page}}) {
-		    $dep->{title} = $self->xmlTool()->unescape( $dep->{title} );
-		    push(@deps, $dep);
-		} 
-	    }
-	}
-    } while ($continue = $xml->{"query-continue"}->{$type}->{$continueProperty} );
 
+	# make the http request                                                                                                                       
+        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'page' );
+	
+	if (exists($xml->{query}->{pages}->{page})) {
+	    foreach my $dep (@{$xml->{query}->{pages}->{page}}) {
+#		$dep->{title} = $self->xmlTool()->unescape( $dep->{title} );
+		$dep->{title} = $dep->{title} ;
+		push(@deps, $dep);
+	    } 
+	}
+    } while ($continue = $xml->{"query-continue"}->{$type}->{$continueProperty});
+    
     return(@deps);
 }
 
@@ -445,116 +539,210 @@ sub embeddedIn {
 
     do {
 	my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&format=xml&eifilterredir=nonredirects&list=embeddedin&eilimit=500&eititle=".uri_escape($title).($continue ? "&eicontinue=".$continue : "") );
-	
+
 	if(!$httpResponse->is_success()) {
 	    $self->log("info", "Unable to get the embedded in for '".$title."' by '".$self->hostname()."'.");
+	    last;
 	}
 	else
 	{
-	    $xml = XMLin( $httpResponse->content() , ForceArray => [('ei')]  );
+	    $xml = XMLin( $httpResponse->content() , ForceArray => [('ei')] );
 
 	    foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
 		push( @links, $hash->{title} );
 	    }
 	} 
-    } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue} );
+    } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue});
 
     return @links;
 }
 
 sub allPages {
     my($self, $namespace) = @_;
+    my $httpPostRequestParams = {
+        'action' => 'query',
+        'apfilterredir' => 'nonredirects',
+        'list' => 'allpages',
+        'format' => 'xml',
+	'aplimit' => '500',
+    };
     my @pages;
     my $continue;
     my $xml;
+
+    # set the appropriate namespace
+    if (defined($namespace)) {
+	$httpPostRequestParams->{'apnamespace'} = $namespace;
+    }
     
     do {
-	my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&list=allpages&format=xml&aplimit=500&".(defined($namespace) ? "&apnamespace=".$namespace : "").($continue ? "&apfrom=".$continue : ""));
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{'apfrom'} = $continue;
+	}
+
+	# make the http request                                                                                                                       
+        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'p' );
 	
-	if(!$httpResponse->is_success()) {
-	    $self->log("info", "Unable to get all pages by '".$self->hostname()."'.");
-	} else {
-	    $xml = XMLin( $httpResponse->content(), ForceArray => [('p')]  );
-	    
-	    if ($@) {
-		$self->log("error", $@);
-	    }
-	    
-	    if ($xml && exists($xml->{query}->{allpages}->{p})) {
-		foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
-		    push(@pages, $page->{title}) if ($page->{title});
+	if (exists($xml->{query}->{allpages}->{p})) {
+	    foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
+		if ($page->{title}) {
+#		    my $title = $self->xmlTool()->unescape($page->{title});
+		    my $title = $page->{title};
+		    push(@pages, $title);
 		}
             }
 	}
-    } while ($continue = $xml->{"query-continue"}->{"allpages"}->{"apfrom"} );
+    } while ($continue = $xml->{"query-continue"}->{"allpages"}->{"apfrom"});
 
     return(@pages);
 }
 
 sub allImages {
     my $self = shift;
+    my $httpPostRequestParams = {
+        'action' => 'query',
+        'generator' => 'allimages',
+        'list' => 'allpages',
+        'format' => 'xml',
+	'gailimit' => '500',
+    };
     my @images;
     my $continue;
     my $xml;
     
     do {
-	my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&generator=allimages&format=xml&gailimit=500&".($continue ? "&gaifrom=".$continue : ""));
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{'gaifrom'} = $continue;
+	}
 
-	if(!$httpResponse->is_success()) {
-	    $self->log("info", "Unable to get all images by '".$self->hostname()."'.");
-	} else {
-	    $xml = XMLin( $httpResponse->content(), ForceArray => [('page')] );
-	    
-	    if ($@) {
-		$self->log("error", $@);
-	    }
-	    
-	    if ($xml && exists($xml->{query}->{pages}->{page})) {
-		foreach my $page (@{$xml->{query}->{pages}->{page}}) {
-		    if ($page->{title}) {
-			my $image = $page->{title};
-			$image =~ s/Image:// ;
-			$image =~ s/\ /_/ ;
-			push(@images, $image);
-		    }
+	# make the http request                                                                                                                       
+        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'page' );	
+
+	if (exists($xml->{query}->{pages}->{page})) {
+	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
+		if ($page->{title}) {
+#		    my $image = $self->xmlTool()->unescape($page->{title});
+		    my $image = $page->{title};
+		    $image =~ s/^Image:// ;
+		    $image =~ s/\ /_/ ;
+		    push(@images, $image);
 		}
             }
 	}
-    } while ($continue = $xml->{"query-continue"}->{"allimages"}->{"gaifrom"} );
-
+    } while ($continue = $xml->{"query-continue"}->{"allimages"}->{"gaifrom"});
 
     return(@images);
 }
 
 sub redirects {
     my($self, $page) = @_;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'list' => 'backlinks',
+        'bltitle' => $page,
+        'format' => 'xml',
+	'blfilterredir' => 'redirects',
+        'bllimit' => '500',
+    };
     my @redirects;
     my $continue;
     my $xml;
-    
+
     do {
-        my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&list=backlinks&bltitle=".$page."&blfilterredir=redirects&bllimit=500&format=xml&".($continue ? "&blcontinue=".$continue : ""));
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{'blcontinue'} = $continue;
+	}
+
+	# make the http request                                                                                                                       
+        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'bl' );	
 	
-	if(!$httpResponse->is_success()) {
-	    $self->log("info", "Unable to get incoming redirects for '".$page."' by '".$self->hostname()."'.");
-	}
-	else
-	{
-	    $xml = XMLin( $httpResponse->content, ForceArray => [('bl')] );
-	    
-	    if ($@) {
-		$self->log("error", $@);
+	if (exists($xml->{query}->{backlinks}->{bl})) {
+	    foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
+#		push(@redirects, $self->xmlTool()->unescape($redirect->{title})) if ($redirect->{title});
+		push(@redirects, $redirect->{title}) if ($redirect->{title});
 	    }
-	    
-	    if ($xml && exists($xml->{query}->{backlinks}->{bl})) {
-		foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
-		    push(@redirects, $redirect->{title}) if ($redirect->{title});
-		}
-            }
 	}
-    } while ($continue = $xml->{"query-continue"}->{"backlinks"}->{"blcontinue"} );
+    } while ($continue = $xml->{"query-continue"}->{"backlinks"}->{"blcontinue"});
 
     return(@redirects);
+}
+
+sub history {
+    my($self, $page, $versionIdLimit, $throttle, $rvlimit) = @_;
+    my $history;
+    my $continue;
+    my $xml;
+    my $versionIdFound = 0;
+
+    unless (defined($rvlimit)) {
+	$rvlimit = 500;
+    }
+
+    unless (defined($throttle)) {
+	$throttle = 1;
+    }
+
+    my $httpPostRequestParams = {
+        'action' => 'query',
+        'titles' => $page,
+        'format' => 'xml',
+	'prop' => 'revisions',
+        'rvlimit' => $rvlimit,
+	'rvprop' => 'ids|timestamp|flags|user|size', 
+	'redirects'=> '42',
+    };
+
+    do {
+	# throttling
+	if (time() - $lastRequestTimestamp < $throttle) {
+	    sleep($throttle);
+	}
+	$lastRequestTimestamp = time();
+
+	# set the appropriate offset
+	if ($continue) {
+            $httpPostRequestParams->{'rvstartid'} = $continue;
+        }
+	
+	# make the http request
+	my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'rev' );	
+
+	# merge with the history (if necessary)
+	if ($history) {
+	    foreach my $rev (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}}) {
+		push(@{$history->{revisions}->{rev}}, $rev);
+	    }
+	} else {
+	    $history = $xml->{query}->{pages}->{page};
+	}
+	
+	# check if the versionIdLImit is not reach
+	if ($versionIdLimit) {
+	    foreach my $rev (@{$xml->{query}->{pages}->{page}->{revisions}->{rev}}) {
+		if ($rev->{revid} eq $versionIdLimit) {
+		    $versionIdFound = 1;
+		    last;
+		}
+	    }
+	}
+    } while (!$versionIdFound && ($continue = $xml->{"query-continue"}->{"revisions"}->{"rvstartid"}));
+
+    # remove revid older than $versionIdLimit
+    if ($versionIdLimit && $versionIdFound) {
+	my $rev;
+	do {
+	    $rev = pop(@{$history->{revisions}->{rev}});
+	} while (scalar(@{$history->{revisions}->{rev}}) && !($rev->{revid} eq $versionIdLimit) );
+    }
+
+    return $history;
 }
 
 # logging
