@@ -1,14 +1,11 @@
 package MediaWiki;
 
+use utf8;
 use strict;
 use XML::Simple;
-use URI::Escape qw(uri_escape);
-#use Search::Tools::XML;
 use Data::Dumper;
 use LWP::UserAgent;
-use threads;
-use threads::shared;
-use Devel::Size qw(size total_size);
+use URI;
 
 my $indexUrl;
 my $apiUrl;
@@ -17,7 +14,6 @@ my $hostname;
 my $user;
 my $password;
 my $userAgent;
-#my $xmlTool;
 my $protocol;
 
 my $httpUser;
@@ -43,7 +39,6 @@ sub new
     # create third parth tools
     $self->userAgent(LWP::UserAgent->new());
     $self->userAgent()->cookie_jar( {} );
-#    $self->xmlTool(Search::Tools::XML->new());
 
     # set default protocol
     unless ($self->protocol()) {
@@ -61,7 +56,7 @@ sub new
 sub computeUrls {
     my $self = shift;
     $self->indexUrl($self->protocol().'://'.$self->hostname().($self->path() ? '/'.$self->path() : '')."/index.php?");
-    $self->apiUrl($self->protocol().'://'.$self->hostname().($self->path() ? '/'.$self->path() : '')."/api.php?");
+    $self->apiUrl($self->protocol().'://'.$self->hostname().($self->path() ? '/'.$self->path() : '')."/api.php");
 }
 
 sub setup {
@@ -201,12 +196,6 @@ sub userAgent {
     return $userAgent;
 }
 
-#sub xmlTool {
-#    my $self = shift;
-#    if (@_) { $xmlTool = shift; }
-#    return $xmlTool;
-#}
-
 sub apiUrl {
     my $self = shift;
     if (@_) { $apiUrl = shift; }
@@ -263,9 +252,6 @@ sub downloadPage {
     # make the http request                                                                                                                       
     my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
     $xml = $self->makeHashFromXml($httpResponse->content());
-
-#    print Dumper($xml->{query}->{pages}->{page});
-#    exit;
 
     if (exists($xml->{query}->{pages}->{page}->{missing})) {
 	return;
@@ -373,9 +359,15 @@ sub makeHttpGetRequest {
 }
 
 sub makeApiRequest {
-    my ($self, $values) = @_;
+    my ($self, $values, $method) = @_;
     my $httpResponse;
+    my $httpHeaders = { "Accept-Charset" => "utf-8" };
     my $count=0;
+    my $loop=0;
+
+    unless ($method) {
+	$method = "GET";
+    }
 
     do {
 	if ($httpResponse) {
@@ -384,11 +376,24 @@ sub makeApiRequest {
 	    sleep($count);
 	}
 
-	$httpResponse = $self->makeHttpPostRequest(
-	    $self->apiUrl(),
-	    $values,
-	    );
-    } while($httpResponse->code != 200);
+	if ($method eq "POST") {
+	    $httpResponse = $self->makeHttpGetRequest($self->apiUrl(), $values);
+	} elsif ($method eq "GET") {
+	    my $url = URI->new($self->apiUrl());
+	    $url->query_form($values);
+	    $httpResponse = $self->makeHttpGetRequest($url, $httpHeaders);
+	} else {
+	    die ("Method has to be GET or POST.");
+	}
+
+	if ($httpResponse->code() != 200) {
+	    $self->log("info", $httpResponse->content());
+	    $loop = 1;
+	} else {
+	    $loop = 0;
+	}
+
+    } while($loop);
 
     return $httpResponse;
 }
@@ -521,7 +526,6 @@ sub dependences {
 	
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $dep (@{$xml->{query}->{pages}->{page}}) {
-#		$dep->{title} = $self->xmlTool()->unescape( $dep->{title} );
 		$dep->{title} = $dep->{title} ;
 		push(@deps, $dep);
 	    } 
@@ -588,7 +592,6 @@ sub allPages {
 	if (exists($xml->{query}->{allpages}->{p})) {
 	    foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
 		if ($page->{title}) {
-#		    my $title = $self->xmlTool()->unescape($page->{title});
 		    my $title = $page->{title};
 		    push(@pages, $title);
 		}
@@ -625,7 +628,6 @@ sub allImages {
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
 		if ($page->{title}) {
-#		    my $image = $self->xmlTool()->unescape($page->{title});
 		    my $image = $page->{title};
 		    $image =~ s/^Image:// ;
 		    $image =~ s/\ /_/ ;
@@ -664,7 +666,6 @@ sub redirects {
 	
 	if (exists($xml->{query}->{backlinks}->{bl})) {
 	    foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
-#		push(@redirects, $self->xmlTool()->unescape($redirect->{title})) if ($redirect->{title});
 		push(@redirects, $redirect->{title}) if ($redirect->{title});
 	    }
 	}
@@ -711,7 +712,7 @@ sub history {
         }
 	
 	# make the http request
-	my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	my $httpResponse = $self->makeApiRequest($httpPostRequestParams, "GET");
 	$xml = $self->makeHashFromXml($httpResponse->content(), 'rev' );	
 
 	# merge with the history (if necessary)

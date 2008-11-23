@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 binmode STDOUT, ":utf8";
+binmode STDIN, ":utf8";
+
+use utf8;
 
 use lib "../";
 use lib "../Mediawiki/";
@@ -11,6 +14,7 @@ use Getopt::Long;
 use Data::Dumper;
 use XML::Simple;
 use MediaWiki;
+use Encode;
 
 # log
 use Log::Log4perl;
@@ -61,7 +65,7 @@ $logger->info("=======================================================");
 sub formatTitle {
     my $title = shift;
     $title =~ tr/ /_/;
-    $title = ucfirst($title);
+    $title = lcfirst($title);
     return $title;
 }
 
@@ -70,7 +74,6 @@ if ($readFromStdin) {
     $logger->info(" Read pages from stdin.");
     while (my $page = <STDIN>) {
 	$page =~ s/\n//;
-	$page = formatTitle($page);
 	push(@pages, $page);
     }
 }
@@ -78,6 +81,10 @@ if ($readFromStdin) {
 # build page hash
 my %pagesHash;
 foreach my $page (@pages) {
+    unless (Encode::is_utf8($page)) {
+	$page = decode_utf8($page);
+    }
+    $page = formatTitle($page);
     $pagesHash{$page} = 1;
 }
 @pages = ();
@@ -85,7 +92,7 @@ foreach my $page (@pages) {
 if ($file) {
     # open file for write
     open DESTINATION_FILE, ">$file.tmp" or die $!;
-    binmode DESTINATION_FILE, ":utf8";
+    binmode(DESTINATION_FILE, ":utf8");
 
     print DESTINATION_FILE "<history>\n"; 
 
@@ -94,7 +101,7 @@ if ($file) {
 
     if (-f $file) {
 	open SOURCE_FILE, "<$file" or die $!;
-	binmode SOURCE_FILE, ":utf8";
+	binmode(SOURCE_FILE, ":utf8");
 
 	# skip the first line
 	while (<SOURCE_FILE>) {
@@ -158,6 +165,7 @@ foreach my $page (keys(%pagesHash)) {
     $logger->info("'$page' history will be new downloaded.");		
     my $history = $site->history($page, undef, $throttle);
     my $xml = XMLout($history);
+
     if ($file) {
 	print(DESTINATION_FILE $xml);
     }  else {
