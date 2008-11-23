@@ -1,6 +1,8 @@
 #!/usr/bin/perl
-binmode(STDOUT, ":utf8");
+binmode STDOUT, ":utf8";
+binmode STDIN, ":utf8";
 
+use utf8;
 use lib "../";
 use lib "../Mediawiki/";
 
@@ -33,6 +35,7 @@ if (!$host) {
 my $site = MediaWiki->new();
 $site->hostname($host);
 $site->path($path);
+$site->logger($logger);
 
 foreach my $image ($site->allImages()) {
     print $image."\n";

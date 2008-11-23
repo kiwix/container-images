@@ -1,10 +1,11 @@
 #!/usr/bin/perl
-binmode(STDOUT, ":utf8");
+binmode STDOUT, ":utf8";
+binmode STDIN, ":utf8";
 
+use utf8;
 use lib "../";
 use lib "../Mediawiki/";
 
-use Config;
 use strict;
 use warnings;
 use Getopt::Long;

@@ -1,5 +1,8 @@
 #!/usr/bin/perl
 binmode(STDOUT, ":utf8");
+binmode STDIN, ":utf8";
+ 
+use utf8;
 
 use lib "../";
 use lib "../Mediawiki/";
@@ -33,8 +36,11 @@ if (!$host || !$page) {
 }
 
 my $site = MediaWiki->new();
-$site->setup({ 'wiki' => { 'host' => $host, 'path' => $path, 'has_query' => 1, 'has_filepath' => 1 } } );
-foreach my $page (@{$site->redirects($page)}) {
+$site->hostname($host);
+$site->path($path);
+$site->setup();
+
+foreach my $page ($site->redirects($page)) {
     print $page."\n";
 }
 

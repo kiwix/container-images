@@ -45,9 +45,6 @@ my %redirectQueue : shared;
 my %pageErrorQueue : shared;
 my %imageErrorQueue : shared;
 
-#my %pageDoneQueue : shared;#
-my %imageDoneQueue : shared;
-
 my @pageDownloadThreads;
 my @pageUploadThreads;
 my @imageDownloadThreads;
@@ -187,8 +184,6 @@ sub stopMirroring {
 
 sub wait {
     my $self = shift;
-#    my $imageDoneCount = -1;
-#    my $pageDoneCount = -1;
 
     while ($self->isRunnable()) {
 	sleep($self->delay() * 5);
@@ -209,6 +204,26 @@ sub wait {
     $self->stopMirroring();
 }
 
+sub getDestinationMediawikiIncompletePages {
+   my $self = shift;
+   my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					$self->destinationMediawikiPassword(), 
+					$self->destinationMediawikiHost(),
+					$self->destinationMediawikiPath(),
+					$self->destinationHttpUsername(),
+					$self->destinationHttpPassword(),
+					$self->destinationHttpRealm());
+   
+   my @pages;
+   foreach my $page ($site->allPages()) {
+       if ($site->isIncompletePage($page)) {
+	   push(@pages, $page);
+       }
+   }
+
+   return @pages;
+}
+
 # check embedded in pages
 sub checkEmbeddedInPages {
     my $self = shift;
@@ -220,9 +235,8 @@ sub checkEmbeddedInPages {
                                          $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
 
-    my %pagesToCheckDependences;
-    
     while ($self->isRunnable() && $site) {
+	my %pagesToCheckDependences;
 
 	# wait embeddedInDelay() seconds
 	my $counter = 0;
@@ -270,16 +284,13 @@ sub checkEmbeddedInPages {
 	    foreach my $pageToCheckDependences (keys(%pagesToCheckDependences)) {
 
 		# make a null-edit to refresh the dependences, otherwise the result does not change
-		my $content = $site->downloadPage($pageToCheckDependences);
-		$site->uploadPage($pageToCheckDependences, $content, "null-edit");
+		$site->touchPage($pageToCheckDependences);
 		
 		# add page to check dependences
 		$self->addPageToCheckTemplateDependence($pageToCheckDependences);
 		$self->addPageToCheckImageDependence($pageToCheckDependences);
 	    }
 	}
-
-	%pagesToCheckDependences = ();
 
 	$self->decrementCurrentTaskCount();
     }
@@ -366,7 +377,6 @@ sub addImageToDownload {
 	$image =~ tr/ /_/;
 
 	lock($imageDownloadMutex);
-#	unless ( exists($imageDoneQueue{$image}) || exists($imageDownloadQueue{$image}) ) {
 	unless ( exists($imageDownloadQueue{$image}) ) {
 	    $imageDownloadQueue{$image} = 1;
 	}
@@ -383,7 +393,6 @@ sub getImageToDownload {
 	($image) = keys(%imageDownloadQueue);
 
 	if ($image) { 
-#	    $self->addImageDone($image);
 	    delete($imageDownloadQueue{$image});
 	} else {
 	    $self->log("error", "empty image title found in getImageToDownload()");
@@ -399,14 +408,6 @@ sub getImageDownloadQueueSize {
     lock($imageDownloadMutex);
     return scalar(keys(%imageDownloadQueue));
 }
-
-#sub addImageDone {
-#    my $self = shift;
-#    my $image = shift;
-
-#    lock($imageDownloadMutex);
-#    $imageDoneQueue{$image} = 1;
-#}
 
 sub addImageError {
     my $self = shift;
@@ -451,7 +452,6 @@ sub uploadImages {
 		return unless ($site);
 	    }
 	    $processCount++;
-	    
 
 	    if ($site->uploadImage($image, $content, $summary)) {
 		$self->log("info", "Image '$image' successfuly uploaded in ".(time() - $timeOffset)."s.");
@@ -540,8 +540,6 @@ sub checkTemplates {
 		if (exists($dep->{"missing"}) || $self->checkCompletedPages()) {
 		    $toMirrorCount++;
 		    my $template = $dep->{"title"};
-		 
-		    #utf8::encode($template);
 
 		    # case of under page
 		    if ($template =~ /(^[^\:]+\:)(\/.*$)/ ) {
@@ -624,7 +622,6 @@ sub checkRedirects {
 
 	    foreach my $redirect (@$redirects) {
 		$toMirrorCount++;
-		#utf8::encode($redirect);
 		$self->addPageToDownload($redirect);
 		$self->addPageToUpload($redirect, "#REDIRECT[[$title]]", "redirect to $title", 1);
 	    }
@@ -709,8 +706,6 @@ sub checkImages {
 		if (exists($dep->{"missing"}) || $self->checkCompletedImages()) {
 		    $toMirrorCount++;
 		    my $image = $dep->{"title"};
-
-#		    utf8::encode($image);
 
 		    $image =~ s/Image://;
 
@@ -837,7 +832,6 @@ sub addPageToDownload {
 	$page =~ tr/ /_/;
 
 	lock($pageDownloadMutex);
-#	unless ( exists($pageDoneQueue{$page}) || exists($pageDownloadQueue{$page})) {
 	unless ( exists($pageDownloadQueue{$page})) {
 	    $pageDownloadQueue{$page} = 1;
 	}
@@ -855,7 +849,6 @@ sub getPageToDownload {
 	lock($pageDownloadMutex);
 	($page) = keys(%pageDownloadQueue);
 
-#	$self->addPageDone($page);
 	delete($pageDownloadQueue{$page});
     }
 
@@ -867,14 +860,6 @@ sub getPageDownloadQueueSize {
     lock($pageDownloadMutex);
     return scalar(keys(%pageDownloadQueue));
 }
-
-#sub addPageDone {
-#    my $self = shift;
-#    my $page = shift;
-
-#    lock($pageDownloadMutex);
-#    $pageDoneQueue{$page} = 1;
-#}
 
 sub addPageError {
     my $self = shift;
@@ -1059,9 +1044,7 @@ sub connectToMediawiki {
     $site->httpPassword($httpPass);
     $site->httpRealm($httpRealm);
 
-    if ($user) {
-	$site->login();
-    }
+    $site->setup();
 
     if ($site->{error}) {
 	$self->isRunnable(0);
@@ -1353,14 +1336,6 @@ sub getQueueStatus {
     lock($imageErrorMutex);
     $statusString .= "[imageErrorQueue]\n";
     $statusString .= queueHashToString(\%imageErrorQueue, 1);
-
-#    lock($pageDownloadMutex);
-#    $statusString .= "[pageDoneQueue]\n";
-#    $statusString .= queueHashToString(\%pageDoneQueue, 1);
-
-#    lock(%imageDoneQueue);
-#    $statusString .= "[imageDoneQueue]\n";
-#    $statusString .= queueHashToString(\%imageDoneQueue, 1);
 
     $statusString .= "[currentTaskCount]\n";
     $statusString .= $self->currentTaskCount()."\n";

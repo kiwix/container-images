@@ -28,7 +28,7 @@ my $ignoreImageDependences;
 
 my $checkCompletedPages;
 my $checkCompletedImages;
-
+my $useIncompletePagesAsInput;
 my $checkIncomingRedirects;
 
 my $noTextMirroring;
@@ -54,6 +54,7 @@ GetOptions(
            'checkCompletedPages' => \$checkCompletedPages,
            'noResume' => \$noResume,
            'noLog' => \$noLog,
+           'useIncompletePagesAsInput' => \$useIncompletePagesAsInput,
            'ignoreTemplateDependences' => \$ignoreTemplateDependences,
            'ignoreImageDependences' => \$ignoreImageDependences,
            'noTextMirroring' => \$noTextMirroring,
@@ -72,7 +73,7 @@ if (!$sourceHost || !$destinationHost ) {
     print "--sourcePath=[path] (example: w)\n\t\tPath in the URL to access to the source Mediawiki root\n\t";
     print "--destinationPath=[path] (example: w)\n\t\tPath in the URL to access to the destination Mediawiki root\n\t";
     print "--page=[page] (for example:Paris)\n\t\tPage name of the article you want to mirror. Can be used many time.\n\t";
-    print "--readFromStdin\n\t\tThe page names will be read as a carriage return separated list from STDIN.\n\t\tBe careful, you have to set the necessary passowrds in the command line if you want to use this option.\n\t";
+    print "--readFromStdin\n\t\tThe page names will be read as a carriage return separated list from STDIN.\n\t\tBe careful, you have to set the necessary passwords in the command line if you want to use this option.\n\t";
     print "--checkCompletedPages\n\t\tPages and templates which are already present in the destination Mediawiki will be mirrored.\n\t";
     print "--checkCompletedImages\n\t\tImage which are already present in the destination Mediawiki will be mirrored.\n\t";
     print "--checkIncomingRedirects\n\t\tUpload pages which have redirects pointing on it will have their redirect mirrored.\n\t";
@@ -80,7 +81,8 @@ if (!$sourceHost || !$destinationHost ) {
     print "--noLog\n\t\tDo not start a logging process.\n\t";
     print "--ignoreTemplateDependences\n\t\tDo not check for each downloaded page the text dependences (templates).\n\t";
     print "--ignoreImageDependences\n\t\tDo not check for each downloaded page the image dependences (images included in the page).\n\t";
-    print "--noTextMirroring\n\t\tDo not mirror any text. Can be useful to mirror only images (for example by ginving a list of picture pages).\n";
+    print "--noTextMirroring\n\t\tDo not mirror any text. Can be useful to mirror only images (for example by ginving a list of picture pages).\n\t";
+    print "--useIncompletePagesAsInput\n\t\tWill check dependences for all pages present in the destination wiki, and mirror lacking dependences.\n";
     exit;
 }
 
@@ -134,13 +136,18 @@ $mirror->noTextMirroring($noTextMirroring);
 # start the mirroring threads
 $mirror->startMirroring();
 
+# useIncompletePagesAsInput
+if ($useIncompletePagesAsInput) {
+    push(@pages, $mirror->getDestinationMediawikiIncompletePages());
+}
+
 # fill the queue of page to mirror
 $mirror->addPagesToMirror(@pages);
 
 # wait untile nothing is to do
 $mirror->wait();
 
-# print on STDOU a small report of queue status
+# print on STDOUT a small report of queue status
 unless ($noResume) {
     print $mirror->getQueueStatus();
 }

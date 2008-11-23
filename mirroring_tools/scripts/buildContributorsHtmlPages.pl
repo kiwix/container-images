@@ -108,7 +108,9 @@ foreach my $letter (@letters, 'others') {
 
     my $contributorsString = "";
     foreach my $contributor (keys(%{$contributors{$letter}})) {
-	$contributorsString .= $contributor.", ";
+	if ($contributor) {
+	    $contributorsString .= $contributor.", ";
+	}
     }
     my $newContributorsString = substr($contributorsString, 0, length($contributorsString) - 2);
     $contributorsString = $newContributorsString;
