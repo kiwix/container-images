@@ -6,6 +6,10 @@ use XML::Simple;
 use Data::Dumper;
 use LWP::UserAgent;
 use URI;
+use Encode;
+
+use threads;
+use threads::shared;
 
 my $indexUrl;
 my $apiUrl;
@@ -23,10 +27,10 @@ my $httpRealm;
 my $logger;
 my $loggerMutex : shared = 1;
 
-my $hasFilePath;
-my $hasWriteApi;
-my $editToken;
+our %filePathCache : shared;
+our %writeApiCache : shared;
 
+my $editToken;
 my $lastRequestTimestamp = 0;
 
 sub new
@@ -39,6 +43,8 @@ sub new
     # create third parth tools
     $self->userAgent(LWP::UserAgent->new());
     $self->userAgent()->cookie_jar( {} );
+   
+    # TODO set a timeout of 20-20 s.
 
     # set default protocol
     unless ($self->protocol()) {
@@ -91,10 +97,6 @@ sub setup {
 	}
     }
 
-    # check filepath & api
-    $self->hasFilePath(1);
-    $self->hasWriteApi(1);
-
     # edit token
     $self->loadEditToken();
     
@@ -121,39 +123,41 @@ sub deletePage {
 }
 
 sub hasFilePath {
-    my ($self, $compute) = @_;
-
-    if ($compute) {
+    my ($self) = @_;
+    
+    lock(%filePathCache);
+    unless (exists($filePathCache{$self->hostname()})) {
 	my $httpResponse = $self->makeHttpGetRequest($self->indexUrl()."title=Special:Version");
 
 	if ($httpResponse->content() =~ /filepath/i ) {
 	    $self->log("info", "Site ".$self->hostname()." has the FilePath extension\n");
-	    $hasFilePath = 1;
+	    $filePathCache{$self->hostname()} = 1;
 	} else {
 	    $self->log("info", "Site ".$self->hostname()." does not have the FilePath extension\n");
-	    $hasFilePath = 0;
+	    $filePathCache{$self->hostname()} = 0;
 	}
     }
     
-    return $hasFilePath;
+    return $filePathCache{$self->hostname()};
 }
 
 sub hasWriteApi {
-    my ($self, $compute) = @_;
+    my ($self) = @_;
 
-    if ($compute) {
-	my $httpResponse = $self->makeHttpPostRequest($self->apiUrl().'action=edit&format=xml');
+    lock(%writeApiCache);
+    unless (exists($writeApiCache{$self->hostname()})) {
+	my $httpResponse = $self->makeApiRequest( { 'action' => 'edit', 'format' => 'xml' }, "POST" );
 
 	if ($httpResponse->content() =~ /notitle/i ) {
 	    $self->log("info", "Site ".$self->hostname()." has the Write API available.\n");
-	    $hasWriteApi = 1;
+	    $writeApiCache{$self->hostname()} = 1;
 	} else {
 	    $self->log("info", "Site ".$self->hostname()." does not have the Write API available.\n");
-	    $hasWriteApi = 0;
+	    $writeApiCache{$self->hostname()} = 0;
 	}
     }
 
-    return $hasWriteApi;
+    return $writeApiCache{$self->hostname()};
 }
 
 sub protocol {
@@ -271,6 +275,7 @@ sub touchPage {
 
 sub uploadPage {
     my ($self, $title, $content, $summary, $createOnly) = @_;
+    my $returnValue = 0;
 
     if ($self->hasWriteApi()) {
 	unless ($self->editToken()) {
@@ -292,19 +297,21 @@ sub uploadPage {
 	    $postValues->{'createonly'} = '1';
 	}
 	
-	my $httpResponse = $self->makeHttpPostRequest($self->apiUrl(), $postValues);
+	my $httpResponse = $self->makeApiRequest($postValues, "POST");
 
-	if ($httpResponse->content =~ /success/i ) {
-	    if ($httpResponse->content =~ /nochange=\"\"/i ) {
-		return 2;
+	if ($httpResponse->content() =~ /success/i ) {
+	    if ($httpResponse->content() =~ /nochange=\"\"/i ) {
+		$returnValue = 2;
+	    } else {
+		$returnValue = 1;
 	    }
-	    return 1;
 	}
     } else {
 	$self->log("error", "Unable to write page '".$title."' on '".$self->hostname()."'. It works only with write api.");
+	$returnValue = 0;
     }
     
-    return 0;
+    return $returnValue;
 }
 
 sub makeHttpRequest {
@@ -337,11 +344,11 @@ sub makeHttpPostRequest {
     my $continue;
 
     do {
-	$httpResponse = eval { $self->makeHttpRequest("POST", $url, $httpHeaders || { Content_Type  => 'multipart/form-data' }, $formValues || {}); };
+	$httpResponse = eval { $self->makeHttpRequest("POST", $url, $httpHeaders || {}, $formValues || {}); };
 
 	if ($@) {
 	    $continue += 1;
-	    $self->log("info", "Unable to make makeHttpPostRequest, will try again in $continue second(s).");
+	    $self->log("info", "Unable to make makeHttpPostRequest (".$@."), will try again in $continue second(s).".Dumper($formValues->{'wpDestFile'}));
 	    sleep($continue);
 	} else {
 	    $continue = 0;
@@ -353,13 +360,29 @@ sub makeHttpPostRequest {
 }
 
 sub makeHttpGetRequest {
-    my ($self, $url, $httpHeaders) = @_;
+    my ($self, $url, $httpHeaders, $values) = @_;
     
+    if ($values) {
+	my $urlObj = URI->new($url);
+	$urlObj->query_form($values);
+	return $self->makeHttpGetRequest($urlObj, $httpHeaders);
+    }
+
     return $self->makeHttpRequest("GET", $url, $httpHeaders || {});
 }
 
+sub makeIndexRequest {
+    my $self = shift;
+    return $self->makeSiteRequest($self->indexUrl(), @_);
+}
+
 sub makeApiRequest {
-    my ($self, $values, $method) = @_;
+    my $self = shift;
+    return $self->makeSiteRequest($self->apiUrl(), @_);
+}
+
+sub makeSiteRequest {
+    my ($self, $url, $values, $method) = @_;
     my $httpResponse;
     my $httpHeaders = { "Accept-Charset" => "utf-8" };
     my $count=0;
@@ -372,22 +395,21 @@ sub makeApiRequest {
     do {
 	if ($httpResponse) {
 	    $count++;
-	    $self->log("info", "Unable to make the following API request ($count time) on '".$self->apiUrl()."':\n".Dumper($values));
+	    $self->log("info", "Unable to make the following API request ($count time) on '".$url."':\n".Dumper($values));
 	    sleep($count);
 	}
 
 	if ($method eq "POST") {
-	    $httpResponse = $self->makeHttpGetRequest($self->apiUrl(), $values);
+	    $httpResponse = $self->makeHttpPostRequest($self->apiUrl(), $values);
 	} elsif ($method eq "GET") {
-	    my $url = URI->new($self->apiUrl());
-	    $url->query_form($values);
-	    $httpResponse = $self->makeHttpGetRequest($url, $httpHeaders);
+	    my $urlObj = URI->new($url);
+	    $urlObj->query_form($values);
+	    $httpResponse = $self->makeHttpGetRequest($urlObj, $httpHeaders);
 	} else {
 	    die ("Method has to be GET or POST.");
 	}
 
 	if ($httpResponse->code() != 200) {
-	    $self->log("info", $httpResponse->content());
 	    $loop = 1;
 	} else {
 	    $loop = 0;
@@ -417,26 +439,62 @@ sub makeHashFromXml {
     return $hash;
 }
 
-sub downloadImage {
+sub getImageUrl {
     my ($self, $image) = @_;
 
-    return $self->makeHttpGetRequest($self->indexUrl()."title=Special:FilePath&file=".uri_escape($image))->content();
+    $self->userAgent()->requests_redirectable([]);
+    my $url =  $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:FilePath', 'file' => $image } )->header('location') ;
+    $self->userAgent()->requests_redirectable(['HEAD', 'POST', 'GET']);
+
+    return $url;
+}
+
+sub downloadImage {
+    my ($self, $image) = @_;
+    return $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:FilePath', 'file' => $image } )->content();
+}
+
+sub uploadImageFromUrl {
+    my($self, $title, $url, $summary) = @_;
+    my $httpPostRequestParams = {
+	    'title' => 'Special:Upload',
+	    'wpSourceType' => "web",
+	    'wpUploadFileURL' => $url,
+	    'wpDestFile' => encode_utf8($title), # it seems that WWW::Mechanize does not handle correctly UTF8 strings
+	    'wpUploadDescription' => $summary ? $summary : "",
+	    'wpUpload' => 'upload',
+	    'wpIgnoreWarning' => 'true'
+    };
+
+    my $httpResponse = $self->makeHttpPostRequest(
+	$self->indexUrl(),
+	$httpPostRequestParams,
+	{ Content_Type  => 'multipart/form-data' }
+	);
+
+    my $status = $httpResponse->code == 302;
+
+    return $status;
 }
 
 sub uploadImage {
     my($self, $title, $content, $summary) = @_;
-
-    my $httpResponse = $self->makeHttpPostRequest(
-	$self->indexUrl().'title=Special:Upload',
-	{
-	    'wpUploadFile' => [ undef, $title, Content => $content ],
-	    'wpDestFile' => $title,
+    my $httpPostRequestParams = {
+	    'title' => 'Special:Upload',
+	    'wpSourceType' => "file",
+	    'wpUploadFile' => [ undef, encode_utf8($title), Content => $content ],
+	    'wpDestFile' => encode_utf8($title), # it seems that WWW::Mechanize does not handle correctly UTF8 strings
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
 	    'wpIgnoreWarning' => 'true'
-	},
+    };
+
+    my $httpResponse = $self->makeHttpPostRequest(
+	$self->indexUrl(),
+	$httpPostRequestParams,
+	{ Content_Type  => 'multipart/form-data' }
 	);
-    
+
     my $status = $httpResponse->code == 302;
 
     return $status;
@@ -449,9 +507,8 @@ sub DESTROY
 sub loadEditToken {
     my $self = shift;
     
-    my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&prop=info&intoken=edit&format=xml&titles=42");
-
-    if ($httpResponse->content =~ /edittoken=\"(.*)\"/ ) {
+    my $httpResponse = $self->makeApiRequest( { 'action' => 'query', 'prop' => 'info', 'intoken' => 'edit', 'format' => 'xml', 'titles' => '42' } , 'GET');
+    if ($httpResponse->content() =~ /edittoken=\"(.*)\"/ ) {
 	$self->editToken($1);
 	return 1;
     }
@@ -540,22 +597,29 @@ sub embeddedIn {
     my @links;
     my $continue;
     my $xml;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'eititle' => $title,
+	'format' => 'xml',
+	'eifilterredir' => 'nonredirects',
+	'eilimit'=> '500',
+	'list' => 'embeddedin',
+    };
 
     do {
-	my $httpResponse = $self->makeHttpGetRequest($self->apiUrl()."action=query&format=xml&eifilterredir=nonredirects&list=embeddedin&eilimit=500&eititle=".uri_escape($title).($continue ? "&eicontinue=".$continue : "") );
-
-	if(!$httpResponse->is_success()) {
-	    $self->log("info", "Unable to get the embedded in for '".$title."' by '".$self->hostname()."'.");
-	    last;
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{'eicontinue'} = $continue;
 	}
-	else
-	{
-	    $xml = XMLin( $httpResponse->content() , ForceArray => [('ei')] );
 
-	    foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
-		push( @links, $hash->{title} );
-	    }
+	# make the http request                                                                                                                       
+        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
+	$xml = $self->makeHashFromXml($httpResponse->content(), 'ei' );
+
+	foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
+	    push( @links, $hash->{title} );
 	} 
+
     } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue});
 
     return @links;

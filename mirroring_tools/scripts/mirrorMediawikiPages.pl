@@ -1,10 +1,13 @@
 #!/usr/bin/perl
+binmode STDOUT, ":utf8";
+binmode STDIN, ":utf8";
 
-#use encoding 'utf8'; 
+use utf8;
 
 use lib "../";
 use lib "../Mediawiki/";
 
+use Encode;
 use strict;
 use warnings;
 use Getopt::Long;
@@ -142,7 +145,12 @@ if ($useIncompletePagesAsInput) {
 }
 
 # fill the queue of page to mirror
-$mirror->addPagesToMirror(@pages);
+foreach my $page (@pages) {
+    unless (Encode::is_utf8($page)) {
+	$page = decode_utf8($page);
+    }
+    $mirror->addPagesToMirror($page);
+}
 
 # wait untile nothing is to do
 $mirror->wait();
