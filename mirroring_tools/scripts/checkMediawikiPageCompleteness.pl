@@ -1,4 +1,8 @@
 #!/usr/bin/perl
+binmode STDOUT, ":utf8";
+binmode STDIN, ":utf8";
+
+use utf8;
 
 use lib "../";
 use lib "../Mediawiki/";
@@ -8,6 +12,7 @@ use warnings;
 use Getopt::Long;
 use Data::Dumper;
 use MediaWiki;
+use Encode;
 
 # log
 use Log::Log4perl;
@@ -52,6 +57,11 @@ if ($checkAllPages || !scalar(@pages)) {
 }
 
 foreach my $page (@pages) {
+
+    unless (Encode::is_utf8($page)) {
+	$page = decode_utf8($page);
+    }
+
     if ($site->isIncompletePage($page)) {
 	$logger->info("Page '$page' is incomplete by '".$host."'.");
 	print $page."\n";
