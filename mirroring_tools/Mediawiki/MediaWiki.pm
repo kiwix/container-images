@@ -7,6 +7,7 @@ use Data::Dumper;
 use LWP::UserAgent;
 use URI;
 use Encode;
+use Getargs::Long;
 
 use threads;
 use threads::shared;
@@ -43,8 +44,6 @@ sub new
     # create third parth tools
     $self->userAgent(LWP::UserAgent->new());
     $self->userAgent()->cookie_jar( {} );
-   
-    # TODO set a timeout of 20-20 s.
 
     # set default protocol
     unless ($self->protocol()) {
@@ -253,14 +252,18 @@ sub downloadPage {
 	'rvprop' => 'content',
     };
  
-    # make the http request                                                                                                                       
-    my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-    $xml = $self->makeHashFromXml($httpResponse->content());
+    # make the http request and parse response
+    $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams);
 
     if (exists($xml->{query}->{pages}->{page}->{missing})) {
 	return;
     } else {
 	my $content = $xml->{query}->{pages}->{page}->{revisions}->{rev};
+	
+	unless (Encode::is_utf8($content)) {
+	    $content = decode_utf8($content);
+	}	
+
 	return ref($content) eq "HASH" ? "" : $content;
     }
     
@@ -283,11 +286,11 @@ sub uploadPage {
 		$self->log("info", "Unable to load edit token for ".$self->hostname());
 	    }
 	}
-	
+
 	my $postValues = {
 	    'action' => 'edit',
 	    'token' => $self->editToken(),
-	    'text' => $content,
+	    'text' => $content, 
 	    'summary' => $summary,
 	    'title' => $title,
 	    'format' => 'xml',
@@ -297,15 +300,29 @@ sub uploadPage {
 	    $postValues->{'createonly'} = '1';
 	}
 	
-	my $httpResponse = $self->makeApiRequest($postValues, "POST");
-
-	if ($httpResponse->content() =~ /success/i ) {
-	    if ($httpResponse->content() =~ /nochange=\"\"/i ) {
-		$returnValue = 2;
-	    } else {
-		$returnValue = 1;
+	my $retryCounter = 0;
+	do {
+	    my $httpResponse = $self->makeApiRequest($postValues, "POST");
+	    
+	    if ($httpResponse->content() =~ /success/i || $httpResponse->content() =~ /articleexists/i ) {
+		if ($httpResponse->content() =~ /nochange=\"\"/i) {
+		    $returnValue = 2;
+		} else {
+		    $returnValue = 1;
+		}
+	    } elsif ($httpResponse->content() =~ /badtoken/i) {
+		$self->loadEditToken();
+		$postValues->{'token'} = $self->editToken();
+		$self->log("info", "Reloading edit token...");
+		$returnValue = 0;
 	    }
-	}
+
+	    unless ($returnValue) {
+		$self->log("info", "Was unable to upload correctly page '$title' (".$httpResponse->content()."), will retry in ".($retryCounter++)." s.");
+		sleep($retryCounter);
+	    }
+	} while (!$returnValue);
+
     } else {
 	$self->log("error", "Unable to write page '".$title."' on '".$self->hostname()."'. It works only with write api.");
 	$returnValue = 0;
@@ -384,23 +401,17 @@ sub makeApiRequest {
 sub makeSiteRequest {
     my ($self, $url, $values, $method) = @_;
     my $httpResponse;
-    my $httpHeaders = { "Accept-Charset" => "utf-8" };
+    my $httpHeaders = { "Accept-Charset" => "utf-8"};
     my $count=0;
     my $loop=0;
 
-    unless ($method) {
+    unless (defined($method)) {
 	$method = "GET";
     }
 
     do {
-	if ($httpResponse) {
-	    $count++;
-	    $self->log("info", "Unable to make the following API request ($count time) on '".$url."':\n".Dumper($values));
-	    sleep($count);
-	}
-
 	if ($method eq "POST") {
-	    $httpResponse = $self->makeHttpPostRequest($self->apiUrl(), $values);
+	    $httpResponse = $self->makeHttpPostRequest($self->apiUrl(), $values, $httpHeaders);
 	} elsif ($method eq "GET") {
 	    my $urlObj = URI->new($url);
 	    $urlObj->query_form($values);
@@ -410,6 +421,9 @@ sub makeSiteRequest {
 	}
 
 	if ($httpResponse->code() != 200) {
+	    $count++;
+	    $self->log("info", "Unable to make the following API request, HTTP error code was '".$httpResponse->code()."', ($count time) on '".$url."':\n".Dumper($values));
+	    sleep($count);
 	    $loop = 1;
 	} else {
 	    $loop = 0;
@@ -430,13 +444,40 @@ sub makeHashFromXml {
 	push(@params, ForceArray => [($forceArray)] );
     }
     
-    my $hash = XMLin( @params);
+    my $hash = eval { XMLin( @params) } ;
     
     if ($@ || !$hash) {
-	die("Unable to parse the following XML:\n".Dumper($xml));
+	$self->log("info", "Unable to parse the following XML:\n".Dumper($xml));
+	$hash = undef;
+    }
+
+    unless (ref($hash) eq "HASH") {
+	$self->log("info", "XMLin result is not a HASH");
+	$hash = undef;
     }
 
     return $hash;
+}
+
+sub makeApiRequestAndParseResponse {
+    my $self = shift;
+    my ($values, $forceArray, $method) = 
+	xgetargs(@_, "values"=>"HASH", "forceArray"=>['s', undef], "method"=>['s', undef])  ;
+    my $xml;
+    my $httpResponse;
+
+    do {
+	$httpResponse = $self->makeApiRequest($values, $method);
+	$xml = $self->makeHashFromXml($httpResponse->content(), $forceArray );
+	
+	unless ($xml) {
+	    $self->log("info", "Unable to makeAndParse API request, will retry...");
+	    sleep(1);
+	}
+
+    } while (!$xml);
+
+    return $xml;
 }
 
 sub getImageUrl {
@@ -456,11 +497,12 @@ sub downloadImage {
 
 sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
+
     my $httpPostRequestParams = {
 	    'title' => 'Special:Upload',
 	    'wpSourceType' => "web",
 	    'wpUploadFileURL' => $url,
-	    'wpDestFile' => encode_utf8($title), # it seems that WWW::Mechanize does not handle correctly UTF8 strings
+	    'wpDestFile' => $title, 
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
 	    'wpIgnoreWarning' => 'true'
@@ -468,8 +510,7 @@ sub uploadImageFromUrl {
 
     my $httpResponse = $self->makeHttpPostRequest(
 	$self->indexUrl(),
-	$httpPostRequestParams,
-	{ Content_Type  => 'multipart/form-data' }
+	$httpPostRequestParams
 	);
 
     my $status = $httpResponse->code == 302;
@@ -479,11 +520,12 @@ sub uploadImageFromUrl {
 
 sub uploadImage {
     my($self, $title, $content, $summary) = @_;
+
     my $httpPostRequestParams = {
 	    'title' => 'Special:Upload',
 	    'wpSourceType' => "file",
-	    'wpUploadFile' => [ undef, encode_utf8($title), Content => $content ],
-	    'wpDestFile' => encode_utf8($title), # it seems that WWW::Mechanize does not handle correctly UTF8 strings
+	    'wpUploadFile' => [ undef, $title, Content => $content ],
+	    'wpDestFile' => $title,
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
 	    'wpIgnoreWarning' => 'true'
@@ -511,6 +553,8 @@ sub loadEditToken {
     if ($httpResponse->content() =~ /edittoken=\"(.*)\"/ ) {
 	$self->editToken($1);
 	return 1;
+    } else {
+	$self->log("info", "Was unable to loadEditToken correctly : (".$httpResponse->content().").");
     }
     
     return 0;
@@ -576,11 +620,10 @@ sub dependences {
 	if ($continue) {
 	    $httpPostRequestParams->{$continueProperty} = $continue;
 	}
-
-	# make the http request                                                                                                                       
-        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'page' );
 	
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page');
+
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $dep (@{$xml->{query}->{pages}->{page}}) {
 		$dep->{title} = $dep->{title} ;
@@ -612,13 +655,12 @@ sub embeddedIn {
 	    $httpPostRequestParams->{'eicontinue'} = $continue;
 	}
 
-	# make the http request                                                                                                                       
-        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'ei' );
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'ei');
 
 	foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
 	    push( @links, $hash->{title} );
-	} 
+	}
 
     } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue});
 
@@ -648,11 +690,10 @@ sub allPages {
 	if ($continue) {
 	    $httpPostRequestParams->{'apfrom'} = $continue;
 	}
-
-	# make the http request                                                                                                                       
-        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'p' );
 	
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'p');
+
 	if (exists($xml->{query}->{allpages}->{p})) {
 	    foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
 		if ($page->{title}) {
@@ -685,9 +726,8 @@ sub allImages {
 	    $httpPostRequestParams->{'gaifrom'} = $continue;
 	}
 
-	# make the http request                                                                                                                       
-        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'page' );	
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page');
 
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
@@ -724,9 +764,8 @@ sub redirects {
 	    $httpPostRequestParams->{'blcontinue'} = $continue;
 	}
 
-	# make the http request                                                                                                                       
-        my $httpResponse = $self->makeApiRequest($httpPostRequestParams);
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'bl' );	
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'bl');
 	
 	if (exists($xml->{query}->{backlinks}->{bl})) {
 	    foreach my $redirect (@{$xml->{query}->{backlinks}->{bl}}) {
@@ -774,10 +813,9 @@ sub history {
 	if ($continue) {
             $httpPostRequestParams->{'rvstartid'} = $continue;
         }
-	
-	# make the http request
-	my $httpResponse = $self->makeApiRequest($httpPostRequestParams, "GET");
-	$xml = $self->makeHashFromXml($httpResponse->content(), 'rev' );	
+
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, method=>"GET", forceArray=>'rev');
 
 	# merge with the history (if necessary)
 	if ($history) {
@@ -808,6 +846,76 @@ sub history {
     }
 
     return $history;
+}
+
+sub listCategoryEntries {
+    my($self, $category, $explorationDepth, $namespace) = @_;
+    my @entries;
+    my $continue;
+    my $xml;
+    my @categoryStack = ("Category:".$category, "|");
+    my $currentDepth = 0;
+    my %doneCategories;
+
+    while ( ($category = shift(@categoryStack)) && ($currentDepth < $explorationDepth) ) {
+
+	if ($category eq "|") {
+	    $currentDepth++;
+	    $self->log("info", "Still ".scalar(@categoryStack)." categories width depth $currentDepth to check...");
+	    if (scalar(@categoryStack)) {
+		push(@categoryStack, "|");
+		next;
+	    }
+
+	    last;
+	}
+
+	if (exists($doneCategories{$category})) {
+	    $self->log("info", "'$category' already check for sub categories.");
+	    next;
+	}
+
+	sleep(1);
+
+	do {
+	    my $httpPostRequestParams = {
+		'action' => 'query',
+		'cmtitle' => $category,
+		'format' => 'xml',
+		'list' => 'categorymembers',
+		'cmlimit' => '500',
+		'cmnamespace' =>  "14|$namespace", 
+	    };
+	    
+	    # set the appropriate offset
+	    if ($continue) {
+		$httpPostRequestParams->{'cmcontinue'} = $continue;
+	    }
+
+	    # make the http request and parse response
+	    $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'cm');
+
+	    if (exists($xml->{query}->{categorymembers}->{cm})) {
+		foreach my $entry (@{$xml->{query}->{categorymembers}->{cm}}) {
+		    if ($entry->{ns} eq "14") {
+			push(@categoryStack, $entry->{title}) if ($entry->{title});
+		    }
+
+		    if (defined($namespace) && !($namespace eq $entry->{ns})) {
+			push(@entries, $entry->{title}) if ($entry->{title});
+			next;
+		    }
+
+		    push(@entries, $entry->{title}) if ($entry->{title});
+		}
+	    }
+
+	    $doneCategories{$category} = 1;
+
+	} while ($continue = $xml->{"query-continue"}->{"categorymembers"}->{"cmcontinue"});
+    }
+
+    return(@entries);    
 }
 
 # logging

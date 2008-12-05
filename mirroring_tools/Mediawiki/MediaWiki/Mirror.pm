@@ -235,39 +235,19 @@ sub getDestinationMediawikiIncompletePages {
 # check embedded in pages
 sub checkEmbeddedInPages {
     my $self = shift;
-    my $processCount = 0;
-    my $site;
-
-    while ( $self->isRunnable() ) {
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					 $self->destinationMediawikiPassword(), 
+					 $self->destinationMediawikiHost(),
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+					 $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
+    while ( $self->isRunnable() && $site) {
 	my %pagesToCheckDependences;
-	
-	# reconnect every 42 processes (cause memory leak)
-	unless ($processCount % 42) {
-	    undef($site);
-	    $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-					      $self->destinationMediawikiPassword(), 
-					      $self->destinationMediawikiHost(),
-					      $self->destinationMediawikiPath(),
-					      $self->destinationHttpUsername(),
-					      $self->destinationHttpPassword(),
-					      $self->destinationHttpRealm());
-	    
-	    return unless ($site);
-	}
-
-	# wait embeddedInDelay() seconds
-
-#	my $counter = 0;
-#	do {
-#	    $counter += $self->delay();
-#	    sleep($self->delay());
-#	} while ( ($counter < $self->embeddedInDelay()) && $self->isRunnable());
 
 	while ( !$self->getEmbeddedInQueueSize() && $self->isRunnable() ) {
 	    sleep($self->delay());
 	}
-
-	$processCount++;
 
 	$self->incrementCurrentTaskCount();
 
@@ -352,29 +332,20 @@ sub downloadImages {
     my $timeOffset;
     my $content;
     my $image;
-    my $processCount = 0;
-    my $site;
+    my$site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+					$self->sourceMediawikiPassword(),
+					$self->sourceMediawikiHost(),
+					$self->sourceMediawikiPath(),
+					$self->sourceHttpUsername(),
+					$self->sourceHttpPassword(),
+					$self->sourceHttpRealm());
 
-    while ($self->isRunnable()) {
+    while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	$image = $self->getImageToDownload();
 
 	if ($image) {
 	    $self->incrementCurrentTaskCount();
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
-						     $self->sourceMediawikiPassword(),
-						     $self->sourceMediawikiHost(),
-						     $self->sourceMediawikiPath(),
-						     $self->sourceHttpUsername(),
-						     $self->sourceHttpPassword(),
-						     $self->sourceHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 
 	    if ($self->uploadFilesFromUrl()) {
 		$content = $site->getImageUrl($image);
@@ -460,29 +431,20 @@ sub existsImageError {
 sub uploadImages {
     my $self = shift;
     my $timeOffset;
-    my $processCount = 0;
-    my $site;
-
-    while ($self->isRunnable()) {
+    my	$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					  $self->destinationMediawikiPassword(),
+					  $self->destinationMediawikiHost(),
+					  $self->destinationMediawikiPath(),
+					  $self->destinationHttpUsername(),
+					  $self->destinationHttpPassword(),
+					  $self->destinationHttpRealm());
+    
+    while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	my ($image, $content, $summary) = $self->getImageToUpload();
 
 	if ($image) {
 	    $self->incrementCurrentTaskCount();
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-						  $self->destinationMediawikiPassword(),
-						  $self->destinationMediawikiHost(),
-						  $self->destinationMediawikiPath(),
-						  $self->destinationHttpUsername(),
-						  $self->destinationHttpPassword(),
-						  $self->destinationHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 
 	    my $status;
 	    if ($self->uploadFilesFromUrl()) {
@@ -554,27 +516,18 @@ sub uploadFilesFromUrl {
 # check template dependences
 sub checkTemplates {
     my $self = shift;
-    my $processCount = 0;
-    my $site;
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					 $self->destinationMediawikiPassword(),
+					 $self->destinationMediawikiHost(),
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+					 $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
 
-    while ($self->isRunnable()) {
+    while ($self->isRunnable() && $site) {
 	my $title = $self->getPageToCheckTemplateDependence();
 
 	if ($title) {
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-						  $self->destinationMediawikiPassword(),
-						  $self->destinationMediawikiHost(),
-						  $self->destinationMediawikiPath(),
-						  $self->destinationHttpUsername(),
-						  $self->destinationHttpPassword(),
-						  $self->destinationHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 
 	    $self->incrementCurrentTaskCount();
 	    my @deps = $site->templateDependences($title);
@@ -705,6 +658,10 @@ sub getPageToCheckRedirects {
 	}
     }
 
+    unless (Encode::is_utf8($page)) {
+	$page = decode_utf8($page);
+    }
+
     return $page;
 }
 
@@ -724,28 +681,20 @@ sub checkIncomingRedirects {
 # check image dependences
 sub checkImages {
     my $self = shift;
-    my $site;    
-    my $processCount = 0;
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					 $self->destinationMediawikiPassword(),
+					 $self->destinationMediawikiHost(),
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+					 $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
+    
 
-    while ($self->isRunnable()) {
+    while ($self->isRunnable() && $site) {
 	my $title = $self->getPageToCheckImageDependence();
 
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-						  $self->destinationMediawikiPassword(),
-						  $self->destinationMediawikiHost(),
-						  $self->destinationMediawikiPath(),
-						  $self->destinationHttpUsername(),
-						  $self->destinationHttpPassword(),
-						  $self->destinationHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 
 	    my @deps = $site->imageDependences($title);
 	    my $toMirrorCount = 0;
@@ -824,32 +773,23 @@ sub downloadPages {
     my $history;
     my $content;
     my $timeOffset;
-    my $processCount = 0;
-    my $site;
+    my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+					 $self->sourceMediawikiPassword(),
+					 $self->sourceMediawikiHost(),
+					 $self->sourceMediawikiPath(),
+					 $self->sourceHttpUsername(),
+					 $self->sourceHttpPassword(),
+					 $self->sourceHttpRealm());
 
     my $revisionCallback = $self->revisionCallback();
 
-    while ($self->isRunnable()) {
+    while ($self->isRunnable() && $site) {
 	$id = "";
 	$timeOffset = time();
 	$title = $self->getPageToDownload();
 	
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
-						  $self->sourceMediawikiPassword(),
-						  $self->sourceMediawikiHost(),
-						  $self->sourceMediawikiPath(),
-						  $self->sourceHttpUsername(),
-						  $self->sourceHttpPassword(),
-						  $self->sourceHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 
 	    $content = $site->downloadPage($title);
 
@@ -955,29 +895,20 @@ sub uploadPages {
     my $timeOffset;
     my $redirectTarget;
     my $status;
-    my $site;
-    my $processCount = 0;
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					 $self->destinationMediawikiPassword(),
+					 $self->destinationMediawikiHost(),
+					 $self->destinationMediawikiPath(),
+					 $self->destinationHttpUsername(),
+					 $self->destinationHttpPassword(),
+					 $self->destinationHttpRealm());
 
-    while ($self->isRunnable()) {
+    while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	my ($title, $content, $summary, $ignoreRedirect) = $self->getPageToUpload();
 
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-
-	    # reconnect every 42 processes (cause memory leak)
-	    unless ($processCount % 42) {
-		undef($site);
-		$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
-						  $self->destinationMediawikiPassword(),
-						  $self->destinationMediawikiHost(),
-						  $self->destinationMediawikiPath(),
-						  $self->destinationHttpUsername(),
-						  $self->destinationHttpPassword(),
-						  $self->destinationHttpRealm());
-		return unless ($site);
-	    }
-	    $processCount++;
 	    
 	    # ist the page a redirection page
 	    $redirectTarget = $self->isRedirectContent($content);
@@ -998,8 +929,12 @@ sub uploadPages {
 	    if ($status) {
 		if ($redirectTarget) {
 		    if ($self->followRedirects() && !$ignoreRedirect && $status eq "1") {
-			$self->log("info", "Page '$title' is a redirect to '$redirectTarget'.");
-			$self->addPageToDownload($redirectTarget, 1);
+			if ($redirectTarget =~ /$title/i) {
+			    $self->log("info", "Page '$title' is a redirect to '$title' : will be ignored.");			    
+			} else {
+			    $self->log("info", "Page '$title' is a redirect to '$redirectTarget'.");
+			    $self->addPageToDownload($redirectTarget, 1);
+			}
 		    }
 		} else {
 		    if ($self->checkTemplateDependences()) {
@@ -1093,8 +1028,6 @@ sub connectToMediawiki {
     $site->httpRealm($httpRealm);
 
     $site->setup();
-
-    $self->log("info", "------------ connection to the $host mediawiki. --------------");
 
     if ($site->{error}) {
 	$self->isRunnable(0);
@@ -1209,7 +1142,10 @@ sub isRedirectContent {
     my $content = shift;
 
     if ( $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/i ) {
-	return $1;
+	my $title = $1;
+	$title =~ tr/ /_/;
+	$title = lcfirst($title);
+	return $title;
     }
     return "";
 }
