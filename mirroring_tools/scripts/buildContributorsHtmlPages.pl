@@ -76,6 +76,7 @@ if ($file) {
 }
 
 # open the html template
+$logger->info("Read template file '$templateFile'.");
 my $template = HTML::Template->new(filename => $templateFile);
 
 # build letter hash
@@ -107,7 +108,10 @@ foreach my $letter (@letters, 'others') {
     $logger->info("Creating '$letter' file...");    
 
     my $contributorsString = "";
-    foreach my $contributor (keys(%{$contributors{$letter}})) {
+
+    my @contributors =  sort(keys(%{$contributors{$letter}}));
+
+    foreach my $contributor (@contributors) {
 	if ($contributor) {
 	    $contributorsString .= $contributor.", ";
 	}
