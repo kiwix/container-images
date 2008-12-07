@@ -618,12 +618,11 @@ sub checkRedirects {
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
 
-	    my $redirects = $site->redirects($title);
+	    my @redirects = $site->redirects($title);
 	    my $toMirrorCount = 0;
 
-	    foreach my $redirect (@$redirects) {
+	    foreach my $redirect (@redirects) {
 		$toMirrorCount++;
-		$self->addPageToDownload($redirect);
 		$self->addPageToUpload($redirect, "#REDIRECT[[$title]]", "redirect to $title", 1);
 	    }
 	    $self->log("info", "$toMirrorCount redirects found for '$title'");
