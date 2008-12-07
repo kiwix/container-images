@@ -105,19 +105,20 @@ sub setup {
 sub deletePage {
     my ($self, $page) = @_;
 
-    my $httpResponse = $self->makeHttpPostRequest(
-	$self->apiUrl(),
+    my $httpResponse = $self->makeApiRequest(
 	{
 	    "action" => "delete",
 	    "title" => $page,
 	    "token" => $self->editToken(),
 	    "format"=> "xml",
 	},
+	"POST"
 	);
 
     if ( $httpResponse->content() =~ /\<error\ /) {
 	return 0;
     }
+
     return 1;
 }
 
@@ -273,7 +274,9 @@ sub downloadPage {
 sub touchPage {
     my ($self, $page) = @_;
     my $content = $self->downloadPage($page);
-    $self->uploadPage($page, $content, "null-edit");
+    if ($content) {
+	$self->uploadPage($page, $content, "null-edit");
+    }
 }
 
 sub uploadPage {
@@ -775,6 +778,42 @@ sub redirects {
     } while ($continue = $xml->{"query-continue"}->{"backlinks"}->{"blcontinue"});
 
     return(@redirects);
+}
+
+sub exists {
+    my $self = shift;
+    my @pages = @_;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'prop' => 'info',
+        'format' => 'xml'
+    };
+    my %pages;
+    my $xml;
+    my $step=10;
+
+    do {
+
+	my $titles = "";
+	for (my $i=0; $i<$step; $i++) {
+	    last unless (scalar(@pages));
+	    $titles .= shift(@pages);
+	    $titles .= "|" unless ($i == $step-1 || !scalar(@pages));
+	}
+
+	$httpPostRequestParams->{titles} = $titles;
+
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page');
+	
+	if (exists($xml->{query}->{pages}->{page})) {
+	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
+		$pages{$page->{title}} = !(exists($page->{missing})) if ($page->{title});
+	    }
+	}
+    } while (scalar(@pages));
+
+    return(%pages);
 }
 
 sub history {
