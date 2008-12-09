@@ -75,24 +75,49 @@ sub setup {
     }
 
     if ($self->user()) {
-	# make the login http request
-	my $httpResponse = $self->makeHttpPostRequest(
-	    $self->indexUrl()."title=Special:Userlogin&action=submitlogin",
-	    {
-		'wpName' => $self->user(),
-		'wpPassword' => $self->password(),
-		'wpLoginattempt' => 'Log in',
-	    },
-	    );
-	
-	# check the http response
-	if($httpResponse->code == 302 || $httpResponse->header("Set-Cookie"))
-	{
-	    $self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
-	    $ok = 1;
+	if ($self->apiUrl()) {
+	    # make the login http request
+	    my $httpResponse = $self->makeApiRequest(
+		{
+		    'lgname' => $self->user(),
+		    'lgpassword' => $self->password(),
+		    'action' => 'login',
+		    'format'=> 'xml',
+		},
+		"POST"
+		);
+
+	    if ($httpResponse->content() =~ /wronpass/i ) {
+		$self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."' : wrong pass.");
+		$ok = 0;
+	    } elsif ($httpResponse->content() =~ /NotExists/i ) {
+		$self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."' : wrong login.");
+		$ok = 0;
+	    } else {
+		$self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
+		$ok = 1;
+	    }
 	} else {
-	    $self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."'.");
-	    $ok = 0;
+	    # make the login http request
+	    my $httpResponse = $self->makeHttpPostRequest(
+		$self->indexUrl()."title=Special:Userlogin&action=submitlogin",
+		{
+		    'wpName' => $self->user(),
+		    'wpPassword' => $self->password(),
+		    'wpLoginattempt' => 'Log in',
+		},
+		);
+	    
+	    # check the http response
+	    print $httpResponse->content();
+	    
+	    if($httpResponse->code == 302 || $httpResponse->header("Set-Cookie")) {
+		$self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
+		$ok = 1;
+	    } else {
+		$self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."'.");
+		$ok = 0;
+	    }
 	}
     }
 
@@ -119,6 +144,26 @@ sub deletePage {
 	return 0;
     }
 
+    return 1;
+}
+
+sub restorePage {
+    my ($self, $page) = @_;
+
+    my $httpResponse = $self->makeApiRequest(
+	{
+	    "action" => "undelete",
+	    "title" => $page,
+	    "token" => $self->editToken(),
+	    "format"=> "xml",
+	},
+	"POST"
+	);
+
+    if ( $httpResponse->content() =~ /\<error\ /) {
+	return 0;
+    }
+    
     return 1;
 }
 
@@ -318,6 +363,10 @@ sub uploadPage {
 		$postValues->{'token'} = $self->editToken();
 		$self->log("info", "Reloading edit token...");
 		$returnValue = 0;
+	    } elsif ($httpResponse->content() =~ /invalidtitle/i) {
+		$self->log("info", "Invalid title, this page '$title' can simply not be uploaded.");
+		$returnValue = 0;
+		last;
 	    }
 
 	    unless ($returnValue) {
@@ -790,10 +839,10 @@ sub exists {
     };
     my %pages;
     my $xml;
-    my $step=10;
+    my $step=50;
 
     do {
-
+	$self->log("info", "Will check existense for $step pages (or less).");
 	my $titles = "";
 	for (my $i=0; $i<$step; $i++) {
 	    last unless (scalar(@pages));
@@ -804,7 +853,7 @@ sub exists {
 	$httpPostRequestParams->{titles} = $titles;
 
 	# make the http request and parse response
-	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page');
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page', method=>"POST");
 	
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
