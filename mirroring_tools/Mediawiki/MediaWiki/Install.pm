@@ -82,8 +82,12 @@ sub install {
     }
     else {
 	$self->log("error", "Mediawiki mirror '".$self->code()."' failed to install.");
-	foreach my $error (@errors) {
-	    $self->log("error", $error);
+	if (scalar(@errors)) {
+	    foreach my $error (@errors) {
+		$self->log("error", $error);
+	    }
+	} else {
+	    $self->log("error", "Unable to connect to ".$self->site().".");
 	}
 	return;
     }
