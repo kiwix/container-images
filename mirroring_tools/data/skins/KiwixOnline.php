@@ -78,6 +78,27 @@ class SkinKiwixOnline extends SkinTemplate {
 		return Linker::makeImageLink2($title, $file, $frameParams, $handlerParams, $time, $query);
         }
 
+	// rewrite finale html output
+	function outputPage( OutputPage $out )  {
+		 $content = $out->mBodytext;
+
+		 // remove links to disemb. and other (if no link inside)
+		 preg_match_all('/<dl>.*?<\/dl>|<div class="dablink">.*?<\/div>/s', $content, $matches);
+		 foreach ($matches[0] as $match) {
+		 	 if (!preg_match("/<dl>.*?<a.*?<\/dl>/s", $match)) {
+			    $content = str_replace($match, "", $content);
+			 } 
+		 }
+		 
+		 // remove return cariage after (sub-)title
+		 $content = str_replace("<p><br />", "<p>", $content);
+		 
+		 // remove empty paragraph
+		 $content = str_replace("<p><br /></p>", "", $content);
+
+		 $out->mBodytext = $content;
+		 SkinTemplate::outputPage($out);
+	}
 }
 
 /**
@@ -155,7 +176,6 @@ class KiwixOnlineTemplate extends QuickTemplate {
 			<?php if($this->data['showjumplinks']) { ?><div id="jump-to-nav"><?php $this->msg('jumpto') ?> <a href="#column-one"><?php $this->msg('jumptonavigation') ?></a>, <a href="#searchInput"><?php $this->msg('jumptosearch') ?></a></div><?php } ?>
 			<!-- start content -->
 			<?php $this->html('bodytext') ?>
-			<?php if($this->data['catlinks']) { $this->html('catlinks'); } ?>
 			<!-- end content -->
 			<?php if($this->data['dataAfterContent']) { $this->html ('dataAfterContent'); } ?>
 			<div class="visualClear"></div>
