@@ -6,6 +6,7 @@ use XML::Simple;
 use Data::Dumper;
 use LWP::UserAgent;
 use URI;
+use URI::Escape;
 use Encode;
 use Getargs::Long;
 
@@ -109,8 +110,6 @@ sub setup {
 		);
 	    
 	    # check the http response
-	    print $httpResponse->content();
-	    
 	    if($httpResponse->code == 302 || $httpResponse->header("Set-Cookie")) {
 		$self->log("info", "Successfuly logged to '".$self->hostname()."' as '".$self->user()."'.");
 		$ok = 1;
@@ -136,6 +135,7 @@ sub deletePage {
 	    "title" => $page,
 	    "token" => $self->editToken(),
 	    "format"=> "xml",
+	    "reason"=>"42",
 	},
 	"POST"
 	);
@@ -156,6 +156,7 @@ sub restorePage {
 	    "title" => $page,
 	    "token" => $self->editToken(),
 	    "format"=> "xml",
+	    "reason"=> "42"
 	},
 	"POST"
 	);
@@ -534,10 +535,25 @@ sub makeApiRequestAndParseResponse {
 
 sub getImageUrl {
     my ($self, $image) = @_;
+    my $url;
+    my $title = 'Special:FilePath';
+    my $continue = 0;
 
-    $self->userAgent()->requests_redirectable([]);
-    my $url =  $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:FilePath', 'file' => $image } )->header('location') ;
-    $self->userAgent()->requests_redirectable(['HEAD', 'POST', 'GET']);
+    do {
+	$self->userAgent()->requests_redirectable([]);
+	$url =  $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => $title, 'file' => $image } )->header('location') ;
+	$self->userAgent()->requests_redirectable(['HEAD', 'POST', 'GET']);
+	
+	if ( $url =~ /\?/ && $url =~ /title\=(.*)\&/ ) {
+	    $title = uri_unescape($1);
+	    unless (Encode::is_utf8($title)) {
+		$title = decode_utf8($title);
+	    }
+	    $continue = 1;
+	} else {
+	    $continue = 0;
+	}
+    } while ( $continue );
 
     return $url;
 }
@@ -720,10 +736,14 @@ sub embeddedIn {
 }
 
 sub allPages {
-    my($self, $namespace) = @_;
+    my($self, $namespace, $filter) = @_;
+
+    unless ($filter) {
+	$filter = 'nonredirects';
+    }
+
     my $httpPostRequestParams = {
         'action' => 'query',
-        'apfilterredir' => 'nonredirects',
         'list' => 'allpages',
         'format' => 'xml',
 	'aplimit' => '500',
@@ -735,6 +755,11 @@ sub allPages {
     # set the appropriate namespace
     if (defined($namespace)) {
 	$httpPostRequestParams->{'apnamespace'} = $namespace;
+    }
+
+    # set filter if necessary
+    if (defined($filter)) {
+	$httpPostRequestParams->{'apfilterredir'} = $filter;
     }
     
     do {
