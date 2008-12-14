@@ -83,9 +83,9 @@ class SkinKiwixOnline extends SkinTemplate {
 		 $content = $out->mBodytext;
 
 		 // remove links to disemb. and other (if no link inside)
-		 preg_match_all('/<dl>.*?<\/dl>|<div class="dablink">.*?<\/div>/s', $content, $matches);
+		 preg_match_all('/<dd>.*?<\/dd>|<div class="dablink">.*?<\/div>/s', $content, $matches);
 		 foreach ($matches[0] as $match) {
-		 	 if (!preg_match("/<dl>.*?<a.*?<\/dl>/s", $match)) {
+		 	 if (!preg_match("/.*?<a.*?/s", $match)) {
 			    $content = str_replace($match, "", $content);
 			 } 
 		 }
