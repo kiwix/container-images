@@ -35,8 +35,7 @@ our %writeApiCache : shared;
 my $editToken;
 my $lastRequestTimestamp = 0;
 
-sub new
-{
+sub new {
     my $class = shift;
     my $self = {};
 
@@ -289,16 +288,22 @@ sub password {
 }
 
 sub downloadPage {
-    my ($self, $page) = @_;
+    my ($self, $page, $revision) = @_;
     my $xml;
     my $httpPostRequestParams = {
 	'action' => 'query',
 	'prop' => 'revisions',
-	'titles' => $page,
 	'format' => 'xml',
 	'rvprop' => 'content',
     };
  
+    # add revisionid if necessary
+    if (defined($revision)) {
+	$httpPostRequestParams->{'revids'} = $revision;
+    } else {
+	$httpPostRequestParams->{'titles'} = $page;
+    }
+
     # make the http request and parse response
     $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams);
 
@@ -811,6 +816,7 @@ sub allImages {
 		if ($page->{title}) {
 		    my $image = $page->{title};
 		    $image =~ s/^Image:// ;
+		    $image =~ s/^File:// ;
 		    $image =~ s/\ /_/ ;
 		    push(@images, $image);
 		}

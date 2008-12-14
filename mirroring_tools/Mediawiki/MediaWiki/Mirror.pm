@@ -604,28 +604,43 @@ sub getTemplateDependenceQueueSize {
 # check redirects
 sub checkRedirects {
     my $self = shift;
-    my $site = $self->connectToMediawiki($self->sourceMediawikiUsername(),
-					 $self->sourceMediawikiPassword(), 
-					 $self->sourceMediawikiHost(),
-					 $self->sourceMediawikiPath(),
-					 $self->sourceHttpUsername(),
-                                         $self->sourceHttpPassword(),
-					 $self->sourceHttpRealm());
+    my $sourceSite = $self->connectToMediawiki($self->sourceMediawikiUsername(),
+					       $self->sourceMediawikiPassword(), 
+					       $self->sourceMediawikiHost(),
+					       $self->sourceMediawikiPath(),
+					       $self->sourceHttpUsername(),
+					       $self->sourceHttpPassword(),
+					       $self->sourceHttpRealm());
+    my $destinationSite = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+					       $self->destinationMediawikiPassword(), 
+					       $self->destinationMediawikiHost(),
+					       $self->destinationMediawikiPath(),
+					       $self->destinationHttpUsername(),
+					       $self->destinationHttpPassword(),
+					       $self->destinationHttpRealm());
     
-    while ($self->isRunnable() && $site) {
+    while ($self->isRunnable() && $sourceSite && $destinationSite) {
 	my $title = $self->getPageToCheckRedirects();
 
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
-
-	    my @redirects = $site->redirects($title);
+	    
+	    my @redirects = $sourceSite->redirects($title);
 	    my $toMirrorCount = 0;
+	    my $count = 0;
+
+	    # check if the pages already exists
+	    my %redirects = $destinationSite->exists(@redirects);
 
 	    foreach my $redirect (@redirects) {
+		$count++;
+		# nothing to do, the page already exists
+		next if ($redirects{$redirect});
+
 		$toMirrorCount++;
 		$self->addPageToUpload($redirect, "#REDIRECT[[$title]]", "redirect to $title", 1);
 	    }
-	    $self->log("info", "$toMirrorCount redirects found for '$title'");
+	    $self->log("info", "$toMirrorCount/$count redirects found for '$title'");
 
 	    $self->decrementCurrentTaskCount();
 	} else {
@@ -703,7 +718,8 @@ sub checkImages {
 		    $toMirrorCount++;
 		    my $image = $dep->{"title"};
 
-		    $image =~ s/Image://;
+		    $image =~ s/Image://i;
+		    $image =~ s/File://i;
 
 		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);
@@ -766,6 +782,7 @@ sub getImageDependenceQueueSize {
 sub downloadPages {
     my $self = shift;
     my $title;
+    my $revision;
     my $page;
     my $id;
     my $summary;
@@ -785,18 +802,19 @@ sub downloadPages {
     while ($self->isRunnable() && $site) {
 	$id = "";
 	$timeOffset = time();
-	$title = $self->getPageToDownload();
+	($title, $revision) = $self->getPageToDownload();
 	
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
 
-	    $content = $site->downloadPage($title);
+	    $content = $site->downloadPage($title, $revision);
+	    $summary = defined($revision) ? $revision : "head";
 
 	    if ($content) {
 		$self->addPageToUpload($title, $content, $summary, 0);
-		$self->log("info", "Page '$title' successfuly downloaded in ".(time() - $timeOffset)."s.");
+		$self->log("info", "Page '$title' ".(defined($revision) ? "rev. $revision " : "") ."successfuly downloaded in ".(time() - $timeOffset)."s.");
 	    } else {
-		$self->log("info", "The page '$title' does not exist.");
+		$self->log("info", "The page '$title' ".(defined($revision) ? "rev. $revision " : "") ."does not exist.");
 		$self->addPageError($title);
 	    }
 	    $self->decrementCurrentTaskCount();
@@ -808,7 +826,7 @@ sub downloadPages {
 
 sub addPageToDownload {
     my $self = shift;
-    my $page = shift;
+    my ($page, $revisionId) = split(/ /, shift);
 
     if ($page) {
 	$page = lcfirst($page);
@@ -816,7 +834,7 @@ sub addPageToDownload {
 
 	lock($pageDownloadMutex);
 	unless ( exists($pageDownloadQueue{$page})) {
-	    $pageDownloadQueue{$page} = 1;
+	    $pageDownloadQueue{$page} = $revisionId;
 	}
     } else {
 	$self->log("error", "empty page title given to addPageToDownload()");
@@ -826,11 +844,13 @@ sub addPageToDownload {
 sub getPageToDownload {
     my $self = shift;
     my $page;
+    my $revision;
 
     if ($self->getPageDownloadQueueSize()) {
 
 	lock($pageDownloadMutex);
 	($page) = keys(%pageDownloadQueue);
+	$revision = $pageDownloadQueue{$page};
 
 	delete($pageDownloadQueue{$page});
     }
@@ -839,7 +859,7 @@ sub getPageToDownload {
 	$page = decode_utf8($page);
     }
 
-    return $page;
+    return ($page, $revision);
 }
 
 sub getPageDownloadQueueSize {
