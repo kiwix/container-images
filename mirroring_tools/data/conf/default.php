@@ -28,15 +28,15 @@ $wgStrictFileExtensions = false;
 
 # permissions
 $wgGroupPermissions['*']['createaccount']    = true;
-$wgGroupPermissions['*']['edit']             = true;
-$wgGroupPermissions['*']['createpage']       = true;
-$wgGroupPermissions['*']['createtalk']       = true;
-$wgGroupPermissions['*']['writeapi']         = true;
-$wgGroupPermissions['*']['upload']           = true;
-$wgGroupPermissions['*']['reupload']         = true;
-$wgGroupPermissions['*']['purge']            = true; 
-$wgGroupPermissions['*']['reupload-shared']  = true;
-$wgGroupPermissions['*']['upload_by_url']    = true;
+$wgGroupPermissions['*']['edit']             = false; // otherwise 'editsection' present in the page
+$wgGroupPermissions['*']['createpage']       = false;
+$wgGroupPermissions['*']['createtalk']       = false;
+$wgGroupPermissions['*']['writeapi']         = false;
+$wgGroupPermissions['*']['upload']           = false;
+$wgGroupPermissions['*']['reupload']         = false;
+$wgGroupPermissions['*']['purge']            = false; 
+$wgGroupPermissions['*']['reupload-shared']  = false;
+$wgGroupPermissions['*']['upload_by_url']    = false;
 
 # write API
 $wgEnableWriteAPI = true; 
