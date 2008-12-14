@@ -50,6 +50,8 @@ $wgMaxShellMemory = 1024000;
 $wgMaxShellFileSize = 1024000;
 $wgMimeDetectorCommand= 'file -bi ';
 $wgVerifyMimeType = true;
+
+# image conversion
 $wgSVGConverter = 'rsvg';
 $wgImageMagickConvertCommand = 'convert';
 
@@ -101,4 +103,6 @@ $wgDisableSearchContext = true;
 global $wgAutoloadLocalClasses;
 $wgAutoloadLocalClasses['ImageGallery'] = 'skins/ImageGallery.php';
 
+# ploticus
+putenv("GDFONTPATH=/usr/share/fonts/truetype/freefont"); 
 ?>
