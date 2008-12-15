@@ -40,12 +40,13 @@ if (!$database || !$databaseUsername || !$databasePassword || !$directory || !$o
 
 ## make tmp directory
 my $tmpDirectory = "/tmp/backup_mediawiki_".time()."/";
+`mkdir $tmpDirectory`;
 
 ## copy the mediawiki directory
 `cp -r $directory $tmpDirectory`;
 
 ## make the mysql dump
-`mysqldump -u $databaseUsername -p$databasePassword $database > $tmpDirectory$database.sql`;
+`mysqldump --add-drop-database -u $databaseUsername -p$databasePassword --databases $database > $tmpDirectory$database.sql`;
 
 ## make a tar.bz
 `tar -cvjf $outputFile $tmpDirectory`;
