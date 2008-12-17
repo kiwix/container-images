@@ -34,7 +34,8 @@ my $checkCompletedPages : shared = 0;
 my $checkCompletedImages : shared = 0;
 my $checkIncomingRedirects : shared = 0;
 my $noTextMirroring : shared = 0;
-    
+my $checkEmbeddedIn : shared = 1;
+
 my %pageDownloadQueue : shared;
 my @pageUploadQueue : shared;
 my %imageDownloadQueue : shared;
@@ -223,7 +224,7 @@ sub getDestinationMediawikiIncompletePages {
 					$self->destinationHttpRealm());
    
    my @pages;
-   foreach my $page ($site->allPages()) {
+   foreach my $page ($site->allPages('0', 'nonredirects')) {
        if ($site->isIncompletePage($page)) {
 	   push(@pages, $page);
        }
@@ -507,6 +508,14 @@ sub checkCompletedImages {
     return $checkCompletedImages;
 }
 
+sub checkEmbeddedIn {
+    my $self = shift;
+
+    lock($checkEmbeddedIn);
+    if (@_) { $checkEmbeddedIn = shift };
+    return $checkEmbeddedIn;
+}
+
 sub uploadFilesFromUrl {
     my $self = shift;
     lock($uploadFilesFromUrl);
@@ -537,6 +546,7 @@ sub checkTemplates {
 		if (exists($dep->{"missing"}) || $self->checkCompletedPages()) {
 		    $toMirrorCount++;
 		    my $template = $dep->{"title"};
+		    $template =~ tr/ /_/;
 
 		    # case of under page
 		    if ($template =~ /(^[^\:]+\:)(\/.*$)/ ) {
@@ -812,9 +822,9 @@ sub downloadPages {
 
 	    if ($content) {
 		$self->addPageToUpload($title, $content, $summary, 0);
-		$self->log("info", "Page '$title' ".(defined($revision) ? "rev. $revision " : "") ."successfuly downloaded in ".(time() - $timeOffset)."s.");
+		$self->log("info", "Page '$title' ".((defined($revision) && !($revision eq "")) ? "rev. $revision " : "") ."successfuly downloaded in ".(time() - $timeOffset)."s.");
 	    } else {
-		$self->log("info", "The page '$title' ".(defined($revision) ? "rev. $revision " : "") ."does not exist.");
+		$self->log("info", "The page '$title' ".((defined($revision) && !($revision eq "")) ? "rev. $revision " : "") ."does not exist.");
 		$self->addPageError($title);
 	    }
 	    $self->decrementCurrentTaskCount();
@@ -827,6 +837,10 @@ sub downloadPages {
 sub addPageToDownload {
     my $self = shift;
     my ($page, $revisionId) = split(/ /, shift);
+
+    unless (defined($revisionId)) {
+	$revisionId = "";
+    }
 
     if ($page) {
 	$page = lcfirst($page);
@@ -948,7 +962,7 @@ sub uploadPages {
 	    if ($status) {
 		if ($redirectTarget) {
 		    if ($self->followRedirects() && !$ignoreRedirect && $status eq "1") {
-			if ($redirectTarget =~ /$title/i) {
+			if ($redirectTarget =~ /\Q$title\E/i) {
 			    $self->log("info", "Page '$title' is a redirect to '$title' : will be ignored.");			    
 			} else {
 			    $self->log("info", "Page '$title' is a redirect to '$redirectTarget'.");
@@ -964,7 +978,7 @@ sub uploadPages {
 			$self->addPageToCheckImageDependence($title);
 		    }
 
-		    if ($self->isTemplate($title) && $status eq "1") {
+		    if ($self->checkEmbeddedIn() && $self->isTemplate($title) && $status eq "1") {
 			$self->addPageToCheckEmbeddedInPages($title);
 		    }
 
