@@ -28,6 +28,7 @@ my $destinationPassword;
 
 my $ignoreTemplateDependences;
 my $ignoreImageDependences;
+my $ignoreEmbeddedInPagesCheck;
 
 my $checkCompletedPages;
 my $checkCompletedImages;
@@ -62,6 +63,7 @@ GetOptions(
            'ignoreImageDependences' => \$ignoreImageDependences,
            'noTextMirroring' => \$noTextMirroring,
            'checkIncomingRedirects' => \$checkIncomingRedirects,
+           'ignoreEmbeddedInPagesCheck' => \$ignoreEmbeddedInPagesCheck,
            );
 
 if (!$sourceHost || !$destinationHost ) {
@@ -85,7 +87,8 @@ if (!$sourceHost || !$destinationHost ) {
     print "--ignoreTemplateDependences\n\t\tDo not check for each downloaded page the text dependences (templates).\n\t";
     print "--ignoreImageDependences\n\t\tDo not check for each downloaded page the image dependences (images included in the page).\n\t";
     print "--noTextMirroring\n\t\tDo not mirror any text. Can be useful to mirror only images (for example by ginving a list of picture pages).\n\t";
-    print "--useIncompletePagesAsInput\n\t\tWill check dependences for all pages present in the destination wiki, and mirror lacking dependences.\n";
+    print "--useIncompletePagesAsInput\n\t\tWill check dependences for all pages present in the destination wiki, and mirror lacking dependences.\n\t";
+    print "--ignoreEmbeddedInPagesCheck\n\t\tWill ignore to check in an article page usind a new upload template as failing dependences.\n";
     exit;
 }
 
@@ -133,6 +136,7 @@ $mirror->checkIncomingRedirects($checkIncomingRedirects);
 
 $mirror->checkImageDependences( $ignoreImageDependences ? 0 : 1);
 $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
+$mirror->checkEmbeddedIn( $ignoreEmbeddedInPagesCheck ? 0 : 1);
 
 $mirror->noTextMirroring($noTextMirroring);
 
