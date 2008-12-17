@@ -51,7 +51,12 @@ class SkinKiwixOnline extends SkinTemplate {
 	// responsible for avoiding the red links
 	function makeBrokenLinkObj( &$nt, $text = '', $query = '', $trail = '', $prefix = '' ) {
 		if ( !isset( $nt ) ) {
-			return "<!-- ERROR -->{$prefix}{$text}{$trail}";
+			return "";
+		}
+
+		// return empty string if it a template inclusion/link
+		if ( $nt->getNamespace() == NS_TEMPLATE ) {
+		         return "";    
 		}
 
 		if ( $nt->getNamespace() == NS_CATEGORY ) {
@@ -75,8 +80,30 @@ class SkinKiwixOnline extends SkinTemplate {
                 if (!$file || !$file->exists()) {
                    return "";
 		}
-		return Linker::makeImageLink2($title, $file, $frameParams, $handlerParams, $time, $query);
+
+		$html = Linker::makeImageLink2($title, $file, $frameParams, $handlerParams, $time, $query);
+
+		// remove image links
+		preg_match_all('/<a [^>]*>(.*?<img.*?)<\/a>/s', $html, $matches);
+		if (count($matches)) {
+		  $html = str_replace($matches[0], $matches[1], $html);
+		}
+
+		return $html;
         }
+
+	// remove zoomicon in thumbs
+	function makeThumbLink2( Title $title, $file, $frameParams = array(), $handlerParams = array(), $time = false, $query = "" ) {
+	        $html = Linker::makeThumbLink2($title, $file, $frameParams, $handlerParams, $time, $query );
+
+		// remove zoomicon
+		preg_match_all('/<div class="magnify">.*?<\/div>/s', $html, $matches);
+		foreach ($matches[0] as $match) {
+		  $html = str_replace($match, "", $html);
+		}
+		
+		return $html;
+	}
 
 	// rewrite finale html output
 	function outputPage( OutputPage $out )  {
