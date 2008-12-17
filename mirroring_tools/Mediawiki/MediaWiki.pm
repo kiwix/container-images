@@ -298,7 +298,7 @@ sub downloadPage {
     };
  
     # add revisionid if necessary
-    if (defined($revision)) {
+    if (defined($revision) && !($revision eq "")) {
 	$httpPostRequestParams->{'revids'} = $revision;
     } else {
 	$httpPostRequestParams->{'titles'} = $page;
@@ -307,7 +307,7 @@ sub downloadPage {
     # make the http request and parse response
     $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams);
 
-    if (exists($xml->{query}->{pages}->{page}->{missing})) {
+    if (ref($xml->{query}->{pages}->{page}) eq "ARRAY" || exists($xml->{query}->{pages}->{page}->{missing})) {
 	return;
     } else {
 	my $content = $xml->{query}->{pages}->{page}->{revisions}->{rev};
@@ -780,6 +780,7 @@ sub allPages {
 	    foreach my $page (@{$xml->{query}->{allpages}->{p}}) {
 		if ($page->{title}) {
 		    my $title = $page->{title};
+		    $title =~ tr/ /_/;
 		    push(@pages, $title);
 		}
             }
