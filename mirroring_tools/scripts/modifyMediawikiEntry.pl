@@ -36,7 +36,7 @@ GetOptions('host=s' => \$host,
     );
 
 if (!$host || (!$readFromStdin && !$file && !scalar(@entries)) ) {
-    print "usage: ./buildHistoryFile.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore] [--username=foobar] [--password=mypass]\n";
+    print "usage: ./buildHistoryFile.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore|replace] [--username=foobar] [--password=mypass]\n";
     exit;
 }
 
@@ -87,6 +87,9 @@ foreach my $entry (@entries) {
 	$status = $site->uploadPage($entry, "");
     } elsif ($action eq "restore") {
 	$status = $site->restorePage($entry, "");
+    } elsif ($action eq "replace") {
+	my ($title, $newContent) = split(/ /, $entry);
+	$status = $site->uploadPage($title, $newContent);
     } else {
 	$logger->info("This action is not valid, will exit.");
 	last;
