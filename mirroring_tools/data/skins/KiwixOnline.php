@@ -83,10 +83,15 @@ class SkinKiwixOnline extends SkinTemplate {
 
 		$html = Linker::makeImageLink2($title, $file, $frameParams, $handlerParams, $time, $query);
 
-		// remove image links
-		preg_match_all('/<a [^>]*>(.*?<img.*?)<\/a>/s', $html, $matches);
-		if (count($matches)) {
-		  $html = str_replace($matches[0], $matches[1], $html);
+		// remove image links, the test is a trick to avoid doing that for imagemap pictures
+		$trace=debug_backtrace();
+		$caller=$trace[2];
+
+		if ($caller['class'] == 'Parser') {
+		  preg_match_all('/<a [^>]*>(.*?<img.*?)<\/a>/s', $html, $matches);
+		  if (count($matches)) {
+		    $html = str_replace($matches[0], $matches[1], $html);
+		  }
 		}
 
 		return $html;
