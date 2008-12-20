@@ -1,8 +1,25 @@
+Template:Infobox_Color/Color_Coordinates
+template:Tnavbar
+template:Update_after
+template:fix
+template:SpecialChars
+template:contains_Chinese_text
+template:Fact
+template:Wikiversity
+template:wikinewshas
+template:wikibookspar
+template:IndicText
+template:WVS
+template:sound_sample_box_align_left
+template:multi-listen_start
+template:multi-listen_item
+template:multi-listen_end
+template:sample_box_end
 template:ambox
 template:fictionrefs
 template:unbalanced
 template:Audio-IPA
-template:Inappropriate person
+template:Inappropriate_person
 template:update
 template:wiktionarycat
 template:ChineseText
@@ -13,9 +30,10 @@ template:Citecheck
 template:cleanup-gallery
 Template:Tubeportalframeless
 template:pagenumbers
-template:Spoken Wikipedia-2
-template:Spoken Wikipedia-4
-template:Audio
+template:Spoken_Wikipedia-2
+template:Spoken_Wikipedia-4
+template:Audio {{{2}}}
+template:Audio-nohelp {{{2}}}
 template:morefootnotes
 template:commonscat-N
 template:Wikisourcelang
