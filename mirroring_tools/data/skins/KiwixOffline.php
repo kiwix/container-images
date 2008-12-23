@@ -1,6 +1,6 @@
 <?php
 /**
- * KiwixOnline
+ * KiwixOffline
  *
  * Translated from gwicke's previous TAL template version to remove
  * dependency on PHPTAL.
@@ -20,25 +20,36 @@ if( !defined( 'MEDIAWIKI' ) )
  * @todo document
  * @ingroup Skins
  */
-class SkinKiwixOnline extends KiwixBaseSkin {
+class SkinKiwixOffline extends KiwixBaseSkin {
 	/** Using kiwix. */
-	function initPage( OutputPage $out ) {
-		parent::initPage( $out );
-		$this->skinname  = 'KiwixOnline';
-		$this->stylename = 'KiwixOnline';
-		$this->template  = 'KiwixOnlineTemplate';
-
+	function initPage( &$out ) {
+		global $wgStylePath;
+		SkinTemplate::initPage( $out );
+		$this->skinname = 'KiwixOffline';
+		$this->stylename = 'KiwixOffline';
+		$this->template = 'KiwixOfflineTemplate';
+		$this->skinpath = "$wgStylePath/KiwixOffline";
 	}
+
+	function setupTemplate( $className, $repository = false, $cache_dir = false ) {
+		global $wgFavicon;
+		$tpl = parent::setupTemplate( $className, $repository, $cache_dir );
+		$tpl->set( 'skinpath', $this->skinpath );
+		$tpl->set( 'favicon', $wgFavicon );
+		return $tpl;
+	}
+
+
 }
 
 /**
  * @todo document
  * @ingroup Skins
  */
-class KiwixOnlineTemplate extends QuickTemplate {
+class KiwixOfflineTemplate extends QuickTemplate {
 	var $skin;
 	/**
-	 * Template filter callback for KiwixOnline skin.
+	 * Template filter callback for KiwixOffline skin.
 	 * Takes an associative array of data set from a SkinTemplate-based
 	 * class, and a wrapper for MediaWiki's localization database, and
 	 * outputs a formatted page.
@@ -297,7 +308,7 @@ class KiwixOnlineTemplate extends QuickTemplate {
 				<li id="t-ispermalink"<?php echo $this->skin->tooltip('t-ispermalink') ?>><?php $this->msg('permalink') ?></li><?php
 		}
 
-		wfRunHooks( 'KiwixOnlineTemplateToolboxEnd', array( &$this ) );
+		wfRunHooks( 'KiwixOfflineTemplateToolboxEnd', array( &$this ) );
 		wfRunHooks( 'SkinTemplateToolboxEnd', array( &$this ) );
 ?>
 			</ul>
