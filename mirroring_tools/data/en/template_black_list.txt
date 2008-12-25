@@ -1,4 +1,12 @@
+Template:Sample_box_tart
+template:wikiquote-inline
+template:3d_commons
+template:v
+Template:Pp-meta
+template:contains_Arabic_text
+Template:Silesian-geo-stub
 template:Wikinewscat
+template:include_timeline
 template:Sisterlinkqsc
 template:Tnavbar
 template:Update_after
@@ -19,7 +27,7 @@ template:sample_box_end
 template:ambox
 template:fictionrefs
 template:unbalanced
-template:Audio-IPA
+template:Audio-IPA {{{2}}}
 template:Inappropriate_person
 template:update
 template:wiktionarycat
@@ -42,6 +50,8 @@ template:rewrite
 template:Essay-like
 template:outofdate
 template:sprotected2
+template:sprotect2
+Template:Pp-semi-indef
 template:Spoken_Wikipedia-3
 template:Current_spaceflight
 template:citation_style
