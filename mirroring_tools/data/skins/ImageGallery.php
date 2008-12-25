@@ -1,20 +1,8 @@
 <?php
-if ( ! defined( 'MEDIAWIKI' ) )
-	die( 1 );
-
-/**
- * Image gallery
- *
- * Add images to the gallery using add(), then render that list to HTML using toHTML().
- *
- * @ingroup Media
- */
-
-include("skins/ImageGallery.php.original");
+include("skins/ImageGalleryOriginal.php");
 
 class ImageGallery extends ImageGalleryOriginal
 {
-
 	function toHTML() {
 		global $wgLang;
 
@@ -47,9 +35,22 @@ class ImageGallery extends ImageGalleryOriginal
 
 		if (count($images) > 0) {
 			$this->mImages = $images;
-			return ImageGalleryOriginal::toHTML();
+			$html = ImageGalleryOriginal::toHTML();
+
+			// remove links
+			$trace=debug_backtrace();
+			$caller=$trace[2];
+
+			if ($caller['class'] == 'ParserOriginal' || $caller['class'] == 'Parser' ) {
+			  preg_match_all('/<a [^>]*>(.*?<img.*?)<\/a>/s', $html, $matches);
+			  if (count($matches)) {
+			    $html = str_replace($matches[0], $matches[1], $html);
+			  }
+			}
+
+			return $html;
 		}
 		
 		return "";
 	}
-} //class
+}
