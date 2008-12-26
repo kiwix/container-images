@@ -20,12 +20,6 @@ class KiwixBaseSkin extends SkinTemplate {
 			// Currently in testing... try 'chick/main.css'
 			$out->addStyle( $wgHandheldStyle, 'handheld' );
 		}
-
-		$out->addStyle( 'monobook/IE50Fixes.css', 'screen', 'lt IE 5.5000' );
-		$out->addStyle( 'monobook/IE55Fixes.css', 'screen', 'IE 5.5000' );
-		$out->addStyle( 'monobook/IE60Fixes.css', 'screen', 'IE 6' );
-		$out->addStyle( 'monobook/IE70Fixes.css', 'screen', 'IE 7' );
-
 		$out->addStyle( 'monobook/rtl.css', 'screen', '', 'rtl' );
 	}
 
@@ -73,7 +67,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		$trace=debug_backtrace();
 		$caller=$trace[2];
 
-		if ($caller['class'] == 'Parser') {
+		if ($caller['class'] == 'ParserOriginal' || $caller['class'] == 'Parser' ) {
 		  preg_match_all('/<a [^>]*>(.*?<img.*?)<\/a>/s', $html, $matches);
 		  if (count($matches)) {
 		    $html = str_replace($matches[0], $matches[1], $html);
@@ -114,7 +108,43 @@ class KiwixBaseSkin extends SkinTemplate {
 		 // remove empty paragraph
 		 $content = str_replace("<p><br /></p>", "", $content);
 
+		 // other type of useless html
+		 $content = str_replace('<p><font class="metadata"><br /></font></p>', "", $content);
+		
 		 $out->mBodytext = $content;
 		 SkinTemplate::outputPage($out);
 	}
+}
+
+global $wgHooks;
+
+// avoid links to category
+$wgHooks['LinkBegin'][] = 'KiwixLinkBegin';
+
+function KiwixLinkBegin($skin, $target, &$text, &$customAttribs, &$query, &$options, &$ret) {
+  if( $target->getNamespace() == NS_CATEGORY ) {
+    return false;
+  }
+  return true;
+}
+
+// remove the footer
+$wgHooks['SkinTemplateOutputPageBeforeExec'][] = 'KiwixSkinTemplateOutputPageBeforeExec';
+
+function KiwixSkinTemplateOutputPageBeforeExec(&$template, &$templateEngine) {
+  $content =& $templateEngine->data["bodytext"];
+
+  // remove the footer
+  preg_match_all('/<div class="printfooter">.*?<\/div>/s', $content, $matches);
+  foreach ($matches[0] as $match) {
+    $content = str_replace($match, "", $content);
+  }
+
+  // remove comments
+  preg_match_all('/<\!\-\- [^>]*?\-\->/s', $content, $matches);
+  foreach ($matches[0] as $match) {
+    $content = str_replace($match, "", $content);
+  }
+
+  return true;
 }

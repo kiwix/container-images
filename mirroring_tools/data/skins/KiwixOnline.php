@@ -12,9 +12,6 @@
 
 include "KiwixBaseSkin.php";
 
-if( !defined( 'MEDIAWIKI' ) )
-	die( -1 );
-
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  * @todo document
@@ -61,7 +58,7 @@ class KiwixOnlineTemplate extends QuickTemplate {
 	<head>
 		<meta http-equiv="Content-Type" content="<?php $this->text('mimetype') ?>; charset=<?php $this->text('charset') ?>" />
 		<?php $this->html('headlinks') ?>
-		<title><?php $this->text('pagetitle') ?></title>
+		<title><?php $this->text('title') ?></title>
 		<?php $this->html('csslinks') ?>
 
 		<!--[if lt IE 7]><script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath') ?>/common/IEFixes.js?<?php echo $GLOBALS['wgStyleVersion'] ?>"></script>

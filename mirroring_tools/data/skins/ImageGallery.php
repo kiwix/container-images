@@ -28,6 +28,8 @@ class ImageGallery extends ImageGalleryOriginal
 				# The image is blacklisted, just show it as a text link.
 			} elseif( !( $thumb = $img->transform( $params ) ) ) {
 				# Error generating thumbnail.
+			} elseif( $img->getMediaType() != 'MEDIATYPE_BITMAP' || $img->getMediaType() != 'MEDIATYPE_DRAWING') {
+			        # non image, ignore
 			} else {
 				array_push($images, $pair);
 			}

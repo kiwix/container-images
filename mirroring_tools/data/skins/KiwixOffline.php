@@ -29,9 +29,16 @@ class KiwixOfflineTemplate extends QuickTemplate {
 		$this->skin = $skin = $this->data['skin'];
 		$action = $wgRequest->getText( 'action' );
 
-		//
+		// optimize the css generated <links>
 		$links = $this->data['csslinks'];
 		$links = str_replace("../../../../skins/../", "../", $links);
+		$links = str_replace("?188", "", $links);
+
+		preg_match_all('/<link[^>]*gen\.css[^>]*\/>/s', $links, $matches);
+		if (count($matches)) {
+		  $links = str_replace($matches[0], "", $links);
+		}
+
 		$this->data['csslinks'] = $links;     
 
 		// Suppress warnings to prevent notices about missing indexes in $this->data
@@ -44,8 +51,7 @@ class KiwixOfflineTemplate extends QuickTemplate {
 	} ?>xml:lang="<?php $this->text('lang') ?>" lang="<?php $this->text('lang') ?>" dir="<?php $this->text('dir') ?>">
 	<head>
 		<meta http-equiv="Content-Type" content="<?php $this->text('mimetype') ?>; charset=<?php $this->text('charset') ?>" />
-		<?php $this->html('headlinks') ?>
-		<title><?php $this->text('pagetitle') ?></title>
+		<title><?php $this->text('title') ?></title>
 		<?php $this->html('csslinks') ?>
 
 		<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
@@ -70,12 +76,12 @@ class KiwixOfflineTemplate extends QuickTemplate {
 		if($this->data['trackbackhtml']) print $this->data['trackbackhtml']; ?>
 	</head>
 <body style="margin: 0 1em 1em 1em;" >
-	<div id="globalWrapper">
+	<div id="globalWrapper"><div id="bodyContent">
 		<a name="top" id="top"></a>
 		<h1 class="firstHeading"><?php $this->html('title'); ?></h1>
 			<?php $this->html('bodytext') ?>
 
-</div>
+</div></div>
 <?php $this->html('bottomscripts'); /* JS call to runBodyOnloadHook */ ?>
 </body></html>
 <?php
