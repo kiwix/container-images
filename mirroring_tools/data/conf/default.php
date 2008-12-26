@@ -79,6 +79,7 @@ $wgTidyInternal = extension_loaded( 'tidy' );
 
 # Latex
 $wgUseTeX = true;
+$wgTexvc = $IP.'/math/texvc';
 
 # Timeline
 $wgTimelineSettings->perlCommand = "/usr/bin/perl";
@@ -102,6 +103,7 @@ $wgDisableSearchContext = true;
 # rewriting of some classes
 global $wgAutoloadLocalClasses;
 $wgAutoloadLocalClasses['ImageGallery'] = 'skins/ImageGallery.php';
+$wgAutoloadLocalClasses['Parser'] = 'skins/Parser.php';
 
 # ploticus
 putenv("GDFONTPATH=/usr/share/fonts/truetype/freefont"); 
