@@ -6,7 +6,6 @@ class KiwixBaseSkin extends SkinTemplate {
 		$this->skinname  = 'KiwixBaseSkin';
 		$this->stylename = 'KiwixBaseSkin';
 		$this->template  = 'KiwixBaseSkin';
-
 	}
 
 	function setupSkinUserCss( OutputPage $out ) {
@@ -97,11 +96,14 @@ class KiwixBaseSkin extends SkinTemplate {
 		 // remove links to disemb. and other (if no link inside)
 		 preg_match_all('/<dd>.*?<\/dd>|<div class="dablink">.*?<\/div>/s', $content, $matches);
 		 foreach ($matches[0] as $match) {
-		 	 if (!preg_match("/.*?<a.*?/s", $match)) {
-			    $content = str_replace($match, "", $content);
-			 } 
+		   
+		   // remove only html code without links or latex generated mathematics images
+		   if (!preg_match("/.*?<a.*?/s", $match) && !preg_match("/.*?<img class=\"tex\".*?/s", $match)) {
+		     $content = str_replace($match, "", $content);
+		   }
+
 		 }
-		 
+
 		 // remove return cariage after (sub-)title
 		 $content = str_replace("<p><br />", "<p>", $content);
 		 
