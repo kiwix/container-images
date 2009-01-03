@@ -112,7 +112,46 @@ class KiwixBaseSkin extends SkinTemplate {
 
 		 // other type of useless html
 		 $content = str_replace('<p><font class="metadata"><br /></font></p>', "", $content);
-		
+
+		 // remove empty chapter/paragraph/...
+
+		 // <p><a name="Monotonicity" id="Monotonicity"></a></p>
+		 // <h3><span class="mw-headline">Monotonicity</span></h3>
+		 // <p><a name="Conservativity" id="Conservativity"></a></p>
+		 // <h3><span class="mw-headline">Conservativity</span></h3>
+
+		 do {
+		   preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>/', $content, $matches);
+
+		   // remove the empty paragraph
+		   $toRemove = $matches[1];
+		   $content = str_replace($toRemove, "", $content);
+
+		   // remove the index entry
+		   preg_match('/<p><a name=\"([^\"]*)\"/', $toRemove, $match);
+		   $anchorName = $match[1];
+
+		   // get sumary index number
+		   preg_match("/<li.*?#$anchorName.*?<span class=\"tocnumber\">([\d\.]*)<\/span>.*?<\/li>/", $content, $match);
+		   $indexNumber = $match[1];
+
+		   // remove index line
+		   $content = str_replace($match[0], "", $content);
+
+		   // update following summary indexes
+		   $indexNumbers = split('[.]', $indexNumber);
+		   $last = $indexNumbers[count($indexNumbers) - 1];
+		   $prefix = substr($indexNumber, 0, strlen($indexNumber) - strlen($last));
+
+		   $last++;
+		   while ( preg_match("/(<span class=\"tocnumber\">$prefix)($last)(<\/span>)/", $content, $match) ) {
+		     $content = str_replace($match[0], $match[1].($last-1).$match[3], $content);
+		     $last++;
+		   };
+
+		 } while (count($matches));
+
+		 // print out
 		 $out->mBodytext = $content;
 		 SkinTemplate::outputPage($out);
 	}
