@@ -1,3 +1,11 @@
+Template:Commons+cat
+Template:Wikisourcepar
+Template:Technical
+Template:Commons-gallery
+template:Imageframe
+template:Link_FA
+template:audio-de [[German language|German]]: <font class="metadata"><span lang="de" xml:lang="de">''{{{1}}}''</span>
+template:Expand_list
 Template:Sample_box_tart
 template:wikiquote-inline
 template:3d_commons
@@ -41,6 +49,7 @@ Template:Tubeportalframeless
 template:pagenumbers
 template:Spoken_Wikipedia-2
 template:Spoken_Wikipedia-4
+template:Spoken
 template:Audio {{{2}}}
 template:Audio-nohelp {{{2}}}
 template:morefootnotes
