@@ -33,12 +33,10 @@ class KiwixOfflineTemplate extends QuickTemplate {
 		$links = $this->data['csslinks'];
 		$links = str_replace("../../../../skins/../", "../", $links);
 		$links = str_replace("?188", "", $links);
-
 		preg_match_all('/<link[^>]*gen\.css[^>]*\/>/s', $links, $matches);
 		if (count($matches)) {
 		  $links = str_replace($matches[0], "", $links);
 		}
-
 		$this->data['csslinks'] = $links;     
 
 		// Suppress warnings to prevent notices about missing indexes in $this->data
@@ -56,7 +54,7 @@ class KiwixOfflineTemplate extends QuickTemplate {
 
 		<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
 
-		<script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath' ) ?>/common/wikibits.js?<?php echo $GLOBALS['wgStyleVersion'] ?>"></script>
+		<script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('stylepath' ) ?>/common/wikibits.js"></script>
 <?php $this->html('headscripts') ?>
 <?php	if($this->data['jsvarurl']) { ?>
 		<script type="<?php $this->text('jsmimetype') ?>" src="<?php $this->text('jsvarurl') ?>"></script>
