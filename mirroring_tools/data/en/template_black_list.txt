@@ -1,3 +1,6 @@
+template:chem-stub
+Template:WikisourceWiki
+Template:Meta
 Template:Commons+cat
 Template:Wikisourcepar
 Template:Technical
