@@ -151,6 +151,11 @@ class KiwixBaseSkin extends SkinTemplate {
 
 		 } while (count($matches));
 
+		 // remove /index.php/foobar style link, generated for example by extension Timeline
+		 while ( preg_match("/(href=\")(\/index.php\/[^\"]+)(\")/", $content, $match) ) {
+		   $content = str_replace($match[0], "", $content);
+		 };
+		 
 		 // print out
 		 $out->mBodytext = $content;
 		 SkinTemplate::outputPage($out);
