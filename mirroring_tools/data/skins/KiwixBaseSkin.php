@@ -120,8 +120,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 // <p><a name="Conservativity" id="Conservativity"></a></p>
 		 // <h3><span class="mw-headline">Conservativity</span></h3>
 
-		 do {
-		   preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>/', $content, $matches);
+		 while ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h[\d]><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>/', $content, $matches) && count($matches) ) {
 
 		   // remove the empty paragraph
 		   $toRemove = $matches[1];
@@ -149,7 +148,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		     $last++;
 		   };
 
-		 } while (count($matches));
+		 };
 
 		 // remove /index.php/foobar style link, generated for example by extension Timeline
 		 while ( preg_match("/(href=\")(\/index.php\/[^\"]+)(\")/", $content, $match) ) {
