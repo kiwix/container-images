@@ -65,7 +65,6 @@ sub install {
     $content .= getParamString('RootUser', $self->dbUser());
     $content .= getParamString('RootPW', $self->dbPassword());
     $content .= getParamString('DBprefix', '');
-#    $content .= getParamString('DBengine', 'MyISAM');
     $content .= getParamString('DBengine', 'InnoDB');
     $content .= getParamString('DBschema', 'mysql4');
     
@@ -114,6 +113,12 @@ sub install {
     open FILE, ">$directory/LocalSettings.php" or die $!; 
     print FILE $conf; 
     close(FILE); 
+
+    # copy the Kiwix skins
+    my $cmd = "cp ../data/skins/*.php ".$directory."/skins/";
+    `$cmd`;
+
+    # todo set link color to 'black' in the timeline extension
 }
 
 
