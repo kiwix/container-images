@@ -34,6 +34,12 @@ my $rtorrentSession = $rtorrentPath."/session/";
 my $rtorrentInbox = $rtorrentPath."/inbox/";
 my $rtorrentWatch = $rtorrentPath."/watch/";
 
+# create necessary directories
+unless (-d $rtorrentPath) { mkdir($rtorrentPath) };
+unless (-d $rtorrentSession) { mkdir($rtorrentSession) };
+unless (-d $rtorrentInbox) { mkdir($rtorrentInbox) };
+unless (-d $rtorrentWatch) { mkdir($rtorrentWatch) };
+
 # log
 use Log::Log4perl;
 Log::Log4perl->init("../conf/log4perl");
@@ -54,7 +60,7 @@ $configurationText .= "check_hash = yes\n";
 $configurationText .= "safe_sync = yes\n";
 $configurationText .= "schedule = watch_directory,5,5,load_start=$rtorrentWatch/*.torrent\n";
 
-unlink($configPath) or die ("Unable to remove $configPath");
+if ( -f $configPath ) { unlink($configPath) or die ("Unable to remove $configPath"); }
 writeFile($configPath, \$configurationText);
 
 # download the torrent files
