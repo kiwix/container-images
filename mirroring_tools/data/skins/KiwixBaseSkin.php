@@ -179,8 +179,10 @@ class KiwixBaseSkin extends SkinTemplate {
 		   $last++;
 		 };
 
-		 // remove imagemap "magnify link"
-		 while ( preg_match("/<a href=\"\/index.php.*About this image.*<\/a>/", $content, $match) ) {
+		 // remove imagemap "magnify link", for example:
+		 // <a href="../../../../articles/l/i/m/File%7ELimburg-Position.png_b699.html" style="position: absolute; top: 0px; left: 0px;">
+		 // <img alt="About this image" src="../../../../../extensions/ImageMap/desc-20.png" style="border: medium none ;"></a>
+		 while ( preg_match("/<a href=[^>]*><img[^>]*About this image[^>]*><\/a>/", $content, $match) ) {
                    $content = str_replace($match[0], "", $content);
                    $last++;
                  };
