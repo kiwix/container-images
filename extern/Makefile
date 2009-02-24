@@ -21,4 +21,4 @@ compile:
 	export MY_PATH=`pwd` ;  export CXXFLAGS=" -fPIC " ; export CPPFLAGS="-I$$MY_PATH/cxxtools/include/" ; export LDFLAGS="-L$$MY_PATH/cxxtools/src/unit/.libs/ -L$$MY_PATH/cxxtools/src/.libs/" ; echo $$LDFLAGS ; echo $$CPPFLAGS ; cd tntzenoreader ; ./autogen.sh ; ./configure --with-reader=no --with-writer=no ; make ; cd ..
 
 clean:
-	rm -rf zlib* bzip* cxxtools tntzenoreader *~
+	rm -rf zlib* bzip* cxxtools tntzenoreader xapian* *~
