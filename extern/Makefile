@@ -13,12 +13,12 @@ download:
 	svn co https://tntzenoreader.svn.sourceforge.net/svnroot/tntzenoreader/trunk tntzenoreader ; fi
 
 compile:
-	cd bzip2-1.0.5 ; sed -i "s/CFLAGS=/CFLAGS=-fPIC /" Makefile ; make ; cd ..
-	cd zlib-1.2.3 ; export CFLAGS=" -fPIC " ; ./configure ; make ; cd ..
-	cd xapian-core-1.0.10 ; export CXXFLAGS=" -fPIC " ; ./configure ; make ; cd ..
+	cd bzip2-1.0.5 ; sed -i "s/CFLAGS=/CFLAGS=-fPIC /" Makefile ; make ; make Makefile-libbz2_so ; cd ..
+	cd zlib-1.2.3 ; export CFLAGS=" -fPIC " ; ./configure --shared ; make ; ./configure ; make ; cd ..
+	export EXTERN_PATH=`pwd` ; cd xapian-core-1.0.10 ; export CPPFLAGS="-I$$EXTERN_PATH/zlib-1.2.3/" ; export CXXFLAGS=" -fPIC -L$$EXTERN_PATH/zlib-1.2.3/" ; ./configure ; make ; cd ..
 	cd cxxtools ; ./autogen.sh ; export CXXFLAGS=" -fPIC " ; ./configure ; make ; \
 	cd src ; ar cr libcxxtools.a *.o ; ranlib libcxxtools.a ; mv libcxxtools.a .libs ; cd ../..
-	export MY_PATH=`pwd` ;  export CXXFLAGS=" -fPIC " ; export CPPFLAGS="-I$$MY_PATH/cxxtools/include/" ; export LDFLAGS="-L$$MY_PATH/cxxtools/src/unit/.libs/ -L$$MY_PATH/cxxtools/src/.libs/" ; echo $$LDFLAGS ; echo $$CPPFLAGS ; cd tntzenoreader ; ./autogen.sh ; ./configure --with-reader=no --with-writer=no ; make ; cd ..
+	export EXTERN_PATH=`pwd` ; export CXXFLAGS=" -fPIC " ; export CPPFLAGS="-I$$EXTERN_PATH/bzip2-1.0.5/ -I$$EXTERN_PATH/zlib-1.2.3/ -I$$EXTERN_PATH/cxxtools/include/" ; export LDFLAGS="-L$$EXTERN_PATH/zlib-1.2.3/ -L$$EXTERN_PATH/bzip2-1.0.5/ -L$$EXTERN_PATH/cxxtools/src/unit/.libs/ -L$$EXTERN_PATH/cxxtools/src/.libs/" ; echo $$LDFLAGS ; echo $$CPPFLAGS ; cd tntzenoreader ; ./autogen.sh ; ./configure --with-reader=no --with-writer=no ; make ; cd ..
 
 clean:
 	rm -rf zlib* bzip* cxxtools tntzenoreader xapian* *~
