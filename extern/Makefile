@@ -21,4 +21,4 @@ compile:
 	export EXTERN_PATH=`pwd` ; export CXXFLAGS=" -fPIC " ; export CPPFLAGS="-I$$EXTERN_PATH/bzip2-1.0.5/ -I$$EXTERN_PATH/zlib-1.2.3/ -I$$EXTERN_PATH/cxxtools/include/" ; export LDFLAGS="-L$$EXTERN_PATH/zlib-1.2.3/ -L$$EXTERN_PATH/bzip2-1.0.5/ -L$$EXTERN_PATH/cxxtools/src/unit/.libs/ -L$$EXTERN_PATH/cxxtools/src/.libs/" ; echo $$LDFLAGS ; echo $$CPPFLAGS ; cd zimlib ; ./autogen.sh ; ./configure --with-reader=no --with-writer=no ; make ; cd ..
 
 clean:
-	rm -rf zlib* bzip* cxxtools tntzenoreader xapian* *~
+	rm -rf zlib* bzip* cxxtools zimlib xapian* *~ *.tmp
