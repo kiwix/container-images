@@ -1038,6 +1038,30 @@ sub listCategoryEntries {
     return(@entries);    
 }
 
+sub allNamespaces {
+    my $self = shift;
+    my $httpResponse = $self->makeHttpPostRequest(
+	$self->indexUrl()."title=Special:PrefixIndex"
+	);
+
+    my $content = $httpResponse->content();
+    my %hash;
+    while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
+	my $code = $1;
+	my $name = $2;
+	$name =~ s/\ /_/;
+	$name = ucfirst($name);
+
+	unless (Encode::is_utf8($name)) {
+	    $name = decode_utf8($name);
+	}
+
+	$hash{$code} = $name;
+    }
+
+    return %hash;
+}
+
 # logging
 sub logger {
     my $self = shift;
