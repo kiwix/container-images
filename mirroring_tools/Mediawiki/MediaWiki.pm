@@ -1046,6 +1046,12 @@ sub allNamespaces {
 
     my $content = $httpResponse->content();
     my %hash;
+
+    # Add the special page namespace
+    if ($content =~ /var\ wgPageName\ \=\ "(.*):(.*)"/) {
+	$hash{-1} = $1;
+    }
+
     while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
 	my $code = $1;
 	my $name = $2;
