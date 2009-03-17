@@ -1049,7 +1049,15 @@ sub allNamespaces {
 
     # Add the special page namespace
     if ($content =~ /var\ wgPageName\ \=\ "(.*):(.*)"/) {
-	$hash{-1} = $1;
+	my $name = $1;
+	$name =~ s/\ /_/;
+	$name = ucfirst($name);
+
+	unless (Encode::is_utf8($name)) {
+	    $name = decode_utf8($name);
+	}
+
+	$hash{-1} = $name;
     }
 
     while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
