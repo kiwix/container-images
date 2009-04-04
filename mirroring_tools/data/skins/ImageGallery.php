@@ -26,7 +26,7 @@ class ImageGallery extends ImageGalleryOriginal
 				# We're dealing with a non-image, spit out the name and be done with it.
 			} elseif( $this->mHideBadImages && wfIsBadImage( $nt->getDBkey(), $this->getContextTitle() ) ) {
 				# The image is blacklisted, just show it as a text link.
-			} elseif( !( $thumb = $img->transform( $params ) ) ) {
+			} elseif( $this->mWidths && $this->mHeights && !( $thumb = $img->transform( $params ) ) ) {
 				# Error generating thumbnail.
 			} elseif( $img->getMediaType() != 'MEDIATYPE_BITMAP' || $img->getMediaType() != 'MEDIATYPE_DRAWING') {
 			        # non image, ignore
