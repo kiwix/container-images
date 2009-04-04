@@ -45,6 +45,7 @@ $site->logger($logger);
 my @entries = $site->listCategoryEntries($category, $explorationDepth, $namespace);
 
 foreach my $entry (@entries) {
+    $entry =~ s/ /_/g;
     print $entry."\n";
 }
 
