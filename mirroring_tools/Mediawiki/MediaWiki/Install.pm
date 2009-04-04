@@ -118,6 +118,12 @@ sub install {
     my $cmd = "cp ../data/skins/*.php ".$directory."/skins/";
     `$cmd`;
 
+    # copy and modify Parser.php
+    $cmd = "cp $directory/includes/parser/Parser.php $directory/skins/ParserOriginal.php";
+    `$cmd`;
+    $cmd = "sed -i -e 's/class Parser/class ParserOriginal/' $directory/skins/ParserOriginal.php";
+    `$cmd`;
+
     # todo set link color to 'black' in the timeline extension
 }
 
