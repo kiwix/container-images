@@ -6,6 +6,7 @@ use utf8;
 use lib "../";
 use lib "../Mediawiki/";
 
+use Encode;
 use Config;
 use strict;
 use warnings;
@@ -36,6 +37,10 @@ GetOptions('host=s' => \$host,
 if (!$host || !$category) {
     print "usage: ./listCategoryEntries.pl --host=my.wiki.org --category=mycat [--path=w] [--explorationDepth=1] [--namespace=0]\n";
     exit;
+}
+
+unless (Encode::is_utf8($category)) {
+    $category = decode_utf8($category);
 }
 
 my $site = MediaWiki->new();
