@@ -53,6 +53,7 @@ $wgVerifyMimeType = true;
 
 # image conversion
 $wgSVGConverter = 'rsvg';
+$wgUseImageMagick = true;
 $wgImageMagickConvertCommand = 'convert';
 
 # logging
