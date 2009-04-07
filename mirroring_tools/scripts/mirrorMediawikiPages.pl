@@ -144,9 +144,11 @@ $mirror->noTextMirroring($noTextMirroring);
 $mirror->startMirroring();
 
 # useIncompletePagesAsInput
+$mirror->logger->info("Page which are incomplete will be searched.");
 if ($useIncompletePagesAsInput) {
     push(@pages, $mirror->getDestinationMediawikiIncompletePages());
 }
+$mirror->logger->info(scalar(@pages)." incomplete pages were found.");
 
 # fill the queue of page to mirror
 foreach my $page (@pages) {

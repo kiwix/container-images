@@ -423,7 +423,7 @@ sub makeHttpPostRequest {
 
 	if ($@) {
 	    $continue += 1;
-	    $self->log("info", "Unable to make makeHttpPostRequest (".$@."), will try again in $continue second(s).".Dumper($formValues->{'wpDestFile'}));
+	    $self->log("info", "Unable to make makeHttpPostRequest (".$@."), will try again in $continue second(s).");
 	    sleep($continue);
 	} else {
 	    $continue = 0;
@@ -480,7 +480,7 @@ sub makeSiteRequest {
 
 	if ($httpResponse->code() != 200) {
 	    $count++;
-	    $self->log("info", "Unable to make the following API request, HTTP error code was '".$httpResponse->code()."', ($count time) on '".$url."':\n".Dumper($values));
+	    $self->log("info", "Unable to make the following API request, HTTP error code was '".$httpResponse->code()."', ($count time) on '".$url."'. Response content is ".$httpResponse->content().":\n");
 	    sleep($count);
 	    $loop = 1;
 	} else {
@@ -546,9 +546,9 @@ sub getImageUrl {
 
     do {
 	$self->userAgent()->requests_redirectable([]);
-	$url =  $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => $title, 'file' => $image } )->header('location') ;
+	$url = $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => $title, 'file' => $image } )->header('location') ;
 	$self->userAgent()->requests_redirectable(['HEAD', 'POST', 'GET']);
-	
+
 	if ( $url =~ /\?/ && $url =~ /title\=(.*)\&/ ) {
 	    $title = uri_unescape($1);
 	    unless (Encode::is_utf8($title)) {
@@ -1021,7 +1021,7 @@ sub listCategoryEntries {
 			push(@categoryStack, $entry->{title}) if ($entry->{title});
 		    }
 
-		    if (defined($namespace) && !($namespace eq $entry->{ns})) {
+		    if (defined($namespace) && ($namespace eq $entry->{ns})) {
 			push(@entries, $entry->{title}) if ($entry->{title});
 			next;
 		    }
