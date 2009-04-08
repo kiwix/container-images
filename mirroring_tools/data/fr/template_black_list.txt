@@ -5,9 +5,11 @@ Template:Portail
 Template:Commons
 Template:Wiktionnaire
 Template:À_vérifier
-Template:référence_nécessaire
-Template:refnec
+Template:référence_nécessaire {{{1}}}
+Template:refnec {{{1}}}
+Template:Référence_souhaitée {{{1}}}
 Template:Wikinews
+Template:Wikibooks
 Template:Commonscat
 Template:Article_de_qualité
 Template:Semi-protection
@@ -17,3 +19,28 @@ Template:Lien_BA
 Template:Lien_AdQ
 Template:Wikisource
 Template:Autres_projets
+Template:Wikiversity
+Template:Sport_à_venir
+Template:Sport_en_cours
+Template:Portail_Suisse
+Template:Synthèse_vocale2
+Template:Événement_à_venir
+Template:cosmo_validé
+Template:portail_cosmologie
+Template:Wikiquote
+Template:Wiktionnaire-2
+Template:portail_géométrie
+Template:Voir_référence
+Template:Wikisourceauteur
+Template:portail_astronomie
+Template:à_sourcer
+Template:Semi-protection_longue
+Template:à_recycler
+Template:Article_incomplet
+Template:intro_courte
+Template:Article_potentiellement_de_qualité
+Template:Portail_Cliopédia
+Template:message_galerie
+Template:Portail_histoire_militaire
+Template:Égypte_antique
+Template:sources_à_lier
