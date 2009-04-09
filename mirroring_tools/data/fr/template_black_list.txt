@@ -4,10 +4,10 @@ Template:wikilivres
 Template:Portail
 Template:Commons
 Template:Wiktionnaire
-Template:À_vérifier
-Template:référence_nécessaire {{{1}}}
-Template:refnec {{{1}}}
-Template:Référence_souhaitée {{{1}}}
+Template:À_vérifier {{#if:{{{1|}}}|{{{1}}}}}
+Template:référence_nécessaire {{#if:{{{1|}}}|{{{1}}}}}
+Template:refnec {{#if:{{{1|}}}|{{{1}}}}}
+Template:Référence_souhaitée {{#if:{{{1|}}}|{{{1}}}}}
 Template:Wikinews
 Template:Wikibooks
 Template:Commonscat
@@ -33,7 +33,7 @@ Template:portail_géométrie
 Template:Voir_référence
 Template:Wikisourceauteur
 Template:portail_astronomie
-Template:à_sourcer
+Template:à_sourcer {{#if:{{{1|}}}|{{{1}}}}}
 Template:Semi-protection_longue
 Template:à_recycler
 Template:Article_incomplet
@@ -44,3 +44,7 @@ Template:message_galerie
 Template:Portail_histoire_militaire
 Template:Égypte_antique
 Template:sources_à_lier
+Template:Qui {{#if:{{{1|}}}|{{{1}}}}}
+Template:Quoi {{#if:{{{1|}}}|{{{1}}}}}
+Template:Portail_mathématiques
+Template:Exercices
