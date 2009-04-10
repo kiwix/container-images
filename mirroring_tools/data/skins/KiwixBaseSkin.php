@@ -60,6 +60,11 @@ class KiwixBaseSkin extends SkinTemplate {
                    return "";
 		}
 
+		// remove none bitmap links
+		if ($file->getMediaType() != "BITMAP" && $file->getMediaType() != "DRAWING") {
+		   return "";
+		} 
+
 		$html = Linker::makeImageLink2($title, $file, $frameParams, $handlerParams, $time, $query);
 
 		// remove image links, the test is a trick to avoid doing that for imagemap pictures
@@ -94,7 +99,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 $content = $out->mBodytext;
 
 		 // remove links to disemb. and other (if no link inside)
-		 preg_match_all('/<dd>.*?<\/dd>|<div class="dablink">.*?<\/div>/s', $content, $matches);
+		 preg_match_all('/<dd>.*?<\/dd>|<div class="(detail|homonymie|dablink)".*?<\/div>/s', $content, $matches);
 		 foreach ($matches[0] as $match) {
 		   
 		   // remove only html code without links or latex generated mathematics images
