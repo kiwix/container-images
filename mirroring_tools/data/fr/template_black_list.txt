@@ -46,5 +46,28 @@ Template:Égypte_antique
 Template:sources_à_lier
 Template:Qui {{#if:{{{1|}}}|{{{1}}}}}
 Template:Quoi {{#if:{{{1|}}}|{{{1}}}}}
+Template:passage_non_neutre {{#if:{{{1|}}}|{{{1}}}}}
 Template:Portail_mathématiques
 Template:Exercices
+Template:Portail_français
+Template:Portail_électricité_et_électronique
+Template:trop_de_liens
+Template:coord
+Template:Portail_États-Unis
+Template:Portail_Grèce
+Template:Portail_Antarctique
+Template:Portail_physique
+Template:Portail_Normandie
+Template:Fiche_de_références
+Template:Anecdotes
+Template:Vidéo
+Template:Var_met
+Template:Désaccord_de_neutralité
+Template:Galerie_détaillée
+Template:Wikisourcetexte
+Template:Portail_POA
+Template:Portail_zoologie
+Template:Tnavbar
+Template:Pour_Wikiquote
+Template:unicode_japonais
+Template:Portail_Japon

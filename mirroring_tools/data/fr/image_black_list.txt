@@ -1,2 +1,2 @@
 Fichier:Speaker_Icon.svg
-
+Fichier:Gtk-dialog-info.svg
