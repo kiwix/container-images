@@ -206,6 +206,19 @@ class KiwixBaseSkin extends SkinTemplate {
 }
 
 global $wgHooks;
+global $wgParser;
+
+// shortcut the imagemap extension and output empty string if any error occurs
+$wgParser->setHook( 'imagemap', 'KiwixImageMap' );
+function KiwixImageMap($content, $attributes, $object) {
+	 ini_set('display_errors', 0);
+	 $output = call_user_func_array( array( 'ImageMap', 'render' ), array( $content, $attributes, $object ) );
+	 ini_set('display_errors', 1);
+	 if (preg_match('/"error"/', $output)) {
+	    return "";
+	 }
+	 return $output;
+}
 
 // avoid links to category
 $wgHooks['LinkBegin'][] = 'KiwixLinkBegin';
