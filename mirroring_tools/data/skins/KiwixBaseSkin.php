@@ -61,7 +61,8 @@ class KiwixBaseSkin extends SkinTemplate {
 		}
 
 		// remove none bitmap links
-		if ($file->getMediaType() != "BITMAP" && $file->getMediaType() != "DRAWING") {
+		if ($file->getMediaType() != "BITMAP" && $file->getMediaType() != "DRAWING" 
+		   			     || preg_match('/\.djvu$/', $title) ) {
 		   return "";
 		} 
 
