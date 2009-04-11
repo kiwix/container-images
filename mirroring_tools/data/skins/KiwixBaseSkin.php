@@ -99,7 +99,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 $content = $out->mBodytext;
 
 		 // remove links to disemb. and other (if no link inside)
-		 preg_match_all('/<dd>.*?<\/dd>|<div class="(detail|homonymie|dablink)".*?<\/div>/s', $content, $matches);
+		 preg_match_all('/<dd>.*?<\/dd>|<div class="(detail|homonymie|dablink|detail principal)".*?<\/div>/s', $content, $matches);
 		 foreach ($matches[0] as $match) {
 		   
 		   // remove only html code without links or latex generated mathematics images
