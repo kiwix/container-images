@@ -71,3 +71,14 @@ Template:Tnavbar
 Template:Pour_Wikiquote
 Template:unicode_japonais
 Template:Portail_Japon
+Template:à_délister
+Template:Infodoc
+Template:Portail_Mali
+Template:Portail_littérature
+Template:citation_nécessaire {{#if:{{{1|}}}|{{{1}}}}}
+Template:contexte_nécessaire {{#if:{{{1|}}}|{{{1}}}}}
+Template:portail_médecine
+Template:Contenu_à_préciser
+Template:Portail_jeu_vidéo
+Template:Copie_à_vérifier
+Template:Wikispecies

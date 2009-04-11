@@ -1,2 +1,5 @@
 Fichier:Speaker_Icon.svg
 Fichier:Gtk-dialog-info.svg
+Fichier:Noimage.png
+Fichier:Importez_le_logo_individu-fr.svg
+Fichier:Loudspeaker.svg
