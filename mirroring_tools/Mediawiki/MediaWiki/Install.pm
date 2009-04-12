@@ -124,7 +124,15 @@ sub install {
     $cmd = "sed -i -e 's/class Parser/class ParserOriginal/' $directory/skins/ParserOriginal.php";
     `$cmd`;
 
-    # todo set link color to 'black' in the timeline extension
+    # compile textvc
+    $cmd = "cd $directory/math ; make";
+    `$cmd`;
+
+    # Set link color to 'black' in the timeline extension
+    $cmd = "sed -i -e 's/\$LinkColor[ |]=.*$/\$LinkColor = \"black\"/' $directory/extensions/timeline/EasyTimeline.pl";
+    `$cmd`;
+
+    # todo: check if all extern tools are there
 }
 
 
