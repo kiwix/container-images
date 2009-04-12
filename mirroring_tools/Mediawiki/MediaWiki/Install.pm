@@ -125,11 +125,12 @@ sub install {
     `$cmd`;
 
     # compile textvc
-    $cmd = "cd $directory/math ; make";
+    $cmd = "cd $directory/math ; make clean all";
+    print $cmd."\n";
     `$cmd`;
 
     # Set link color to 'black' in the timeline extension
-    $cmd = "sed -i -e 's/\$LinkColor[ |]=.*$/\$LinkColor = \"black\"/' $directory/extensions/timeline/EasyTimeline.pl";
+    $cmd = 'sed -i -e \'s/\$LinkColor[ |]=.*$/\$LinkColor = "black"/\' ' . $directory . '/extensions/timeline/EasyTimeline.pl';
     `$cmd`;
 
     # todo: check if all extern tools are there

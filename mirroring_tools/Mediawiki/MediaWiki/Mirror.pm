@@ -226,7 +226,10 @@ sub getDestinationMediawikiIncompletePages {
    my @pages;
    foreach my $page ($site->allPages('0', 'nonredirects')) {
        if ($site->isIncompletePage($page)) {
+	   $self->log("info", "'".$page."' is incomplete.");
 	   push(@pages, $page);
+       } else {
+	   $self->log("info", "'".$page."' is already complete.");
        }
    }
 
@@ -730,6 +733,7 @@ sub checkImages {
 
 		    $image =~ s/Image://i;
 		    $image =~ s/File://i;
+		    $image =~ s/Fichier://i;
 
 		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);
