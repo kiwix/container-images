@@ -124,6 +124,12 @@ sub install {
     $cmd = "sed -i -e 's/class Parser/class ParserOriginal/' $directory/skins/ParserOriginal.php";
     `$cmd`;
 
+    # copy and modify ImageGallery.php
+    $cmd = "cp $directory/includes/ImageGallery.php $directory/skins/ImageGalleryOriginal.php";
+    `$cmd`;
+    $cmd = "sed -i -e 's/class ImageGallery/class ImageGalleryOriginal/' $directory/skins/ImageGalleryOriginal.php";
+    `$cmd`;
+
     # compile textvc
     $cmd = "cd $directory/math ; make clean all";
     print $cmd."\n";
