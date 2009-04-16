@@ -741,7 +741,7 @@ sub embeddedIn {
 }
 
 sub allPages {
-    my($self, $namespace, $filter) = @_;
+    my($self, $namespace, $filter, $prefix) = @_;
 
     unless ($filter) {
 	$filter = 'nonredirects';
@@ -767,6 +767,11 @@ sub allPages {
 	$httpPostRequestParams->{'apfilterredir'} = $filter;
     }
     
+    # set prefix if necessary
+    if (defined($prefix)) {
+	$httpPostRequestParams->{'apprefix'} = $prefix;
+    }
+
     do {
 	# set the appropriate offset
 	if ($continue) {

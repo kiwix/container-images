@@ -22,16 +22,18 @@ my $host = "";
 my $path = "";
 my $namespace;
 my $filter = "all";
+my $prefix;
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
 	   'path=s' => \$path,
 	   'filter=s' => \$filter,
-	   'namespace=s' => \$namespace
+	   'namespace=s' => \$namespace,
+	   'prefix=s' => \$prefix,
 	   );
 
 if (!$host || !($filter eq "all" || $filter eq "nonredirects" || $filter eq "redirects")) {
-    print "usage: ./listAllPages.pl --host=my.wiki.org [--path=w] [--namespace=0] [--filter=[all|redirects|nonredirects]]\n";
+    print "usage: ./listAllPages.pl --host=my.wiki.org [--path=w] [--namespace=0] [--filter=[all|redirects|nonredirects]] [--prefix=foobar]\n";
     exit;
 }
 
@@ -39,7 +41,7 @@ my $site = MediaWiki->new();
 $site->hostname($host);
 $site->path($path);
 
-foreach my $page ($site->allPages($namespace, $filter)) {
+foreach my $page ($site->allPages($namespace, $filter, $prefix)) {
     print $page."\n";
 }
 
