@@ -2,6 +2,7 @@ package MediaWiki;
 
 use utf8;
 use strict;
+use warnings;
 use XML::Simple;
 use Data::Dumper;
 use LWP::UserAgent;
@@ -13,47 +14,36 @@ use Getargs::Long;
 use threads;
 use threads::shared;
 
-my $indexUrl;
-my $apiUrl;
-my $path;
-my $hostname;
-my $user;
-my $password;
-my $userAgent;
-my $protocol;
-
-my $httpUser;
-my $httpPassword;
-my $httpRealm;
-
 my $logger;
 my $loggerMutex : shared = 1;
 
 our %filePathCache : shared;
 our %writeApiCache : shared;
 
-my $editToken;
 my $lastRequestTimestamp = 0;
 
 sub new {
     my $class = shift;
-    my $self = {};
+    my $self = {
+	editToken => undef,
+	hostname => "127.0.0.1",
+	indexUrl => undef,
+	apiUrl => undef,
+	path => "",
+	user => undef,
+	password => undef,
+	userAgent => undef,
+	protocol => "http",
+	httpUser => undef,
+	httpPassword => undef,
+	httpRealm => undef
+    };
 
     bless($self, $class);
 
     # create third parth tools
     $self->userAgent(LWP::UserAgent->new());
     $self->userAgent()->cookie_jar( {} );
-
-    # set default protocol
-    unless ($self->protocol()) {
-	$self->protocol('http');
-    }
-
-    # set default hostname
-    unless ($self->hostname()) {
-	$self->hostname('127.0.0.1');
-    }
 
     return $self;
 }
@@ -206,85 +196,85 @@ sub hasWriteApi {
 }
 
 sub protocol {
-    my $self =  shift;
+    my $self = shift;
 
     if (@_) { 
-	$protocol = shift;
+	$self->{protocol} = shift;
 	$self->computeUrls();
     }
-    return $protocol;
+    return $self->{protocol};
 }
 
 sub httpPassword {
     my $self = shift;
-    if (@_) { $httpPassword = shift; }
-    return $httpPassword;
+    if (@_) { $self->{httpPassword} = shift; }
+    return $self->{httpPassword};
 }
 
 sub httpUser {
     my $self = shift;
-    if (@_) { $httpUser = shift; }
-    return $httpUser;
+    if (@_) { $self->{httpUser} = shift; }
+    return $self->{httpUser};
 }
 
 sub httpRealm {
     my $self = shift;
-    if (@_) { $httpRealm = shift; }
-    return $httpRealm;
+    if (@_) { $self->{httpRealm} = shift; }
+    return $self->{httpRealm};
 }
 
 sub indexUrl {
     my $self = shift;
-    if (@_) { $indexUrl = shift; }
-    return $indexUrl;
+    if (@_) { $self->{indexUrl} = shift; }
+    return $self->{indexUrl};
 }
 
 sub userAgent {
     my $self = shift;
-    if (@_) { $userAgent = shift; }
-    return $userAgent;
+    if (@_) { $self->{userAgent} = shift; }
+    return $self->{userAgent};
 }
 
 sub apiUrl {
     my $self = shift;
-    if (@_) { $apiUrl = shift; }
-    return $apiUrl;
+    if (@_) { $self->{apiUrl} = shift; }
+    return $self->{apiUrl};
 }
 
 sub editToken {
     my $self = shift;
-    if (@_) { $editToken = shift; }
-    return $editToken;
+    if (@_) { $self->{editToken} = shift; }
+    return $self->{editToken};
 }
 
 sub hostname {
     my $self = shift;
     if (@_) { 
-	$hostname = shift; 
+	$self->{hostname} = shift; 
 	$self->computeUrls();
     }
-    return $hostname;
+    return $self->{hostname};
 }
 
 sub path {
     my $self = shift;
     if (@_) { 
-	$path = shift; 
+	$self->{path} = shift; 
 	$self->computeUrls();
     }
-    return $path;
+    return $self->{path};
 }
 
 sub user {
     my $self = shift;
-    if (@_) { $user = shift; }
-    return $user;
+    if (@_) { $self->{user} = shift; }
+    return $self->{user};
 }
 
 sub password {
     my $self = shift;
-    if (@_) { $password = shift; }
-    return $password;
+    if (@_) { $self->{password} = shift; }
+    return $self->{password};
 }
 
 sub downloadPage {
