@@ -1,0 +1,17 @@
+Template:Nota_disambigua
+Template:vedi_anche
+Template:portale
+Template:vetrina
+Template:ip
+Template:interprogetto
+Template:Interprogetto/notizia
+Template:Coord
+Template:vetrina_rimozione
+Template:NN
+Template:citazione_necessaria {{#if:{{{1|}}}|{{{1}}}}}
+Template:cn {{#if:{{{1|}}}|{{{1}}}}}
+Template:Curiosità
+Template:Avvisobloccoparziale
+Template:Avvisobloccoparziale_scad
+Template:film_horror
+Template:Avvisounicode
