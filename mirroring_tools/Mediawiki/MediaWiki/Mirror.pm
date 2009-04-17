@@ -734,6 +734,7 @@ sub checkImages {
 		    $image =~ s/Image://i;
 		    $image =~ s/File://i;
 		    $image =~ s/Fichier://i;
+		    $image =~ s/Archivo://i;
 
 		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);
