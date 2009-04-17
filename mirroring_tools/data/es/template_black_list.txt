@@ -1,0 +1,23 @@
+Template:otros_usos
+Template:AP
+Template:VT
+Template:CP
+Template:referencias
+Template:Audio {{#if:{{{2|}}}|{{{2}}}}}
+Template:Artículo_destacado
+Template:Wikipedia_grabada
+Template:commons
+Template:Artículo_bueno
+Template:Interwiki_país
+Template:info
+Template:Portal
+Template:commonscat
+Template:wikcionario
+Template:Wikisource
+Template:wikinews
+Template:wikiquote
+Template:wikibooks
+Template:Sonido
+Template:wikispecies
+Template:redirige_aquí
+Template:Notasalpie
