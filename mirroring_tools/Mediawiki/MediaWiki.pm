@@ -360,7 +360,7 @@ sub uploadPage {
 		$self->log("info", "Reloading edit token...");
 		$returnValue = 0;
 	    } elsif ($httpResponse->content() =~ /invalidtitle/i) {
-		$self->log("info", "Invalid title, this page '$title' can simply not be uploaded.");
+		$self->log("info", "Invalid title '$title', this page '$title' can simply not be uploaded.");
 		$returnValue = 0;
 		last;
 	    }
