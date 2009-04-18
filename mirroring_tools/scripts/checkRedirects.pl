@@ -53,6 +53,7 @@ sub isRedirectContent {
 }
 
 my @targets;
+my %redirects;
 foreach my $redirect (@redirects) {
 
     # load content
@@ -63,6 +64,7 @@ foreach my $redirect (@redirects) {
 
     if ($target) {
 	push(@targets, $target);
+	$redirects{$target} = $redirect;
     }
 }
 
@@ -71,7 +73,7 @@ my %existences = $site->exists(@targets);
 
 foreach my $existence (keys(%existences)) {
     unless ($existences{$existence}) {
-	print $existence."\n";
+	print $redirects{$existence}."\n";
     }
 }
 
