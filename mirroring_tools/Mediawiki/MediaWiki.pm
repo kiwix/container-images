@@ -623,6 +623,37 @@ sub loadEditToken {
     return 0;
 }
 
+sub getOutgoingLinks {
+    my($self, $page) = @_;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'prop' => 'links',
+        'titles' => $page,
+        'format' => 'xml',
+        'allimit' => '500',
+    };
+    my %links;
+    my $continue;
+    my $xml;
+
+    do {
+	# set the appropriate offset
+	if ($continue) {
+	    $httpPostRequestParams->{'plcontinue'} = $continue;
+	}
+
+	# make the http request and parse response
+	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'pl');
+	if (exists($xml->{query}->{pages}->{page}->{links}->{pl})) {
+	    foreach my $link (@{$xml->{query}->{pages}->{page}->{links}->{pl}}) {
+		$links{$link->{title}} = 1 if ($link->{title});
+	    }
+	}
+    } while ($continue = $xml->{"query-continue"}->{"links"}->{"plcontinue"});
+
+    return(keys(%links));
+}
+
 sub getFailingDependences {
     my $self = shift;
     my $page = shift;
