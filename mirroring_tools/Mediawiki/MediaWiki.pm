@@ -623,6 +623,23 @@ sub loadEditToken {
     return 0;
 }
 
+sub getFailingDependences {
+    my $self = shift;
+    my $page = shift;
+    
+    my @dependences = ($self->imageDependences($page), $self->templateDependences($page));
+    my @failingDependences;
+
+    foreach my $dep (@dependences) {
+        if (exists($dep->{"missing"})) {
+	    $dep->{title} =~ tr/ /_/;
+	    push(@failingDependences, $dep->{title});
+        }
+    }
+
+    return @failingDependences;
+}
+
 sub isIncompletePage {
     my $self = shift;
     my $page = shift;

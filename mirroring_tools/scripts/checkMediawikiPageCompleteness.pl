@@ -25,17 +25,19 @@ my $path = "";
 my @pages;
 my $readFromStdin = 0;
 my $checkAllPages = 0;
+my $printDependences = 0;
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
 	   'path=s' => \$path,
            'readFromStdin' => \$readFromStdin,
            'checkAllPages' => \$checkAllPages,
+           'printDependences' => \$printDependences,
            'page=s' => \@pages,
 	   );
 
 if (!$host) {
-    print "usage: ./getIncompletePages.pl --host=my.wiki.org [--path=w] [--page=mypage] [--readFromStdin] [--checkAllPages]\n";
+    print "usage: ./getIncompletePages.pl --host=my.wiki.org [--path=w] [--page=mypage] [--readFromStdin] [--checkAllPages] [--printDependences]\n";
     exit;
 }
 
@@ -62,11 +64,16 @@ foreach my $page (@pages) {
 	$page = decode_utf8($page);
     }
 
-    if ($site->isIncompletePage($page)) {
-	$logger->info("Page '$page' is incomplete by '".$host."'.");
-	print $page."\n";
+    if ($printDependences) {
+	foreach my $page ($site->getFailingDependences($page)) {
+	    $logger->info("Page '$page' is incomplete by '".$host."'.");
+	    print $page."\n";
+	}
     } else {
-	$logger->info("Page '$page' is complete by '".$host."'.");
+	if ($site->isIncompletePage($page)) {
+	} else {
+	    $logger->info("Page '$page' is complete by '".$host."'.");
+	}
     }
 }
 
