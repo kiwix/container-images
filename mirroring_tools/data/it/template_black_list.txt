@@ -15,3 +15,6 @@ Template:Avvisobloccoparziale
 Template:Avvisobloccoparziale_scad
 Template:film_horror
 Template:Avvisounicode
+Template:Vaglio
+Template:...
+Template:C

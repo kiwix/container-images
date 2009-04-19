@@ -82,3 +82,11 @@ Template:Contenu_à_préciser
 Template:Portail_jeu_vidéo
 Template:Copie_à_vérifier
 Template:Wikispecies
+Template:Prononciation
+Template:Son_simple
+Template:Portail_automobile
+Template:Portail_Hellenopedia
+Template:Résumé_introductif_trop_long
+Template:Aide_pays_et_drapeau
+Template:Article_audio
+Template:fusion
