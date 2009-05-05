@@ -90,3 +90,14 @@ Template:Résumé_introductif_trop_long
 Template:Aide_pays_et_drapeau
 Template:Article_audio
 Template:fusion
+Template:Nom_protégé
+Template:Catégorie_principale
+Template:interwiki
+Template:Unicode_cyrillique
+Template:Portail_conservation_de_la_nature
+Template:Wikisource_XY
+Template:wiktionnaire_langue
+Template:Wikibookspar
+Template:plusieurs_en_cours
+Template:homop
+Template:UnicodeChinois

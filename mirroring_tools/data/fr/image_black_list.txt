@@ -3,3 +3,5 @@ Fichier:Gtk-dialog-info.svg
 Fichier:Noimage.png
 Fichier:Importez_le_logo_individu-fr.svg
 Fichier:Loudspeaker.svg
+Fichier:Fairytale_bookmark_gold.png
+Fichier:Image:Fairytale_bookmark_silver.png
