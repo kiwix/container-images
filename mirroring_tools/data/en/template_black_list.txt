@@ -151,3 +151,5 @@ template:About
 template:pp-semi
 template:otheruses2
 template:external_links
+Template:Featured_list
+Template:psych-stub
