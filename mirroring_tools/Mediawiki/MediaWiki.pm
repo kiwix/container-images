@@ -770,7 +770,9 @@ sub embeddedIn {
 	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'ei');
 
 	foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
-	    push( @links, $hash->{title} );
+	    my $title = $hash->{title};
+	    $title =~ tr/ /_/;
+	    push( @links, $title );
 	}
 
     } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue});
@@ -1020,6 +1022,8 @@ sub listCategoryEntries {
     my $currentDepth = 0;
     my %doneCategories;
 
+    unless (defined($explorationDepth)) { $explorationDepth=1 };
+
     while ( ($category = shift(@categoryStack)) && ($currentDepth < $explorationDepth) ) {
 
 	if ($category eq "|") {
@@ -1060,16 +1064,15 @@ sub listCategoryEntries {
 
 	    if (exists($xml->{query}->{categorymembers}->{cm})) {
 		foreach my $entry (@{$xml->{query}->{categorymembers}->{cm}}) {
+		    # Add a subcategory
 		    if ($entry->{ns} eq "14") {
 			push(@categoryStack, $entry->{title}) if ($entry->{title});
 		    }
 
+		    # Add a page 
 		    if (defined($namespace) && ($namespace eq $entry->{ns})) {
 			push(@entries, $entry->{title}) if ($entry->{title});
-			next;
 		    }
-
-		    push(@entries, $entry->{title}) if ($entry->{title});
 		}
 	    }
 
