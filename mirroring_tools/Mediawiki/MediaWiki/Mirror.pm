@@ -949,7 +949,7 @@ sub uploadPages {
 	    $self->incrementCurrentTaskCount();
 	    
 	    # ist the page a redirection page
-	    $redirectTarget = $self->isRedirectContent($content);
+	    $redirectTarget = $site->isRedirectContent($content);
 
 	    # upload the page
 	    $status = $site->uploadPage($title, $content, $summary, $redirectTarget);
@@ -1172,20 +1172,6 @@ sub destinationHttpPassword {
     lock($destinationHttpPassword);
     if (@_) { $destinationHttpPassword = shift }
     return $destinationHttpPassword;
-}
-
-# mirroring stuff
-sub isRedirectContent {
-    my $self = shift;
-    my $content = shift;
-
-    if ( $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/i ) {
-	my $title = $1;
-	$title =~ tr/ /_/;
-	$title = lcfirst($title);
-	return $title;
-    }
-    return "";
 }
 
 sub isTemplate {

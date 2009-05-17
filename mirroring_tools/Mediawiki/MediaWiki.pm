@@ -18,6 +18,7 @@ my $logger;
 my $loggerMutex : shared = 1;
 
 our %filePathCache : shared;
+our %redirectRegexCache : shared;
 our %writeApiCache : shared;
 
 my $lastRequestTimestamp = 0;
@@ -155,6 +156,31 @@ sub restorePage {
     }
     
     return 1;
+}
+
+sub getRedirectionRegex {
+    my $self = shift;
+
+    lock(%redirectRegexCache);
+    unless (exists($redirectRegexCache{$self->hostname()})) {
+	my $xml = $self->makeApiRequestAndParseResponse(
+	    values=>{ meta => "siteinfo", siprop => "magicwords", action => "query", format => "xml"}, 
+	    method=>"GET",
+	    forceArray => "alias"
+	    );
+
+	my @names;
+	if (ref($xml->{query}->{magicwords}->{magicword}->{redirect}->{aliases}->{alias}) eq "ARRAY") {
+	    @names = @{$xml->{query}->{magicwords}->{magicword}->{redirect}->{aliases}->{alias}};
+	}
+	else {
+	    @names = ("REDIRECT");
+	}
+
+	$redirectRegexCache{$self->hostname()} = "(".join("|", @names).")[ ]*\[\[[ ]*(.*)[ ]*\]\]";
+    }
+
+    return $redirectRegexCache{$self->hostname()};
 }
 
 sub hasFilePath {
@@ -1120,6 +1146,22 @@ sub allNamespaces {
     }
 
     return %hash;
+}
+
+# mirroring stuff
+sub isRedirectContent {
+    my $self = shift;
+    my $content = shift;
+
+    my $regex = $self->getRedirectionRegex();
+
+    if ( $content =~ /$regex/i ) {
+	my $title = $2;
+	$title =~ tr/ /_/;
+	$title = lcfirst($title);
+	return $title;
+    }
+    return "";
 }
 
 # logging

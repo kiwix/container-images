@@ -34,37 +34,27 @@ if (!$host) {
 }
 
 my $site = MediaWiki->new();
+$site->logger($logger);
 $site->hostname($host);
 $site->path($path);
 $site->setup();
 
 my @redirects = $site->allPages('0', "redirects"); 
 
-sub isRedirectContent {
-    my $content = shift;
-
-    if ( $content =~ /\#REDIRECT[ ]*\[\[[ ]*(.*)[ ]*\]\]/i ) {
-	my $title = $1;
-	$title =~ tr/ /_/;
-	$title = lcfirst($title);
-	return $title;
-    }
-    return "";
-}
-
 my @targets;
 my %redirects;
 foreach my $redirect (@redirects) {
-
     # load content
     my $content = $site->downloadPage($redirect);
 
     # is redirect
-    my $target = isRedirectContent($content);
+    my $target = $site->isRedirectContent($content);
 
     if ($target) {
 	push(@targets, $target);
 	$redirects{$target} = $redirect;
+    } else {
+	$logger->error("Unable to find target in redirect content : '".$content."'");
     }
 }
 
@@ -73,7 +63,9 @@ my %existences = $site->exists(@targets);
 
 foreach my $existence (keys(%existences)) {
     unless ($existences{$existence}) {
-	print $redirects{$existence}."\n";
+	my $title = lcfirst($existence);
+	$title =~ tr/ /_/;
+	print $redirects{$title}."\n";
     }
 }
 
