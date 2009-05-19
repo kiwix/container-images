@@ -2,6 +2,11 @@ Template:otros_usos
 Template:AP
 Template:VT
 Template:CP
+Template:Mal_traducido
+Template:Wikificar
+Template:actualidad
+Template:destacado
+Template:wikiversidad
 Template:referencias
 Template:Audio {{#if:{{{2|}}}|{{{2}}}}}
 Template:Artículo_destacado
