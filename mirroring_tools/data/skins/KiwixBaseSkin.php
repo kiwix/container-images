@@ -165,8 +165,50 @@ class KiwixBaseSkin extends SkinTemplate {
 
 		 };
 
-		 // remove timeline image map <img usemap="#1e85951432e89de2bc508a5b1c7eb174" src="/images/timeline/1e85951432e89de2bc508a5b1c7eb174.png">
+		 // remove last empty chapter/paragraph/...
 
+		 // <h2> <span class="mw-headline">Enlaces externos</span></h2>
+		 //  <!-- end content -->
+		 $offset = 0;
+
+		 if ( preg_match('/(<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ )/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+
+		   // set the offset for the future
+		   $offset = $matches[0][2] + 1 ;
+
+		   // exlude the case of under chapter
+		   if ($matches[2][0] >= $matches[5][0]) {
+
+		     // remove the empty paragraph
+		     $toRemove = $matches[1][0].$matches[2][0].$matches[3][0];
+		     $content = str_replace($toRemove, "", $content);
+		     
+		     // remove the index entry
+		     preg_match('/<p><a name=\"([^\"]*)\"/', $toRemove, $match);
+		     $anchorName = $match[1];
+		     
+		     // get sumary index number
+		     preg_match("/<li.*?#$anchorName.*?<span class=\"tocnumber\">([\d\.]*)<\/span>.*?<\/li>/", $content, $match);
+		     $indexNumber = $match[1];
+		     
+		     // remove index line
+		     $content = str_replace($match[0], "", $content);
+		     
+		     // update following summary indexes
+		     $indexNumbers = split('[.]', $indexNumber);
+		     $last = $indexNumbers[count($indexNumbers) - 1];
+		     $prefix = substr($indexNumber, 0, strlen($indexNumber) - strlen($last));
+		     
+		     $last++;
+		     while ( preg_match("/(<span class=\"tocnumber\">$prefix)($last)(<\/span>)/", $content, $match) ) {
+		       $content = str_replace($match[0], $match[1].($last-1).$match[3], $content);
+		       $last++;
+		     };
+		   }
+
+		 };
+
+		 // remove timeline image map <img usemap="#1e85951432e89de2bc508a5b1c7eb174" src="/images/timeline/1e85951432e89de2bc508a5b1c7eb174.png">
 		 while ( preg_match("/(<img )(usemap=\"\#)([^\"]+)(\" )(src=\".*timeline.*\")/", $content, $match) ) {
 		   
 		   // remove map call in img tag
