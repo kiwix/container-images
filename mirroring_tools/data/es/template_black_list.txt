@@ -4,6 +4,13 @@ Template:VT
 Template:CP
 Template:Mal_traducido
 Template:Wikificar
+Template:discutido
+Template:copyedit
+Template:fusionar
+Template:InterWiki
+Template:noneutral
+Template:Traducción
+Template:No_neutralidad
 Template:actualidad
 Template:destacado
 Template:wikiversidad
