@@ -49,6 +49,7 @@ $site->hostname($host);
 $site->path($path);
 $site->logger($logger);
 
+my %deadLinks;
 foreach my $page (@pages) {
 
     unless (Encode::is_utf8($page)) {
@@ -60,9 +61,13 @@ foreach my $page (@pages) {
     foreach my $link (keys(%links)) {
 	unless ($links{$link}) {
 	    $link =~ tr/ /_/s;
-	    print $link."\n";
+	    $deadLinks{$link} = 1;
 	}
     }
 };
+
+foreach my $deadLink (keys(%deadLinks)) {
+    print $deadLink."\n";
+}
 
 exit;
