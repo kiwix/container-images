@@ -8,6 +8,13 @@ Template:discutido
 Template:copyedit
 Template:fusionar
 Template:InterWiki
+Template:desactualizado
+Template:bueno
+Template:endesarrollo
+Template:En_desarrollo
+Template:Separar
+Template:Incubator
+Template:evento_actual
 Template:noneutral
 Template:Traducción
 Template:No_neutralidad
