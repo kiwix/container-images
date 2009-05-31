@@ -5,7 +5,6 @@ Template:vetrina
 Template:ip
 Template:interprogetto
 Template:Interprogetto/notizia
-Template:Coord
 Template:vetrina_rimozione
 Template:NN
 Template:citazione_necessaria {{#if:{{{1|}}}|{{{1}}}}}
@@ -18,3 +17,4 @@ Template:Avvisounicode
 Template:Vaglio
 Template:...
 Template:C
+Template:F
