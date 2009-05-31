@@ -33,6 +33,8 @@ class KiwixBaseSkin extends SkinTemplate {
 		         return "";    
 		}
 
+		// This seems not being necessary 
+		/*
 		if ( $nt->getNamespace() == NS_CATEGORY ) {
 			# Determine if the category has any articles in it
 			$dbr = wfGetDB( DB_SLAVE );
@@ -42,6 +44,7 @@ class KiwixBaseSkin extends SkinTemplate {
 				return $this->makeKnownLinkObj( $nt, $text, $query, $trail, $prefix );
 			}
 		}
+		*/
 
 		if ( $text == '' ) {
 			$text = $nt->getPrefixedText();
@@ -267,7 +270,7 @@ $wgHooks['LinkBegin'][] = 'KiwixLinkBegin';
 
 function KiwixLinkBegin($skin, $target, &$text, &$customAttribs, &$query, &$options, &$ret) {
   if( $target->getNamespace() == NS_CATEGORY ) {
-    return false;
+    $options = Array('broken');
   }
   return true;
 }
