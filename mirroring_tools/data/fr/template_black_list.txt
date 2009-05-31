@@ -8,14 +8,27 @@ Template:À_vérifier {{#if:{{{1|}}}|{{{1}}}}}
 Template:référence_nécessaire {{#if:{{{1|}}}|{{{1}}}}}
 Template:refnec {{#if:{{{1|}}}|{{{1}}}}}
 Template:Référence_souhaitée {{#if:{{{1|}}}|{{{1}}}}}
+Template:pertinence
+Template:Désaccord_de_pertinence
+Template:mettre_à_jour
+Template:À_réactualiser
+Template:traduction
+Template:Demande_de_traduction
 Template:Wikinews
+Template:Taxobox_fin |}
 Template:Wikibooks
+Template:Livre_de_cuisine
 Template:à_traduire
 Template:Demande_de_traduction
 Template:Commonscat
 Template:Article_de_qualité
 Template:Semi-protection
 Template:...
+Template:À_illustrer
+Template:Wikisource_Enc
+Template:Taxobox_wikispecies
+Template:Taxobox_commons
+Template:Titre_simple
 Template:Son
 Template:copie_de_site
 Template:internationaliser
