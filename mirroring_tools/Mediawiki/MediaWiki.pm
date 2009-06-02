@@ -1050,61 +1050,65 @@ sub listCategoryEntries {
 
     unless (defined($explorationDepth)) { $explorationDepth=1 };
 
-    while ( ($category = shift(@categoryStack)) && ($currentDepth < $explorationDepth) ) {
+    while ( $currentDepth < $explorationDepth ) {
 
-	if ($category eq "|") {
-	    $currentDepth++;
-	    $self->log("info", "Still ".scalar(@categoryStack)." categories width depth $currentDepth to check...");
-	    if (scalar(@categoryStack)) {
-		push(@categoryStack, "|");
+	while ($category = shift(@categoryStack)) {
+
+	    if ($category eq "|") {
+		$self->log("info", "Still ".scalar(@categoryStack)." categories width depth > $currentDepth...");
+		$currentDepth++;
+
+		if (scalar(@categoryStack)) {
+		    push(@categoryStack, "|");
+		}
+		
+		last;
+	    }
+	    
+	    if (exists($doneCategories{$category})) {
+		$self->log("info", "'$category' already check for sub categories.");
 		next;
 	    }
-
-	    last;
-	}
-
-	if (exists($doneCategories{$category})) {
-	    $self->log("info", "'$category' already check for sub categories.");
-	    next;
-	}
-
-	sleep(1);
-
-	do {
-	    my $httpPostRequestParams = {
-		'action' => 'query',
-		'cmtitle' => $category,
-		'format' => 'xml',
-		'list' => 'categorymembers',
-		'cmlimit' => '500',
-		'cmnamespace' =>  "14|$namespace", 
-	    };
 	    
-	    # set the appropriate offset
-	    if ($continue) {
-		$httpPostRequestParams->{'cmcontinue'} = $continue;
-	    }
-
-	    # make the http request and parse response
-	    $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'cm');
-
-	    if (exists($xml->{query}->{categorymembers}->{cm})) {
-		foreach my $entry (@{$xml->{query}->{categorymembers}->{cm}}) {
-		    # Add a subcategory
-		    if ($entry->{ns} eq "14") {
-			push(@categoryStack, $entry->{title}) if ($entry->{title});
-		    }
-
-		    # Add a page 
-		    if (defined($namespace) && ($namespace eq $entry->{ns})) {
-			push(@entries, $entry->{title}) if ($entry->{title});
+	    sleep(1);
+	    
+	    $self->log("info", "Reading '$category'...");
+	    do {
+		my $httpPostRequestParams = {
+		    'action' => 'query',
+		    'cmtitle' => $category,
+		    'format' => 'xml',
+		    'list' => 'categorymembers',
+		    'cmlimit' => '500',
+		    'cmnamespace' =>  "14|$namespace", 
+		};
+		
+		# set the appropriate offset
+		if ($continue) {
+		    $httpPostRequestParams->{'cmcontinue'} = $continue;
+		}
+		
+		# make the http request and parse response
+		$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'cm');
+		
+		if (exists($xml->{query}->{categorymembers}->{cm})) {
+		    foreach my $entry (@{$xml->{query}->{categorymembers}->{cm}}) {
+			# Add a subcategory
+			if ($entry->{ns} eq "14") {
+			    push(@categoryStack, $entry->{title}) if ($entry->{title});
+			}
+			
+			# Add a page 
+			if (defined($namespace) && ($namespace eq $entry->{ns})) {
+			    push(@entries, $entry->{title}) if ($entry->{title});
+			}
 		    }
 		}
-	    }
-
-	    $doneCategories{$category} = 1;
-
-	} while ($continue = $xml->{"query-continue"}->{"categorymembers"}->{"cmcontinue"});
+		
+		$doneCategories{$category} = 1;
+		
+	    } while ($continue = $xml->{"query-continue"}->{"categorymembers"}->{"cmcontinue"});
+	}
     }
 
     return(@entries);    
