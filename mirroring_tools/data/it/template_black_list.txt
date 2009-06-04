@@ -18,3 +18,9 @@ Template:Vaglio
 Template:...
 Template:C
 Template:F
+Template:D
+Tempalte:C
+Template:P
+Template:W
+Template:vaglio
+Template:Wikipedia_parlata-n

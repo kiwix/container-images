@@ -40,3 +40,9 @@ Template:Sonido
 Template:wikispecies
 Template:redirige_aquí
 Template:Notasalpie
+Template:dividir
+Template:Wikiatlas
+Template:posiblefusionar
+Template:Posible_fusionar
+Template:PA
+Template:Problemas_artículo
