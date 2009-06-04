@@ -42,6 +42,8 @@ my $readFromStdin = 0;
 my $noResume = 0;
 my $noLog = 0;
 
+my $footerPath;
+
 ## Get console line arguments
 GetOptions(
 	   'sourceHost=s' => \$sourceHost, 
@@ -52,6 +54,7 @@ GetOptions(
            'destinationPath=s' => \$destinationPath,
            'destinationUsername=s' => \$destinationUsername,
            'destinationPassword=s' => \$destinationPassword,
+           'footerPath=s' => \$footerPath,
            'readFromStdin' => \$readFromStdin,
            'page=s' => \@pages,
            'checkCompletedImages' => \$checkCompletedImages,
@@ -88,7 +91,8 @@ if (!$sourceHost || !$destinationHost ) {
     print "--ignoreImageDependences\n\t\tDo not check for each downloaded page the image dependences (images included in the page).\n\t";
     print "--noTextMirroring\n\t\tDo not mirror any text. Can be useful to mirror only images (for example by ginving a list of picture pages).\n\t";
     print "--useIncompletePagesAsInput\n\t\tWill check dependences for all pages present in the destination wiki, and mirror lacking dependences.\n\t";
-    print "--ignoreEmbeddedInPagesCheck\n\t\tWill ignore to check in an article page usind a new upload template as failing dependences.\n";
+    print "--ignoreEmbeddedInPagesCheck\n\t\tWill ignore to check in an article page usind a new upload template as failing dependences.\n\t";
+    print "--footerPath=[path] (example: footer.html.tmpl)\n\t\tWill append to every article mirrored this HTML code.\n";
     exit;
 }
 
@@ -139,6 +143,8 @@ $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
 $mirror->checkEmbeddedIn( $ignoreEmbeddedInPagesCheck ? 0 : 1);
 
 $mirror->noTextMirroring($noTextMirroring);
+
+$mirror->footerPath($footerPath);
 
 # start the mirroring threads
 $mirror->startMirroring();

@@ -37,7 +37,7 @@ sub new {
 	protocol => "http",
 	httpUser => undef,
 	httpPassword => undef,
-	httpRealm => undef
+	httpRealm => undef,
     };
 
     bless($self, $class);
@@ -310,7 +310,7 @@ sub downloadPage {
 	'action' => 'query',
 	'prop' => 'revisions',
 	'format' => 'xml',
-	'rvprop' => 'content',
+	'rvprop' => 'content|ids',
     };
  
     # add revisionid if necessary
@@ -326,13 +326,14 @@ sub downloadPage {
     if (ref($xml->{query}->{pages}->{page}) eq "ARRAY" || exists($xml->{query}->{pages}->{page}->{missing})) {
 	return;
     } else {
-	my $content = $xml->{query}->{pages}->{page}->{revisions}->{rev};
-	
+	my $content = $xml->{query}->{pages}->{page}->{revisions}->{rev}->{content};
+	$revision = $xml->{query}->{pages}->{page}->{revisions}->{rev}->{revid};
+
 	unless (Encode::is_utf8($content)) {
 	    $content = decode_utf8($content);
 	}	
 
-	return ref($content) eq "HASH" ? "" : $content;
+	return (ref($content) eq "HASH" ? "" : $content, $revision);
     }
     
     return "";

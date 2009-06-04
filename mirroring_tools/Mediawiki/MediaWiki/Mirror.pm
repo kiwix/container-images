@@ -4,8 +4,11 @@ use utf8;
 use strict;
 use warnings;
 use Encode;
+use HTML::Template;
 use Data::Dumper;
 use MediaWiki;
+use POSIX qw(strftime);
+use URI::Escape;
 
 use threads;
 use threads::shared;
@@ -86,6 +89,8 @@ my $imageDependenceMutex : shared = 1;
 my $imageErrorMutex : shared = 1;
 my $pageErrorMutex : shared = 1;
 my $embeddedInMutex : shared = 1;
+
+my $footerPath : shared = 1;
 
 sub new {
     my $class = shift;
@@ -735,6 +740,7 @@ sub checkImages {
 		    $image =~ s/File://i;
 		    $image =~ s/Fichier://i;
 		    $image =~ s/Archivo://i;
+		    $image =~ s/ملف://i;
 
 		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);
@@ -822,7 +828,7 @@ sub downloadPages {
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
 
-	    $content = $site->downloadPage($title, $revision);
+	    ($content, $revision) = $site->downloadPage($title, $revision);
 	    $summary = defined($revision) ? $revision : "head";
 
 	    if ($content) {
@@ -941,6 +947,9 @@ sub uploadPages {
 					 $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
 
+    my $footer = HTML::Template->new(filename => $self->footerPath());
+    my $date = strftime("%d-%m-%Y", localtime);
+
     while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	my ($title, $content, $summary, $ignoreRedirect) = $self->getPageToUpload();
@@ -948,9 +957,17 @@ sub uploadPages {
 	if ($title) {
 	    $self->incrementCurrentTaskCount();
 	    
-	    # ist the page a redirection page
+	    # is the page a redirection page?
 	    $redirectTarget = $site->isRedirectContent($content);
 
+	    # append the footer if not a redirect
+	    unless ($redirectTarget && !$self->isTemplate($content)) {
+		$footer->param(TITLE => uri_escape($title));
+		$footer->param(REVISION => $summary);
+		$footer->param(DATE => $date);
+		$content = $content.$footer->output();
+	    }
+	    
 	    # upload the page
 	    $status = $site->uploadPage($title, $content, $summary, $redirectTarget);
 
@@ -1244,6 +1261,14 @@ sub extractImageNameFromPageName {
    if ($page =~ /(image\:)(.*)/i ) {
        return $2;
    }
+}
+
+# Footer stuff
+sub footerPath {
+    my $self = shift;
+    lock($footerPath);
+    if (@_) { $footerPath = shift; }
+    return $footerPath;
 }
 
 # current task
