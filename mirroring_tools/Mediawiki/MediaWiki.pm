@@ -341,9 +341,9 @@ sub downloadPage {
 
 sub touchPage {
     my ($self, $page) = @_;
-    my $content = $self->downloadPage($page);
+    my ($content, $revision) = $self->downloadPage($page);
     if ($content) {
-	$self->uploadPage($page, $content, "null-edit");
+	$self->uploadPage($page, $content, $revision);
     }
 }
 
@@ -374,7 +374,7 @@ sub uploadPage {
 	my $retryCounter = 0;
 	do {
 	    my $httpResponse = $self->makeApiRequest($postValues, "POST");
-	    
+
 	    if ($httpResponse->content() =~ /success/i || $httpResponse->content() =~ /articleexists/i ) {
 		if ($httpResponse->content() =~ /nochange=\"\"/i) {
 		    $returnValue = 2;
@@ -566,7 +566,7 @@ sub getImageUrl {
 	$url = $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => $title, 'file' => $image } )->header('location') ;
 	$self->userAgent()->requests_redirectable(['HEAD', 'POST', 'GET']);
 
-	if ( $url =~ /\?/ && $url =~ /title\=(.*)\&/ ) {
+	if ( $url && $url =~ /\?/ && $url =~ /title\=(.*)\&/ ) {
 	    $title = uri_unescape($1);
 	    unless (Encode::is_utf8($title)) {
 		$title = decode_utf8($title);
