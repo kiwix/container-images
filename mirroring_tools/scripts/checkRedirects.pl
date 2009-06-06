@@ -45,7 +45,7 @@ my @targets;
 my %redirects;
 foreach my $redirect (@redirects) {
     # load content
-    my $content = $site->downloadPage($redirect);
+    my ($content, $revision) = $site->downloadPage($redirect);
 
     # is redirect
     my $target = $site->isRedirectContent($content);
