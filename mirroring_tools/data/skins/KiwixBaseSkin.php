@@ -174,7 +174,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 //  <!-- end content -->
 		 $offset = 0;
 
-		 if ( preg_match('/(<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ )/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][2] + 1 ;
@@ -185,7 +185,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		     // remove the empty paragraph
 		     $toRemove = $matches[1][0].$matches[2][0].$matches[3][0];
 		     $content = str_replace($toRemove, "", $content);
-		     
+		     		     
 		     // remove the index entry
 		     preg_match('/<p><a name=\"([^\"]*)\"/', $toRemove, $match);
 		     $anchorName = $match[1];
@@ -193,10 +193,10 @@ class KiwixBaseSkin extends SkinTemplate {
 		     // get sumary index number
 		     preg_match("/<li.*?#$anchorName.*?<span class=\"tocnumber\">([\d\.]*)<\/span>.*?<\/li>/", $content, $match);
 		     $indexNumber = $match[1];
-		     
+
 		     // remove index line
 		     $content = str_replace($match[0], "", $content);
-		     
+
 		     // update following summary indexes
 		     $indexNumbers = split('[.]', $indexNumber);
 		     $last = $indexNumbers[count($indexNumbers) - 1];
