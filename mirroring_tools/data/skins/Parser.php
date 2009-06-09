@@ -10,4 +10,14 @@ class Parser extends ParserOriginal
 	  }
 	  return $m[0];
 	}
+
+	/* Necessary to avoid overwriting from the extensions */
+	function setHook( $tag, $callback ) {
+	  if ($tag == 'imagemap' && $this->mTagHooks[$tag])
+	    return;
+	  
+	  return parent::setHook($tag, $callback);
+	}
 }
+
+?>
