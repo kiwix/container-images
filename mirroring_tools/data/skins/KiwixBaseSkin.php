@@ -80,7 +80,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		  if (count($matches)) {
 		    $html = str_replace($matches[0], $matches[1], $html);
 		  }
-		}
+		} 
 
 		return $html;
         }
@@ -174,7 +174,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 //  <!-- end content -->
 		 $offset = 0;
 
-		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<br\/\>\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][2] + 1 ;
@@ -244,6 +244,12 @@ class KiwixBaseSkin extends SkinTemplate {
                    $last++;
                  };
 
+		 // Remove empty links (red links) in imagemaps
+		 while ( preg_match("/<area\ .*href=\"\".*\/>/", $content, $match) ) {
+                   $content = str_replace($match[0], "", $content);
+                   $last++;
+                 };
+
 		 // print out
 		 $out->mBodytext = $content;
 		 SkinTemplate::outputPage($out);
@@ -262,6 +268,12 @@ function KiwixImageMap($content, $attributes, $object) {
 	 if (preg_match('/"error"/', $output)) {
 	    return "";
 	 }
+	 
+	 // remove if default link (one link for the whole image)
+	 if (preg_match('/<a [^>]*>.*?<img.*?<\/a>/s', $output)) {
+	   return "";
+	 }
+
 	 return $output;
 }
 
