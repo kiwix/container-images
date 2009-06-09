@@ -105,6 +105,7 @@ $wgDisableSearchContext = true;
 global $wgAutoloadLocalClasses;
 $wgAutoloadLocalClasses['ImageGallery'] = 'skins/ImageGallery.php';
 $wgAutoloadLocalClasses['Parser'] = 'skins/Parser.php';
+$wgAutoloadLocalClasses['Title'] = 'skins/Title.php';
 
 # ploticus
 putenv("GDFONTPATH=/usr/share/fonts/truetype/freefont"); 
