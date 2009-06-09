@@ -947,9 +947,14 @@ sub uploadPages {
 					 $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
 
-    open(my $fh, '<:utf8', $self->footerPath());
-    my $footer = HTML::Template->new(filehandle => $fh);
-    my $date = strftime("%d-%m-%Y", localtime);
+    my $footer;
+    my $date;
+
+    if ($self->footerPath()) {
+	open(my $fh, '<:utf8', $self->footerPath());
+	$footer = HTML::Template->new(filehandle => $fh);
+	$date = strftime("%d-%m-%Y", localtime);
+    }
 
     while ($self->isRunnable() && $site) {
 	$timeOffset = time();
@@ -962,7 +967,7 @@ sub uploadPages {
 	    $redirectTarget = $site->isRedirectContent($content);
 
 	    # append the footer if not a redirect
-	    if (!$redirectTarget && !$self->isTemplate($title)) {
+	    if ($footer && !$redirectTarget && !$self->isTemplate($title)) {
 		$footer->param(TITLE => uri_escape($title));
 		$footer->param(REVISION => $summary);
 		$footer->param(DATE => $date);
