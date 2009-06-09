@@ -130,6 +130,14 @@ sub install {
     $cmd = "sed -i -e 's/class ImageGallery/class ImageGalleryOriginal/' $directory/skins/ImageGalleryOriginal.php";
     `$cmd`;
 
+    # copy and modify title.php
+    $cmd = "cp $directory/includes/Title.php $directory/skins/TitleOriginal.php";
+    `$cmd`;
+    $cmd = "sed -i -e 's/class Title/class TitleOriginal/' $directory/skins/TitleOriginal.php";
+    `$cmd`;
+    $cmd = "sed -i -e 's/private /protected /' $directory/skins/TitleOriginal.php";
+    `$cmd`;
+
     # compile textvc
     $cmd = "cd $directory/math ; make clean all";
     print $cmd."\n";
