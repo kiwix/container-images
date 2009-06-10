@@ -969,9 +969,9 @@ sub uploadPages {
 	    # append the footer if not a redirect
 	    if ($footer && !$redirectTarget && !$self->isTemplate($title)) {
 		$footer->param(TITLE => uri_escape_utf8($title));
-		$footer->param(REVISION => $summary);
+		$footer5A->param(REVISION => $summary);
 		$footer->param(DATE => $date);
-		$content = $content.$footer->output();
+		$content = $content."<noinclude>".$footer->output()."</noinclude>";
 	    }
 	    
 	    # upload the page
