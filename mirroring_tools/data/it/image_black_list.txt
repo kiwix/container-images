@@ -1,1 +1,4 @@
-Fichier:Speaker_Icon.svg
+File:Speaker_Icon.svg
+File:Information-silk.png
+File:Logo.png
+File:Segui_progetto_giorni.png

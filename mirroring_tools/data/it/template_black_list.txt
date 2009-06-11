@@ -3,8 +3,6 @@ Template:vedi_anche
 Template:portale
 Template:vetrina
 Template:ip
-Template:interprogetto
-Template:Interprogetto/notizia
 Template:vetrina_rimozione
 Template:NN
 Template:citazione_necessaria {{#if:{{{1|}}}|{{{1}}}}}
@@ -19,8 +17,15 @@ Template:...
 Template:C
 Template:F
 Template:D
-Tempalte:C
+Template:C
 Template:P
 Template:W
+Template:T
+Template:S_sezione
+Template:S
 Template:vaglio
 Template:Wikipedia_parlata-n
+Template:Da_fare
+Template:da_fare/avviso
+Template:Ascolto
+Template:Bio/warning_C
