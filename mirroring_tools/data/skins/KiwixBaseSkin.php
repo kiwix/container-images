@@ -57,6 +57,41 @@ class KiwixBaseSkin extends SkinTemplate {
 	  return $text;
 	}
 
+	/* Should also remove red links */
+	public function link( $target, $text = null, $customAttribs = array(), $query = array(), $options = array() ) {
+		wfProfileIn( __METHOD__ );
+		if( !$target instanceof Title ) {
+			return "<!-- ERROR -->$text";
+		}
+		$options = (array)$options;
+
+		$ret = null;
+		if( !wfRunHooks( 'LinkBegin', array( $this, $target, &$text,
+		&$customAttribs, &$query, &$options, &$ret ) ) ) {
+			wfProfileOut( __METHOD__ );
+			return $ret;
+		}
+
+		# Normalize the Title if it's a special page
+		$target = $this->normaliseSpecialPage( $target );
+
+		# If we don't know whether the page exists, let's find out.
+		wfProfileIn( __METHOD__ . '-checkPageExistence' );
+		if( !in_array( 'known', $options ) and !in_array( 'broken', $options ) ) {
+			if( $target->isKnown() ) {
+				$options []= 'known';
+			} else {
+				$options []= 'broken';
+			}
+		}
+		
+		if (in_array( 'broken', $options )) {
+		   return $text;
+		}
+
+		return Linker::link($target, $text, $customAttribs, $query, $options);
+	}
+
 	// responsible for removing failing pictures
 	function makeImageLink2( Title $title, $file, $frameParams = array(), $handlerParams = array(), $time = false, $query = "" ) {
                 if (!$file || !$file->exists()) {
@@ -281,7 +316,7 @@ function KiwixImageMap($content, $attributes, $object) {
 $wgHooks['LinkBegin'][] = 'KiwixLinkBegin';
 
 function KiwixLinkBegin($skin, $target, &$text, &$customAttribs, &$query, &$options, &$ret) {
-  if( $target->getNamespace() == NS_CATEGORY ) {
+  if( $target->getNamespace() != NS_MAIN ) {
     $options = Array('broken');
   }
   return true;
