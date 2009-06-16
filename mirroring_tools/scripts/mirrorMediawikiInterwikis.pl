@@ -20,34 +20,34 @@ my $logger = Log::Log4perl->get_logger("mirrorMediawikiInterwikis.pl");
 my $sourceHost = "";
 my $sourcePath = "";
 
-my $destinationHost = "localhost";
-my $destinationPort = "3306";
-my $destinationDatabase = "";
-my $destinationUsername = "";
-my $destinationPassword = "";
+my $databaseHost = "localhost";
+my $databasePort = "3306";
+my $databaseName = "";
+my $databaseUsername = "";
+my $databasePassword = "";
 
 ## Get console line arguments
 GetOptions('sourceHost=s' => \$sourceHost, 
 	   'sourcePath=s' => \$sourcePath,
-	   'destinationHost=s' => \$destinationHost,
-	   'destinationPort=s' => \$destinationPort,
-	   'destinationDatabase=s' => \$destinationDatabase,
-	   'destinationUsername=s' => \$destinationUsername,
-	   'destinationPassword=s' => \$destinationPassword
+	   'databaseHost=s' => \$databaseHost,
+	   'databasePort=s' => \$databasePort,
+	   'databaseName=s' => \$databaseName,
+	   'databaseUsername=s' => \$databaseUsername,
+	   'databasePassword=s' => \$databasePassword
 	   );
 
-if (!$sourceHost || !$destinationDatabase) {
-    print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --destinationDatabase=MYDB [--sourcePath=w] [--destinationHost=localhost] [--destinationPort=3306] [--destinationUsername=tom] [--destinationPassword=fff]\n";
+if (!$sourceHost || !$databaseName) {
+    print "usage: ./mirrorMediawikiInterwikis.pl --sourceHost=my.wiki.org --databaseName=MYDB [--sourcePath=w] [--databaseHost=localhost] [--databasePort=3306] [--databaseUsername=tom] [--databasePassword=fff]\n";
     exit;
 }
 
-if ($destinationUsername && !$destinationPassword) {
-    $destinationPassword = query("Destination password:", "");
+if ($databaseUsername && !$databasePassword) {
+    $databasePassword = query("Database password:", "");
 }
 
 my $manager = MediaWiki::InterwikiManager->new();
 $manager->logger($logger);
 $manager->readFromWeb($sourceHost, $sourcePath);
-$manager->writeToDatabase($destinationDatabase, $destinationUsername, $destinationPassword, $destinationHost, $destinationPort);
+$manager->writeToDatabase($databaseName, $databaseUsername, $databasePassword, $databaseHost, $databasePort);
 
 exit;
