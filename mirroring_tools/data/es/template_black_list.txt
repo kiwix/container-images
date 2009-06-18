@@ -1,3 +1,4 @@
+Template:desambiguación
 Template:otros_usos
 Template:AP
 Template:VT
@@ -7,6 +8,7 @@ Template:Wikificar
 Template:discutido
 Template:copyedit
 Template:fusionar
+Template:Fusionar_en
 Template:InterWiki
 Template:desactualizado
 Template:bueno
@@ -46,3 +48,5 @@ Template:posiblefusionar
 Template:Posible_fusionar
 Template:PA
 Template:Problemas_artículo
+Template:Ficticio
+Template:evento_futuro

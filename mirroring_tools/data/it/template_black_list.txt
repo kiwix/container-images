@@ -15,6 +15,7 @@ Template:Avvisounicode
 Template:Vaglio
 Template:...
 Template:C
+Template:E
 Template:F
 Template:D
 Template:C
@@ -35,3 +36,5 @@ Template:Bio/warning_C
 Template:Tmp
 Template:ListaBio
 Template:da_correggere
+Template:da_aggiornare
+Template:ISO639
