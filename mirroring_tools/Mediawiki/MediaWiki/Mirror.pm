@@ -61,12 +61,12 @@ my @redirectThreads;
 my @embeddedInThreads;
 
 my $pageDownloadThreadCount = 1;
-my $pageUploadThreadCount = 2;
+my $pageUploadThreadCount = 3;
 my $imageDownloadThreadCount = 1;
-my $imageUploadThreadCount = 1;
-my $imageDependenceThreadCount = 2;
-my $templateDependenceThreadCount = 2;
-my $redirectThreadCount = 1;
+my $imageUploadThreadCount = 3;
+my $imageDependenceThreadCount = 3;
+my $templateDependenceThreadCount = 3;
+my $redirectThreadCount = 3;
 my $embeddedInThreadCount = 1;
 
 my $isRunnable : shared = 1;
@@ -720,8 +720,13 @@ sub checkImages {
 					 $self->destinationHttpUsername(),
 					 $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
-    
 
+    my $imageNamespace = "file";
+    if ($site) {
+	my %namespaces = $site->namespaces();
+	$imageNamespace = $namespaces{6};
+    }
+    
     while ($self->isRunnable() && $site) {
 	my $title = $self->getPageToCheckImageDependence();
 
@@ -736,11 +741,7 @@ sub checkImages {
 		    $toMirrorCount++;
 		    my $image = $dep->{"title"};
 
-		    $image =~ s/Image://i;
-		    $image =~ s/File://i;
-		    $image =~ s/Fichier://i;
-		    $image =~ s/Archivo://i;
-		    $image =~ s/ملف://i;
+		    $image =~ s/$imageNamespace://i;
 
 		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);

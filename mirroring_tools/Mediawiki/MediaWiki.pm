@@ -38,6 +38,7 @@ sub new {
 	httpUser => undef,
 	httpPassword => undef,
 	httpRealm => undef,
+	namespaces => undef,
     };
 
     bless($self, $class);
@@ -1115,42 +1116,48 @@ sub listCategoryEntries {
     return(@entries);    
 }
 
-sub allNamespaces {
+sub namespaces {
     my $self = shift;
-    my $httpResponse = $self->makeHttpPostRequest(
-	$self->indexUrl()."title=Special:PrefixIndex"
-	);
+    
+    unless ($self->{namespaces}) {
+	my $httpResponse = $self->makeHttpPostRequest(
+	    $self->indexUrl()."title=Special:PrefixIndex"
+	    );
+	
+	my $content = $httpResponse->content();
+	
+	my %hash;
 
-    my $content = $httpResponse->content();
-    my %hash;
-
-    # Add the special page namespace
-    if ($content =~ /var\ wgPageName\ \=\ "(.*):(.*)"/) {
-	my $name = $1;
-	$name =~ s/\ /_/;
-	$name = ucfirst($name);
-
-	unless (Encode::is_utf8($name)) {
-	    $name = decode_utf8($name);
+	# Add the special page namespace
+	if ($content =~ /var\ wgPageName\ \=\ "(.*):(.*)"/) {
+	    my $name = $1;
+	    $name =~ s/\ /_/;
+	    $name = ucfirst($name);
+	    
+	    unless (Encode::is_utf8($name)) {
+		$name = decode_utf8($name);
+	    }
+	    
+	    $hash{-1} = $name;
 	}
-
-	$hash{-1} = $name;
+	
+	while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
+	    my $code = $1;
+	    my $name = $2;
+	    $name =~ s/\ /_/;
+	    $name = ucfirst($name);
+	    
+	    unless (Encode::is_utf8($name)) {
+		$name = decode_utf8($name);
+	    }
+	    
+	    $hash{$code} = $name;
+	}
+	
+	$self->{namespaces} = \%hash;
     }
 
-    while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
-	my $code = $1;
-	my $name = $2;
-	$name =~ s/\ /_/;
-	$name = ucfirst($name);
-
-	unless (Encode::is_utf8($name)) {
-	    $name = decode_utf8($name);
-	}
-
-	$hash{$code} = $name;
-    }
-
-    return %hash;
+    return %{$self->{namespaces}};
 }
 
 # mirroring stuff
