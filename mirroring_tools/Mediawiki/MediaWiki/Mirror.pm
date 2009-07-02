@@ -976,7 +976,8 @@ sub uploadPages {
 	    }
 	    
 	    # upload the page
-	    $status = $site->uploadPage($title, $content, $summary, $redirectTarget);
+	    #	   $status = $site->uploadPage($title, $content, $summary, $redirectTarget );
+	    $status = $site->uploadPage($title, $content, $summary );
 
 	    # display the correct log message, depending of $status and $redirectTarget
 	    if ($status eq "1") {
