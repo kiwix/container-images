@@ -164,9 +164,12 @@ class KiwixBaseSkin extends SkinTemplate {
 		 // <p><a name="Conservativity" id="Conservativity"></a></p>
 		 // <h3><span class="mw-headline">Conservativity</span></h3>
 
+		 // <h2 id="Altri_progetti"> <span class="mw-headline">Altri progetti</span></h2>
+		 // <h2 id="Collegamenti_esterni"> <span class="mw-headline">Collegamenti esterni</span></h2>
+
 		 $offset = 0;
 
-		 while ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>)/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 while ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>)/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][1] + 1 ;
@@ -181,6 +184,12 @@ class KiwixBaseSkin extends SkinTemplate {
 		     // remove the index entry
 		     preg_match('/<p><a name=\"([^\"]*)\"/', $toRemove, $match);
 		     $anchorName = $match[1];
+
+		     // new by it.mirror.kiwix.org
+		     if ($anchorName == "") {
+		       preg_match('/id=\"([^\"]*)\"/', $toRemove, $match);
+		       $anchorName = $match[1];
+		     }		     		 
 		     
 		     // get sumary index number
 		     preg_match("/<li.*?#$anchorName.*?<span class=\"tocnumber\">([\d\.]*)<\/span>.*?<\/li>/", $content, $match);
