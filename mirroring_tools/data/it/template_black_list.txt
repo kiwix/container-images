@@ -21,7 +21,7 @@ Template:D
 Template:C
 Template:P
 Template:W
-Tempalte:L
+Template:L
 Template:T
 Template:S_sezione
 Template:S_comuni
@@ -38,3 +38,6 @@ Template:ListaBio
 Template:da_correggere
 Template:da_aggiornare
 Template:ISO639
+Template:interprogetto
+Template:Interprogetto/notizia
+Template:disambigua
