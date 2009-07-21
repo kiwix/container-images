@@ -142,7 +142,9 @@ class KiwixBaseSkin extends SkinTemplate {
 		 foreach ($matches[0] as $match) {
 		   
 		   // remove only html code without links or latex generated mathematics images
-		   if (!preg_match("/.*?<a.*?/s", $match) && !preg_match("/.*?<img class=\"tex\".*?/s", $match)) {
+		   if (!preg_match("/.*?<a.*?/s", $match) && 
+		       !preg_match("/.*?<img class=\"tex\".*?/s", $match) && 
+		       !preg_match("/.*?texhtml.*?/s", $match)) {
 		     $content = str_replace($match, "", $content);
 		   }
 
