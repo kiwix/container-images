@@ -153,3 +153,5 @@ template:otheruses2
 template:external_links
 Template:Featured_list
 Template:psych-stub
+Template:language-stub
+Template:Lang-stub
