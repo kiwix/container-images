@@ -37,7 +37,7 @@ $site->hostname($host);
 $site->path($path);
 $site->logger($logger);
 
-my %namespaces = $site->allNamespaces();
+my %namespaces = $site->namespaces();
 
 foreach my $code (keys(%namespaces)) {
     print $code."\t".$namespaces{$code}."\n";
