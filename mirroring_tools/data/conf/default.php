@@ -64,6 +64,9 @@ $wgHideInterlanguageLinks = true;
 # ajax
 $wgUseAjax = true;
 
+# throttling
+$wgPasswordAttemptThrottle = array( 'count' => 424242424242, 'seconds' => 1 );
+
 # cache policy
 $wgMainCacheType = CACHE_MEMCACHED;
 $wgParserCacheType = CACHE_MEMCACHED;
