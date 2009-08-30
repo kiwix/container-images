@@ -15,7 +15,7 @@ my $doc;
 my $mediawikiRevision = "head";
 my @extensions;
 my $filter=".*";
-my @extensionsToIgnore = ('MakeBot', 'SiteMatrix', 'FixedImage', 'OggHandler', 'BoardVote', 'CentralNotice', 'TorBlock', 'Central.*Auth', 'TitleKey', 'CheckUser', 'Cross.*namespace.*', 'GlobalBlocking', 'OAIRepository', 'SimpleAntiSpam', 'SpamBlacklist', 'ConfirmEdit', 'MakeBot', 'AntiBot', 'AntiSpoof', 'Oversight', 'Makesysop', 'Title.*Blacklist', 'DismissableSiteNotice', 'Username.*Blacklist', 'MWSearch', 'OpenSearchXml', 'Renameuser', 'TrustedXFF', 'Collection', 'SecurePoll', 'AbuseFilter'. 'UsabilityInitiative' );
+my @extensionsToIgnore = ('MakeBot', 'SiteMatrix', 'FixedImage', 'OggHandler', 'BoardVote', 'CentralNotice', 'TorBlock', 'Central.*Auth', 'TitleKey', 'CheckUser', 'Cross.*namespace.*', 'GlobalBlocking', 'OAIRepository', 'SimpleAntiSpam', 'SpamBlacklist', 'ConfirmEdit', 'MakeBot', 'AntiBot', 'AntiSpoof', 'Oversight', 'Makesysop', 'Title.*Blacklist', 'DismissableSiteNotice', 'Username.*Blacklist', 'MWSearch', 'OpenSearchXml', 'Renameuser', 'TrustedXFF', 'Collection', 'SecurePoll', 'AbuseFilter', 'UsabilityInitiative', 'PDF Handler', 'PrefStats', 'OptIn' );
 
 sub new {
     my $class = shift;
@@ -69,10 +69,10 @@ sub get {
 
 	# handle with the $ignoreExtension value
 	if ($ignoreExtension) {
-	    $self->log("info", "Ignore extension : ".$extension{title}."\n");
+	    $self->log("info", "Ignore extension : '".$extension{title}."'\n");
 	    next;
 	} else {
-	    $self->log("info", "Will install extension : ".$extension{title}."\n");
+	    $self->log("info", "Will install extension : '".$extension{title}."'\n");
 	}
 
 	$extension{description} =~ s/\<[^>]+\>//g;
