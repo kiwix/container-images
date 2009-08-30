@@ -590,21 +590,15 @@ sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
 
     my $httpPostRequestParams = {
-	    'title' => 'Special:Upload',
-	    'wpSourceType' => "web",
-	    'wpUploadFileURL' => $url,
-	    'wpDestFile' => $title, 
-	    'wpUploadDescription' => $summary ? $summary : "",
-	    'wpUpload' => 'upload',
-	    'wpIgnoreWarning' => 'true'
+	'action' => 'upload',
+	'url' => $url,
+	'filename' => $title,
+	'token' => $self->editToken()
+
     };
-
-    my $httpResponse = $self->makeHttpPostRequest(
-	$self->indexUrl(),
-	$httpPostRequestParams
-	);
-
-    my $status = $httpResponse->code == 302;
+    
+    my $httpResponse = $self->makeApiRequest($httpPostRequestParams, "POST" );
+    my $status = $httpResponse->code == 200;
 
     return $status;
 }
