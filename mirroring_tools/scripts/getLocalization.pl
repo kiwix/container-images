@@ -63,7 +63,7 @@ sub writeFile {
     my $file = shift;
     my $data = shift;
 
-    open (FILE, ">$file") or die "Couldn't open file: $file";
+    open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
     print FILE $data;
     close (FILE);
 }
@@ -72,7 +72,7 @@ sub readFile {
     my $path = shift;
     my $data = "";
 
-    open FILE, $path or die "Couldn't open file: $path";
+    open FILE, "<:utf8", $path or die "Couldn't open file: $path";
     while (<FILE>) {
         $data .= $_;
     }
