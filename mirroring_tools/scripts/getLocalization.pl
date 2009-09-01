@@ -45,17 +45,17 @@ unless ( -d $path."/".$code."/main") { mkdir $path."/".$code."/main"; }
 $path = $path."/".$code."/main/";
 
 # get help.html
-($source, $rev) = $site->downloadPage("Translation/languages/en-US/help.html");
+($source, $rev) = $site->downloadPage("Translation/languages/".$code."/help.html");
 $source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
 writeFile($path."help.html", $source);
 
 # get main.dtd
-($source, $rev) = $site->downloadPage("Translation/languages/en-US/main.dtd");
+($source, $rev) = $site->downloadPage("Translation/languages/".$code."/main.dtd");
 $source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
 writeFile($path."main.dtd", $source);
 
 # get main.properties
-($source, $rev) = $site->downloadPage("Translation/languages/en-US/main.properties");
+($source, $rev) = $site->downloadPage("Translation/languages/".$code."/main.properties");
 $source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
 writeFile($path."main.properties", $source);
 
