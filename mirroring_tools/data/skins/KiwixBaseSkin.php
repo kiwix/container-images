@@ -155,6 +155,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 
 		 // remove empty paragraph
 		 $content = str_replace("<p><br /></p>", "", $content);
+		 $content = str_replace("<p></p>", "", $content);
 
 		 // other type of useless html
 		 $content = str_replace('<p><font class="metadata"><br /></font></p>', "", $content);
@@ -220,7 +221,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 //  <!-- end content -->
 		 $offset = 0;
 
-		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<br\/\>\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<br\/\>\<div\ class\=\"kf\"|\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][2] + 1 ;
