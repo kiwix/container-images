@@ -40,3 +40,6 @@ Template:ISO639
 Template:interprogetto
 Template:Interprogetto/notizia
 Template:Antroponimipersone
+Template:recentismo
+Template:incorso
+Template:Link_AdQ
