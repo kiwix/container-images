@@ -885,7 +885,7 @@ sub allImages {
 		    my $image = $page->{title};
 		    $image =~ s/^Image:// ;
 		    $image =~ s/^File:// ;
-		    $image =~ s/\ /_/ ;
+		    $image =~ tr/\ /_/ ;
 		    push(@images, $image);
 		}
             }
@@ -1125,7 +1125,7 @@ sub namespaces {
 	# Add the special page namespace
 	if ($content =~ /var\ wgPageName\ \=\ "(.*):(.*)"/) {
 	    my $name = $1;
-	    $name =~ s/\ /_/;
+	    $name =~ tr/\ /_/;
 	    $name = ucfirst($name);
 	    
 	    unless (Encode::is_utf8($name)) {
@@ -1138,7 +1138,7 @@ sub namespaces {
 	while ($content =~ /<option value="([\d]+)"[^>]*>(.*)<\/option>/mg ) {
 	    my $code = $1;
 	    my $name = $2;
-	    $name =~ s/\ /_/;
+	    $name =~ tr/\ /_/;
 	    $name = ucfirst($name);
 	    
 	    unless (Encode::is_utf8($name)) {
