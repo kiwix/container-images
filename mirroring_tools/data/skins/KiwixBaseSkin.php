@@ -172,7 +172,7 @@ class KiwixBaseSkin extends SkinTemplate {
 
 		 $offset = 0;
 
-		 while ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t])(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>)/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 while ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*>[ ]*<span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])([^>]*>[ ]*<span class=\"[^\"]*\">.*?<\/span><\/h[\d]>)/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][1] + 1 ;
@@ -221,7 +221,7 @@ class KiwixBaseSkin extends SkinTemplate {
 		 //  <!-- end content -->
 		 $offset = 0;
 
-		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])(><span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<br\/\>\<div\ class\=\"kf\"|\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
+		 if ( preg_match('/(<p><a name=\"[^\"]*\" id=\"[^\"]*\"><\/a><\/p>[\n\r\t]<h|<h)([\d])(>[ ]*<span class=\"[^\"]*\">.*?<\/span><\/h[\d]>[\n\r\t]*)(\<\!\-\-\ |\<br\/\>\<div\ class\=\"kf\"|\<div\ class\=\"kf\")/', $content, $matches, PREG_OFFSET_CAPTURE, $offset) && count($matches)) {
 
 		   // set the offset for the future
 		   $offset = $matches[0][2] + 1 ;
