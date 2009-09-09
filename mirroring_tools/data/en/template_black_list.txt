@@ -26,6 +26,11 @@ template:Wikinewscat
 template:include_timeline
 template:Sisterlinkqsc
 template:Tnavbar
+template:navbar
+template:Tnavbar-header
+template:Tnavbar-navframe
+template:Tnavbar-collapsible
+Template:Codifiednavbar
 template:Update_after
 template:fix
 template:SpecialChars
