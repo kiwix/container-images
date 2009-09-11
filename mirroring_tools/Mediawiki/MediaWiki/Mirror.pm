@@ -1254,19 +1254,19 @@ sub addPagesToMirror {
 	    sleep($self->delay());
 	}
 
-	if (my $imageName = $self->extractImageNameFromPageName($page)) {
-	    $self->addImageToDownload($imageName);
+	if (my $fileName = $self->extractFileNameFromPageName($page)) {
+	    $self->addImageToDownload($fileName);
 	} elsif (!$self->checkCompletedPages()) {
 	    $self->addPageToDownload($page);
 	}
     }
 }
 
-sub extractImageNameFromPageName {
+sub extractFileNameFromPageName {
    my $self = shift;
    my $page = shift;
 
-   if ($page =~ /(image\:)(.*)/i ) {
+   if ($page =~ /(file\:)(.*)/i ) {
        return $2;
    }
 }
