@@ -38,7 +38,7 @@ $site->path($path);
 $site->logger($logger);
 
 foreach my $image ($site->allImages()) {
-    print $image."\n";
+    print "File:".$image."\n";
 }
 
 exit;
