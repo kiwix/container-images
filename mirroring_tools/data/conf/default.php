@@ -46,14 +46,17 @@ $wgEnableUploads = true;
 $wgAllowCopyUploads = true;
 
 # memory
-$wgMaxShellMemory = 1024000;
-$wgMaxShellFileSize = 1024000;
+#$wgMaxShellMemory = 1024000;
+#$wgMaxShellFileSize = 1024000;
 $wgMimeDetectorCommand= 'file -bi ';
 $wgVerifyMimeType = true;
 
 # image conversion
 $wgSVGConverter = 'rsvg';
-$wgUseImageMagick = false;
+
+# problem is that libgd ist not able to deal with animated gif
+# http://bugs.libgd.org/?do=details&task_id=57&histring=animated%20gif
+$wgUseImageMagick = true;
 
 # logging
 $wgDisableCounters = true;
