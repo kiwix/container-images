@@ -593,7 +593,8 @@ sub uploadImageFromUrl {
 	'action' => 'upload',
 	'url' => $url,
 	'filename' => $title,
-	'token' => $self->editToken()
+	'token' => $self->editToken(),
+	'format' => 'xml'
 
     };
     
