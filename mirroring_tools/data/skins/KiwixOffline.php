@@ -73,7 +73,7 @@ class KiwixOfflineTemplate extends QuickTemplate {
 <?php	}
 		if($this->data['trackbackhtml']) print $this->data['trackbackhtml']; ?>
 	</head>
-<body style="margin: 0 1em 1em 1em;" >
+<body style="margin: 0 1em 1em 1em; background: #FFFFFF" >
 	<div id="globalWrapper"><div id="bodyContent">
 		<a name="top" id="top"></a>
 		<h1 class="firstHeading"><?php $this->html('title'); ?></h1>
