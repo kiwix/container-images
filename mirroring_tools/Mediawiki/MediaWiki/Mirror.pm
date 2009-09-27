@@ -251,6 +251,13 @@ sub checkEmbeddedInPages {
 					 $self->destinationHttpUsername(),
 					 $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
+
+    my $templateNamespace = "template";
+    if ($site) {
+	my %namespaces = $site->namespaces();
+        $templateNamespace = $namespaces{10};
+    }
+
     while ( $self->isRunnable() && $site) {
 	my %pagesToCheckDependences;
 
@@ -268,7 +275,7 @@ sub checkEmbeddedInPages {
 	foreach my $title (@titles) {
 	    my @pages = $site->embeddedIn($title);
 	    foreach my $page (@pages) {
-		next if ($self->isTemplate($page));
+		next if ($self->isTemplate($page, $templateNamespace));
 		$pagesToCheckDependences{$page} = 1;
 	    }
 	}
@@ -957,6 +964,12 @@ sub uploadPages {
 	$date = strftime("%d-%m-%Y", localtime);
     }
 
+    my $templateNamespace = "template";
+    if ($site) {
+	my %namespaces = $site->namespaces();
+        $templateNamespace = $namespaces{10};
+    }
+
     while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	my ($title, $content, $summary, $ignoreRedirect) = $self->getPageToUpload();
@@ -968,7 +981,7 @@ sub uploadPages {
 	    $redirectTarget = $site->isRedirectContent($content);
 
 	    # append the footer if not a redirect
-	    if ($footer && !$redirectTarget && !$self->isTemplate($title)) {
+	    if ($footer && !$redirectTarget && !$self->isTemplate($title, $templateNamespace)) {
 		$footer->param(TITLE => uri_escape_utf8($title));
 		$footer->param(REVISION => $summary);
 		$footer->param(DATE => $date);
@@ -1008,7 +1021,7 @@ sub uploadPages {
 			$self->addPageToCheckImageDependence($title);
 		    }
 
-		    if ($self->checkEmbeddedIn() && $self->isTemplate($title) && $status eq "1") {
+		    if ($self->checkEmbeddedIn() && $self->isTemplate($title, $templateNamespace) && $status eq "1") {
 			$self->addPageToCheckEmbeddedInPages($title);
 		    }
 
@@ -1202,9 +1215,10 @@ sub destinationHttpPassword {
 sub isTemplate {
     my $self = shift;
     my $title = shift;
+    my $templateNamespace = shift;
 
     if ($title) {
-	if ($title =~ /^template\:.*/i ) {
+	if ($title =~ /^$templateNamespace\:.*/i ) {
 	    return 1;
 	}
     }
