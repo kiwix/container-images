@@ -1155,6 +1155,28 @@ sub namespaces {
     return %{$self->{namespaces}};
 }
 
+# Prepare a page: ask for the HTML code and check if no error
+sub preparePage {
+    my $self = shift;
+    my $title = shift;
+    my $ok = 1;
+
+    do {
+	$self->log("info", "Preparing page '$title'...");
+	
+	my $httpResponse = $self->makeHttpGetRequest(
+	    $self->apiUrl()."?action=parse&text={{:$title}}"
+	);
+	my $content = $httpResponse->content();
+	
+	if ($content =~ /passthru/ && $content =~ /unable to fork/i) {
+	    $ok = 0;
+	} else {
+	    $ok = 1;
+	}
+    } while (!$ok);
+}
+
 # mirroring stuff
 sub isRedirectContent {
     my $self = shift;
