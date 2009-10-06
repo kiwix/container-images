@@ -8,6 +8,7 @@ use warnings;
 use Getopt::Long;
 use Data::Dumper;
 use HTML::Template;
+use MediaWiki;
 
 # log
 use Log::Log4perl;
@@ -19,6 +20,11 @@ my $readFromStdin = 0;
 my $file;
 my $directory;
 my $templateFile = "../data/en/contributors.html.tmpl";
+my $mediawikiHost;
+my $mediawikiPath;
+my $mediawikiUsername;
+my $mediawikiPassword;
+my $mediawikiPrefix="contributors";
 
 # letter managment
 my @letters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
@@ -32,10 +38,15 @@ GetOptions('file=s' => \$file,
            'readFromStdin' => \$readFromStdin,
            'directory=s' => \$directory,
            'template=s' => \$templateFile,
+	   'mediawikiPath=s' => \$mediawikiPath,
+           'mediawikiHost=s' => \$mediawikiHost,
+           'mediawikiUsername=s' => \$mediawikiUsername,
+	   'mediawikiPassword=s' => \$mediawikiPassword,
+           'mediawikiPrefix=s' => \$mediawikiPrefix,
     );
 
-if (!$directory || (!$readFromStdin && !$file) ) {
-    print "usage: ./buildContributorsHtmlPages.pl [--file=my_file] --directory=my_dir [--readFromStdin] [--template=mytemplate.html.tmpl]\n";
+if ((!$directory && !$mediawikiHost)|| (!$readFromStdin && !$file) ) {
+    print "usage: ./buildContributorsHtmlPages.pl [--file=my_file] [--directory=my_dir] [--readFromStdin] [--template=mytemplate.html.tmpl] [--mediawikiHost] [--mediawikiPath] [--mediawikiUsername] [--mediawikiPassword] [--mediawikiPrefix]\n";
     exit;
 }
 
@@ -79,6 +90,26 @@ if ($file) {
 $logger->info("Read template file '$templateFile'.");
 my $template = HTML::Template->new(filename => $templateFile);
 
+# create the directory
+if ($directory) {
+    `rm -rf $directory`;
+    `mkdir $directory`;
+}
+
+# connect to mediawiki
+my $site;
+if ($mediawikiHost) {
+    $site = MediaWiki->new();
+    $site->hostname($mediawikiHost);
+    $site->path($mediawikiPath);
+    $site->user($mediawikiUsername);
+    $site->password($mediawikiPassword);
+    unless ($site->setup()) {
+	print STDERR "Not able to connect to the Mediawiki.";
+	exit;
+    }
+}
+
 # build letter hash
 my @letterArray;
 foreach my $letter (@letters) {
@@ -87,16 +118,18 @@ foreach my $letter (@letters) {
     next unless (scalar(keys(%{$contributors{$letter}})));
 
     my %letterHash;
-    $letterHash{"FILENAME"} = "./$letter.html";
+    if ($directory) {
+	$letterHash{"FILENAME"} = "./$letter.html";
+    }
+    if ($site) {
+	$letterHash{"PREFIX"} = $mediawikiPrefix;
+    }
+
     $letterHash{"LETTER"} = $letter;
     push(@letterArray, \%letterHash);
     
 }
 $template->param("LETTERS" => \@letterArray);
-
-# create the directory
-		 `rm -rf $directory`;
-		 `mkdir $directory`;
 
 foreach my $letter (@letters, 'others') {
 
@@ -109,7 +142,7 @@ foreach my $letter (@letters, 'others') {
 
     my $contributorsString = "";
 
-    my @contributors =  sort(keys(%{$contributors{$letter}}));
+    my @contributors = sort(keys(%{$contributors{$letter}}));
 
     foreach my $contributor (@contributors) {
 	if ($contributor) {
@@ -127,14 +160,24 @@ foreach my $letter (@letters, 'others') {
 
     # fill in some parameters
     $template->param("CONTRIBUTORS" => $contributorsString);
+    if ($site) {
+	$template->param("PREFIX" => $mediawikiPrefix);
+    }
 
     # send the obligatory Content-Type and print the template output
     my $html = $template->output();
-    
+
     # write file
-    open FILE, ">$directory/$letter.html" or die $!;
-    print FILE $html;
-    close(FILE);
+    if ($directory) {
+	open FILE, ">$directory/$letter.html" or die $!;
+	print FILE $html;
+	close(FILE);
+    }
+
+    # write in the mediawiki
+    if ($site) {
+	$site->uploadPage("$mediawikiPrefix/$letter", $html, "contributors $letter");
+    }
 }
 
 $logger->info("=======================================================");
