@@ -96,7 +96,12 @@ $wgExtraNamespaces[NS_WIKIPEDIA] = "Wikipedia";
 $wgNamespaceProtection[NS_WIKIPEDIA] = array( 'editwikipedia' ); #permission "editfoo" required to edit the foo namespace
 $wgNamespacesWithSubpages[NS_WIKIPEDIA] = true;                  #subpages enabled for the foo namespace
 $wgGroupPermissions['sysop']['editwikipedia'] = true; 
-$wgContentNamespaces[] = NS_WIKIPEDIA;
+
+define("NS_CONTRIBUTORS", 411);
+$wgExtraNamespaces[NS_CONTRIBUTORS] = "Contributors"; 
+$wgNamespaceProtection[NS_CONTRIBUTORS] = array( 'editcontributors' ); #permission "editfoo" required to edit the foo namespace
+$wgNamespacesWithSubpages[NS_CONTRIBUTORS] = true;                  #subpages enabled for the foo namespace
+$wgGroupPermissions['sysop']['editcontributors'] = true; 
 
 # jumpto link
 $wgDefaultUserOptions["showjumplinks"] = 0;
