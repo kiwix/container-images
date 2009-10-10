@@ -70,6 +70,11 @@ $wgUseAjax = true;
 # throttling
 $wgPasswordAttemptThrottle = array( 'count' => 424242424242, 'seconds' => 1 );
 
+# Indexing policy
+$wgExemptFromUserRobotsControl = Array();
+$wgDefaultRobotPolicy = 'index,follow';
+$wgNamespaceRobotPolicies = array( 0 => 'index,follow' );
+
 # cache policy
 $wgMainCacheType = CACHE_MEMCACHED;
 $wgParserCacheType = CACHE_MEMCACHED;
