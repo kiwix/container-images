@@ -316,9 +316,14 @@ function KiwixImageMap($content, $attributes, $object) {
 	    return "";
 	 }
 	 
-	 // remove if default link (one link for the whole image)
-	 if (preg_match('/<a [^>]*>.*?<img.*?<\/a>/s', $output)) {
-	   return "";
+	 // (deprecated) remove if default link (one link for the whole image)
+	 // if (preg_match('/<a [^>]*>.*?<img.*?<\/a>/s', $output)) {
+	 //   return "";
+	 // }
+
+	 // Only remove the link
+	 if (preg_match('/<a [^>]*>.*?(<img.*?)<\/a>/s', $output, $matches)) {
+	    $output = str_replace($matches[0], $matches[1], $output);
 	 }
 
 	 return $output;
