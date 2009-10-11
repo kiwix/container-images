@@ -58,6 +58,9 @@ $wgSVGConverter = 'rsvg';
 # http://bugs.libgd.org/?do=details&task_id=57&histring=animated%20gif
 $wgUseImageMagick = true;
 
+# remove the syndication feeds
+$wgFeed = false;
+
 # logging
 $wgDisableCounters = true;
 
@@ -106,7 +109,7 @@ define("NS_CONTRIBUTORS", 411);
 $wgExtraNamespaces[NS_CONTRIBUTORS] = "Contributors"; 
 $wgNamespaceProtection[NS_CONTRIBUTORS] = array( 'editcontributors' ); #permission "editfoo" required to edit the foo namespace
 $wgNamespacesWithSubpages[NS_CONTRIBUTORS] = true;                  #subpages enabled for the foo namespace
-$wgGroupPermissions['sysop']['editcontributors'] = true; 
+$wgGroupPermissions['*']['editcontributors'] = true; 
 
 # jumpto link
 $wgDefaultUserOptions["showjumplinks"] = 0;
