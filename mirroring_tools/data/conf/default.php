@@ -103,7 +103,7 @@ define("NS_WIKIPEDIA", 424);
 $wgExtraNamespaces[NS_WIKIPEDIA] = "Wikipedia"; 
 $wgNamespaceProtection[NS_WIKIPEDIA] = array( 'editwikipedia' ); #permission "editfoo" required to edit the foo namespace
 $wgNamespacesWithSubpages[NS_WIKIPEDIA] = true;                  #subpages enabled for the foo namespace
-$wgGroupPermissions['sysop']['editwikipedia'] = true; 
+$wgGroupPermissions['*']['editwikipedia'] = true; 
 
 define("NS_CONTRIBUTORS", 411);
 $wgExtraNamespaces[NS_CONTRIBUTORS] = "Contributors"; 
