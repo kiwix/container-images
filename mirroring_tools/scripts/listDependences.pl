@@ -54,6 +54,10 @@ $site->logger($logger);
 my %templateDependences;
 my %imageDependences;
 
+unless (scalar(@pages)) {
+    @pages = $site->allPages("0", "nonredirects")
+}
+
 foreach my $page (@pages) {
 
     unless (Encode::is_utf8($page)) {
