@@ -954,7 +954,7 @@ sub exists {
 
 	# make the http request and parse response
 	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'page', method=>"POST");
-	
+
 	if (exists($xml->{query}->{pages}->{page})) {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
 		$pages{$page->{title}} = !(exists($page->{missing})) if ($page->{title});
@@ -1047,7 +1047,7 @@ sub listCategoryEntries {
 
     unless (defined($explorationDepth)) { $explorationDepth=1 };
 
-    while ( $currentDepth < $explorationDepth ) {
+    while ( $currentDepth < $explorationDepth && scalar(@categoryStack) ) {
 
 	while ($category = shift(@categoryStack)) {
 
