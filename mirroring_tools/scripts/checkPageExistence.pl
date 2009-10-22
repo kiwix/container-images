@@ -53,6 +53,7 @@ my %pages = $site->exists(@pages);
 
 foreach my $page (keys(%pages)) {
     if ($pages{$page}) {
+	$page =~ tr/ /_/;
 	print $page."\n";
     }
 }
