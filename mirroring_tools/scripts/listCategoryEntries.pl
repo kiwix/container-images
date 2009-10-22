@@ -36,7 +36,7 @@ GetOptions('host=s' => \$host,
 	   'namespace=s' => \$namespace,
 	   );
 
-if (!$host || !scalar(@categories)) {
+if (!$host || ( !scalar(@categories) && !$readFromStdin) ) {
     print "usage: ./listCategoryEntries.pl --host=my.wiki.org [--category=mycat] [--readFromStdin] [--path=w] [--explorationDepth=1] [--namespace=0]\n";
     exit;
 }
