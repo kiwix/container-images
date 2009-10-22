@@ -22,35 +22,56 @@ my $logger = Log::Log4perl->get_logger("listCategoryEntries.pl");
 # get the params
 my $host = "";
 my $path = "";
-my $category = "";
+my @categories;
 my $explorationDepth = 1;
+my $readFromStdin;
 my $namespace;
 
 ## Get console line arguments
 GetOptions('host=s' => \$host, 
 	   'path=s' => \$path,
-	   'category=s' => \$category,
 	   'explorationDepth=s' => \$explorationDepth,
+	   'readFromStdin' => \$readFromStdin,
+	   'category=s' => \@categories,
 	   'namespace=s' => \$namespace,
 	   );
 
-if (!$host || !$category) {
-    print "usage: ./listCategoryEntries.pl --host=my.wiki.org --category=mycat [--path=w] [--explorationDepth=1] [--namespace=0]\n";
+if (!$host || !scalar(@categories)) {
+    print "usage: ./listCategoryEntries.pl --host=my.wiki.org [--category=mycat] [--readFromStdin] [--path=w] [--explorationDepth=1] [--namespace=0]\n";
     exit;
 }
 
-unless (Encode::is_utf8($category)) {
-    $category = decode_utf8($category);
+# readFromStdin
+if ($readFromStdin) {
+    $logger->info("Read categories from stdin.");
+    while (my $category = <STDIN>) {
+        $category =~ s/\n//;
+        push(@categories, $category);
+    }
 }
 
+# Site
 my $site = MediaWiki->new();
 $site->hostname($host);
 $site->path($path);
 $site->logger($logger);
-my @entries = $site->listCategoryEntries($category, $explorationDepth, $namespace);
 
-foreach my $entry (@entries) {
-    $entry =~ s/ /_/g;
+# Go over the category list
+my %entries;
+foreach my $category (@categories) {
+
+    unless (Encode::is_utf8($category)) {
+	$category = decode_utf8($category);
+    }
+
+    foreach my $entry ($site->listCategoryEntries($category, $explorationDepth, $namespace)) {
+	$entry =~ s/ /_/g;
+	$entries{$entry} = $entry;
+    }
+}
+
+# Print to the output
+foreach my $entry (keys(%entries)) {
     print $entry."\n";
 }
 
