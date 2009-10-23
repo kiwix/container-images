@@ -588,18 +588,31 @@ sub downloadImage {
 
 sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
+    my $status;
 
     my $httpPostRequestParams = {
 	'action' => 'upload',
 	'url' => $url,
 	'filename' => $title,
 	'token' => $self->editToken(),
-	'format' => 'xml'
-
+	'format' => 'xml',
+	'asyncdownload' => '1',
+	'ignorewarnings' => '1',
     };
     
     my $httpResponse = $self->makeApiRequest($httpPostRequestParams, "POST" );
-    my $status = $httpResponse->code == 200;
+    my $content = $httpResponse->content;
+
+    if ($content =~ /error\ code\=\"([^\"]+)\"/) {
+	$self->log("error", "Error by uploading image '$title' : $1");
+    }
+    elsif ($content =~ /upload_session_key\=\"([\d]+)\"/) {
+	my $sessionKey = $1;
+	$httpResponse = $self->makeApiRequest( { 'action' => 'upload', 'httpstatus' => '1', 'sessionkey' => "$sessionKey", 'format' => 'xml', 'token' => $self->editToken() } , 'POST');
+	$status = 1;
+    } else {
+	$self->log("error", "Error by uploading image '$title' : $content");
+    }
 
     return $status;
 }
