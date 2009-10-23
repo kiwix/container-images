@@ -49,7 +49,7 @@ $wgAllowCopyUploads = true;
 #$wgMaxShellMemory = 1024000;
 #$wgMaxShellFileSize = 1024000;
 $wgMimeDetectorCommand= 'file -bi ';
-$wgVerifyMimeType = true;
+$wgVerifyMimeType = false;
 
 # image conversion
 $wgSVGConverter = 'rsvg';
