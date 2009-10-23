@@ -129,6 +129,8 @@ sub install {
     `$cmd`;
     $cmd = "sed -i -e 's/class ImageGallery/class ImageGalleryOriginal/' $directory/skins/ImageGalleryOriginal.php";
     `$cmd`;
+    $cmd = "sed -i -e 's/private /protected /' $directory/skins/ImageGalleryOriginal.php";
+    `$cmd`;
 
     # copy and modify title.php
     $cmd = "cp $directory/includes/Title.php $directory/skins/TitleOriginal.php";
