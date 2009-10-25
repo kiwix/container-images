@@ -333,7 +333,7 @@ function KiwixImageMap($content, $attributes, $object) {
 $wgHooks['LinkBegin'][] = 'KiwixLinkBegin';
 
 function KiwixLinkBegin($skin, $target, &$text, &$customAttribs, &$query, &$options, &$ret) {
-  if( $target->getNamespace() != NS_MAIN ) {
+  if( $target->getNamespace() != NS_MAIN && $target->getNamespace() != NS_WIKIPEDIA ) {
     $options = Array('broken');
   }
   return true;
