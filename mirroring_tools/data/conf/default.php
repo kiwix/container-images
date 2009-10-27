@@ -47,7 +47,7 @@ $wgAllowCopyUploads = true;
 
 # memory
 #$wgMaxShellMemory = 1024000;
-#$wgMaxShellFileSize = 1024000;
+$wgMaxShellFileSize = 1024000;
 $wgMimeDetectorCommand= 'file -bi ';
 $wgVerifyMimeType = false;
 
