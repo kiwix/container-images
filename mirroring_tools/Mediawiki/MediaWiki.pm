@@ -588,18 +588,29 @@ sub downloadImage {
 
 sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
+    my $wpEditToken;
+
+    # Get upload token
+    my $httpResponse = $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:Upload' } );
+    if ($httpResponse->content =~ /value\=\"([^\"]+)\"\ name\=\"wpEditToken\"/ ) {
+	$wpEditToken = $1;
+    } else {
+	$self->log("error", "Unable to retrieve wpEditToken to upload image.");
+	return 0;
+    }
 
     my $httpPostRequestParams = {
 	    'title' => 'Special:Upload',
-	    'wpSourceType' => "web",
+	    'wpSourceType' => "Url",
 	    'wpUploadFileURL' => $url,
 	    'wpDestFile' => $title, 
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
-	    'wpIgnoreWarning' => 'true'
+	    'wpIgnoreWarning' => 'true',
+	    'wpEditToken' => $wpEditToken,
     };
 
-    my $httpResponse = $self->makeHttpPostRequest(
+    $httpResponse = $self->makeHttpPostRequest(
 	$self->indexUrl(),
 	$httpPostRequestParams
 	);
