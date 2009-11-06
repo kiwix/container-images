@@ -588,6 +588,29 @@ sub downloadImage {
 
 sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
+
+    my $httpPostRequestParams = {
+	    'title' => 'Special:Upload',
+	    'wpSourceType' => "web",
+	    'wpUploadFileURL' => $url,
+	    'wpDestFile' => $title, 
+	    'wpUploadDescription' => $summary ? $summary : "",
+	    'wpUpload' => 'upload',
+	    'wpIgnoreWarning' => 'true'
+    };
+
+    my $httpResponse = $self->makeHttpPostRequest(
+	$self->indexUrl(),
+	$httpPostRequestParams
+	);
+
+    my $status = $httpResponse->code == 302;
+
+    return $status;
+}
+
+sub uploadImageFromUrl_withapi {
+    my($self, $title, $url, $summary) = @_;
     my $status;
 
     my $httpPostRequestParams = {
@@ -603,12 +626,17 @@ sub uploadImageFromUrl {
     my $httpResponse = $self->makeApiRequest($httpPostRequestParams, "POST" );
     my $content = $httpResponse->content;
 
+    $self->log("info", "Upload $title : ".$httpResponse->content);
+
     if ($content =~ /error\ code\=\"([^\"]+)\"/) {
 	$self->log("error", "Error by uploading image '$title' : $1");
     }
     elsif ($content =~ /upload_session_key\=\"([\d]+)\"/) {
 	my $sessionKey = $1;
 	$httpResponse = $self->makeApiRequest( { 'action' => 'upload', 'httpstatus' => '1', 'sessionkey' => "$sessionKey", 'format' => 'xml', 'token' => $self->editToken() } , 'POST');
+
+	$self->log("info", "Status Upload $title : ".$httpResponse->content);
+
 	$status = 1;
     } else {
 	$self->log("error", "Error by uploading image '$title' : $content");
