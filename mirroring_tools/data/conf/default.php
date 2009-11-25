@@ -26,6 +26,14 @@ add_include_path("/usr/share");
 $wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg', 'mp3', 'ogg', 'pdf', 'svg' );
 $wgStrictFileExtensions = false;
 
+# image shared dir
+$wgUseSharedUploads = true;
+$wgSharedUploadPath = "http://commons.mirror.kiwix.org/images";
+$wgFetchCommonsDescriptions = false;
+$wgSharedUploadDirectory = "/var/www/mirror/commons/images";
+$wgSharedUploadDBname = "mirror_commons";
+$wgCacheSharedUploads = false;
+
 # permissions
 $wgGroupPermissions['*']['createaccount']    = true;
 $wgGroupPermissions['*']['edit']             = false; // otherwise 'editsection' present in the page
