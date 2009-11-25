@@ -34,12 +34,8 @@ sub connectToDatabase() {
     $self->dbh($dbh);
 }
 
-sub deleteRevisions {
+sub deleteOldRevisions {
     my $self = shift;
-
-    # Connect to databse
-    $self->connectToDatabase();
-    $self->log("info", "Connected to database ".$self->database());
 
     # Get all pages
     my $req = "SELECT page_latest, page_id, page_title FROM page WHERE page_id IS NOT NULL";
@@ -75,16 +71,10 @@ sub deleteRevisions {
 	$self->log("info", "Deleting '".$page->{page_title}."' (".$page->{page_id}.")... ". $revCount." revision(s)");
     }
 
-    # Delete text
-    $self->deleteTexts();
-
-    # commit
-    $self->dbh()->commit();
-
     $self->log("info", "Deleting old revisions done");
 }
 
-sub deleteTexts {
+sub deleteOrphanTexts {
     my $self = shift;
     my %revisionTextIds;
 
@@ -121,6 +111,24 @@ sub deleteTexts {
 	    $self->log("info", "Keeping old text revision '$revisionTextId'.");
 	}
     }
+}
+
+sub deleteOrphanFiles {
+    my $self = shift;
+
+    my $dir = $self->mediawikiDirectory()."/images/archive/*";
+    `rm -rf $dir`
+}
+
+sub deleteRemovedFiles {
+    my $self = shift;
+    
+    my $req = "DELETE FROM filearchive";
+    my $sth = $self->dbh()->prepare($req) or die ("Unable to prepare request.");
+    $sth->execute() or die ("Unable to execute request.");
+
+    my $dir = $self->mediawikiDirectory()."/images/deleted/*";
+    `rm -rf $dir`
 }
 
 # logging
@@ -174,4 +182,9 @@ sub dbh {
     return $self->{dbh};
 }
 
+sub mediawikiDirectory {
+    my $self = shift;
+    if (@_) { $self->{mediawikiDirectory} = shift }
+    return $self->{mediawikiDirectory};
+}
 1;

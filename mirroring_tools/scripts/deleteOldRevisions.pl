@@ -22,6 +22,7 @@ my $port = "3306";
 my $database = "";
 my $username = "";
 my $password = "";
+my $mediawikiDirectory="";
 
 ## Get console line arguments
 GetOptions('host=s' => \$host,
@@ -29,10 +30,11 @@ GetOptions('host=s' => \$host,
 	   'database=s' => \$database,
 	   'username=s' => \$username,
 	   'password=s' => \$password,
+	   'mediawikiDirectory=s' => \$mediawikiDirectory,	   
 	   );
 
-if (!$database) {
-    print "usage: ./deleteOldRevisions.pl --database=MYDB [--host=localhost] [--port=3306] [--username=tom] [--password=fff]\n";
+if (!$database || !$mediawikiDirectory) {
+    print "usage: ./deleteOldRevisions.pl --database=MYDB --mediawikiDirectory=/var/www/wiki/ [--host=localhost] [--port=3306] [--username=tom] [--password=fff]\n";
     exit;
 }
 
@@ -48,6 +50,11 @@ $manager->password($password);
 $manager->host($host);
 $manager->port($port);
 $manager->password($password);
-$manager->deleteRevisions();
+$manager->mediawikiDirectory($mediawikiDirectory);
+$manager->connectToDatabase();
+$manager->deleteOldRevisions();
+$manager->deleteOrphanTexts();
+$manager->deleteOrphanFiles();
+$manager->deleteRemovedFiles();
 
 exit;
