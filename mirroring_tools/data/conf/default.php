@@ -46,8 +46,9 @@ $wgEnableUploads = true;
 $wgAllowCopyUploads = true;
 
 # memory
-#$wgMaxShellMemory = 1024000;
-$wgMaxShellFileSize = 1024000;
+$wgMaxShellMemory = 502400;
+$wgMaxShellTime = 180;
+$wgMaxShellFileSize = 202400;
 $wgMimeDetectorCommand= 'file -bi ';
 $wgVerifyMimeType = false;
 
@@ -69,6 +70,10 @@ $wgHideInterlanguageLinks = true;
 
 # ajax
 $wgUseAjax = true;
+
+# timeout
+$wgSyncHTTPTimeout = 1200;
+$wgAsyncHTTPTimeout = 1200;
 
 # throttling
 $wgPasswordAttemptThrottle = array( 'count' => 424242424242, 'seconds' => 1 );
