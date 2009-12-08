@@ -581,6 +581,29 @@ sub getImageUrl {
     return $url;
 }
 
+sub getImageSize {
+    my($self, $image) = @_;
+    my $size;
+    my $httpPostRequestParams = {
+	'action' => 'query',
+	'titles' => "file:".$image,
+	'format' => 'xml',
+	'iiprop' => 'size',
+	'prop' => 'imageinfo'
+    };
+    
+    my $xml;
+
+    # make the http request and parse response
+    $xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams);
+
+    if (exists($xml->{query}->{pages}->{page}->{imageinfo}->{ii})) {
+	$size = $xml->{query}->{pages}->{page}->{imageinfo}->{ii}->{size}
+    }
+    
+    return $size;
+}
+
 sub downloadImage {
     my ($self, $image) = @_;
     return $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:FilePath', 'file' => $image } )->content();
@@ -620,6 +643,8 @@ sub uploadImageFromUrl {
     return $status;
 }
 
+# Curently not use, seems to be buggy
+# After hours it doe not work anymore
 sub uploadImageFromUrl_withapi {
     my($self, $title, $url, $summary) = @_;
     my $status;
@@ -923,6 +948,9 @@ sub allImages {
     my $continue;
     my $xml;
     
+    my %namespaces = $self->namespaces();
+    my $imageNamespace = $namespaces{6};
+
     do {
 	# set the appropriate offset
 	if ($continue) {
@@ -936,8 +964,7 @@ sub allImages {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
 		if ($page->{title}) {
 		    my $image = $page->{title};
-		    $image =~ s/^Image:// ;
-		    $image =~ s/^File:// ;
+		    $image =~ s/^$imageNamespace:// ;
 		    $image =~ tr/\ /_/ ;
 		    push(@images, $image);
 		}
