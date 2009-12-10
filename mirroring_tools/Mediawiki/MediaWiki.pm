@@ -584,9 +584,15 @@ sub getImageUrl {
 sub getImageSize {
     my($self, $image) = @_;
     my $size;
+    my $imageNamespaceName = $self->getFileNamespaceName();
+
+    unless ($image =~ /^file:/i || $image =~ /^$imageNamespaceName:/i ) {
+	$image = "file:".$image;
+    }
+
     my $httpPostRequestParams = {
 	'action' => 'query',
-	'titles' => "file:".$image,
+	'titles' => $image,
 	'format' => 'xml',
 	'iiprop' => 'size',
 	'prop' => 'imageinfo'
@@ -1190,6 +1196,7 @@ sub listCategoryEntries {
     return(@entries);    
 }
 
+# namespaces
 sub namespaces {
     my $self = shift;
     
@@ -1232,6 +1239,19 @@ sub namespaces {
     }
 
     return %{$self->{namespaces}};
+}
+
+sub getNamespaceName() {
+    my $self = shift;
+    my $number = shift;
+
+    my %namespaces = $self->namespaces();
+    return $namespaces{$number};
+}
+
+sub getFileNamespaceName() {
+    my $self = shift;
+    return $self->getNamespaceName(6);
 }
 
 # Prepare a page: ask for the HTML code and check if no error
