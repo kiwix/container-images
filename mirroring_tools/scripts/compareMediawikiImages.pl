@@ -85,7 +85,11 @@ foreach my $image (@images) {
 	unless ($noLog) {
 	    $logger->info("image '$image' in both Mediawikis.");
 	}
-	print "File:".$image."\n";
+
+	unless ($image =~ /^file:/i) {
+	    $image = "File:".$image;
+	}
+	print $image."\n";
     } else {
 	unless ($noLog) {
 	    $logger->info("image '$image' differences: '".($firstSize || "undefined")."' in first and '".($secondSize || "undefined")."' in second Mediawiki.");
