@@ -45,6 +45,6 @@ if (!$host || !$username || !$password ) {
 `cat /tmp/$host.commons_files_to_upload | ./mirrorMediawikiPages.pl --sourceHost=$host --destinationHost=commons.mirror.kiwix.org --destinationPassword="$password" --destinationUsername="$username" --readFromStdin --ignoreEmbeddedInPagesCheck --noTextMirroring --ignoreImageDependences --ignoreTemplateDependences`;
 
 # remove pictures
-`cat ar.commons_images | ./modifyMediawikiEntry.pl --host=ar.mirror.kiwix.org --readFromStdin --action=delete --username=Kelson --password=KelsonKelson`
+`cat /tmp/$host.commons_files | ./modifyMediawikiEntry.pl --host=$host --readFromStdin --action=delete --username=Kelson --password=KelsonKelson`;
 
 exit;
