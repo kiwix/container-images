@@ -16,21 +16,27 @@ use Data::Dumper;
 use Term::Query qw( query query_table query_table_set_defaults query_table_process );
 
 # get the params
-my $host;
+my $wiki;
 my $username;
 my $password;
+my $dbUsername;
+my $dbPassword;
 
 ## Get console line arguments
 GetOptions(
-	   'host=s' => \$host, 
+	   'wiki=s' => \$wiki, 
            'username=s' => \$username,
 	   'password=s' => \$password, 
+           'dbUsername=s' => \$dbUsername,
+	   'dbPassword=s' => \$dbPassword, 
            );
 
-if (!$host || !$username || !$password ) {
-    print "Usage: tryToMigrateImagesToCommons.pl --host=localhost --username=myname --password=foobar\n\n";
+if (!$wiki || !$username || !$password || !$dbUsername || !$dbPassword) {
+    print "Usage: tryToMigrateImagesToCommons.pl --wiki=es --username=myname --password=foobar --dbUsername --dbPassword\n";
     exit;
 }
+
+my $host = $wiki.".mirror.kiwix.org";
 
 # compare images
 `./compareMediawikiImages.pl --firstHost=$host --secondHost=commons.wikimedia.org --secondPath=w > /tmp/$host.commons_files`;
@@ -46,5 +52,8 @@ if (!$host || !$username || !$password ) {
 
 # remove pictures
 `cat /tmp/$host.commons_files | ./modifyMediawikiEntry.pl --host=$host --readFromStdin --action=delete --username=Kelson --password=KelsonKelson`;
+
+# clean
+`./deleteOldRevisions.pl --database=mirror_$wiki --mediawikiDirectory=/var/www/mirror/$wiki --username=$dbUsername --password=$dbPassword`;
 
 exit;
