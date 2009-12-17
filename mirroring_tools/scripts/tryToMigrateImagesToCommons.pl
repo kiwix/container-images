@@ -51,13 +51,13 @@ my $host = $wiki.".mirror.kiwix.org";
 `cat /tmp/$host.commons_files_to_upload | ./mirrorMediawikiPages.pl --sourceHost=$host --destinationHost=commons.mirror.kiwix.org --destinationPassword="$password" --destinationUsername="$username" --readFromStdin --ignoreEmbeddedInPagesCheck --noTextMirroring --ignoreImageDependences --ignoreTemplateDependences`;
 
 # Check if image were uploaded
-if [ ! `cat /tmp/$host.commons_files_to_upload | sed '1q' | ./checkPageExistence.pl --host=commons.mirror.kiwix.org --readFromStdin` == `cat /tmp/$host.commons_files_to_upload | sed '1q'` ] ; then echo "Pictures were not uploaded to commons.mirror.kiwix.org" ; exit 1 ; fi
+`if [ ! \`cat /tmp/$host.commons_files_to_upload | sed '1q' | ./checkPageExistence.pl --host=commons.mirror.kiwix.org --readFromStdin\` == \`cat /tmp/$host.commons_files_to_upload | sed '1q'\` ] ; then echo "Pictures were not uploaded to commons.mirror.kiwix.org"; exit 1 ; fi` ;
 
 # remove pictures
 `cat /tmp/$host.commons_files | ./modifyMediawikiEntry.pl --host=$host --readFromStdin --action=delete --username=Kelson --password=KelsonKelson`;
 
 # Check if image were delete
-if [ `cat /tmp/$host.commons_files | sed '1q' | ./checkPageExistence.pl --host=$host --readFromStdin` == `cat /tmp/$host.commons_files | sed '1q'` ] ; then echo "Pictures were not deleted from $host" ; exit 1 ; fi
+`if [ \`cat /tmp/$host.commons_files | sed '1q' | ./checkPageExistence.pl --host=$host --readFromStdin\` == \`cat /tmp/$host.commons_files | sed '1q'\` ] ; then echo "Pictures were not deleted from $host" ; exit 1 ; fi` ;
 
 # clean
 `./deleteOldRevisions.pl --database=mirror_$wiki --mediawikiDirectory=/var/www/mirror/$wiki --username=$dbUsername --password=$dbPassword`;
