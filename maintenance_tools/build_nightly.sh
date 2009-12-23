@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "43" > /tmp/43
+
 DEST=$1
 TMP=/tmp
 DIR=$TMP/kiwix
@@ -15,10 +17,10 @@ cd $DIR
 
 # configure
 ./autogen.sh
-./configure
+./configure 
 
 # make the dist file
 make dist-bzip2
 
 # move to destination dir
-mv ./kiwix-svn.tar.bz2 $DEST/kiwix-svn-`date "+%Y-%m-%d"`.tar.bz2
+mv ./kiwix-*.tar.bz2 $DEST/kiwix-svn-`date "+%Y-%m-%d"`.tar.bz2
