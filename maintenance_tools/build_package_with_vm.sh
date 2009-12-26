@@ -6,10 +6,10 @@ PASS=kelson
 ISO=""
 NAME=""
 IMG=""
-PWD=`pwd`
 
 function startVM {
-    qemu -hda "$IMG" -redir tcp:2222::22 -nographic &
+    qemu -hda "$IMG" -redir tcp:2222::22  &
+    sleep 10
     WAIT=1
     while [ "$WAIT" = "1" ]
     do 
@@ -18,14 +18,52 @@ function startVM {
 	echo "Virtual machine starting..."
 	sleep 1
     done
+    echo "Port 22 open on the virtual machine."
 }
 
 function stopVM {
-    kill -0 `pidof qemu`
+    kill -9 `pidof qemu`
 }
 
-function buildRPM {
-    ssh -p 2222 root@localhost <<'EOF'
+function buildDeb {
+    ssh-keygen -R localhost
+    ssh-keyscan -p 2222 localhost >> ~/.ssh/known_host
+    ssh -q -p $PORT $USER@localhost <<'EOF'
+
+    export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+    export TERM=linux
+
+    # update the distribution
+    apt-get update
+    apt-get dist-upgrade
+
+    # install packages
+    apt-get install debhelper libxapian-dev libbz2-dev libunac1-dev xulrunner-dev m4 zlib1g-dev debianutils libunac1 libxapian15 xapian-tools xulrunner zlib1g libbz2-1.0 libmicrohttpd5 libmicrohttpd-dev subversion wget autotools-dev automake autoconf libtool
+
+    # build the dist file
+    cd /tmp
+    rm -rf moulinkiwix
+    svn co https://kiwix.svn.sourceforge.net/svnroot/kiwix/moulinkiwix
+    cd moulinkiwix
+    ./autogen.sh
+    ./configure
+
+    # build the DEB
+    make deb
+EOF
+
+    # Get the RPM file
+    scp -P $PORT $USER@localhost:/tmp/kiwix*.deb .
+
+    # stop
+    shutdown now
+}
+
+function buildRpm {
+    ssh-keygen -R localhost
+    ssh-keyscan -p 2222 localhost >> ~/.ssh/known_host
+    ssh -q -p $PORT $USER@localhost <<'EOF'
+
     # update the distribution
     yum -y update
 
@@ -49,14 +87,10 @@ function buildRPM {
 EOF
 
     # Get the RPM file
-    scp -P 2222 root@localhost:/tmp/moulinkiwix/kiwix*.rpm $PWD/
+    scp -P $PORT $USER@localhost:/tmp/moulinkiwix/kiwix*.rpm .
 
     # stop
     shutdown now
-}
-
-function buildDeb {
-    echo "todo"
 }
 
 function usage {
@@ -118,7 +152,19 @@ then
 
     cd "$NAME"
     startVM
-    buildRPM
+    buildRpm
+    stopVM
+elif [ "$1" = "--buildDeb" ]
+then
+    NAME="$2"
+    IMG="$NAME.img"
+    cd ~/qemu/
+
+    checkNameAndImg
+
+    cd "$NAME"
+    startVM
+    buildDeb
     stopVM
 else
     usage
