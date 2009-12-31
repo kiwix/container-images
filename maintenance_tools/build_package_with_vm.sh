@@ -53,7 +53,7 @@ function buildDeb {
 EOF
 
     # Get the RPM file
-    scp -P $PORT $USER@localhost:/tmp/kiwix*.deb .
+    scp -P $PORT $USER@localhost:/tmp/moulinkiwix/kiwix*.deb .
 
     # stop
     shutdown now
