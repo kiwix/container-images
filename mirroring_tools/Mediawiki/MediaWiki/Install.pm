@@ -149,6 +149,10 @@ sub install {
     $cmd = 'sed -i -e \'s/\$LinkColor[ |]=.*$/\$LinkColor = "black";/\' ' . $directory . '/extensions/timeline/EasyTimeline.pl';
     `$cmd`;
 
+    # Make the link for the shared directory
+    $cmd = 'ln -s /var/www/mirror/commons/images/ '.$directory.'/images/shared/';
+    `$cmd`;
+
     # todo: check if all extern tools are there
 }
 
