@@ -146,15 +146,17 @@ sub install {
     `$cmd`;
 
     # Set link color to 'black' in the timeline extension
-    $cmd = 'sed -i -e \'s/\$LinkColor[ |]=.*$/\$LinkColor = "black";/\' ' . $directory . '/extensions/timeline/EasyTimeline.pl';
-    `$cmd`;
+    if ( -f $directory.'/extensions/timeline/EasyTimeline.pl') {
+	$cmd = 'sed -i -e \'s/\$LinkColor[ |]=.*$/\$LinkColor = "black";/\' ' . $directory . '/extensions/timeline/EasyTimeline.pl';
+	`$cmd`;
+    }
 
     # Make the link for the 'local directory
-    $cmd = 'ln -s /var/www/mirror/commons/images/ '.$directory.'/images/shared/';
+    $cmd = 'ln -s /var/www/mirror/commons/images/ '.$directory.'/images/shared';
     `$cmd`;
 
     # Make the link for the 'local' directory
-    $cmd = 'ln -s '.$directory.'/images/ '.$directory.'/images/local/';
+    $cmd = 'ln -s '.$directory.'/images/ '.$directory.'/images/local';
     `$cmd`;
 
     # todo: check if all extern tools are there
