@@ -29,7 +29,7 @@ GetOptions('code=s' => \$code,
 	   'path=s' => \$path
 	   );
 
-if (!$code) {
+if (!$code && !$path) {
     print "usage: ./getLocalization.pl --code=en-US --path=./\n";
     exit;
 }
