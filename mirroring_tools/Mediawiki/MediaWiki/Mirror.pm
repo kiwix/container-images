@@ -13,6 +13,12 @@ use URI::Escape;
 use threads;
 use threads::shared;
 
+my $commonMediawikiHost : shared = undef;
+my $commonMediawikiPath : shared = undef;
+my $commonMediawikiUsername : shared = undef;
+my $commonMediawikiPassword : shared = undef;
+my $commonRegexp : shared = undef;    
+
 my $sourceMediawikiHost : shared = undef;
 my $sourceMediawikiPath : shared = undef;
 my $sourceMediawikiUsername : shared = undef;
@@ -447,13 +453,21 @@ sub existsImageError {
 sub uploadImages {
     my $self = shift;
     my $timeOffset;
-    my	$site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
+    my $site = $self->connectToMediawiki($self->destinationMediawikiUsername(),
 					  $self->destinationMediawikiPassword(),
 					  $self->destinationMediawikiHost(),
 					  $self->destinationMediawikiPath(),
 					  $self->destinationHttpUsername(),
 					  $self->destinationHttpPassword(),
 					  $self->destinationHttpRealm());
+
+    my $commonSite = $self->connectToMediawiki($self->commonMediawikiUsername(),
+					  $self->commonMediawikiPassword(),
+					  $self->commonMediawikiHost(),
+					  $self->commonMediawikiPath(),
+					  ,
+					  ,
+					  );
     
     while ($self->isRunnable() && $site) {
 	$timeOffset = time();
@@ -464,7 +478,12 @@ sub uploadImages {
 
 	    my $status;
 	    if ($self->uploadFilesFromUrl()) {
-		$status = $site->uploadImageFromUrl($image, $content, $summary);
+		if ($self->isCommonUrl($content)) {
+		    $status = $commonSite->uploadImageFromUrl($image, $content, $summary);
+		} else {
+		    $status = $site->uploadImageFromUrl($image, $content, $summary);
+		}
+
 	    } else {
 		$status = $site->uploadImage($image, $content, $summary);
 	    }
@@ -1210,6 +1229,49 @@ sub destinationHttpPassword {
     lock($destinationHttpPassword);
     if (@_) { $destinationHttpPassword = shift }
     return $destinationHttpPassword;
+}
+
+
+sub commonMediawikiHost { 
+    my $self = shift; 
+    lock($commonMediawikiHost);
+    if (@_) { $commonMediawikiHost = shift }
+    return $commonMediawikiHost;
+}
+
+sub commonMediawikiPath { 
+    my $self = shift; 
+    lock($commonMediawikiPath);
+    if (@_) { $commonMediawikiPath = shift }
+    return $commonMediawikiPath;
+}
+
+sub commonMediawikiUsername {
+    my $self = shift;
+    lock($commonMediawikiUsername);
+    if (@_) { $commonMediawikiUsername = shift }
+    return $commonMediawikiUsername;
+}
+
+sub commonMediawikiPassword {
+    my $self = shift;
+    lock($commonMediawikiPassword);
+    if (@_) { $commonMediawikiPassword = shift }
+    return $commonMediawikiPassword;
+}
+
+sub commonRegexp {
+    my $self = shift;
+    lock($commonRegexp);
+    if (@_) { $commonRegexp = shift }
+    return $commonRegexp;
+}
+
+sub isCommonUrl {
+    my $self = shift;
+    my $url = shift;
+    lock($commonRegexp);
+    return ($url =~ /$commonRegexp/ ? 1 : 0);
 }
 
 sub isTemplate {

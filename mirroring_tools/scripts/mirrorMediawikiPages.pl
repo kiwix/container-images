@@ -26,6 +26,12 @@ my $destinationPath;
 my $destinationUsername;
 my $destinationPassword;
 
+my $commonHost;
+my $commonPath;
+my $commonUsername;
+my $commonPassword;
+my $commonRegexp = "\\/commons\\/";
+
 my $ignoreTemplateDependences;
 my $ignoreImageDependences;
 my $ignoreEmbeddedInPagesCheck;
@@ -54,6 +60,10 @@ GetOptions(
            'destinationPath=s' => \$destinationPath,
            'destinationUsername=s' => \$destinationUsername,
            'destinationPassword=s' => \$destinationPassword,
+	   'commonHost=s' => \$commonHost, 
+           'commonPath=s' => \$commonPath,
+           'commonUsername=s' => \$commonUsername,
+           'commonPassword=s' => \$commonPassword,
            'footerPath=s' => \$footerPath,
            'readFromStdin' => \$readFromStdin,
            'page=s' => \@pages,
@@ -67,7 +77,8 @@ GetOptions(
            'noTextMirroring' => \$noTextMirroring,
            'checkIncomingRedirects' => \$checkIncomingRedirects,
            'ignoreEmbeddedInPagesCheck' => \$ignoreEmbeddedInPagesCheck,
-           );
+           'commonRegexp=s'=> \$commonRegexp
+    );
 
 if (!$sourceHost || !$destinationHost ) {
     print "Usage:\n\t";
@@ -92,7 +103,12 @@ if (!$sourceHost || !$destinationHost ) {
     print "--noTextMirroring\n\t\tDo not mirror any text. Can be useful to mirror only images (for example by ginving a list of picture pages).\n\t";
     print "--useIncompletePagesAsInput\n\t\tWill check dependences for all pages present in the destination wiki, and mirror lacking dependences.\n\t";
     print "--ignoreEmbeddedInPagesCheck\n\t\tWill ignore to check in an article page usind a new upload template as failing dependences.\n\t";
-    print "--footerPath=[path] (example: footer.html.tmpl)\n\t\tWill append to every article mirrored this HTML code.\n";
+    print "--footerPath=[path] (example: footer.html.tmpl)\n\t\tWill append to every article mirrored this HTML code.\n\t";
+    print "--commonUsername=[username] (example: foobar)\n\t\tUsername for the common Mediawiki\n\t";
+    print "--commonPassword=[password] (example: foobarpass)\n\t\tPassword for the common Mediawiki\n\t";
+    print "--commonPath=[path] (example: w)\n\t\tPath in the URL to access to the common Mediawiki root\n\t";
+    print "--commonHost=[host] (example: localhost)\n\t\tIP or hostname of the common Mediawiki\n\t";
+    print "--commonRegexp=[\/commons\/] (example: localhost)\n\t\tIP or hostname of the common Mediawiki\n";
     exit;
 }
 
@@ -124,13 +140,11 @@ unless ($noLog) {
 # add configuration parameters to the mirroring module
 $mirror->sourceMediawikiHost($sourceHost);
 $mirror->sourceMediawikiPath($sourcePath);
-
 $mirror->sourceMediawikiUsername(ucfirst($sourceUsername));
 $mirror->sourceMediawikiPassword($sourcePassword);
 
 $mirror->destinationMediawikiHost($destinationHost);
 $mirror->destinationMediawikiPath($destinationPath);
-
 $mirror->destinationMediawikiUsername(ucfirst($destinationUsername));
 $mirror->destinationMediawikiPassword($destinationPassword);
 
@@ -141,6 +155,12 @@ $mirror->checkIncomingRedirects($checkIncomingRedirects);
 $mirror->checkImageDependences( $ignoreImageDependences ? 0 : 1);
 $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
 $mirror->checkEmbeddedIn( $ignoreEmbeddedInPagesCheck ? 0 : 1);
+
+$mirror->commonMediawikiHost($commonHost);
+$mirror->commonMediawikiPath($commonPath);
+$mirror->commonMediawikiUsername($commonUsername);
+$mirror->commonMediawikiPassword($commonPassword);
+$mirror->commonRegexp($commonRegexp);
 
 $mirror->noTextMirroring($noTextMirroring);
 
