@@ -461,14 +461,16 @@ sub uploadImages {
 					  $self->destinationHttpPassword(),
 					  $self->destinationHttpRealm());
 
-    my $commonSite = $self->connectToMediawiki($self->commonMediawikiUsername(),
-					  $self->commonMediawikiPassword(),
-					  $self->commonMediawikiHost(),
-					  $self->commonMediawikiPath(),
-					  ,
-					  ,
-					  );
-    
+    my $commonSite;
+    if ($self->commonMediawikiHost()) {
+	$commonSite= $self->connectToMediawiki($self->commonMediawikiUsername(),
+					       $self->commonMediawikiPassword(),
+					       $self->commonMediawikiHost(),
+					       $self->commonMediawikiPath(),
+					       ,
+					       ,);
+    }
+	
     while ($self->isRunnable() && $site) {
 	$timeOffset = time();
 	my ($image, $content, $summary) = $self->getImageToUpload();
@@ -747,6 +749,17 @@ sub checkImages {
 					 $self->destinationHttpPassword(),
 					 $self->destinationHttpRealm());
 
+    my $commonSite;
+    if ($self->commonMediawikiHost()) {
+	$commonSite= $self->connectToMediawiki($self->commonMediawikiUsername(),
+					       $self->commonMediawikiPassword(),
+					       $self->commonMediawikiHost(),
+					       $self->commonMediawikiPath(),
+					       ,
+					       ,
+	    );
+    }
+
     my $imageNamespace = "file";
     if ($site) {
 	my %namespaces = $site->namespaces();
@@ -764,12 +777,17 @@ sub checkImages {
 
 	    foreach my $dep (@deps) {
 		if (exists($dep->{"missing"}) || $self->checkCompletedImages()) {
-		    $toMirrorCount++;
 		    my $image = $dep->{"title"};
-
+		    $toMirrorCount++;
 		    $image =~ s/$imageNamespace://i;
 
-		    unless ($self->existsImageError($image)) {
+		    # Check if necessary if the image is not on the common Mediawiki instance
+		    if ($commonSite) {
+			my $commonSize = $commonSite->getImageSize($image);
+			unless ($commonSize && $commonSite != $site->getImageSize($image)) {
+			    $self->addImageToDownload($image);
+			}
+		    } elsif (!$self->existsImageError($image)) {
 			$self->addImageToDownload($image);
 		    }
 		}
@@ -1271,7 +1289,7 @@ sub isCommonUrl {
     my $self = shift;
     my $url = shift;
     lock($commonRegexp);
-    return ($url =~ /$commonRegexp/ ? 1 : 0);
+    return (($commonRegexp && $url =~ /$commonRegexp/) ? 1 : 0);
 }
 
 sub isTemplate {

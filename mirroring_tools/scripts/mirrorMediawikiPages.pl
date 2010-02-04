@@ -30,7 +30,7 @@ my $commonHost;
 my $commonPath;
 my $commonUsername;
 my $commonPassword;
-my $commonRegexp = "\\/commons\\/";
+my $commonRegexp;
 
 my $ignoreTemplateDependences;
 my $ignoreImageDependences;
@@ -109,6 +109,11 @@ if (!$sourceHost || !$destinationHost ) {
     print "--commonPath=[path] (example: w)\n\t\tPath in the URL to access to the common Mediawiki root\n\t";
     print "--commonHost=[host] (example: localhost)\n\t\tIP or hostname of the common Mediawiki\n\t";
     print "--commonRegexp=[\/commons\/] (example: localhost)\n\t\tIP or hostname of the common Mediawiki\n";
+    exit;
+}
+
+if ($commonHost && !$commonRegexp) {
+    print "You have to specify --commonRegexp if you specify --commonHost.\n";
     exit;
 }
 
