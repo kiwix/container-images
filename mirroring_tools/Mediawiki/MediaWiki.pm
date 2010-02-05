@@ -624,8 +624,8 @@ sub uploadImageFromUrl {
     if ($httpResponse->content =~ /value\=\"([^\"]+)\"\ name\=\"wpEditToken\"/ ) {
 	$wpEditToken = $1;
     } else {
-	$self->log("error", "Unable to retrieve wpEditToken to upload image.");
-	return 0;
+	$self->log("warn", "Unable to retrieve wpEditToken to upload image, will try to do without.");
+	#return 0;
     }
 
     my $httpPostRequestParams = {
