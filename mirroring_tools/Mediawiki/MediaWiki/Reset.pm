@@ -10,6 +10,7 @@ my $port = "3306";
 my $username = "";
 my $password = "";
 my $database = "";
+my $keepImages;
 my $logger;
 
 sub new {
@@ -31,10 +32,19 @@ sub reset {
     
     $dbh = DBI->connect($dsn, $username, $password) or die ("Unable to connect to the database.");
     
-    foreach my $table ("archive", "categorylinks", "externallinks", "filearchive", "hitcounter", "image", "imagelinks", "interwiki", "langlinks", "logging", "math", "objectcache", "oldimage", "oldimage", "redirect", "page", "pagelinks", "revision", "text", "recentchanges", "searchindex", "templatelinks") {
+    foreach my $table ("archive", "categorylinks", "externallinks", "filearchive", "hitcounter", "imagelinks", "langlinks", "logging", "math", "objectcache", "redirect", "page", "pagelinks", "revision", "text", "recentchanges", "searchindex", "templatelinks") {
 	$req = "TRUNCATE $table";
 	$sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
 	$sth->execute() or die ("Unable to execute request.");
+    }
+
+    # Keep images?
+    unless ($self->keepImages()) {
+	foreach my $table ("image", "imageold") {
+	    $req = "TRUNCATE $table";
+	    $sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
+	    $sth->execute() or die ("Unable to execute request.");
+	}
     }
 }
 
@@ -81,6 +91,12 @@ sub database {
     my $self = shift;
     if (@_) { $database = shift }
     return $database;
+}
+
+sub keepImages {
+    my $self = shift;
+    if (@_) { $keepImages = shift }
+    return $keepImages;
 }
 
 # loggin
