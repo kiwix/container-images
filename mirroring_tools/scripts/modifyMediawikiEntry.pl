@@ -36,7 +36,7 @@ GetOptions('host=s' => \$host,
     );
 
 if (!$host || (!$readFromStdin && !$file && !scalar(@entries)) || !($action =~ /^(touch|delete|empty|restore|replace)$/)) {
-    print "usage: ./buildHistoryFile.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore|replace] [--username=foobar] [--password=mypass]\n";
+    print "usage: ./modifyMediawikiEntry.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore|replace] [--username=foobar] [--password=mypass]\n";
     exit;
 }
 
