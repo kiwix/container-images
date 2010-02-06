@@ -35,8 +35,8 @@ GetOptions('host=s' => \$host,
            'entry=s' => \@entries,
     );
 
-if (!$host || (!$readFromStdin && !$file && !scalar(@entries)) || !($action =~ /^(touch|delete|empty|restore|replace)$/)) {
-    print "usage: ./modifyMediawikiEntry.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore|replace] [--username=foobar] [--password=mypass]\n";
+if (!$host || (!$readFromStdin && !$file && !scalar(@entries)) || !($action =~ /^(touch|delete|empty|restore|replace|stub)$/)) {
+    print "usage: ./modifyMediawikiEntry.pl --host=my.wiki.org [--file=my_file] [--path=w] [--entry=my_page] [--readFromStdin] [--action=touch|delete|empty|restore|replace|stub] [--username=foobar] [--password=mypass]\n";
     exit;
 }
 
@@ -90,6 +90,8 @@ foreach my $entry (@entries) {
     } elsif ($action eq "replace") {
 	my ($title, $newContent) = split(/ /, $entry);
 	$status = $site->uploadPage($title, $newContent);
+    } elsif ($action eq "stub") {
+	$status = $site->uploadPage($entry, "-");
     } else {
 	$logger->info("This action is not valid, will exit.");
 	last;
