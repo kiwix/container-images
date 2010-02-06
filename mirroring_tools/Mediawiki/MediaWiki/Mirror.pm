@@ -784,10 +784,16 @@ sub checkImages {
 		    # Check if necessary if the image is not on the common Mediawiki instance
 		    if ($commonSite) {
 			my $commonSize = $commonSite->getImageSize($image);
-			unless ($commonSize && $commonSite != $site->getImageSize($image)) {
-			    $self->addImageToDownload($image);
+			if ($commonSize) {
+			    if ($commonSize == $site->getImageSize($image)) {
+				$self->addImageToDownload($image);
+				next;
+			    }
 			}
-		    } elsif (!$self->existsImageError($image)) {
+		    } 
+
+		    # Seems not to be a common image
+		    unless ($self->existsImageError($image)) {
 			$self->addImageToDownload($image);
 		    }
 		}
