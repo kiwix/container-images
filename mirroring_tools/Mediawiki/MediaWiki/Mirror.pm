@@ -595,7 +595,7 @@ sub checkTemplates {
 		}
 	    }
 
-	    $self->log("info", "$toMirrorCount/".scalar(@deps)." template dependence(s) found for '$title'");
+	    $self->log("info", "$toMirrorCount/".scalar(@deps)." template dependence(s) todo for '$title'");
 
 	    $self->decrementCurrentTaskCount();
 	} else {
@@ -778,27 +778,28 @@ sub checkImages {
 	    foreach my $dep (@deps) {
 		if (exists($dep->{"missing"}) || $self->checkCompletedImages()) {
 		    my $image = $dep->{"title"};
-		    $toMirrorCount++;
 		    $image =~ s/$imageNamespace://i;
 
 		    # Check if necessary if the image is not on the common Mediawiki instance
 		    if ($commonSite) {
 			my $commonSize = $commonSite->getImageSize($image);
 			if ($commonSize) {
-			    if ($commonSize == $site->getImageSize($image)) {
+			    unless ($commonSize eq $site->getImageSize($image)) {
+				$toMirrorCount++;
 				$self->addImageToDownload($image);
-				next;
 			    }
+			    next;
 			}
 		    } 
 
 		    # Seems not to be a common image
 		    unless ($self->existsImageError($image)) {
+			$toMirrorCount++;
 			$self->addImageToDownload($image);
 		    }
 		}
 	    }
-	    $self->log("info", "$toMirrorCount/".scalar(@deps)." image dependence(s) found for '$title'");
+	    $self->log("info", "$toMirrorCount/".scalar(@deps)." image dependence(s) todo for '$title'");
 
 	    $self->decrementCurrentTaskCount();
 	} else {
