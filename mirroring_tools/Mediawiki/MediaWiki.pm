@@ -39,6 +39,7 @@ sub new {
 	httpPassword => undef,
 	httpRealm => undef,
 	namespaces => undef,
+	useImageUploadToken => 1
     };
 
     bless($self, $class);
@@ -304,6 +305,12 @@ sub password {
     return $self->{password};
 }
 
+sub useImageUploadToken {
+    my $self = shift;
+    if (@_) { $self->{useImageUploadToken} = shift; }
+    return $self->{useImageUploadToken};
+}
+
 sub downloadPage {
     my ($self, $page, $revision) = @_;
     my $xml;
@@ -393,12 +400,17 @@ sub uploadPage {
 		last;
 	    }
 
-	    unless ($returnValue) {
+	    if (!$returnValue && $retryCounter <= 15) {
 		$self->log("info", "Was unable to upload correctly page '$title' (".$httpResponse->content()."), will retry in ".($retryCounter++)." s.");
 		sleep($retryCounter);
 	    }
-	} while (!$returnValue);
 
+	} while (!$returnValue && $retryCounter <= 15);
+
+	if ($retryCounter > 15) {
+	    $self->log("info", "Was unable to upload correctly page '$title'... I abandon now after 15 retries.");
+	}
+	
     } else {
 	$self->log("error", "Unable to write page '".$title."' on '".$self->hostname()."'. It works only with write api.");
 	$returnValue = 0;
@@ -617,29 +629,34 @@ sub downloadImage {
 
 sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
-    my $wpEditToken;
-
-    # Get upload token
-    my $httpResponse = $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:Upload' } );
-    if ($httpResponse->content =~ /value\=\"([^\"]+)\"\ name\=\"wpEditToken\"/ ) {
-	$wpEditToken = $1;
-    } else {
-	$self->log("warn", "Unable to retrieve wpEditToken to upload image, will try to do without.");
-	#return 0;
-    }
 
     my $httpPostRequestParams = {
 	    'title' => 'Special:Upload',
-	    'wpSourceType' => "Url",
+	    'wpSourceType' => "url",
 	    'wpUploadFileURL' => $url,
 	    'wpDestFile' => $title, 
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
-	    'wpIgnoreWarning' => 'true',
-	    'wpEditToken' => $wpEditToken,
+	    'wpIgnoreWarning' => '1',
     };
 
-    $httpResponse = $self->makeHttpPostRequest(
+    # Get upload token
+    # Not all Mediawikis have this edit token security
+    if ($self->useImageUploadToken()) {
+	my $httpResponseToken = $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:Upload' } );
+	if ($httpResponseToken->content =~ /value\=\"([^\"]+)\"\ name\=\"wpEditToken\"/ ) {
+	    $httpPostRequestParams->{'wpEditToken'} = $1;
+	} else {
+	    if ($httpResponseToken->code == 200) {
+		$self->log("warn", "Unable to retrieve wpEditToken to upload image, will try to do without in the future.");
+		$self->useImageUploadToken(0);
+	    } else {
+		$self->log("warn", "Unable to retrieve wpEditToken to upload image, will try to do without this time.");
+	    }
+	}
+    }
+
+    my $httpResponse = $self->makeHttpPostRequest(
 	$self->indexUrl(),
 	$httpPostRequestParams
 	);
