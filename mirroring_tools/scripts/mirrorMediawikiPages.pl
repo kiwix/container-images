@@ -39,8 +39,9 @@ my $ignoreEmbeddedInPagesCheck;
 my $checkCompletedPages;
 my $checkCompletedImages;
 my $useIncompletePagesAsInput;
-my $checkIncomingRedirects;
 
+my $checkIncomingRedirects;
+my $dontFollowRedirects;
 my $noTextMirroring;
 
 my @pages;
@@ -76,6 +77,7 @@ GetOptions(
            'ignoreImageDependences' => \$ignoreImageDependences,
            'noTextMirroring' => \$noTextMirroring,
            'checkIncomingRedirects' => \$checkIncomingRedirects,
+           'dontFollowRedirects' => \$dontFollowRedirects,
            'ignoreEmbeddedInPagesCheck' => \$ignoreEmbeddedInPagesCheck,
            'commonRegexp=s'=> \$commonRegexp
     );
@@ -96,6 +98,7 @@ if (!$sourceHost || !$destinationHost ) {
     print "--checkCompletedPages\n\t\tPages and templates which are already present in the destination Mediawiki will be mirrored.\n\t";
     print "--checkCompletedImages\n\t\tImage which are already present in the destination Mediawiki will be mirrored.\n\t";
     print "--checkIncomingRedirects\n\t\tUpload pages which have redirects pointing on it will have their redirect mirrored.\n\t";
+    print "--dontFollowRedirects\n\t\tUpload redirects but do not try to upload the targeted pages.\n\t";
     print "--noResume\n\t\tDo not print on STDOUT a resume of the queue status.\n\t";
     print "--noLog\n\t\tDo not start a logging process.\n\t";
     print "--ignoreTemplateDependences\n\t\tDo not check for each downloaded page the text dependences (templates).\n\t";
@@ -156,6 +159,7 @@ $mirror->destinationMediawikiPassword($destinationPassword);
 $mirror->checkCompletedPages($checkCompletedPages);
 $mirror->checkCompletedImages($checkCompletedImages);
 $mirror->checkIncomingRedirects($checkIncomingRedirects);
+$mirror->followRedirects($dontFollowRedirects ? 0 : 1);
 
 $mirror->checkImageDependences( $ignoreImageDependences ? 0 : 1);
 $mirror->checkTemplateDependences( $ignoreTemplateDependences ? 0 : 1);
