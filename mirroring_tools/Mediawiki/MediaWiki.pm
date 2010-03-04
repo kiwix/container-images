@@ -870,7 +870,7 @@ sub dependences {
 }
 
 sub embeddedIn {
-    my ($self, $title) = @_;
+    my ($self, $title, $namespace) = @_;
     my @links;
     my $continue;
     my $xml;
@@ -893,9 +893,13 @@ sub embeddedIn {
 	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams, forceArray=>'ei');
 
 	foreach my $hash ( @{ $xml->{query}->{embeddedin}->{ei} } ) {
-	    my $title = $hash->{title};
-	    $title =~ tr/ /_/;
-	    push( @links, $title );
+
+	    if (defined($namespace) && ($namespace eq $hash->{ns})) {
+		my $title = $hash->{title};
+		$title =~ tr/ /_/;
+		push( @links, $title );
+	    }
+
 	}
 
     } while ($continue = $xml->{"query-continue"}->{embeddedin}->{eicontinue});
