@@ -92,14 +92,55 @@ sub getLangWords() {
     $langWords = [$lc->get_intersection()];
 }
 
+sub extractTranslationsFromWikiCode {
+    my $code = shift;
+    my $lang = shift;
+    my @translations;
+
+    while ($code =~ /\{\{trad[\+|\-|]\|$lang\|([^\}]*)\}\}/ig ) {
+	push (@translations, $1);
+    }
+
+    return \@translations;
+}
+
 sub buildFrenchDictionary() {
     foreach my $frenchWord (@$frenchWords) {
 	my ($content, $revision) = $site->downloadPage($frenchWord);
 	
-	if ($content =~ /\{\{trad\|$code\|([^\}]*)\}\}/) {
-	    my $langWord = $1;
-	    $frenchDictionary{$frenchWord} = { "translation" => $langWord}
-      }
+	# Get the "French" paragraph
+	if ($content =~ /(.*\=\=\ \{\{\=fr\=\}\}\ \=\=)(.*?)(\=\=\ \{\{\=|$)/s ) {
+	    $content = $2;
+	} else {
+	    next;
+	}
+
+	my %translations;
+	my $langWords;
+
+	# Go through all translations
+	while ($content =~ /{{boîte[_|\ ]début\|(.*?)}}(.*?){{boîte[_|\ ]fin}}/sgi ) {
+	    my $frenchWordDerivate = $1;
+	    my $subContent = $2;
+	    $langWords = extractTranslationsFromWikiCode($subContent, $code);
+	    if (scalar(@$langWords)) {
+		$translations{$frenchWordDerivate} = $langWords;
+	    }
+	}
+	
+	# If no derivates, try to find the "simple" translation
+	unless (scalar(keys(%translations))) {
+	    $langWords = extractTranslationsFromWikiCode($content, $code);
+	    if (scalar(@$langWords)) {
+		$translations{$frenchWord} = $langWords;
+	    }
+	}
+
+	# Save the translations
+	if (scalar(keys(%translations))) {
+	    $frenchDictionary{$frenchWord} = { "translations" => \%translations };
+	}
+
     }
 }
 
@@ -113,6 +154,7 @@ getAllLangWords();
 getAllEmbeddedIns();
 getFrenchWords();
 getLangWords();
+#$frenchWords = [("chat")];
 buildFrenchDictionary();
 
 print Dumper(%frenchDictionary);
