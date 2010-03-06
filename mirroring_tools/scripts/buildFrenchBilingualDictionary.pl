@@ -22,7 +22,9 @@ my $logger = Log::Log4perl->get_logger("buildFrenchBilingualDictionary.pl");
 # constant
 my %natureCodes = (
     "verb" => { "code" => "V", "abbr" => "v.", "label" => "Verbe" },
-    "nom" => { "code" =>  "NC", "abbr" => "n.c.", "label" => "Nom commun" }
+    "nom" => { "code" =>  "N", "abbr" => "n.", "label" => "Nom" },
+    "loc-phr" => { "code" =>  "LOC", "abbr" => "loc.", "label" => "Locution" },
+    "adj" => { "code" =>  "A", "abbr" => "adj.", "label" => "Adjectif" },
 );
 
 # get the params
@@ -119,8 +121,8 @@ sub extractTranslationsFromWikiCode {
     my $lang = shift;
     my @translations;
 
-    while ($code =~ /\{\{trad[\+|\-|]\|$lang\|([^\}]*)\}\}/ig ) {
-	push (@translations, $1);
+    while ($code =~ /\{\{trad(\+|\-|)\|$lang\|([^\}]*)\}\}/ig ) {
+	push (@translations, $2);
     }
 
     return \@translations;
@@ -134,9 +136,11 @@ sub extractAllTranslationsFromWikiCode {
     my %translations;
 
     # Go through all translation derivates
-    while ($code =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\||}})(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
+    while ($code =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\|.*|}})\n(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
 	my $derivative = $2;
 	my $subContent = $4;
+	$derivative =~ s/{{.*?}}//g;
+	$derivative =~ s/^[ ]+//g;
 	$langWords = extractTranslationsFromWikiCode($subContent, $lang);
 	if (scalar(@$langWords)) {
 	    $translations{$derivative} = { "nature" => $nature, "translations" => $langWords };
@@ -144,8 +148,8 @@ sub extractAllTranslationsFromWikiCode {
     }
     
     # Try to find the generic translation
-    if ($code =~ /{{trad\-trier}}(.*?){{\)}}/si ) {
-	my $subContent = $1;
+    if ($code =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
+	my $subContent = $2;
 	$langWords = extractTranslationsFromWikiCode($subContent, $lang);
 	if (scalar(@$langWords)) {
 	    $translations{$word} = { "nature" => $nature, "translations" => $langWords };
@@ -159,14 +163,14 @@ sub extractLanguageParagraphFromWikiCode {
     my $code = shift;
     my $lang = shift;
 
-    if ($code =~ /.*\=\=\ \{\{\=$lang\=\}\}\ \=\=(.*?)(\=\=\ \{\{\=|$)/s ) {
-	return $1;
+    if ($code =~ /.*\=\=(\ |)\{\{\=$lang\=\}\}(\ |)\=\=(.*?)(\=\=\ \{\{\=|$)/s ) {
+	return $3;
     }     
 }
 
 sub extractWordNaturesFromWikiCode {
     my $code = shift;
-    my $supportedNatures = "verb|nom";
+    my $supportedNatures = join("|", keys(%natureCodes));
     my @natures;
     
     while ($code =~ /({{\-)($supportedNatures)(\-)(.*?)({{\-($supportedNatures)\-|$)/si) {
@@ -206,7 +210,7 @@ sub buildFrenchDictionary() {
 }
 
 sub writeFrenchDictionary {
-    my $xml = "<OneToOneDictionary source=\"fr\" target=\"$code\">\n";
+    my $xml = "<OneToOneDictionary source=\"fr\" target=\"$code\" source_name=\"français\" target_name=\"$category\">\n";
 
     # Codes
     $xml .= "\t<codes>\n";
@@ -243,19 +247,21 @@ sub writeFrenchDictionary {
     write_file($frenchDictionaryFile, $xml);
 }
 
-if ($allFrenchWordsFile) {
-    $allFrenchWords = read_file($allFrenchWordsFile);
-} else {
-    getAllFrenchWords();
-}
+#if ($allFrenchWordsFile) {
+#    $allFrenchWords = read_file($allFrenchWordsFile);
+#} else {
+#    getAllFrenchWords();
+#}
 
-getAllLangWords();
-getAllEmbeddedIns();
-getFrenchWords();
-getLangWords();
-#$frenchWords = [("manger", "chat")];
+#getAllLangWords();
+#getAllEmbeddedIns();
+#getFrenchWords();
+#getLangWords();
+$frenchWords = [("chaleur")];
 buildFrenchDictionary();
 writeFrenchDictionary();
+
+print Dumper(%frenchDictionary);
 
 exit;
 
