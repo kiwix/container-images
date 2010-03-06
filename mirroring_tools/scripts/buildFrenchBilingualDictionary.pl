@@ -17,7 +17,7 @@ use List::Compare;
 # log
 use Log::Log4perl;
 Log::Log4perl->init("../conf/log4perl");
-my $logger = Log::Log4perl->get_logger("buildFrenchBilingualDictionary.pl");
+my $logger = Log::Log4perl->get_logger("buildOneToOneDictionaryInFrench.pl");
 
 # constant
 my %natureCodes = (
@@ -247,17 +247,17 @@ sub writeFrenchDictionary {
     write_file($frenchDictionaryFile, $xml);
 }
 
-#if ($allFrenchWordsFile) {
-#    $allFrenchWords = read_file($allFrenchWordsFile);
-#} else {
-#    getAllFrenchWords();
-#}
+if ($allFrenchWordsFile) {
+    $allFrenchWords = read_file($allFrenchWordsFile);
+} else {
+    getAllFrenchWords();
+}
 
-#getAllLangWords();
-#getAllEmbeddedIns();
-#getFrenchWords();
-#getLangWords();
-$frenchWords = [("chaleur")];
+getAllLangWords();
+getAllEmbeddedIns();
+getFrenchWords();
+getLangWords();
+#$frenchWords = [("chaleur")];
 buildFrenchDictionary();
 writeFrenchDictionary();
 
