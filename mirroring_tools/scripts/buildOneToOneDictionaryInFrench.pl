@@ -14,71 +14,78 @@ use Data::Dumper;
 use MediaWiki;
 use List::Compare;
 
-# log
+# Start the log system
 use Log::Log4perl;
 Log::Log4perl->init("../conf/log4perl");
 my $logger = Log::Log4perl->get_logger("buildOneToOneDictionaryInFrench.pl");
 
-# constant
+# Hash containing all possible word natures
 my %natureCodes = (
     "verb" => { "code" => "V", "abbr" => "v.", "label" => "Verbe" },
     "nom" => { "code" =>  "N", "abbr" => "n.", "label" => "Nom" },
     "loc-phr" => { "code" =>  "LOC", "abbr" => "loc.", "label" => "Locution" },
     "adj" => { "code" =>  "A", "abbr" => "adj.", "label" => "Adjectif" },
 );
+my $supportedNaturesRegex = join("|", keys(%natureCodes));
 
-# get the params
+# Declare the console argument variables
 my $host = "fr.wiktionary.org";
 my $path = "w";
-my $category = "";
-my $code = "";
-my $allFrenchWordsFile = "";
-my $frenchDictionaryFile = "";
-my $langDictionaryFile = "";
+my $languageCategory = "";
+my $languageCode = "";
+my $languageWordList = "";
+my $languageDictionaryFile = "";
+my $secondLanguageCategory = "français";
+my $secondLanguageCode = "fr";
+my $secondLanguageWordList = "";
+my $secondLanguageDictionaryFile = "";
 
-# words
-my $allFrenchWords;
-my $allLangWords;
+# Declare necessary variables
+my $allLanguageWords;
+my $allSecondLanguageWords;
 my $allEmbeddedIns;
-my $frenchWords;
-my $langWords;
-my %frenchDictionary;
-my %langDictionary;
+my $languageWords;
+my $secondLanguageWords;
+my %languageDictionary;
+my %secondLanguageDictionary;
 
-# get console line arguments
-GetOptions('code=s' => \$code, 
-	   'category=s' => \$category,
-	   'allFrenchWordsFile=s' => \$allFrenchWordsFile,
-	   'frenchDictionaryFile=s' =>  \$frenchDictionaryFile,
-	   'langDictionaryFile=s' => \$langDictionaryFile
+# Get console line arguments
+GetOptions(
+    'languageCode=s' => \$languageCode, 
+    'languageCategory=s' => \$languageCategory,
+    'languageWordList=s' => \$languageWordList,
+    'languageDictionaryFile=s' => \$languageDictionaryFile,
+    'secondLanguageCode=s' => \$secondLanguageCode, 
+    'secondLanguageCategory=s' => \$secondLanguageCategory,
+    'secondLanguageWordList=s' => \$secondLanguageWordList,
+    'secondLanguageDictionaryFile=s' => \$secondLanguageDictionaryFile,
     );
 
-if (!$code || !$category || (!$frenchDictionaryFile && !$langDictionaryFile)) {
-    print "usage: ./buildFrenchBilingualDictionary.pl --code=ses --category=songhaï_koyraboro_senni [--allFrenchWordsFile=file.lst] [--frenchDictionaryFile=frenchdico.xml] [--langDictionaryFile=langdico.xml]\n";
-    if (!$frenchDictionaryFile && !$langDictionaryFile) {
-	print "You have to choose one of the following options : --frenchDictionaryFile or/and --langDictionaryFile\n";
+# Verify the mandatory arguments
+if (!$languageCode || !$languageCategory || (!$languageDictionaryFile && !$secondLanguageDictionaryFile)) {
+    print "usage: ./buildOneToOneDictionaryInFrench.pl --languageCode=ses --languageCategory=songhaï_koyraboro_senni --languageDictionaryFile=langDico.xml [--languageWordList=file.lst] [--secondLanguageCode=fr] [--secondLanguageCategory=français] [--secondLanguageWordList=frenchWords.lst] [--secondLanguageDictionaryFile=frenchDico.xml]\n";
+    if (!$languageDictionaryFile && !$secondLanguageDictionaryFile) {
+	print "You have to choose at least one of the following options : --languageDictionaryFile or/and --secondLanguageDictionaryFile\n";
     }
     exit;
 }
 
+# Create the mediawiki accessor
 my $site = MediaWiki->new();
 $site->hostname($host);
 $site->path($path);
 $site->logger($logger);
 
-sub getAllFrenchWords() {
-    $allFrenchWords = [$site->listCategoryEntries("français", 1, "0")];
+sub getAllWords {
+    my $category = shift;
+    return [$site->listCategoryEntries($category, 1, "0")];
 }
 
-sub getAllLangWords() {
-    $allLangWords = [$site->listCategoryEntries($category, 1, "0")];
+sub getAllEmbeddedIns {
+    return [$site->embeddedIn("template:$languageCode", "0")];
 }
 
-sub getAllEmbeddedIns() {
-    $allEmbeddedIns = [$site->embeddedIn("template:$code", "0")];
-}
-
-sub write_file {
+sub writeFile {
     my $file = shift;
     my $data = shift;
 
@@ -87,7 +94,7 @@ sub write_file {
     close (FILE);
 }
 
-sub read_file {
+sub readFile {
     my $file = shift;
     my @list;
  
@@ -100,28 +107,21 @@ sub read_file {
     return \@list;
 }
 
-sub getFrenchWords() {
-    my $lc = List::Compare->new(
-	$allFrenchWords, 
-	$allEmbeddedIns
-	);
-    $frenchWords = [$lc->get_intersection()];
-}
+sub getListsIntersection {
+    my $l1 = shift;
+    my $l2 = shift;
 
-sub getLangWords() {
-    my $lc = List::Compare->new(
-	$allLangWords, 
-	$allEmbeddedIns
-	);
-    $langWords = [$lc->get_intersection()];
+    my $lc = List::Compare->new($l1, $l2);
+
+    return [$lc->get_intersection()];
 }
 
 sub extractTranslationsFromWikiCode {
-    my $code = shift;
-    my $lang = shift;
+    my $wikiCode = shift;
+    my $languageCode = shift;
     my @translations;
 
-    while ($code =~ /\{\{trad(\+|\-|)\|$lang\|([^\}]*)\}\}/ig ) {
+    while ($wikiCode =~ /\{\{trad(\+|\-|)\|$languageCode\|([^\}]*)\}\}/ig ) {
 	push (@translations, $2);
     }
 
@@ -129,30 +129,30 @@ sub extractTranslationsFromWikiCode {
 }
 
 sub extractAllTranslationsFromWikiCode {
-    my $code = shift;
-    my $lang = shift;
+    my $wikiCode = shift;
+    my $languageCode = shift;
     my $word = shift;
     my $nature = shift;
     my %translations;
 
-    # Go through all translation derivates
-    while ($code =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\|.*|}})\n(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
+    # Go through all derivatives if possible
+    while ($wikiCode =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\|.*|}})\n(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
 	my $derivative = $2;
 	my $subContent = $4;
 	$derivative =~ s/{{.*?}}//g;
 	$derivative =~ s/^[ ]+//g;
-	$langWords = extractTranslationsFromWikiCode($subContent, $lang);
-	if (scalar(@$langWords)) {
-	    $translations{$derivative} = { "nature" => $nature, "translations" => $langWords };
+	my $derivativeTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
+	if (scalar(@$derivativeTranslations)) {
+	    $translations{$derivative} = { "nature" => $nature, "translations" => $derivativeTranslations };
 	}
     }
     
     # Try to find the generic translation
-    if ($code =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
+    if ($wikiCode =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
 	my $subContent = $2;
-	$langWords = extractTranslationsFromWikiCode($subContent, $lang);
-	if (scalar(@$langWords)) {
-	    $translations{$word} = { "nature" => $nature, "translations" => $langWords };
+	my $genericTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
+	if (scalar(@$genericTranslations)) {
+	    $translations{$word} = { "nature" => $nature, "translations" => $genericTranslations };
 	}
     }
     
@@ -160,37 +160,39 @@ sub extractAllTranslationsFromWikiCode {
 }
 
 sub extractLanguageParagraphFromWikiCode {
-    my $code = shift;
-    my $lang = shift;
+    my $wikiCode = shift;
+    my $languageCode = shift;
+    my $paragraph;
 
-    if ($code =~ /.*\=\=(\ |)\{\{\=$lang\=\}\}(\ |)\=\=(.*?)(\=\=\ \{\{\=|$)/s ) {
-	return $3;
-    }     
+    if ($wikiCode =~ /.*\=\=(\ |)\{\{\=$languageCode\=\}\}(\ |)\=\=(.*?)(\=\=\ \{\{\=|$)/s ) {
+	$paragraph = $3;
+    }
+
+    return $paragraph;
 }
 
 sub extractWordNaturesFromWikiCode {
-    my $code = shift;
-    my $supportedNatures = join("|", keys(%natureCodes));
+    my $wikiCode = shift;
     my @natures;
     
-    while ($code =~ /({{\-)($supportedNatures)(\-)(.*?)({{\-($supportedNatures)\-|$)/si) {
+    while ($wikiCode =~ /({{\-)($supportedNaturesRegex)(\-)(.*?)({{\-($supportedNaturesRegex)\-|$)/si) {
 	my $nature = $2;
 	my $subContent = $4;
 	push(@natures, { "nature" => $nature, "content" => $subContent});
-	$code =~ s/\Q$1$2$3$4\E//;
+	$wikiCode =~ s/\Q$1$2$3$4\E//;
     }
 
     return \@natures;
 }
 
-sub buildFrenchDictionary() {
+sub buildSecondLanguageDictionary() {
 
-    # Find the translation(s) for each french word
-    foreach my $frenchWord (@$frenchWords) {
-	my ($content, $revision) = $site->downloadPage($frenchWord);
+    # Find the translation(s) for each second language word
+    foreach my $secondLanguageWord (@$secondLanguageWords) {
+	my ($content, $revision) = $site->downloadPage($secondLanguageWord);
 	
-	# Get the "French" paragraph
-	$content = extractLanguageParagraphFromWikiCode($content, "fr");
+	# Get the "second language" paragraph
+	$content = extractLanguageParagraphFromWikiCode($content, $secondLanguageCode);
 	next unless ($content);
 
 	# Get the nature of the word
@@ -201,16 +203,19 @@ sub buildFrenchDictionary() {
 	foreach my $natureHash (@$natures) {
 	    my $nature = $natureHash->{"nature"};
 	    my $subContent = $natureHash->{"content"};
-	    my $translations = extractAllTranslationsFromWikiCode($subContent, $code, $frenchWord, $nature);	    
+	    my $translations = extractAllTranslationsFromWikiCode($subContent, $languageCode, $secondLanguageWord, $nature);	    
 	    if (scalar(keys(%$translations))) {
-		$frenchDictionary{$frenchWord} = $translations;
+		$secondLanguageDictionary{$secondLanguageWord} = $translations;
 	    }
 	}
     }
 }
 
-sub writeFrenchDictionary {
-    my $xml = "<OneToOneDictionary source=\"fr\" target=\"$code\" source_name=\"français\" target_name=\"$category\">\n";
+sub writeDictionary {
+    my $dictionary = shift;
+    my $path = shift;
+
+    my $xml = "<OneToOneDictionary source=\"$languageCode\" target=\"$secondLanguageCode\">\n";
 
     # Codes
     $xml .= "\t<codes>\n";
@@ -221,11 +226,11 @@ sub writeFrenchDictionary {
 
     # words
     $xml .="\t<words>\n";
-    foreach my $word (keys(%frenchDictionary)) {
+    foreach my $word (keys(%$dictionary)) {
 	$xml .= "\t\t<word>\n";
 	$xml .= "\t\t\t<value>$word</value>\n";
 
-	my $wordHash = $frenchDictionary{$word};
+	my $wordHash = $dictionary->{$word};
 	foreach my $derivative (keys(%$wordHash)) {
 	    my $derivativeHash = $wordHash->{$derivative};
 	    $xml .= "\t\t\t<derivative type=\"".$natureCodes{$derivativeHash->{"nature"}}{"code"}."\">\n";
@@ -244,24 +249,26 @@ sub writeFrenchDictionary {
 
     $xml .= "</OneToOneDictionary>\n";
     
-    write_file($frenchDictionaryFile, $xml);
+    writeFile($path, $xml);
 }
 
-if ($allFrenchWordsFile) {
-    $allFrenchWords = read_file($allFrenchWordsFile);
-} else {
-    getAllFrenchWords();
-}
+# Build whole list of words for both languages
+$allLanguageWords = $languageWordList ? 
+    readFile($languageWordList) : getAllWords($languageCategory);
+$allSecondLanguageWords = $secondLanguageWordList ? 
+    readFile($secondLanguageWordList) : getAllWords($secondLanguageCategory);
 
-getAllLangWords();
-getAllEmbeddedIns();
-getFrenchWords();
-getLangWords();
+# Get the list of wiktionary articles using the template:$languageCode
+$allEmbeddedIns = getAllEmbeddedIns();
+
+# Reduce list of words for both languages
+$languageWords = getListsIntersection($allEmbeddedIns, $allLanguageWords);
+$secondLanguageWords = getListsIntersection($allEmbeddedIns, $allSecondLanguageWords);
+
 #$frenchWords = [("chaleur")];
-buildFrenchDictionary();
-writeFrenchDictionary();
 
-print Dumper(%frenchDictionary);
+buildSecondLanguageDictionary();
+writeDictionary(\%secondLanguageDictionary, $secondLanguageDictionaryFile);
 
 exit;
 
