@@ -76,6 +76,15 @@ sub getAllEmbeddedIns() {
     $allEmbeddedIns = [$site->embeddedIn("template:$code", "0")];
 }
 
+sub write_file {
+    my $file = shift;
+    my $data = shift;
+
+    open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
+    print FILE $data;
+    close (FILE);
+}
+
 sub read_file {
     my $file = shift;
     my @list;
@@ -207,31 +216,46 @@ sub writeFrenchDictionary {
     $xml .= "\t</codes>\n";
 
     # words
-    $xml .= "\t<words>\n";
+    $xml .="\t<words>\n";
     foreach my $word (keys(%frenchDictionary)) {
-	
+	$xml .= "\t\t<word>\n";
+	$xml .= "\t\t\t<value>$word</value>\n";
+
+	my $wordHash = $frenchDictionary{$word};
+	foreach my $derivative (keys(%$wordHash)) {
+	    my $derivativeHash = $wordHash->{$derivative};
+	    $xml .= "\t\t\t<derivative type=\"".$natureCodes{$derivativeHash->{"nature"}}{"code"}."\">\n";
+	    $xml .= "\t\t\t\t<value>".$derivative."</value>\n";
+	    
+	    foreach my $translation (@{$derivativeHash->{"translations"}}) {
+		$xml .= "\t\t\t\t<translation>".$translation."</translation>\n";
+	    }
+
+	    $xml .= "\t\t\t</derivative>\n";
+	}
+
+	$xml .= "\t\t</word>\n";
     }
     $xml .= "\t</words>\n";
 
     $xml .= "</OneToOneDictionary>\n";
-    print $xml;
+    
+    write_file($frenchDictionaryFile, $xml);
 }
 
-#if ($allFrenchWordsFile) {
-#    $allFrenchWords = read_file($allFrenchWordsFile);
-#} else {
-#    getAllFrenchWords();
-#}
+if ($allFrenchWordsFile) {
+    $allFrenchWords = read_file($allFrenchWordsFile);
+} else {
+    getAllFrenchWords();
+}
 
-#getAllLangWords();
-#getAllEmbeddedIns();
-#getFrenchWords();
-#getLangWords();
-$frenchWords = [("manger")];
+getAllLangWords();
+getAllEmbeddedIns();
+getFrenchWords();
+getLangWords();
+#$frenchWords = [("manger", "chat")];
 buildFrenchDictionary();
 writeFrenchDictionary();
-
-print Dumper(%frenchDictionary);
 
 exit;
 
