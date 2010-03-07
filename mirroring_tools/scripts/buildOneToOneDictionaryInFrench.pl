@@ -133,6 +133,8 @@ sub extractAllTranslationsFromWikiCode {
     my $languageCode = shift;
     my $word = shift;
     my $nature = shift;
+    my $gender = shift;
+
     my %translations;
 
     # Go through all derivatives if possible
@@ -143,7 +145,8 @@ sub extractAllTranslationsFromWikiCode {
 	$derivative =~ s/^[ ]+//g;
 	my $derivativeTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
 	if (scalar(@$derivativeTranslations)) {
-	    $translations{$derivative} = { "nature" => $nature, "translations" => $derivativeTranslations };
+	    $translations{$derivative} = { "nature" => $nature, "gender" => $gender,
+					   "translations" => $derivativeTranslations };
 	}
     }
     
@@ -152,7 +155,7 @@ sub extractAllTranslationsFromWikiCode {
 	my $subContent = $2;
 	my $genericTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
 	if (scalar(@$genericTranslations)) {
-	    $translations{$word} = { "nature" => $nature, "translations" => $genericTranslations };
+	    $translations{$word} = { "nature" => $nature, "gender" => $gender, "translations" => $genericTranslations };
 	}
     }
     
@@ -185,7 +188,14 @@ sub extractWordNaturesFromWikiCode {
     return \@natures;
 }
 
-sub buildSecondLanguageDictionary() {
+sub extractGenderFromWikiCode {
+    my $wikiCode = shift;
+    if ($wikiCode =~ /{{(m|f)}}/i ) {
+	return $1;
+    }
+}
+
+sub buildSecondLanguageDictionary {
 
     # Find the translation(s) for each second language word
     foreach my $secondLanguageWord (@$secondLanguageWords) {
@@ -203,7 +213,15 @@ sub buildSecondLanguageDictionary() {
 	foreach my $natureHash (@$natures) {
 	    my $nature = $natureHash->{"nature"};
 	    my $subContent = $natureHash->{"content"};
-	    my $translations = extractAllTranslationsFromWikiCode($subContent, $languageCode, $secondLanguageWord, $nature);	    
+	    my $gender;
+
+	    # Get the name gender if the word is a name
+	    if ($nature eq "nom") {
+		$gender = extractGenderFromWikiCode($subContent);
+	    }
+
+	    my $translations = extractAllTranslationsFromWikiCode($subContent, $languageCode, 
+								  $secondLanguageWord, $nature, $gender);	    
 	    if (scalar(keys(%$translations))) {
 		$secondLanguageDictionary{$secondLanguageWord} = $translations;
 	    }
@@ -211,11 +229,16 @@ sub buildSecondLanguageDictionary() {
     }
 }
 
+sub buildLanguageDictionary {
+}
+
 sub writeDictionary {
     my $dictionary = shift;
     my $path = shift;
+    my $source = shift;
+    my $target = shift;
 
-    my $xml = "<OneToOneDictionary source=\"$languageCode\" target=\"$secondLanguageCode\">\n";
+    my $xml = "<OneToOneDictionary source=\"$source\" target=\"$target\">\n";
 
     # Codes
     $xml .= "\t<codes>\n";
@@ -233,7 +256,8 @@ sub writeDictionary {
 	my $wordHash = $dictionary->{$word};
 	foreach my $derivative (keys(%$wordHash)) {
 	    my $derivativeHash = $wordHash->{$derivative};
-	    $xml .= "\t\t\t<derivative type=\"".$natureCodes{$derivativeHash->{"nature"}}{"code"}."\">\n";
+	    $xml .= "\t\t\t<derivative type=\"".$natureCodes{$derivativeHash->{"nature"}}{"code"}."\"".
+		($derivativeHash->{"gender"} ? " gender=\"".$derivativeHash->{"gender"}."\"" : "").">\n";
 	    $xml .= "\t\t\t\t<value>".$derivative."</value>\n";
 	    
 	    foreach my $translation (@{$derivativeHash->{"translations"}}) {
@@ -265,10 +289,16 @@ $allEmbeddedIns = getAllEmbeddedIns();
 $languageWords = getListsIntersection($allEmbeddedIns, $allLanguageWords);
 $secondLanguageWords = getListsIntersection($allEmbeddedIns, $allSecondLanguageWords);
 
-#$frenchWords = [("chaleur")];
+#$secondLanguageWords = [("religion")];
 
+# Build the dictionaries hashes
 buildSecondLanguageDictionary();
-writeDictionary(\%secondLanguageDictionary, $secondLanguageDictionaryFile);
+buildLanguageDictionary() if ($languageDictionaryFile);
+
+# Write the file
+writeDictionary(\%secondLanguageDictionary, $secondLanguageDictionaryFile, $secondLanguageCode, $languageCode);
+writeDictionary(\%languageDictionary, $languageDictionaryFile, $languageCode, $secondLanguageCode)
+    if ($languageDictionaryFile);
 
 exit;
 
