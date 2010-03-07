@@ -39,15 +39,7 @@ my $secondLanguageCategory = "français";
 my $secondLanguageCode = "fr";
 my $secondLanguageWordList = "";
 my $secondLanguageDictionaryFile = "";
-
-# Declare necessary variables
-my $allLanguageWords;
-my $allSecondLanguageWords;
-my $allEmbeddedIns;
-my $languageWords;
-my $secondLanguageWords;
-my %languageDictionary;
-my %secondLanguageDictionary;
+my $frenchWordList = "";
 
 # Get console line arguments
 GetOptions(
@@ -59,11 +51,12 @@ GetOptions(
     'secondLanguageCategory=s' => \$secondLanguageCategory,
     'secondLanguageWordList=s' => \$secondLanguageWordList,
     'secondLanguageDictionaryFile=s' => \$secondLanguageDictionaryFile,
+    'frenchWordList=s' => \$frenchWordList,
     );
 
 # Verify the mandatory arguments
 if (!$languageCode || !$languageCategory || (!$languageDictionaryFile && !$secondLanguageDictionaryFile)) {
-    print "usage: ./buildOneToOneDictionaryInFrench.pl --languageCode=ses --languageCategory=songhaï_koyraboro_senni --languageDictionaryFile=langDico.xml [--languageWordList=file.lst] [--secondLanguageCode=fr] [--secondLanguageCategory=français] [--secondLanguageWordList=frenchWords.lst] [--secondLanguageDictionaryFile=frenchDico.xml]\n";
+    print "usage: ./buildOneToOneDictionaryInFrench.pl --languageCode=ses --languageCategory=songhaï_koyraboro_senni --languageDictionaryFile=langDico.xml [--languageWordList=file.lst] [--secondLanguageCode=fr] [--secondLanguageCategory=français] [--secondLanguageWordList=frenchWords.lst] [--secondLanguageDictionaryFile=frenchDico.xml] [--frenchWordList=words.fr.lst]\n";
     if (!$languageDictionaryFile && !$secondLanguageDictionaryFile) {
 	print "You have to choose at least one of the following options : --languageDictionaryFile or/and --secondLanguageDictionaryFile\n";
     }
@@ -82,7 +75,8 @@ sub getAllWords {
 }
 
 sub getAllEmbeddedIns {
-    return [$site->embeddedIn("template:$languageCode", "0")];
+    my $template = shift;
+    return [$site->embeddedIn("template:$template", "0")];
 }
 
 sub writeFile {
@@ -107,7 +101,7 @@ sub readFile {
     return \@list;
 }
 
-sub getListsIntersection {
+sub getListIntersection {
     my $l1 = shift;
     my $l2 = shift;
 
@@ -130,10 +124,12 @@ sub extractTranslationsFromWikiCode {
 
 sub extractAllTranslationsFromWikiCode {
     my $wikiCode = shift;
-    my $languageCode = shift;
-    my $word = shift;
+    my $frenchWord = shift;
     my $nature = shift;
-    my $gender = shift;
+    my $languageCode = shift;
+    my $secondLanguageCode = shift;
+    my $languageWords = shift;
+    my $secondLanguageWords = shift;
 
     my %translations;
 
@@ -143,19 +139,39 @@ sub extractAllTranslationsFromWikiCode {
 	my $subContent = $4;
 	$derivative =~ s/{{.*?}}//g;
 	$derivative =~ s/^[ ]+//g;
-	my $derivativeTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
-	if (scalar(@$derivativeTranslations)) {
-	    $translations{$derivative} = { "nature" => $nature, "gender" => $gender,
-					   "translations" => $derivativeTranslations };
+
+	# try to find the translations for the french word
+	my $languageDerivativeTranslations = ($languageCode eq "fr" ? [($derivative)] : 
+					      extractTranslationsFromWikiCode($subContent, $languageCode));
+	my $secondLanguageDerivativeTranslations = ($secondLanguageCode eq "fr" ? [($derivative)] : 
+						    extractTranslationsFromWikiCode($subContent, $secondLanguageCode));
+
+	# Save the translations
+	if (scalar(@$languageDerivativeTranslations) && scalar(@$secondLanguageDerivativeTranslations)) {
+	    $translations{$derivative} = { "nature" => $nature,
+					   $languageCode => $languageDerivativeTranslations,
+					   $secondLanguageCode => $secondLanguageDerivativeTranslations,
+	    };
+	    push(@$languageWords, @$languageDerivativeTranslations);
+	    push(@$secondLanguageWords, @$secondLanguageDerivativeTranslations);
 	}
     }
     
     # Try to find the generic translation
     if ($wikiCode =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
 	my $subContent = $2;
-	my $genericTranslations = extractTranslationsFromWikiCode($subContent, $languageCode);
-	if (scalar(@$genericTranslations)) {
-	    $translations{$word} = { "nature" => $nature, "gender" => $gender, "translations" => $genericTranslations };
+	my $languageGenericTranslations = ($languageCode eq "fr" ? [($frenchWord)] : 
+					   extractTranslationsFromWikiCode($subContent, $languageCode));
+	my $secondLanguageGenericTranslations = ($secondLanguageCode eq "fr" ? [($frenchWord)] : 
+						 extractTranslationsFromWikiCode($subContent, $secondLanguageCode));
+	
+	if (scalar(@$languageGenericTranslations) && scalar(@$secondLanguageGenericTranslations)) {
+	    $translations{$frenchWord} = { "nature" => $nature,
+					   $languageCode => $languageGenericTranslations,
+					   $secondLanguageCode => $secondLanguageGenericTranslations
+	    };
+	    push(@$languageWords, @$languageGenericTranslations);
+	    push(@$secondLanguageWords, @$secondLanguageGenericTranslations);
 	}
     }
     
@@ -195,14 +211,54 @@ sub extractGenderFromWikiCode {
     }
 }
 
-sub buildSecondLanguageDictionary {
+sub buildTranslationTable {
+    my $frenchWords = shift;
+    my $languageCode = shift;
+    my $secondLanguageCode = shift;
+    my $languageWords = shift;
+    my $secondLanguageWords = shift;
+    my %translations;
 
-    # Find the translation(s) for each second language word
-    foreach my $secondLanguageWord (@$secondLanguageWords) {
-	my ($content, $revision) = $site->downloadPage($secondLanguageWord);
+    # Go through the word list
+    foreach my $frenchWord (@$frenchWords) {
+	my ($content, $revision) = $site->downloadPage($frenchWord);
 	
-	# Get the "second language" paragraph
-	$content = extractLanguageParagraphFromWikiCode($content, $secondLanguageCode);
+	# Get the French language paragraph
+	$content = extractLanguageParagraphFromWikiCode($content, "fr");
+	next unless ($content);
+
+	# Get the nature of the word
+	my $natures = extractWordNaturesFromWikiCode($content);
+	next unless (scalar(@$natures));
+
+	# Get the translations for both languages
+	foreach my $natureHash (@$natures) {
+	    my $nature = $natureHash->{"nature"};
+	    my $subContent = $natureHash->{"content"};
+
+	    my $frenchWordTranslations = extractAllTranslationsFromWikiCode($subContent, $frenchWord, 
+									    $nature, $languageCode, $secondLanguageCode,
+									    $languageWords, $secondLanguageWords);	    
+	    if (scalar(keys(%$frenchWordTranslations))) {
+		$translations{$frenchWord} = $frenchWordTranslations;
+	    }
+	}
+    }
+
+    return \%translations;
+}
+
+sub buildDictionary {
+    my $words = shift;
+    my $languageCode = shift;
+    my %dictionary;
+
+    # Go through the word list
+    foreach my $word (@$words) {
+	my ($content, $revision) = $site->downloadPage($word);
+	
+	# Get the language paragraph
+	$content = extractLanguageParagraphFromWikiCode($content, $languageCode);
 	next unless ($content);
 
 	# Get the nature of the word
@@ -220,16 +276,12 @@ sub buildSecondLanguageDictionary {
 		$gender = extractGenderFromWikiCode($subContent);
 	    }
 
-	    my $translations = extractAllTranslationsFromWikiCode($subContent, $languageCode, 
-								  $secondLanguageWord, $nature, $gender);	    
-	    if (scalar(keys(%$translations))) {
-		$secondLanguageDictionary{$secondLanguageWord} = $translations;
-	    }
+	    # Add the word to the dictionary
+	    $dictionary{$word} = { $word => { "nature" => $nature, "gender" => $gender } };
 	}
     }
-}
 
-sub buildLanguageDictionary {
+    return \%dictionary;
 }
 
 sub writeDictionary {
@@ -277,27 +329,57 @@ sub writeDictionary {
 }
 
 # Build whole list of words for both languages
-$allLanguageWords = $languageWordList ? 
+$logger->info("Getting all words for the language with code $languageCode.");
+my $allLanguageWords = $languageWordList ? 
     readFile($languageWordList) : getAllWords($languageCategory);
-$allSecondLanguageWords = $secondLanguageWordList ? 
+$logger->info("Getting all words for the language with code $secondLanguageCode.");
+my $allSecondLanguageWords = $secondLanguageWordList ? 
     readFile($secondLanguageWordList) : getAllWords($secondLanguageCategory);
 
-# Get the list of wiktionary articles using the template:$languageCode
-$allEmbeddedIns = getAllEmbeddedIns();
+# Build the whole list of french words
+$logger->info("Getting all words for the french language.");
+my $allFrenchWords = $frenchWordList ? 
+    readFile($frenchWordList) : getAllWords("français");
+
+# Get the list of wiktionary articles using language templates
+$logger->info("Getting all articles using the template:$languageCode.");
+my $allLanguageEmbeddedIns = ($languageCode eq "fr" ? $allFrenchWords : getAllEmbeddedIns($languageCode));
+$logger->info("Getting all articles using the template:$secondLanguageCode.");
+my $allSecondLanguageEmbeddedIns = ($secondLanguageCode eq "fr" ? $allFrenchWords : getAllEmbeddedIns($secondLanguageCode));
 
 # Reduce list of words for both languages
-$languageWords = getListsIntersection($allEmbeddedIns, $allLanguageWords);
-$secondLanguageWords = getListsIntersection($allEmbeddedIns, $allSecondLanguageWords);
+$logger->info("Computing list intersections...");
+my $languageWords = getListIntersection($allLanguageEmbeddedIns, $allFrenchWords);
+my $secondLanguageWords = getListIntersection($allSecondLanguageEmbeddedIns, $allFrenchWords);
+my $frenchWords = getListIntersection($languageWords, $secondLanguageWords);
 
-#$secondLanguageWords = [("religion")];
+# Clear the both languages, new words lists will depend on which
+# traductions are available in the corresponding french word
+$languageWords = [()];
+$secondLanguageWords = [()];
+
+# Build the translation table
+$logger->info("Building Translation table...");
+my $translationTable = buildTranslationTable($frenchWords, $languageCode, $secondLanguageCode, 
+					     $languageWords, $secondLanguageWords);
+
+# Remove duplicates
+my %languageTmpHash = map { $_, 1 } @$languageWords; $languageWords = [keys(%languageTmpHash)];
+my %secondLanguageTmpHash = map { $_, 1 } @$languageWords; $languageWords = [keys(%secondLanguageTmpHash)];
 
 # Build the dictionaries hashes
-buildSecondLanguageDictionary();
-buildLanguageDictionary() if ($languageDictionaryFile);
+$logger->info("Building dictionary for the language with code $languageCode.");
+my $languageDictionary = buildDictionary($languageWords, $languageCode) if ($languageDictionaryFile);
+
+$logger->info("Building dictionary for the language with code $secondLanguageCode.");
+my $secondLanguageDictionary = buildDictionary($secondLanguageWords, $secondLanguageCode)
+    if ($secondLanguageDictionaryFile);
 
 # Write the file
-writeDictionary(\%secondLanguageDictionary, $secondLanguageDictionaryFile, $secondLanguageCode, $languageCode);
-writeDictionary(\%languageDictionary, $languageDictionaryFile, $languageCode, $secondLanguageCode)
+$logger->info("Computing and writting final bilingual dictionaries...");
+writeDictionary($secondLanguageDictionary, $secondLanguageDictionaryFile, $secondLanguageCode, $languageCode)
+    if ($secondLanguageDictionaryFile);
+writeDictionary($languageDictionary, $languageDictionaryFile, $languageCode, $secondLanguageCode)
     if ($languageDictionaryFile);
 
 exit;
