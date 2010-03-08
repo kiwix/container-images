@@ -134,16 +134,18 @@ sub extractAllTranslationsFromWikiCode {
     my %translations;
 
     # Go through all derivatives if possible
-    while ($wikiCode =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\|.*|}})\n(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
+    my $genericWikiCode = $wikiCode;
+    while ($wikiCode =~ /{{(\(|boîte[_|\ ]début)\|(.*?)(\|.*?|}})\n(.*?){{(\)|boîte[_|\ ]fin)}}/sgi ) {
 	my $derivative = $2;
 	my $subContent = $4;
+	$genericWikiCode =~ s/\Q$subContent\E//;
 	$derivative =~ s/{{.*?}}//g;
 	$derivative =~ s/^[ ]+//g;
 
 	# try to find the translations for the french word
-	my $languageDerivativeTranslations = ($languageCode eq "fr" ? [($derivative)] : 
+	my $languageDerivativeTranslations = ($languageCode eq "fr" ? [($frenchWord)] : 
 					      extractTranslationsFromWikiCode($subContent, $languageCode));
-	my $secondLanguageDerivativeTranslations = ($secondLanguageCode eq "fr" ? [($derivative)] : 
+	my $secondLanguageDerivativeTranslations = ($secondLanguageCode eq "fr" ? [($frenchWord)] : 
 						    extractTranslationsFromWikiCode($subContent, $secondLanguageCode));
 
 	# Save the translations
@@ -158,13 +160,13 @@ sub extractAllTranslationsFromWikiCode {
     }
     
     # Try to find the generic translation
-    if ($wikiCode =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
+    if ($genericWikiCode =~ /{{(trad\-trier|\-trad\-)}}(.*?){{\)}}/si ) {
 	my $subContent = $2;
 	my $languageGenericTranslations = ($languageCode eq "fr" ? [($frenchWord)] : 
 					   extractTranslationsFromWikiCode($subContent, $languageCode));
 	my $secondLanguageGenericTranslations = ($secondLanguageCode eq "fr" ? [($frenchWord)] : 
 						 extractTranslationsFromWikiCode($subContent, $secondLanguageCode));
-	
+
 	if (scalar(@$languageGenericTranslations) && scalar(@$secondLanguageGenericTranslations)) {
 	    $translations{$frenchWord} = { "nature" => $nature,
 					   $languageCode => $languageGenericTranslations,
@@ -182,6 +184,8 @@ sub extractLanguageParagraphFromWikiCode {
     my $wikiCode = shift;
     my $languageCode = shift;
     my $paragraph;
+
+    return unless ($wikiCode);
 
     if ($wikiCode =~ /.*\=\=(\ |)\{\{\=$languageCode\=\}\}(\ |)\=\=(.*?)(\=\=\ \{\{\=|$)/s ) {
 	$paragraph = $3;
@@ -239,6 +243,7 @@ sub buildTranslationTable {
 	    my $frenchWordTranslations = extractAllTranslationsFromWikiCode($subContent, $frenchWord, 
 									    $nature, $languageCode, $secondLanguageCode,
 									    $languageWords, $secondLanguageWords);	    
+
 	    if (scalar(keys(%$frenchWordTranslations))) {
 		$translations{$frenchWord} = $frenchWordTranslations;
 	    }
@@ -265,7 +270,7 @@ sub buildDictionary {
 	my $natures = extractWordNaturesFromWikiCode($content);
 	next unless (scalar(@$natures));
 
-	# Save the translations
+	# Save the natures
 	foreach my $natureHash (@$natures) {
 	    my $nature = $natureHash->{"nature"};
 	    my $subContent = $natureHash->{"content"};
@@ -277,7 +282,7 @@ sub buildDictionary {
 	    }
 
 	    # Add the word to the dictionary
-	    $dictionary{$word} = { $word => { "nature" => $nature, "gender" => $gender } };
+	    $dictionary{$word} = { $nature => { "gender" => $gender} };
 	}
     }
 
@@ -285,12 +290,14 @@ sub buildDictionary {
 }
 
 sub writeDictionary {
-    my $dictionary = shift;
     my $path = shift;
-    my $source = shift;
-    my $target = shift;
+    my $sourceDictionary = shift;
+    my $sourceCode = shift;
+    my $targetDictionary = shift;
+    my $targetCode = shift;
+    my $translationTable = shift;
 
-    my $xml = "<OneToOneDictionary source=\"$source\" target=\"$target\">\n";
+    my $xml = "<OneToOneDictionary source=\"$sourceCode\" target=\"$targetCode\">\n";
 
     # Codes
     $xml .= "\t<codes>\n";
@@ -299,21 +306,45 @@ sub writeDictionary {
     }
     $xml .= "\t</codes>\n";
 
+    # build translation hash
+    my $translationTableHash;
+    foreach my $frenchWord (keys(%$translationTable)) {
+	my $frenchWordHash = $translationTable->{$frenchWord};
+	foreach my $frenchWordDerivative (keys(%$frenchWordHash)) {
+	    my $frenchWordDerivativeHash = $frenchWordHash->{$frenchWordDerivative};
+	    $frenchWordDerivativeHash->{"value"} = $frenchWordDerivative;
+	    my $sourceWords = $frenchWordDerivativeHash->{$sourceCode};
+
+	    foreach my $sourceWord (@$sourceWords) {
+		if (exists($translationTableHash->{$sourceWord})) {
+		    push(@{$translationTableHash->{$sourceWord}}, $frenchWordDerivativeHash);
+		} else {
+		    $translationTableHash->{$sourceWord} = [($frenchWordDerivativeHash)];
+		}
+	    }
+	}
+    }
+
     # words
     $xml .="\t<words>\n";
-    foreach my $word (keys(%$dictionary)) {
+    foreach my $word (keys(%$sourceDictionary)) {
 	$xml .= "\t\t<word>\n";
 	$xml .= "\t\t\t<value>$word</value>\n";
 
-	my $wordHash = $dictionary->{$word};
-	foreach my $derivative (keys(%$wordHash)) {
-	    my $derivativeHash = $wordHash->{$derivative};
+	my $wordHash = $sourceDictionary->{$word};
+	my $wordGender = (exists($wordHash->{"nom"}) ? $wordHash->{"nom"}->{"gender"} : "");
+	my $derivatives = $translationTableHash->{$word};
+
+	foreach my $derivativeHash (@$derivatives) {
 	    $xml .= "\t\t\t<derivative type=\"".$natureCodes{$derivativeHash->{"nature"}}{"code"}."\"".
-		($derivativeHash->{"gender"} ? " gender=\"".$derivativeHash->{"gender"}."\"" : "").">\n";
-	    $xml .= "\t\t\t\t<value>".$derivative."</value>\n";
+		($derivativeHash->{"nature"} eq "nom" && $wordGender ? " gender=\"".$wordGender."\"" : "").">\n";
+	    $xml .= "\t\t\t\t<value>".$derivativeHash->{"value"}."</value>\n";
 	    
-	    foreach my $translation (@{$derivativeHash->{"translations"}}) {
-		$xml .= "\t\t\t\t<translation>".$translation."</translation>\n";
+	    foreach my $translation (@{$derivativeHash->{$targetCode}}) {
+		my $translationHash = $targetDictionary->{$translation};
+		my $translationGender = (exists($translationHash->{"nom"}) ? $translationHash->{"nom"}->{"gender"} : "");
+
+		$xml .= "\t\t\t\t<translation".($derivativeHash->{"nature"} eq "nom" && $translationGender ? " gender=\"$translationGender\"" : "").">".$translation."</translation>\n";
 	    }
 
 	    $xml .= "\t\t\t</derivative>\n";
@@ -363,6 +394,7 @@ $logger->info("Building Translation table...");
 my $translationTable = buildTranslationTable($frenchWords, $languageCode, $secondLanguageCode, 
 					     $languageWords, $secondLanguageWords);
 
+
 # Remove duplicates
 my %languageTmpHash = map { $_, 1 } @$languageWords; $languageWords = [keys(%languageTmpHash)];
 my %secondLanguageTmpHash = map { $_, 1 } @$languageWords; $languageWords = [keys(%secondLanguageTmpHash)];
@@ -377,10 +409,12 @@ my $secondLanguageDictionary = buildDictionary($secondLanguageWords, $secondLang
 
 # Write the file
 $logger->info("Computing and writting final bilingual dictionaries...");
-writeDictionary($secondLanguageDictionary, $secondLanguageDictionaryFile, $secondLanguageCode, $languageCode)
-    if ($secondLanguageDictionaryFile);
-writeDictionary($languageDictionary, $languageDictionaryFile, $languageCode, $secondLanguageCode)
+writeDictionary($languageDictionaryFile, $languageDictionary, $languageCode,
+		$secondLanguageDictionary, $secondLanguageCode, $translationTable)
     if ($languageDictionaryFile);
+writeDictionary($secondLanguageDictionaryFile, $secondLanguageDictionary, $secondLanguageCode, 
+		$languageDictionary, $languageCode, $translationTable)
+    if ($secondLanguageDictionaryFile);
 
 exit;
 
