@@ -71,6 +71,8 @@ $site->logger($logger);
 
 sub getAllWords {
     my $category = shift;
+
+    $logger->info("Getting all words in category '$category' ...");
     return [$site->listCategoryEntries($category, 1, "0")];
 }
 
@@ -83,6 +85,8 @@ sub writeFile {
     my $file = shift;
     my $data = shift;
 
+    $logger->info("Writing file $file ...");
+
     open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
     print FILE $data;
     close (FILE);
@@ -92,6 +96,8 @@ sub readFile {
     my $file = shift;
     my @list;
  
+    $logger->info("Reading file $file ...");
+
     open(FILE, '<:utf8', $file);
     while (my $page = <FILE>) {
 	$page =~ s/\n//;
@@ -141,6 +147,7 @@ sub extractAllTranslationsFromWikiCode {
 	$genericWikiCode =~ s/\Q$subContent\E//;
 	$derivative =~ s/{{.*?}}//g;
 	$derivative =~ s/^[ ]+//g;
+	$derivative = $frenchWord unless ($derivative);
 
 	# try to find the translations for the french word
 	my $languageDerivativeTranslations = ($languageCode eq "fr" ? [($frenchWord)] : 
