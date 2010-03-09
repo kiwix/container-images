@@ -423,5 +423,8 @@ writeDictionary($secondLanguageDictionaryFile, $secondLanguageDictionary, $secon
 		$languageDictionary, $languageCode, $translationTable)
     if ($secondLanguageDictionaryFile);
 
+# Finish
+$logger->info("Computing and writting final bilingual dictionaries finished.");
+
 exit;
 
