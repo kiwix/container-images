@@ -897,6 +897,11 @@ sub embeddedIn {
 	    if (defined($namespace) && ($namespace eq $hash->{ns})) {
 		my $title = $hash->{title};
 		$title =~ tr/ /_/;
+
+                unless (Encode::is_utf8($title)) {
+                    $title = decode_utf8($title);
+                }
+
 		push( @links, $title );
 	    }
 
