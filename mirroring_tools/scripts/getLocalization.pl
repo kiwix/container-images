@@ -12,6 +12,7 @@ use warnings;
 use Getopt::Long;
 use Data::Dumper;
 use MediaWiki;
+use Term::Query qw(query);
 
 # log
 use Log::Log4perl;
@@ -19,50 +20,86 @@ Log::Log4perl->init("../conf/log4perl");
 my $logger = Log::Log4perl->get_logger("getLocalization.pl");
 
 # get the params
-my $code = "";
-my $path = "./";
+my @languages;
+my $allLanguages;
+my $path;
 my $source;
 my $rev;
 
 ## Get console line arguments
-GetOptions('code=s' => \$code, 
-	   'path=s' => \$path
+GetOptions('language=s' => \@languages, 
+	   'path=s' => \$path,
+	   'allLanguages' => \$allLanguages
 	   );
 
-if (!$code && !$path) {
-    print "usage: ./getLocalization.pl --code=en-US --path=./\n";
+if (!$path) {
+    print "usage: ./getLocalization.pl --path=./ [--language=en-US] [--allLanguages]\n";
+    exit;
+} elsif (! -d $path) {
+    print "'$path' is not a directory or does not exist.\n";
     exit;
 }
 
+# Check if --allLanguages is not set if the user really want to mirror all languages
+if (!scalar(@languages) && !$allLanguages) {
+    $allLanguages = query("getLocalization.pl will download all Kiwix locales in directory '$path'. Do you want to continue? (y/n)", "N");
+    
+    if ($allLanguages =~ /no/i) {
+	exit;
+    }
+}
+
+# Initiate the Mediawiki object
 my $site = MediaWiki->new();
 $site->hostname("www.kiwix.org");
 $site->path("");
 $site->logger($logger);
 
-# create directory
-unless ( -d $path."/".$code) { mkdir $path."/".$code; }
-unless ( -d $path."/".$code."/main") { mkdir $path."/".$code."/main"; }
-$path = $path."/".$code."/main/";
+# Get all languages if necessary
+if (!scalar(@languages) || $allLanguages) {
+    my @embeddedIns = $site->embeddedIn("template:Language_translation", 0);
+    foreach my $embeddedIn (@embeddedIns) {
+	if ($embeddedIn =~ /Translation\/languages\/(.*)/ ) {
+	    my $language = $1;
+	    push(@languages, $language);
+	}
+    }
+}
 
-# get help.html
-($source, $rev) = $site->downloadPage("Translation/languages/".$code."/help.html");
-$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-writeFile($path."help.html", $source);
-
-# get main.dtd
-($source, $rev) = $site->downloadPage("Translation/languages/".$code."/main.dtd");
-$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-writeFile($path."main.dtd", $source);
-
-# get main.properties
-($source, $rev) = $site->downloadPage("Translation/languages/".$code."/main.properties");
-$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-writeFile($path."main.properties", $source);
+# Get all languages
+foreach my $language (@languages) {
+    
+    # create directory
+    unless ( -d $path."/".$language) { mkdir $path."/".$language; }
+    unless ( -d $path."/".$language."/main") { mkdir $path."/".$language."/main"; }
+    $path = $path."/".$language."/main/";
+    
+    # get help.html
+    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/help.html");
+    if ($source) {
+	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
+	writeFile($path."help.html", $source);
+    }
+    
+    # get main.dtd
+    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/main.dtd");
+    if ($source) {
+	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
+	writeFile($path."main.dtd", $source);
+    }
+    
+    # get main.properties
+    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/main.properties");
+    if ($source) {
+	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
+	writeFile($path."main.properties", $source);
+    }
+}
 
 sub writeFile {
     my $file = shift;
-    my $data = shift;
-
+	my $data = shift;
+    
     open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
     print FILE $data;
     close (FILE);
