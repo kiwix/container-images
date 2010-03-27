@@ -63,11 +63,11 @@ foreach my $page (@pages) {
     my $longitude = "";
     my $latitude = "";
 
-    if ($content =~ /latitude[\ |\t]*=[\ |\t]*([\d|\/|\.|\-]+)/i ) {
+    if ($content =~ /latitude[\ |\t]*=[\ |\t]*([\d|\/|\.|\-|w|e|n|s]+)/i ) {
 	$latitude=$1;
     }
 
-    if ($content =~ /longitude[\ |\t]*=[\ |\t]*([\d|\/|\.|\-]+)/i ) {
+    if ($content =~ /longitude[\ |\t]*=[\ |\t]*([\d|\/|\.|\-|w|e|n|s]+)/i ) {
 	$longitude=$1;
     }
 
