@@ -68,31 +68,33 @@ if (!scalar(@languages) || $allLanguages) {
 
 # Get all languages
 foreach my $language (@languages) {
+
+    $logger->info("Getting locale '$language'.");
     
     # create directory
     unless ( -d $path."/".$language) { mkdir $path."/".$language; }
     unless ( -d $path."/".$language."/main") { mkdir $path."/".$language."/main"; }
-    $path = $path."/".$language."/main/";
+    my $localePath = $path."/".$language."/main/";
     
     # get help.html
-    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/help.html");
+    ($source) = $site->downloadPage("Translation/languages/".$language."/help.html");
     if ($source) {
 	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-	writeFile($path."help.html", $source);
+	writeFile($localePath."help.html", $source);
     }
     
     # get main.dtd
-    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/main.dtd");
+    ($source) = $site->downloadPage("Translation/languages/".$language."/main.dtd");
     if ($source) {
 	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-	writeFile($path."main.dtd", $source);
+	writeFile($localePath."main.dtd", $source);
     }
     
     # get main.properties
-    ($source, $rev) = $site->downloadPage("Translation/languages/".$language."/main.properties");
+    ($source) = $site->downloadPage("Translation/languages/".$language."/main.properties");
     if ($source) {
 	$source =~ s/^<[\/]*source[^>]*>[\n]*//mg;
-	writeFile($path."main.properties", $source);
+	writeFile($localePath."main.properties", $source);
     }
 }
 
