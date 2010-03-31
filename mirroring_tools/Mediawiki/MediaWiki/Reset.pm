@@ -40,7 +40,7 @@ sub reset {
 
     # Keep images?
     unless ($self->keepImages()) {
-	foreach my $table ("image", "imageold") {
+	foreach my $table ("image", "oldimage") {
 	    $req = "TRUNCATE $table";
 	    $sth = $dbh->prepare($req)  or die ("Unable to prepare request.");
 	    $sth->execute() or die ("Unable to execute request.");
