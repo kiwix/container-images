@@ -1156,6 +1156,7 @@ sub listCategoryEntries {
     my $currentDepth = 0;
     my %doneCategories;
 
+    unless (defined($namespace)) { $namespace = ""};
     unless (defined($explorationDepth)) { $explorationDepth=1 };
 
     while ( $currentDepth < $explorationDepth && scalar(@categoryStack) ) {
@@ -1188,7 +1189,7 @@ sub listCategoryEntries {
 		    'format' => 'xml',
 		    'list' => 'categorymembers',
 		    'cmlimit' => '500',
-		    'cmnamespace' =>  "14|$namespace", 
+		    'cmnamespace' => join("|", "14", $namespace), 
 		};
 		
 		# set the appropriate offset
