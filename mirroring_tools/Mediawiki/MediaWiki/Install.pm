@@ -96,6 +96,10 @@ sub install {
 
     # move config file
     rename($directory."/config/LocalSettings.php", $directory."/LocalSettings.php");
+    unless (-e $directory."/LocalSettings.php") {
+	$self->log("error", "Unable to move ".$directory."/config/LocalSettings.php to ".$directory."/LocalSettings.php");
+    }
+
 
     # add the conf includes
     my $confIncludeString="";
