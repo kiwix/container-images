@@ -55,6 +55,7 @@ my %templateDependences;
 my %imageDependences;
 
 unless (scalar(@pages)) {
+    $logger->info("Get all nonredirect articles (namespace=0) of $host.");
     @pages = $site->allPages("0", "nonredirects")
 }
 
@@ -65,7 +66,9 @@ foreach my $page (@pages) {
     }
 
     # images
+    $logger->info("Getting image dependences of the page '$page'...");
     my @imageDependences = $site->imageDependences($page);
+    $logger->info(scalar(@imageDependences)." image dependences found.");
     foreach my $dep (@imageDependences) {
 	my $image = $dep->{title};
 	unless ($imageDependences{$image}) {
@@ -75,7 +78,9 @@ foreach my $page (@pages) {
     }
 
     # templates
+    $logger->info("Get template dependences of the page '$page'.");
     my @templateDependences = $site->templateDependences($page);
+    $logger->info(scalar(@templateDependences)." template dependences found.");
     foreach my $dep (@templateDependences) {
 	my $template = $dep->{title};
 	unless ($templateDependences{$template}) {
@@ -86,12 +91,14 @@ foreach my $page (@pages) {
 
 };
 
+$logger->info("Printing to stdout image dependences...");
 foreach my $image (keys(%imageDependences)) {
     if ($filter eq "all" || ($filter eq "missing" && $imageDependences{$image}) || ($filter eq "present" && !$imageDependences{$image})) {
 	print $image."\n";
     }
 }
 
+$logger->info("Printing to stdout template dependences...");
 foreach my $template (keys(%templateDependences)) {
     if ($filter eq "all" || ($filter eq "missing" && $templateDependences{$template}) || ($filter eq "present" && !$templateDependences{$template})) {
 	print $template."\n";
