@@ -32,6 +32,9 @@ sub install {
     # install url
     my $installUrl = "http://".$self->site()."/".$self->path()."/config/index.php";
 
+    # change the permission of the config directory
+    my $cmd = "chmod a+w ".$self->directory()."/".$self->path()."/config/"; `$cmd`;
+
     # Create a user agent object
     my $ua = LWP::UserAgent->new;
     $ua->agent("Kiwix");
@@ -115,7 +118,7 @@ sub install {
     close(FILE); 
 
     # copy the Kiwix skins
-    my $cmd = "cp ../data/skins/*.php ".$directory."/skins/";
+    $cmd = "cp ../data/skins/*.php ".$directory."/skins/";
     `$cmd`;
 
     # copy and modify Parser.php
