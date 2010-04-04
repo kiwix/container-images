@@ -56,7 +56,9 @@ $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-pagelinks.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-redirect.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-templatelinks.sql.gz"; `$cmd`;
-$cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-latest-externallinks.sql.gz"; `$cmd`;
+$cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-externallinks.sql.gz"; `$cmd`;
+$cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-categorylinks.sql.gz"; `$cmd`;
+$cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-category.sql.gz"; `$cmd`;
 
 # Install and compile the mwdumper
 my $mwDumperDir = $tmpDir."/mwdumper/";
@@ -87,8 +89,9 @@ $cmd = "gzip -d -c $tmpDir/$projectCode-latest-imagelinks.sql.gz | $mysqlCmd"; `
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-pagelinks.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-redirect.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-templatelinks.sql.gz | $mysqlCmd"; `$cmd`;
-$cmd = "gzip -d -c $tmpDir/$projectCode-latest-latest-externallinks.sql.gz | $mysqlCmd"; `$cmd`;
-
+$cmd = "gzip -d -c $tmpDir/$projectCode-latest-externallinks.sql.gz | $mysqlCmd"; `$cmd`;
+$cmd = "gzip -d -c $tmpDir/$projectCode-latest-categorylinks.sql.gz | $mysqlCmd"; `$cmd`;
+$cmd = "gzip -d -c $tmpDir/$projectCode-latest-category.sql.gz | $mysqlCmd"; `$cmd`;
 # Upload the XML
 $cmd = "cd $mwDumperDir; java -classpath ./src org.mediawiki.dumper.Dumper --format=sql:1.5 ../$projectCode-latest-pages-articles.xml.bz2 | $mysqlCmd"; `$cmd`;
 
