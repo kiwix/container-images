@@ -38,7 +38,7 @@ GetOptions(
     );
 
 if (!$masterLanguage || !$username || !$password) {
-    print "usage: ./synchronizeLocalizations.pl --materLanguage=en-US --username=foo --password=bar [--language=en-US] [--allLanguages]\n";
+    print "usage: ./synchronizeLocalizations.pl --masterLanguage=en-US --username=foo --password=bar [--language=en-US] [--allLanguages]\n";
     exit;
 }
 
