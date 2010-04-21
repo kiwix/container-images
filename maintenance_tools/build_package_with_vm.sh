@@ -38,7 +38,7 @@ function buildDeb {
     apt-get dist-upgrade
 
     # install packages
-    apt-get install debhelper libxapian-dev libbz2-dev libunac1-dev xulrunner-dev m4 zlib1g-dev debianutils libunac1 libxapian15 xapian-tools xulrunner zlib1g libbz2-1.0 libmicrohttpd5 libmicrohttpd-dev subversion wget autotools-dev automake autoconf libtool
+    apt-get install debhelper libxapian-dev libbz2-dev libicu-dev xulrunner-dev m4 zlib1g-dev debianutils libicu42 libxapian15 xapian-tools xulrunner zlib1g libbz2-1.0 libmicrohttpd5 libmicrohttpd-dev subversion wget autotools-dev automake autoconf libtool
 
     # build the dist file
     cd /tmp
