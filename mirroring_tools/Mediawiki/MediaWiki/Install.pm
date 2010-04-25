@@ -126,7 +126,7 @@ sub install {
     `$cmd`;
 
     # Overwrite the dumpHtml.* extension files
-    my $cmd = "cp ../data/skins/dumpHTML.* ".$directory."/extension/DumpHTML/";
+    $cmd = "cp ../data/skins/dumpHTML.* ".$directory."/extension/DumpHTML/";
     `$cmd`;
 
     # copy and modify Parser.php
