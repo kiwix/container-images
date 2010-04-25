@@ -69,16 +69,30 @@ sub setup {
 
     if ($self->user()) {
 	if ($self->apiUrl()) {
+
 	    # make the login http request
-	    my $httpResponse = $self->makeApiRequest(
-		{
-		    'lgname' => $self->user(),
-		    'lgpassword' => $self->password(),
-		    'action' => 'login',
-		    'format'=> 'xml',
-		},
-		"POST"
-		);
+	    my $connectionRetryCounter = 0;
+	    my $httpResponse;
+	    my $lgtoken = "";
+	    do {
+		my $postValues = {
+			'lgname' => $self->user(),
+			'lgpassword' => $self->password(),
+			'action' => 'login',
+			'format'=> 'xml',
+		};
+		
+		if ($lgtoken) {
+		    $postValues->{'lgtoken'} = $lgtoken;
+		}
+
+		$httpResponse = $self->makeApiRequest($postValues, "POST");
+
+		if ($httpResponse->content() =~ /token=\"(.*?)\"/ ) {
+		    $lgtoken = $1;
+		}
+
+	    } while ($httpResponse->content =~ /NeedToken/i && $connectionRetryCounter++ < 1);
 
 	    if ($httpResponse->content() =~ /wronpass/i ) {
 		$self->log("info", "Failed to logged in '".$self->hostname()."' as '".$self->user()."' : wrong pass.");
@@ -736,7 +750,7 @@ sub loadEditToken {
     my $self = shift;
     
     my $httpResponse = $self->makeApiRequest( { 'action' => 'query', 'prop' => 'info', 'intoken' => 'edit', 'format' => 'xml', 'titles' => '42' } , 'GET');
-    if ($httpResponse->content() =~ /edittoken=\"(.*)\"/ ) {
+    if ($httpResponse->content() =~ /edittoken=\"(.*?)\"/ ) {
 	$self->editToken($1);
 	return 1;
     } else {
