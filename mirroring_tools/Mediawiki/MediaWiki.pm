@@ -223,7 +223,7 @@ sub hasWriteApi {
 
     lock(%writeApiCache);
     unless (exists($writeApiCache{$self->hostname()})) {
-	my $httpResponse = $self->makeApiRequest( { 'action' => 'edit', 'format' => 'xml' }, "POST" );
+	my $httpResponse = $self->makeApiRequest( { 'action' => 'edit', 'format' => 'xml', 'token' => $self->editToken() }, "POST" );
 
 	if ($httpResponse->content() =~ /notitle/i ) {
 	    $self->log("info", "Site ".$self->hostname()." has the Write API available.\n");
