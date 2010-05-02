@@ -297,6 +297,12 @@ class KiwixBaseSkin extends SkinTemplate {
                    $last++;
                  };
 
+                 // Really strange new bugs... img src which starts with http://localhost
+		 while ( preg_match("/http\:\/\/localhost/", $content, $match) ) {
+                   $content = str_replace($match[0], "", $content);
+                   $last++;
+                 };
+
 		 // print out
 		 $out->mBodytext = $content;
 		 SkinTemplate::outputPage($out);
