@@ -641,7 +641,7 @@ sub downloadImage {
     return $self->makeHttpGetRequest($self->indexUrl(), {}, {  'title' => 'Special:FilePath', 'file' => $image } )->content();
 }
 
-sub uploadImageFromUrl {
+sub _uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
 
     my $httpPostRequestParams = {
@@ -652,6 +652,9 @@ sub uploadImageFromUrl {
 	    'wpUploadDescription' => $summary ? $summary : "",
 	    'wpUpload' => 'upload',
 	    'wpIgnoreWarning' => '1',
+	    'wpForReUpload' => 'true',
+	    'wpDestFileWarningAck' => 'true',
+	    'action' => 'submit',
     };
 
     # Get upload token
@@ -682,7 +685,7 @@ sub uploadImageFromUrl {
 
 # Curently not use, seems to be buggy
 # After hours it doe not work anymore
-sub uploadImageFromUrl_withapi {
+sub uploadImageFromUrl {
     my($self, $title, $url, $summary) = @_;
     my $status;
 
@@ -692,7 +695,7 @@ sub uploadImageFromUrl_withapi {
 	'filename' => $title,
 	'token' => $self->editToken(),
 	'format' => 'xml',
-	'asyncdownload' => '1',
+#	'asyncdownload' => '1',
 	'ignorewarnings' => '1',
     };
     
@@ -710,6 +713,8 @@ sub uploadImageFromUrl_withapi {
 
 	$self->log("info", "Status Upload $title : ".$httpResponse->content);
 
+	$status = 1;
+    } elsif ($content =~ /queued\=\"1"/) {
 	$status = 1;
     } else {
 	$self->log("error", "Error by uploading image '$title' : $content");
