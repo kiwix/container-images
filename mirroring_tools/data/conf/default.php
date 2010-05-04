@@ -83,6 +83,9 @@ $wgUseAjax = true;
 $wgSyncHTTPTimeout = 1200;
 $wgAsyncHTTPTimeout = 1200;
 
+# jobs
+$wgJobRunRate = 0;
+
 # throttling
 $wgPasswordAttemptThrottle = array( 'count' => 424242424242, 'seconds' => 1 );
 
