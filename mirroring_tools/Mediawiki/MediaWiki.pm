@@ -711,10 +711,11 @@ sub uploadImageFromUrl {
 	my $sessionKey = $1;
 	$httpResponse = $self->makeApiRequest( { 'action' => 'upload', 'httpstatus' => '1', 'sessionkey' => "$sessionKey", 'format' => 'xml', 'token' => $self->editToken() } , 'POST');
 
-	$self->log("info", "Status Upload $title : ".$httpResponse->content);
+	$self->log("info", "Status upload $title : ".$httpResponse->content);
 
 	$status = 1;
     } elsif ($content =~ /queued\=\"1"/) {
+	$self->log("info", "Status upload $title : queued");
 	$status = 1;
     } else {
 	$self->log("error", "Error by uploading image '$title' : $content");
