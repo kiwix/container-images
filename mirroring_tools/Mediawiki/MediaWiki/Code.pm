@@ -15,7 +15,7 @@ my $doc;
 my $mediawikiRevision = "head";
 my @extensions;
 my $filter=".*";
-my @extensionsToIgnore = ('MakeBot', 'SiteMatrix', 'FixedImage', 'OggHandler', 'BoardVote', 'CentralNotice', 'TorBlock', 'Central.*Auth', 'TitleKey', 'CheckUser', 'Cross.*namespace.*', 'GlobalBlocking', 'Global[ |_]*Usage', 'OAIRepository', 'SimpleAntiSpam', 'SpamBlacklist', 'ConfirmEdit', 'MakeBot', 'AntiBot', 'AntiSpoof', 'Oversight', 'Makesysop', 'Title.*Blacklist', 'DismissableSiteNotice', 'Username.*Blacklist', 'MWSearch', 'OpenSearchXml', 'Renameuser', 'TrustedXFF', 'Collection', 'SecurePoll', 'Abuse[ ]*Filter', 'UsabilityInitiative', 'PDF Handler', 'PrefStats', 'OptIn', 'UploadBlacklist', 'WikimediaMessages', 'NewUserMessage', 'LocalisationUpdate', 'nuke', 'FlaggedRevs' );
+my @extensionsToIgnore = ('MakeBot', 'SiteMatrix', 'FixedImage', 'OggHandler', 'BoardVote', 'CentralNotice', 'TorBlock', 'Central.*Auth', 'TitleKey', 'CheckUser', 'Cross.*namespace.*', 'GlobalBlocking', 'Global[ |_]*Usage', 'OAIRepository', 'SimpleAntiSpam', 'SpamBlacklist', 'ConfirmEdit', 'MakeBot', 'AntiBot', 'AntiSpoof', 'Oversight', 'Makesysop', 'Title.*Blacklist', 'DismissableSiteNotice', 'Username.*Blacklist', 'MWSearch', 'OpenSearchXml', 'Renameuser', 'TrustedXFF', 'Collection', 'SecurePoll', 'Abuse[ ]*Filter', 'UsabilityInitiative', 'PDF Handler', 'PrefStats', 'OptIn', 'UploadBlacklist', 'WikimediaMessages', 'NewUserMessage', 'LocalisationUpdate', 'nuke', 'FlaggedRevs', 'UsabilityInitiative' );
 
 sub new {
     my $class = shift;
