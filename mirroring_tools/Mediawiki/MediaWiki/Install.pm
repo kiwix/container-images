@@ -120,57 +120,6 @@ sub install {
     open FILE, ">$directory/LocalSettings.php" or die $!; 
     print FILE $conf; 
     close(FILE); 
-
-    # copy the Kiwix skins
-    $cmd = "cp ../data/skins/*.php ".$directory."/skins/";
-    `$cmd`;
-
-    # Overwrite the dumpHtml.* extension files
-    $cmd = "cp ../data/skins/dumpHTML.* ".$directory."/extension/DumpHTML/";
-    `$cmd`;
-
-    # copy and modify Parser.php
-    $cmd = "cp $directory/includes/parser/Parser.php $directory/skins/ParserOriginal.php";
-    `$cmd`;
-    $cmd = "sed -i -e 's/class Parser/class ParserOriginal/' $directory/skins/ParserOriginal.php";
-    `$cmd`;
-
-    # copy and modify ImageGallery.php
-    $cmd = "cp $directory/includes/ImageGallery.php $directory/skins/ImageGalleryOriginal.php";
-    `$cmd`;
-    $cmd = "sed -i -e 's/class ImageGallery/class ImageGalleryOriginal/' $directory/skins/ImageGalleryOriginal.php";
-    `$cmd`;
-    $cmd = "sed -i -e 's/private /protected /' $directory/skins/ImageGalleryOriginal.php";
-    `$cmd`;
-
-    # copy and modify title.php
-    $cmd = "cp $directory/includes/Title.php $directory/skins/TitleOriginal.php";
-    `$cmd`;
-    $cmd = "sed -i -e 's/class Title/class TitleOriginal/' $directory/skins/TitleOriginal.php";
-    `$cmd`;
-    $cmd = "sed -i -e 's/private /protected /' $directory/skins/TitleOriginal.php";
-    `$cmd`;
-
-    # compile textvc
-    $cmd = "cd $directory/math ; make clean all";
-    print $cmd."\n";
-    `$cmd`;
-
-    # Set link color to 'black' in the timeline extension
-    if ( -f $directory.'/extensions/timeline/EasyTimeline.pl') {
-	$cmd = 'sed -i -e \'s/\$LinkColor[ |]=.*$/\$LinkColor = "black";/\' ' . $directory . '/extensions/timeline/EasyTimeline.pl';
-	`$cmd`;
-    }
-
-    # Make the link for the 'local directory
-    $cmd = 'ln -s /var/www/mirror/commons/images/ '.$directory.'/images/shared';
-    `$cmd`;
-
-    # Make the link for the 'local' directory
-    $cmd = 'ln -s '.$directory.'/images/ '.$directory.'/images/local';
-    `$cmd`;
-
-    # todo: check if all extern tools are there
 }
 
 

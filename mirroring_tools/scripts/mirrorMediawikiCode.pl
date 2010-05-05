@@ -58,6 +58,8 @@ if ($action eq "info") {
     foreach my $command (split("\n", $svn)) {
 	`$command`;
     }
+
+    $code->applyCustomisations();
     
     my $code = "<?php\n".$code->php()."\n?>\n";
     my $filename = "$directory/extensions.php";
