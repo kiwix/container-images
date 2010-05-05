@@ -17,7 +17,13 @@ cd $DIR
 for MIRROR in `ls -lad * | cut -d " " -f 8`
 do
     echo $MIRROR
-    php $MIRROR/maintenance/runJobs.php
+    STATUS=255
+
+    while [ "$STATUS" -eq "255" ]
+    do
+	php $MIRROR/maintenance/runJobs.php
+	STATUS=$?
+    done
 done
 
 # Remove the lock file
