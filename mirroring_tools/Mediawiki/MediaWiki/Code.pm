@@ -43,7 +43,7 @@ sub get {
 	}
     }
 
-    while ($html =~ /<td>.*(http.*mediawiki.*xtension:[^\"]+)[^>]+>([^>]+)<\/a>.* (\d{4}-\d{2}-\d{2}|\d+\.*\d*\.*\d*|r\d+|).*<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>/mg ) {
+    while ($html =~ /<td>.*(http.*mediawiki.*xtension:[^\"]+)[^>]+>([^>]+)<\/a>.*[\n]*[\t].*r([\d]+).*<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>.*[\n]*[\t]*.*<td>(.*)<\/td>/mg ) {
 	my %extension;
 
 	$extension{url} = $1;
@@ -78,12 +78,6 @@ sub get {
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
 
-	$extension{version} =~ s/r// ;
-	if ($extension{version} =~ /\./) {
-	    #$extension{version} = $self->getRevisionForBranch($extension{version});
-	    $extension{version} = "head";
-	}
-
 	my $path = $self->getPathForExtension($extension{url}) || $self->getPathForExtension($extension{url}."/installation");
 
 	my $firstSlash = index($path, "/");
@@ -117,12 +111,6 @@ sub get {
 
 	$extension{description} =~ s/\<[^>]+\>//g;
 	$extension{description} = decode_entities($extension{description});
-
-	$extension{version} =~ s/r// ;
-	if ($extension{version} =~ /\./) {
-	    #$extension{version} = $self->getRevisionForBranch($extension{version});
-	    $extension{version} = "head";
-	}
 
 	my $path = $self->getPathForExtension($extension{url}) || $self->getPathForExtension($extension{url}."/installation");
 
@@ -187,8 +175,8 @@ sub informations {
     my $informations = "";
 
     if ("Mediawiki" =~ /$filter/i ) {
-	$informations .= "[Mediawiki]\n";
-	$informations .= "revision: $mediawikiRevision\n\n";
+	print "[Mediawiki]\n";
+	print "revision: $mediawikiRevision\n\n";
     }
 
     foreach my $extension (@extensions) {
@@ -224,25 +212,6 @@ sub getSvnCommands {
     return $svnCommands;
 }
 
-sub getRevisionForBranch {
-    my $self = shift;
-    my $branch = shift;
-
-    my $revision = $branch;
-    $revision =~ s/\./\_/gm;
-
-    if (length($revision) == 3) {
-	$revision .= "_0";
-    }
-
-    $revision = "REL".$revision;
-                    my $command = "svn info --xml http://svn.wikimedia.org/svnroot/mediawiki/tags/".$revision." | grep \"revision\" | sed -n \"2p\" | sed -e \"s/.*=\\\"//\" | sed -e \"s/\\\".*//\"";
-    $revision  = `$command`;
-    $revision =~ s/\n//g;
-
-    return $revision;
-}
-
 sub downloadTextFromUrl {
     my $self = shift;
     my $url = shift;
@@ -257,7 +226,6 @@ sub downloadTextFromUrl {
 	$data = Compress::Zlib::memGunzip($data);
     }
     
-    #utf8::encode($data);
     return $data;
 }
 
