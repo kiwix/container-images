@@ -1,5 +1,7 @@
 #!/bin/sh
 
+BINARY=$0
+BINARY_DIR=`pwd`/`dirname $BINARY`
 DIR=/var/www/mirror/
 LOCKFILE=$DIR/jobs.lock
 
@@ -21,7 +23,7 @@ do
 
     while [ "$STATUS" -eq "255" ]
     do
-	php $MIRROR/maintenance/runJobs.php
+	php $MIRROR/maintenance/runJobs.php > $BINARY_DIR/logs/jobs.log
 	STATUS=$?
     done
 done
