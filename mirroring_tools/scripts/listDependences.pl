@@ -23,6 +23,7 @@ my $logger = Log::Log4perl->get_logger("listDependences.pl");
 my $host = "";
 my $path = "";
 my $filter = "all";
+my $type = "all";
 my @pages;
 my $readFromStdin = 0;
 
@@ -32,10 +33,11 @@ GetOptions('host=s' => \$host,
 	   'filter=s' => \$filter,
            'readFromStdin' => \$readFromStdin,
            'page=s' => \@pages,
+	   'type=s' => \$type,
 	   );
 
-if (!$host) {
-    print "usage: ./listDependences.pl --host=my.wiki.org [--path=w] [--page=mypage] [--readFromStdin] [--filter=all|missing|present]\n";
+if (!$host || !($type =~ /(all|image|template)/i) || !($filter =~ /(all|missing|present)/i)) {
+    print "usage: ./listDependences.pl --host=my.wiki.org [--path=w] [--page=mypage] [--readFromStdin] [--filter=all|missing|present] --type=[all|image|template]\n";
     exit;
 }
 
@@ -66,26 +68,30 @@ foreach my $page (@pages) {
     }
 
     # images
-    $logger->info("Getting image dependences of the page '$page'...");
-    my @imageDependences = $site->imageDependences($page);
-    $logger->info(scalar(@imageDependences)." image dependences found.");
-    foreach my $dep (@imageDependences) {
-	my $image = $dep->{title};
-	unless ($imageDependences{$image}) {
-	    $image =~ tr/ /_/s;
-	    $imageDependences{$image} = exists($dep->{missing});
+    if ($type =~ /(all|image)/i ) {
+	$logger->info("Getting image dependences of the page '$page'...");
+	my @imageDependences = $site->imageDependences($page);
+	$logger->info(scalar(@imageDependences)." image dependences found.");
+	foreach my $dep (@imageDependences) {
+	    my $image = $dep->{title};
+	    unless ($imageDependences{$image}) {
+		$image =~ tr/ /_/s;
+		$imageDependences{$image} = exists($dep->{missing});
+	    }
 	}
     }
 
     # templates
-    $logger->info("Get template dependences of the page '$page'.");
-    my @templateDependences = $site->templateDependences($page);
-    $logger->info(scalar(@templateDependences)." template dependences found.");
-    foreach my $dep (@templateDependences) {
-	my $template = $dep->{title};
-	unless ($templateDependences{$template}) {
-	    $template =~ tr/ /_/s;
-	    $templateDependences{$template} = exists($dep->{missing});
+    if ($type =~ /(all|template)/i ) {
+	$logger->info("Get template dependences of the page '$page'.");
+	my @templateDependences = $site->templateDependences($page);
+	$logger->info(scalar(@templateDependences)." template dependences found.");
+	foreach my $dep (@templateDependences) {
+	    my $template = $dep->{title};
+	    unless ($templateDependences{$template}) {
+		$template =~ tr/ /_/s;
+		$templateDependences{$template} = exists($dep->{missing});
+	    }
 	}
     }
 
