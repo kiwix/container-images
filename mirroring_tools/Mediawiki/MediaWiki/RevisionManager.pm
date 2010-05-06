@@ -120,10 +120,18 @@ sub deleteOrphanFiles {
     `rm -rf $dir`
 }
 
+sub deleteOldImages {
+    my $self = shift;
+    
+    my $req = "TRUNCATE TABLE oldimage";
+    my $sth = $self->dbh()->prepare($req) or die ("Unable to prepare request.");
+    $sth->execute() or die ("Unable to execute request.");
+}
+
 sub deleteRemovedFiles {
     my $self = shift;
     
-    my $req = "DELETE FROM filearchive";
+    my $req = "TRUNCATE TABLE filearchive";
     my $sth = $self->dbh()->prepare($req) or die ("Unable to prepare request.");
     $sth->execute() or die ("Unable to execute request.");
 

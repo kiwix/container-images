@@ -53,6 +53,7 @@ $manager->password($password);
 $manager->mediawikiDirectory($mediawikiDirectory);
 $manager->connectToDatabase();
 $manager->deleteOldRevisions();
+$manager->deleteOldImages();
 $manager->deleteOrphanTexts();
 $manager->deleteOrphanFiles();
 $manager->deleteRemovedFiles();
