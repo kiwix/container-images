@@ -999,9 +999,8 @@ sub allImages {
     my @images;
     my $continue;
     my $xml;
-    
-    my %namespaces = $self->namespaces();
-    my $imageNamespace = $namespaces{6};
+
+    my $imageNamespaceName = $self->getFileNamespaceName();
 
     do {
 	# set the appropriate offset
@@ -1016,7 +1015,7 @@ sub allImages {
 	    foreach my $page (@{$xml->{query}->{pages}->{page}}) {
 		if ($page->{title}) {
 		    my $image = $page->{title};
-		    $image =~ s/^$imageNamespace:// ;
+		    $image =~ s/^($imageNamespaceName|file)://i ;
 		    $image =~ tr/\ /_/ ;
 		    push(@images, $image);
 		}
@@ -1299,6 +1298,11 @@ sub getNamespaceName() {
 sub getFileNamespaceName() {
     my $self = shift;
     return $self->getNamespaceName(6);
+}
+
+sub getTemplateNamespaceName() {
+    my $self = shift;
+    return $self->getNamespaceName(10);
 }
 
 # Prepare a page: ask for the HTML code and check if no error
