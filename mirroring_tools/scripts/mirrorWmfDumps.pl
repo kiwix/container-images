@@ -23,6 +23,7 @@ my $databaseName = "";
 my $databaseUsername = "";
 my $databasePassword = "";
 my $projectCode = "";
+my $withoutImages;
 my $tmpDir = "/tmp";
 my $cmd;
 
@@ -33,11 +34,12 @@ GetOptions('databaseHost=s' => \$databaseHost,
 	   'databaseUsername=s' => \$databaseUsername,
 	   'databasePassword=s' => \$databasePassword,
 	   'projectCode=s' => \$projectCode,
+	   'withoutImages' => \$withoutImages,
 	   'tmpDir=s' => \$tmpDir,
 	   );
 
 if (!$databaseName || !$projectCode) {
-    print "usage: ./mirrorWmfDumps.pl --projectCode=enwiki --databaseName=MYDB [--tmpDir=/tmp] [--databaseHost=localhost] [--databasePort=3306] [--databaseUsername=tom] [--databasePassword=fff]\n";
+    print "usage: ./mirrorWmfDumps.pl --projectCode=enwiki --databaseName=MYDB [--tmpDir=/tmp] [--databaseHost=localhost] [--databasePort=3306] [--databaseUsername=tom] [--databasePassword=fff] [--withoutImages]\n";
     exit;
 }
 
@@ -53,13 +55,16 @@ $tmpDir = $tmpDir."/wmfDumps";
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-pages-articles.xml.bz2"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-interwiki.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-imagelinks.sql.gz"; `$cmd`;
-$cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-image.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-pagelinks.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-redirect.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-templatelinks.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-externallinks.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-categorylinks.sql.gz"; `$cmd`;
 $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-category.sql.gz"; `$cmd`;
+
+unless ($withoutImages) {
+    $cmd = "cd $tmpDir ; wget -c http://download.wikimedia.org/$projectCode/latest/$projectCode-latest-image.sql.gz"; `$cmd`;
+}
 
 # Install and compile the mwdumper
 my $mwDumperDir = $tmpDir."/mwdumper/";
@@ -87,13 +92,17 @@ my $mysqlCmd = "mysql --user=$databaseUsername --password=$databasePassword $dat
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-interwiki.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-interwiki.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-imagelinks.sql.gz | $mysqlCmd"; `$cmd`;
-$cmd = "gzip -d -c $tmpDir/$projectCode-latest-image.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-pagelinks.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-redirect.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-templatelinks.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-externallinks.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-categorylinks.sql.gz | $mysqlCmd"; `$cmd`;
 $cmd = "gzip -d -c $tmpDir/$projectCode-latest-category.sql.gz | $mysqlCmd"; `$cmd`;
+
+unless ($withoutImages) {
+    $cmd = "gzip -d -c $tmpDir/$projectCode-latest-image.sql.gz | $mysqlCmd"; `$cmd`;
+}
+
 # Upload the XML
 $cmd = "cd $mwDumperDir; java -classpath ./src org.mediawiki.dumper.Dumper --format=sql:1.5 ../$projectCode-latest-pages-articles.xml.bz2 | $mysqlCmd"; `$cmd`;
 
