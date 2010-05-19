@@ -202,7 +202,7 @@ class DumpHTML {
 			$title = Title::newFromID( $id );
 			if ( $title ) {
 				$ns = $title->getNamespace() ;
-				if ( ($ns == NS_MAIN || $ns == NS_WIKIPEDIA ) && 
+				if ( ($ns == NS_MAIN ) && 
 				  $title->getPrefixedDBkey() != $mainPage ) {
 					$this->doArticle( $title );
 				}
