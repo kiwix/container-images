@@ -1,3 +1,0 @@
-image:Replace_this_image_male.svg
-image:Replace_this_image_female.svg
-image:Ltspkr.png

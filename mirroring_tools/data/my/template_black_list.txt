@@ -1,7 +1,0 @@
-template:stub
-template:Disambig
-template:Tnavbar
-Template:Converted_Articles
-template:Translation_Needed
-template:commonscat
-template:sisterlinks
