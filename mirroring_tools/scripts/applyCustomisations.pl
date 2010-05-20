@@ -51,6 +51,17 @@ if ($username) {
 }
 $site->setup();
 
+# connect to commons
+my $commons = MediaWiki->new();
+$commons->logger($logger);
+$commons->hostname("commons.mirror.kiwix.org");
+$commons->path($path);
+if ($username) {
+    $commons->user($username);
+    $commons->password($password);
+}
+$commons->setup();
+
 # Initiate www.kiwix.org
 my $www = MediaWiki->new();
 $www->hostname("www.kiwix.org");
@@ -79,6 +90,7 @@ sub getList {
 $entries = getList("Mirrors/$projectCode/image_black_list.txt");
 foreach my $entry (split(/\n/, $entries)) {
     $site->deletePage($entry);
+    $commons->deletePage($entry);
 }
 
 exit;
