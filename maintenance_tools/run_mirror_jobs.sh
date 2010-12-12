@@ -23,7 +23,7 @@ do
 
     while [ "$STATUS" -eq "255" ]
     do
-	php $MIRROR/maintenance/runJobs.php > $BINARY_DIR/logs/jobs.log
+	php $MIRROR/maintenance/runJobs.php >> /tmp/jobs.log
 	STATUS=$?
     done
 done
