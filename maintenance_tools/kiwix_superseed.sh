@@ -30,6 +30,7 @@ do
 	if [ ! $INBOX_DIR == "" ]
 	then
 	    SOURCE_LINK=$SOURCE_DIR$DIR/$FILE
+	    LOCAL_FILE=`echo $FILE | sed -e 's/.*\///m'`
 	    cd $INBOX_DIR
 	    if [ -e $LOCAL_FILE ]
 	    then
