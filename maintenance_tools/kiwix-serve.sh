@@ -30,3 +30,4 @@ nice -10 kiwix-serve --port=4222 --index="wikipedia_ja_all_03_2011.zim.idx" --da
 nice -10 kiwix-serve --port=4223 --index="wikipedia_ur_all_04_2011.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_ur_all_04_2011.zim"
 nice -10 kiwix-serve --port=4224 --index="wikipedia_sw_all_04_2011.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_sw_all_04_2011.zim"
 nice -10 kiwix-serve --port=4225 --index="wikipedia_ru_all_05_2011.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_ru_all_05_2011.zim"
+nice -10 kiwix-serve --port=4226 --index="wikipedia_en_simple_all_08_2011.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_en_simple_all_08_2011.zim"
