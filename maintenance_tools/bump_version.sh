@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # changes Kiwix version number everywhere needed
 # arguments:
@@ -42,8 +42,8 @@ sed -ised -e 's/^texta\[0\] = "Kiwix [0-9\.]* [a-zA-Z0-9\.\-\_]*";/texta\[0\] = 
 # MacOS bundle property file
 #<key>CFBundleGetInfoString</key>
 #<string>0.9 alpha8</string>
-sed -ised -e 's/\<string\>[0-9\.]* [a-zA-Z0-9\.\-\_]*\<\/string\>/\<string\>'$MAJOR' '$MINOR'\<\/string\>/' ../moulinkiwix/src/macosx/Info.plist
+sed -ised -e 's/<string>[0-9\.]* [a-zA-Z0-9\.\-\_]*<\/string>/<string>'$MAJOR' '$MINOR'<\/string>/' ../moulinkiwix/src/macosx/Info.plist
 #<key>CFBundleShortVersionString</key>
 #<string>0.9</string>
-sed -ised -e 's/\<key\>CFBundleShortVersionString\<\/key\> 	\<string\>[0-9\.]*\<\/string\>/\<string\>'$MAJOR'\<\/string\>/' ../moulinkiwix/src/macosx/Info.plist
-tr '\n\t' ' ' < ../moulinkiwix/src/macosx/Info.plist | sed 's/\<key\>CFBundleShortVersionString\<\/key\>   \<string\>[0-9\.]*\<\/string\>/\<key\>CFBundleShortVersionString\<\/key\>   \<string\>'$MAJOR'\<\/string\>/' | XMLLINT_INDENT=$'\t' xmllint --format --recover --output ../moulinkiwix/src/macosx/Info.plist -
+tr '\n\t' ' ' < ../moulinkiwix/src/macosx/Info.plist | sed 's/<key>CFBundleShortVersionString<\/key>  <string>[0-9\.]*<\/string>/<key>CFBundleShortVersionString<\/key>  <string>'$MAJOR'<\/string>/' | XMLLINT_INDENT=$'\t' xmllint --format --recover - > /tmp/kiwix_bump_$MAJOR_$MINOR.plist
+mv /tmp/kiwix_bump_$MAJOR_$MINOR.plist ../moulinkiwix/src/macosx/Info.plist
