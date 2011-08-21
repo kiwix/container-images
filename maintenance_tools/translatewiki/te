@@ -1,0 +1,36 @@
+# Messages for Telugu (తెలుగు)
+# Exported from translatewiki.net
+# Author: Veeven
+
+ui.main.print=ముద్రించు
+ui.main.printPdf=PDF గా ప్రచురించు
+ui.main.edit=సవరించు
+ui.main.find=పుటలో వెతుకు...
+ui.main.selectall=అన్నీ ఎంచుకో
+ui.main.transliteration=లిప్యంతరీకరణ
+ui.main.preferences=అభిరుచులు
+ui.main.zoomorig=అసలు పరిమాణం
+ui.main.language=భాష
+ui.main.skin=అలంకారం
+ui.main.statusbar=స్థితి పట్టీ
+ui.main.resultsbar=ఫలితాల పట్టీ
+ui.main.fullscreen=నిండుతెర
+ui.main.tools=పనిముట్లు
+ui.main.randomArticle=యాదృచ్చిక వ్యాసం
+ui.main.help=సహాయం
+ui.main.back=వెనుకకు
+ui.main.forward=ముందుకు
+ui.main.home=ముంగిలి
+ui.main.searchBar=అన్వేషణ పట్టీ
+ui.main.search=వెతుకు
+ui.main.close=మూసివేయి
+ui.preferences.preferences=అభిరుచులు
+ui.preferences.save=భద్రపరచు
+ui.preferences.cancel=రద్దుచేయి
+ui.messages.confirm=నిర్ధారించు
+ui.messages.no=కాదు
+ui.messages.yes=అవును
+ui.messages.ok=సరే
+ui.messages.cancel=రద్దుచేయి
+ui.messages.error=పొరపాటు
+ui.messages.information=సమాచారం

@@ -1,0 +1,54 @@
+# Messages for Luxembourgish (Lëtzebuergesch)
+# Exported from translatewiki.net
+# Author: Robby
+
+ui.main.file=Fichier
+ui.main.openFile=Fichier opmaachen...
+ui.main.lastOpen=Rezent opgemaach...
+ui.main.saveFile=Säit späicheren als ...
+ui.main.print=Drécken
+ui.main.printPdf=Als PDF drécken
+ui.main.quit=Erausgoen
+ui.main.edit=Änneren
+ui.main.find=Op der Säit sichen...
+ui.main.copy=Kopéieren
+ui.main.transliteration=Transliteratioun
+ui.main.preferences=Astellungen
+ui.main.display=Weisen
+ui.main.zoom=Zoom
+ui.main.zoomin=Vergréisseren
+ui.main.zoomout=Verklengeren
+ui.main.zoomorig=Original Gréisst
+ui.main.language=Sprooch
+ui.main.skin=Ausgesinn
+ui.main.fullscreen=Ganzen Ecran
+ui.main.tools=Geschir (Tools)
+ui.main.randomArticle=Zoufällegen Artikel
+ui.main.help=Hëllef
+ui.main.reportabug=E Feeler mellen
+ui.main.about=Iwwer &brand.brandShortName;
+ui.main.back=Zréck
+ui.main.forward=Virun
+ui.main.home=Haaptsäit
+ui.main.search=Sichen
+ui.main.findInText=Am Text sichen
+ui.main.bookmarks=Favoriten
+ui.main.results.title=Resultater vum Sichen
+ui.main.bmkLabel=Favoriten:
+ui.main.mark=Dës Säit markéieren
+ui.main.defaultset=Standard Astellung
+ui.main.saveImageAs=Bild späicheren als ...
+ui.main.close=Zoumaachen
+ui.preferences.preferences=Astellungen
+ui.preferences.save=Späicheren
+ui.preferences.cancel=Ofbriechen
+ui.messages.emptySearchStringError=Dir musst en Text aginn, no deem gesicht soll ginn
+ui.messages.loadArticleError=Dësen Artikel kann net geluede ginn.
+ui.messages.dontDisplayAnymore=Dës Dialog-Këscht net méi weisen.
+ui.messages.confirm=Confirméieren
+ui.messages.no=neen
+ui.messages.yes=jo
+ui.messages.ok=OK
+ui.messages.cancel=Ofbriechen
+ui.messages.error=Feeler
+ui.messages.information=Informatioun
