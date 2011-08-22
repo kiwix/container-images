@@ -47,7 +47,8 @@ foreach my $language (@languages) {
     # Create directory if necessary
     unless ( -d $path."/kiwix/chrome/locale/".$language) { mkdir $path."/kiwix/chrome/locale/".$language; }
     unless ( -d $path."/kiwix/chrome/locale/".$language."/main") { mkdir $path."/kiwix/chrome/locale/".$language."/main"; }
-    
+    unless ( -f $path."/kiwix/chrome/locale/".$language."/main/help.html") { writeFile($path."/kiwix/chrome/locale/".$language."/main/help.html", "") };
+
     # Get translation translatewiki content
     my $content = readFile($language);
 
