@@ -16,7 +16,7 @@ nice -10 kiwix-serve --port=4208 --index="wikipedia_he_all_07_2011.zim.idx" --da
 nice -10 kiwix-serve --port=4209 --index="wikipedia_zh_all_05_2010_alpha1.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_zh_all_05_2010_alpha1.zim"
 nice -10 kiwix-serve --port=4210 --index="wikipedia_ml_500+_05_2010_beta2.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_ml_500+_05_2010_beta2.zim"
 nice -10 kiwix-serve --port=4211 --index="wikipedia_ml_all_06_2010_beta1.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_ml_all_06_2010_beta1.zim"
-nice -10 kiwix-serve --port=4212 --index="wikipedia_fr_all_07_2010_beta2.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_fr_all_07_2010_beta2.zim"
+nice -10 kiwix-serve --port=4212 --index="wikipedia_fr_all_07_2011.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_fr_all_07_2011.zim"
 nice -10 kiwix-serve --port=4213 --index="wikipedia_pt_all_10_2010_alpha1.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_pt_all_10_2010_alpha1.zim"
 nice -10 kiwix-serve --port=4214 --index="wikipedia_es_all_09_2010_beta1.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/wikipedia_es_all_09_2010_beta1.zim"
 nice -10 kiwix-serve --port=4215 --index="vikidia_fr_all_10_2010_alpha1.zim.idx" --daemon "/var/www/download.kiwix.org/zim/0.9/vikidia_fr_all_10_2010_alpha1.zim"
