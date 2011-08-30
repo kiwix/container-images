@@ -1,5 +1,6 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
+# Author: McDutchie
 
 ui.main.cssdirection=ltr
 ui.main.file=Fitxer
@@ -68,6 +69,7 @@ ui.main.forward=Enadvant
 ui.main.home=Pàgina d'inici
 ui.main.searchBar=Barra de cerca
 ui.main.search=Cerca
+# Fuzzy
 ui.main.findInText=Find in text
 ui.main.noSearchBar=La cerca necessita un fitxer ZIM indexat
 ui.main.bookmarks=Adreces d'interès

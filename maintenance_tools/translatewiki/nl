@@ -1,5 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
+# Author: McDutchie
 # Author: Siebrand
 
 ui.main.cssdirection=ltr
@@ -94,7 +95,7 @@ ui.messages.emptySearchStringError=U moet tekst invoeren om te zoeken.
 ui.messages.noResultsError=Deze zoekopdracht heeft geen resultaten.
 ui.messages.loadArticleError=Deze pagina kan niet geladen worden.
 ui.messages.noActiveZimFile=Er is geen actief ZIM-bestand. Open eerst een bestand.
-ui.messages.indexZimFileConfirm=Dit bestaand heeft geen zoekindex. Een index aanmaken kost enige tijd. Wilt u dit ZIM-bestand nu indexeren?
+ui.messages.indexZimFileConfirm=Dit bestand heeft geen zoekindex. Een index aanmaken kost enige tijd. Wilt u dit ZIM-bestand nu indexeren?
 ui.messages.abortIndexingConfirm=Er wordt op dit moment al geïndexeerd. Wilt u dit proces nu afbreken?
 ui.messages.restartConfirm=%1 moet opnieuw gestart worden. Wilt u dit nu doen?
 ui.messages.endOfIndexing=Het indexeren is afgerond.

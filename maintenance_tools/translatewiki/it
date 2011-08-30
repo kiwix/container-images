@@ -1,5 +1,6 @@
 # Messages for Italian (Italiano)
 # Exported from translatewiki.net
+# Author: McDutchie
 
 ui.main.cssdirection=ltr
 ui.main.file=File
@@ -68,6 +69,7 @@ ui.main.forward=Avanti
 ui.main.home=Pagina iniziale
 ui.main.searchBar=Barra di ricerca
 ui.main.search=Ricerca
+# Fuzzy
 ui.main.findInText=Find in text
 ui.main.noSearchBar=La ricerca richiede uno ZIM indicizzato
 ui.main.bookmarks=Segnalibri

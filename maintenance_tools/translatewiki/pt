@@ -1,5 +1,6 @@
 # Messages for Portuguese (Português)
 # Exported from translatewiki.net
+# Author: McDutchie
 
 ui.main.cssdirection=ltr
 ui.main.file=Ficheiro
@@ -68,6 +69,7 @@ ui.main.forward=Avançar
 ui.main.home=Início
 ui.main.searchBar=Barra de pesquisa
 ui.main.search=Pesquisar
+# Fuzzy
 ui.main.findInText=Find in text
 ui.main.noSearchBar=A pesquisa requere um ficheiro Zim indexado
 ui.main.bookmarks=Favoritos
