@@ -1,5 +1,6 @@
 # Messages for Italian (Italiano)
 # Exported from translatewiki.net
+# Author: Beta16
 # Author: McDutchie
 
 ui.main.cssdirection=ltr
@@ -69,8 +70,7 @@ ui.main.forward=Avanti
 ui.main.home=Pagina iniziale
 ui.main.searchBar=Barra di ricerca
 ui.main.search=Ricerca
-# Fuzzy
-ui.main.findInText=Find in text
+ui.main.findInText=Trova nel testo
 ui.main.noSearchBar=La ricerca richiede uno ZIM indicizzato
 ui.main.bookmarks=Segnalibri
 ui.main.results.title=Risultati
@@ -80,6 +80,7 @@ ui.main.loadbmk=Importa una collezione di segnalibri
 ui.main.newbmk=Crea una nuova collezione di segnalibri
 ui.main.mark=Aggiungi questa pagina ai segnalibri
 ui.main.unmark=Togli questa pagina dai segnalibri
+# Fuzzy
 ui.main.reload=Azzera collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
 ui.main.saveImageAs=Salva immagine con nome...

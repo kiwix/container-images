@@ -78,6 +78,7 @@ ui.main.loadbmk=导入书签组
 ui.main.newbmk=创建新的书签组
 ui.main.mark=标记本页
 ui.main.unmark=取消标记
+# Fuzzy
 ui.main.reload=重新设定书签组
 ui.main.defaultset=缺省书签组
 ui.main.saveImageAs=图片另存为...

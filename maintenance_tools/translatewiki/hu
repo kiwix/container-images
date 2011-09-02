@@ -49,6 +49,7 @@ ui.main.loadbmk=Könyvjelzőkészlet importálása
 ui.main.newbmk=Új könyvjelzőkészlet létrehozása
 ui.main.mark=Oldal megjelölése
 ui.main.unmark=Kijelöltek megjelölésének törlése
+# Fuzzy
 ui.main.reload=Könyvjelzőkészlet visszaállítása
 ui.main.defaultset=Alapértelmezett készlet
 ui.main.saveImageAs=Kép mentése másként...

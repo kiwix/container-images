@@ -49,6 +49,7 @@ ui.main.loadbmk=Importar collection de marcapaginas
 ui.main.newbmk=Crear nove collection de marcapaginas
 ui.main.mark=Marcar iste pagina
 ui.main.unmark=Dismarcar selection
+# Fuzzy
 ui.main.reload=Reinitialisar collection de marcapaginas
 ui.main.defaultset=Collection predefinite
 ui.main.saveImageAs=Salveguardar imagine sub nomine...

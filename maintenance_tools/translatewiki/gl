@@ -49,6 +49,7 @@ ui.main.loadbmk=Importar un conxunto de favoritos
 ui.main.newbmk=Crear un novo conxunto de favoritos
 ui.main.mark=Marcar esta páxina
 ui.main.unmark=Desmarcar a selección
+# Fuzzy
 ui.main.reload=Restablecer o conxunto de favoritos
 ui.main.defaultset=Conxunto predeterminado
 ui.main.saveImageAs=Gardar imaxe como...

@@ -79,6 +79,7 @@ ui.main.loadbmk=Importar marcadores
 ui.main.newbmk=Crear nuevo conjunto de marcadores
 ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar seleccionados
+# Fuzzy
 ui.main.reload=Restablecer conjunto de marcadores
 ui.main.defaultset=Conjunto predeterminado
 ui.main.saveImageAs=Guardar imagen como...

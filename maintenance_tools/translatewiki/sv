@@ -49,6 +49,7 @@ ui.main.loadbmk=Importera bokmärkessamling
 ui.main.newbmk=Skapa ny bokmärkessamling
 ui.main.mark=Markera denna sida
 ui.main.unmark=Avmarkera valda
+# Fuzzy
 ui.main.reload=Återställ bokmärkessamling
 ui.main.defaultset=Standardsamling
 ui.main.saveImageAs=Spara bild som...

@@ -80,6 +80,7 @@ ui.main.loadbmk=Importar Conjunto de Favoritos
 ui.main.newbmk=Criar novo Conjunto de Favoritos
 ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar selecionadas
+# Fuzzy
 ui.main.reload=Repor Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
 ui.main.saveImageAs=Guardar a imagem como ...

@@ -46,6 +46,7 @@ ui.main.loadbmk=Importer bokmerkesamling
 ui.main.newbmk=Opprett nytt bokmerkesamling
 ui.main.mark=Marker denne siden
 ui.main.unmark=Fjern markering for valgte
+# Fuzzy
 ui.main.reload=Nullstill bokmerkesamling
 ui.main.saveImageAs=Lagre bilde som...
 ui.main.close=Lukk

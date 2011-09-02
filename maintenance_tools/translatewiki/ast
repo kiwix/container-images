@@ -49,6 +49,7 @@ ui.main.loadbmk=Importar grupu de marcadores
 ui.main.newbmk=Crear nuevu grupu de marcadores
 ui.main.mark=Amestar la páxina a marcadores
 ui.main.unmark=Desmarcar esbillaos
+# Fuzzy
 ui.main.reload=Reaniciar el grupu de marcadores
 ui.main.defaultset=Grupu predetermináu
 ui.main.saveImageAs=Guardar imaxe como...

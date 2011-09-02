@@ -49,6 +49,7 @@ ui.main.loadbmk=Läsezeiche importiere
 ui.main.newbmk=Neui Datei für Läsezeiche aalege
 ui.main.mark=Syte markiere
 ui.main.unmark=Markierig uffhebe
+# Fuzzy
 ui.main.reload=Läsezeiche zrucksetze
 ui.main.defaultset=Schtandarddatei
 ui.main.saveImageAs=Bild spychere als...

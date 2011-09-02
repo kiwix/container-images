@@ -1,6 +1,7 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
 # Author: McDutchie
+# Author: Solde
 
 ui.main.cssdirection=ltr
 ui.main.file=Fitxer
@@ -69,8 +70,7 @@ ui.main.forward=Enadvant
 ui.main.home=Pàgina d'inici
 ui.main.searchBar=Barra de cerca
 ui.main.search=Cerca
-# Fuzzy
-ui.main.findInText=Find in text
+ui.main.findInText=Cercar en el text
 ui.main.noSearchBar=La cerca necessita un fitxer ZIM indexat
 ui.main.bookmarks=Adreces d'interès
 ui.main.results.title=Resultats de la cerca
@@ -80,6 +80,7 @@ ui.main.loadbmk=Importar grup de preferits
 ui.main.newbmk=Crea grup de preferits
 ui.main.mark=Afegeix als preferits
 ui.main.unmark=Treu dels preferits
+# Fuzzy
 ui.main.reload=Reiniciar grup de preferits
 ui.main.defaultset=Grup predeterminat
 ui.main.saveImageAs=Desa imatge com a...

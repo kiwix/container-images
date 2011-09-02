@@ -1,6 +1,7 @@
 # Messages for French (Français)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Od1n
 
 ui.main.cssdirection=ltr
 ui.main.file=Fichier
@@ -44,7 +45,7 @@ ui.main.skin=Habillage
 ui.main.skin.accesskey=H
 ui.main.statusbar=Barre d'état
 ui.main.statusbar.accesskey=B
-ui.main.resultsbar=Resultats
+ui.main.resultsbar=Résultats
 ui.main.resultsbar.accesskey=R
 ui.main.tabs=Onglets
 ui.main.tabs.accesskey=T
@@ -71,16 +72,17 @@ ui.main.searchBar=Barre de recherche
 ui.main.search=Rechercher
 ui.main.findInText=Rechercher
 ui.main.noSearchBar=La recherche nécessite un fichier ZIM indexé.
-ui.main.bookmarks=Marques pages
+ui.main.bookmarks=Marque-pages
 ui.main.results.title=Resultats de recherche
-ui.main.bmkLabel=Marques pages :
-ui.main.notesLabel=Notes du marque page :
-ui.main.loadbmk=Importer un jeu de marques-pages
-ui.main.newbmk=Créer un nouveau jeu de marques-pages
+ui.main.bmkLabel=Marque-pages :
+ui.main.notesLabel=Notes du marque-page :
+ui.main.loadbmk=Importer un jeu de marque-pages
+ui.main.newbmk=Créer un nouveau jeu de marque-pages
 ui.main.mark=Marquer cette page
-ui.main.unmark=Supprimer le marque page séléctionné
-ui.main.reload=Supprimer tous les marques pages de ce jeu
-ui.main.defaultset=Mes marques pages
+ui.main.unmark=Supprimer le marque-page séléctionné
+# Fuzzy
+ui.main.reload=Supprimer tous les marque-pages de ce jeu
+ui.main.defaultset=Mes marque-pages
 ui.main.saveImageAs=Enregistrer l'image sous...
 ui.main.close=Fermer
 ui.preferences.preferences=Options
@@ -100,7 +102,7 @@ ui.messages.restartConfirm=%1 doit être redémarré. Voulez-vous le faire maint
 ui.messages.endOfIndexing=Le processus d'indexation est terminé.
 ui.messages.removeProfileConfirm=Voulez-vous supprimer votre profile ?
 ui.messages.dontDisplayAnymore=Ne plus afficher cette fenêtre de dialogue.
-ui.messages.changeSkinNeedRestart=Pour changer d'habillage, l'application doit être relancée ?
+ui.messages.changeSkinNeedRestart=Pour changer d'habillage, l'application doit être relancée. Relancer l'application ?
 ui.messages.confirm=Confirmation
 ui.messages.no=non
 ui.messages.yes=oui
@@ -109,5 +111,5 @@ ui.messages.cancel=Annuler
 ui.messages.error=Erreur
 ui.messages.information=Information
 ui.messages.indexing=Indexation
-ui.messages.selectBookmarkSet=Importer un jeu de marques pages
+ui.messages.selectBookmarkSet=Importer un jeu de marque-pages
 ui.messages.nameBookmarkSet=Créer un nom de fichier pour le jeu

@@ -49,6 +49,7 @@ ui.main.loadbmk=Увези збир обележувачи
 ui.main.newbmk=Создај збир обележувачи
 ui.main.mark=Означи ја страницава
 ui.main.unmark=Тргни обележано
+# Fuzzy
 ui.main.reload=Одново
 ui.main.defaultset=Основен збир
 ui.main.saveImageAs=Зачувај ја сликата како...

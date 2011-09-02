@@ -78,6 +78,7 @@ ui.main.loadbmk=Importuj zestaw zakładek
 ui.main.newbmk=Stwórz nowy zestaw zakładek
 ui.main.mark=Zaznacz bieżącą stronę
 ui.main.unmark=Odznacz wybrane
+# Fuzzy
 ui.main.reload=Usuń wszystkie zakładki z bieżącego zestawu
 ui.main.defaultset=Zestaw domyślny
 ui.main.saveImageAs=Zapisz obrazek jako...

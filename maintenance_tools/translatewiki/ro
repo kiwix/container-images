@@ -49,6 +49,7 @@ ui.main.loadbmk=Importă un set de semne de carte
 ui.main.newbmk=Creează un set nou de semne de carte
 ui.main.mark=Marchează această pagină
 ui.main.unmark=Șterge marcajul selectat
+# Fuzzy
 ui.main.reload=Resetează setul de semne de carte
 ui.main.defaultset=Set implicit
 ui.main.saveImageAs=Salvează imaginea ca...

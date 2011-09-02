@@ -1,5 +1,6 @@
 # Messages for Finnish (Suomi)
 # Exported from translatewiki.net
+# Author: Nedergard
 # Author: Nike
 
 ui.main.file=Tiedosto
@@ -49,6 +50,7 @@ ui.main.loadbmk=Tuo kirjanmerkkikokoelma
 ui.main.newbmk=Luo uusi kirjanmerkkikokoelma
 ui.main.mark=Merkitse tämä sivu
 ui.main.unmark=Poista merkintä valituista
+# Fuzzy
 ui.main.reload=Alusta kirjanmerkkikokoelma
 ui.main.defaultset=Oletuskokoelma
 ui.main.saveImageAs=Tallenna kuva nimellä...
@@ -60,21 +62,24 @@ ui.preferences.profileDirectory=Profiili-hakemisto
 ui.preferences.browse=Selaa
 ui.messages.loadZimFileError=Tiedoston %1 lataaminen epäonnistui.
 ui.messages.alreadyIndexingError=Indeksointi on jo käynnissä.
+ui.messages.emptySearchStringError=Sinun täytyy kirjoittaa hakuteksti.
 ui.messages.noResultsError=Ei tuloksia kyselylle.
 ui.messages.loadArticleError=Artikkelin lataaminen epäonnistui.
 ui.messages.noActiveZimFile=Valitse ensin ZIM-tiedosto.
 ui.messages.indexZimFileConfirm=Tämä tiedosto ei sisällä hakuindeksiä. Hakuindeksin luominen voi kestää useita minuutteja. Haluatko luoda hakuindeksin nyt?
-ui.messages.abortIndexingConfirm=Indeksointi on meneillään. Haluatko varmasti lopettaa sen?
+ui.messages.abortIndexingConfirm=Indeksointi on meneillään. Haluatko varmasti lopettaa indeksoinnin ja poistua ohjelmasta?
 ui.messages.restartConfirm=%1 täytyy käynnistää uudelleen. Haluatko, että se tehdään nyt?
 ui.messages.endOfIndexing=Indeksointi on päättynyt.
 ui.messages.removeProfileConfirm=Haluatko poistaa profiilisi?
 ui.messages.dontDisplayAnymore=Älä näytä tätä kysymystä uudestaan.
 ui.messages.changeSkinNeedRestart=Ulkoasun vaihtaminen vaatii sovelluksen uudelleen käynnistämisen. Käynnistetäänkö sovellus uudelleen nyt?
+ui.messages.confirm=Vahvista
 ui.messages.no=ei
 ui.messages.yes=kyllä
 ui.messages.ok=OK
 ui.messages.cancel=Peruuta
 ui.messages.error=Virhe
 ui.messages.information=Tietoja
+ui.messages.indexing=Indeksoidaan...
 ui.messages.selectBookmarkSet=Valitse kirjanmerkkikokoelman tiedosto
 ui.messages.nameBookmarkSet=Valitse kirjanmerkkikokoelman nimi

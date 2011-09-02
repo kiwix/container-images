@@ -1,0 +1,87 @@
+# Messages for Greek (Ελληνικά)
+# Exported from translatewiki.net
+# Author: Crazymadlover
+# Author: Kiolalis
+# Author: Omnipaedista
+# Author: ZaDiak
+
+ui.main.file=Αρχείο
+ui.main.openFile=Άνοιγμα αρχείου...
+ui.main.lastOpen=Ανοίχτηκε πρόσφατα...
+ui.main.saveFile=Αποθήκευση σελίδας ως...
+ui.main.print=Εκτύπωση
+ui.main.printPdf=Εκτύπωση ως PDF
+ui.main.quit=Έξοδος
+ui.main.edit=Επεξεργασία
+ui.main.find=Αναζήτηση στη σελίδα...
+ui.main.selectall=Επιλογή όλων
+ui.main.copy=Αντιγραφή
+ui.main.transliteration=Μεταγραφή
+ui.main.preferences=Προτιμήσεις
+ui.main.display=Εμφάνιση
+ui.main.zoom=Εστίαση
+ui.main.zoomin=Μεγέθυνση
+ui.main.zoomout=Μειώστε
+ui.main.zoomorig=Αρχικό μέγεθος
+ui.main.language=Γλώσσα
+ui.main.skin=Οπτική οργάνωση (skin)
+ui.main.statusbar=Γραμμή κατάστασης
+ui.main.resultsbar=Γραμμή αποτελεσμάτων
+ui.main.tabs=Καρτέλες
+ui.main.fullscreen=Πλήρης οθόνη
+ui.main.tools=Εργαλεία
+ui.main.randomArticle=Τυχαίο άρθρο
+ui.main.checkIntegrity=Έλεγχος ακεραιότητας
+ui.main.purgeHistory=Εκκαθάριση ιστορικού
+ui.main.help=Βοήθεια
+ui.main.reportabug=Αναφορά σφάλματος
+ui.main.requestafeature=Ζητήστε ένα χαρακτηριστικό
+ui.main.about=Σχετικά με το &brand.brandShortName;
+ui.main.back=Πίσω
+ui.main.forward=Μπροστά
+ui.main.home=Αρχή
+ui.main.searchBar=Γραμμή αναζήτησης
+ui.main.search=Αναζήτηση
+ui.main.findInText=Εύρεση στο κείμενο
+ui.main.noSearchBar=Η αναζήτηση απαιτεί ένα καταχωρημένο αρχείο ZIM
+ui.main.bookmarks=Σελιδοδείκτες
+ui.main.results.title=Αποτελέσματα αναζήτησης
+ui.main.bmkLabel=Σελιδοδείκτες:
+ui.main.notesLabel=Σημειώσεις σελιδοδείκτη:
+ui.main.loadbmk=Εισαγωγή Συνόλου Σελιδοδεικτών
+ui.main.newbmk=Δημιουργία νέου Συνόλου Σελιδοδεικτών
+ui.main.mark=Σημειώστε αυτή τη σελίδα
+ui.main.unmark=Κατάργηση σήμανσης επιλεγμένο
+# Fuzzy
+ui.main.reload=Επαναφορά Συνόλου Σελιδοδεικτών
+ui.main.defaultset=Προεπιλεγμένο Σύνολο
+ui.main.saveImageAs=Αποθήκευση εικόνας ως...
+ui.main.close=Κλείσιμο
+ui.preferences.preferences=Προτιμήσεις
+ui.preferences.save=Αποθήκευση
+ui.preferences.cancel=Ακύρωση
+ui.preferences.profileDirectory=Κατάλογος Προφίλ
+ui.preferences.browse=Πλοήγηση
+ui.messages.loadZimFileError=Δεν είναι δυνατή η φόρτωση του '% 1' Είστε βέβαιοι ότι αυτό είναι ένα αρχείο ZIM;
+ui.messages.alreadyIndexingError=Η διαδικασία δημιουργίας ευρετηρίου εκτελείται ήδη.
+ui.messages.emptySearchStringError=Πρέπει να εισαγάγετε ένα κείμενο για την αναζήτηση.
+ui.messages.noResultsError=Κανένα αποτέλεσμα για αυτήν την αναζήτηση.
+ui.messages.loadArticleError=Δεν είναι δυνατή η φόρτωση αυτού του άρθρου.
+ui.messages.noActiveZimFile=Κανένα ενεργό αρχείο ΖΙΜ, παρακαλώ φορτώστε ένα πρώτα.
+ui.messages.indexZimFileConfirm=Αυτό το αρχείο δεν περιλαμβάνει ευρετήριο αναζήτησης. Η δημιουργία ενός μπορεί να διαρκέσει αρκετά λεπτά. Θέλετε να δημιουργήσετε ευρετήριο του αρχείου ZIM τώρα;
+ui.messages.abortIndexingConfirm=Η διαδικασία δημιουργίας ευρετηρίου εκτελείται αυτήν τη στιγμή. Είστε σίγουροι ότι θέλετε να κλείσετε και να εγκαταλείψετε τώρα;
+ui.messages.restartConfirm=%1 πρέπει να επανεκκινηθεί. Θέλετε να το κάνετε τώρα;
+ui.messages.endOfIndexing=Έχει ολοκληρωθεί η διαδικασία δημιουργίας του ευρετηρίου.
+ui.messages.removeProfileConfirm=Θέλετε να καταργήσετε το προφίλ σας;
+ui.messages.dontDisplayAnymore=Να μην εμφανίζεται αυτό το πλαίσιο διαλόγου πλέον.
+ui.messages.changeSkinNeedRestart=Για να αλλάξετε εμφάνιση, η εφαρμογή πρέπει να επανεκκινηθεί. Επανεκκίνηση εφαρμογής;
+ui.messages.confirm=Επιβεβαίωση
+ui.messages.no=όχι
+ui.messages.yes=ναι
+ui.messages.ok=Εντάξει
+ui.messages.cancel=Ακύρωση
+ui.messages.error=Σφάλμα
+ui.messages.information=Πληροφορία
+ui.messages.indexing=Δημιουργία ευρετηρίου
+ui.messages.selectBookmarkSet=Επιλογή αρχείου Συνόλου Σελιδοδεικτών
+ui.messages.nameBookmarkSet=Εισαγωγή ονόματος αρχείου του Συνόλου Σελιδοδεικτών
