@@ -49,8 +49,7 @@ ui.main.loadbmk=Importer bogmærkesamling
 ui.main.newbmk=Opret ny bogmærkesamling
 ui.main.mark=Marker denne side
 ui.main.unmark=Fjern markering af valgte
-# Fuzzy
-ui.main.reload=Nulstil bogmærkesamling
+ui.main.reload=Genindlæs bogmærkesamling
 ui.main.defaultset=Standardsamling
 ui.main.saveImageAs=Gem billede som...
 ui.main.close=Luk

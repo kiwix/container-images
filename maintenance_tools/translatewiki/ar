@@ -1,5 +1,6 @@
 # Messages for Arabic (العربية)
 # Exported from translatewiki.net
+# Author: Meno25
 # Author: OsamaK
 
 ui.main.cssdirection=rtl
@@ -79,8 +80,7 @@ ui.main.loadbmk=إستيراد مجموعة مفضلة
 ui.main.newbmk=إنشاء مجموعة مفضلة جديدة
 ui.main.mark=علم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
-# Fuzzy
-ui.main.reload=إعادة تعيين المفضلة
+ui.main.reload=أعد تحميل مجموعة المفضلة
 ui.main.defaultset=الخيارات المبدئية
 ui.main.saveImageAs=احفظ الصورة ك...
 ui.main.close=أغلق

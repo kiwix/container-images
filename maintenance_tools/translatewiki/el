@@ -52,8 +52,7 @@ ui.main.loadbmk=Εισαγωγή Συνόλου Σελιδοδεικτών
 ui.main.newbmk=Δημιουργία νέου Συνόλου Σελιδοδεικτών
 ui.main.mark=Σημειώστε αυτή τη σελίδα
 ui.main.unmark=Κατάργηση σήμανσης επιλεγμένο
-# Fuzzy
-ui.main.reload=Επαναφορά Συνόλου Σελιδοδεικτών
+ui.main.reload=Επαναφόρτωση Συνόλου Σελιδοδεικτών
 ui.main.defaultset=Προεπιλεγμένο Σύνολο
 ui.main.saveImageAs=Αποθήκευση εικόνας ως...
 ui.main.close=Κλείσιμο

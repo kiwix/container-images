@@ -79,8 +79,7 @@ ui.main.loadbmk=ورود تنظیمات نشانک
 ui.main.newbmk=ایجاد تنظیمات جدید نشانک
 ui.main.mark=این صفحه را علامت بزن
 ui.main.unmark=علامت انتخاب شده را بردار
-# Fuzzy
-ui.main.reload=ریست کردن تنظیمات نشانک
+ui.main.reload=بارگذاری مجدد مجموعه نشانک
 ui.main.defaultset=تنظیمات نشانک
 ui.main.saveImageAs=...ذخیره عکس به صورت
 ui.main.close=بستن

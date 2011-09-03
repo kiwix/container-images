@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Nedergard
 # Author: Nike
+# Author: Olli
 
 ui.main.file=Tiedosto
 ui.main.openFile=Avaa tiedosto...
@@ -50,8 +51,7 @@ ui.main.loadbmk=Tuo kirjanmerkkikokoelma
 ui.main.newbmk=Luo uusi kirjanmerkkikokoelma
 ui.main.mark=Merkitse tämä sivu
 ui.main.unmark=Poista merkintä valituista
-# Fuzzy
-ui.main.reload=Alusta kirjanmerkkikokoelma
+ui.main.reload=Lataa kirjanmerkkikokoelma uudelleen
 ui.main.defaultset=Oletuskokoelma
 ui.main.saveImageAs=Tallenna kuva nimellä...
 ui.main.close=Sulje

@@ -1,5 +1,6 @@
 # Messages for Latvian (Latviešu)
 # Exported from translatewiki.net
+# Author: GreenZeb
 # Author: Papuass
 
 ui.main.file=Fails
@@ -15,11 +16,13 @@ ui.main.selectall=Izvēlēties visu
 ui.main.copy=Kopēt
 ui.main.transliteration=Transliterācija
 ui.main.preferences=Izvēles
+ui.main.display=Displejs
 ui.main.zoom=Tālummaiņa
 ui.main.zoomin=Palielināt
 ui.main.zoomout=Samazināt
 ui.main.zoomorig=Sākotnējais izmērs
 ui.main.language=Valoda
+ui.main.skin=Apdare
 ui.main.statusbar=Statusa josla
 ui.main.resultsbar=Rezultātu josla
 ui.main.tabs=Cilnes

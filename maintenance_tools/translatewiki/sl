@@ -49,8 +49,7 @@ ui.main.loadbmk=Uvozi množico zaznamkov
 ui.main.newbmk=Ustvari novo množico zaznamkov
 ui.main.mark=Označi to stran
 ui.main.unmark=Odznači izbrane
-# Fuzzy
-ui.main.reload=Ponastavi množico zaznamkov
+ui.main.reload=Ponovno naloži množico zaznamkov
 ui.main.defaultset=Privzeta množica
 ui.main.saveImageAs=Shrani sliko kot ...
 ui.main.close=Zapri

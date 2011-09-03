@@ -1,5 +1,6 @@
 # Messages for Swedish (Svenska)
 # Exported from translatewiki.net
+# Author: Fluff
 # Author: WikiPhoenix
 
 ui.main.file=Arkiv
@@ -49,8 +50,7 @@ ui.main.loadbmk=Importera bokmärkessamling
 ui.main.newbmk=Skapa ny bokmärkessamling
 ui.main.mark=Markera denna sida
 ui.main.unmark=Avmarkera valda
-# Fuzzy
-ui.main.reload=Återställ bokmärkessamling
+ui.main.reload=Ladda om bokmärkessamling
 ui.main.defaultset=Standardsamling
 ui.main.saveImageAs=Spara bild som...
 ui.main.close=Stäng

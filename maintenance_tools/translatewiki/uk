@@ -49,8 +49,7 @@ ui.main.loadbmk=Імпортувати набір закладок
 ui.main.newbmk=Створити новий набір закладок
 ui.main.mark=Позначити цю сторінку
 ui.main.unmark=Зняти позначку з виділених
-# Fuzzy
-ui.main.reload=Скидання набору закладок
+ui.main.reload=Перезавантажити набір закладок
 ui.main.defaultset=Встановити за замовчуванням
 ui.main.saveImageAs=Зберегти зображення як ...
 ui.main.close=Закрити

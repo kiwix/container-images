@@ -24,9 +24,12 @@ ui.main.language=Schprooch
 ui.main.skin=Et Ussinn
 ui.main.statusbar=De Zohschtands-Reih
 ui.main.resultsbar=De Äjeebnis-Reih
+ui.main.tabs=Zubbel
 ui.main.fullscreen=Op  der kumplääte Beldscherm
 ui.main.tools=Werkzüch
 ui.main.randomArticle=Ene zohfälleje Atikel
+# Fuzzy
+ui.main.checkIntegrity=\nIntegrity prööfe
 # Fuzzy
 ui.main.purgeHistory=Älldere Versione Fassunge\nfottschmiiße
 ui.main.help=Hölp
@@ -48,8 +51,7 @@ ui.main.loadbmk=Ene Pöngel Lesezeiche us ene Dattei empoteere
 ui.main.newbmk=Ene neue Pöngel Lesezeiche aanfange
 ui.main.mark=Heh di Sigg makeere
 ui.main.unmark=Makeerung fottnämme
-# Fuzzy
-ui.main.reload=Ene Pöngel Lesezeiche läddesch maache 
+ui.main.reload=Donn dä Pöngel Lesezeiche norr_ens neu vun dä Dattei laade
 ui.main.defaultset=Der schtandatmääßeje Pöngel
 ui.main.saveImageAs=Dat Beld faßhallde onger...
 ui.main.close=Zohmaache

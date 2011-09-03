@@ -49,8 +49,7 @@ ui.main.loadbmk=Laai stel boekmerke
 ui.main.newbmk=Skep nuwe stel bookmerke
 ui.main.mark=Merk hierdie bladsy
 ui.main.unmark=Ontmerk gekose
-# Fuzzy
-ui.main.reload=Herstel die stel boekmerke
+ui.main.reload=Herlaai die stel boekmerke
 ui.main.defaultset=Standaardgroep
 ui.main.saveImageAs=Stoor beeld as...
 ui.main.close=Sluit

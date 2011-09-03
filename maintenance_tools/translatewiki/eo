@@ -1,6 +1,7 @@
 # Messages for Esperanto (Esperanto)
 # Exported from translatewiki.net
 # Author: Airon90
+# Author: Yekrats
 
 ui.main.file=Dosiero
 ui.main.openFile=Malfermi dosieron...
@@ -49,8 +50,7 @@ ui.main.loadbmk=Importi legosignaron
 ui.main.newbmk=Krei novan legosignaron
 ui.main.mark=Marki ĉi tiun paĝon
 ui.main.unmark=Malmarki elektitajn
-# Fuzzy
-ui.main.reload=Malplenigi legosignaron
+ui.main.reload=Reŝarĝi legosignaron
 ui.main.defaultset=Apriora aro
 ui.main.saveImageAs=Konservi bildon kiel...
 ui.main.close=Fermi
@@ -65,6 +65,13 @@ ui.messages.emptySearchStringError=Vi devu tajpi serĉendan tekston
 ui.messages.noResultsError=Neniu rezulto pri ĉi tiu peto
 ui.messages.loadArticleError=Neeblas ŝarĝi ĉi tiun artikolon
 ui.messages.noActiveZimFile=Neniu aktiva ZIM-dosiero, bonvolu unue ŝarĝi unu
+ui.messages.indexZimFileConfirm=Ĉi tiu dosiero ne inkluzivas serĉindekson. Kreado de ĝi povas daŭri multajn minutojn. Ĉu vi volas indeksi la ZIM-dosieron nun?
+ui.messages.abortIndexingConfirm=Indeksado nune funkcias. Ĉu vi certas ke vi volas halti kaj ĉesigi ĝin nun?
+ui.messages.restartConfirm=%1 bezonas esti restartita. Ĉu vi volas restarti nun?
+ui.messages.endOfIndexing=La indeksado estas finita.
+ui.messages.removeProfileConfirm=Ĉu vi volas forigi vian profilon?
+ui.messages.dontDisplayAnymore=Ne plu montri ĉi tiun dialogujon.
+ui.messages.changeSkinNeedRestart=Por ŝanĝi la haŭton, necesas ke la aplikaĵo restartu. Ĉu restartu nun?
 ui.messages.confirm=Konfirmi
 ui.messages.no=ne
 ui.messages.yes=jes

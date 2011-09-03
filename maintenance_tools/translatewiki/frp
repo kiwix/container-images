@@ -49,8 +49,7 @@ ui.main.loadbmk=Importar un juè de mârca-pâges
 ui.main.newbmk=Fâre un juè de mârca-pâges novél
 ui.main.mark=Marcar ceta pâge
 ui.main.unmark=Dèmarcar lo chouèx
-# Fuzzy
-ui.main.reload=Tornar inicialisar lo juè de mârca-pâges
+ui.main.reload=Rechargiér lo juè de mârca-pâges
 ui.main.defaultset=Juè per dèfôt
 ui.main.saveImageAs=Encartar l’émâge coment...
 ui.main.close=Cllôre

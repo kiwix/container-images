@@ -1,5 +1,6 @@
 # Messages for Belarusian (Беларуская)
 # Exported from translatewiki.net
+# Author: Renessaince
 # Author: Хомелка
 
 ui.main.file=Файл
@@ -60,12 +61,12 @@ ui.preferences.cancel=Адмена
 ui.preferences.profileDirectory=Каталог профіля
 ui.preferences.browse=Праглядаць
 ui.messages.loadZimFileError=Немагчыма загрузіць '%1' Вы ўпэўненыя, што гэта файл ZIM?
-ui.messages.alreadyIndexingError=Працэс індэксавання ужо запушчаны.
+ui.messages.alreadyIndexingError=Працэс індэксавання ўжо запушчаны.
 ui.messages.emptySearchStringError=Вы павінны ўвесці тэкст для пошуку.
 ui.messages.noResultsError=Няма вынікаў па гэтым запыце.
 ui.messages.loadArticleError=Не ўдаецца загрузіць гэты артыкул.
-ui.messages.noActiveZimFile=Няма актыўнага файла ZIM, калі ласка, загрузіць яго спачатку.
-ui.messages.indexZimFileConfirm=Гэты файл не змяшчае пошукавы індэкс. Стварэнне аднаго можа заняць некалькі хвілін. Вы хочаце, індэксаваць файл ЗІМ зараз?
+ui.messages.noActiveZimFile=Няма актыўнага файла ZIM, калі ласка, загрузіце яго спачатку.
+ui.messages.indexZimFileConfirm=Гэты файл не змяшчае пошукавы індэкс. Стварэнне аднаго можа заняць некалькі хвілін. Вы хочаце індэксаваць файл ЗІМ зараз?
 ui.messages.abortIndexingConfirm=У дадзены момант запушчаны працэс індэксавання. Вы ўпэўнены, што хочаце выйсці і спыніць яго?
 ui.messages.restartConfirm=%1 павінна быць перазапушчана. Вы хочаце зрабіць гэта зараз?
 ui.messages.endOfIndexing=Працэс індэксавання скончаны.

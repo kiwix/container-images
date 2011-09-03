@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: Od1n
+# Author: Wyz
 
 ui.main.cssdirection=ltr
 ui.main.file=Fichier
@@ -79,9 +80,8 @@ ui.main.notesLabel=Notes du marque-page :
 ui.main.loadbmk=Importer un jeu de marque-pages
 ui.main.newbmk=Créer un nouveau jeu de marque-pages
 ui.main.mark=Marquer cette page
-ui.main.unmark=Supprimer le marque-page séléctionné
-# Fuzzy
-ui.main.reload=Supprimer tous les marque-pages de ce jeu
+ui.main.unmark=Supprimer le marque-page sélectionné
+ui.main.reload=Recharger le jeu de marque-pages
 ui.main.defaultset=Mes marque-pages
 ui.main.saveImageAs=Enregistrer l'image sous...
 ui.main.close=Fermer
@@ -100,7 +100,7 @@ ui.messages.indexZimFileConfirm=Voulez-vous indexer votre fichier ZIM maintenant
 ui.messages.abortIndexingConfirm=Un processus d'indexation est en cours ; fermer Kiwix l'interrompra. Êtes-vous certain de vouloir continuer ?
 ui.messages.restartConfirm=%1 doit être redémarré. Voulez-vous le faire maintenant ?
 ui.messages.endOfIndexing=Le processus d'indexation est terminé.
-ui.messages.removeProfileConfirm=Voulez-vous supprimer votre profile ?
+ui.messages.removeProfileConfirm=Voulez-vous supprimer votre profil ?
 ui.messages.dontDisplayAnymore=Ne plus afficher cette fenêtre de dialogue.
 ui.messages.changeSkinNeedRestart=Pour changer d'habillage, l'application doit être relancée. Relancer l'application ?
 ui.messages.confirm=Confirmation
