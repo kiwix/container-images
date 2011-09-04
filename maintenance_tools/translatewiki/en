@@ -86,7 +86,6 @@ ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.messages.loadZimFileError=Unable to load '%1' Are you sure this is a ZIM file?
 ui.messages.alreadyIndexingError=An indexing process is already running.
-ui.messages.emptySearchStringError=You have to enter a text to search.
 ui.messages.noResultsError=No results for this query.
 ui.messages.loadArticleError=Unable to load this article.
 ui.messages.noActiveZimFile=No active ZIM file, please load one first.
