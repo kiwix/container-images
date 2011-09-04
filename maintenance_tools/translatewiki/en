@@ -104,6 +104,6 @@ ui.messages.ok=OK
 ui.messages.cancel=Cancel
 ui.messages.error=Error
 ui.messages.information=Information
-ui.messages.indexing=Indexing
+ui.messages.indexing=Indexing...
 ui.messages.selectBookmarkSet=Select Bookmark Set file
 ui.messages.nameBookmarkSet=Enter Bookmark Set filename
