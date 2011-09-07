@@ -10,7 +10,7 @@ use Data::Dumper;
 
 # get the params
 my @languages;
-my $allLanguages;
+my $allLanguages="";
 my $path;
 
 # Get console line arguments
