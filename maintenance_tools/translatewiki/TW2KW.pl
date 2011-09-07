@@ -6,6 +6,7 @@ use utf8;
 use strict;
 use warnings;
 use Getopt::Long;
+use Data::Dumper;
 
 # get the params
 my @languages;
@@ -15,11 +16,11 @@ my $path;
 # Get console line arguments
 GetOptions('path=s' => \$path,
 	   'language=s' => \@languages, 
-	   'allLanguages' => \$allLanguages
+	   'allLanguages=s' => \$allLanguages
 	   );
 
 if (!$path) {
-    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages]\n";
+    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]]\n";
     exit;
 } elsif (! -d $path || ! -d $path."/kiwix/") {
     print STDERR "'$path' is not a directory, does not exist or is not the Kiwix source directory 'moulinkiwix'.\n";
@@ -27,8 +28,12 @@ if (!$path) {
 }
 
 # Get all languages if necessary
-if ($allLanguages) {
-    opendir(DIR, "./") || die("Cannot open directory $path"); 
+if ($allLanguages eq "tw" || $allLanguages eq "kw") {
+    if ($allLanguages eq "kw") {
+	opendir(DIR, "./") || die("Cannot open directory."); 
+    } else {
+	opendir(DIR, $path."/kiwix/chrome/locale") || die("Cannot open directory."); 
+    }
     foreach my $language (readdir(DIR)) {
 	if ($language =~ '^[a-z]{2}$' && !($language eq "en")) {
 	    push(@languages, $language);
