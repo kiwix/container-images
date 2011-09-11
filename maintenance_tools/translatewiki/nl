@@ -91,7 +91,6 @@ ui.preferences.profileDirectory=Profielmap
 ui.preferences.browse=Bladeren
 ui.messages.loadZimFileError="%1" kan niet geladen worden. Weet u zeker dat dit een ZIM-bestand is?
 ui.messages.alreadyIndexingError=Er wordt op dit moment al geïndexeerd.
-ui.messages.emptySearchStringError=U moet tekst invoeren om te zoeken.
 ui.messages.noResultsError=Deze zoekopdracht heeft geen resultaten.
 ui.messages.loadArticleError=Deze pagina kan niet geladen worden.
 ui.messages.noActiveZimFile=Er is geen actief ZIM-bestand. Open eerst een bestand.

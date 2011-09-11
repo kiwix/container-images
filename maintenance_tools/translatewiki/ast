@@ -49,8 +49,7 @@ ui.main.loadbmk=Importar grupu de marcadores
 ui.main.newbmk=Crear nuevu grupu de marcadores
 ui.main.mark=Amestar la páxina a marcadores
 ui.main.unmark=Desmarcar esbillaos
-# Fuzzy
-ui.main.reload=Reaniciar el grupu de marcadores
+ui.main.reload=Recargar el grupu de marcadores
 ui.main.defaultset=Grupu predetermináu
 ui.main.saveImageAs=Guardar imaxe como...
 ui.main.close=Zarrar
@@ -61,7 +60,6 @@ ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Navegar
 ui.messages.loadZimFileError=Nun se pudo cargar «%1». ¿Seguro que ye un ficheru ZIM?
 ui.messages.alreadyIndexingError=Ya ta executándose un procesu d'indexáu.
-ui.messages.emptySearchStringError=Tienes d'escribir un testu pa guetar.
 ui.messages.noResultsError=Nun hai resultaos pa esta consulta.
 ui.messages.loadArticleError=Nun se pudo cargar esti artículu.
 ui.messages.noActiveZimFile=Nun hai dengún ficheru ZIM activu, carga unu primero.

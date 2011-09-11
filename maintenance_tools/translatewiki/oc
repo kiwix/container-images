@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Repertòri del profil
 ui.preferences.browse=Legir
 ui.messages.loadZimFileError=Se pòt pas cargar '%1' Segur qu'es un fichièr ZIM?
 ui.messages.alreadyIndexingError=Una indexacion es ja a se far.
-ui.messages.emptySearchStringError=Vos cal dintrar quicòm de cercar.
 ui.messages.noResultsError=Pas cap de resulta.
 ui.messages.loadArticleError=L'article se podèt pas cargar.
 ui.messages.noActiveZimFile=Pas de fichièr ZIM actiu, cargatz n'un.

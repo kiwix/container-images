@@ -62,7 +62,6 @@ ui.preferences.profileDirectory=Profiili-hakemisto
 ui.preferences.browse=Selaa
 ui.messages.loadZimFileError=Tiedoston %1 lataaminen epäonnistui.
 ui.messages.alreadyIndexingError=Indeksointi on jo käynnissä.
-ui.messages.emptySearchStringError=Sinun täytyy kirjoittaa hakuteksti.
 ui.messages.noResultsError=Ei tuloksia kyselylle.
 ui.messages.loadArticleError=Artikkelin lataaminen epäonnistui.
 ui.messages.noActiveZimFile=Valitse ensin ZIM-tiedosto.

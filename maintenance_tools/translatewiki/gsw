@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Blättre
 ui.messages.loadZimFileError='%1' cha nit glade wärde. Sin Sie sicher, ass es e ZIM-Datei isch?
 ui.messages.alreadyIndexingError=S'lauft scho ne Indizierig.
-ui.messages.emptySearchStringError=Go sueche muen Sie ne Tekscht igäh.
 ui.messages.noResultsError=S'isch nüt gfunde worde.
 ui.messages.loadArticleError=Selli Syte cha nit glade wärde.
 ui.messages.noActiveZimFile=S'isch chei aktivi ZIM-Datei glade, sie muen z'erscht eini lade.

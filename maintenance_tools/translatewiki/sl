@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Mapa profila
 ui.preferences.browse=Prebrskaj
 ui.messages.loadZimFileError=Ne morem naložiti »%1«. Ste prepričani, da gre za datoteko ZIM?
 ui.messages.alreadyIndexingError=Postopek indeksiranja se že izvaja.
-ui.messages.emptySearchStringError=Vnesti morate besedilo za iskanje.
 ui.messages.noResultsError=Ni rezultatov za to poizvedbo.
 ui.messages.loadArticleError=Članka ne morem naložiti.
 ui.messages.noActiveZimFile=Ni dejavne datoteke ZIM; prosimo, najprej eno naložite.

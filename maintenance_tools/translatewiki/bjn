@@ -1,4 +1,4 @@
-# Messages for Bahasa Banjar (Bahasa Banjar)
+# Messages for Banjar (Bahasa Banjar)
 # Exported from translatewiki.net
 # Author: J Subhi
 
@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Propil dirakturi
 ui.preferences.browse=Tangadahi
 ui.messages.loadZimFileError=Kada-kawa mamuat '%1' Pian yakin kah ngini sabuah barakas ZIM?
 ui.messages.alreadyIndexingError=Sabuah pa-indiks-kan lagi bajalan.
-ui.messages.emptySearchStringError=Pian musti mambuati sabuah naskah hagan manggagai.
 ui.messages.noResultsError=Kadada kulihan pamintaan ngini.
 ui.messages.loadArticleError=Kada-kawa mamuat artikal ngini.
 ui.messages.noActiveZimFile=Kadada barakas ZIM aktip, muhun muat sabuah barakas ZIM panambaian hulu.

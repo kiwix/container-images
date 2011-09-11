@@ -62,7 +62,6 @@ ui.preferences.profileDirectory=Profilis katalogas
 ui.preferences.browse=Naršyti
 ui.messages.loadZimFileError=Nepavyko įkelti "% 1" Ar čia tikrai ZIM failas?
 ui.messages.alreadyIndexingError=Indeksavimo procesas jau veikia.
-ui.messages.emptySearchStringError=Jūs turite įvesti tekstą, kad galėtumėt ieškoti.
 ui.messages.noResultsError=Šios užklausos rezultatų.
 ui.messages.loadArticleError=Nepavyko įkelti šio straipsnio.
 ui.messages.noActiveZimFile=Nėra aktyvaus ZIM failo, prašome ji paleisti.

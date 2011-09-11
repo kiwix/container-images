@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Ordinatur dal profil
 ui.preferences.browse=Navigar
 ui.messages.loadZimFileError=Betg pussaivel da chargiar '%1'. Es ti segirs che quai è ina datoteca da ZIM?
 ui.messages.alreadyIndexingError=In process dad indexar è gia activ
-ui.messages.emptySearchStringError=Ti stos endatar in text per tschertgar.
 ui.messages.noResultsError=Nagins resultats per questa retschertga.
 ui.messages.loadArticleError=Betg pussaivel da chargiar quest artitgel.
 ui.messages.noActiveZimFile=Nagina datoteca da ZIM activa, ti stos l'emprim chargiar ina.

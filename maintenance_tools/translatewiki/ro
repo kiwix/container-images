@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Dosar de profil
 ui.preferences.browse=Răsfoiește
 ui.messages.loadZimFileError=Imposibil de încărcat „%1”. Sunteți sigur că acesta este un fișier ZIM?
 ui.messages.alreadyIndexingError=Un proces de indexare rulează deja.
-ui.messages.emptySearchStringError=Trebuie să introduceți un text pentru a căuta.
 ui.messages.noResultsError=Niciun rezultat pentru această interogare.
 ui.messages.loadArticleError=Imposibil de încărcat acest articol.
 ui.messages.noActiveZimFile=Niciun fișier ZIM activ; vă rugăm să încărcați unul, mai întâi.

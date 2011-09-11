@@ -92,7 +92,6 @@ ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.messages.loadZimFileError=No s'ha pogut carregar '%1' Estàs segur que és un fitxer ZIM?
 ui.messages.alreadyIndexingError=Ja s'està executant un procés d'indexació.
-ui.messages.emptySearchStringError=Has d'inserir text per cercar.
 ui.messages.noResultsError=No s'han trobat resultats per aquesta cerca.
 ui.messages.loadArticleError=No s'ha pogut carregar aquest article
 ui.messages.noActiveZimFile=No hi ha cap fitxer ZIM actiu, si us plau carrega'n un abans.

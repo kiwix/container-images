@@ -90,7 +90,6 @@ ui.preferences.profileDirectory=设置目录
 ui.preferences.browse=浏览
 ui.messages.loadZimFileError=无法加载'%1'，你确定打开的是zim文件吗？
 ui.messages.alreadyIndexingError=建立索引的进程已在运行。
-ui.messages.emptySearchStringError=你需要输入文本进行搜索。
 ui.messages.noResultsError=此搜索无相关结果。
 ui.messages.loadArticleError=无法加载文章。
 ui.messages.noActiveZimFile=没有可用的zim文件，请首先加载。

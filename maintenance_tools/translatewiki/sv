@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Profilkatalog
 ui.preferences.browse=Bläddra
 ui.messages.loadZimFileError=Det gick inte att läsa in '%1'. Är du säker på att detta är en ZIM-fil?
 ui.messages.alreadyIndexingError=En indexeringsprocess körs redan.
-ui.messages.emptySearchStringError=Du måste skriva in en text för att söka.
 ui.messages.noResultsError=Inga resultat för den här frågan.
 ui.messages.loadArticleError=Det gick inte att läsa in den här artikeln.
 ui.messages.noActiveZimFile=Ingen aktiv ZIM-fil, var god läs in en först.

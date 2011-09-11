@@ -49,8 +49,7 @@ ui.main.loadbmk=Importar un conxunto de favoritos
 ui.main.newbmk=Crear un novo conxunto de favoritos
 ui.main.mark=Marcar esta páxina
 ui.main.unmark=Desmarcar a selección
-# Fuzzy
-ui.main.reload=Restablecer o conxunto de favoritos
+ui.main.reload=Recargar o conxunto de favoritos
 ui.main.defaultset=Conxunto predeterminado
 ui.main.saveImageAs=Gardar imaxe como...
 ui.main.close=Pechar
@@ -61,7 +60,6 @@ ui.preferences.profileDirectory=Directorio do perfil
 ui.preferences.browse=Navegar
 ui.messages.loadZimFileError=Non se pode cargar "%1". Está seguro de que é un ficheiro ZIM?
 ui.messages.alreadyIndexingError=Xa se está executando outro proceso de indexación.
-ui.messages.emptySearchStringError=Ten que escribir un texto para a procura.
 ui.messages.noResultsError=Non hai resultados para a pescuda.
 ui.messages.loadArticleError=Non se pode cargar o artigo.
 ui.messages.noActiveZimFile=Non hai ningún ficheiro ZIM activo, cargue un primeiro.

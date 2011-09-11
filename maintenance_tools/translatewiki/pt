@@ -1,5 +1,6 @@
 # Messages for Portuguese (Português)
 # Exported from translatewiki.net
+# Author: Giro720
 # Author: Malafaya
 # Author: McDutchie
 
@@ -9,7 +10,7 @@ ui.main.file.accesskey=F
 ui.main.openFile=Abrir ficheiro...
 ui.main.openFile.accesskey=A
 ui.main.lastOpen=Aberto recentemente...
-ui.main.saveFile=Gravar Página como...
+ui.main.saveFile=Gravar página como...
 ui.main.saveFile.accesskey=S
 ui.main.print=Imprimir
 ui.main.print.accesskey=I
@@ -79,7 +80,7 @@ ui.main.notesLabel=Notas do favorito:
 ui.main.loadbmk=Importar Conjunto de Favoritos
 ui.main.newbmk=Criar novo Conjunto de Favoritos
 ui.main.mark=Marcar esta página
-ui.main.unmark=Desmarcar selecionadas
+ui.main.unmark=Desmarcar seleccionadas
 ui.main.reload=Recarregar Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
 ui.main.saveImageAs=Guardar a imagem como ...
@@ -91,7 +92,6 @@ ui.preferences.profileDirectory=Diretório de perfil
 ui.preferences.browse=Navegar
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem a certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está a correr.
-ui.messages.emptySearchStringError=Tem de introduzir um texto a pesquisar.
 ui.messages.noResultsError=Nenhum resultado para esta pesquisa.
 ui.messages.loadArticleError=Incapaz de carregar o artigo.
 ui.messages.noActiveZimFile=Nenhum ficheiro ZIM ativo, por favor carregue um primeiro.

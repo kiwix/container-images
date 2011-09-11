@@ -28,10 +28,8 @@ ui.main.tabs=Zubbel
 ui.main.fullscreen=Op  der kumplääte Beldscherm
 ui.main.tools=Werkzüch
 ui.main.randomArticle=Ene zohfälleje Atikel
-# Fuzzy
-ui.main.checkIntegrity=\nIntegrity prööfe
-# Fuzzy
-ui.main.purgeHistory=Älldere Versione Fassunge\nfottschmiiße
+ui.main.checkIntegrity=Der ennere Zosammehald vun dä ZIM-Dattei prööfe
+ui.main.purgeHistory=Schmieß de Leß met de köözlesch opjemaate Deieje fott
 ui.main.help=Hölp
 ui.main.reportabug=Ene Fähler mälde
 ui.main.requestafeature=Verbäßerung vörschlonn
@@ -62,7 +60,6 @@ ui.preferences.profileDirectory=Verzeischneß mem Profil
 ui.preferences.browse=Aanluure
 ui.messages.loadZimFileError=Mer künne di Dattei '%1' nit lade. Beß De Der jeweß,  dat dat en ZIM -Dattei es?
 ui.messages.alreadyIndexingError=Dat Projamm för ene Index aanzelääje es ald aam Loufe.
-ui.messages.emptySearchStringError=Ene Täx för donoh ze söhke sullt ald enjejovve sin!
 ui.messages.noResultsError=Nix jefonge.
 ui.messages.loadArticleError=Mer künne dä Atikel nit laade.
 ui.messages.noActiveZimFile=Mer han kein ZIM-Dattei jelaade. Donn dat eets ens.

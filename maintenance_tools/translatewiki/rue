@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Адресарь профілу хосноват
 ui.preferences.browse=Переглядати
 ui.messages.loadZimFileError=Не годен натягнути  '%1' Істотнї то є ZIM файл?
 ui.messages.alreadyIndexingError=Процес індексованя уж є спущеный.
-ui.messages.emptySearchStringError=Мусите увести текст про гляданя.
 ui.messages.noResultsError=Про тоту пожадавку не суть резултаты.
 ui.messages.loadArticleError=Не годен натягнути тоту статю.
 ui.messages.noActiveZimFile=Не є актівного ZIM файлу, просиме, натягните даякый.

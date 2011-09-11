@@ -80,8 +80,7 @@ ui.main.loadbmk=Importa una collezione di segnalibri
 ui.main.newbmk=Crea una nuova collezione di segnalibri
 ui.main.mark=Aggiungi questa pagina ai segnalibri
 ui.main.unmark=Togli questa pagina dai segnalibri
-# Fuzzy
-ui.main.reload=Azzera collezione di segnalibri
+ui.main.reload=Ricarica collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
 ui.main.saveImageAs=Salva immagine con nome...
 ui.main.close=Chiudi
@@ -92,7 +91,6 @@ ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.messages.loadZimFileError=Impossibile caricare %1. Sei sicuro che sia un file ZIM?
 ui.messages.alreadyIndexingError=C'è già un processo di indicizzazione in corso.
-ui.messages.emptySearchStringError=Devi inserire un testo per iniziare una ricerca.
 ui.messages.noResultsError=Nessun risultato per questa ricerca.
 ui.messages.loadArticleError=Impossibile caricare questa pagina.
 ui.messages.noActiveZimFile=Non c'è nessun file ZIM attivo: caricane uno, prima.

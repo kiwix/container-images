@@ -90,7 +90,6 @@ ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.browse=مرور
 ui.messages.loadZimFileError=قادر به بارگذاری '%1' نیست، آیا مطمئنید که این یک فایل ZIM است؟
 ui.messages.alreadyIndexingError=فرایند فهرست بندی در حال اجراست.
-ui.messages.emptySearchStringError=شما باید متنی را برای جستجو وارد نمایید.
 ui.messages.noResultsError=یافته ای برای این جستجو پیدا نشد.
 ui.messages.loadArticleError=قادر به بارگذاری مقاله نمی باشد.
 ui.messages.noActiveZimFile=فایل فعال ZIM پیدا نشد، ابتدا آن را بارگذاری نمایید.

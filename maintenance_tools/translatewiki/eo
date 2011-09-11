@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Profila dosierujo
 ui.preferences.browse=Foliumi
 ui.messages.loadZimFileError=Neeblas ŝarĝi '%1' Ĉu vu certas, ke ĝi estas ZIM-dosiero?
 ui.messages.alreadyIndexingError=Indeksa procezo estas jam rulanta
-ui.messages.emptySearchStringError=Vi devu tajpi serĉendan tekston
 ui.messages.noResultsError=Neniu rezulto pri ĉi tiu peto
 ui.messages.loadArticleError=Neeblas ŝarĝi ĉi tiun artikolon
 ui.messages.noActiveZimFile=Neniu aktiva ZIM-dosiero, bonvolu unue ŝarĝi unu

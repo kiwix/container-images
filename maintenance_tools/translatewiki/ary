@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=l-idara dial l-profile
 ui.preferences.browse=ṫsffeh
 ui.messages.loadZimFileError=maqdrċ itċarja '%1' waċ mt'ked billa rah milef ZIM?
 ui.messages.alreadyIndexingError=ṛah mazal ċi ijra' dial l'indexation ĥddam.
-ui.messages.emptySearchStringError=ĥaṣṣk tdĥell ċi naṣṣ ll-bahṫ.
 ui.messages.noResultsError=ṫa ċi naṫija l-had talab.
 ui.messages.loadArticleError=l-maqala ma qdraṫċ ṫċarja.
 ui.messages.noActiveZimFile=ṫa milef ZIM ma mċarċi, ĥaṣṣ ṫċarji ċi waḫd bĝda.

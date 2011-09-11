@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Profiliraj direktorij
 ui.preferences.browse=Pregledaj
 ui.messages.loadZimFileError=Nije moguće učitati '%1' Da li ste sigurni da je ovo ZIM datoteka?
 ui.messages.alreadyIndexingError=Proces indeksiranja već traje.
-ui.messages.emptySearchStringError=Morati ukucati tekst za pretragu.
 ui.messages.noResultsError=Nema rezultata za ovaj upit.
 ui.messages.loadArticleError=Nije moguće učitati ovaj članak.
 ui.messages.noActiveZimFile=Nema aktivne ZIM datoteke, molim prvo učitajte jednu.

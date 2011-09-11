@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=配置文件目录
 ui.preferences.browse=浏览
 ui.messages.loadZimFileError=无法载入'%1'，您确认它是ZIM文件吗？
 ui.messages.alreadyIndexingError=索引进行中。
-ui.messages.emptySearchStringError=请输入文本以进行搜索
 ui.messages.noResultsError=查无结果。
 ui.messages.loadArticleError=无法载入该文章。
 ui.messages.noActiveZimFile=无打开的ZIM文件，请先加载。

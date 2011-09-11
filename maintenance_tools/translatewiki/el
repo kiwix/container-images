@@ -63,7 +63,6 @@ ui.preferences.profileDirectory=Κατάλογος Προφίλ
 ui.preferences.browse=Πλοήγηση
 ui.messages.loadZimFileError=Δεν είναι δυνατή η φόρτωση του '% 1' Είστε βέβαιοι ότι αυτό είναι ένα αρχείο ZIM;
 ui.messages.alreadyIndexingError=Η διαδικασία δημιουργίας ευρετηρίου εκτελείται ήδη.
-ui.messages.emptySearchStringError=Πρέπει να εισαγάγετε ένα κείμενο για την αναζήτηση.
 ui.messages.noResultsError=Κανένα αποτέλεσμα για αυτήν την αναζήτηση.
 ui.messages.loadArticleError=Δεν είναι δυνατή η φόρτωση αυτού του άρθρου.
 ui.messages.noActiveZimFile=Κανένα ενεργό αρχείο ΖΙΜ, παρακαλώ φορτώστε ένα πρώτα.

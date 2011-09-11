@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Profielgids
 ui.preferences.browse=Blaai
 ui.messages.loadZimFileError="%1" kan nie gelaai word nie. Is u seker dis 'n ZIM-lêer?
 ui.messages.alreadyIndexingError=Reeds besig met indeksering.
-ui.messages.emptySearchStringError=U moet teks invoer om na te soek.
 ui.messages.noResultsError=Geen resultate vir hierdie soektog nie.
 ui.messages.loadArticleError=Kan nie hierdie artikel laai nie.
 ui.messages.noActiveZimFile=Geen aktiewe Zim-lêer nie, laai asseblief eers een.

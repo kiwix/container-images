@@ -61,7 +61,6 @@ ui.preferences.profileDirectory=Profilkönyvtár
 ui.preferences.browse=Tallózás
 ui.messages.loadZimFileError=Nem sikerült betölteni a következőt: '%1' Biztos vagy benne, hogy ez egy ZIM fájl?
 ui.messages.alreadyIndexingError=Az indexelési folyamat már fut.
-ui.messages.emptySearchStringError=Meg kell adnod a keresendő szöveget.
 ui.messages.noResultsError=Nincs találat erre a keresésre.
 ui.messages.loadArticleError=Nem sikerült betölteni ezt a szócikket.
 ui.messages.noActiveZimFile=Nincs aktív ZIM fájl, kérlek tölts be egyet.

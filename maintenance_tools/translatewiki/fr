@@ -92,7 +92,6 @@ ui.preferences.profileDirectory=Répertoire du profil
 ui.preferences.browse=Parcourir
 ui.messages.loadZimFileError=Impossible de charger le fichier ZIM '%1'. Peut-être ce fichier est-il invalide ?
 ui.messages.alreadyIndexingError=Un processus d'indexation est déjà en cours.
-ui.messages.emptySearchStringError=Vous devez entrer un texte à rechercher.
 ui.messages.noResultsError=Il n'y a pas de résultats pour cette recherche.
 ui.messages.loadArticleError=Impossible d'afficher cet article.
 ui.messages.noActiveZimFile=Aucun fichier ZIM chargé, merci d'en ouvrir un avant toute chose.

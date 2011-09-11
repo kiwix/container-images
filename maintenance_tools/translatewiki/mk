@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Директориум на профилот
 ui.preferences.browse=Прелистај
 ui.messages.loadZimFileError=Не можам да го  вчитам „%1“. Дали сте дигурни дека е ZIM-податотека?
 ui.messages.alreadyIndexingError=Индексирањето е во тек.
-ui.messages.emptySearchStringError=Треба да внесете текст за пребарување.
 ui.messages.noResultsError=Нема резултати од ова барање.
 ui.messages.loadArticleError=Не можам да ја вчитам оваа статија.
 ui.messages.noActiveZimFile=Нема активна ZIM-податотека. Подигнете ја, па продолжете.

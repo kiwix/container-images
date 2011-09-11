@@ -62,7 +62,6 @@ ui.preferences.profileDirectory=Каталог профіля
 ui.preferences.browse=Праглядаць
 ui.messages.loadZimFileError=Немагчыма загрузіць '%1' Вы ўпэўненыя, што гэта файл ZIM?
 ui.messages.alreadyIndexingError=Працэс індэксавання ўжо запушчаны.
-ui.messages.emptySearchStringError=Вы павінны ўвесці тэкст для пошуку.
 ui.messages.noResultsError=Няма вынікаў па гэтым запыце.
 ui.messages.loadArticleError=Не ўдаецца загрузіць гэты артыкул.
 ui.messages.noActiveZimFile=Няма актыўнага файла ZIM, калі ласка, загрузіце яго спачатку.

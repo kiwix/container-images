@@ -60,7 +60,6 @@ ui.preferences.profileDirectory=Direktori profil
 ui.preferences.browse=Semak imbas
 ui.messages.loadZimFileError='%' tidak dapat dimuatkan. Adakah anda pasti ini ialah fail ZIM?
 ui.messages.alreadyIndexingError=Proses pengindeksan sedang dijalankan.
-ui.messages.emptySearchStringError=Anda perlu menaipkan sesuatu untuk mencari.
 ui.messages.noResultsError=Tiada hasil untuk pertanyaan ini.
 ui.messages.loadArticleError=Rencana ini tidak dapat dimuatkan.
 ui.messages.noActiveZimFile=Tiada fail ZIM aktif; sila muatkan satu fail ZIM terlebih dahulu.
