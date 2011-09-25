@@ -109,6 +109,6 @@ ui.messages.ok=OK
 ui.messages.cancel=Annuler
 ui.messages.error=Erreur
 ui.messages.information=Information
-ui.messages.indexing=Indexation
+ui.messages.indexing=Indexation...
 ui.messages.selectBookmarkSet=Importer un jeu de marque-pages
 ui.messages.nameBookmarkSet=Créer un nom de fichier pour le jeu

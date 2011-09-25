@@ -1,10 +1,11 @@
 # Messages for Swiss German (Alemannisch)
 # Exported from translatewiki.net
+# Author: Als-Holder
 # Author: 80686
 
 ui.main.file=Datei
 ui.main.openFile=Datei uffmache...
-ui.main.lastOpen=Z'letscht uffgmacht...
+ui.main.lastOpen=Zletscht uffgmacht...
 ui.main.saveFile=Syte spychere als...
 ui.main.print=Drucke
 ui.main.printPdf=As PDF-Datei uusgee
@@ -22,25 +23,25 @@ ui.main.zoomout=Chliiner
 ui.main.zoomorig=Orginalgrößi
 ui.main.language=Sproch
 ui.main.skin=Benutzeroberflechi
-ui.main.statusbar=Schtatuslieschte
-ui.main.resultsbar=Ergäbnislieschte
+ui.main.statusbar=Schtatusliischte
+ui.main.resultsbar=Ergäbnisliischte
 ui.main.tabs=Ryter
 ui.main.fullscreen=Vollbildschirm
 ui.main.tools=Wärchzyyg
 ui.main.randomArticle=Zuefälligi Syte
-ui.main.checkIntegrity=Integrietätspruefig
+ui.main.checkIntegrity=Integrietätsprüefig
 ui.main.purgeHistory=Verlauf lösche
 ui.main.help=Hilf
 ui.main.reportabug=Fähler mälde
 ui.main.requestafeature=Erwyterig vorschlage
-ui.main.about=Übr &brand.brandShortName;
+ui.main.about=Über &brand.brandShortName;
 ui.main.back=Zruck
 ui.main.forward=Wyter
 ui.main.home=Hauptsyte
-ui.main.searchBar=Suechlieschte
+ui.main.searchBar=Suechliischte
 ui.main.search=Sueche
 ui.main.findInText=Ir Syte sueche
-ui.main.noSearchBar=D'Suechi bruucht e indizierti ZIM-Datei
+ui.main.noSearchBar=D Suechi bruucht e indizierti ZIM-Datei
 ui.main.bookmarks=Läsezeiche
 ui.main.results.title=Suech-Ergäbnis
 ui.main.bmkLabel=Läsezeiche:
@@ -49,8 +50,7 @@ ui.main.loadbmk=Läsezeiche importiere
 ui.main.newbmk=Neui Datei für Läsezeiche aalege
 ui.main.mark=Syte markiere
 ui.main.unmark=Markierig uffhebe
-# Fuzzy
-ui.main.reload=Läsezeiche zrucksetze
+ui.main.reload=Läsezeiche nomol lade
 ui.main.defaultset=Schtandarddatei
 ui.main.saveImageAs=Bild spychere als...
 ui.main.close=Zuemache
@@ -60,14 +60,14 @@ ui.preferences.cancel=Abbräche
 ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Blättre
 ui.messages.loadZimFileError='%1' cha nit glade wärde. Sin Sie sicher, ass es e ZIM-Datei isch?
-ui.messages.alreadyIndexingError=S'lauft scho ne Indizierig.
-ui.messages.noResultsError=S'isch nüt gfunde worde.
+ui.messages.alreadyIndexingError=S lauft scho ne Indizierig.
+ui.messages.noResultsError=S isch nüt gfunde worde.
 ui.messages.loadArticleError=Selli Syte cha nit glade wärde.
-ui.messages.noActiveZimFile=S'isch chei aktivi ZIM-Datei glade, sie muen z'erscht eini lade.
-ui.messages.indexZimFileConfirm=Selli Datei het no chei Suech-Index. Eine go mache bruucht e baar Minute. Wenn Sie die ZIM-Datei jetz indiziere?
-ui.messages.abortIndexingConfirm=S'lauft scho e Indizierig. Sin Sie sicher ass Sie jetz es abbräche un zuemache wenn?
+ui.messages.noActiveZimFile=S isch kei aktivi ZIM-Datei glade, Si müen zerscht eini lade.
+ui.messages.indexZimFileConfirm=Selli Datei het no kei Suech-Index. Eine go mache bruucht e baar Minute. Wenn Sie die ZIM-Datei jetz indiziere?
+ui.messages.abortIndexingConfirm=S lauft scho e Indizierig. Sin Sie sicher, ass Sie jetz es abbräche un zuemache wenn?
 ui.messages.restartConfirm=%1 sött me neu schtarte. Wenn Sie des jetz grad mache?
-ui.messages.endOfIndexing=D'Indizierig isch färdig.
+ui.messages.endOfIndexing=D Indizierig isch färdig.
 ui.messages.removeProfileConfirm=Wotte Sie Ihre Profil lösche?
 ui.messages.dontDisplayAnymore=Sell Fänschter nümme aazeige.
 ui.messages.changeSkinNeedRestart=Go d Oberflechi ändere, mueß d Aawändig nej gstartet wäre. Nejstart?

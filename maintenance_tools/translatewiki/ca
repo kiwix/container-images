@@ -1,6 +1,7 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
 # Author: McDutchie
+# Author: SMP
 # Author: Solde
 
 ui.main.cssdirection=ltr
@@ -80,8 +81,7 @@ ui.main.loadbmk=Importar grup de preferits
 ui.main.newbmk=Crea grup de preferits
 ui.main.mark=Afegeix als preferits
 ui.main.unmark=Treu dels preferits
-# Fuzzy
-ui.main.reload=Reiniciar grup de preferits
+ui.main.reload=Recarrega el grup de preferits
 ui.main.defaultset=Grup predeterminat
 ui.main.saveImageAs=Desa imatge com a...
 ui.main.close=Close
