@@ -63,6 +63,7 @@ ui.preferences.save=Mentés
 ui.preferences.cancel=Mégse
 ui.preferences.profileDirectory=Profilkönyvtár
 ui.preferences.browse=Tallózás
+ui.preferences.tabs=Emlékezzen a fülekre
 ui.messages.loadZimFileError=Nem sikerült betölteni a következőt: '%1' Biztos vagy benne, hogy ez egy ZIM fájl?
 ui.messages.alreadyIndexingError=Az indexelési folyamat már fut.
 ui.messages.noResultsError=Nincs találat erre a keresésre.
