@@ -1,12 +1,14 @@
 # Messages for Spanish (Español)
 # Exported from translatewiki.net
 # Author: Fitoschido
+# Author: Vivaelcelta
 
 ui.main.cssdirection=ltr
 ui.main.file=Archivo
 ui.main.file.accesskey=A
 ui.main.openFile=Abrir archivo…
 ui.main.openFile.accesskey=A
+ui.main.browseLibrary=Examinar la biblioteca
 ui.main.lastOpen=Abiertos recientemente…
 ui.main.saveFile=Guardar página como…
 ui.main.saveFile.accesskey=S
@@ -60,6 +62,7 @@ ui.main.purgeHistory=Purgar historial
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Ayuda
 ui.main.help.accesskey=y
+ui.main.feedback=Comentarios
 ui.main.reportabug=Informar de un error
 ui.main.requestafeature=Solicitar una característica
 ui.main.about=Acerca de &brand.brandShortName;
@@ -82,6 +85,8 @@ ui.main.unmark=Desmarcar seleccionados
 ui.main.reload=Recargar el conjunto de marcadores
 ui.main.defaultset=Conjunto predeterminado
 ui.main.saveImageAs=Guardar imagen como…
+ui.main.openLinkInNewTab=Abrir el enlace en una nueva pestaña
+ui.main.searchFor=Buscar por
 ui.main.close=Cerrar
 ui.preferences.preferences=Preferencias
 ui.preferences.save=Guardar
@@ -110,3 +115,8 @@ ui.messages.information=Información
 ui.messages.indexing=Indizando…
 ui.messages.selectBookmarkSet=Seleccione un archivo de conjunto de marcadores
 ui.messages.nameBookmarkSet=Introduzca el nombre del archivo de conjunto de marcadores
+ui.messages.newContentAvailable=Hay nuevos contenidos disponibles para descargar.
+ui.messages.newContentAvailableInvitation=Hay nuevos contenidos disponibles para descargar. ¿Quiere verlos?
+ui.messages.preparingContentDownload=Preparando la descarga...
+ui.messages.contentDownloadFinished=Acabó la descarga de "%1".
+ui.messages.feedback=Comentarios

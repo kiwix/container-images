@@ -1,6 +1,7 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
 # Author: McDutchie
+# Author: SPQRobin
 # Author: Siebrand
 
 ui.main.cssdirection=ltr
@@ -8,6 +9,7 @@ ui.main.file=Bestand
 ui.main.file.accesskey=B
 ui.main.openFile=Bestand openen...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Bibliotheek doorbladeren
 ui.main.lastOpen=Recent geopend...
 ui.main.saveFile=Pagina opslaan als...
 ui.main.saveFile.accesskey=S
@@ -61,6 +63,7 @@ ui.main.purgeHistory=Geschiedenis verwijderen
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Hulp
 ui.main.help.accesskey=H
+ui.main.feedback=Terugkoppeling
 ui.main.reportabug=Probleem melden
 ui.main.requestafeature=Nieuwe functionaliteit aanvragen
 ui.main.about=Over &brand.brandShortName;
@@ -83,12 +86,15 @@ ui.main.unmark=Markering voor geselecteerde verwijderen
 ui.main.reload=Bladwijzergroep opnieuw laden
 ui.main.defaultset=Standaardgroep
 ui.main.saveImageAs=Afbeelding opslaan als...
+ui.main.openLinkInNewTab=Verwijzing openen in nieuw tabblad
+ui.main.searchFor=Zoeken naar
 ui.main.close=Sluiten
 ui.preferences.preferences=Voorkeuren
 ui.preferences.save=Opslaan
 ui.preferences.cancel=Annuleren
 ui.preferences.profileDirectory=Profielmap
 ui.preferences.browse=Bladeren
+ui.preferences.tabs=Tabbladen onthouden
 ui.messages.loadZimFileError="%1" kan niet geladen worden. Weet u zeker dat dit een ZIM-bestand is?
 ui.messages.alreadyIndexingError=Er wordt op dit moment al geïndexeerd.
 ui.messages.noResultsError=Deze zoekopdracht heeft geen resultaten.
@@ -111,3 +117,8 @@ ui.messages.information=Informatie
 ui.messages.indexing=Indexeren
 ui.messages.selectBookmarkSet=Selecteer favorieten set bestand
 ui.messages.nameBookmarkSet=Geef favorieten set bestandsnaam op
+ui.messages.newContentAvailable=Er is nieuwe inhoud te downloaden.
+ui.messages.newContentAvailableInvitation=Er is nieuwe inhoud te downloaden. Wilt u die bekijken?
+ui.messages.preparingContentDownload=Download wordt voorbereid...
+ui.messages.contentDownloadFinished=Download van '%1' is voltooid.
+ui.messages.feedback=Terugkoppeling

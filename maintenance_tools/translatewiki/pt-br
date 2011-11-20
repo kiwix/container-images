@@ -2,9 +2,11 @@
 # Exported from translatewiki.net
 # Author: Giro720
 # Author: MetalBrasil
+# Author: Pedroca cerebral
 
 ui.main.file=Arquivo
 ui.main.openFile=Abrir arquivo...
+ui.main.browseLibrary=Navegar na biblioteca
 ui.main.lastOpen=Aberto recentemente...
 ui.main.saveFile=Salvar  página como...
 ui.main.print=Imprimir
@@ -32,6 +34,7 @@ ui.main.randomArticle=Artigo aleatório
 ui.main.checkIntegrity=Verificação de integridade
 ui.main.purgeHistory=Limpar histórico
 ui.main.help=Ajuda
+ui.main.feedback=Comentários
 ui.main.reportabug=Reportar um erro
 ui.main.requestafeature=Solicitar um recurso
 ui.main.about=Sobre &brand.brandShortName;
@@ -53,6 +56,8 @@ ui.main.unmark=Desmarcar a seleção
 ui.main.reload=Restabelecer grupo de Favoritos
 ui.main.defaultset=Conjunto padrão
 ui.main.saveImageAs=Salvar imagem como...
+ui.main.openLinkInNewTab=Abrir link em uma nova aba
+ui.main.searchFor=Procurar por
 ui.main.close=Fechar
 ui.preferences.preferences=Preferências
 ui.preferences.save=Salvar
@@ -81,3 +86,8 @@ ui.messages.information=Informação
 ui.messages.indexing=Indexação
 ui.messages.selectBookmarkSet=Selecionar o arquivo dos Favoritos
 ui.messages.nameBookmarkSet=Insira o nome do arquivo dos Favoritos
+ui.messages.newContentAvailable=Há novos conteúdos disponíveis para download.
+ui.messages.newContentAvailableInvitation=Há novos conteúdos disponíveis para download. Gostaria de vê-los?
+ui.messages.preparingContentDownload=Preparando download...
+ui.messages.contentDownloadFinished=O download de '%1' terminou.
+ui.messages.feedback=Comentários

@@ -1,9 +1,11 @@
 # Messages for Hungarian (Magyar)
 # Exported from translatewiki.net
+# Author: Dj
 # Author: Hunyadym
 
 ui.main.file=Fájl
 ui.main.openFile=Fájl megnyitása...
+ui.main.browseLibrary=Könyvtár böngészése
 ui.main.lastOpen=Legutóbb megnyitott...
 ui.main.saveFile=Oldal mentése másként...
 ui.main.print=Nyomtatás
@@ -31,6 +33,7 @@ ui.main.randomArticle=Lap találomra
 ui.main.checkIntegrity=Sértetlenség ellenőrzése
 ui.main.purgeHistory=Előzmények törlése
 ui.main.help=Súgó
+ui.main.feedback=Visszajelzés
 ui.main.reportabug=Hibajelentés
 ui.main.requestafeature=Javaslat új funkciókra
 ui.main.about=&brand.brandShortName; névjegye
@@ -49,10 +52,11 @@ ui.main.loadbmk=Könyvjelzőkészlet importálása
 ui.main.newbmk=Új könyvjelzőkészlet létrehozása
 ui.main.mark=Oldal megjelölése
 ui.main.unmark=Kijelöltek megjelölésének törlése
-# Fuzzy
-ui.main.reload=Könyvjelzőkészlet visszaállítása
+ui.main.reload=!Könyvjelzőkészlet visszaátöltése
 ui.main.defaultset=Alapértelmezett készlet
 ui.main.saveImageAs=Kép mentése másként...
+ui.main.openLinkInNewTab=A hivatkozás megnyitása új lapon
+ui.main.searchFor=Keresés
 ui.main.close=Bezárás
 ui.preferences.preferences=Beállítások
 ui.preferences.save=Mentés
@@ -81,3 +85,8 @@ ui.messages.information=Információ
 ui.messages.indexing=Indexelés
 ui.messages.selectBookmarkSet=Válaszd ki a könyvjelzőkészletet
 ui.messages.nameBookmarkSet=Adj meg egy fájlnevet a könyvjelzőkészletnek
+ui.messages.newContentAvailable=Új tartalom tölthető le.
+ui.messages.newContentAvailableInvitation=Új tartalom tölthető le. Szeretné látni?
+ui.messages.preparingContentDownload=Letöltés előkészítése...
+ui.messages.contentDownloadFinished='%1' letöltése befejeződött.
+ui.messages.feedback=Visszajelzés

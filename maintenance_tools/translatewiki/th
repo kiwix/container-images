@@ -1,6 +1,7 @@
 # Messages for Thai (ไทย)
 # Exported from translatewiki.net
 # Author: Akkhaporn
+# Author: Horus
 
 ui.main.file=แฟ้ม
 ui.main.openFile=เปิดแฟ้ม...
@@ -30,7 +31,7 @@ ui.main.tools=เครื่องมือ
 ui.main.randomArticle=สุ่มบทความ
 ui.main.checkIntegrity=ตรวจสอบความสมบูรณ์
 ui.main.purgeHistory=ล้างประวัติ
-ui.main.help=ช่วยเหลือ
+ui.main.help=วิธีใช้
 ui.main.reportabug=รายงานข้อผิดพลาด
 ui.main.requestafeature=แนะนำคุณสมบัติ
 ui.main.about=เกี่ยวกับ &brand.brandShortName;

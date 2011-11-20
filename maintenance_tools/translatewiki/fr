@@ -1,5 +1,6 @@
 # Messages for French (Français)
 # Exported from translatewiki.net
+# Author: Gomoko
 # Author: Kelson
 # Author: Od1n
 # Author: Wyz
@@ -9,6 +10,7 @@ ui.main.file=Fichier
 ui.main.file.accesskey=F
 ui.main.openFile=Ouvrir un fichier...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Parcourir la bibliothèque
 ui.main.lastOpen=Récemment ouvert...
 ui.main.saveFile=Enregistrer la page sous...
 ui.main.saveFile.accesskey=S
@@ -62,6 +64,7 @@ ui.main.purgeHistory=Purger l'historique
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Aide
 ui.main.help.accesskey=e
+ui.main.feedback=Avis
 ui.main.reportabug=Rapporter un bogue
 ui.main.requestafeature=Demander une fonctionnalité
 ui.main.about=À propos de &brand.brandShortName;
@@ -84,6 +87,8 @@ ui.main.unmark=Supprimer le marque-page sélectionné
 ui.main.reload=Recharger le jeu de marque-pages
 ui.main.defaultset=Mes marque-pages
 ui.main.saveImageAs=Enregistrer l'image sous...
+ui.main.openLinkInNewTab=Ouvrir le lien dans un nouvel onglet
+ui.main.searchFor=Rechercher
 ui.main.close=Fermer
 ui.preferences.preferences=Options
 ui.preferences.save=Enregistrer
@@ -112,3 +117,8 @@ ui.messages.information=Information
 ui.messages.indexing=Indexation...
 ui.messages.selectBookmarkSet=Importer un jeu de marque-pages
 ui.messages.nameBookmarkSet=Créer un nom de fichier pour le jeu
+ui.messages.newContentAvailable=Il y a un nouveau contenu disponible au téléchargement.
+ui.messages.newContentAvailableInvitation=Il y a un nouveau contenu disponible au téléchargement. Voulez-vous le voir?
+ui.messages.preparingContentDownload=Préparation de téléchargement...
+ui.messages.contentDownloadFinished=Téléchargement de "%1" terminé.
+ui.messages.feedback=Avis

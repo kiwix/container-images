@@ -1,6 +1,7 @@
 # Messages for Russian (Русский)
 # Exported from translatewiki.net
 # Author: Dim Grits
+# Author: Eleferen
 # Author: Lvova
 # Author: Renessaince
 
@@ -9,6 +10,7 @@ ui.main.file=Файл
 ui.main.file.accesskey=F
 ui.main.openFile=Открыть файл ...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Просмотр библиотеки
 ui.main.lastOpen=Недавно открытые ...
 ui.main.saveFile=Сохранить страницу как...
 ui.main.saveFile.accesskey=S
@@ -62,6 +64,7 @@ ui.main.purgeHistory=Очистить историю
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Справка
 ui.main.help.accesskey=H
+ui.main.feedback=Обратная связь
 ui.main.reportabug=Сообщить об ошибке
 ui.main.requestafeature=Запросить функцию
 ui.main.about=О & brand.brandShortName;
@@ -84,6 +87,8 @@ ui.main.unmark=Снять пометку с выбранного
 ui.main.reload=Обновить набор закладок
 ui.main.defaultset=Установить по умолчанию
 ui.main.saveImageAs=Сохранить изображение как...
+ui.main.openLinkInNewTab=Открыть ссылку в новой вкладке
+ui.main.searchFor=Поиск
 ui.main.close=Закрыть
 ui.preferences.preferences=Параметры
 ui.preferences.save=Сохранить
@@ -112,3 +117,8 @@ ui.messages.information=Информация
 ui.messages.indexing=Индексирование
 ui.messages.selectBookmarkSet=Выберите файл закладок
 ui.messages.nameBookmarkSet=Введите имя файла закладок
+ui.messages.newContentAvailable=Новый контент доступен для загрузки.
+ui.messages.newContentAvailableInvitation=Новый контент доступен для скачивания. Вы хотите его увидеть?
+ui.messages.preparingContentDownload=Подготовка к загрузке…
+ui.messages.contentDownloadFinished=Загрузка завершена на '%1'.
+ui.messages.feedback=Обратная связь
