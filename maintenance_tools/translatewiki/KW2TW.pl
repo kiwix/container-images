@@ -31,7 +31,7 @@ if (!$path) {
 if ($allLanguages) {
     opendir(DIR, $path."/kiwix/chrome/locale/") || die("Cannot open directory $path"); 
     foreach my $language (readdir(DIR)) {
-	if ($language =~ '^[a-z]{2}$') {
+	if ($language =~ '^[a-z]{2,3}(-[a-z]{2,3}|)$') {
 	    push(@languages, $language);
 	}
     }
