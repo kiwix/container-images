@@ -3,12 +3,14 @@
 # Author: Giro720
 # Author: Malafaya
 # Author: McDutchie
+# Author: Waldir
 
 ui.main.cssdirection=ltr
 ui.main.file=Ficheiro
 ui.main.file.accesskey=F
 ui.main.openFile=Abrir ficheiro...
 ui.main.openFile.accesskey=A
+ui.main.browseLibrary=Explorar a biblioteca
 ui.main.lastOpen=Aberto recentemente...
 ui.main.saveFile=Gravar página como...
 ui.main.saveFile.accesskey=S
@@ -62,6 +64,7 @@ ui.main.purgeHistory=Limpar histórico
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Ajuda
 ui.main.help.accesskey=A
+ui.main.feedback=Comentários
 ui.main.reportabug=Reportar um erro
 ui.main.requestafeature=Solicitar recursos
 ui.main.about=Sobre &brand.brandShortName;
@@ -84,12 +87,15 @@ ui.main.unmark=Desmarcar seleccionadas
 ui.main.reload=Recarregar Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
 ui.main.saveImageAs=Guardar a imagem como ...
+ui.main.openLinkInNewTab=Abrir a ligação num novo separador
+ui.main.searchFor=Procurar por
 ui.main.close=Fechar
 ui.preferences.preferences=Preferências
 ui.preferences.save=Gravar
 ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Diretório de perfil
 ui.preferences.browse=Navegar
+ui.preferences.tabs=Memorizar os separadores
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem a certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está a correr.
 ui.messages.noResultsError=Nenhum resultado para esta pesquisa.
@@ -112,3 +118,8 @@ ui.messages.information=Informação
 ui.messages.indexing=Indexação
 ui.messages.selectBookmarkSet=Selecionar ficheiro Conjunto de Favoritos
 ui.messages.nameBookmarkSet=Introduzir nome para ficheiro - Conjunto de Favoritos
+ui.messages.newContentAvailable=Há novos conteúdos disponíveis para descarregamento.
+ui.messages.newContentAvailableInvitation=Há novos conteúdos disponíveis para descarregamento. Gostaria de vê-los?
+ui.messages.preparingContentDownload=A preparar o descarregamento...
+ui.messages.contentDownloadFinished=O descarregamento de '%1' terminou.
+ui.messages.feedback=Comentários

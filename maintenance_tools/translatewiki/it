@@ -1,6 +1,7 @@
 # Messages for Italian (Italiano)
 # Exported from translatewiki.net
 # Author: Beta16
+# Author: Inskatolata
 # Author: McDutchie
 
 ui.main.cssdirection=ltr
@@ -83,6 +84,7 @@ ui.main.unmark=Togli questa pagina dai segnalibri
 ui.main.reload=Ricarica collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
 ui.main.saveImageAs=Salva immagine con nome...
+ui.main.openLinkInNewTab=Apri il Collegamento in una Nuova Scheda
 ui.main.close=Chiudi
 ui.preferences.preferences=Preferences
 ui.preferences.save=Save
@@ -111,3 +113,5 @@ ui.messages.information=Informazioni
 ui.messages.indexing=Indicizzazione
 ui.messages.selectBookmarkSet=Seleziona il file della collezione di segnalibri
 ui.messages.nameBookmarkSet=Inserisci il nome del file della collezione di segnalibri
+ui.messages.newContentAvailable=Ci sono nuovi contenuti disponibili per il download.
+ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili per il download. Vuoi vederli?

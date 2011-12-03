@@ -1,12 +1,14 @@
 # Messages for Ukrainian (Українська)
 # Exported from translatewiki.net
 # Author: Dim Grits
+# Author: Дар'я Козлова
 
 ui.main.cssdirection=ltr
 ui.main.file=Файл
 ui.main.file.accesskey=F
 ui.main.openFile=Відкрити файл ...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Огляд бібліотеки
 ui.main.lastOpen=Нещодавно відкриті ...
 ui.main.saveFile=Зберегти сторінку як...
 ui.main.saveFile.accesskey=S
@@ -60,6 +62,7 @@ ui.main.purgeHistory=Очистити історію
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Довідка
 ui.main.help.accesskey=H
+ui.main.feedback=Зворотний зв'язок
 ui.main.reportabug=Повідомити про помилку
 ui.main.requestafeature=Запит функцій
 ui.main.about=Про & brand.brandShortName;
@@ -82,12 +85,15 @@ ui.main.unmark=Зняти позначку з виділених
 ui.main.reload=Перезавантажити набір закладок
 ui.main.defaultset=Встановити за замовчуванням
 ui.main.saveImageAs=Зберегти зображення як ...
+ui.main.openLinkInNewTab=Відкрити посилання у новій вкладці
+ui.main.searchFor=Шукати
 ui.main.close=Закрити
 ui.preferences.preferences=Уподобання
 ui.preferences.save=Зберегти
 ui.preferences.cancel=Скасувати
 ui.preferences.profileDirectory=Папка профілю користувача
 ui.preferences.browse=Огляд
+ui.preferences.tabs=Збережені вкладки
 ui.messages.loadZimFileError=Не вдається завантажити "% 1" Ви впевнені що це ZIM-файл?
 ui.messages.alreadyIndexingError=Процес індексування вже запущений.
 ui.messages.noResultsError=Немає результатів за цим запитом.
@@ -110,3 +116,8 @@ ui.messages.information=Інформація
 ui.messages.indexing=Індексування
 ui.messages.selectBookmarkSet=Виберіть файл закладок
 ui.messages.nameBookmarkSet=Введіть ім'я для файла закладок
+ui.messages.newContentAvailable=Новий контент, доступний для завантаження
+ui.messages.newContentAvailableInvitation=Новий контент, доступний для завантаження. Ви хочете побачити його?
+ui.messages.preparingContentDownload=Підготовка завантаження...
+ui.messages.contentDownloadFinished=Завантаження завершене на "%1".
+ui.messages.feedback=Зворотний зв'язок

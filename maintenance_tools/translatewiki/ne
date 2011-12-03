@@ -2,7 +2,7 @@
 # Exported from translatewiki.net
 # Author: सरोज कुमार ढकाल
 
-ui.main.cssdirection=बायाँ देखि दायाँ
+ui.main.cssdirection=ltr
 ui.main.file=फाइल
 ui.main.file.accesskey=फ
 ui.main.openFile=फाइल खोल्ने

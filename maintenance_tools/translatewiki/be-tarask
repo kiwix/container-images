@@ -64,6 +64,7 @@ ui.preferences.save=Захаваць
 ui.preferences.cancel=Скасаваць
 ui.preferences.profileDirectory=Дырэкторыя профілю
 ui.preferences.browse=Прагляд
+ui.preferences.tabs=Памятаць закладкі
 ui.messages.loadZimFileError=Немагчыма загрузіць «%1». Вы ўпэўненыя, што гэта ZIM-файл?
 ui.messages.alreadyIndexingError=Працэс індэксаваньня ўжо запушчаны.
 ui.messages.noResultsError=Няма вынікаў па гэтым запыце.

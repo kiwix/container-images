@@ -1,5 +1,6 @@
 # Messages for Catalan (Català)
 # Exported from translatewiki.net
+# Author: Gemmaa
 # Author: McDutchie
 # Author: SMP
 # Author: Solde
@@ -9,6 +10,7 @@ ui.main.file=Fitxer
 ui.main.file.accesskey=F
 ui.main.openFile=Obre...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Navegar Biblioteca
 ui.main.lastOpen=Oberts recentment...
 ui.main.saveFile=Desa pàgina com a...
 ui.main.saveFile.accesskey=D
@@ -62,6 +64,7 @@ ui.main.purgeHistory=Netejar historial
 ui.main.purgeHistory.accesskey=N
 ui.main.help=Ajuda
 ui.main.help.accesskey=A
+ui.main.feedback=Comentaris
 ui.main.reportabug=Informar un error
 ui.main.requestafeature=Demanar noves característiques
 ui.main.about=Quant a &brand.brandShortName;
@@ -84,12 +87,15 @@ ui.main.unmark=Treu dels preferits
 ui.main.reload=Recarrega el grup de preferits
 ui.main.defaultset=Grup predeterminat
 ui.main.saveImageAs=Desa imatge com a...
+ui.main.openLinkInNewTab=Obre l'enllaç en una pestanya nova
+ui.main.searchFor=Buscar
 ui.main.close=Close
 ui.preferences.preferences=Preferences
 ui.preferences.save=Save
 ui.preferences.cancel=Cancel
 ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
+ui.preferences.tabs=Recordeu tabs
 ui.messages.loadZimFileError=No s'ha pogut carregar '%1' Estàs segur que és un fitxer ZIM?
 ui.messages.alreadyIndexingError=Ja s'està executant un procés d'indexació.
 ui.messages.noResultsError=No s'han trobat resultats per aquesta cerca.
@@ -112,3 +118,8 @@ ui.messages.information=Informació
 ui.messages.indexing=Indexant
 ui.messages.selectBookmarkSet=Selecciona grup d'adreces d'interès
 ui.messages.nameBookmarkSet=Insereix nom de grup d'adreces d'interès
+ui.messages.newContentAvailable=Hi ha nou contingut disponible per descarregar.
+ui.messages.newContentAvailableInvitation=Hi ha nou contingut disponible per descarregar. Voleu veure'ls?
+ui.messages.preparingContentDownload=S'està preparant el descarregar...
+ui.messages.contentDownloadFinished=La descàrrega de "% 1" s'acaba.
+ui.messages.feedback=Comentaris

@@ -1,6 +1,7 @@
 # Messages for Brazilian Portuguese (Português do Brasil)
 # Exported from translatewiki.net
 # Author: Giro720
+# Author: Luigipiccoli
 # Author: MetalBrasil
 # Author: Pedroca cerebral
 
@@ -64,6 +65,7 @@ ui.preferences.save=Salvar
 ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Diretório do perfil
 ui.preferences.browse=Navegar
+ui.preferences.tabs=Lembrar abas
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está ocorrendo.
 ui.messages.noResultsError=Nenhum resultado para esta consulta.

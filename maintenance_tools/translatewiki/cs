@@ -1,9 +1,12 @@
 # Messages for Czech (Česky)
 # Exported from translatewiki.net
 # Author: Jachym
+# Author: Mormegil
+# Author: Utar
 
 ui.main.file=Soubor
 ui.main.openFile=Otevřít soubor...
+ui.main.browseLibrary=Prohlížet knihovnu
 ui.main.lastOpen=Nedávno otevřené...
 ui.main.saveFile=Uložit stránku jako....
 ui.main.print=Tisk
@@ -31,6 +34,7 @@ ui.main.randomArticle=Náhodný článek
 ui.main.checkIntegrity=Kontrola integrity
 ui.main.purgeHistory=Vymazat historii
 ui.main.help=Nápověda
+ui.main.feedback=Zpětná vazba
 ui.main.reportabug=Nahlásit chybu
 ui.main.requestafeature=Navrhnout novou funkci
 ui.main.about=O &brand.brandShortName;
@@ -52,12 +56,15 @@ ui.main.unmark=Odznačit vybrané
 ui.main.reload=Znovu nahrát sadu záložek
 ui.main.defaultset=Výchozí sada
 ui.main.saveImageAs=Uložit obrázek jako...
+ui.main.openLinkInNewTab=Otevřít odkaz v nové záložce
+ui.main.searchFor=Vyhledat
 ui.main.close=Zavřít
 ui.preferences.preferences=Možnosti
 ui.preferences.save=Uložit
 ui.preferences.cancel=Storno
 ui.preferences.profileDirectory=Profilový adresář
 ui.preferences.browse=Procházet
+ui.preferences.tabs=Uložit záložky
 ui.messages.loadZimFileError=Nepodařilo se nahrát '%1'. Jste si jisti, že je to soubor ZIM?
 ui.messages.alreadyIndexingError=Proces indexace už běží.
 ui.messages.noResultsError=Žádné výsledky na tento dotaz.
@@ -80,3 +87,8 @@ ui.messages.information=Informace
 ui.messages.indexing=Indexování...
 ui.messages.selectBookmarkSet=Vyberte soubor sady záložek
 ui.messages.nameBookmarkSet=Zadejte název souboru sady záložek
+ui.messages.newContentAvailable=Nový obsah je k dispozici ke stažení.
+ui.messages.newContentAvailableInvitation=Nový obsah je k dispozici ke stažení. Chcete jej vidět?
+ui.messages.preparingContentDownload=Příprava stahování...
+ui.messages.contentDownloadFinished=Stahování „%1“ je dokončeno.
+ui.messages.feedback=Zpětná vazba

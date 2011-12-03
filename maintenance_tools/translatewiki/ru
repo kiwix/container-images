@@ -4,6 +4,7 @@
 # Author: Eleferen
 # Author: Lvova
 # Author: Renessaince
+# Author: Александр Сигачёв
 
 ui.main.cssdirection=ltr
 ui.main.file=Файл
@@ -95,6 +96,7 @@ ui.preferences.save=Сохранить
 ui.preferences.cancel=Отмена
 ui.preferences.profileDirectory=Каталог профиля
 ui.preferences.browse=Обзор
+ui.preferences.tabs=Запомнить закладки
 ui.messages.loadZimFileError=Не удается загрузить «% 1», вы уверены что это файл ZIM?
 ui.messages.alreadyIndexingError=Процесс индексирования уже запущен.
 ui.messages.noResultsError=Нет результатов по этому запросу.

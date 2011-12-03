@@ -77,6 +77,7 @@ ui.preferences.save=Encartar
 ui.preferences.cancel=Anular
 ui.preferences.profileDirectory=Rèpèrtouèro du profil
 ui.preferences.browse=Dèfelar
+ui.preferences.tabs=Sè rapelar des ongllètes
 ui.messages.loadZimFileError=Empossiblo de chargiér '%1'. Éte-vos de sûr qu’o est un fichiér ZIM ?
 ui.messages.alreadyIndexingError=Una mètoda d’endèxacion est ja en cors.
 ui.messages.noResultsError=Y at gins de rèsultat por cela rechèrche.
