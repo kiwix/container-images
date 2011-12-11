@@ -1,9 +1,11 @@
 # Messages for Slovak (Slovenčina)
 # Exported from translatewiki.net
 # Author: Helix84
+# Author: Wizzard
 
 ui.main.file=Súbor
 ui.main.openFile=Otvoriť súbor...
+ui.main.browseLibrary=Prehľadávať knižnicu
 ui.main.lastOpen=Nedávno otvorené...
 ui.main.saveFile=Uložiť stránku ako...
 ui.main.print=Tlačiť
@@ -31,6 +33,7 @@ ui.main.randomArticle=Náhodný článok
 ui.main.checkIntegrity=Kontrola integrity
 ui.main.purgeHistory=Vyčistiť históriu
 ui.main.help=Pomocník
+ui.main.feedback=Spätná väzba
 ui.main.reportabug=Nahlásiť chybu
 ui.main.requestafeature=Požiadať o funkciu
 ui.main.about=O &brand.brandShortName;
@@ -52,12 +55,15 @@ ui.main.unmark=Zrušiť označenie vybraných
 ui.main.reload=Znovu načítať množinu záložiek
 ui.main.defaultset=Predvolená množina
 ui.main.saveImageAs=Uložiť obrázok ako...
+ui.main.openLinkInNewTab=Otvoriť odkaz v novej záložke
+ui.main.searchFor=Hľadať
 ui.main.close=Zatvoriť
 ui.preferences.preferences=Nastavenia
 ui.preferences.save=Uložiť
 ui.preferences.cancel=Zrušiť
 ui.preferences.profileDirectory=Adresár profilu
 ui.preferences.browse=Prehliadať
+ui.preferences.tabs=Uložiť záložky
 ui.messages.loadZimFileError=Nedá sa načítať „$1“. Naozaj toto je súbor ZIM?
 ui.messages.alreadyIndexingError=Vytváranie indexu je už spustené.
 ui.messages.noResultsError=Žiadne výsledky pre túto požiadavku.
@@ -80,3 +86,8 @@ ui.messages.information=Informácie
 ui.messages.indexing=Prebieha indexovanie...
 ui.messages.selectBookmarkSet=Vyberte súbor množiny záložiek
 ui.messages.nameBookmarkSet=Zadajte názov súboru množiny záložiek
+ui.messages.newContentAvailable=Existuje nový obsah k dispozícii na prevzatie.
+ui.messages.newContentAvailableInvitation=Existuje nový obsah k dispozícii na prevzatie. Chcete ho vidieť?
+ui.messages.preparingContentDownload=Pripravuje sa preberanie...
+ui.messages.contentDownloadFinished=Sťahovanie „%1“ je dokončené.
+ui.messages.feedback=Spätná väzba

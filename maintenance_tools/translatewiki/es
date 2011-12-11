@@ -93,6 +93,7 @@ ui.preferences.save=Guardar
 ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Examinar
+ui.preferences.tabs=Recordar las pestañas
 ui.messages.loadZimFileError=No se pudo cargar «%1». ¿Está seguro que este es un archivo ZIM?
 ui.messages.alreadyIndexingError=Ya se está ejecutando un proceso de indización.
 ui.messages.noResultsError=No hay resultados para esta consulta.

@@ -88,6 +88,7 @@ ui.main.defaultset=Standaardgroep
 ui.main.saveImageAs=Afbeelding opslaan als...
 ui.main.openLinkInNewTab=Verwijzing openen in nieuw tabblad
 ui.main.searchFor=Zoeken naar
+ui.main.copyLinkAddress=Verwijzingslocatie kopiëren
 ui.main.close=Sluiten
 ui.preferences.preferences=Voorkeuren
 ui.preferences.save=Opslaan

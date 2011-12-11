@@ -62,6 +62,7 @@ ui.preferences.save=Simpen
 ui.preferences.cancel=Bolay
 ui.preferences.profileDirectory=Direktori profil
 ui.preferences.browse=Sungsi
+ui.preferences.tabs=Apalkeun tab
 ui.messages.loadZimFileError=Teu bisa ngamuat '%1'. Anjeun yakin yén ieu téh berkas ZIM?
 ui.messages.alreadyIndexingError=Aya prosés ngindéx nu keur jalan.
 ui.messages.noResultsError=Taya hasil pikeun ieu rekés.

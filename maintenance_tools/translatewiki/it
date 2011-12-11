@@ -115,3 +115,4 @@ ui.messages.selectBookmarkSet=Seleziona il file della collezione di segnalibri
 ui.messages.nameBookmarkSet=Inserisci il nome del file della collezione di segnalibri
 ui.messages.newContentAvailable=Ci sono nuovi contenuti disponibili per il download.
 ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili per il download. Vuoi vederli?
+ui.messages.contentDownloadFinished=Download di '%1' completato.

@@ -63,6 +63,7 @@ ui.preferences.save=Lagre
 ui.preferences.cancel=Avbryt
 ui.preferences.profileDirectory=Profilkatalog
 ui.preferences.browse=Bla gjennom
+ui.preferences.tabs=Husk faner
 ui.messages.loadZimFileError=Kan ikke laste '%1'. Er du sikker på at dette er en ZIM-fil?
 ui.messages.alreadyIndexingError=En indekseringsprosess kjører allerede.
 ui.messages.noResultsError=Ingen resultater for dette søket.
