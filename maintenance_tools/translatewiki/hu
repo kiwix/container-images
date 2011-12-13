@@ -57,6 +57,7 @@ ui.main.defaultset=Alapértelmezett készlet
 ui.main.saveImageAs=Kép mentése másként...
 ui.main.openLinkInNewTab=A hivatkozás megnyitása új lapon
 ui.main.searchFor=Keresés
+ui.main.copyLinkAddress=Hivatkozás címének másolása
 ui.main.close=Bezárás
 ui.preferences.preferences=Beállítások
 ui.preferences.save=Mentés

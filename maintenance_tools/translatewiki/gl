@@ -56,6 +56,7 @@ ui.main.defaultset=Conxunto predeterminado
 ui.main.saveImageAs=Gardar imaxe como...
 ui.main.openLinkInNewTab=Abrir a ligazón nunha nova lapela
 ui.main.searchFor=Procurar por
+ui.main.copyLinkAddress=Copiar o enderezo da ligazón
 ui.main.close=Pechar
 ui.preferences.preferences=Preferencias
 ui.preferences.save=Gardar

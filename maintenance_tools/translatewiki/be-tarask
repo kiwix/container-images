@@ -58,6 +58,7 @@ ui.main.defaultset=Набор па змоўчваньні
 ui.main.saveImageAs=Захаваць выяву як…
 ui.main.openLinkInNewTab=Адкрыць спасылку ў новай закладцы
 ui.main.searchFor=Шукаць
+ui.main.copyLinkAddress=Скапіяваць адрас спасылкі
 ui.main.close=Зачыніць
 ui.preferences.preferences=Налады
 ui.preferences.save=Захаваць

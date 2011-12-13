@@ -56,6 +56,7 @@ ui.main.defaultset=Grupu predetermináu
 ui.main.saveImageAs=Guardar imaxe como...
 ui.main.openLinkInNewTab=Abrir enllaz en llingüeta nueva
 ui.main.searchFor=Buscar
+ui.main.copyLinkAddress=Copiar la direición del enllaz
 ui.main.close=Zarrar
 ui.preferences.preferences=Preferencies
 ui.preferences.save=Guardar

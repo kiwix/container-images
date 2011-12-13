@@ -56,6 +56,7 @@ ui.main.defaultset=Privzeta množica
 ui.main.saveImageAs=Shrani sliko kot ...
 ui.main.openLinkInNewTab=Odpri povezavo na novem zavihku
 ui.main.searchFor=Išči
+ui.main.copyLinkAddress=Kopiraj naslov povezave
 ui.main.close=Zapri
 ui.preferences.preferences=Nastavitve
 ui.preferences.save=Shrani

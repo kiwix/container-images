@@ -56,6 +56,7 @@ ui.main.defaultset=Standardna skupina
 ui.main.saveImageAs=Wobraz składować jako...
 ui.main.openLinkInNewTab=Wotkaz w nowym rajtarku wočinić
 ui.main.searchFor=Pytać za
+ui.main.copyLinkAddress=Wotkazowu adresu kopěrować
 ui.main.close=Začinić
 ui.preferences.preferences=Nastajenja
 ui.preferences.save=Składować

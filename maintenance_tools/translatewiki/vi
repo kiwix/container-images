@@ -56,6 +56,7 @@ ui.main.defaultset=Danh sách Mặc định
 ui.main.saveImageAs=Lưu Hình Như…
 ui.main.openLinkInNewTab=Mở liên kết trong thẻ mới
 ui.main.searchFor=Tìm kiếm
+ui.main.copyLinkAddress=Chép địa chỉ liên kết
 ui.main.close=Đóng
 ui.preferences.preferences=Tùy chỉnh
 ui.preferences.save=Lưu

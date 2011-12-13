@@ -56,6 +56,7 @@ ui.main.defaultset=Подразумевани скуп
 ui.main.saveImageAs=Сачувај слику као…
 ui.main.openLinkInNewTab=Отвори везу у новом језичку
 ui.main.searchFor=Тражи
+ui.main.copyLinkAddress=Умножи адресу везе
 ui.main.close=Затвори
 ui.preferences.preferences=Поставке
 ui.preferences.save=Сачувај

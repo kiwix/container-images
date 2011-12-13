@@ -57,6 +57,7 @@ ui.main.defaultset=Standardsamling
 ui.main.saveImageAs=Lagre bilde som...
 ui.main.openLinkInNewTab=Åpne lenke i ny fane
 ui.main.searchFor=Søk etter
+ui.main.copyLinkAddress=Kopier lenkeadresse
 ui.main.close=Lukk
 ui.preferences.preferences=Innstillinger
 ui.preferences.save=Lagre

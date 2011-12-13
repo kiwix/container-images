@@ -56,6 +56,7 @@ ui.main.defaultset=Set Azali
 ui.main.saveImageAs=Simpan imej sebagai...
 ui.main.openLinkInNewTab=Buka Pautan dalam Tab Baru
 ui.main.searchFor=Cari
+ui.main.copyLinkAddress=Salin alamat pautan
 ui.main.close=Tutup
 ui.preferences.preferences=Keutamaan
 ui.preferences.save=Simpan

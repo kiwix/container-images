@@ -57,6 +57,7 @@ ui.main.defaultset=Standardsamling
 ui.main.saveImageAs=Spara bild som...
 ui.main.openLinkInNewTab=Öppna länk i ny flik
 ui.main.searchFor=Sök efter
+ui.main.copyLinkAddress=Kopiera länkadress
 ui.main.close=Stäng
 ui.preferences.preferences=Inställningar
 ui.preferences.save=Spara

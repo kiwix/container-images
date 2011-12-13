@@ -56,6 +56,7 @@ ui.main.defaultset=Collection predefinite
 ui.main.saveImageAs=Salveguardar imagine sub nomine...
 ui.main.openLinkInNewTab=Aperir ligamine in nove scheda
 ui.main.searchFor=Cercar
+ui.main.copyLinkAddress=Copiar adresse del ligamine
 ui.main.close=Clauder
 ui.preferences.preferences=Preferentias
 ui.preferences.save=Salveguardar

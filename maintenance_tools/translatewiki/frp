@@ -71,6 +71,7 @@ ui.main.defaultset=Juè per dèfôt
 ui.main.saveImageAs=Encartar l’émâge coment...
 ui.main.openLinkInNewTab=Uvrir lo lim dens una ongllèta novèla
 ui.main.searchFor=Rechèrchiér
+ui.main.copyLinkAddress=Copiyér l’adrèce du lim
 ui.main.close=Cllôre
 ui.preferences.preferences=Prèferences
 ui.preferences.save=Encartar

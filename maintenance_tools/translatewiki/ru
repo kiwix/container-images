@@ -90,6 +90,7 @@ ui.main.defaultset=Установить по умолчанию
 ui.main.saveImageAs=Сохранить изображение как...
 ui.main.openLinkInNewTab=Открыть ссылку в новой вкладке
 ui.main.searchFor=Поиск
+ui.main.copyLinkAddress=Скопировать адрес ссылки
 ui.main.close=Закрыть
 ui.preferences.preferences=Параметры
 ui.preferences.save=Сохранить
