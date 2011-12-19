@@ -101,6 +101,7 @@ ui.main.library.filterBy=Filtern nach
 ui.main.library.filterBy.fileSize=Dateigröße
 ui.main.library.filterBy.language=Sprache
 ui.main.library.filterBy.language.all=Alle
+# Fuzzy
 ui.main.library.filterBy.author=Autor(en)
 ui.main.library.filterBy.author.all=Alle
 ui.main.library.filterBy.publisher=Veröffentlicher

@@ -56,7 +56,26 @@ ui.main.defaultset=Der schtandatmääßeje Pöngel
 ui.main.saveImageAs=Dat Beld faßhallde onger...
 ui.main.openLinkInNewTab=Donn dä Lengk en enem neue Ongerfinster op maache
 ui.main.searchFor=Söhk noh
+ui.main.copyLinkAddress=Donn di <i lang="en">URL</i> vun dämm Lėngk kopėėere
 ui.main.close=Zohmaache
+ui.main.library.myLibrary=Ming eije Sammlong
+ui.main.library.getNewFiles=Neu Datteije krijje
+ui.main.library.searchZimFiles=Noh neu ZIM-Datteije söhke
+ui.main.library.sortBy=Zoteer noh
+ui.main.library.sortBy.title=Övverschreff
+ui.main.library.sortBy.size=Ömfang
+ui.main.library.sortBy.date=Dattum un Zick
+ui.main.library.sortBy.author=Fotojraf udder Maacher
+ui.main.library.sortBy.publisher=Verläjer udder Veröffentlescher
+ui.main.library.filterBy=Ußsöhke noh
+ui.main.library.filterBy.fileSize=Datteiömfang
+ui.main.library.filterBy.language=Schprooch
+ui.main.library.filterBy.language.all=Alle Schprooche
+# Fuzzy
+ui.main.library.filterBy.author=Fottojraafe udder Maacher
+ui.main.library.filterBy.author.all=Jeeder Ein
+ui.main.library.filterBy.publisher=Verläjer udder Veröffentlescher
+ui.main.library.filterBy.publisher.all=Jeeder Ein
 ui.preferences.preferences=Enschtellunge
 ui.preferences.save=Fasshalde
 ui.preferences.cancel=Ophüre

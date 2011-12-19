@@ -68,6 +68,15 @@ ui.main.library.sortBy.size=ଆକାର
 ui.main.library.sortBy.date=ତାରିଖ
 ui.main.library.sortBy.author=ଲେଖକ
 ui.main.library.sortBy.publisher=ପ୍ରକାଶକ
+ui.main.library.filterBy=କାହା ଦେଇ ଛଣା ହେବ:
+ui.main.library.filterBy.fileSize=ଫାଇଲ ଆକାର
+ui.main.library.filterBy.language=ଭାଷା
+ui.main.library.filterBy.language.all=ସବୁ
+# Fuzzy
+ui.main.library.filterBy.author=ଲେଖକ (ଗଣ)
+ui.main.library.filterBy.author.all=ସବୁ
+ui.main.library.filterBy.publisher=ପ୍ରକାଶକ
+ui.main.library.filterBy.publisher.all=ସବୁ
 ui.preferences.preferences=ପସନ୍ଦସବୁ
 ui.preferences.save=ସାଇତିବେ
 ui.preferences.cancel=ନାକଚ

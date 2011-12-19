@@ -71,6 +71,7 @@ ui.main.library.filterBy=Филтрирај по
 ui.main.library.filterBy.fileSize=Големина на податотеката
 ui.main.library.filterBy.language=Јазик
 ui.main.library.filterBy.language.all=Сите
+# Fuzzy
 ui.main.library.filterBy.author=Автор(и)
 ui.main.library.filterBy.author.all=Сите
 ui.main.library.filterBy.publisher=Издавач

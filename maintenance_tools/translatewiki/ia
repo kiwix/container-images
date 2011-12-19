@@ -71,6 +71,7 @@ ui.main.library.filterBy=Filtrar per
 ui.main.library.filterBy.fileSize=Dimension de file
 ui.main.library.filterBy.language=Lingua
 ui.main.library.filterBy.language.all=Totes
+# Fuzzy
 ui.main.library.filterBy.author=Autor(es)
 ui.main.library.filterBy.author.all=Totes
 ui.main.library.filterBy.publisher=Editor

@@ -73,6 +73,7 @@ ui.main.library.filterBy=Фільтраваць па
 ui.main.library.filterBy.fileSize=Памеру файла
 ui.main.library.filterBy.language=Мове
 ui.main.library.filterBy.language.all=Усе
+# Fuzzy
 ui.main.library.filterBy.author=Аўтару(ам)
 ui.main.library.filterBy.author.all=Усе
 ui.main.library.filterBy.publisher=Выдавецтву

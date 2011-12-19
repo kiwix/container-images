@@ -71,6 +71,7 @@ ui.main.library.filterBy=Filtrować po
 ui.main.library.filterBy.fileSize=Wulkosć dataje
 ui.main.library.filterBy.language=Rěč
 ui.main.library.filterBy.language.all=Wšě
+# Fuzzy
 ui.main.library.filterBy.author=Awtorojo
 ui.main.library.filterBy.author.all=Wšě
 ui.main.library.filterBy.publisher=Wudawaćel

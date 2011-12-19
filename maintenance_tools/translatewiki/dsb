@@ -71,6 +71,7 @@ ui.main.library.filterBy=Filtrowaś pó
 ui.main.library.filterBy.fileSize=Wjelikosć dataje
 ui.main.library.filterBy.language=Rěc
 ui.main.library.filterBy.language.all=Wšykne
+# Fuzzy
 ui.main.library.filterBy.author=Awtory
 ui.main.library.filterBy.author.all=Wšykne
 ui.main.library.filterBy.publisher=Wudawaŕ
