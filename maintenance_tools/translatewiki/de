@@ -1,5 +1,6 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
+# Author: Jan Luca
 # Author: Kghbln
 
 ui.main.cssdirection=ltr
@@ -101,8 +102,7 @@ ui.main.library.filterBy=Filtern nach
 ui.main.library.filterBy.fileSize=Dateigröße
 ui.main.library.filterBy.language=Sprache
 ui.main.library.filterBy.language.all=Alle
-# Fuzzy
-ui.main.library.filterBy.author=Autor(en)
+ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Alle
 ui.main.library.filterBy.publisher=Veröffentlicher
 ui.main.library.filterBy.publisher.all=Alle
@@ -112,7 +112,7 @@ ui.preferences.cancel=Abbrechen
 ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Durchsuchen
 ui.preferences.tabs=Reiter merken
-ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Sind Sie sicher, dass dies eine ZIM-Datei ist?
+ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Bist du sicher, dass dies eine ZIM-Datei ist?
 ui.messages.alreadyIndexingError=Ein Indexierungsprozess wurde bereits gestartet.
 ui.messages.noResultsError=Keine Ergebnisse gefunden.
 ui.messages.loadArticleError=Dieser Artikel kann nicht geladen werden.

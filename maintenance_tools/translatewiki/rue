@@ -1,9 +1,11 @@
 # Messages for Rusyn (Русиньскый)
 # Exported from translatewiki.net
 # Author: Gazeb
+# Author: Kelson
 
 ui.main.file=Файл
 ui.main.openFile=Отворити файл ...
+ui.main.browseLibrary=Огляд книжніцї
 ui.main.lastOpen=Недавно отворены ...
 ui.main.saveFile=Уложыти сторінку як...
 ui.main.print=Друк
@@ -31,6 +33,7 @@ ui.main.randomArticle=Нагодна статя
 ui.main.checkIntegrity=Перевірїня інтеґріты
 ui.main.purgeHistory=Змазати історію
 ui.main.help=Поміч
+ui.main.feedback=Одозва
 ui.main.reportabug=Репортовати хыбу
 ui.main.requestafeature=Жадати функцію
 ui.main.about=Про &brand.brandShortName;
@@ -52,12 +55,33 @@ ui.main.unmark=Зняти позначку з выбраных
 ui.main.reload=Знову натягнути саду заложок
 ui.main.defaultset=Імпліцітна сада
 ui.main.saveImageAs=Уложыти образчік як...
+ui.main.openLinkInNewTab=Одкрыти одказ в новім табі
+ui.main.searchFor=Глядати
+ui.main.copyLinkAddress=Копіровати  адресу одказу
 ui.main.close=Заперти
+ui.main.library.myLibrary=Моя книжніця
+ui.main.library.getNewFiles=Обтримати новы файлы
+ui.main.library.searchZimFiles=Глядати ZIM файлы
+ui.main.library.sortBy=Сортовати за
+ui.main.library.sortBy.title=Назва
+ui.main.library.sortBy.size=Розмір
+ui.main.library.sortBy.date=Датум
+ui.main.library.sortBy.author=Автор
+ui.main.library.sortBy.publisher=Выдаватель
+ui.main.library.filterBy=Філтрованя за
+ui.main.library.filterBy.fileSize=Розмір файлу
+ui.main.library.filterBy.language=Язык
+ui.main.library.filterBy.language.all=Вшыткы
+ui.main.library.filterBy.author=Автор
+ui.main.library.filterBy.author.all=Вшыткы
+ui.main.library.filterBy.publisher=Выдаватель
+ui.main.library.filterBy.publisher.all=Вшыткы
 ui.preferences.preferences=Наставлїня
 ui.preferences.save=Уложыти
 ui.preferences.cancel=Сторно
 ui.preferences.profileDirectory=Адресарь профілу хоснователя
 ui.preferences.browse=Переглядати
+ui.preferences.tabs=Уложыти табы
 ui.messages.loadZimFileError=Не годен натягнути  '%1' Істотнї то є ZIM файл?
 ui.messages.alreadyIndexingError=Процес індексованя уж є спущеный.
 ui.messages.noResultsError=Про тоту пожадавку не суть резултаты.
@@ -80,3 +104,8 @@ ui.messages.information=Інформація
 ui.messages.indexing=Індексованя
 ui.messages.selectBookmarkSet=Выберьте файл сады заложок
 ui.messages.nameBookmarkSet=Уведьте назву про файл заложок
+ui.messages.newContentAvailable=Новый обсяг є доступный про скачаня.
+ui.messages.newContentAvailableInvitation=Новый обсяг є доступный про скачаня. Хочете го відїти?
+ui.messages.preparingContentDownload=Рыхтованя скачаня...
+ui.messages.contentDownloadFinished=Скачаня „%1“ докінчене.
+ui.messages.feedback=Одозва

@@ -1,5 +1,6 @@
 # Messages for Nepali (नेपाली)
 # Exported from translatewiki.net
+# Author: RajeshPandey
 # Author: सरोज कुमार ढकाल
 
 ui.main.cssdirection=ltr
@@ -7,6 +8,7 @@ ui.main.file=फाइल
 ui.main.file.accesskey=फ
 ui.main.openFile=फाइल खोल्ने
 ui.main.openFile.accesskey=ख
+ui.main.browseLibrary=पुस्तकालय हेर्नुहोस
 ui.main.lastOpen=हालसालै खोलिएको
 ui.main.saveFile=पृष्ठलाई यसरुपमा बचत गर्ने...
 ui.main.saveFile.accesskey=ब
@@ -60,6 +62,7 @@ ui.main.purgeHistory=सफाइ इतिहास
 ui.main.purgeHistory.accesskey=इ
 ui.main.help=सहायता
 ui.main.help.accesskey=ह
+ui.main.feedback=प्रतिक्रिया।
 ui.main.reportabug=बग उजुरी गर्ने
 ui.main.requestafeature=नयाँ गुण अनुरोध गर्ने
 ui.main.about=बारेमा &brand.brandShortName;
@@ -82,7 +85,13 @@ ui.main.unmark=छानिएकामा चिनो हटाउने
 ui.main.reload=यो पुस्तक चिनो पूर्वरुपमा फर्काउने
 ui.main.defaultset=पूर्व निर्धारित समुह
 ui.main.saveImageAs=तस्विरलाई यसरुपमा बचत गर्ने...
+ui.main.openLinkInNewTab=लिङ्कलाइ नयाँ ट्याबमा खोल्नुहोस
+ui.main.searchFor=यसलाइ खोज्ने
+ui.main.copyLinkAddress=लिङ्क ठेगाना कपि गर्ने
 ui.main.close=बन्द गर्ने
+ui.main.library.myLibrary=मेरो पुस्तकालय
+ui.main.library.getNewFiles=नयाँ फाइलहरु लिनुहोस
+ui.main.library.searchZimFiles=ZIM फाइलहरु खोज्ने
 ui.preferences.preferences=प्राथमिकताहरु
 ui.preferences.save=बचत गर्ने
 ui.preferences.cancel=रद्द गर्ने

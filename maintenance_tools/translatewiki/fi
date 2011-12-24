@@ -1,5 +1,6 @@
 # Messages for Finnish (Suomi)
 # Exported from translatewiki.net
+# Author: Crt
 # Author: Nedergard
 # Author: Nike
 # Author: Olli
@@ -33,6 +34,7 @@ ui.main.randomArticle=Satunnainen artikkeli
 ui.main.checkIntegrity=Eheydentarkistus
 ui.main.purgeHistory=Tyhjennä historia
 ui.main.help=Ohje
+ui.main.feedback=Palaute
 ui.main.reportabug=Ilmoita virheestä
 ui.main.requestafeature=Ehdota ominaisuutta
 ui.main.about=Tietoja sovelluksesta &brand.brandShortName;
@@ -54,12 +56,18 @@ ui.main.unmark=Poista merkintä valituista
 ui.main.reload=Lataa kirjanmerkkikokoelma uudelleen
 ui.main.defaultset=Oletuskokoelma
 ui.main.saveImageAs=Tallenna kuva nimellä...
+ui.main.openLinkInNewTab=Avaa linkki uudessa välilehdessä
 ui.main.close=Sulje
+ui.main.library.filterBy.language=Kieli
+ui.main.library.filterBy.language.all=Kaikki
+ui.main.library.filterBy.author.all=Kaikki
+ui.main.library.filterBy.publisher.all=Kaikki
 ui.preferences.preferences=Asetukset
 ui.preferences.save=Tallenna
 ui.preferences.cancel=Peruuta
 ui.preferences.profileDirectory=Profiili-hakemisto
 ui.preferences.browse=Selaa
+ui.preferences.tabs=Muista välilehdet
 ui.messages.loadZimFileError=Tiedoston %1 lataaminen epäonnistui.
 ui.messages.alreadyIndexingError=Indeksointi on jo käynnissä.
 ui.messages.noResultsError=Ei tuloksia kyselylle.
@@ -82,3 +90,4 @@ ui.messages.information=Tietoja
 ui.messages.indexing=Indeksoidaan...
 ui.messages.selectBookmarkSet=Valitse kirjanmerkkikokoelman tiedosto
 ui.messages.nameBookmarkSet=Valitse kirjanmerkkikokoelman nimi
+ui.messages.feedback=Palaute

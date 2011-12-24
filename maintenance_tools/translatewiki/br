@@ -72,8 +72,7 @@ ui.main.library.filterBy=Silañ dre
 ui.main.library.filterBy.fileSize=Ment ar restr
 ui.main.library.filterBy.language=Yezh
 ui.main.library.filterBy.language.all=An holl
-# Fuzzy
-ui.main.library.filterBy.author=Aozer(ien)
+ui.main.library.filterBy.author=Aozer
 ui.main.library.filterBy.author.all=An holl
 ui.main.library.filterBy.publisher=Embanner
 ui.main.library.filterBy.publisher.all=An holl

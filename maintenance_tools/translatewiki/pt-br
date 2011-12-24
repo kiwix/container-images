@@ -4,6 +4,7 @@
 # Author: Luigipiccoli
 # Author: MetalBrasil
 # Author: Pedroca cerebral
+# Author: Rafael Vargas
 
 ui.main.file=Arquivo
 ui.main.openFile=Abrir arquivo...
@@ -59,7 +60,25 @@ ui.main.defaultset=Conjunto padrão
 ui.main.saveImageAs=Salvar imagem como...
 ui.main.openLinkInNewTab=Abrir link em uma nova aba
 ui.main.searchFor=Procurar por
+ui.main.copyLinkAddress=Copiar endereço do link
 ui.main.close=Fechar
+ui.main.library.myLibrary=Minha biblioteca
+ui.main.library.getNewFiles=Obter novos arquivos
+ui.main.library.searchZimFiles=Procurar por arquivos ZIM
+ui.main.library.sortBy=Classificar por
+ui.main.library.sortBy.title=Título
+ui.main.library.sortBy.size=Tamanho
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Autor
+ui.main.library.sortBy.publisher=Editora
+ui.main.library.filterBy=Filtrar por
+ui.main.library.filterBy.fileSize=Tamanho do arquivo
+ui.main.library.filterBy.language=Idioma
+ui.main.library.filterBy.language.all=Todas
+ui.main.library.filterBy.author=Autor
+ui.main.library.filterBy.author.all=Todos
+ui.main.library.filterBy.publisher=Editora
+ui.main.library.filterBy.publisher.all=Todas
 ui.preferences.preferences=Preferências
 ui.preferences.save=Salvar
 ui.preferences.cancel=Cancelar

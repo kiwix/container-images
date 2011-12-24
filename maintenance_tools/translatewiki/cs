@@ -1,6 +1,7 @@
 # Messages for Czech (Česky)
 # Exported from translatewiki.net
 # Author: Jachym
+# Author: Jkjk
 # Author: Mormegil
 # Author: Utar
 
@@ -58,7 +59,25 @@ ui.main.defaultset=Výchozí sada
 ui.main.saveImageAs=Uložit obrázek jako...
 ui.main.openLinkInNewTab=Otevřít odkaz v nové záložce
 ui.main.searchFor=Vyhledat
+ui.main.copyLinkAddress=Zkopírovat adresu odkazu
 ui.main.close=Zavřít
+ui.main.library.myLibrary=Moje knihovna
+ui.main.library.getNewFiles=Získat nové soubory
+ui.main.library.searchZimFiles=Prohledat soubory ZIM
+ui.main.library.sortBy=Seřadit podle
+ui.main.library.sortBy.title=Názvu
+ui.main.library.sortBy.size=Velikosti
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Autora
+ui.main.library.sortBy.publisher=Vydavatele
+ui.main.library.filterBy=Filtrovat podle
+ui.main.library.filterBy.fileSize=Velikosti souboru
+ui.main.library.filterBy.language=Jazyka
+ui.main.library.filterBy.language.all=Všechny
+ui.main.library.filterBy.author=Autor
+ui.main.library.filterBy.author.all=Všichni
+ui.main.library.filterBy.publisher=Vydavatele
+ui.main.library.filterBy.publisher.all=Všechny
 ui.preferences.preferences=Možnosti
 ui.preferences.save=Uložit
 ui.preferences.cancel=Storno

@@ -1,9 +1,11 @@
 # Messages for Afrikaans (Afrikaans)
 # Exported from translatewiki.net
 # Author: Naudefj
+# Author: SPQRobin
 
 ui.main.file=Lêer
 ui.main.openFile=Maak lêer oop...
+ui.main.browseLibrary=Blaai deur biblioteek
 ui.main.lastOpen=Onlangs geopen...
 ui.main.saveFile=Stoor bladsy as...
 ui.main.print=Druk
@@ -31,6 +33,7 @@ ui.main.randomArticle=Lukrake artikel
 ui.main.checkIntegrity=Integriteitskontrole
 ui.main.purgeHistory=Skrap geskiedenis
 ui.main.help=Hulp
+ui.main.feedback=Terugvoer
 ui.main.reportabug=Rapporteer 'n fout
 ui.main.requestafeature=Vra vir nuwe funksionaliteit
 ui.main.about=Oor &brand.brandShortName;
@@ -52,12 +55,33 @@ ui.main.unmark=Ontmerk gekose
 ui.main.reload=Herlaai die stel boekmerke
 ui.main.defaultset=Standaardgroep
 ui.main.saveImageAs=Stoor beeld as...
+ui.main.openLinkInNewTab=Open skakel in nuwe oortjie
+ui.main.searchFor=Soek na
+ui.main.copyLinkAddress=Kopieer skakel
 ui.main.close=Sluit
+ui.main.library.myLibrary=My biblioteek
+ui.main.library.getNewFiles=Kry nuwe lêers
+ui.main.library.searchZimFiles=Soek ZIM-lêers
+ui.main.library.sortBy=Sorteer volgens
+ui.main.library.sortBy.title=Titel
+ui.main.library.sortBy.size=Grootte
+ui.main.library.sortBy.date=Datum
+ui.main.library.sortBy.author=Outeur
+ui.main.library.sortBy.publisher=Uitgewer
+ui.main.library.filterBy=Filtreer volgens
+ui.main.library.filterBy.fileSize=Lêergrootte
+ui.main.library.filterBy.language=Taal
+ui.main.library.filterBy.language.all=Alle
+ui.main.library.filterBy.author=Outeur
+ui.main.library.filterBy.author.all=Alle
+ui.main.library.filterBy.publisher=Uitgewer
+ui.main.library.filterBy.publisher.all=Alle
 ui.preferences.preferences=Voorkeure
 ui.preferences.save=Stoor
 ui.preferences.cancel=Kanselleer
 ui.preferences.profileDirectory=Profielgids
 ui.preferences.browse=Blaai
+ui.preferences.tabs=Onthou oortjies
 ui.messages.loadZimFileError="%1" kan nie gelaai word nie. Is u seker dis 'n ZIM-lêer?
 ui.messages.alreadyIndexingError=Reeds besig met indeksering.
 ui.messages.noResultsError=Geen resultate vir hierdie soektog nie.
@@ -80,3 +104,8 @@ ui.messages.information=Inligting
 ui.messages.indexing=Indeksering
 ui.messages.selectBookmarkSet=Kies lêer vir stel boekmerke
 ui.messages.nameBookmarkSet=Lêernaam vir stel boekmerke
+ui.messages.newContentAvailable=Daar is nuwe inhoud om af te laai.
+ui.messages.newContentAvailableInvitation=Daar is nuwe inhoud om af te laai. Wil u dit sien?
+ui.messages.preparingContentDownload=Berei voor vir aflaai...
+ui.messages.contentDownloadFinished=Aflaai van "%1" is voltooi.
+ui.messages.feedback=Terugvoer

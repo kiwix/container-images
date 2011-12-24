@@ -2,6 +2,8 @@
 # Exported from translatewiki.net
 # Author: Dim Grits
 # Author: Eleferen
+# Author: Eugrus
+# Author: Kelson
 # Author: Lvova
 # Author: Renessaince
 # Author: Александр Сигачёв
@@ -92,6 +94,23 @@ ui.main.openLinkInNewTab=Открыть ссылку в новой вкладк�
 ui.main.searchFor=Поиск
 ui.main.copyLinkAddress=Скопировать адрес ссылки
 ui.main.close=Закрыть
+ui.main.library.myLibrary=Моя библиотека
+ui.main.library.getNewFiles=Получить новые файлы
+ui.main.library.searchZimFiles=Поиск ZIM-файлов
+ui.main.library.sortBy=Сортировать по
+ui.main.library.sortBy.title=Заголовок
+ui.main.library.sortBy.size=Размер
+ui.main.library.sortBy.date=Дата
+ui.main.library.sortBy.author=Автор
+ui.main.library.sortBy.publisher=Издатель
+ui.main.library.filterBy=Фильтровать по
+ui.main.library.filterBy.fileSize=Размер файла
+ui.main.library.filterBy.language=Язык
+ui.main.library.filterBy.language.all=Все
+ui.main.library.filterBy.author=Автор
+ui.main.library.filterBy.author.all=Все
+ui.main.library.filterBy.publisher=Издатель
+ui.main.library.filterBy.publisher.all=Все
 ui.preferences.preferences=Параметры
 ui.preferences.save=Сохранить
 ui.preferences.cancel=Отмена

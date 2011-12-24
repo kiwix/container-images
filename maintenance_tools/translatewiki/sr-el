@@ -71,7 +71,6 @@ ui.main.library.filterBy=Filtriraj po
 ui.main.library.filterBy.fileSize=veličini datoteke
 ui.main.library.filterBy.language=jeziku
 ui.main.library.filterBy.language.all=svim jezicima
-# Fuzzy
 ui.main.library.filterBy.author=autoru
 ui.main.library.filterBy.author.all=svim autorima
 ui.main.library.filterBy.publisher=izdavaču

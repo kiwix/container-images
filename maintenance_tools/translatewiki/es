@@ -1,6 +1,7 @@
 # Messages for Spanish (Español)
 # Exported from translatewiki.net
 # Author: Fitoschido
+# Author: Platonides
 # Author: Vivaelcelta
 
 ui.main.cssdirection=ltr
@@ -87,7 +88,25 @@ ui.main.defaultset=Conjunto predeterminado
 ui.main.saveImageAs=Guardar imagen como…
 ui.main.openLinkInNewTab=Abrir el enlace en una nueva pestaña
 ui.main.searchFor=Buscar por
+ui.main.copyLinkAddress=Copiar dirección del enlace
 ui.main.close=Cerrar
+ui.main.library.myLibrary=Mi biblioteca
+ui.main.library.getNewFiles=Obtener nuevos archivos
+ui.main.library.searchZimFiles=Buscar archivos ZIM
+ui.main.library.sortBy=Ordenar por
+ui.main.library.sortBy.title=Título
+ui.main.library.sortBy.size=Tamaño
+ui.main.library.sortBy.date=Fecha
+ui.main.library.sortBy.author=Autor
+ui.main.library.sortBy.publisher=Editor
+ui.main.library.filterBy=Filtrar por
+ui.main.library.filterBy.fileSize=Tamaño del archivo
+ui.main.library.filterBy.language=Idioma
+ui.main.library.filterBy.language.all=Todos los idiomas
+ui.main.library.filterBy.author=Autor
+ui.main.library.filterBy.author.all=Todos los autores
+ui.main.library.filterBy.publisher=Editor
+ui.main.library.filterBy.publisher.all=Todos los editores
 ui.preferences.preferences=Preferencias
 ui.preferences.save=Guardar
 ui.preferences.cancel=Cancelar

@@ -1,6 +1,8 @@
 # Messages for Ukrainian (Українська)
 # Exported from translatewiki.net
+# Author: Alex Khimich
 # Author: Dim Grits
+# Author: Kelson
 # Author: Дар'я Козлова
 
 ui.main.cssdirection=ltr
@@ -87,7 +89,25 @@ ui.main.defaultset=Встановити за замовчуванням
 ui.main.saveImageAs=Зберегти зображення як ...
 ui.main.openLinkInNewTab=Відкрити посилання у новій вкладці
 ui.main.searchFor=Шукати
+ui.main.copyLinkAddress=Копіювати адресу посилання
 ui.main.close=Закрити
+ui.main.library.myLibrary=Моя бібліотека
+ui.main.library.getNewFiles=Отримати нові файли
+ui.main.library.searchZimFiles=Пошук ZIM-файлів
+ui.main.library.sortBy=Сортувати за
+ui.main.library.sortBy.title=Назва
+ui.main.library.sortBy.size=Розмір
+ui.main.library.sortBy.date=Дата
+ui.main.library.sortBy.author=Автор
+ui.main.library.sortBy.publisher=Видавець
+ui.main.library.filterBy=Фільтрування за
+ui.main.library.filterBy.fileSize=Розмір файлу
+ui.main.library.filterBy.language=Мова
+ui.main.library.filterBy.language.all=Всі
+ui.main.library.filterBy.author=Автор
+ui.main.library.filterBy.author.all=Всі
+ui.main.library.filterBy.publisher=Видавець
+ui.main.library.filterBy.publisher.all=Всі
 ui.preferences.preferences=Уподобання
 ui.preferences.save=Зберегти
 ui.preferences.cancel=Скасувати

@@ -71,7 +71,6 @@ ui.main.library.filterBy=Tapis mengikut
 ui.main.library.filterBy.fileSize=Saiz fail
 ui.main.library.filterBy.language=Bahasa
 ui.main.library.filterBy.language.all=Semua
-# Fuzzy
 ui.main.library.filterBy.author=Pengarang
 ui.main.library.filterBy.author.all=Semua
 ui.main.library.filterBy.publisher=Pengarang

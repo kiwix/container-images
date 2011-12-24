@@ -71,8 +71,7 @@ ui.main.library.filterBy=Filtrar por
 ui.main.library.filterBy.fileSize=Tamaño do ficheiro
 ui.main.library.filterBy.language=Lingua
 ui.main.library.filterBy.language.all=Todas
-# Fuzzy
-ui.main.library.filterBy.author=Autor(es)
+ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Todos
 ui.main.library.filterBy.publisher=Editor
 ui.main.library.filterBy.publisher.all=Todos
