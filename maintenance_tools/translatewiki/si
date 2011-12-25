@@ -1,9 +1,11 @@
 # Messages for Sinhala (සිංහල)
 # Exported from translatewiki.net
+# Author: පසිඳු කාවින්ද
 # Author: සුරනිමල
 
 ui.main.file=ගොනුව
 ui.main.openFile=ගොනුව විවෘත කරන්න...
+ui.main.browseLibrary=ගබඩාව පිරික්සන්න
 ui.main.lastOpen=මෑතදී විවෘත කෙරුණු...
 ui.main.saveFile=පිටුව මෙසේ සුරකින්න...
 ui.main.print=මුද්‍රණය කරන්න
@@ -31,6 +33,7 @@ ui.main.randomArticle=අහඹු ලිපිය
 ui.main.checkIntegrity=සම්පූර්ණත්ව අවේක්ෂාව
 ui.main.purgeHistory=ශෝධන ඉතිහාසය
 ui.main.help=උදවු
+ui.main.feedback=ප්‍රතිචාරය
 ui.main.reportabug=දෝෂයක් වාර්තා කරන්න
 ui.main.requestafeature=විශේෂාංගයක් ඉල්ලන්න
 ui.main.about=&වර්ගය.වර්ගකෙටිනම පිළිබඳ;
@@ -52,12 +55,33 @@ ui.main.unmark=තෝරාගත්ත අසලකුණු කරන්න
 ui.main.reload=පොත්යොමු කට්ටලය යළි-බාගන්න
 ui.main.defaultset=පෙරනිමි කට්ටලය
 ui.main.saveImageAs=රූපය මෙසේ සුරකින්න...
+ui.main.openLinkInNewTab=සබැඳිය නව ටැබයක විවෘත කරන්න
+ui.main.searchFor=සඳහා ගවේෂණය
+ui.main.copyLinkAddress=සබැඳි ලිපිනය පිටපත් කරන්න
 ui.main.close=වසන්න
+ui.main.library.myLibrary=මගේ පුස්තකාලය
+ui.main.library.getNewFiles=නව ගොනු ලබාගන්න
+ui.main.library.searchZimFiles=ZIM ගොනු සොයන්න
+ui.main.library.sortBy=මෙසේ පෙළගස්වන්න
+ui.main.library.sortBy.title=මාතෘකාව
+ui.main.library.sortBy.size=විශාලත්වය
+ui.main.library.sortBy.date=දිනය
+ui.main.library.sortBy.author=කතෘ
+ui.main.library.sortBy.publisher=ප්‍රකාශකයා
+ui.main.library.filterBy=මෙසේ පෙරන්න
+ui.main.library.filterBy.fileSize=ගොනුවේ විශාලත්වය
+ui.main.library.filterBy.language=භාෂාව
+ui.main.library.filterBy.language.all=සියල්ල
+ui.main.library.filterBy.author=කතෘ
+ui.main.library.filterBy.author.all=සියල්ල
+ui.main.library.filterBy.publisher=ප්‍රකාශකයා
+ui.main.library.filterBy.publisher.all=සියල්ල
 ui.preferences.preferences=අභිරුචි
 ui.preferences.save=සුරකින්න
 ui.preferences.cancel=අවලංගු කරන්න
 ui.preferences.profileDirectory=පැතිකඩ නාමාවලිය
 ui.preferences.browse=පිරික්සන්න
+ui.preferences.tabs=මතක් කිරීම් ටැබයන්
 ui.messages.loadZimFileError='%1'  බා ගැනීමට නොහැකියි මෙය  ZIM ගොනුවක් බව සහතිකද?
 ui.messages.alreadyIndexingError=සූචිකරණ ක්‍රියාවලිය දැනටමත් ක්‍රියාත්මක වෙමින් පවතියි.
 ui.messages.noResultsError=මෙම විමසුමට ප්‍රතිඵල නොමැත.
@@ -80,3 +104,8 @@ ui.messages.information=තොරතුරු
 ui.messages.indexing=සූචිකරණය කරමින්...
 ui.messages.selectBookmarkSet=පොත්යොමු කට්ටල ගොනුව තෝරාගන්න
 ui.messages.nameBookmarkSet=පොත්යොමු කට්ටල ගොනුනාමය ඇතුළු කරන්න
+ui.messages.newContentAvailable=නව අන්තර්ගතයන් බාගැනීමට හැක.
+ui.messages.newContentAvailableInvitation=නව අන්තර්ගතයන් බාගැනීමට හැක. ඔබට ඒවා නැරඹීමට අවශ්‍යද?
+ui.messages.preparingContentDownload=බාගැනීම සූදානම් කරමින්...
+ui.messages.contentDownloadFinished='%1' හී බාගැනීම සම්පූර්ණයි.
+ui.messages.feedback=ප්‍රතිචාරය

@@ -2,9 +2,11 @@
 # Exported from translatewiki.net
 # Author: Marinari
 # Author: Mjbmr
+# Author: Olsi
 
 ui.main.file=\nDosja
 ui.main.openFile=Hap dosjen
+ui.main.browseLibrary=Shfleto librarinë
 ui.main.lastOpen=Hapur kohët e fundit...
 ui.main.saveFile=Ruaj faqen si ...
 ui.main.print=Shtyp
@@ -32,6 +34,7 @@ ui.main.randomArticle=Artikull i  rastit
 ui.main.checkIntegrity=Kontrollimi i tërësisë
 ui.main.purgeHistory=Pastro historikun
 ui.main.help=Ndihmë
+ui.main.feedback=Përshtypja
 ui.main.reportabug=Raportoni një gabim
 ui.main.requestafeature=Kërkesë një tipar
 ui.main.about=Rreth &brand.brandShortName;
@@ -53,12 +56,33 @@ ui.main.unmark=Çshenjoje të zgjedhurën
 ui.main.reload=Rifresko kompletin e Faqe-shenjuesit
 ui.main.defaultset=Kompleti aktiv
 ui.main.saveImageAs=Ruaj foton si...
+ui.main.openLinkInNewTab=Hap lidhjen në një skedë të re
+ui.main.searchFor=Kërko për
+ui.main.copyLinkAddress=Kopjo adresën e lidhjes
 ui.main.close=Mbylle
+ui.main.library.myLibrary=Libraria ime
+ui.main.library.getNewFiles=Merr skeda të reja
+ui.main.library.searchZimFiles=Kërko për skeda ZIM
+ui.main.library.sortBy=Rendit nga
+ui.main.library.sortBy.title=Titulli
+ui.main.library.sortBy.size=Madhësia
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Autori
+ui.main.library.sortBy.publisher=Publikuesi
+ui.main.library.filterBy=Filtro nga
+ui.main.library.filterBy.fileSize=Madhësia e skedës
+ui.main.library.filterBy.language=Gjuha
+ui.main.library.filterBy.language.all=Të gjitha
+ui.main.library.filterBy.author=Autori
+ui.main.library.filterBy.author.all=Të gjitha
+ui.main.library.filterBy.publisher=Publikuesi
+ui.main.library.filterBy.publisher.all=Të gjitha
 ui.preferences.preferences=Parapëlqimet
 ui.preferences.save=Ruaj
 ui.preferences.cancel=Anulo
 ui.preferences.profileDirectory=Regjistri i profilit
 ui.preferences.browse=Shfleto
+ui.preferences.tabs=Mba mend skedat
 ui.messages.loadZimFileError=E pamundur për të ngarkuar '%1' Jeni i sigurt se ky është ZIM dokument ?
 ui.messages.alreadyIndexingError=Procesi i indeksimit tashmë është në veprim
 ui.messages.noResultsError=Nuk ka rezultat për këtë pyetje
@@ -81,3 +105,8 @@ ui.messages.information=Informacione
 ui.messages.indexing=Duke indeksuar
 ui.messages.selectBookmarkSet=Zgjidh dokumentin e kompletit të flete-shenjuesit
 ui.messages.nameBookmarkSet=Shkruaj emrin e dokumentit të kompletit të flete-shenjuesit
+ui.messages.newContentAvailable=Ka përmbajtje të reja të mundshme për shkarkim.
+ui.messages.newContentAvailableInvitation=Ka përmbajtje të reja të mundshme për shkarkim. Deshironi t'i shikoni?
+ui.messages.preparingContentDownload=Duke përgatitur shkarkimin...
+ui.messages.contentDownloadFinished=Shkarkimi prej '$1' ka përfunduar.
+ui.messages.feedback=Përshtypja

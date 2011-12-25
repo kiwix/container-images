@@ -1,5 +1,6 @@
 # Messages for Hindi (हिन्दी)
 # Exported from translatewiki.net
+# Author: Ansumang
 # Author: Manu9324
 
 ui.main.file=फ़ाइल
@@ -56,7 +57,25 @@ ui.main.defaultset=डिफ़ॉल्ट सेट
 ui.main.saveImageAs=के रूप में छवि सहेजें...
 ui.main.openLinkInNewTab=नए टैब में लिंक खोलें
 ui.main.searchFor=के लिए खोजें
+ui.main.copyLinkAddress=लिंक पते की प्रतिलिपि बनाएँ
 ui.main.close=बंद करें
+ui.main.library.myLibrary=मेरे पुस्तकालय
+ui.main.library.getNewFiles=नई फाइलें लिजिए
+ui.main.library.searchZimFiles=ZIM फ़ाइलें खोज करें
+ui.main.library.sortBy=क्रमबद्ध करें
+ui.main.library.sortBy.title=शीर्षक
+ui.main.library.sortBy.size=आकार
+ui.main.library.sortBy.date=दिनांक
+ui.main.library.sortBy.author=लेखक
+ui.main.library.sortBy.publisher=प्रकाशक
+ui.main.library.filterBy=फ़िल्टर करें
+ui.main.library.filterBy.fileSize=फ़ाइल का आकार
+ui.main.library.filterBy.language=भाषा
+ui.main.library.filterBy.language.all=सभी
+ui.main.library.filterBy.author=लेखक
+ui.main.library.filterBy.author.all=सभी
+ui.main.library.filterBy.publisher=प्रकाशक
+ui.main.library.filterBy.publisher.all=सभी
 ui.preferences.preferences=वरीयताएँ
 ui.preferences.save=सहेजें
 ui.preferences.cancel=रद्द करें
