@@ -1,5 +1,6 @@
 # Messages for Polish (Polski)
 # Exported from translatewiki.net
+# Author: Olgak85
 # Author: Sp5uhe
 
 ui.main.cssdirection=ltr
@@ -7,6 +8,7 @@ ui.main.file=Plik
 ui.main.file.accesskey=P
 ui.main.openFile=Otwórz plik...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=Przeglądaj biblioteki
 ui.main.lastOpen=Ostatnio otwierane...
 ui.main.saveFile=Zapisz stronę jako...
 ui.main.saveFile.accesskey=Z
@@ -60,6 +62,7 @@ ui.main.purgeHistory=Wyczyść historię
 ui.main.purgeHistory.accesskey=W
 ui.main.help=Pomoc
 ui.main.help.accesskey=C
+ui.main.feedback=Opinie
 ui.main.reportabug=Zgłoś błąd
 ui.main.requestafeature=Zaproponuj nową funkcję
 ui.main.about=O &brand.brandShortName;
@@ -82,12 +85,33 @@ ui.main.unmark=Odznacz wybrane
 ui.main.reload=Przeładuj wszystkie zakładki z bieżącego zestawu
 ui.main.defaultset=Zestaw domyślny
 ui.main.saveImageAs=Zapisz obrazek jako...
+ui.main.openLinkInNewTab=Otwórz odnośnik na nowej karcie
+ui.main.searchFor=Szukaj
+ui.main.copyLinkAddress=Kopiuj adres łącza
 ui.main.close=Zamknij
+ui.main.library.myLibrary=Moja biblioteka
+ui.main.library.getNewFiles=Pobierz nowe pliki
+ui.main.library.searchZimFiles=Szukaj plików ZIM
+ui.main.library.sortBy=Sortuj według
+ui.main.library.sortBy.title=Tytuł
+ui.main.library.sortBy.size=Rozmiar
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Autor
+ui.main.library.sortBy.publisher=Wydawca
+ui.main.library.filterBy=Filtruj
+ui.main.library.filterBy.fileSize=Rozmiar pliku
+ui.main.library.filterBy.language=Język
+ui.main.library.filterBy.language.all=Wszystko
+ui.main.library.filterBy.author=Autor
+ui.main.library.filterBy.author.all=Wszystko
+ui.main.library.filterBy.publisher=Wydawca
+ui.main.library.filterBy.publisher.all=Wszystko
 ui.preferences.preferences=Preferencje
 ui.preferences.save=Zapisz
 ui.preferences.cancel=Anuluj
 ui.preferences.profileDirectory=Katalogu profilu
 ui.preferences.browse=Przeglądaj
+ui.preferences.tabs=Zapamiętaj zakładki
 ui.messages.loadZimFileError=Nie można wczytać „%1“. Czy to na pewno plik w formacie ZIM?
 ui.messages.alreadyIndexingError=Trwa właśnie proces indeksowania.
 ui.messages.noResultsError=Brak wyników dla wpisanego zapytania.
@@ -110,3 +134,8 @@ ui.messages.information=Informacja
 ui.messages.indexing=Indeksowanie
 ui.messages.selectBookmarkSet=Wybierz plik z zestawem zakładek
 ui.messages.nameBookmarkSet=Wpisz nazwę pliku z zestawem zakładek
+ui.messages.newContentAvailable=Nowe treści są gotowe do porania.
+ui.messages.newContentAvailableInvitation=Nowe treści są gotowe do pobrania. Czy chcesz je wyświetlić?
+ui.messages.preparingContentDownload=Trwa przygotowywanie pobierania...
+ui.messages.contentDownloadFinished=Ukończono pobieranie w '%1'
+ui.messages.feedback=Opinie

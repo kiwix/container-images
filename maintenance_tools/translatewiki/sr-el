@@ -1,6 +1,7 @@
 # Messages for Serbian (Latin script) (‪Srpski (latinica)‬)
 # Exported from translatewiki.net
 # Author: Rancher
+# Author: SpeedyGonsales
 
 ui.main.file=Datoteka
 ui.main.openFile=Otvori datoteku…
@@ -15,7 +16,7 @@ ui.main.find=Pretraži stranicu…
 ui.main.selectall=Izaberi sve
 ui.main.copy=Umnoži
 ui.main.transliteration=Preslovljavanje
-ui.main.preferences=Postavke
+ui.main.preferences=Podešavanja
 ui.main.display=Prikaz
 ui.main.zoom=Uvećaj
 ui.main.zoomin=Uvećaj

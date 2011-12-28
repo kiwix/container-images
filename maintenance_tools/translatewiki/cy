@@ -56,6 +56,7 @@ ui.main.defaultset=Set rhagosodedig
 ui.main.saveImageAs=Cadw'r ddelwedd fel...
 ui.main.openLinkInNewTab=Agor y cyswllt mewn tab newydd
 ui.main.searchFor=Chwilier am
+ui.main.copyLinkAddress=Copïo cyfeiriad y cyswllt
 ui.main.close=Cau
 ui.main.library.myLibrary=Fy llyfrgell
 ui.main.library.getNewFiles=Hol ffeiliau newydd

@@ -1,5 +1,6 @@
 # Messages for Simplified Chinese (‪中文(简体)‬)
 # Exported from translatewiki.net
+# Author: Anakmalaysia
 # Author: Breawycker
 # Author: Kuailong
 # Author: Liangent
@@ -16,7 +17,7 @@ ui.main.edit=编辑
 ui.main.find=在页面内搜索...
 ui.main.selectall=全选
 ui.main.copy=复制
-ui.main.transliteration=翻译工具
+ui.main.transliteration=音译转写
 ui.main.preferences=参数设置
 ui.main.display=显示
 ui.main.zoom=缩放
@@ -49,11 +50,11 @@ ui.main.bookmarks=书签
 ui.main.results.title=搜索结果
 ui.main.bmkLabel=书签：
 ui.main.notesLabel=书签注记：
-ui.main.loadbmk=导入书签设置
-ui.main.newbmk=创建新的书签设置
+ui.main.loadbmk=导入书签集
+ui.main.newbmk=创建新书签集
 ui.main.mark=标记此页
 ui.main.unmark=取消选中
-ui.main.reload=重新加载书签设置
+ui.main.reload=重新加载书签集
 ui.main.defaultset=默认设置
 ui.main.saveImageAs=保存图像为....
 ui.main.openLinkInNewTab=在新标签页打开链接
@@ -103,8 +104,8 @@ ui.messages.cancel=取消
 ui.messages.error=错误
 ui.messages.information=信息
 ui.messages.indexing=索引中
-ui.messages.selectBookmarkSet=选择书签设置文件
-ui.messages.nameBookmarkSet=输入书签设置文件名
+ui.messages.selectBookmarkSet=选择书签集文件
+ui.messages.nameBookmarkSet=输入书签套集件名
 ui.messages.newContentAvailable=有新内容可以下载。
 ui.messages.newContentAvailableInvitation=有新内容可以下载了。您希望查看吗？
 ui.messages.preparingContentDownload=正在准备下载...

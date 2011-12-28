@@ -6,16 +6,24 @@
 # Author: Olli
 
 ui.main.file=Tiedosto
+ui.main.file.accesskey=T
 ui.main.openFile=Avaa tiedosto...
+ui.main.openFile.accesskey=A
 ui.main.browseLibrary=Selaa kirjastoa
-ui.main.lastOpen=Hiljattain avatut...
+ui.main.browseLibrary.accesskey=S
+ui.main.lastOpen=Viimeksi avatut...
 ui.main.saveFile=Tallenna sivu nimellä...
+ui.main.saveFile.accesskey=T
 ui.main.print=Tulosta
 ui.main.printPdf=Tulosta PDF-tiedostoksi
 ui.main.quit=Lopeta
+ui.main.quit.accesskey=S
 ui.main.edit=Muokkaa
+ui.main.edit.accesskey=M
 ui.main.find=Etsi sivulta...
+ui.main.find.accesskey=E
 ui.main.selectall=Valitse kaikki
+ui.main.selectall.accesskey=V
 ui.main.copy=Kopioi
 ui.main.transliteration=Translitterointi
 ui.main.preferences=Asetukset

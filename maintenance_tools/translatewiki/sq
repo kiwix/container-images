@@ -4,7 +4,7 @@
 # Author: Mjbmr
 # Author: Olsi
 
-ui.main.file=\nDosja
+ui.main.file=Dosja
 ui.main.openFile=Hap dosjen
 ui.main.browseLibrary=Shfleto librarinë
 ui.main.lastOpen=Hapur kohët e fundit...

@@ -4,6 +4,7 @@
 # Author: Beta16
 # Author: Inskatolata
 # Author: McDutchie
+# Author: Nemo bis
 
 ui.main.cssdirection=ltr
 ui.main.file=File
@@ -30,7 +31,7 @@ ui.main.copy=Copia
 ui.main.copy.accesskey=p
 ui.main.transliteration=Traslitterazione
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Preferences
+ui.main.preferences=Preferenze
 ui.main.preferences.accesskey=n
 ui.main.display=Visualizza
 ui.main.display.accesskey=V
@@ -87,11 +88,11 @@ ui.main.unmark=Togli questa pagina dai segnalibri
 ui.main.reload=Ricarica collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
 ui.main.saveImageAs=Salva immagine con nome...
-ui.main.openLinkInNewTab=Apri il Collegamento in una Nuova Scheda
-ui.main.searchFor=Ricerca per
+ui.main.openLinkInNewTab=Apri il collegamento in una nuova scheda
+ui.main.searchFor=Ricerca
 ui.main.copyLinkAddress=Copia l'indirizzo del collegamento
 ui.main.close=Chiudi
-ui.main.library.myLibrary=Mia libreria
+ui.main.library.myLibrary=Mia biblioteca
 ui.main.library.getNewFiles=Ottieni nuovi file
 ui.main.library.searchZimFiles=Cerca file ZIM
 ui.main.library.sortBy=Ordina per
@@ -108,11 +109,11 @@ ui.main.library.filterBy.author=Autore
 ui.main.library.filterBy.author.all=Tutti
 ui.main.library.filterBy.publisher=Editore
 ui.main.library.filterBy.publisher.all=Tutti
-ui.preferences.preferences=Preferences
-ui.preferences.save=Save
-ui.preferences.cancel=Cancel
-ui.preferences.profileDirectory=Profile directory
-ui.preferences.browse=Browse
+ui.preferences.preferences=Preferenze
+ui.preferences.save=Salva
+ui.preferences.cancel=Annulla
+ui.preferences.profileDirectory=Cartella del profilo
+ui.preferences.browse=Esplora
 ui.preferences.tabs=Ricorda schede
 ui.messages.loadZimFileError=Impossibile caricare %1. Sei sicuro che sia un file ZIM?
 ui.messages.alreadyIndexingError=C'è già un processo di indicizzazione in corso.
@@ -138,6 +139,6 @@ ui.messages.selectBookmarkSet=Seleziona il file della collezione di segnalibri
 ui.messages.nameBookmarkSet=Inserisci il nome del file della collezione di segnalibri
 ui.messages.newContentAvailable=Ci sono nuovi contenuti disponibili per il download.
 ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili per il download. Vuoi vederli?
-ui.messages.preparingContentDownload=Preparando il download...
+ui.messages.preparingContentDownload=Preparazione del download...
 ui.messages.contentDownloadFinished=Download di '%1' completato.
-ui.messages.feedback=Feedback
+ui.messages.feedback=Commenti
