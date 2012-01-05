@@ -10,7 +10,7 @@ if [ "$CONTENT" == "" ]
 then
     for CONTENT in `find $PORTABLE_DIR -name "*zip"| cut -d "+" -f 2 | sort -u | sed -e "s/.zip//g"`
     do
-	for FILE2DELETE in `cd $PORTABLE_DIR ; ls -alrt *$CONTENT* | head -n -1 | cut -d " " -f 8`
+	for FILE2DELETE in `cd $PORTABLE_DIR ; ls -alrt *$CONTENT* | head -n -1 | awk '{print $8}'`
 	do
 	    echo "Removing $FILE2DELETE files..."
 	    rm $PORTABLE_DIR$FILE2DELETE
