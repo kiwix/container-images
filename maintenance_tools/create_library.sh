@@ -11,6 +11,7 @@ do
   grep $FILE .ignore > /dev/null
   if [ "$?" -eq "1" ]
   then
+      echo "Inserting $FILE ..."
       kiwix-manage $LIBRARYFILE add $FILE --zimPathToSave="" --url=http://download.kiwix.org/zim/0.9/$FILE.metalink
   fi
 done
