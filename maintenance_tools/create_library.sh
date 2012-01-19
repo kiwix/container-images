@@ -3,6 +3,10 @@
 ZIMDIR=/var/www/download.kiwix.org/zim/0.9/
 LIBRARYFILE=`pwd`/library.xml
 
+# Delete file, otherwise this will be an overwrite and old values
+# will be taken in account.
+rm $LIBRARYFILE
+
 cd $ZIMDIR
 
 for FILE in `find . -name "*zim"`
