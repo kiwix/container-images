@@ -1,5 +1,6 @@
 # Messages for Gujarati (ગુજરાતી)
 # Exported from translatewiki.net
+# Author: KartikMistry
 # Author: Tanmay
 
 ui.main.file=દસ્તાવેજ
@@ -36,7 +37,7 @@ ui.main.feedback=અભિપ્રાય
 ui.main.reportabug=તૃતી હોએ તો દરશાવો
 ui.main.requestafeature=વિશિષ્ટતા માટે પૂછો
 ui.main.about=માટે
-ui.main.back=પાચળ
+ui.main.back=પાછાં જાવ
 ui.main.forward=આગળ વધો
 ui.main.home=ઘર
 ui.main.searchBar=શોધવા માટે ની જગ્યા

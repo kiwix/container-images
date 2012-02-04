@@ -1,9 +1,11 @@
 # Messages for Tatar (Cyrillic script) (Татарча)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Ильнар
 
 ui.main.file=Файл
 ui.main.openFile=Файлны ачу ...
+ui.main.browseLibrary=Китапханәне карау
 ui.main.lastOpen=Озак түгел ачылганнар ...
 ui.main.saveFile=Битне саклау форматы ...
 ui.main.print=Бастыру
@@ -31,6 +33,7 @@ ui.main.randomArticle=Очраклы бит
 ui.main.checkIntegrity=Тулылыгын тикшерү
 ui.main.purgeHistory=Тарихын чистарту
 ui.main.help=Ярдәм
+ui.main.feedback=Аралашу
 ui.main.reportabug=Хата барлыгын әйтү
 ui.main.requestafeature=Функция сорау
 ui.main.about=&brand.brandShortName; турында
@@ -52,12 +55,33 @@ ui.main.unmark=Сайланган биттән тамганы алу
 ui.main.reload=Кыстыргычлар төпчеген яңарту
 ui.main.defaultset=Баштагы көйләнмәләргә кайтару
 ui.main.saveImageAs=Рәсем саклау форматы ...
+ui.main.openLinkInNewTab=Сылтаманы яңа тәрәзәдә ачу
+ui.main.searchFor=Эзләү
+ui.main.copyLinkAddress=Сылтаманың юлламасын күчермәләү
 ui.main.close=Ябу
+ui.main.library.myLibrary=Минем китапханә
+ui.main.library.getNewFiles=Яңа файллар алу
+ui.main.library.searchZimFiles=ZIM-файлларны эзләү
+ui.main.library.sortBy=Сирәкләү төре:
+ui.main.library.sortBy.title=Башлам
+ui.main.library.sortBy.size=Үлчәм
+ui.main.library.sortBy.date=Дата
+ui.main.library.sortBy.author=Автор
+ui.main.library.sortBy.publisher=Нәшрият
+ui.main.library.filterBy=Фильтрлау төре:
+ui.main.library.filterBy.fileSize=Файлның зурлыгы
+ui.main.library.filterBy.language=Тел
+ui.main.library.filterBy.language.all=Барысы
+ui.main.library.filterBy.author=Автор
+ui.main.library.filterBy.author.all=Барысы
+ui.main.library.filterBy.publisher=Нәшрият
+ui.main.library.filterBy.publisher.all=Барысы
 ui.preferences.preferences=Көйләнмәләр
 ui.preferences.save=Саклау
 ui.preferences.cancel=Баш тарту
 ui.preferences.profileDirectory=Профиль каталогы
 ui.preferences.browse=Карау
+ui.preferences.tabs=Кыстырмаларны истә тотарга
 ui.messages.loadZimFileError=«% 1» йөкләү мөмкин түгел, ул чыннан да ZIM файл төреме?
 ui.messages.alreadyIndexingError=Индекслау процессы кабанган инде.
 ui.messages.noResultsError=Сорау буенча нәтиҗәләр юк.
@@ -80,3 +104,8 @@ ui.messages.information=Мәгълүмат
 ui.messages.indexing=Индекслау...
 ui.messages.selectBookmarkSet=Кыстыргычлар файлын сайлау
 ui.messages.nameBookmarkSet=Кыстыргычлар файлының исемен кертегез
+ui.messages.newContentAvailable=Яңа контент йөкләү өчен ачык.
+ui.messages.newContentAvailableInvitation=Яңа контент йөкләү өчен ачык. Сез аны карарга телисезме?
+ui.messages.preparingContentDownload=Йөкләүгә әзерле...
+ui.messages.contentDownloadFinished=Йөкләү '%1' тәмамланды.
+ui.messages.feedback=Аралашу

@@ -1,12 +1,14 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
 # Author: Mjbmr
+# Author: ZxxZxxZ
 
 ui.main.cssdirection=rtl
 ui.main.file=پرونده
 ui.main.file.accesskey=F
 ui.main.openFile=گشودن پرونده...
 ui.main.openFile.accesskey=O
+ui.main.browseLibrary=مرور کتابخانه
 ui.main.lastOpen=اخیراً گشوده شده...
 ui.main.saveFile=...ذخیره صفحه به عنوان
 ui.main.saveFile.accesskey=S
@@ -60,6 +62,7 @@ ui.main.purgeHistory=پاکسازی تاریخچه
 ui.main.purgeHistory.accesskey=P
 ui.main.help=کمک
 ui.main.help.accesskey=H
+ui.main.feedback=بازخورد
 ui.main.reportabug=گزارش یک اشکال
 ui.main.requestafeature=درخواست یک ویژگی
 ui.main.about=درباره علامت تجاری.نام کوتاه تجاری;
@@ -82,12 +85,33 @@ ui.main.unmark=علامت انتخاب شده را بردار
 ui.main.reload=بارگذاری مجدد مجموعه نشانک
 ui.main.defaultset=تنظیمات نشانک
 ui.main.saveImageAs=...ذخیره عکس به صورت
+ui.main.openLinkInNewTab=بازکردن پیوند در زبانهٔ جدید
+ui.main.searchFor=جستجو برای
+ui.main.copyLinkAddress=رونویسی نشانی پیوند
 ui.main.close=بستن
+ui.main.library.myLibrary=کتابخانهٔ من
+ui.main.library.getNewFiles=دریافت پرونده‌های جدید
+ui.main.library.searchZimFiles=جستجو برای پرونده‌های ZIM
+ui.main.library.sortBy=مرتب‌سازی بر اساس
+ui.main.library.sortBy.title=عنوان
+ui.main.library.sortBy.size=اندازه
+ui.main.library.sortBy.date=تاریخ
+ui.main.library.sortBy.author=نویسنده
+ui.main.library.sortBy.publisher=ناشر
+ui.main.library.filterBy=پالایش با
+ui.main.library.filterBy.fileSize=اندازهٔ پرونده
+ui.main.library.filterBy.language=زبان
+ui.main.library.filterBy.language.all=همه
+ui.main.library.filterBy.author=نویسنده
+ui.main.library.filterBy.author.all=همه
+ui.main.library.filterBy.publisher=ناشر
+ui.main.library.filterBy.publisher.all=همه
 ui.preferences.preferences=ترجیحات
 ui.preferences.save=ذخیره
 ui.preferences.cancel=لغو
 ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.browse=مرور
+ui.preferences.tabs=به‌خاطرسپردن زبانه‌ها
 ui.messages.loadZimFileError=قادر به بارگذاری '%1' نیست، آیا مطمئنید که این یک فایل ZIM است؟
 ui.messages.alreadyIndexingError=فرایند فهرست بندی در حال اجراست.
 ui.messages.noResultsError=یافته ای برای این جستجو پیدا نشد.
@@ -110,3 +134,8 @@ ui.messages.information=اطلاعات
 ui.messages.indexing=فهرست بندی
 ui.messages.selectBookmarkSet=انتخاب پرونده مجموعه نشانک
 ui.messages.nameBookmarkSet=فایل تنظیمات نشانک را وارد کنید
+ui.messages.newContentAvailable=محتویات جدیدی برای دریافت در دسترس هستند.
+ui.messages.newContentAvailableInvitation=محتویات جدیدی برای دریافت در دسترس هستند. آیا مایلید آن‌ها را ببینید؟
+ui.messages.preparingContentDownload=در حال آماده‌سازی برای درافت...
+ui.messages.contentDownloadFinished=دریافت «%1» به پایان رسید.
+ui.messages.feedback=بازخورد

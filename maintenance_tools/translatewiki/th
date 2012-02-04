@@ -1,10 +1,12 @@
 # Messages for Thai (ไทย)
 # Exported from translatewiki.net
 # Author: Akkhaporn
+# Author: Ariesanywhere
 # Author: Horus
 
 ui.main.file=แฟ้ม
 ui.main.openFile=เปิดแฟ้ม...
+ui.main.browseLibrary=เปิดดูคลังดาวน์โหลด
 ui.main.lastOpen=เปิดล่าสุด...
 ui.main.saveFile=บันทึกหน้าเป็น...
 ui.main.print=พิมพ์
@@ -32,6 +34,7 @@ ui.main.randomArticle=สุ่มบทความ
 ui.main.checkIntegrity=ตรวจสอบความสมบูรณ์
 ui.main.purgeHistory=ล้างประวัติ
 ui.main.help=วิธีใช้
+ui.main.feedback=คำติชม
 ui.main.reportabug=รายงานข้อผิดพลาด
 ui.main.requestafeature=แนะนำคุณสมบัติ
 ui.main.about=เกี่ยวกับ &brand.brandShortName;
@@ -53,12 +56,33 @@ ui.main.unmark=ไม่ทำเครื่องหมายที่เล�
 ui.main.reload=โหลดการตั้งค่าของที่คั่นหน้าเว็บ
 ui.main.defaultset=การตั้งค่าเริ่มต้น
 ui.main.saveImageAs=บันทึกภาพเป็น...
+ui.main.openLinkInNewTab=เปิดลิงค์ในแท็บใหม่
+ui.main.searchFor=ค้นหาเกี่ยวกับคำนี้
+ui.main.copyLinkAddress=คัดลอกที่อยู่ลิงค์
 ui.main.close=ปิด
+ui.main.library.myLibrary=คลังดาวน์โหลดของฉัน
+ui.main.library.getNewFiles=ดึงไฟล์ใหม่
+ui.main.library.searchZimFiles=ค้นหาไฟล์ ZIM
+ui.main.library.sortBy=จัดเรียงโดย
+ui.main.library.sortBy.title=ชื่อเรื่อง
+ui.main.library.sortBy.size=ขนาด
+ui.main.library.sortBy.date=วันที่
+ui.main.library.sortBy.author=ผู้แต่ง
+ui.main.library.sortBy.publisher=ผู้เผยแพร่
+ui.main.library.filterBy=กรองข้อมูลโดย
+ui.main.library.filterBy.fileSize=ขนาดไฟล์
+ui.main.library.filterBy.language=ภาษา
+ui.main.library.filterBy.language.all=ทั้งหมด
+ui.main.library.filterBy.author=ผู้แต่ง
+ui.main.library.filterBy.author.all=ทั้งหมด
+ui.main.library.filterBy.publisher=ผู้เผยแพร่
+ui.main.library.filterBy.publisher.all=ทั้งหมด
 ui.preferences.preferences=การตั้งค่า
 ui.preferences.save=บันทึก
 ui.preferences.cancel=ยกเลิก
 ui.preferences.profileDirectory=ไดเรกทอรีโปรไฟล์
 ui.preferences.browse=เรียกดู
+ui.preferences.tabs=จำแท็บนี้ไว้
 ui.messages.loadZimFileError=ไม่สามารถโหลด '%1' คุณแน่ใจนี้เป็นไฟล์ ZIM?
 ui.messages.alreadyIndexingError=กระบวนการจัดทำดัชนีกำลังทำงานอยู่
 ui.messages.noResultsError=ไม่มีผลลัพธ์สำหรับคำถามนี้
@@ -81,3 +105,8 @@ ui.messages.information=ข้อมูล
 ui.messages.indexing=จัดทำดัชนี
 ui.messages.selectBookmarkSet=เลือกแฟ้มการตั้งค่าของที่คั่นหน้าเว็บ
 ui.messages.nameBookmarkSet=ป้อนชื่อแฟ้มการตั้งค่าของที่คั่นหน้าเว็บ
+ui.messages.newContentAvailable=มีเนื้อหาใหม่พร้อมให้ดาวน์โหลด
+ui.messages.newContentAvailableInvitation=มีเนื้อหาใหม่พร้อมให้ดาวน์โหลด. คุณต้องการดูเนื้อหาดังกล่าวหรือไม่?
+ui.messages.preparingContentDownload=กำลังเตรียมดาวน์โหลด...
+ui.messages.contentDownloadFinished=ดาวน์โหลด '%1' เสร็จเรียบร้อยแล้ว.
+ui.messages.feedback=คำติชม

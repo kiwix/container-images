@@ -1,5 +1,6 @@
 # Messages for Sinhala (සිංහල)
 # Exported from translatewiki.net
+# Author: Singhalawap
 # Author: පසිඳු කාවින්ද
 # Author: සුරනිමල
 
@@ -18,14 +19,14 @@ ui.main.copy=පිටපත් කරන්න
 ui.main.transliteration=අක්ෂර පරිවර්තනය
 ui.main.preferences=අභිරුචි
 ui.main.display=පෙන්වීම
-ui.main.zoom=සමීප දුරස්ථ රූප ගැනුම
+ui.main.zoom=zසූම් කරන්න
 ui.main.zoomin=විශාලනය
 ui.main.zoomout=ඌනනය
 ui.main.zoomorig=මුල් විශාලත්වය
 ui.main.language=භාෂාව
 ui.main.skin=ඡවිය
-ui.main.statusbar=තත්ත්ව පටිය
-ui.main.resultsbar=ප්‍රතිඵල පටිය
+ui.main.statusbar=තත්ත්‍ව පටය (Status bar)
+ui.main.resultsbar=ප්‍රතිඵල පටය
 ui.main.tabs=ටැබ
 ui.main.fullscreen=පූර්ණ තිරය
 ui.main.tools=මෙවලම්
@@ -46,8 +47,8 @@ ui.main.findInText=පෙළෙහි සොයන්න
 ui.main.noSearchBar=ගවේෂණය සඳහා සූචිත ZIM ගොනුවක් අවශ්‍ය වෙයි
 ui.main.bookmarks=පොත්යොමු
 ui.main.results.title=සෙවුම් ප්‍රතිඵල
-ui.main.bmkLabel=පොත්යොමු:
-ui.main.notesLabel=පොත්යොමු සටහන්:
+ui.main.bmkLabel=බුක්මාක්:
+ui.main.notesLabel=බුක්මාක් සටහන්:
 ui.main.loadbmk=පොත්යොමු කට්ටලය ආයාත කරන්න
 ui.main.newbmk=නව පොත්යොමු කට්ටලයක් තනන්න
 ui.main.mark=මෙම පිටුව සලකුණු කරන්න
@@ -66,7 +67,7 @@ ui.main.library.sortBy=මෙසේ පෙළගස්වන්න
 ui.main.library.sortBy.title=මාතෘකාව
 ui.main.library.sortBy.size=විශාලත්වය
 ui.main.library.sortBy.date=දිනය
-ui.main.library.sortBy.author=කතෘ
+ui.main.library.sortBy.author=කර්තෘ
 ui.main.library.sortBy.publisher=ප්‍රකාශකයා
 ui.main.library.filterBy=මෙසේ පෙරන්න
 ui.main.library.filterBy.fileSize=ගොනුවේ විශාලත්වය
@@ -74,14 +75,14 @@ ui.main.library.filterBy.language=භාෂාව
 ui.main.library.filterBy.language.all=සියල්ල
 ui.main.library.filterBy.author=කතෘ
 ui.main.library.filterBy.author.all=සියල්ල
-ui.main.library.filterBy.publisher=ප්‍රකාශකයා
+ui.main.library.filterBy.publisher=ප්‍රකාශක
 ui.main.library.filterBy.publisher.all=සියල්ල
 ui.preferences.preferences=අභිරුචි
 ui.preferences.save=සුරකින්න
 ui.preferences.cancel=අවලංගු කරන්න
 ui.preferences.profileDirectory=පැතිකඩ නාමාවලිය
 ui.preferences.browse=පිරික්සන්න
-ui.preferences.tabs=මතක් කිරීම් ටැබයන්
+ui.preferences.tabs=මතක්කිරීම් ටැබයන්
 ui.messages.loadZimFileError='%1'  බා ගැනීමට නොහැකියි මෙය  ZIM ගොනුවක් බව සහතිකද?
 ui.messages.alreadyIndexingError=සූචිකරණ ක්‍රියාවලිය දැනටමත් ක්‍රියාත්මක වෙමින් පවතියි.
 ui.messages.noResultsError=මෙම විමසුමට ප්‍රතිඵල නොමැත.
@@ -103,7 +104,7 @@ ui.messages.error=දෝෂය
 ui.messages.information=තොරතුරු
 ui.messages.indexing=සූචිකරණය කරමින්...
 ui.messages.selectBookmarkSet=පොත්යොමු කට්ටල ගොනුව තෝරාගන්න
-ui.messages.nameBookmarkSet=පොත්යොමු කට්ටල ගොනුනාමය ඇතුළු කරන්න
+ui.messages.nameBookmarkSet=බුක්මාක් කට්ටල ගොනුනාමය ඇතුළු කරන්න
 ui.messages.newContentAvailable=නව අන්තර්ගතයන් බාගැනීමට හැක.
 ui.messages.newContentAvailableInvitation=නව අන්තර්ගතයන් බාගැනීමට හැක. ඔබට ඒවා නැරඹීමට අවශ්‍යද?
 ui.messages.preparingContentDownload=බාගැනීම සූදානම් කරමින්...
