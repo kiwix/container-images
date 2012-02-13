@@ -1,5 +1,6 @@
 # Messages for Gujarati (ગુજરાતી)
 # Exported from translatewiki.net
+# Author: Haritosh
 # Author: KartikMistry
 # Author: Tanmay
 
@@ -57,7 +58,25 @@ ui.main.defaultset=મૂળ સંઘ્રહ
 ui.main.saveImageAs=ફોટા નો સંઘ્રહ આ નામે કરો
 ui.main.openLinkInNewTab=લીનક ને નવા ફાટા માં ખોલો
 ui.main.searchFor=આ માટે શોધો
+ui.main.copyLinkAddress=લિન્ક ની નકલ બનાવો
 ui.main.close=બંધ કરો
+ui.main.library.myLibrary=મારૂં પુસ્તકાલય
+ui.main.library.getNewFiles=નવી ફાઈલ મેળવો
+ui.main.library.searchZimFiles=ZIM ફાઈલ્સમાં ગોતો
+ui.main.library.sortBy=દ્વારા ગોઠવો
+ui.main.library.sortBy.title=શીર્ષક
+ui.main.library.sortBy.size=કદ
+ui.main.library.sortBy.date=તારીખ
+ui.main.library.sortBy.author=લેખક
+ui.main.library.sortBy.publisher=પ્રકાશક
+ui.main.library.filterBy=દ્વારા ફિલ્ટર કરો
+ui.main.library.filterBy.fileSize=ફાઇલનું કદ
+ui.main.library.filterBy.language=ભાષા
+ui.main.library.filterBy.language.all=બધી
+ui.main.library.filterBy.author=લેખક
+ui.main.library.filterBy.author.all=બધા
+ui.main.library.filterBy.publisher=પ્રકાશક
+ui.main.library.filterBy.publisher.all=બધા
 ui.preferences.preferences=પસંદ
 ui.preferences.save=સાચવો
 ui.preferences.cancel=રદ કરો
