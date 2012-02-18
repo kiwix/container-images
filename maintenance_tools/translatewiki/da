@@ -1,5 +1,6 @@
 # Messages for Danish (Dansk)
 # Exported from translatewiki.net
+# Author: Gorbi
 # Author: Peter Alberti
 
 ui.main.file=Fil
@@ -14,6 +15,8 @@ ui.main.edit=Redigér
 ui.main.find=Søg i side...
 ui.main.selectall=Marker alt
 ui.main.copy=Kopier
+ui.main.mute=Lyd fra
+ui.main.audible=Hørbar
 ui.main.transliteration=Translitteration
 ui.main.preferences=Indstillinger
 ui.main.display=Vis

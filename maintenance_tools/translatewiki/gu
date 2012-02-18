@@ -1,5 +1,6 @@
 # Messages for Gujarati (ગુજરાતી)
 # Exported from translatewiki.net
+# Author: Ankit
 # Author: Haritosh
 # Author: KartikMistry
 # Author: Tanmay
@@ -16,6 +17,8 @@ ui.main.edit=ફેરફાર કરો
 ui.main.find=આ પેજ ઉપર શોધવું
 ui.main.selectall=બધ્ધું પસંદ કરો
 ui.main.copy=નકલ
+ui.main.mute=મૂંગુ
+ui.main.audible=સાંભળી શકાય એવું
 ui.main.transliteration=લીપી બદલાવ
 ui.main.preferences=પસંદ
 ui.main.display=આવ્તરણ

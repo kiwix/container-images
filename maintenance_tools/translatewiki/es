@@ -1,5 +1,6 @@
 # Messages for Spanish (Español)
 # Exported from translatewiki.net
+# Author: Armando-Martin
 # Author: Fitoschido
 # Author: Platonides
 # Author: Vivaelcelta
@@ -27,6 +28,8 @@ ui.main.selectall=Seleccionar todo
 ui.main.selectall.accesskey=a
 ui.main.copy=Copiar
 ui.main.copy.accesskey=C
+ui.main.mute=Silencio
+ui.main.audible=Audible
 ui.main.transliteration=Transcripción
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferencias
