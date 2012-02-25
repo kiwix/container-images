@@ -1,6 +1,7 @@
 # Messages for Bashkir (Башҡортса)
 # Exported from translatewiki.net
 # Author: Haqmar
+# Author: Roustammr
 
 ui.main.file=Файл
 ui.main.openFile=Файлды асырға...
@@ -14,6 +15,8 @@ ui.main.edit=Мөхәррирләү
 ui.main.find=Биттә эҙләү...
 ui.main.selectall=Барыһын да һайларға
 ui.main.copy=Күсермәһен алырға
+ui.main.mute=Тыуышһыҙ
+ui.main.audible=Тыушлы
 ui.main.transliteration=Транслитерация
 ui.main.preferences=Көйләүҙәр
 ui.main.display=Күрһәтергә

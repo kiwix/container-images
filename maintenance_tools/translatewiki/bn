@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Bellayet
 # Author: Devayon
+# Author: Jayantanth
 # Author: Wikitanvir
 
 ui.main.file=ফাইল
@@ -16,6 +17,8 @@ ui.main.edit=সম্পাদনা
 ui.main.find=পাতায় অনুসন্ধান করুন...
 ui.main.selectall=সবগুলো নির্বাচন
 ui.main.copy=অনুলিপি
+ui.main.mute=নিঃশব্দ
+ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকরণ
 ui.main.preferences=পছন্দ
 ui.main.display=প্রদর্শন
