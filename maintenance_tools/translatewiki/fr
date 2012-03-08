@@ -3,6 +3,7 @@
 # Author: Gomoko
 # Author: Kelson
 # Author: Od1n
+# Author: Verdy p
 # Author: Wyz
 
 ui.main.cssdirection=ltr
@@ -131,7 +132,7 @@ ui.messages.changeSkinNeedRestart=Pour changer d'habillage, l'application doit Ã
 ui.messages.confirm=Confirmation
 ui.messages.no=non
 ui.messages.yes=oui
-ui.messages.ok=OK
+ui.messages.ok=Valider
 ui.messages.cancel=Annuler
 ui.messages.error=Erreur
 ui.messages.information=Information

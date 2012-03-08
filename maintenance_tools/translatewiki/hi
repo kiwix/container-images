@@ -2,6 +2,8 @@
 # Exported from translatewiki.net
 # Author: Ansumang
 # Author: Manu9324
+# Author: Nikhilsheth
+# Author: Siddhartha Ghai
 
 ui.main.file=फ़ाइल
 ui.main.openFile=फ़ाइल खोलें...
@@ -15,6 +17,8 @@ ui.main.edit=संपादित करें
 ui.main.find=पृष्ठ में खोज...
 ui.main.selectall=सभी का चयन करें
 ui.main.copy=कॉपी करें
+ui.main.mute=आवाज़ बंद करें
+ui.main.audible=जो सुनाई दे
 ui.main.transliteration=लिप्यंतरण
 ui.main.preferences=वरीयताएँ
 ui.main.display=डिस्प्ले

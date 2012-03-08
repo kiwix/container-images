@@ -3,6 +3,7 @@
 # Author: Alex Khimich
 # Author: Dim Grits
 # Author: Kelson
+# Author: Probil
 # Author: Дар'я Козлова
 
 ui.main.cssdirection=ltr
@@ -28,6 +29,8 @@ ui.main.selectall=Виділити всі
 ui.main.selectall.accesskey=a
 ui.main.copy=Копіювати
 ui.main.copy.accesskey=p
+ui.main.mute=Без звуку
+ui.main.audible=Зі звуком
 ui.main.transliteration=Транслітерація
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Параметри
