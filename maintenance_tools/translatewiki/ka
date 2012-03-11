@@ -1,5 +1,6 @@
 # Messages for Georgian (ქართული)
 # Exported from translatewiki.net
+# Author: David1010
 # Author: ITshnik
 
 ui.main.file=ფაილი
@@ -14,6 +15,8 @@ ui.main.edit=რედაქტირება
 ui.main.find=ძიება გვერდზე...
 ui.main.selectall=ყველაფრის მონიშვნა
 ui.main.copy=ასლის შექმნა
+ui.main.mute=უხმო
+ui.main.audible=ხმით
 ui.main.transliteration=ტრანსლიტერაცია
 ui.main.preferences=კონფიგურაცია
 ui.main.display=ჩვენება
