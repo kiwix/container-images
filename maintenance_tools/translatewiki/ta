@@ -1,5 +1,6 @@
 # Messages for Tamil (தமிழ்)
 # Exported from translatewiki.net
+# Author: Karthi.dr
 # Author: Shanmugamp7
 
 ui.main.file=கோப்பு
@@ -14,6 +15,8 @@ ui.main.edit=திருத்து
 ui.main.find=பக்கத்தில் தேடு...
 ui.main.selectall=எல்லாவற்றையும் தேர்வுசெய்யவும்
 ui.main.copy=நகல் எடு
+ui.main.mute=அமைதியாக்கு
+ui.main.audible=கேட்கத் தக்க
 ui.main.transliteration=ஒலிப்பெயர்ப்பு
 ui.main.preferences=விருப்பங்கள்
 ui.main.display=காண்பி

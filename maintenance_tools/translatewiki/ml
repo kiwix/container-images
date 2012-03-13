@@ -1,5 +1,6 @@
 # Messages for Malayalam (മലയാളം)
 # Exported from translatewiki.net
+# Author: Praveenp
 # Author: Vaikoovery
 
 ui.main.cssdirection=ltr
@@ -88,7 +89,7 @@ ui.main.openLinkInNewTab=കണ്ണി പുതിയ ടാബിൽ തു�
 ui.main.searchFor=തിരയുക
 ui.main.close=അടയ്ക്കുക
 ui.preferences.preferences=ഐച്ഛികങ്ങള്‍
-ui.preferences.save=സൂക്ഷിക്കുക
+ui.preferences.save=സേവ് ചെയ്യുക
 ui.preferences.cancel=റദ്ദാക്കുക
 ui.preferences.profileDirectory=പ്രൊഫൈല്‍ ഡയറക്ടറി
 ui.preferences.browse=പരതുക
