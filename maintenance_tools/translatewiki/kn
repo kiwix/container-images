@@ -1,6 +1,7 @@
 # Messages for Kannada (ಕನ್ನಡ)
 # Exported from translatewiki.net
 # Author: Abhirama
+# Author: Nayvik
 
 ui.main.file=ಕಡತ
 ui.main.openFile=ಕಡತವನ್ನು ಉದ್ಘಾಟಿಸಿ...
@@ -14,6 +15,8 @@ ui.main.edit=ಸಂಪಾದಿಸಿ
 ui.main.find=ಪುಟದಲ್ಲಿ ಹುಡುಕಿ...
 ui.main.selectall=ಎಲ್ಲವನ್ನೂ ಆಯ್ಕೆ ಮಾಡಿ
 ui.main.copy=ನಕಲು ಮಾಡು
+ui.main.mute=ಮೂಕವಾಗಿಸು
+ui.main.audible=ಕೇಳಿಸುವ
 ui.main.transliteration=ಲಿಪ್ಯಂತರಣ
 ui.main.preferences=ಪ್ರಾಶಸ್ತ್ಯಗಳು
 ui.main.display=ಪ್ರದರ್ಶಿಸು

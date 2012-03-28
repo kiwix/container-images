@@ -1,5 +1,6 @@
 # Messages for Ukrainian (Українська)
 # Exported from translatewiki.net
+# Author: AS
 # Author: Alex Khimich
 # Author: Dim Grits
 # Author: Kelson
@@ -133,7 +134,7 @@ ui.messages.confirm=Підтвердити
 ui.messages.no=ні
 ui.messages.yes=так
 ui.messages.ok=Готово
-ui.messages.cancel=Відміна
+ui.messages.cancel=Скасувати
 ui.messages.error=Помилка
 ui.messages.information=Інформація
 ui.messages.indexing=Індексування

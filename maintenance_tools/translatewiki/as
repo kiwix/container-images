@@ -1,5 +1,6 @@
 # Messages for Assamese (অসমীয়া)
 # Exported from translatewiki.net
+# Author: Bishnu Saikia
 # Author: Devayon
 # Author: Nilamdyuti
 
@@ -15,6 +16,8 @@ ui.main.edit=সম্পাদনা
 ui.main.find=পৃষ্ঠাত অনুসন্ধান কৰক...
 ui.main.selectall=সকলো চয়ন কৰক
 ui.main.copy=অনুলিপি
+ui.main.mute=নিঃশব্দ
+ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকৰণ
 ui.main.preferences=পছন্দসমূহ
 ui.main.display=প্রদর্শন
