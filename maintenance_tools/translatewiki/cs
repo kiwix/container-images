@@ -1,6 +1,7 @@
 # Messages for Czech (Česky)
 # Exported from translatewiki.net
 # Author: Jachym
+# Author: Jezevec
 # Author: Jkjk
 # Author: Mormegil
 # Author: Utar
@@ -17,6 +18,8 @@ ui.main.edit=Upravit
 ui.main.find=Hledat na stránce...
 ui.main.selectall=Vybrat vše
 ui.main.copy=Kopírovat
+ui.main.mute=Ztlumit
+ui.main.audible=Zesílit
 ui.main.transliteration=Transliterace
 ui.main.preferences=Možnosti
 ui.main.display=Zobrazení

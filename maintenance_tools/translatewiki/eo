@@ -1,6 +1,7 @@
 # Messages for Esperanto (Esperanto)
 # Exported from translatewiki.net
 # Author: Airon90
+# Author: Amire80
 # Author: Yekrats
 
 ui.main.file=Dosiero
@@ -15,6 +16,8 @@ ui.main.edit=Redakti
 ui.main.find=Serĉi en paĝo
 ui.main.selectall=Elekti ĉiujn
 ui.main.copy=Kopii
+ui.main.mute=Mutigi
+ui.main.audible=Aŭdebligi
 ui.main.transliteration=Transliterumado
 ui.main.preferences=Agordoj
 ui.main.display=Montri

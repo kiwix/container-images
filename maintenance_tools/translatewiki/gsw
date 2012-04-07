@@ -1,5 +1,6 @@
 # Messages for Swiss German (Alemannisch)
 # Exported from translatewiki.net
+# Author: Als-Chlämens
 # Author: Als-Holder
 # Author: 80686
 
@@ -57,9 +58,9 @@ ui.main.unmark=Markierig uffhebe
 ui.main.reload=Läsezeiche nomol lade
 ui.main.defaultset=Schtandarddatei
 ui.main.saveImageAs=Bild spychere als...
-ui.main.openLinkInNewTab=Gleich im e noie Fenschter uffmache
+ui.main.openLinkInNewTab=Link im e noie Fenschter uffmache
 ui.main.searchFor=Suech no
-ui.main.copyLinkAddress=Gleich kopiere
+ui.main.copyLinkAddress=Link kopiere
 ui.main.close=Zuemache
 ui.main.library.myLibrary=Mini Bibliothek
 ui.main.library.getNewFiles=Noii Dateie abelade
