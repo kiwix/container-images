@@ -110,6 +110,7 @@ ui.preferences.cancel=Cancel
 ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.preferences.tabs=Remember tabs
+ui.preferences.downloadCatalogs=Dowload remote catalog(s)
 ui.messages.loadZimFileError=Unable to load '%1'. Are you sure this is a ZIM file?
 ui.messages.alreadyIndexingError=An indexing process is already running.
 ui.messages.noResultsError=No results for this query.
