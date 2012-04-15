@@ -17,6 +17,7 @@ ui.main.copy=Умножи
 ui.main.mute=Искључи звук
 ui.main.audible=Звучно
 ui.main.transliteration=Пресловљавање
+# Fuzzy
 ui.main.preferences=Поставке
 ui.main.display=Приказ
 ui.main.zoom=Увећање
@@ -83,6 +84,7 @@ ui.preferences.cancel=Откажи
 ui.preferences.profileDirectory=Фасцикла за профиле
 ui.preferences.browse=Потражи
 ui.preferences.tabs=Запамти језичке
+ui.preferences.downloadCatalogs=Преузми удаљене каталоге
 ui.messages.loadZimFileError=Не могу да учитам „%1“. Јесте ли сигурни да је ово ZIM датотека?
 ui.messages.alreadyIndexingError=Пописивање је већ покренуто.
 ui.messages.noResultsError=Нема резултата за овај упит.

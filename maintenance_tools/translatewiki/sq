@@ -17,6 +17,7 @@ ui.main.find=Kërko në faqe...
 ui.main.selectall=Selekto të gjitha
 ui.main.copy=Kopjo
 ui.main.transliteration=Transliterim
+# Fuzzy
 ui.main.preferences=Parapëlqimet
 ui.main.display=Shfaq
 ui.main.zoom=Zmadho

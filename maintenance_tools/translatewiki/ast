@@ -1,5 +1,6 @@
 # Messages for Asturian (Asturianu)
 # Exported from translatewiki.net
+# Author: Esbardu
 # Author: Xuacu
 
 ui.main.file=Ficheru
@@ -17,6 +18,7 @@ ui.main.copy=Copiar
 ui.main.mute=Mudu
 ui.main.audible=Oyible
 ui.main.transliteration=Treslliteración
+# Fuzzy
 ui.main.preferences=Preferencies
 ui.main.display=Amosar
 ui.main.zoom=Zoom
@@ -83,6 +85,7 @@ ui.preferences.cancel=Encaboxar
 ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Recordar les llingüetes
+ui.preferences.downloadCatalogs=Descargar catálogu remotu
 ui.messages.loadZimFileError=Nun se pudo cargar «%1». ¿Seguro que ye un ficheru ZIM?
 ui.messages.alreadyIndexingError=Ya ta executándose un procesu d'indexáu.
 ui.messages.noResultsError=Nun hai resultaos pa esta consulta.

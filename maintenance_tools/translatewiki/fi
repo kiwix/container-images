@@ -28,7 +28,9 @@ ui.main.selectall.accesskey=V
 ui.main.copy=Kopioi
 ui.main.transliteration=Translitterointi
 ui.main.transliteration.accesskey=o
+# Fuzzy
 ui.main.preferences=Asetukset
+# Fuzzy
 ui.main.preferences.accesskey=k
 ui.main.display=Näytä
 ui.main.display.accesskey=ä

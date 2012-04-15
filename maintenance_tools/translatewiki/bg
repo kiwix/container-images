@@ -16,6 +16,7 @@ ui.main.find=Търсене в страницата...
 ui.main.selectall=Избиране на всички
 ui.main.copy=Копиране
 ui.main.transliteration=Транслитерация
+# Fuzzy
 ui.main.preferences=Предпочитания
 ui.main.display=Показване
 ui.main.zoom=Мащабиране

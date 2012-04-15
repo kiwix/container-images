@@ -17,6 +17,7 @@ ui.main.copy=Salin
 ui.main.mute=Senyap
 ui.main.audible=Berbunyi
 ui.main.transliteration=Alih huruf
+# Fuzzy
 ui.main.preferences=Keutamaan
 ui.main.display=Paparan
 ui.main.zoom=Zum
@@ -83,6 +84,7 @@ ui.preferences.cancel=Batalkan
 ui.preferences.profileDirectory=Direktori profil
 ui.preferences.browse=Semak imbas
 ui.preferences.tabs=Ingati tab
+ui.preferences.downloadCatalogs=Muat turun katalog jauh
 ui.messages.loadZimFileError='%' tidak dapat dimuatkan. Adakah anda pasti ini ialah fail ZIM?
 ui.messages.alreadyIndexingError=Proses pengindeksan sedang dijalankan.
 ui.messages.noResultsError=Tiada hasil untuk pertanyaan ini.

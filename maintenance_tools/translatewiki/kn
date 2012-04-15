@@ -18,6 +18,7 @@ ui.main.copy=ನಕಲು ಮಾಡು
 ui.main.mute=ಮೂಕವಾಗಿಸು
 ui.main.audible=ಕೇಳಿಸುವ
 ui.main.transliteration=ಲಿಪ್ಯಂತರಣ
+# Fuzzy
 ui.main.preferences=ಪ್ರಾಶಸ್ತ್ಯಗಳು
 ui.main.display=ಪ್ರದರ್ಶಿಸು
 ui.main.zoom=ಸಮೀಪೀಕರಣ/ದೂರೀಕರಣ

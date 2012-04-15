@@ -19,6 +19,7 @@ ui.main.copy=Kopii
 ui.main.mute=Mutigi
 ui.main.audible=Aŭdebligi
 ui.main.transliteration=Transliterumado
+# Fuzzy
 ui.main.preferences=Agordoj
 ui.main.display=Montri
 ui.main.zoom=Pligrandigilo

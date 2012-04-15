@@ -28,6 +28,7 @@ ui.main.copy=Copiază
 ui.main.mute=Fără sunet
 ui.main.audible=Sonor
 ui.main.transliteration=Transliterare
+# Fuzzy
 ui.main.preferences=Preferințe
 ui.main.display=Afișare
 ui.main.zoom=Zoom

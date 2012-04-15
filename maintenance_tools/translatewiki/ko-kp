@@ -17,6 +17,7 @@ ui.main.copy=베끼기
 ui.main.mute=소리없음
 ui.main.audible=소리있음
 ui.main.transliteration=해당 글자로 내주기
+# Fuzzy
 ui.main.preferences=좋아하는 것
 ui.main.display=표시
 ui.main.zoom=크게-작게

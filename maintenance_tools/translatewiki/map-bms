@@ -17,6 +17,7 @@ ui.main.copy=Salin
 ui.main.mute=Bisu
 ui.main.audible=Teyeng dirungokna
 ui.main.transliteration=Transliterasi
+# Fuzzy
 ui.main.preferences=Preferensi
 ui.main.display=Tampilan
 ui.main.zoom=Digedhekna

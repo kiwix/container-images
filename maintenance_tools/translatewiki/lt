@@ -16,6 +16,7 @@ ui.main.find=Paieškos puslapyje...
 ui.main.selectall=Pasirinkti visus
 ui.main.copy=Kopijuoti
 ui.main.transliteration=Transliteracijos
+# Fuzzy
 ui.main.preferences=Nustatymai
 ui.main.display=Rodyti
 ui.main.zoom=Padidinti

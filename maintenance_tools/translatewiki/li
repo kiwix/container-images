@@ -15,6 +15,7 @@ ui.main.find=Zeuke in pagina...
 ui.main.selectall=Alles selektere
 ui.main.copy=Kopiëre
 ui.main.transliteration=Transliteratie
+# Fuzzy
 ui.main.preferences=Veurkäöre
 ui.main.display=Bild
 ui.main.zoom=Zoome

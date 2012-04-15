@@ -17,6 +17,7 @@ ui.main.copy=Salin
 ui.main.mute=Diam
 ui.main.audible=Dapat didengar
 ui.main.transliteration=Transliterasi
+# Fuzzy
 ui.main.preferences=Preferensi
 ui.main.display=Tampilan
 ui.main.zoom=Perbesaran

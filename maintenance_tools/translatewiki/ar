@@ -28,7 +28,9 @@ ui.main.copy=انسخ
 ui.main.copy.accesskey=ن
 ui.main.transliteration=تحويل لغة الكتابة
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=تفضيلات
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=عرض
 ui.main.display.accesskey=ع

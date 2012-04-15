@@ -20,6 +20,7 @@ ui.main.copy=નકલ
 ui.main.mute=મૂંગુ
 ui.main.audible=સાંભળી શકાય એવું
 ui.main.transliteration=લીપી બદલાવ
+# Fuzzy
 ui.main.preferences=પસંદ
 ui.main.display=આવ્તરણ
 ui.main.zoom=ઝૂમ

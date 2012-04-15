@@ -20,9 +20,10 @@ ui.main.copy=অনুলিপি
 ui.main.mute=নিঃশব্দ
 ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকরণ
+# Fuzzy
 ui.main.preferences=পছন্দ
 ui.main.display=প্রদর্শন
-ui.main.zoom=বড় করুন
+ui.main.zoom=বড় করো
 ui.main.zoomin=বিবর্ধিত করুন
 ui.main.zoomout=হ্রাস করুন
 ui.main.zoomorig=মূল আকার

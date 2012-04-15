@@ -17,6 +17,7 @@ ui.main.copy=copier
 ui.main.mute=sakketha
 ui.main.audible=Yetsema3
 ui.main.transliteration=baddel el logha elli inti fiha
+# Fuzzy
 ui.main.preferences=ech t7eb fi el Wiki hadha
 ui.main.display=khaddemha
 ui.main.zoom=kabber

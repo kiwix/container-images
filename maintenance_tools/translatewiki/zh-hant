@@ -18,6 +18,7 @@ ui.main.selectall=全選
 ui.main.copy=複製
 ui.main.mute=靜音
 ui.main.transliteration=音譯
+# Fuzzy
 ui.main.preferences=偏好設定
 ui.main.display=顯示
 ui.main.zoom=縮放

@@ -15,6 +15,7 @@ ui.main.find=Gagai pinntang tungkaran...
 ui.main.selectall=Pilihi samunyaan
 ui.main.copy=Rekap
 ui.main.transliteration=Translitarasi
+# Fuzzy
 ui.main.preferences=Kakatujuan
 ui.main.display=Tampaian
 ui.main.zoom=Pangganalan

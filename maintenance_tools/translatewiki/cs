@@ -21,6 +21,7 @@ ui.main.copy=Kopírovat
 ui.main.mute=Ztlumit
 ui.main.audible=Zesílit
 ui.main.transliteration=Transliterace
+# Fuzzy
 ui.main.preferences=Možnosti
 ui.main.display=Zobrazení
 ui.main.zoom=Přiblížení

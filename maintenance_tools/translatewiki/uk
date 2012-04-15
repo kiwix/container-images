@@ -34,7 +34,9 @@ ui.main.mute=Без звуку
 ui.main.audible=Зі звуком
 ui.main.transliteration=Транслітерація
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Параметри
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Показати
 ui.main.display.accesskey=D

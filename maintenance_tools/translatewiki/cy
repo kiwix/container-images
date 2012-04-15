@@ -18,6 +18,7 @@ ui.main.copy=Copïo
 ui.main.mute=Heb sain
 ui.main.audible=Sain
 ui.main.transliteration=Trawslythrennol
+# Fuzzy
 ui.main.preferences=Dewisiadau
 ui.main.display=Arddangos
 ui.main.zoom=Chwyddo
@@ -84,6 +85,7 @@ ui.preferences.cancel=Canslo
 ui.preferences.profileDirectory=Cyfeiriadur proffil
 ui.preferences.browse=Pori
 ui.preferences.tabs=Cofier tabiau
+ui.preferences.downloadCatalogs=Islwytho catalog(au) allanol
 ui.messages.loadZimFileError=Methwyd a llwytho '%1'. Ydych chi'n siwr mai ffeil ZIM yw hon?
 ui.messages.alreadyIndexingError=Mae proses mynegeio yn rhedeg eisoes.
 ui.messages.noResultsError=Dim canlyniadau ar gyfer yr ymholiad hwn.

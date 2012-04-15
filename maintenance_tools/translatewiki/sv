@@ -18,6 +18,7 @@ ui.main.copy=Kopiera
 ui.main.mute=Tyst
 ui.main.audible=Hörbar
 ui.main.transliteration=Translitteration
+# Fuzzy
 ui.main.preferences=Inställningar
 ui.main.display=Visa
 ui.main.zoom=Zooma
@@ -84,6 +85,7 @@ ui.preferences.cancel=Avbryt
 ui.preferences.profileDirectory=Profilkatalog
 ui.preferences.browse=Bläddra
 ui.preferences.tabs=Kom ihåg flikar
+ui.preferences.downloadCatalogs=Ladda ned avlägsna katalog(er)
 ui.messages.loadZimFileError=Det gick inte att läsa in '%1'. Är du säker på att detta är en ZIM-fil?
 ui.messages.alreadyIndexingError=En indexeringsprocess körs redan.
 ui.messages.noResultsError=Inga resultat för den här frågan.

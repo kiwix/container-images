@@ -18,6 +18,7 @@ ui.main.copy=Күчерелмәләү
 ui.main.mute=Тавышсыз
 ui.main.audible=Тавышлы
 ui.main.transliteration=Транслитерация
+# Fuzzy
 ui.main.preferences=Көйләнмәләр
 ui.main.display=Күрсәтергә
 ui.main.zoom=Масштаб

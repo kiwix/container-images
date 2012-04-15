@@ -15,6 +15,7 @@ ui.main.find=Sib fil-paġna...
 ui.main.selectall=Agħżel kollox
 ui.main.copy=Ikkopja
 ui.main.transliteration=Trażlitterazzjoni
+# Fuzzy
 ui.main.preferences=Preferenzi
 ui.main.display=Viżwal
 ui.main.zoom=Iffoka

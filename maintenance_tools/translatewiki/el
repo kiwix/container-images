@@ -32,7 +32,9 @@ ui.main.copy=Αντιγραφή
 ui.main.copy.accesskey=p
 ui.main.transliteration=Μεταγραφή
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Προτιμήσεις
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Εμφάνιση
 ui.main.display.accesskey=D

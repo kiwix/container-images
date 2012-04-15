@@ -33,7 +33,9 @@ ui.main.mute=Muet
 ui.main.audible=Audible
 ui.main.transliteration=Translittération
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Options
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Affichage
 ui.main.display.accesskey=A
@@ -117,6 +119,7 @@ ui.preferences.cancel=Annuler
 ui.preferences.profileDirectory=Répertoire du profil
 ui.preferences.browse=Parcourir
 ui.preferences.tabs=Se souvenir des onglets ouverts en quittant Kiwix
+ui.preferences.downloadCatalogs=Télécharger le(s) catalogue(s) distant
 ui.messages.loadZimFileError=Impossible de charger le fichier ZIM '%1'. Peut-être ce fichier est-il invalide ?
 ui.messages.alreadyIndexingError=Un processus d'indexation est déjà en cours.
 ui.messages.noResultsError=Il n'y a pas de résultats pour cette recherche.

@@ -29,7 +29,9 @@ ui.main.copy=प्रतिलिपी गर्ने
 ui.main.copy.accesskey=प
 ui.main.transliteration=अनुवर्ण
 ui.main.transliteration.accesskey=अ
+# Fuzzy
 ui.main.preferences=प्राथमिकता
+# Fuzzy
 ui.main.preferences.accesskey=त
 ui.main.display=दृश्य
 ui.main.display.accesskey=द

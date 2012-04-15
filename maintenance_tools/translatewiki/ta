@@ -18,6 +18,7 @@ ui.main.copy=நகல் எடு
 ui.main.mute=அமைதியாக்கு
 ui.main.audible=கேட்கத் தக்க
 ui.main.transliteration=ஒலிப்பெயர்ப்பு
+# Fuzzy
 ui.main.preferences=விருப்பங்கள்
 ui.main.display=காண்பி
 ui.main.zoom=அணுகிக் காண்

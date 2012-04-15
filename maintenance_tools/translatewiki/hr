@@ -15,6 +15,7 @@ ui.main.find=Traži na stranici...
 ui.main.selectall=Odaberi sve
 ui.main.copy=Kopiraj
 ui.main.transliteration=Preslovljavanje (transliteracija)
+# Fuzzy
 ui.main.preferences=Postavke
 ui.main.display=Prikaz
 ui.main.zoom=Postavke uvećanja

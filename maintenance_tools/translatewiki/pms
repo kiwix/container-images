@@ -18,6 +18,7 @@ ui.main.copy=Copié
 ui.main.mute=Mut
 ui.main.audible=Scotàbil
 ui.main.transliteration=Trasliterassion
+# Fuzzy
 ui.main.preferences=Mè gust
 ui.main.display=Visualisa
 ui.main.zoom=Angrandiment

@@ -18,6 +18,7 @@ ui.main.find=在页面内搜索...
 ui.main.selectall=全选
 ui.main.copy=复制
 ui.main.transliteration=音译转写
+# Fuzzy
 ui.main.preferences=参数设置
 ui.main.display=显示
 ui.main.zoom=缩放

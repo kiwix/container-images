@@ -17,6 +17,7 @@ ui.main.copy=拷備
 ui.main.mute=無聲
 ui.main.audible=放聲
 ui.main.transliteration=音譯
+# Fuzzy
 ui.main.preferences=設定
 ui.main.display=顯示
 ui.main.zoom=搝近

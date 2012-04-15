@@ -33,7 +33,9 @@ ui.main.mute=Muto
 ui.main.audible=Ascolta
 ui.main.transliteration=Traslitterazione
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Preferenze
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Visualizza
 ui.main.display.accesskey=V

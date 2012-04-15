@@ -16,6 +16,7 @@ ui.main.selectall=אויסוויילן אלע
 ui.main.copy=קאפירן
 ui.main.mute=איינשטילן
 ui.main.transliteration=טראנסליטעראציע
+# Fuzzy
 ui.main.preferences=פרעפֿערענצן
 ui.main.display=אויסשטעלונג
 ui.main.zoom=זום

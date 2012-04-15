@@ -14,6 +14,7 @@ ui.main.edit=ಸಂಪಾದನೆ ಮಲ್ಪುಲೆ
 ui.main.find=.....ಈ ಪುಟೊಟ್ ನಾಡ್‘ಲೆ
 ui.main.selectall=ಮಾತೈನ್‘ಲಾ ಆಯ್ಕೆ ಮಲ್ಪುಲೆ
 ui.main.copy=ನಕಲ್ ಮಲ್ಪುಲೆ
+# Fuzzy
 ui.main.preferences=ಪ್ರಾಶಸ್ತ್ಯೊಲು
 ui.main.display=ಪ್ರದರ್ಶಿಸಾಲೆ
 ui.main.zoom=ಮಲ್ಲ ಮಲ್ಪುಲೆ

@@ -32,7 +32,9 @@ ui.main.mute=Silencio
 ui.main.audible=Audible
 ui.main.transliteration=Transcripción
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Preferencias
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Mostrar
 ui.main.display.accesskey=P
@@ -116,6 +118,7 @@ ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Examinar
 ui.preferences.tabs=Recordar las pestañas
+ui.preferences.downloadCatalogs=Descargar catálogo(s) remoto(s)
 ui.messages.loadZimFileError=No se pudo cargar «%1». ¿Está seguro que este es un archivo ZIM?
 ui.messages.alreadyIndexingError=Ya se está ejecutando un proceso de indización.
 ui.messages.noResultsError=No hay resultados para esta consulta.

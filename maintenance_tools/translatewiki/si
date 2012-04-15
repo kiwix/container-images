@@ -17,6 +17,7 @@ ui.main.find=පිටුවෙහි සොයන්න...
 ui.main.selectall=සියල්ල සොයන්න
 ui.main.copy=පිටපත් කරන්න
 ui.main.transliteration=අක්ෂර පරිවර්තනය
+# Fuzzy
 ui.main.preferences=අභිරුචි
 ui.main.display=පෙන්වීම
 ui.main.zoom=zසූම් කරන්න

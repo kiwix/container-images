@@ -18,6 +18,7 @@ ui.main.copy=Másolás
 ui.main.mute=Némítás
 ui.main.audible=Hallható
 ui.main.transliteration=Átírás
+# Fuzzy
 ui.main.preferences=Beállítások
 ui.main.display=Megjelenítés
 ui.main.zoom=Kicsinyítés/nagyítás

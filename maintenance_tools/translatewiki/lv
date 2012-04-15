@@ -18,6 +18,7 @@ ui.main.copy=Kopēt
 ui.main.mute=Skaņas izslēgšana
 ui.main.audible=Dzirdams
 ui.main.transliteration=Transliterācija
+# Fuzzy
 ui.main.preferences=Izvēles
 ui.main.display=Displejs
 ui.main.zoom=Tālummaiņa

@@ -19,6 +19,7 @@ ui.main.copy=Капіяваць
 ui.main.mute=Бяз гучны
 ui.main.audible=З гукам
 ui.main.transliteration=Трансьлітарацыя
+# Fuzzy
 ui.main.preferences=Налады
 ui.main.display=Паказаць
 ui.main.zoom=Маштаб

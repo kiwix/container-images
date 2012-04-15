@@ -19,6 +19,7 @@ ui.main.copy=คัดลอก
 ui.main.mute=ปิดเสียง
 ui.main.audible=มีเสียง
 ui.main.transliteration=การทับศัพท์
+# Fuzzy
 ui.main.preferences=ตั้งค่า
 ui.main.display=แสดงผล
 ui.main.zoom=ย่อ-ขยาย

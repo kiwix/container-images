@@ -17,6 +17,7 @@ ui.main.copy=Iskaychay
 ui.main.mute=Amu
 ui.main.audible=Uyarinalla
 ui.main.transliteration=Sanampa wantuy (translitirasyun)
+# Fuzzy
 ui.main.preferences=Allinkachinakuna
 ui.main.display=Qhawachiy
 ui.main.zoom=Llamphachiy

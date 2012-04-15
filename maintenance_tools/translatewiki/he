@@ -29,7 +29,9 @@ ui.main.mute=השתקה
 ui.main.audible=נשמע
 ui.main.transliteration=תעתיק
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=העדפות
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=תצוגה
 ui.main.display.accesskey=D

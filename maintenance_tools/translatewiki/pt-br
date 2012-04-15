@@ -21,6 +21,7 @@ ui.main.copy=Copiar
 ui.main.mute=Sem som
 ui.main.audible=Audível
 ui.main.transliteration=Transliteração
+# Fuzzy
 ui.main.preferences=Preferências
 ui.main.display=Exibição
 ui.main.zoom=Zoom

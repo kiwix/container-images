@@ -15,6 +15,7 @@ ui.main.find=Leita á síðu...
 ui.main.selectall=Vel alt
 ui.main.copy=Fjølrita (kopiera)
 ui.main.transliteration=Translitteratión
+# Fuzzy
 ui.main.preferences=Innstillingar
 ui.main.display=Vís
 ui.main.zoom=Mynddráttur (zoom)

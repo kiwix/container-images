@@ -20,6 +20,7 @@ ui.main.copy=कॉपी करें
 ui.main.mute=आवाज़ बंद करें
 ui.main.audible=जो सुनाई दे
 ui.main.transliteration=लिप्यंतरण
+# Fuzzy
 ui.main.preferences=वरीयताएँ
 ui.main.display=डिस्प्ले
 ui.main.zoom=ज़ूम करें

@@ -17,6 +17,7 @@ ui.main.copy=Ìwòkọ
 ui.main.mute=Palẹ́numọ́
 ui.main.audible=Olóhùn
 ui.main.transliteration=Ìyítumọ̀dà
+# Fuzzy
 ui.main.preferences=Àwọn ìfẹ́ràn
 ui.main.display=Ìmúhàn
 ui.main.zoom=Zoom

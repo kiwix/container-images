@@ -15,6 +15,7 @@ ui.main.find=En dä Sigg söhke...
 ui.main.selectall=Alles ußwähle
 ui.main.copy=Kopeere
 ui.main.transliteration=Bochschtabe tuusche
+# Fuzzy
 ui.main.preferences=Enschtellunge
 ui.main.display=Aanzeije
 ui.main.zoom=Zoome

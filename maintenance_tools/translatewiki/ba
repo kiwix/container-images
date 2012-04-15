@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Haqmar
 # Author: Roustammr
+# Author: ҒатаУлла
 
 ui.main.file=Файл
 ui.main.openFile=Файлды асырға...
@@ -18,6 +19,7 @@ ui.main.copy=Күсермәһен алырға
 ui.main.mute=Тыуышһыҙ
 ui.main.audible=Тыушлы
 ui.main.transliteration=Транслитерация
+# Fuzzy
 ui.main.preferences=Көйләүҙәр
 ui.main.display=Күрһәтергә
 ui.main.zoom=Масштаб
@@ -84,6 +86,7 @@ ui.preferences.cancel=Кире алырға
 ui.preferences.profileDirectory=Профиль каталогы
 ui.preferences.browse=Байҡарға
 ui.preferences.tabs=Һалынмаларҙы хәтерҙә тоторға
+ui.preferences.downloadCatalogs=Юйылған каталогты (-тарҙы) күсереп алың
 ui.messages.loadZimFileError=«% 1» тейәп булмай, ул ысындан ZIM файлмы?
 ui.messages.alreadyIndexingError=Индекслау процессы башланған инде.
 ui.messages.noResultsError=Был һорау буйынса һөҙөмтәләр юҡ.

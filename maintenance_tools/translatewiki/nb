@@ -18,6 +18,7 @@ ui.main.copy=Kopier
 ui.main.mute=Demp
 ui.main.audible=Hørbar
 ui.main.transliteration=Translitterasjon
+# Fuzzy
 ui.main.preferences=Innstillinger
 ui.main.display=Skjerm
 ui.main.zoom=Zoom

@@ -30,7 +30,9 @@ ui.main.mute=صامت‌سازی
 ui.main.audible=قابل شنیدن
 ui.main.transliteration=نويسه گردانى
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=ترجیحات
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=نمایش
 ui.main.display.accesskey=D

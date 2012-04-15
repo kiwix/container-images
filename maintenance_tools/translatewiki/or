@@ -16,6 +16,7 @@ ui.main.find=ପୃଷ୍ଠା ଅନୁସାରେ ଖୋଜିବେ...
 ui.main.selectall=ସବୁକୁ ବାଛିବେ
 ui.main.copy=ନକଲ
 ui.main.transliteration=ଲିପି ଅନ୍ତରଣ
+# Fuzzy
 ui.main.preferences=ପସନ୍ଦସବୁ
 ui.main.display=ଦେଖଣା
 ui.main.zoom=ବଡ଼କରି ଦେଖାଇବେ

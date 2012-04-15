@@ -18,6 +18,7 @@ ui.main.copy=ასლის შექმნა
 ui.main.mute=უხმო
 ui.main.audible=ხმით
 ui.main.transliteration=ტრანსლიტერაცია
+# Fuzzy
 ui.main.preferences=კონფიგურაცია
 ui.main.display=ჩვენება
 ui.main.zoom=ზომა

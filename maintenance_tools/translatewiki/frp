@@ -19,6 +19,7 @@ ui.main.selectall=Chouèsir tot
 ui.main.selectall.accesskey=T
 ui.main.copy=Copiyér
 ui.main.transliteration=Translitèracion
+# Fuzzy
 ui.main.preferences=Prèferences
 ui.main.display=Fâre vêre
 ui.main.display.accesskey=V

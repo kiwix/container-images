@@ -15,6 +15,7 @@ ui.main.find=Agbiruk iti daytoy a panid...
 ui.main.selectall=Pilien amin
 ui.main.copy=Kopiaen
 ui.main.transliteration=Panakaipatarus
+# Fuzzy
 ui.main.preferences=Kaykayatan
 ui.main.display=Iparang
 ui.main.zoom=Padakkelen

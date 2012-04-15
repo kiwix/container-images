@@ -31,7 +31,8 @@ ui.main.mute=Geluid dempen
 ui.main.audible=Geluid aanzetten
 ui.main.transliteration=Transliteratie
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Voorkeuren
+ui.main.preferences=Server
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Beeld
 ui.main.display.accesskey=D
@@ -115,6 +116,7 @@ ui.preferences.cancel=Annuleren
 ui.preferences.profileDirectory=Profielmap
 ui.preferences.browse=Bladeren
 ui.preferences.tabs=Tabbladen onthouden
+ui.preferences.downloadCatalogs=Catalogi downloaden
 ui.messages.loadZimFileError="%1" kan niet geladen worden. Weet u zeker dat dit een ZIM-bestand is?
 ui.messages.alreadyIndexingError=Er wordt op dit moment al geïndexeerd.
 ui.messages.noResultsError=Deze zoekopdracht heeft geen resultaten.

@@ -17,6 +17,7 @@ ui.main.copy=복사하기
 ui.main.mute=무음
 ui.main.audible=유음
 ui.main.transliteration=표기법
+# Fuzzy
 ui.main.preferences=선호
 ui.main.display=표시
 ui.main.zoom=확대/축소

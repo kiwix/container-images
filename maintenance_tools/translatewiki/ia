@@ -17,6 +17,7 @@ ui.main.copy=Copiar
 ui.main.mute=Mute
 ui.main.audible=Audibile
 ui.main.transliteration=Translitteration
+# Fuzzy
 ui.main.preferences=Preferentias
 ui.main.display=Visualisation
 ui.main.zoom=Zoom
@@ -83,6 +84,7 @@ ui.preferences.cancel=Cancellar
 ui.preferences.profileDirectory=Directorio de profilo
 ui.preferences.browse=Foliar
 ui.preferences.tabs=Memorar schedas
+ui.preferences.downloadCatalogs=Discargar catalogo(s) remote
 ui.messages.loadZimFileError=Impossibile cargar "$1". Es tu secur que es un file ZIM?
 ui.messages.alreadyIndexingError=Un processo de indexation es jam in curso.
 ui.messages.noResultsError=Le recerca non ha resultatos.

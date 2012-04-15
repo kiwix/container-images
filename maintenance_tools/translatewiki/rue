@@ -16,6 +16,7 @@ ui.main.find=Гляданя на сторінцї...
 ui.main.selectall=Выбрати вшыткы
 ui.main.copy=Копіровати
 ui.main.transliteration=Транслітерація
+# Fuzzy
 ui.main.preferences=Параметры
 ui.main.display=Указати
 ui.main.zoom=Зоом

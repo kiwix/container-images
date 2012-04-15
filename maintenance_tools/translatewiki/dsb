@@ -17,6 +17,7 @@ ui.main.copy=Kopěrowaś
 ui.main.mute=Bźez zuka
 ui.main.audible=Słyšabny
 ui.main.transliteration=Transliteracija
+# Fuzzy
 ui.main.preferences=Nastajenja
 ui.main.display=Zwobraznjenje
 ui.main.zoom=Skalěrowanje
@@ -83,6 +84,7 @@ ui.preferences.cancel=Pśetergnuś
 ui.preferences.profileDirectory=Profilowy zarědnik
 ui.preferences.browse=Pśepytaś
 ui.preferences.tabs=Rejtarki se spomnjeś
+ui.preferences.downloadCatalogs=Zdalone katalogi ześěgnuś
 ui.messages.loadZimFileError='%1' njedajo se zacytaś. Cośo se wěsty, až to jo ZIM-dataja?
 ui.messages.alreadyIndexingError=Indicěrowański proces južo běžy.
 ui.messages.noResultsError=Žedne wuslědki namakane.

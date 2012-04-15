@@ -15,6 +15,7 @@ ui.main.find=Tìm kiếm trong Trang…
 ui.main.selectall=Chọn Toàn bộ
 ui.main.copy=Chép
 ui.main.transliteration=Chuyển tự
+# Fuzzy
 ui.main.preferences=Tùy chỉnh
 ui.main.display=Hiển thị
 ui.main.zoom=Thu phóng

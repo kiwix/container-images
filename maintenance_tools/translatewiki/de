@@ -30,7 +30,9 @@ ui.main.mute=Ton aus
 ui.main.audible=Hörbar
 ui.main.transliteration=Transliteration
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=Einstellungen
+# Fuzzy
 ui.main.preferences.accesskey=E
 ui.main.display=Bildschirm
 ui.main.display.accesskey=B
@@ -114,6 +116,7 @@ ui.preferences.cancel=Abbrechen
 ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Durchsuchen
 ui.preferences.tabs=Reiter merken
+ui.preferences.downloadCatalogs=Externe(n) Katalog(e) herunterladen
 ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Bist du sicher, dass dies eine ZIM-Datei ist?
 ui.messages.alreadyIndexingError=Ein Indexierungsprozess wurde bereits gestartet.
 ui.messages.noResultsError=Keine Ergebnisse gefunden.

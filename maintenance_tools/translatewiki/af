@@ -16,6 +16,7 @@ ui.main.find=Soek in bladsy...
 ui.main.selectall=Kies almal
 ui.main.copy=Kopieer
 ui.main.transliteration=Transliterasie
+# Fuzzy
 ui.main.preferences=Voorkeure
 ui.main.display=Wys
 ui.main.zoom=Zoom
