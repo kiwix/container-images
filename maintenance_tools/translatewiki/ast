@@ -18,8 +18,7 @@ ui.main.copy=Copiar
 ui.main.mute=Mudu
 ui.main.audible=Oyible
 ui.main.transliteration=Treslliteración
-# Fuzzy
-ui.main.preferences=Preferencies
+ui.main.preferences=Sirvidor
 ui.main.display=Amosar
 ui.main.zoom=Zoom
 ui.main.zoomin=Aumentar

@@ -17,8 +17,7 @@ ui.main.copy=拷備
 ui.main.mute=無聲
 ui.main.audible=放聲
 ui.main.transliteration=音譯
-# Fuzzy
-ui.main.preferences=設定
+ui.main.preferences=主機
 ui.main.display=顯示
 ui.main.zoom=搝近
 ui.main.zoomin=放大
@@ -84,6 +83,7 @@ ui.preferences.cancel=取銷
 ui.preferences.profileDirectory=基本資料目錄
 ui.preferences.browse=瀏覽
 ui.preferences.tabs=記牢書籤頁
+ui.preferences.downloadCatalogs=下載遠位的目錄
 ui.messages.loadZimFileError=無法度讀 '%1'，你敢確定這是一个 ZIM 檔案？
 ui.messages.alreadyIndexingError=排列的程序已經咧走矣！
 ui.messages.noResultsError=這擺揣無資料

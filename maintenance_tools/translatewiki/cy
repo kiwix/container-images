@@ -18,8 +18,7 @@ ui.main.copy=Copïo
 ui.main.mute=Heb sain
 ui.main.audible=Sain
 ui.main.transliteration=Trawslythrennol
-# Fuzzy
-ui.main.preferences=Dewisiadau
+ui.main.preferences=Gweinydd
 ui.main.display=Arddangos
 ui.main.zoom=Chwyddo
 ui.main.zoomin=Chwyddo

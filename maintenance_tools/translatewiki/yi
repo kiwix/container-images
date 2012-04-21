@@ -15,9 +15,9 @@ ui.main.find=זוכן אין בלאט…
 ui.main.selectall=אויסוויילן אלע
 ui.main.copy=קאפירן
 ui.main.mute=איינשטילן
+ui.main.audible=הערבאר
 ui.main.transliteration=טראנסליטעראציע
-# Fuzzy
-ui.main.preferences=פרעפֿערענצן
+ui.main.preferences=סארווער
 ui.main.display=אויסשטעלונג
 ui.main.zoom=זום
 ui.main.zoomin=פֿארגרעסערן

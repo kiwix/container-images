@@ -1,9 +1,10 @@
 # Messages for Arabic (العربية)
 # Exported from translatewiki.net
+# Author: DRIHEM
 # Author: Meno25
 # Author: OsamaK
 
-ui.main.cssdirection=rtl
+ui.main.cssdirection=ltr
 ui.main.file=ملف
 ui.main.file.accesskey=م
 ui.main.openFile=افتح ملفا...
@@ -26,12 +27,12 @@ ui.main.selectall=اختر الكل
 ui.main.selectall.accesskey=ح
 ui.main.copy=انسخ
 ui.main.copy.accesskey=ن
+ui.main.mute=كتم الصوت
+ui.main.audible=مسموعة
 ui.main.transliteration=تحويل لغة الكتابة
 ui.main.transliteration.accesskey=T
-# Fuzzy
-ui.main.preferences=تفضيلات
-# Fuzzy
-ui.main.preferences.accesskey=n
+ui.main.preferences=الخادم
+ui.main.preferences.accesskey=s
 ui.main.display=عرض
 ui.main.display.accesskey=ع
 ui.main.zoom=تكبير/تصغير
@@ -110,10 +111,11 @@ ui.main.library.filterBy.publisher=الناشر
 ui.main.library.filterBy.publisher.all=الكل
 ui.preferences.preferences=تفضيلات
 ui.preferences.save=احفظ
-ui.preferences.cancel=ألغِ
+ui.preferences.cancel=ألغي
 ui.preferences.profileDirectory=دليل الملف الشخصي
 ui.preferences.browse=تصفّح
 ui.preferences.tabs=تذكّر الألسنة
+ui.preferences.downloadCatalogs=قم بتحميل فهرس (اث) عن بعد
 ui.messages.loadZimFileError=تغذّر تحميل '%1'. أمتأكد أن هذا ملف ZIM؟
 ui.messages.alreadyIndexingError=هناك عملية فهرسة جارية فعلا.
 ui.messages.noResultsError=لا نتائج لهذا البحث.

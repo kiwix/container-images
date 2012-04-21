@@ -33,8 +33,7 @@ ui.main.transliteration=Transliteracja
 ui.main.transliteration.accesskey=T
 # Fuzzy
 ui.main.preferences=Preferencje
-# Fuzzy
-ui.main.preferences.accesskey=n
+ui.main.preferences.accesskey=s
 ui.main.display=Widok
 ui.main.display.accesskey=W
 ui.main.zoom=Powiększenie

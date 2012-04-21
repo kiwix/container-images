@@ -17,8 +17,7 @@ ui.main.copy=Kopiraj
 ui.main.mute=Nemo
 ui.main.audible=Slišno
 ui.main.transliteration=Prečrkovanje
-# Fuzzy
-ui.main.preferences=Nastavitve
+ui.main.preferences=Strežnik
 ui.main.display=Prikaz
 ui.main.zoom=Povečava
 ui.main.zoomin=Povečaj
@@ -84,6 +83,7 @@ ui.preferences.cancel=Prekliči
 ui.preferences.profileDirectory=Mapa profila
 ui.preferences.browse=Prebrskaj
 ui.preferences.tabs=Zapomni si zavihke
+ui.preferences.downloadCatalogs=prenesite oddaljen(e) katalog(e)
 ui.messages.loadZimFileError=Ne morem naložiti »%1«. Ste prepričani, da gre za datoteko ZIM?
 ui.messages.alreadyIndexingError=Postopek indeksiranja se že izvaja.
 ui.messages.noResultsError=Ni rezultatov za to poizvedbo.

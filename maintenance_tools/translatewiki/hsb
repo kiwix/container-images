@@ -17,8 +17,7 @@ ui.main.copy=Kopěrować
 ui.main.mute=Bjez zynka
 ui.main.audible=Słyšomny
 ui.main.transliteration=Transliteracija
-# Fuzzy
-ui.main.preferences=Nastajenja
+ui.main.preferences=Serwer
 ui.main.display=Zwobraznić
 ui.main.zoom=Skalowanje
 ui.main.zoomin=Powjetšić

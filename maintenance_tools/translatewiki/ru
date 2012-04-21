@@ -3,6 +3,7 @@
 # Author: Dim Grits
 # Author: Eleferen
 # Author: Eugrus
+# Author: Ignatus
 # Author: Kelson
 # Author: Lvova
 # Author: Renessaince
@@ -120,6 +121,7 @@ ui.preferences.cancel=Отмена
 ui.preferences.profileDirectory=Каталог профиля
 ui.preferences.browse=Обзор
 ui.preferences.tabs=Запомнить закладки
+ui.preferences.downloadCatalogs=Скачать удалённый(-ые) каталог(и)
 ui.messages.loadZimFileError=Не удается загрузить «% 1», вы уверены что это файл ZIM?
 ui.messages.alreadyIndexingError=Процесс индексирования уже запущен.
 ui.messages.noResultsError=Нет результатов по этому запросу.

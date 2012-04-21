@@ -17,8 +17,7 @@ ui.main.copy=Ìwòkọ
 ui.main.mute=Palẹ́numọ́
 ui.main.audible=Olóhùn
 ui.main.transliteration=Ìyítumọ̀dà
-# Fuzzy
-ui.main.preferences=Àwọn ìfẹ́ràn
+ui.main.preferences=Ẹ̀rọ-apèsè
 ui.main.display=Ìmúhàn
 ui.main.zoom=Zoom
 ui.main.zoomin=Ìmútóbi
@@ -84,6 +83,7 @@ ui.preferences.cancel=Fagilé
 ui.preferences.profileDirectory=Àpò orukọ
 ui.preferences.browse=Ìṣíwò
 ui.preferences.tabs=Rántí àwọn ìpele
+ui.preferences.downloadCatalogs=Ìrùjádé (àwọn) àpò fáìlì ọ̀ọ́kán
 ui.messages.loadZimFileError='%1' kò ṣeé gbé wá. Ṣẹ́ ẹ dájú pé fáìlì ZIM kan nìyí?
 ui.messages.alreadyIndexingError=Ìdá atọ́ka pilẹ̀ ti bẹ̀rẹ̀.
 ui.messages.noResultsError=Kò sí èsì fún ìbéèrè yìí.

@@ -17,8 +17,7 @@ ui.main.copy=Copiar
 ui.main.mute=Silenciar
 ui.main.audible=Audible
 ui.main.transliteration=Transliteración
-# Fuzzy
-ui.main.preferences=Preferencias
+ui.main.preferences=Servidor
 ui.main.display=Visualización
 ui.main.zoom=Zoom
 ui.main.zoomin=Ampliar

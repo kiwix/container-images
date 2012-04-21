@@ -1,6 +1,7 @@
 # Messages for Swedish (Svenska)
 # Exported from translatewiki.net
 # Author: Fluff
+# Author: Lokal Profil
 # Author: WikiPhoenix
 
 ui.main.file=Arkiv
@@ -18,8 +19,7 @@ ui.main.copy=Kopiera
 ui.main.mute=Tyst
 ui.main.audible=Hörbar
 ui.main.transliteration=Translitteration
-# Fuzzy
-ui.main.preferences=Inställningar
+ui.main.preferences=Server
 ui.main.display=Visa
 ui.main.zoom=Zooma
 ui.main.zoomin=Förstora

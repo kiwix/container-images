@@ -17,8 +17,7 @@ ui.main.copy=Копирај
 ui.main.mute=Искл. звук
 ui.main.audible=Звучна
 ui.main.transliteration=Транслитерација
-# Fuzzy
-ui.main.preferences=Нагодувања
+ui.main.preferences=Опслужувач
 ui.main.display=Приказ
 ui.main.zoom=Размер
 ui.main.zoomin=Зголеми

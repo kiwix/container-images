@@ -14,8 +14,7 @@ ui.main.find=Op der Säit sichen...
 ui.main.selectall=Alles uwielen
 ui.main.copy=Kopéieren
 ui.main.transliteration=Transliteratioun
-# Fuzzy
-ui.main.preferences=Astellungen
+ui.main.preferences=Server
 ui.main.display=Weisen
 ui.main.zoom=Zoom
 ui.main.zoomin=Vergréisseren

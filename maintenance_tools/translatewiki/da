@@ -18,8 +18,7 @@ ui.main.copy=Kopier
 ui.main.mute=Lyd fra
 ui.main.audible=Hørbar
 ui.main.transliteration=Translitteration
-# Fuzzy
-ui.main.preferences=Indstillinger
+ui.main.preferences=Server
 ui.main.display=Vis
 ui.main.zoom=Zoom
 ui.main.zoomin=Forstør
@@ -85,6 +84,7 @@ ui.preferences.cancel=Afbryd
 ui.preferences.profileDirectory=Profilmappe
 ui.preferences.browse=Gennemse
 ui.preferences.tabs=Husk faneblade
+ui.preferences.downloadCatalogs=Hent eksterne kataloger ned
 ui.messages.loadZimFileError=Kunne ikke indlæse '%1'. Er du sikker på, det er en ZIM-fil?
 ui.messages.alreadyIndexingError=En indekseringsproces kører allerede.
 ui.messages.noResultsError=Ingen resultater for denne forespørgsel.

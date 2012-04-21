@@ -30,8 +30,7 @@ ui.main.mute=Ton aus
 ui.main.audible=Hörbar
 ui.main.transliteration=Transliteration
 ui.main.transliteration.accesskey=T
-# Fuzzy
-ui.main.preferences=Einstellungen
+ui.main.preferences=Server
 # Fuzzy
 ui.main.preferences.accesskey=E
 ui.main.display=Bildschirm
