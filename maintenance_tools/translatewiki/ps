@@ -17,8 +17,7 @@ ui.main.copy=لمېسل
 ui.main.mute=ټپول
 ui.main.audible=اورېدون وړ
 ui.main.transliteration=سپوڼ کښنه
-# Fuzzy
-ui.main.preferences=غوره توبونه
+ui.main.preferences=پالنګر
 ui.main.display=ښکارېدنه
 ui.main.zoomin=لويول
 ui.main.zoomout=وړوکی کول

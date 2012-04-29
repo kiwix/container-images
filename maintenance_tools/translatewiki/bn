@@ -3,6 +3,7 @@
 # Author: Bellayet
 # Author: Devayon
 # Author: Jayantanth
+# Author: Nasir8891
 # Author: Wikitanvir
 
 ui.main.file=ফাইল
@@ -20,8 +21,7 @@ ui.main.copy=অনুলিপি
 ui.main.mute=নিঃশব্দ
 ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকরণ
-# Fuzzy
-ui.main.preferences=পছন্দ
+ui.main.preferences=সার্ভার
 ui.main.display=প্রদর্শন
 ui.main.zoom=বড় করো
 ui.main.zoomin=বিবর্ধিত করুন
@@ -87,6 +87,7 @@ ui.preferences.cancel=বাতিল
 ui.preferences.profileDirectory=প্রোফাইল ডিরেক্টরি
 ui.preferences.browse=ব্রাউজ
 ui.preferences.tabs=টাঁব মনে রাখুন
+ui.preferences.downloadCatalogs=ক্যাটালগ ডাউনলোড করুন
 ui.messages.loadZimFileError='%1' লোড করতে ব্যর্থ হয়েছে। আপনি কী নিশ্চিত যে একটি একটি জেআইএম ফাইল?
 ui.messages.alreadyIndexingError=একটি সূচিকরণের কাজ ইতিমধ্যেই প্রক্রিয়াধীন রয়েছে।
 ui.messages.noResultsError=এই অনুসন্ধানের জন্য কোনো ফলাফল নেই।

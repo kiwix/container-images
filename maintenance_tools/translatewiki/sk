@@ -1,6 +1,7 @@
 # Messages for Slovak (Slovenčina)
 # Exported from translatewiki.net
 # Author: Helix84
+# Author: Kusavica
 # Author: Wizzard
 
 ui.main.file=Súbor
@@ -16,8 +17,7 @@ ui.main.find=Hľadať na stránke...
 ui.main.selectall=Vybrať všetky
 ui.main.copy=Kopírovať
 ui.main.transliteration=Transliterácia
-# Fuzzy
-ui.main.preferences=Nastavenia
+ui.main.preferences=Server
 ui.main.display=Zobrazenie
 ui.main.zoom=Zväčšenie
 ui.main.zoomin=Zväčšiť

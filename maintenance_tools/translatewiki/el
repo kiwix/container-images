@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: AK
 # Author: Crazymadlover
+# Author: Glavkos
 # Author: Kiolalis
 # Author: Omnipaedista
 # Author: ZaDiak
@@ -30,10 +31,11 @@ ui.main.selectall=Επιλογή όλων
 ui.main.selectall.accesskey=a
 ui.main.copy=Αντιγραφή
 ui.main.copy.accesskey=p
+ui.main.mute=Σίγαση
+ui.main.audible=Ηχητικό
 ui.main.transliteration=Μεταγραφή
 ui.main.transliteration.accesskey=T
-# Fuzzy
-ui.main.preferences=Προτιμήσεις
+ui.main.preferences=Διακομιστής
 # Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=Εμφάνιση
@@ -118,6 +120,7 @@ ui.preferences.cancel=Ακύρωση
 ui.preferences.profileDirectory=Κατάλογος Προφίλ
 ui.preferences.browse=Πλοήγηση
 ui.preferences.tabs=Απομνημόνευση καρτελών
+ui.preferences.downloadCatalogs=Κατεβάστε απομακρυσμένους καταλόγους
 ui.messages.loadZimFileError=Δεν είναι δυνατή η φόρτωση του '% 1' Είστε βέβαιοι ότι αυτό είναι ένα αρχείο ZIM;
 ui.messages.alreadyIndexingError=Η διαδικασία δημιουργίας ευρετηρίου εκτελείται ήδη.
 ui.messages.noResultsError=Κανένα αποτέλεσμα για αυτήν την αναζήτηση.

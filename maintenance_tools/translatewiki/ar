@@ -4,7 +4,7 @@
 # Author: Meno25
 # Author: OsamaK
 
-ui.main.cssdirection=ltr
+ui.main.cssdirection=rtl
 ui.main.file=ملف
 ui.main.file.accesskey=م
 ui.main.openFile=افتح ملفا...

@@ -17,8 +17,7 @@ ui.main.copy=Умножи
 ui.main.mute=Искључи звук
 ui.main.audible=Звучно
 ui.main.transliteration=Пресловљавање
-# Fuzzy
-ui.main.preferences=Поставке
+ui.main.preferences=Сервер
 ui.main.display=Приказ
 ui.main.zoom=Увећање
 ui.main.zoomin=Увећај
