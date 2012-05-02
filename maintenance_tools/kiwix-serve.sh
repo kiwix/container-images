@@ -3,18 +3,26 @@
 ZIM_DIRECTORY=/var/www/download.kiwix.org/zim/
 IDX_DIRECTORY=/var/www/library.kiwix.org/
 LIBRARY_PATH=/var/www/library.kiwix.org/library.xml
-PORT=4242
+ALIAS_PATH=/var/www/kiwix/maintenance_tools/contents.alias
+ALIAS_DIRECTORY=$IDX_DIRECTORY
+PORT=4200
 
 # Delete library
 rm -f $LIBRARY_PATH
 
+# Remove Alias symlinks
+for ALIAS in `find $ALIAS_DIRECTORY -name "*.zim"`
+do
+    unlink $ALIAS
+done
+
 # Go trough all ZIM files, build idx file and library.xml
-for ZIM in `find /var/www/download.kiwix.org/zim/ -name "*.zim" | grep -v "0.8"`
+for ZIM in `find $ZIM_DIRECTORY -name "*.zim" | grep -v "0.8"`
 do
     echo $ZIM
     BASE=`echo $ZIM | sed -e "s/.*\///g"`
     IDX=$IDX_DIRECTORY/$BASE.idx
-    echo "Checkin search index for $BASE"
+    echo "Checking search index for $BASE"
     if [ ! -e $IDX ]
     then
 	echo "Building idx for $ZIM..."
@@ -22,15 +30,29 @@ do
 	kiwix-compact $IDX
     fi
 
+    # Check for alias
+    ALIAS=`cat $ALIAS_PATH | grep $BASE | cut -d" " -f1`
+    echo "$BASE $ALIAS"
+    if [ ! $ALIAS == "" ]
+    then
+	echo "Creating alias link for $BASE ($ALIAS)"
+	ZIM_ALIAS_PATH=$ALIAS_DIRECTORY/$ALIAS
+	ln -s $ZIM $ZIM_ALIAS_PATH
+	ZIM=$ZIM_ALIAS_PATH
+    fi
+
     # Add to library
+    echo "Adding $BASE to library.xml..."
     kiwix-manage $LIBRARY_PATH add $ZIM --indexPath=$IDX --indexBackend=xapian
 done
 
 # kill kiwix-serve instances
+echo "Killing old kiwix-serve instance(s)"
 if [ ! "`pidof kiwix-serve`" == "" ]
 then
     kill -9 `pidof kiwix-serve`
 fi
 
 # Start kiwix-serve
+echo "Starting kiwix-serve"
 kiwix-serve --library --port=$PORT $LIBRARY_PATH
