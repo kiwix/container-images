@@ -5,12 +5,13 @@
 # Author: MetalBrasil
 # Author: Pedroca cerebral
 # Author: Rafael Vargas
+# Author: 555
 
 ui.main.file=Arquivo
 ui.main.openFile=Abrir arquivo...
 ui.main.browseLibrary=Navegar na biblioteca
 ui.main.lastOpen=Aberto recentemente...
-ui.main.saveFile=Salvar  página como...
+ui.main.saveFile=Salvar página como...
 ui.main.print=Imprimir
 ui.main.printPdf=Imprimir como PDF
 ui.main.quit=Sair
@@ -21,8 +22,7 @@ ui.main.copy=Copiar
 ui.main.mute=Sem som
 ui.main.audible=Audível
 ui.main.transliteration=Transliteração
-# Fuzzy
-ui.main.preferences=Preferências
+ui.main.preferences=Servidor
 ui.main.display=Exibição
 ui.main.zoom=Zoom
 ui.main.zoomin=Ampliar
@@ -88,6 +88,7 @@ ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Diretório do perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Lembrar abas
+ui.preferences.downloadCatalogs=Baixar catálogo(s) remoto(s)
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está ocorrendo.
 ui.messages.noResultsError=Nenhum resultado para esta consulta.

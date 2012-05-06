@@ -33,8 +33,7 @@ ui.main.audible=Audível
 ui.main.transliteration=Translineação
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Servidor
-# Fuzzy
-ui.main.preferences.accesskey=n
+ui.main.preferences.accesskey=s
 ui.main.display=Ver
 ui.main.display.accesskey=V
 ui.main.zoom=Zoom

@@ -1,5 +1,6 @@
 # Messages for Arabic (العربية)
 # Exported from translatewiki.net
+# Author: Bassem JARKAS
 # Author: DRIHEM
 # Author: Meno25
 # Author: OsamaK
@@ -7,7 +8,7 @@
 ui.main.cssdirection=rtl
 ui.main.file=ملف
 ui.main.file.accesskey=م
-ui.main.openFile=افتح ملفا...
+ui.main.openFile=افتح ملفًا...
 ui.main.openFile.accesskey=ف
 ui.main.browseLibrary=تصفح المكتبة
 ui.main.lastOpen=المفتوح مؤخراً...
@@ -81,7 +82,7 @@ ui.main.bookmarks=المفضلة
 ui.main.results.title=النتائج
 ui.main.bmkLabel=المفضلة:
 ui.main.notesLabel=ملاحظات المفضلة:
-ui.main.loadbmk=إستيراد مجموعة مفضلة
+ui.main.loadbmk=استيراد مجموعة مفضلة
 ui.main.newbmk=إنشاء مجموعة مفضلة جديدة
 ui.main.mark=علم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
@@ -127,7 +128,7 @@ ui.messages.restartConfirm=%1 بحاجة إلى إعادة التشغيل، هل
 ui.messages.endOfIndexing=تم الإنتهاء من عملية الفهرسة.
 ui.messages.removeProfileConfirm=هل تريد إزالة ملفك الشخصي?
 ui.messages.dontDisplayAnymore=لا تعرض هذه النافذة مرة أخرى.
-ui.messages.changeSkinNeedRestart=لتغيير الواجهة يجب إعادة التشغيل أعد التشغيل الأن?
+ui.messages.changeSkinNeedRestart=لتغيير الواجهة يجب إعادة التشغيل أعد التشغيل الآن؟
 ui.messages.confirm=تأكيد
 ui.messages.no=لا
 ui.messages.yes=نعم

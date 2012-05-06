@@ -118,6 +118,7 @@ ui.preferences.cancel=Annulla
 ui.preferences.profileDirectory=Cartella del profilo
 ui.preferences.browse=Esplora
 ui.preferences.tabs=Ricorda schede
+ui.preferences.downloadCatalogs=Scarica cataloghi remoti
 ui.messages.loadZimFileError=Impossibile caricare %1. Sei sicuro che sia un file ZIM?
 ui.messages.alreadyIndexingError=C'è già un processo di indicizzazione in corso.
 ui.messages.noResultsError=Nessun risultato per questa ricerca.
