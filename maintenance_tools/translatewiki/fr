@@ -33,9 +33,10 @@ ui.main.mute=Muet
 ui.main.audible=Audible
 ui.main.transliteration=Translittération
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Serveur
+ui.main.preferences=Options
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Serveur
 ui.main.display=Affichage
 ui.main.display.accesskey=A
 ui.main.zoom=Zoom

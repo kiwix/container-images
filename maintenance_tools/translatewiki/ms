@@ -18,6 +18,7 @@ ui.main.mute=Senyap
 ui.main.audible=Berbunyi
 ui.main.transliteration=Alih huruf
 ui.main.preferences=Pelayan
+ui.main.server=Pelayan
 ui.main.display=Paparan
 ui.main.zoom=Zum
 ui.main.zoomin=Besarkan

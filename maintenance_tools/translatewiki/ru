@@ -39,6 +39,7 @@ ui.main.transliteration.accesskey=T
 ui.main.preferences=Сервер
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Сервер
 ui.main.display=Показать
 ui.main.display.accesskey=D
 ui.main.zoom=Масштаб

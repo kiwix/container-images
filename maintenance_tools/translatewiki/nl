@@ -34,6 +34,7 @@ ui.main.transliteration.accesskey=T
 ui.main.preferences=Server
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Server
 ui.main.display=Beeld
 ui.main.display.accesskey=D
 ui.main.zoom=Zoomen

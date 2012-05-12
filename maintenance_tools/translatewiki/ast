@@ -19,6 +19,7 @@ ui.main.mute=Mudu
 ui.main.audible=Oyible
 ui.main.transliteration=Treslliteración
 ui.main.preferences=Sirvidor
+ui.main.server=Sirvidor
 ui.main.display=Amosar
 ui.main.zoom=Zoom
 ui.main.zoomin=Aumentar

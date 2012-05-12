@@ -18,6 +18,7 @@ ui.main.mute=Bjez zynka
 ui.main.audible=Słyšomny
 ui.main.transliteration=Transliteracija
 ui.main.preferences=Serwer
+ui.main.server=Serwer
 ui.main.display=Zwobraznić
 ui.main.zoom=Skalowanje
 ui.main.zoomin=Powjetšić

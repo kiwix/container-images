@@ -34,6 +34,7 @@ ui.main.transliteration=تحويل لغة الكتابة
 ui.main.transliteration.accesskey=T
 ui.main.preferences=الخادم
 ui.main.preferences.accesskey=s
+ui.main.server=الخادوم
 ui.main.display=عرض
 ui.main.display.accesskey=ع
 ui.main.zoom=تكبير/تصغير

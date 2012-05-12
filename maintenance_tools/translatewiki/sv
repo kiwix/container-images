@@ -20,6 +20,7 @@ ui.main.mute=Tyst
 ui.main.audible=Hörbar
 ui.main.transliteration=Translitteration
 ui.main.preferences=Server
+ui.main.server=Server
 ui.main.display=Visa
 ui.main.zoom=Zooma
 ui.main.zoomin=Förstora

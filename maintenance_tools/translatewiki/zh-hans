@@ -4,6 +4,7 @@
 # Author: Breawycker
 # Author: Kuailong
 # Author: Liangent
+# Author: Yanmiao liu
 
 ui.main.file=文件
 ui.main.openFile=打开文件
@@ -17,8 +18,11 @@ ui.main.edit=编辑
 ui.main.find=在页面内搜索...
 ui.main.selectall=全选
 ui.main.copy=复制
+ui.main.mute=静音
+ui.main.audible=有声
 ui.main.transliteration=音译转写
 ui.main.preferences=服务器
+ui.main.server=服务器
 ui.main.display=显示
 ui.main.zoom=缩放
 ui.main.zoomin=放大
@@ -84,6 +88,7 @@ ui.preferences.cancel=取消
 ui.preferences.profileDirectory=配置文件目录
 ui.preferences.browse=浏览
 ui.preferences.tabs=记住标签页
+ui.preferences.downloadCatalogs=下载远程目录
 ui.messages.loadZimFileError=无法载入'%1'，您确认它是ZIM文件吗？
 ui.messages.alreadyIndexingError=索引进行中。
 ui.messages.noResultsError=查无结果。

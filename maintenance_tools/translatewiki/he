@@ -29,10 +29,10 @@ ui.main.mute=השתקה
 ui.main.audible=נשמע
 ui.main.transliteration=תעתיק
 ui.main.transliteration.accesskey=T
-# Fuzzy
 ui.main.preferences=העדפות
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=שרת
 ui.main.display=תצוגה
 ui.main.display.accesskey=D
 ui.main.zoom=מרחק מתצוגה
@@ -115,6 +115,7 @@ ui.preferences.cancel=ביטול
 ui.preferences.profileDirectory=תיקיית פרופיל
 ui.preferences.browse=עיון
 ui.preferences.tabs=לזכור לשוניות
+ui.preferences.downloadCatalogs=הורדת קטלוגים מרוחקים
 ui.messages.loadZimFileError=לא ניתן לטעון את הקובץ '%1'.  האם וידאת שמדובר בקובץ מסוג ZIM?
 ui.messages.alreadyIndexingError=יצירת האינדקס כבר בעיצומה.
 ui.messages.noResultsError=אין תוצאות לחיפוש זה.

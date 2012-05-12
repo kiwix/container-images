@@ -18,6 +18,7 @@ ui.main.mute=Silenciar
 ui.main.audible=Audible
 ui.main.transliteration=Transliteración
 ui.main.preferences=Servidor
+ui.main.server=Servidor
 ui.main.display=Visualización
 ui.main.zoom=Zoom
 ui.main.zoomin=Ampliar

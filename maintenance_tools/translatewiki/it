@@ -3,6 +3,7 @@
 # Author: Aushulz
 # Author: Beta16
 # Author: Inskatolata
+# Author: Kelson
 # Author: McDutchie
 # Author: Nemo bis
 
@@ -33,9 +34,10 @@ ui.main.mute=Muto
 ui.main.audible=Ascolta
 ui.main.transliteration=Traslitterazione
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Server
+ui.main.preferences=Preferenze
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Server
 ui.main.display=Visualizza
 ui.main.display.accesskey=V
 ui.main.zoom=Dimensione testo
