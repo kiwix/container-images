@@ -12,11 +12,11 @@ from optparse import OptionParser
 
 
 # configure following
-machines = ['ubuntu32', 'ubuntu64', 'macosx', 'fedora', 'arm']
+machines = ['ubuntu32', 'ubuntu64', 'osx', 'fedora', 'arm', 'win32', 'win64']
 ips = {
     'ubuntu32': '192.168.5.50',
     'ubuntu64': '192.168.5.51',
-    'macosx': '192.168.5.52',
+    'osx': '192.168.5.52',
     'win32': '192.168.5.53',
     'win64': '192.168.5.54',
     'fedora': '192.168.5.55',
@@ -33,6 +33,7 @@ class VirtualMachine(object):
     SSH = '/usr/bin/ssh'
     QEMU = '/home/buildbot/vms/launch_qemu'
     QEMU_RUNNING = '/home/buildbot/vms/is_qemu_running'
+    QEMU_HALT = '/home/buildbot/vms/halt_qemu'
 
     def __call__(self, *args, **kw):
         ins = VirtualMachine(*args, **kw)
@@ -64,11 +65,12 @@ class VirtualMachine(object):
                               '--vrdp', 'config'])
 
     def stop(self):
-        if self.name.lower() in ('macosx', 'arm'):
-            sudo = 'sudo ' if self.name.lower() == 'macosx' else ''
+        if self.name.lower() == 'osx':
             ip = ips.get(self.name, None)
             if ip:
-                subprocess.Popen([self.SSH, 'dev@%s' % ip, '"%(sudo)s/sbin/shutdown -h now"' % sudo])
+                subprocess.Popen([self.SSH, 'dev@%s' % ip, '"sudo /sbin/shutdown -h now"'])
+        elif self.name.lower() == 'arm':
+            subprocess.Popen([self.QEMU_HALT])
         else:
             subprocess.Popen([self.MANAGE, 'controlvm',
                               self.name, 'acpipowerbutton'])
