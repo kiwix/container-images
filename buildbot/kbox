@@ -65,9 +65,10 @@ class VirtualMachine(object):
 
     def stop(self):
         if self.name.lower() in ('macosx', 'arm'):
+            sudo = 'sudo ' if self.name.lower() == 'macosx' else ''
             ip = ips.get(self.name, None)
             if ip:
-                subprocess.Popen([self.SSH, 'dev@%s' % ip, 'sudo halt'])
+                subprocess.Popen([self.SSH, 'dev@%s' % ip, '"%(sudo)s/sbin/shutdown -h now"' % sudo])
         else:
             subprocess.Popen([self.MANAGE, 'controlvm',
                               self.name, 'acpipowerbutton'])
