@@ -19,6 +19,7 @@ ui.main.mute=Isključi zvuk
 ui.main.audible=Zvučno
 ui.main.transliteration=Preslovljavanje
 ui.main.preferences=Server
+ui.main.server=Server
 ui.main.display=Prikaz
 ui.main.zoom=Uvećanje
 ui.main.zoomin=Uvećaj

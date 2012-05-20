@@ -18,6 +18,7 @@ ui.main.mute=Nemo
 ui.main.audible=Slišno
 ui.main.transliteration=Prečrkovanje
 ui.main.preferences=Strežnik
+ui.main.server=Strežnik
 ui.main.display=Prikaz
 ui.main.zoom=Povečava
 ui.main.zoomin=Povečaj

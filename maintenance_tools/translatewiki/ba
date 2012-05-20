@@ -19,8 +19,8 @@ ui.main.copy=Күсермәһен алырға
 ui.main.mute=Тыуышһыҙ
 ui.main.audible=Тыушлы
 ui.main.transliteration=Транслитерация
-# Fuzzy
-ui.main.preferences=Көйләүҙәр
+ui.main.preferences=Сервер
+ui.main.server=Сервер
 ui.main.display=Күрһәтергә
 ui.main.zoom=Масштаб
 ui.main.zoomin=Ҙурайтырға
