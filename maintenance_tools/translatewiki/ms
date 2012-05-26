@@ -1,6 +1,7 @@
 # Messages for Malay (Bahasa Melayu)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Kelson
 
 ui.main.file=Fail
 ui.main.openFile=Buka fail...
@@ -17,7 +18,7 @@ ui.main.copy=Salin
 ui.main.mute=Senyap
 ui.main.audible=Berbunyi
 ui.main.transliteration=Alih huruf
-ui.main.preferences=Pelayan
+ui.main.preferences=Keutamaan
 ui.main.server=Pelayan
 ui.main.display=Paparan
 ui.main.zoom=Zum

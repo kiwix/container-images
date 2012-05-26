@@ -1,5 +1,6 @@
 # Messages for Welsh (Cymraeg)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Lloffiwr
 # Author: Pwyll
 
@@ -18,7 +19,7 @@ ui.main.copy=Copïo
 ui.main.mute=Heb sain
 ui.main.audible=Sain
 ui.main.transliteration=Trawslythrennol
-ui.main.preferences=Gweinydd
+ui.main.preferences=Dewisiadau
 ui.main.server=Gweinydd
 ui.main.display=Arddangos
 ui.main.zoom=Chwyddo

@@ -1,6 +1,7 @@
 # Messages for Japanese (日本語)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Kelson
 # Author: Schu
 # Author: Shirayuki
 # Author: 青子守歌
@@ -20,7 +21,8 @@ ui.main.copy=コピー
 ui.main.mute=ミュート
 ui.main.audible=可聴
 ui.main.transliteration=翻字
-ui.main.preferences=サーバー
+ui.main.preferences=設定
+ui.main.server=サーバー
 ui.main.display=表示
 ui.main.zoom=拡大縮小
 ui.main.zoomin=拡大

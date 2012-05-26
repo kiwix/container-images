@@ -1,5 +1,6 @@
 # Messages for Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Rancher
 
 ui.main.file=Датотека
@@ -17,7 +18,7 @@ ui.main.copy=Умножи
 ui.main.mute=Искључи звук
 ui.main.audible=Звучно
 ui.main.transliteration=Пресловљавање
-ui.main.preferences=Сервер
+ui.main.preferences=Поставке
 ui.main.server=Сервер
 ui.main.display=Приказ
 ui.main.zoom=Увећање

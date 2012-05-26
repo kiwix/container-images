@@ -1,5 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: McDutchie
 # Author: SPQRobin
 # Author: Siebrand
@@ -10,6 +11,7 @@ ui.main.file.accesskey=B
 ui.main.openFile=Bestand openen...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Bibliotheek doorbladeren
+ui.main.hideLibrary=Bibliotheek verbergen
 ui.main.lastOpen=Recent geopend...
 ui.main.saveFile=Pagina opslaan als...
 ui.main.saveFile.accesskey=S
@@ -31,7 +33,7 @@ ui.main.mute=Geluid dempen
 ui.main.audible=Geluid aanzetten
 ui.main.transliteration=Transliteratie
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Server
+ui.main.preferences=Voorkeuren
 # Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.server=Server

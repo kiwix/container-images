@@ -1,6 +1,7 @@
 # Messages for Pashto (پښتو)
 # Exported from translatewiki.net
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
+# Author: Kelson
 
 ui.main.file=دوتنه
 ui.main.openFile=دوتنه پرانيستل...
@@ -17,7 +18,8 @@ ui.main.copy=لمېسل
 ui.main.mute=ټپول
 ui.main.audible=اورېدون وړ
 ui.main.transliteration=سپوڼ کښنه
-ui.main.preferences=پالنګر
+ui.main.preferences=غوره توبونه
+ui.main.server=پالنګر
 ui.main.display=ښکارېدنه
 ui.main.zoomin=لويول
 ui.main.zoomout=وړوکی کول

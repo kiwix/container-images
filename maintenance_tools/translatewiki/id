@@ -1,6 +1,7 @@
 # Messages for Indonesian (Bahasa Indonesia)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Kelson
 # Author: Kenrick95
 
 ui.main.file=Berkas
@@ -18,7 +19,8 @@ ui.main.copy=Salin
 ui.main.mute=Diam
 ui.main.audible=Dapat didengar
 ui.main.transliteration=Transliterasi
-ui.main.preferences=Server
+ui.main.preferences=Preferensi
+ui.main.server=Server
 ui.main.display=Tampilan
 ui.main.zoom=Perbesaran
 ui.main.zoomin=Perbesar

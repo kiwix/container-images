@@ -1,6 +1,7 @@
 # Messages for Romanian (Română)
 # Exported from translatewiki.net
 # Author: Firilacroco
+# Author: Kelson
 # Author: Minisarm
 
 ui.main.cssdirection=ltr
@@ -28,7 +29,8 @@ ui.main.copy=Copiază
 ui.main.mute=Fără sunet
 ui.main.audible=Sonor
 ui.main.transliteration=Transliterare
-ui.main.preferences=Server
+ui.main.preferences=Preferințe
+ui.main.server=Server
 ui.main.display=Afișare
 ui.main.zoom=Zoom
 ui.main.zoomin=Mărește

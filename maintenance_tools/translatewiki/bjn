@@ -1,6 +1,7 @@
 # Messages for Banjar (Bahasa Banjar)
 # Exported from translatewiki.net
 # Author: J Subhi
+# Author: Riemogerz
 
 ui.main.file=Barakas
 ui.main.openFile=Ungkap barakas...
@@ -14,9 +15,12 @@ ui.main.edit=Babak
 ui.main.find=Gagai pinntang tungkaran...
 ui.main.selectall=Pilihi samunyaan
 ui.main.copy=Rekap
+ui.main.mute=Kada basuara
+ui.main.audible=Kawa didangar
 ui.main.transliteration=Translitarasi
 # Fuzzy
-ui.main.preferences=Kakatujuan
+ui.main.preferences=Rujukan
+ui.main.server=Server
 ui.main.display=Tampaian
 ui.main.zoom=Pangganalan
 ui.main.zoomin=Ganali
@@ -82,6 +86,7 @@ ui.preferences.cancel=Walangi
 ui.preferences.profileDirectory=Propil dirakturi
 ui.preferences.browse=Tangadahi
 ui.preferences.tabs=Ingati tab
+ui.preferences.downloadCatalogs=Unggah katalug rimut
 ui.messages.loadZimFileError=Kada-kawa mamuat '%1' Pian yakin kah ngini sabuah barakas ZIM?
 ui.messages.alreadyIndexingError=Sabuah pa-indiks-kan lagi bajalan.
 ui.messages.noResultsError=Kadada kulihan pamintaan ngini.

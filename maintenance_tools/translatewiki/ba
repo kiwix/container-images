@@ -1,6 +1,7 @@
 # Messages for Bashkir (Башҡортса)
 # Exported from translatewiki.net
 # Author: Haqmar
+# Author: Kelson
 # Author: Roustammr
 # Author: ҒатаУлла
 
@@ -19,7 +20,7 @@ ui.main.copy=Күсермәһен алырға
 ui.main.mute=Тыуышһыҙ
 ui.main.audible=Тыушлы
 ui.main.transliteration=Транслитерация
-ui.main.preferences=Сервер
+ui.main.preferences=Көйләүҙәр
 ui.main.server=Сервер
 ui.main.display=Күрһәтергә
 ui.main.zoom=Масштаб

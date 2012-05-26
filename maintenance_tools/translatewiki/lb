@@ -1,5 +1,6 @@
 # Messages for Luxembourgish (Lëtzebuergesch)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Robby
 
 ui.main.file=Fichier
@@ -16,6 +17,7 @@ ui.main.copy=Kopéieren
 ui.main.mute=Toun aus
 ui.main.transliteration=Transliteratioun
 ui.main.preferences=Server
+ui.main.server=Server
 ui.main.display=Weisen
 ui.main.zoom=Zoom
 ui.main.zoomin=Vergréisseren

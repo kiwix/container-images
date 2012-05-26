@@ -1,10 +1,12 @@
 # Messages for Slovenian (Slovenščina)
 # Exported from translatewiki.net
 # Author: Dbc334
+# Author: Kelson
 
 ui.main.file=Datoteka
 ui.main.openFile=Odpri datoteko ...
 ui.main.browseLibrary=Prebrskaj knjižnico
+ui.main.hideLibrary=Skrij knjižnico
 ui.main.lastOpen=Nedavno odprto ...
 ui.main.saveFile=Shrani stran kot ...
 ui.main.print=Natisni
@@ -17,7 +19,7 @@ ui.main.copy=Kopiraj
 ui.main.mute=Nemo
 ui.main.audible=Slišno
 ui.main.transliteration=Prečrkovanje
-ui.main.preferences=Strežnik
+ui.main.preferences=Nastavitve
 ui.main.server=Strežnik
 ui.main.display=Prikaz
 ui.main.zoom=Povečava

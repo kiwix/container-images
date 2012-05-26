@@ -1,6 +1,7 @@
 # Messages for Danish (Dansk)
 # Exported from translatewiki.net
 # Author: Gorbi
+# Author: Kelson
 # Author: Peter Alberti
 
 ui.main.file=Fil
@@ -18,7 +19,7 @@ ui.main.copy=Kopier
 ui.main.mute=Lyd fra
 ui.main.audible=Hørbar
 ui.main.transliteration=Translitteration
-ui.main.preferences=Server
+ui.main.preferences=Indstillinger
 ui.main.server=Server
 ui.main.display=Vis
 ui.main.zoom=Zoom

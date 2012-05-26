@@ -1,10 +1,12 @@
 # Messages for Quechua (Runa Simi)
 # Exported from translatewiki.net
 # Author: AlimanRuna
+# Author: Kelson
 
 ui.main.file=Willañiqi
 ui.main.openFile=Willañiqita kichariy...
 ui.main.browseLibrary=Ñawirina ukhupi wamp'uy
+ui.main.hideLibrary=Ñawirina ukhuta pakay
 ui.main.lastOpen=Ñaqha kichasqa...
 ui.main.saveFile=P'anqata waqaychay kay sutiwan...
 ui.main.print=Ch'ipachiy
@@ -17,7 +19,8 @@ ui.main.copy=Iskaychay
 ui.main.mute=Amu
 ui.main.audible=Uyarinalla
 ui.main.transliteration=Sanampa wantuy (translitirasyun)
-ui.main.preferences=Sirwiq
+ui.main.preferences=Allinkachinakuna
+ui.main.server=Sirwiq
 ui.main.display=Qhawachiy
 ui.main.zoom=Llamphachiy
 ui.main.zoomin=Hatunchay

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Armando-Martin
 # Author: Fitoschido
+# Author: Kelson
 # Author: Platonides
 # Author: Vivaelcelta
 
@@ -11,6 +12,7 @@ ui.main.file.accesskey=A
 ui.main.openFile=Abrir archivo…
 ui.main.openFile.accesskey=A
 ui.main.browseLibrary=Examinar la biblioteca
+ui.main.hideLibrary=Ocultar la biblioteca
 ui.main.lastOpen=Abiertos recientemente…
 ui.main.saveFile=Guardar página como…
 ui.main.saveFile.accesskey=S
@@ -32,7 +34,7 @@ ui.main.mute=Silencio
 ui.main.audible=Audible
 ui.main.transliteration=Transcripción
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Servidor
+ui.main.preferences=Preferencias
 # Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.server=Servidor

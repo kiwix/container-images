@@ -1,5 +1,6 @@
 # Messages for Serbian (Latin script) (‪Srpski (latinica)‬)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Rancher
 # Author: SpeedyGonsales
 
@@ -18,7 +19,7 @@ ui.main.copy=Umnoži
 ui.main.mute=Isključi zvuk
 ui.main.audible=Zvučno
 ui.main.transliteration=Preslovljavanje
-ui.main.preferences=Server
+ui.main.preferences=Podešavanja
 ui.main.server=Server
 ui.main.display=Prikaz
 ui.main.zoom=Uvećanje

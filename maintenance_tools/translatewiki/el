@@ -3,6 +3,7 @@
 # Author: AK
 # Author: Crazymadlover
 # Author: Glavkos
+# Author: Kelson
 # Author: Kiolalis
 # Author: Omnipaedista
 # Author: ZaDiak
@@ -35,9 +36,10 @@ ui.main.mute=Σίγαση
 ui.main.audible=Ηχητικό
 ui.main.transliteration=Μεταγραφή
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Διακομιστής
+ui.main.preferences=Προτιμήσεις
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Διακομιστής
 ui.main.display=Εμφάνιση
 ui.main.display.accesskey=D
 ui.main.zoom=Εστίαση

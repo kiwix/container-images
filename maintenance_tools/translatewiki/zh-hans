@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Anakmalaysia
 # Author: Breawycker
+# Author: Kelson
 # Author: Kuailong
 # Author: Liangent
 # Author: Yanmiao liu
@@ -21,7 +22,7 @@ ui.main.copy=复制
 ui.main.mute=静音
 ui.main.audible=有声
 ui.main.transliteration=音译转写
-ui.main.preferences=服务器
+ui.main.preferences=参数设置
 ui.main.server=服务器
 ui.main.display=显示
 ui.main.zoom=缩放

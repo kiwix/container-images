@@ -3,6 +3,7 @@
 # Author: Jachym
 # Author: Jezevec
 # Author: Jkjk
+# Author: Kelson
 # Author: Mormegil
 # Author: Reaperman
 # Author: Utar
@@ -22,7 +23,7 @@ ui.main.copy=Kopírovat
 ui.main.mute=Ztlumit
 ui.main.audible=Zesílit
 ui.main.transliteration=Transliterace
-ui.main.preferences=Server
+ui.main.preferences=Možnosti
 ui.main.display=Zobrazení
 ui.main.zoom=Přiblížení
 ui.main.zoomin=Zvětšit

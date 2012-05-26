@@ -6,6 +6,7 @@
 ui.main.file=Fájl
 ui.main.openFile=Fájl megnyitása...
 ui.main.browseLibrary=Könyvtár böngészése
+ui.main.hideLibrary=Könyvtár elrejtése
 ui.main.lastOpen=Legutóbb megnyitott...
 ui.main.saveFile=Oldal mentése másként...
 ui.main.print=Nyomtatás
@@ -18,8 +19,8 @@ ui.main.copy=Másolás
 ui.main.mute=Némítás
 ui.main.audible=Hallható
 ui.main.transliteration=Átírás
-# Fuzzy
 ui.main.preferences=Beállítások
+ui.main.server=Szerver
 ui.main.display=Megjelenítés
 ui.main.zoom=Kicsinyítés/nagyítás
 ui.main.zoomin=Nagyítás
@@ -85,6 +86,7 @@ ui.preferences.cancel=Mégse
 ui.preferences.profileDirectory=Profilkönyvtár
 ui.preferences.browse=Tallózás
 ui.preferences.tabs=Emlékezzen a fülekre
+ui.preferences.downloadCatalogs=Távoli katalógus(ok) letöltése
 ui.messages.loadZimFileError=Nem sikerült betölteni a következőt: '%1' Biztos vagy benne, hogy ez egy ZIM fájl?
 ui.messages.alreadyIndexingError=Az indexelési folyamat már fut.
 ui.messages.noResultsError=Nincs találat erre a keresésre.

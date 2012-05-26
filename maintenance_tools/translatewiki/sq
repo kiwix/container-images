@@ -1,5 +1,6 @@
 # Messages for Albanian (Shqip)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Marinari
 # Author: Mjbmr
 # Author: Olsi
@@ -19,7 +20,7 @@ ui.main.copy=Kopjo
 ui.main.mute=Ndal zërin
 ui.main.audible=I Ndëgjuesëm
 ui.main.transliteration=Transliterim
-ui.main.preferences=Server
+ui.main.preferences=Parapëlqimet
 ui.main.display=Shfaq
 ui.main.zoom=Zmadho
 ui.main.zoomin=Zgjero

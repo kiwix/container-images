@@ -1,10 +1,12 @@
 # Messages for Galician (Galego)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Toliño
 
 ui.main.file=Ficheiro
 ui.main.openFile=Abrir un ficheiro...
-ui.main.browseLibrary=Percorrer a biblioteca
+ui.main.browseLibrary=Explorar a biblioteca
+ui.main.hideLibrary=Agochar a biblioteca
 ui.main.lastOpen=Aberto recentemente...
 ui.main.saveFile=Gardar páxina como...
 ui.main.print=Imprimir
@@ -17,7 +19,7 @@ ui.main.copy=Copiar
 ui.main.mute=Silenciar
 ui.main.audible=Audible
 ui.main.transliteration=Transliteración
-ui.main.preferences=Servidor
+ui.main.preferences=Preferencias
 ui.main.server=Servidor
 ui.main.display=Visualización
 ui.main.zoom=Zoom

@@ -1,6 +1,7 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
 # Author: Jan Luca
+# Author: Kelson
 # Author: Kghbln
 
 ui.main.cssdirection=ltr
@@ -9,6 +10,7 @@ ui.main.file.accesskey=D
 ui.main.openFile=Datei öffnen …
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Bibliothek durchsuchen
+ui.main.hideLibrary=Bibliothek verbergen
 ui.main.lastOpen=Vor Kurzem geöffnet ...
 ui.main.saveFile=Artikel speichern als ...
 ui.main.saveFile.accesskey=S
@@ -30,7 +32,7 @@ ui.main.mute=Ton aus
 ui.main.audible=Hörbar
 ui.main.transliteration=Transliteration
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Server
+ui.main.preferences=Einstellungen
 # Fuzzy
 ui.main.preferences.accesskey=E
 ui.main.server=Server

@@ -1,6 +1,7 @@
 # Messages for Yoruba (Yorùbá)
 # Exported from translatewiki.net
 # Author: Demmy
+# Author: Kelson
 
 ui.main.file=Fáìlì
 ui.main.openFile=Ṣí fáìlì...
@@ -17,7 +18,8 @@ ui.main.copy=Ìwòkọ
 ui.main.mute=Palẹ́numọ́
 ui.main.audible=Olóhùn
 ui.main.transliteration=Ìyítumọ̀dà
-ui.main.preferences=Ẹ̀rọ-apèsè
+ui.main.preferences=Àwọn ìfẹ́ràn
+ui.main.server=Ẹ̀rọ-apèsè
 ui.main.display=Ìmúhàn
 ui.main.zoom=Zoom
 ui.main.zoomin=Ìmútóbi

@@ -1,10 +1,12 @@
 # Messages for Lower Sorbian (Dolnoserbski)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Michawiki
 
 ui.main.file=Dataja
 ui.main.openFile=Dataju wócyniś...
 ui.main.browseLibrary=Biblioteku pśepytaś
+ui.main.hideLibrary=Biblioteku schowaś
 ui.main.lastOpen=Njedawno wócynjony...
 ui.main.saveFile=Bok składowaś ako...
 ui.main.print=Śišćaś
@@ -17,7 +19,7 @@ ui.main.copy=Kopěrowaś
 ui.main.mute=Bźez zuka
 ui.main.audible=Słyšabny
 ui.main.transliteration=Transliteracija
-ui.main.preferences=Serwer
+ui.main.preferences=Nastajenja
 ui.main.server=Serwer
 ui.main.display=Zwobraznjenje
 ui.main.zoom=Skalěrowanje

@@ -1,6 +1,7 @@
 # Messages for Breton (Brezhoneg)
 # Exported from translatewiki.net
 # Author: Fulup
+# Author: Kelson
 # Author: Y-M D
 
 ui.main.file=Restr
@@ -18,7 +19,8 @@ ui.main.copy=Eilañ
 ui.main.mute=Hep son
 ui.main.audible=Gant son
 ui.main.transliteration=Treuzlizherennadur
-ui.main.preferences=Servijer
+ui.main.preferences=Penndibaboù
+ui.main.server=Servijer
 ui.main.display=Diskwel
 ui.main.zoom=Zoum
 ui.main.zoomin=Brasaat

@@ -1,5 +1,6 @@
 # Messages for French (Français)
 # Exported from translatewiki.net
+# Author: DavidL
 # Author: Gomoko
 # Author: Kelson
 # Author: Od1n
@@ -12,6 +13,7 @@ ui.main.file.accesskey=F
 ui.main.openFile=Ouvrir un fichier...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Parcourir la bibliothèque
+ui.main.hideLibrary=Masquer la bibliothèque
 ui.main.lastOpen=Récemment ouvert...
 ui.main.saveFile=Enregistrer la page sous...
 ui.main.saveFile.accesskey=S

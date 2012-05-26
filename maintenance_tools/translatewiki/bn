@@ -3,6 +3,7 @@
 # Author: Bellayet
 # Author: Devayon
 # Author: Jayantanth
+# Author: Kelson
 # Author: Nasir8891
 # Author: Wikitanvir
 
@@ -21,7 +22,8 @@ ui.main.copy=অনুলিপি
 ui.main.mute=নিঃশব্দ
 ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকরণ
-ui.main.preferences=সার্ভার
+ui.main.preferences=পছন্দ
+ui.main.server=সার্ভার
 ui.main.display=প্রদর্শন
 ui.main.zoom=বড় করো
 ui.main.zoomin=বিবর্ধিত করুন
