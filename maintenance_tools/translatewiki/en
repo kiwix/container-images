@@ -144,3 +144,5 @@ ui.messages.feedback=Feedback
 ui.messages.library=Library
 ui.messages.fullscreen=Full screen
 ui.messages.quitFullscreen=Exit full screen mode
+ui.messages.integrityCheckSuccessful=The file integrity was successfully checked.
+ui.messages.integrityCheckFailed=The integrity check failed. Your file is corrupted.
