@@ -13,6 +13,13 @@ my @languages;
 my $allLanguages="";
 my $path;
 
+# Duplicates, are responsible to find one tranlsation in differents
+# files. The key, is the target
+my $duplicates = {
+    "ui.messages.browseLibrary" => "ui.main.browseLibrary",
+    "ui.messages.hideLibrary" => "ui.main.hideLibrary"
+};
+
 # Get console line arguments
 GetOptions('path=s' => \$path,
 	   'language=s' => \@languages, 
@@ -56,6 +63,7 @@ foreach my $language (@languages) {
 
     # Get translation translatewiki content
     my $content = readFile($language);
+    my $globalHash = getLocaleHash($content, "|");
 
     # Update main dtd
     my $mainDtdHash = getLocaleHash($content, "ui\.|main");
@@ -68,6 +76,9 @@ foreach my $language (@languages) {
 
 	if (exists($mainDtdHash->{$name})) {
 	    $value = $mainDtdHash->{$name};
+	} elsif (exists($duplicates->{"ui.".$name}) && 
+		 exists($globalHash->{$duplicates->{"ui.".$name}})) {
+	    $value = $globalHash->{$duplicates->{"ui.".$name}};
 	}
 
 	$languageMainDtdSource =~ s/\Q$1$2$3$4$5\E/$prefix$value$postfix/;
@@ -85,6 +96,9 @@ foreach my $language (@languages) {
 	
 	if (exists($mainPropertiesHash->{$name})) {
 	    $value = $mainPropertiesHash->{$name};
+	} elsif (exists($duplicates->{"ui.messages.".$name}) && 
+		 exists($globalHash->{$duplicates->{"ui.messages.".$name}})) {
+	    $value = $globalHash->{$duplicates->{"ui.messages.".$name}};
 	}
 	
 	$languageMainPropertiesSource =~ s/\Q$1$2$3\E/$name$middle$value/;
