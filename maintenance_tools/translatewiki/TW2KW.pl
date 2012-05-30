@@ -34,6 +34,9 @@ if (!$path) {
     exit;
 }
 
+# lowercase $allLanguages
+$allLanguages = lc($allLanguages);
+
 # Get all languages if necessary
 if ($allLanguages eq "tw" || $allLanguages eq "kw") {
     if ($allLanguages eq "kw") {
@@ -54,6 +57,7 @@ my $languageMainPropertiesSourceMaster = readFile($path."/kiwix/chrome/locale/en
 
 # Update Kiwix locales
 foreach my $language (@languages) {
+    print STDERR "Doing $language...\n";
     my $localePath = $path."/kiwix/chrome/locale/".$language."/main/";
 
     # Create directory if necessary
