@@ -141,3 +141,4 @@ ui.messages.newContentAvailableInvitation=There are new contents available for d
 ui.messages.preparingContentDownload=Preparing download...
 ui.messages.contentDownloadFinished=Download of '%1' is finished.
 ui.messages.feedback=Feedback
+ui.messages.library=Library
