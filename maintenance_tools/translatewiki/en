@@ -142,3 +142,5 @@ ui.messages.preparingContentDownload=Preparing download...
 ui.messages.contentDownloadFinished=Download of '%1' is finished.
 ui.messages.feedback=Feedback
 ui.messages.library=Library
+ui.messages.fullscreen=Full screen
+ui.messages.quitFullscreen=Exit full screen mode

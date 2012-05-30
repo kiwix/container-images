@@ -17,7 +17,8 @@ my $path;
 # files. The key, is the target
 my $duplicates = {
     "ui.messages.browseLibrary" => "ui.main.browseLibrary",
-    "ui.messages.hideLibrary" => "ui.main.hideLibrary"
+    "ui.messages.hideLibrary" => "ui.main.hideLibrary",
+    "ui.messages.fullscreen" => "ui.main.fullscreen",
 };
 
 # Get console line arguments
