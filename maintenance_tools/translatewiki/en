@@ -73,6 +73,7 @@ ui.main.forward=Forward
 ui.main.home=Home
 ui.main.searchBar=Search bar
 ui.main.search=Search
+ui.main.searchPlaceholder=Type the text to search here...
 ui.main.findInText=Find in text
 ui.main.noSearchBar=Search requires an indexed ZIM file
 ui.main.bookmarks=Bookmarks
