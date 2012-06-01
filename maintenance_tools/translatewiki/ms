@@ -6,6 +6,7 @@
 ui.main.file=Fail
 ui.main.openFile=Buka fail...
 ui.main.browseLibrary=Semak imbas perpustakaan
+ui.main.hideLibrary=Sorokkan perpustakaan
 ui.main.lastOpen=Baru dibuka
 ui.main.saveFile=Simpan halaman sebagai...
 ui.main.print=Cetak

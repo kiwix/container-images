@@ -147,3 +147,4 @@ ui.messages.newContentAvailableInvitation=Er is nieuwe inhoud te downloaden. Wil
 ui.messages.preparingContentDownload=Downloaden wordt voorbereid...
 ui.messages.contentDownloadFinished=Het downloaden van "%1" is voltooid.
 ui.messages.feedback=Terugkoppeling
+ui.messages.fullscreen=Volledig scherm

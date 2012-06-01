@@ -4,6 +4,7 @@
 # Author: Malafaya
 # Author: McDutchie
 # Author: Waldir
+# Author: 555
 
 ui.main.cssdirection=ltr
 ui.main.file=Ficheiro
@@ -32,7 +33,7 @@ ui.main.mute=Sem som
 ui.main.audible=Audível
 ui.main.transliteration=Translineação
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Servidor
+ui.main.preferences=Preferências
 ui.main.preferences.accesskey=s
 ui.main.display=Ver
 ui.main.display.accesskey=V

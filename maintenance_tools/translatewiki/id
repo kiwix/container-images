@@ -1,12 +1,14 @@
 # Messages for Indonesian (Bahasa Indonesia)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Farras
 # Author: Kelson
 # Author: Kenrick95
 
 ui.main.file=Berkas
 ui.main.openFile=Buka berkas...
 ui.main.browseLibrary=Jelajah perpustakaan
+ui.main.hideLibrary=Sembunyikan perpustakaan
 ui.main.lastOpen=Barusan dibuka...
 ui.main.saveFile=Simpan halaman sebagai...
 ui.main.print=Cetak
@@ -86,6 +88,7 @@ ui.preferences.cancel=Batal
 ui.preferences.profileDirectory=Direktori profil
 ui.preferences.browse=Jelajahi
 ui.preferences.tabs=Ingat tab
+ui.preferences.downloadCatalogs=Unduh katalog jauh
 ui.messages.loadZimFileError=Tidak dapat memuat '%1' Apakah Anda yakin ini adalah berkas ZIM?
 ui.messages.alreadyIndexingError=Sebuah proses pengindeksan sudah berjalan.
 ui.messages.noResultsError=Tidak ada hasil untuk permintaan ini.

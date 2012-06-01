@@ -6,11 +6,13 @@
 # Author: MetalBrasil
 # Author: Pedroca cerebral
 # Author: Rafael Vargas
+# Author: TheGabrielZaum
 # Author: 555
 
 ui.main.file=Arquivo
 ui.main.openFile=Abrir arquivo...
 ui.main.browseLibrary=Navegar na biblioteca
+ui.main.hideLibrary=Ocultar a biblioteca
 ui.main.lastOpen=Aberto recentemente...
 ui.main.saveFile=Salvar página como...
 ui.main.print=Imprimir
