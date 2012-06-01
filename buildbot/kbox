@@ -12,7 +12,7 @@ from optparse import OptionParser
 
 
 # configure following
-machines = ['ubuntu32', 'ubuntu64', 'osx', 'fedora', 'arm', 'win32', 'win64']
+machines = ['ubuntu32', 'ubuntu64', 'osx', 'fedora', 'arm', 'win32', 'debian32', 'debian64']
 ips = {
     'ubuntu32': '192.168.5.50',
     'ubuntu64': '192.168.5.51',
