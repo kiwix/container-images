@@ -1,4 +1,4 @@
-# Messages for French (Français)
+# Messages for French (français)
 # Exported from translatewiki.net
 # Author: DavidL
 # Author: Gomoko
@@ -81,6 +81,7 @@ ui.main.forward=Suivante
 ui.main.home=Retour Accueil
 ui.main.searchBar=Barre de recherche
 ui.main.search=Rechercher
+ui.main.searchPlaceholder=Entrer le texte à rechercher ici...
 ui.main.findInText=Rechercher
 ui.main.noSearchBar=La recherche nécessite un fichier ZIM indexé.
 ui.main.bookmarks=Marque-pages
@@ -149,3 +150,8 @@ ui.messages.newContentAvailableInvitation=Il y a de nouveaux contenus disponible
 ui.messages.preparingContentDownload=Préparation du téléchargement...
 ui.messages.contentDownloadFinished=Téléchargement de "%1" terminé.
 ui.messages.feedback=Avis
+ui.messages.library=Bibliothèque
+ui.messages.fullscreen=Plein écran
+ui.messages.quitFullscreen=Quitter le mode plein écran
+ui.messages.integrityCheckSuccessful=L'intégrité du fichier a été vérifiée avec succès.
+ui.messages.integrityCheckFailed=La vérification de l'intégrité du fichier a échoué. Le fichier est corrompu.

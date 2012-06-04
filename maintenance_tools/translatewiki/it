@@ -1,4 +1,4 @@
-# Messages for Italian (Italiano)
+# Messages for Italian (italiano)
 # Exported from translatewiki.net
 # Author: Aushulz
 # Author: Beta16
@@ -6,6 +6,7 @@
 # Author: Kelson
 # Author: McDutchie
 # Author: Nemo bis
+# Author: Ximo17
 
 ui.main.cssdirection=ltr
 ui.main.file=File
@@ -81,6 +82,7 @@ ui.main.forward=Avanti
 ui.main.home=Pagina iniziale
 ui.main.searchBar=Barra di ricerca
 ui.main.search=Ricerca
+ui.main.searchPlaceholder=Digita il testo da cercare qui...
 ui.main.findInText=Trova nel testo
 ui.main.noSearchBar=La ricerca richiede uno ZIM indicizzato
 ui.main.bookmarks=Segnalibri
@@ -149,3 +151,8 @@ ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili pe
 ui.messages.preparingContentDownload=Preparazione del download...
 ui.messages.contentDownloadFinished=Download di '%1' completato.
 ui.messages.feedback=Commenti
+ui.messages.library=Archivio
+ui.messages.fullscreen=A tutto schermo
+ui.messages.quitFullscreen=Esci dalla modalità a tutto schermo
+ui.messages.integrityCheckSuccessful=L'integrità del file è stata verificata con successo.
+ui.messages.integrityCheckFailed=Il controllo dell'integrità è fallito. Il file è danneggiato.

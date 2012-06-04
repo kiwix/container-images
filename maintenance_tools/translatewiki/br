@@ -1,4 +1,4 @@
-# Messages for Breton (Brezhoneg)
+# Messages for Breton (brezhoneg)
 # Exported from translatewiki.net
 # Author: Fulup
 # Author: Kelson
@@ -47,6 +47,7 @@ ui.main.forward=Da-heul
 ui.main.home=Degemer
 ui.main.searchBar=Barrenn klask
 ui.main.search=Klask
+ui.main.searchPlaceholder=Merkañ amañ an destenn a glaskit...
 ui.main.findInText=Kavout en destenn
 ui.main.noSearchBar=Ezhomm en deus ar c'hlask eus ur restr ZIM menegeret
 ui.main.bookmarks=Sinedoù
@@ -115,3 +116,8 @@ ui.messages.newContentAvailableInvitation=Boued nevez zo da bellgargañ. Ha gwel
 ui.messages.preparingContentDownload=Oc'h en em brientiñ da bellgargañ...
 ui.messages.contentDownloadFinished=Echuet eo pellgargañ '%1'.
 ui.messages.feedback=Sonjoù
+ui.messages.library=Levraoueg
+ui.messages.fullscreen=Skramm leun
+ui.messages.quitFullscreen=Kuitaat ar mod skramm leun
+ui.messages.integrityCheckSuccessful=Gwiriet eo bet anterinded ar restr ervat.
+ui.messages.integrityCheckFailed=C'hwitet eo bet gwiriañ anterinded ar restr. Brein eo-hi.

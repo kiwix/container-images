@@ -1,4 +1,4 @@
-# Messages for Spanish (Español)
+# Messages for Spanish (español)
 # Exported from translatewiki.net
 # Author: Armando-Martin
 # Author: Fitoschido
@@ -80,6 +80,7 @@ ui.main.forward=Adelante
 ui.main.home=Inicio
 ui.main.searchBar=Barra de búsqueda
 ui.main.search=Buscar
+ui.main.searchPlaceholder=Escribe el texto a buscar aquí...
 ui.main.findInText=Buscar en el texto
 ui.main.noSearchBar=La búsqueda requiere un archivo ZIM indizado
 ui.main.bookmarks=Marcadores
@@ -148,3 +149,8 @@ ui.messages.newContentAvailableInvitation=Hay nuevos contenidos disponibles para
 ui.messages.preparingContentDownload=Preparando la descarga...
 ui.messages.contentDownloadFinished=Acabó la descarga de "%1".
 ui.messages.feedback=Comentarios
+ui.messages.library=Biblioteca
+ui.messages.fullscreen=Pantalla completa
+ui.messages.quitFullscreen=Salir del modo de pantalla completa
+ui.messages.integrityCheckSuccessful=Se comprobó con éxito la integridad del archivo.
+ui.messages.integrityCheckFailed=Error en la comprobación de integridad. El archivo está dañado.

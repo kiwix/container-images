@@ -1,4 +1,4 @@
-# Messages for Macedonian (Македонски)
+# Messages for Macedonian (македонски)
 # Exported from translatewiki.net
 # Author: Bjankuloski06
 
@@ -45,6 +45,7 @@ ui.main.forward=Напред
 ui.main.home=Почеток
 ui.main.searchBar=Пребарување
 ui.main.search=Пребарување
+ui.main.searchPlaceholder=Тука внесете го текстот за пребарување...
 ui.main.findInText=Пронајди во текстот
 ui.main.noSearchBar=Пребарувањето бара индексирана ZIM-податотека
 ui.main.bookmarks=Обележани
@@ -113,3 +114,8 @@ ui.messages.newContentAvailableInvitation=Има нови содржини за 
 ui.messages.preparingContentDownload=Го подготвувам преземањето...
 ui.messages.contentDownloadFinished=Преземањето на „%1“ заврши.
 ui.messages.feedback=Мислења
+ui.messages.library=Библиотека
+ui.messages.fullscreen=На цел екран
+ui.messages.quitFullscreen=Излези од цел екран
+ui.messages.integrityCheckSuccessful=Податотеката е целовидна.
+ui.messages.integrityCheckFailed=Податотеката не е целовидна. Расипана е.
