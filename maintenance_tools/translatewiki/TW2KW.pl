@@ -40,7 +40,7 @@ $allLanguages = lc($allLanguages);
 
 # Get all languages if necessary
 if ($allLanguages eq "tw" || $allLanguages eq "kw") {
-    if ($allLanguages eq "kw") {
+    if ($allLanguages eq "tw") {
 	opendir(DIR, "./") || die("Cannot open directory."); 
     } else {
 	opendir(DIR, $path."/kiwix/chrome/locale") || die("Cannot open directory."); 
