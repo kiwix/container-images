@@ -6,6 +6,7 @@
 ui.main.file=טעקע
 ui.main.openFile=עפֿענען טעקע…
 ui.main.browseLibrary=דורכזוכן ביבליאטעק
+ui.main.hideLibrary=פארבארגן ביבליאטעק
 ui.main.lastOpen=לעצטנס געעפֿנט…
 ui.main.saveFile=אויפֿהיטן בלאט אלס…
 ui.main.print=דרוקן
@@ -45,6 +46,7 @@ ui.main.forward=ווײַטער
 ui.main.home=היימבלאַט
 ui.main.searchBar=זוכ־לײַסט
 ui.main.search=זוכן
+ui.main.searchPlaceholder=אריינקלאפן דעם טעקסט צו זוכן דא …
 ui.main.findInText=זוכן אין טעקסט
 ui.main.noSearchBar=זוך פֿאדערט אן אינדעקסירטע ZIM-טעקע
 ui.main.bookmarks=ליין־צייכנס

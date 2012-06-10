@@ -3,10 +3,12 @@
 # Author: Gorbi
 # Author: Kelson
 # Author: Peter Alberti
+# Author: Tjernobyl
 
 ui.main.file=Fil
 ui.main.openFile=Åbn fil...
 ui.main.browseLibrary=Gennemse bibliotek
+ui.main.hideLibrary=Skjul bibliotek
 ui.main.lastOpen=Nyligt åbnede...
 ui.main.saveFile=Gem side som...
 ui.main.print=Udskriv
@@ -46,6 +48,7 @@ ui.main.forward=Fremad
 ui.main.home=Hjem
 ui.main.searchBar=Søgelinje
 ui.main.search=Søg
+ui.main.searchPlaceholder=Indtast din søgetekst her...
 ui.main.findInText=Find i teksten
 ui.main.noSearchBar=Søgning kræver en indekseret ZIM-fil
 ui.main.bookmarks=Bogmærker
@@ -114,3 +117,6 @@ ui.messages.newContentAvailableInvitation=Der er nyt indhold klart til at blive 
 ui.messages.preparingContentDownload=Forbereder overførsel...
 ui.messages.contentDownloadFinished=Færdig med at hente '%1'.
 ui.messages.feedback=Tilbagemeldinger
+ui.messages.library=Bibliotek
+ui.messages.fullscreen=Fuldskærm
+ui.messages.quitFullscreen=Forlad fuldskærm
