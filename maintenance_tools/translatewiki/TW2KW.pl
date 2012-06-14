@@ -71,7 +71,8 @@ foreach my $language (@languages) {
     my $globalHash = getLocaleHash($content, "|");
 
     # Update main dtd
-    my $mainDtdHash = getLocaleHash($content, "ui\.|main");
+    my $mainDtdHash = getLocaleHash($content, "ui\.|[^\.]+");
+
     my $languageMainDtdSource = $languageMainDtdSourceMaster;
     while ($languageMainDtdSourceMaster =~ /(!ENTITY[ |\t]+)(.*?)([ |\t]+\")(.*?)(\")/g ) {
 	my $prefix = $1.$2.$3;
