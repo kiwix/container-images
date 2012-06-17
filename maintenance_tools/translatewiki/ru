@@ -150,3 +150,4 @@ ui.messages.newContentAvailableInvitation=Новый контент доступ
 ui.messages.preparingContentDownload=Подготовка к загрузке…
 ui.messages.contentDownloadFinished=Загрузка завершена на '%1'.
 ui.messages.feedback=Обратная связь
+ui.messages.fullscreen=На весь экран
