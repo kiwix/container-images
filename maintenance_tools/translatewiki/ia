@@ -18,6 +18,7 @@ ui.main.copy=Copiar
 ui.main.mute=Mute
 ui.main.audible=Audibile
 ui.main.transliteration=Translitteration
+# Fuzzy
 ui.main.preferences=Servitor
 ui.main.server=Servitor
 ui.main.display=Visualisation

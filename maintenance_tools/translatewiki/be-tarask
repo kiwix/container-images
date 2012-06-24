@@ -1,4 +1,4 @@
-# Messages for Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+# Messages for Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
 # Exported from translatewiki.net
 # Author: EugeneZelenko
 # Author: Jim-by
@@ -7,6 +7,7 @@
 ui.main.file=Файл
 ui.main.openFile=Адкрыць файл…
 ui.main.browseLibrary=Праглядзець бібліятэку
+ui.main.hideLibrary=Схаваць бібліятэку
 ui.main.lastOpen=Апошнія адкрытыя…
 ui.main.saveFile=Захаваць старонку як…
 ui.main.print=Друкаваць
@@ -19,8 +20,8 @@ ui.main.copy=Капіяваць
 ui.main.mute=Бяз гучны
 ui.main.audible=З гукам
 ui.main.transliteration=Трансьлітарацыя
-# Fuzzy
 ui.main.preferences=Налады
+ui.main.server=Сэрвэр
 ui.main.display=Паказаць
 ui.main.zoom=Маштаб
 ui.main.zoomin=Павялічыць
@@ -46,6 +47,7 @@ ui.main.forward=Наперад
 ui.main.home=Пачатак
 ui.main.searchBar=Панэль пошуку
 ui.main.search=Пошук
+ui.main.searchPlaceholder=Тут увядзіце тэкст для пошуку…
 ui.main.findInText=Знайсьці ў тэксьце
 ui.main.noSearchBar=Пошук патрабуе індэксаванага ZIM-файлу
 ui.main.bookmarks=Закладкі
@@ -86,6 +88,7 @@ ui.preferences.cancel=Скасаваць
 ui.preferences.profileDirectory=Дырэкторыя профілю
 ui.preferences.browse=Прагляд
 ui.preferences.tabs=Памятаць закладкі
+ui.preferences.downloadCatalogs=Загрузіць аддалены(я) каталёг(і)
 ui.messages.loadZimFileError=Немагчыма загрузіць «%1». Вы ўпэўненыя, што гэта ZIM-файл?
 ui.messages.alreadyIndexingError=Працэс індэксаваньня ўжо запушчаны.
 ui.messages.noResultsError=Няма вынікаў па гэтым запыце.

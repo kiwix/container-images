@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Anakmalaysia
 # Author: Breawycker
+# Author: Hydra
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
@@ -10,6 +11,7 @@
 ui.main.file=文件
 ui.main.openFile=打开文件
 ui.main.browseLibrary=浏览库
+ui.main.hideLibrary=隐藏库
 ui.main.lastOpen=最近打开...
 ui.main.saveFile=页面另存为...
 ui.main.print=打印
@@ -49,6 +51,7 @@ ui.main.forward=前进
 ui.main.home=首页
 ui.main.searchBar=搜索栏
 ui.main.search=搜索
+ui.main.searchPlaceholder=在这里键入要搜索的文本...
 ui.main.findInText= 文内查找
 ui.main.noSearchBar=需要已索引的ZIM文件进行搜索
 ui.main.bookmarks=书签
@@ -117,3 +120,8 @@ ui.messages.newContentAvailableInvitation=有新内容可以下载了。您希�
 ui.messages.preparingContentDownload=正在准备下载...
 ui.messages.contentDownloadFinished=“$1”已下载完成。
 ui.messages.feedback=反馈
+ui.messages.library=库
+ui.messages.fullscreen=全屏
+ui.messages.quitFullscreen=退出全屏模式
+ui.messages.integrityCheckSuccessful=成功地检查文件完整性。
+ui.messages.integrityCheckFailed=文件完整性检查失败。您的文件已损坏。

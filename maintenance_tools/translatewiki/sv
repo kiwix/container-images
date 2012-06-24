@@ -3,11 +3,13 @@
 # Author: Fluff
 # Author: Kelson
 # Author: Lokal Profil
+# Author: Warrakkk
 # Author: WikiPhoenix
 
 ui.main.file=Arkiv
 ui.main.openFile=Öppna fil...
 ui.main.browseLibrary=Bläddra i biblioteket
+ui.main.hideLibrary=Dölj bibliotek
 ui.main.lastOpen=Nyligen öppna...
 ui.main.saveFile=Spara sida som...
 ui.main.print=Skriv ut
@@ -47,8 +49,9 @@ ui.main.forward=Framåt
 ui.main.home=Hem
 ui.main.searchBar=Sökfält
 ui.main.search=Sök
+ui.main.searchPlaceholder=Skriv texten du vill söka efter här...
 ui.main.findInText=Hitta i text
-ui.main.noSearchBar=Sök kräver en indexerad Zim-fil
+ui.main.noSearchBar=Sök kräver en indexerad ZIM-fil
 ui.main.bookmarks=Bokmärken
 ui.main.results.title=Sökresultat
 ui.main.bmkLabel=Bokmärken:
@@ -115,3 +118,8 @@ ui.messages.newContentAvailableInvitation=Det finns nytt innehåll tillgänglig 
 ui.messages.preparingContentDownload=Förbereder nedladdning...
 ui.messages.contentDownloadFinished=Nedladdningen av '%1' är slutförd.
 ui.messages.feedback=Feedback
+ui.messages.library=Bibliotek
+ui.messages.fullscreen=Helskärm
+ui.messages.quitFullscreen=Avsluta helskärmsläge
+ui.messages.integrityCheckSuccessful=Filintegritetskontrollen lyckades.
+ui.messages.integrityCheckFailed=Filintegritetskontrollen misslyckades. Filen är skadad.
