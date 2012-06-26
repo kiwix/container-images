@@ -108,6 +108,7 @@ ui.main.library.filterBy.author=Author
 ui.main.library.filterBy.author.all=All
 ui.main.library.filterBy.publisher=Publisher
 ui.main.library.filterBy.publisher.all=All
+ui.main.library.filterBy.lessThan=Less than
 ui.preferences.preferences=Preferences
 ui.preferences.save=Save
 ui.preferences.cancel=Cancel
