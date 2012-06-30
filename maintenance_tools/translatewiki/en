@@ -1,4 +1,8 @@
 ui.main.cssdirection=ltr
+ui.main.osxservices=Services
+ui.main.osxhideapp=Hide &brand.brandShortName;
+ui.main.osxhideothers=Hide Others
+ui.main.osxshowall=Show All
 ui.main.file=File
 ui.main.file.accesskey=F
 ui.main.openFile=Open file...
