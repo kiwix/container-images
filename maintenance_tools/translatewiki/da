@@ -120,3 +120,5 @@ ui.messages.feedback=Tilbagemeldinger
 ui.messages.library=Bibliotek
 ui.messages.fullscreen=Fuldskærm
 ui.messages.quitFullscreen=Forlad fuldskærm
+ui.messages.integrityCheckSuccessful=Det lykkedes at kontrollere filens integritet.
+ui.messages.integrityCheckFailed=Kontrollen af filens integritet mislykkedes. Din fil er beskadiget.
