@@ -84,6 +84,7 @@ ui.main.library.filterBy.author=Författare
 ui.main.library.filterBy.author.all=Alla
 ui.main.library.filterBy.publisher=Utgivare
 ui.main.library.filterBy.publisher.all=Alla
+ui.main.library.filterBy.lessThan=Mindre än
 ui.preferences.preferences=Inställningar
 ui.preferences.save=Spara
 ui.preferences.cancel=Avbryt

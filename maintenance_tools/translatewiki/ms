@@ -81,6 +81,7 @@ ui.main.library.filterBy.author=Pengarang
 ui.main.library.filterBy.author.all=Semua
 ui.main.library.filterBy.publisher=Pengarang
 ui.main.library.filterBy.publisher.all=Semua
+ui.main.library.filterBy.lessThan=Kurang daripada
 ui.preferences.preferences=Keutamaan
 ui.preferences.save=Simpan
 ui.preferences.cancel=Batalkan

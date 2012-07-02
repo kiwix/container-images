@@ -81,6 +81,7 @@ ui.main.library.filterBy.author=Awtor
 ui.main.library.filterBy.author.all=Wšykne
 ui.main.library.filterBy.publisher=Wudawaŕ
 ui.main.library.filterBy.publisher.all=Wšykne
+ui.main.library.filterBy.lessThan=Mjenjej ako
 ui.preferences.preferences=Nastajenja
 ui.preferences.save=Składowaś
 ui.preferences.cancel=Pśetergnuś

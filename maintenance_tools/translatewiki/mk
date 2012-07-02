@@ -18,8 +18,7 @@ ui.main.copy=Копирај
 ui.main.mute=Искл. звук
 ui.main.audible=Звучна
 ui.main.transliteration=Транслитерација
-# Fuzzy
-ui.main.preferences=Опслужувач
+ui.main.preferences=Нагодувања
 ui.main.server=Опслужувач
 ui.main.display=Приказ
 ui.main.zoom=Размер
@@ -81,6 +80,7 @@ ui.main.library.filterBy.author=Автор
 ui.main.library.filterBy.author.all=Сите
 ui.main.library.filterBy.publisher=Издавач
 ui.main.library.filterBy.publisher.all=Сите
+ui.main.library.filterBy.lessThan=Помалку од
 ui.preferences.preferences=Нагодувања
 ui.preferences.save=Зачувај
 ui.preferences.cancel=Откажи

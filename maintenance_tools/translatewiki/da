@@ -83,6 +83,7 @@ ui.main.library.filterBy.author=Forfatter
 ui.main.library.filterBy.author.all=Alle
 ui.main.library.filterBy.publisher=Udgiver
 ui.main.library.filterBy.publisher.all=Alle
+ui.main.library.filterBy.lessThan=Mindre end
 ui.preferences.preferences=Indstillinger
 ui.preferences.save=Gem
 ui.preferences.cancel=Afbryd

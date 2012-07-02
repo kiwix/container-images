@@ -81,6 +81,7 @@ ui.main.library.filterBy.author=저자
 ui.main.library.filterBy.author.all=모두
 ui.main.library.filterBy.publisher=발표자
 ui.main.library.filterBy.publisher.all=모두
+ui.main.library.filterBy.lessThan=이내
 ui.preferences.preferences=환경 설정
 ui.preferences.save=저장
 ui.preferences.cancel=취소

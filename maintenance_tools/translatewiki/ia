@@ -18,8 +18,7 @@ ui.main.copy=Copiar
 ui.main.mute=Mute
 ui.main.audible=Audibile
 ui.main.transliteration=Translitteration
-# Fuzzy
-ui.main.preferences=Servitor
+ui.main.preferences=Preferentias
 ui.main.server=Servitor
 ui.main.display=Visualisation
 ui.main.zoom=Zoom
@@ -81,6 +80,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Totes
 ui.main.library.filterBy.publisher=Editor
 ui.main.library.filterBy.publisher.all=Totes
+ui.main.library.filterBy.lessThan=Minus de
 ui.preferences.preferences=Preferentias
 ui.preferences.save=Salveguardar
 ui.preferences.cancel=Cancellar

@@ -80,6 +80,7 @@ ui.main.library.filterBy.author=May-akda
 ui.main.library.filterBy.author.all=Lahat
 ui.main.library.filterBy.publisher=Tagapaglathala
 ui.main.library.filterBy.publisher.all=Lahat
+ui.main.library.filterBy.lessThan=Mas mababa kaysa sa
 ui.preferences.preferences=Mga nais
 ui.preferences.save=Sagipin
 ui.preferences.cancel=Huwag ituloy

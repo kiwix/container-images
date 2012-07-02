@@ -117,6 +117,7 @@ ui.main.library.filterBy.author=Autore
 ui.main.library.filterBy.author.all=Tutti
 ui.main.library.filterBy.publisher=Editore
 ui.main.library.filterBy.publisher.all=Tutti
+ui.main.library.filterBy.lessThan=Meno di
 ui.preferences.preferences=Preferenze
 ui.preferences.save=Salva
 ui.preferences.cancel=Annulla

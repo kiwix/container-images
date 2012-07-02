@@ -111,6 +111,7 @@ ui.main.library.filterBy.author=מחבר
 ui.main.library.filterBy.author.all=הכול
 ui.main.library.filterBy.publisher=מוציא לאור
 ui.main.library.filterBy.publisher.all=הכול
+ui.main.library.filterBy.lessThan=פחות מ
 ui.preferences.preferences=העדפות
 ui.preferences.save=שמירה
 ui.preferences.cancel=ביטול

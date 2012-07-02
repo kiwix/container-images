@@ -82,6 +82,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Toos
 ui.main.library.filterBy.publisher=Editor
 ui.main.library.filterBy.publisher.all=Toos
+ui.main.library.filterBy.lessThan=Menos de
 ui.preferences.preferences=Preferencies
 ui.preferences.save=Guardar
 ui.preferences.cancel=Encaboxar

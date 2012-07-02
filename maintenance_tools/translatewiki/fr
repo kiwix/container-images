@@ -1,5 +1,6 @@
 # Messages for French (français)
 # Exported from translatewiki.net
+# Author: Boniface
 # Author: DavidL
 # Author: Gomoko
 # Author: Kelson
@@ -8,6 +9,10 @@
 # Author: Wyz
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Services
+ui.main.osxhideapp=Masquer &brand.brandShortName;
+ui.main.osxhideothers=Masquer les autres
+ui.main.osxshowall=Tout afficher
 ui.main.file=Fichier
 ui.main.file.accesskey=F
 ui.main.openFile=Ouvrir un fichier...
@@ -116,6 +121,7 @@ ui.main.library.filterBy.author=Auteur
 ui.main.library.filterBy.author.all=Tous
 ui.main.library.filterBy.publisher=Éditeur
 ui.main.library.filterBy.publisher.all=Tous
+ui.main.library.filterBy.lessThan=Moins que
 ui.preferences.preferences=Options
 ui.preferences.save=Enregistrer
 ui.preferences.cancel=Annuler

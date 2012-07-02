@@ -6,6 +6,10 @@
 # Author: Siebrand
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Diensten
+ui.main.osxhideapp=&brand.brandShortName; verbergen
+ui.main.osxhideothers=Andere verbergen
+ui.main.osxshowall=Allemaal weergeven
 ui.main.file=Bestand
 ui.main.file.accesskey=B
 ui.main.openFile=Bestand openen...
