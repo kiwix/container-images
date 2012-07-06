@@ -55,4 +55,4 @@ fi
 
 # Start kiwix-serve
 echo "Starting kiwix-serve"
-kiwix-serve --library --port=$PORT $LIBRARY_PATH
+kiwix-serve --verbose --library --port=$PORT $LIBRARY_PATH
