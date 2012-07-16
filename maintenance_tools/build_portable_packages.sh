@@ -15,8 +15,10 @@ do
 	if [ ! -f "$TARGET_DIR"/"$FILENAME" ]
 	then
 	    echo "Building $FILENAME..."
-	    $SCRIPT --filePath="/tmp/$FILENAME" --zimPath=/var/www/download.kiwix.org/zim/0.9/$FILE --type=portable
-	    mv /tmp/$FILENAME $TARGET_DIR/
+	    $SCRIPT --filePath="/tmp/$FILENAME" --zimPath="/var/www/download.kiwix.org/zim/0.9/$FILE" --type=portable
+
+	    echo "Move to $TARGET_DIR"
+	    mv "/tmp/$FILENAME" "$TARGET_DIR/"
 	else
 	    echo "Skipping $FILENAME..."
 	fi
