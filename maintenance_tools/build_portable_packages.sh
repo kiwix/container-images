@@ -12,8 +12,6 @@ do
     for FILE in `rsync -az download.kiwix.org::download.kiwix.org/$DIR/ | sed -e 's/^.* //g' | grep '\....' | grep zim`
     do
 	FILENAME="kiwix-"$KIWIX_VERSION+`echo $FILE| sed -e 's/zim/zip/g'`
-	echo $FILENAME
-	exit
 	if [ ! -f "$TARGET_DIR"/"$FILENAME" ]
 	then
 	    echo "Building $FILENAME..."
