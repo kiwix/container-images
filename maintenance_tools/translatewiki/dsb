@@ -3,6 +3,10 @@
 # Author: Kelson
 # Author: Michawiki
 
+ui.main.osxservices=Słužby
+ui.main.osxhideapp=&brand.brandShortName; schowaś
+ui.main.osxhideothers=Druge schowaś
+ui.main.osxshowall=Wšykne pokazaś
 ui.main.file=Dataja
 ui.main.openFile=Dataju wócyniś...
 ui.main.browseLibrary=Biblioteku pśepytaś

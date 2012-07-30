@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: AK
 # Author: Crazymadlover
+# Author: Geraki
 # Author: Glavkos
 # Author: Kelson
 # Author: Kiolalis
@@ -9,11 +10,16 @@
 # Author: ZaDiak
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Υπηρεσίες
+ui.main.osxhideapp=Απόκρυψη &brand.brandShortName;
+ui.main.osxhideothers=Απόκρυψη Άλλων
+ui.main.osxshowall=Εμφάνιση Όλων
 ui.main.file=Αρχείο
 ui.main.file.accesskey=F
 ui.main.openFile=Άνοιγμα αρχείου...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Περιήγηση βιβλιοθήκης
+ui.main.hideLibrary=Απόκρυψη Βιβλιοθήκης
 ui.main.browseLibrary.accesskey=B
 ui.main.lastOpen=Ανοίχτηκε πρόσφατα...
 ui.main.saveFile=Αποθήκευση σελίδας ως...
@@ -82,6 +88,7 @@ ui.main.forward=Μπροστά
 ui.main.home=Αρχή
 ui.main.searchBar=Γραμμή αναζήτησης
 ui.main.search=Αναζήτηση
+ui.main.searchPlaceholder=Πληκτρολογήστε το κείμενο αναζήτησης εδώ...
 ui.main.findInText=Εύρεση στο κείμενο
 ui.main.noSearchBar=Η αναζήτηση απαιτεί ένα καταχωρημένο αρχείο ZIM
 ui.main.bookmarks=Σελιδοδείκτες
@@ -116,6 +123,7 @@ ui.main.library.filterBy.author=Συγγραφέα
 ui.main.library.filterBy.author.all=Όλοι
 ui.main.library.filterBy.publisher=Εκδότη
 ui.main.library.filterBy.publisher.all=Όλοι
+ui.main.library.filterBy.lessThan=Μικρότερο από
 ui.preferences.preferences=Προτιμήσεις
 ui.preferences.save=Αποθήκευση
 ui.preferences.cancel=Ακύρωση
@@ -150,3 +158,8 @@ ui.messages.newContentAvailableInvitation=Υπάρχουν νέα περιεχό
 ui.messages.preparingContentDownload=Προετοιμασία λήψης...
 ui.messages.contentDownloadFinished=Η λήψη του '%1' έχει ολοκληρωθεί.
 ui.messages.feedback=Ανατροφοδότηση
+ui.messages.library=Βιβλιοθήκη
+ui.messages.fullscreen=Πλήρης οθόνη
+ui.messages.quitFullscreen=Έξοδος από τη λειτουργία πλήρους οθόνης
+ui.messages.integrityCheckSuccessful=Η ακεραιότητα του αρχείου ελέγχθηκε με επιτυχία.
+ui.messages.integrityCheckFailed=Ο έλεγχος ακεραιότητας απέτυχε. Το αρχείο είναι κατεστραμμένο.

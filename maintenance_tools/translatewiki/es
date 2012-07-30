@@ -7,6 +7,10 @@
 # Author: Vivaelcelta
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Servicios
+ui.main.osxhideapp=Ocultar &brand.brandShortName;
+ui.main.osxhideothers=Ocultar los otros
+ui.main.osxshowall=Mostrar todo
 ui.main.file=Archivo
 ui.main.file.accesskey=A
 ui.main.openFile=Abrir archivo…
@@ -115,6 +119,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Todos los autores
 ui.main.library.filterBy.publisher=Editor
 ui.main.library.filterBy.publisher.all=Todos los editores
+ui.main.library.filterBy.lessThan=Menos de
 ui.preferences.preferences=Preferencias
 ui.preferences.save=Guardar
 ui.preferences.cancel=Cancelar

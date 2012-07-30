@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: Bjankuloski06
 
+ui.main.osxservices=Услуги
+ui.main.osxhideapp=Скриј &brand.brandShortName;
+ui.main.osxhideothers=Скриј други
+ui.main.osxshowall=Прикажи сè
 ui.main.file=Податотека
 ui.main.openFile=Отвори податотека...
 ui.main.browseLibrary=Прелистување на библиотеката

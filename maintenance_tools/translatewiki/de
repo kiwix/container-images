@@ -5,6 +5,10 @@
 # Author: Kghbln
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Dienste
+ui.main.osxhideapp=&brand.brandShortName; verbergen
+ui.main.osxhideothers=Andere verbergen
+ui.main.osxshowall=Alle anzeigen
 ui.main.file=Datei
 ui.main.file.accesskey=D
 ui.main.openFile=Datei öffnen …

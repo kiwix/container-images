@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: Purodha
 
+ui.main.osxservices=Deenste
+ui.main.osxhideapp=&brand.brandShortName; verschteische
+ui.main.osxhideothers=Andere verschteische
+ui.main.osxshowall=Alle aanzeije
 ui.main.file=Dattei
 ui.main.openFile=Dattei opmaache...
 ui.main.browseLibrary=En de Bilijotheek bläddere
@@ -80,6 +84,7 @@ ui.main.library.filterBy.author=Fottojraaf udder Maacher
 ui.main.library.filterBy.author.all=Jeeder Ein
 ui.main.library.filterBy.publisher=Verläjer udder Veröffentlescher
 ui.main.library.filterBy.publisher.all=Jeeder Ein
+ui.main.library.filterBy.lessThan=Winnijer wi
 ui.preferences.preferences=Enschtellunge
 ui.preferences.save=Faßhalde
 ui.preferences.cancel=Ophüre

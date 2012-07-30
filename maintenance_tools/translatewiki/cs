@@ -8,9 +8,14 @@
 # Author: Reaperman
 # Author: Utar
 
+ui.main.osxservices=Služby
+ui.main.osxhideapp=Skrýt &brand.brandShortName;
+ui.main.osxhideothers=Skrýt ostatní
+ui.main.osxshowall=Zobrazit vše
 ui.main.file=Soubor
 ui.main.openFile=Otevřít soubor...
 ui.main.browseLibrary=Prohlížet knihovnu
+ui.main.hideLibrary=Skrýt knihovnu
 ui.main.lastOpen=Nedávno otevřené...
 ui.main.saveFile=Uložit stránku jako....
 ui.main.print=Tisk
@@ -24,6 +29,7 @@ ui.main.mute=Ztlumit
 ui.main.audible=Zesílit
 ui.main.transliteration=Transliterace
 ui.main.preferences=Možnosti
+ui.main.server=Server
 ui.main.display=Zobrazení
 ui.main.zoom=Přiblížení
 ui.main.zoomin=Zvětšit
@@ -49,6 +55,7 @@ ui.main.forward=Vpřed
 ui.main.home=Domů
 ui.main.searchBar=Řádek vyhledávání
 ui.main.search=Vyhledávání
+ui.main.searchPlaceholder=Zde zadejte text, který chcete hledat…
 ui.main.findInText=Najít v textu
 ui.main.noSearchBar=Hledání vyžaduje indexovaný soubor ZIM
 ui.main.bookmarks=Záložky
@@ -83,6 +90,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Všichni
 ui.main.library.filterBy.publisher=Vydavatele
 ui.main.library.filterBy.publisher.all=Všechny
+ui.main.library.filterBy.lessThan=Méně než
 ui.preferences.preferences=Možnosti
 ui.preferences.save=Uložit
 ui.preferences.cancel=Storno
@@ -117,3 +125,8 @@ ui.messages.newContentAvailableInvitation=Nový obsah je k dispozici ke stažen�
 ui.messages.preparingContentDownload=Příprava stahování...
 ui.messages.contentDownloadFinished=Stahování „%1“ je dokončeno.
 ui.messages.feedback=Zpětná vazba
+ui.messages.library=Knihovna
+ui.messages.fullscreen=Celá obrazovka
+ui.messages.quitFullscreen=Ukončit celoobrazovkový režim
+ui.messages.integrityCheckSuccessful=Integrita souboru byl úspěšně zkontrolována.
+ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.

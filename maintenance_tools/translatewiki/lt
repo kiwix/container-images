@@ -3,6 +3,8 @@
 # Author: Eitvys200
 # Author: Ignas693
 
+ui.main.osxhideothers=Slėpti Kitus
+ui.main.osxshowall=Rodyti Viską
 ui.main.file=Failas
 ui.main.openFile=Atidaryti failą...
 ui.main.browseLibrary=Naršyti biblioteką
@@ -18,6 +20,7 @@ ui.main.copy=Kopijuoti
 ui.main.transliteration=Transliteracijos
 # Fuzzy
 ui.main.preferences=Nustatymai
+ui.main.server=Serveris
 ui.main.display=Rodyti
 ui.main.zoom=Padidinti
 ui.main.zoomin=Perdėti
@@ -77,6 +80,7 @@ ui.main.library.filterBy.author=Autorius
 ui.main.library.filterBy.author.all=Visi
 ui.main.library.filterBy.publisher=Leidėjas
 ui.main.library.filterBy.publisher.all=Visi
+ui.main.library.filterBy.lessThan=Mažiau nei
 ui.preferences.preferences=Nustatymai
 ui.preferences.save=Išsaugoti
 ui.preferences.cancel=Atšaukti
@@ -110,3 +114,6 @@ ui.messages.newContentAvailableInvitation=Yra naujo turinio persisiuntimui. Ar n
 ui.messages.preparingContentDownload=Rengiamasi atsisiųsti...
 ui.messages.contentDownloadFinished=Atsisiųsti iš '% 1' baigtas.
 ui.messages.feedback=Atsiliepimas
+ui.messages.library=Biblioteka
+ui.messages.fullscreen=Visas ekranas
+ui.messages.quitFullscreen=Išeiti iš viso ekrano režimo

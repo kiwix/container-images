@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: AnakngAraw
 
+ui.main.osxservices=Mga paglilingkod
+ui.main.osxhideapp=Itago ang &brand.brandShortName;
+ui.main.osxhideothers=Itago Ang Iba Pa
+ui.main.osxshowall=Ipakita Ang Lahat
 ui.main.file=Talaksan
 ui.main.openFile=Buksan ang talaksan...
 ui.main.browseLibrary=Tumingin-tingin sa aklatan

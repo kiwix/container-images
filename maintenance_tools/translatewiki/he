@@ -1,8 +1,10 @@
 # Messages for Hebrew (עברית)
 # Exported from translatewiki.net
 # Author: Amire80
+# Author: Inkbug
 
 ui.main.cssdirection=rtl
+ui.main.osxservices=שירותים
 ui.main.file=קובץ
 ui.main.file.accesskey=F
 ui.main.openFile=פתיחת קובץ...

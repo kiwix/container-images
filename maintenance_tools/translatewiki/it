@@ -9,6 +9,10 @@
 # Author: Ximo17
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Servizi
+ui.main.osxhideapp=Nascondi &brand.brandShortName;
+ui.main.osxhideothers=Nascondi gli altri
+ui.main.osxshowall=Mostra tutto
 ui.main.file=File
 ui.main.file.accesskey=F
 ui.main.openFile=Apri...

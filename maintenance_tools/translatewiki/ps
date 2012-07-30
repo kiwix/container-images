@@ -3,9 +3,14 @@
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
 # Author: Kelson
 
+ui.main.osxservices=چوپړونه
+ui.main.osxhideapp=سوداګريزې نخښې لنډ سوداګريز نوم پټول؛
+ui.main.osxhideothers=نور پټول
+ui.main.osxshowall=ټول ښکاره کول
 ui.main.file=دوتنه
 ui.main.openFile=دوتنه پرانيستل...
 ui.main.browseLibrary=کتابتون سپړل
+ui.main.hideLibrary=کتابتون پټول
 ui.main.lastOpen=وروستی پرانيستی...
 ui.main.saveFile=مخ خوندي کول لکه...
 ui.main.print=چاپول
@@ -103,3 +108,5 @@ ui.messages.newContentAvailableInvitation=د ښکته کولو لپاره نوې
 ui.messages.preparingContentDownload=د ښکته کولو چمتووالی...
 ui.messages.contentDownloadFinished=د '%1' ښکته کول بشپړ شو.
 ui.messages.feedback=غبرګون
+ui.messages.library=کتابتون
+ui.messages.fullscreen=ډکه پرده

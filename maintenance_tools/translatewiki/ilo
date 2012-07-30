@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: Lam-ang
 
+ui.main.osxservices=Dagiti serbisio
+ui.main.osxhideapp=Ilemmeng &marka.markaNababaNagan;
+ui.main.osxhideothers=Ilemmeng dagiti dadduma
+ui.main.osxshowall=Ipakita Amin
 ui.main.file=Papeles
 ui.main.openFile=Lukatan ti papeles...
 ui.main.browseLibrary=Agbasabasa ti biblioteka
@@ -24,7 +28,7 @@ ui.main.display=Iparang
 ui.main.zoom=Padakkelen
 ui.main.zoomin=Ipadakkel
 ui.main.zoomout=Pabassiten
-ui.main.zoomorig=Kinasigud a kadakkel
+ui.main.zoomorig=Kasisigud a kadakkel
 ui.main.language=Pagsasao
 ui.main.skin=Kudil
 ui.main.statusbar=Kasasaad ti baras
@@ -80,6 +84,7 @@ ui.main.library.filterBy.author=Mannurat
 ui.main.library.filterBy.author.all=Amin
 ui.main.library.filterBy.publisher=Nangipablaak
 ui.main.library.filterBy.publisher.all=Amin
+ui.main.library.filterBy.lessThan=Basbassit ngem
 ui.preferences.preferences=Kaykayatan
 ui.preferences.save=Idulin
 ui.preferences.cancel=Ukasen
@@ -95,10 +100,10 @@ ui.messages.noActiveZimFile=Awan ti nasiglat a ZIM a papeles, pangngaasi nga agi
 ui.messages.indexZimFileConfirm=Daytoy a papeles ket awan ti nairaman a pagsurotan ti panagbiruk. No agaramid baka agbayag iti sumagmamano a minutos. Kayatmo nga  ikabil ti pagsurotan ti ZIM a papeles tattan?
 ui.messages.abortIndexingConfirm=Ti pinagaramid a pagsurotan ket agdama nga agtartaray. Sigurado ka a kayatmo ti agsardeng tattan?
 ui.messages.restartConfirm=%1 ket masapul a maiparugi. Kayatmo nga aramidenen tattan?
-ui.messages.endOfIndexing=Ti pinagaramid a pagsurotan ket nalpasen.
+ui.messages.endOfIndexing=Ti  pagsurotan a pamay-an ket nalpasen.
 ui.messages.removeProfileConfirm=Kayatmo nga ikkaten ti paglangaam?
-ui.messages.dontDisplayAnymore=Saan mon nga iparang ti pagsaritaan a kahon.
-ui.messages.changeSkinNeedRestart=Ti panagsukat ti kudil, nasken a maiparugi ti aplikasion. Irugi ti aplikasion?
+ui.messages.dontDisplayAnymore=Saanmon nga iparang ti pagsaritaan a kahon.
+ui.messages.changeSkinNeedRestart=Tapno masukatan ti kudil, nasken a maiparugi manen ti aplikasion. Irugi manen ti aplikasion?
 ui.messages.confirm=Pasingkedan
 ui.messages.no=saan
 ui.messages.yes=wen

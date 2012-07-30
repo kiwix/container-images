@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: McDutchie
 
+ui.main.osxservices=Servicios
+ui.main.osxhideapp=Celar &brand.brandShortName;
+ui.main.osxhideothers=Celar le alteres
+ui.main.osxshowall=Monstrar totes
 ui.main.file=Archivo
 ui.main.openFile=Aperir file...
 ui.main.browseLibrary=Explorar bibliotheca

@@ -6,6 +6,10 @@
 # Author: Warrakkk
 # Author: WikiPhoenix
 
+ui.main.osxservices=Tjänster
+ui.main.osxhideapp=Dölj &brand.brandShortName;
+ui.main.osxhideothers=Dölj andra
+ui.main.osxshowall=Visa alla
 ui.main.file=Arkiv
 ui.main.openFile=Öppna fil...
 ui.main.browseLibrary=Bläddra i biblioteket

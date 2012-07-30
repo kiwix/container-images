@@ -3,6 +3,10 @@
 # Author: Kelson
 # Author: Toliño
 
+ui.main.osxservices=Servizos
+ui.main.osxhideapp=Agochar &brand.brandShortName;
+ui.main.osxhideothers=Agochar os outros
+ui.main.osxshowall=Mostrar todos
 ui.main.file=Ficheiro
 ui.main.openFile=Abrir un ficheiro...
 ui.main.browseLibrary=Explorar a biblioteca

@@ -4,6 +4,10 @@
 # Author: Kelson
 # Author: Xuacu
 
+ui.main.osxservices=Servicios
+ui.main.osxhideapp=Anubrir &brand.brandShortName;
+ui.main.osxhideothers=Anubrir otros
+ui.main.osxshowall=Amosar too
 ui.main.file=Ficheru
 ui.main.openFile=Abrir ficheru...
 ui.main.browseLibrary=Navegar pela biblioteca

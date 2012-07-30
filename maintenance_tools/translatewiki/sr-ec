@@ -3,9 +3,14 @@
 # Author: Kelson
 # Author: Rancher
 
+ui.main.osxservices=Услуге
+ui.main.osxhideapp=Сакриј &brand.brandShortName;
+ui.main.osxhideothers=Сакриј друге
+ui.main.osxshowall=Прикажи све
 ui.main.file=Датотека
 ui.main.openFile=Отвори датотеку…
 ui.main.browseLibrary=Прегледај библиотеку
+ui.main.hideLibrary=Сакриј библиотеку
 ui.main.lastOpen=Недавно отворено…
 ui.main.saveFile=Сачувај страницу као…
 ui.main.print=Штампај
@@ -45,6 +50,7 @@ ui.main.forward=Напред
 ui.main.home=Почетна
 ui.main.searchBar=Трака за претрагу
 ui.main.search=Претражи
+ui.main.searchPlaceholder=Овде унесите текст за претраживање…
 ui.main.findInText=Пронађи у тексту
 ui.main.noSearchBar=Претрага захтева пописану ZIP датотеку
 ui.main.bookmarks=Забелешке
@@ -79,6 +85,7 @@ ui.main.library.filterBy.author=аутору
 ui.main.library.filterBy.author.all=свим ауторима
 ui.main.library.filterBy.publisher=издавачу
 ui.main.library.filterBy.publisher.all=свим издавачима
+ui.main.library.filterBy.lessThan=Мање од
 ui.preferences.preferences=Поставке
 ui.preferences.save=Сачувај
 ui.preferences.cancel=Откажи
@@ -113,3 +120,8 @@ ui.messages.newContentAvailableInvitation=Доступан је нови сад�
 ui.messages.preparingContentDownload=Припремам преузимање…
 ui.messages.contentDownloadFinished=Датотека „%1“ је преузета.
 ui.messages.feedback=Повратна информација
+ui.messages.library=Библиотека
+ui.messages.fullscreen=Цео екран
+ui.messages.quitFullscreen=Изађи из целог екрана
+ui.messages.integrityCheckSuccessful=Датотека је целовита.
+ui.messages.integrityCheckFailed=Датотека није целовита. Оштећена је.

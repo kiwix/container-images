@@ -2,9 +2,14 @@
 # Exported from translatewiki.net
 # Author: Csisc
 
+ui.main.osxservices=5adamet
+ui.main.osxhideapp=a5fi &brand.brandShortName;
+ui.main.osxhideothers=ghathi el o5rin
+ui.main.osxshowall=warri el kol
 ui.main.file=milaf (Fichier)
 ui.main.openFile=ifta7 el fichier
 ui.main.browseLibrary=ara el maktba mte3 el wiki
+ui.main.hideLibrary=إخفاء المكتبة
 ui.main.lastOpen=elli 7allaytou ss'arlek chouiya
 ui.main.saveFile=enregistri el page ki...
 ui.main.print=itthba3
@@ -17,8 +22,8 @@ ui.main.copy=copier
 ui.main.mute=sakketha
 ui.main.audible=Yetsema3
 ui.main.transliteration=baddel el logha elli inti fiha
-# Fuzzy
-ui.main.preferences=ech t7eb fi el Wiki hadha
+ui.main.preferences=تفضيلات
+ui.main.server=الخادوم
 ui.main.display=khaddemha
 ui.main.zoom=kabber
 ui.main.zoomin=kabber detail
@@ -44,6 +49,7 @@ ui.main.forward=ittali
 ui.main.home=el accueil
 ui.main.searchBar=barre mte3 ettelwij
 ui.main.search=lawwej
+ui.main.searchPlaceholder=أدخل النص للبحث هنا...
 ui.main.findInText=lawwej fil nass
 ui.main.noSearchBar=يتطلب البحث عن الملفات وفهرستها Zim
 ui.main.bookmarks=el mofadhala
@@ -78,12 +84,14 @@ ui.main.library.filterBy.author=المؤلف
 ui.main.library.filterBy.author.all=el koll
 ui.main.library.filterBy.publisher=annecher
 ui.main.library.filterBy.publisher.all=el koll
+ui.main.library.filterBy.lessThan=a9al min
 ui.preferences.preferences=tafdhilat
 ui.preferences.save=sajjel
 ui.preferences.cancel=ifsa5
 ui.preferences.profileDirectory=dalil el milaf echa5ss'i
 ui.preferences.browse=ara
 ui.preferences.tabs=تذكّر الألسنة
+ui.preferences.downloadCatalogs=قم بتحميل فهرس (اث) عن بعد
 ui.messages.loadZimFileError=تغذّر تحميل '%1'. أمتأكد أن هذا ملف ZIM؟
 ui.messages.alreadyIndexingError=هناك عملية فهرسة جارية فعلا.
 ui.messages.noResultsError=ma famma 7atha resultat
@@ -111,3 +119,8 @@ ui.messages.newContentAvailableInvitation=تتوفر محتويات جديدة �
 ui.messages.preparingContentDownload=يُجهّز التنزيل..
 ui.messages.contentDownloadFinished=اكتمل تنزيل '%1'.
 ui.messages.feedback=mole7adhat
+ui.messages.library=المكتبة
+ui.messages.fullscreen=كامل الشاشة
+ui.messages.quitFullscreen=إنهاء وضع كامل الشاشة
+ui.messages.integrityCheckSuccessful=تم التأكد بنجاح من تكامل الملف.
+ui.messages.integrityCheckFailed=فشل التحقق من التكامل. الملف معطوب.

@@ -4,6 +4,10 @@
 # Author: Kelson
 # Author: Y-M D
 
+ui.main.osxservices=Servijoù
+ui.main.osxhideapp=Kuzhat &brand.brandShortName;
+ui.main.osxhideothers=Kuzhat ar re all
+ui.main.osxshowall=Diskouez pep tra
 ui.main.file=Restr
 ui.main.openFile=Digeriñ ur restr...
 ui.main.browseLibrary=Furchal el levraoueg

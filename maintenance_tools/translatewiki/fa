@@ -1,9 +1,13 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
+# Author: Leyth
 # Author: Mjbmr
+# Author: Reza1615
 # Author: ZxxZxxZ
 
 ui.main.cssdirection=rtl
+ui.main.osxservices=خدمات
+ui.main.osxshowall=نمایش همه
 ui.main.file=پرونده
 ui.main.file.accesskey=F
 ui.main.openFile=گشودن پرونده...
@@ -30,10 +34,10 @@ ui.main.mute=صامت‌سازی
 ui.main.audible=قابل شنیدن
 ui.main.transliteration=نويسه گردانى
 ui.main.transliteration.accesskey=T
-# Fuzzy
 ui.main.preferences=ترجیحات
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=کارگزار
 ui.main.display=نمایش
 ui.main.display.accesskey=D
 ui.main.zoom=اندازه‌نمایی
@@ -76,6 +80,7 @@ ui.main.forward=جلو
 ui.main.home=خانه
 ui.main.searchBar=نوار جستجو
 ui.main.search=جستجو
+ui.main.searchPlaceholder=برای جستجو متنی در اینجا بنویسید ...
 ui.main.findInText=جستجو در متن
 ui.main.noSearchBar=جستجو نیاز به یک فایل ZIM فهرست بندی شده دارد
 ui.main.bookmarks=نشانکها
@@ -110,6 +115,7 @@ ui.main.library.filterBy.author=نویسنده
 ui.main.library.filterBy.author.all=همه
 ui.main.library.filterBy.publisher=ناشر
 ui.main.library.filterBy.publisher.all=همه
+ui.main.library.filterBy.lessThan=کمتر از
 ui.preferences.preferences=ترجیحات
 ui.preferences.save=ذخیره
 ui.preferences.cancel=لغو
@@ -143,3 +149,6 @@ ui.messages.newContentAvailableInvitation=محتویات جدیدی برای د�
 ui.messages.preparingContentDownload=در حال آماده‌سازی برای درافت...
 ui.messages.contentDownloadFinished=دریافت «%1» به پایان رسید.
 ui.messages.feedback=بازخورد
+ui.messages.library=کتابخانه
+ui.messages.fullscreen=تمام‌صفحه
+ui.messages.quitFullscreen=خروج از حالت تمام‌صفحه

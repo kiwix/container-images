@@ -1,12 +1,17 @@
 # Messages for Arabic (العربية)
 # Exported from translatewiki.net
 # Author: Bassem JARKAS
+# Author: Ciphers
 # Author: DRIHEM
 # Author: Kelson
 # Author: Meno25
 # Author: OsamaK
 
 ui.main.cssdirection=rtl
+ui.main.osxservices=خدمات
+ui.main.osxhideapp=إخفاء &brand.brandShortName;
+ui.main.osxhideothers=إخفاء الأخرى
+ui.main.osxshowall=أظهر الكل
 ui.main.file=ملف
 ui.main.file.accesskey=م
 ui.main.openFile=افتح ملفًا...
@@ -114,9 +119,10 @@ ui.main.library.filterBy.author=المؤلف
 ui.main.library.filterBy.author.all=الكل
 ui.main.library.filterBy.publisher=الناشر
 ui.main.library.filterBy.publisher.all=الكل
+ui.main.library.filterBy.lessThan=أقل من
 ui.preferences.preferences=تفضيلات
 ui.preferences.save=احفظ
-ui.preferences.cancel=ألغي
+ui.preferences.cancel=ألغِ
 ui.preferences.profileDirectory=دليل الملف الشخصي
 ui.preferences.browse=تصفّح
 ui.preferences.tabs=تذكّر الألسنة
@@ -137,7 +143,7 @@ ui.messages.confirm=تأكيد
 ui.messages.no=لا
 ui.messages.yes=نعم
 ui.messages.ok=موافق
-ui.messages.cancel=إلغاء
+ui.messages.cancel=ألغِ
 ui.messages.error=خطأ
 ui.messages.information=معلومات
 ui.messages.indexing=الفهرسة

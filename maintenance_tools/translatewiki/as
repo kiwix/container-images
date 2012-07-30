@@ -4,9 +4,13 @@
 # Author: Devayon
 # Author: Nilamdyuti
 
+ui.main.osxservices=সেৱাসমূহ
+ui.main.osxhideothers=অন্যবোৰ লুকাই থওক
+ui.main.osxshowall=সকলোবোৰ দেখুৱাওক
 ui.main.file=ফাইল
 ui.main.openFile=ফাইল খুলক...
 ui.main.browseLibrary=লাইব্রেৰি ব্রাউজ কৰক
+ui.main.hideLibrary=পুথিভৰাল আঁৰ কৰক
 ui.main.lastOpen=বর্তমানে খোলা পৃষ্ঠা...
 ui.main.saveFile=অন্ন্য বাবে পৃষ্ঠা সংৰক্ষণ কৰক ...
 ui.main.print=প্ৰিন্ট কৰিবলৈ
@@ -21,6 +25,7 @@ ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকৰণ
 # Fuzzy
 ui.main.preferences=পছন্দসমূহ
+ui.main.server=চাৰ্ভাৰ
 ui.main.display=প্রদর্শন
 ui.main.zoom=ডাঙৰ কৰক
 ui.main.zoomin=ডাঙৰ কৰক
@@ -80,6 +85,7 @@ ui.main.library.filterBy.author=লেখক
 ui.main.library.filterBy.author.all=সকলো
 ui.main.library.filterBy.publisher=প্ৰকাশক
 ui.main.library.filterBy.publisher.all=সকলো
+ui.main.library.filterBy.lessThan=তকৈ কম
 ui.preferences.preferences=পছন্দসমূহ
 ui.preferences.save=সঞ্চিত কৰক
 ui.preferences.cancel=বাতিল কৰক
@@ -113,3 +119,5 @@ ui.messages.newContentAvailableInvitation=নতুন বিষয়বস্�
 ui.messages.preparingContentDownload=ডাউনলোড প্রস্তুত হই আচে ...
 ui.messages.contentDownloadFinished='%1' : ডাউনলোড শেষ |
 ui.messages.feedback=মন্তব্য
+ui.messages.library=পুথিভৰাল
+ui.messages.fullscreen=সম্পূৰ্ণ স্ক্ৰীণ

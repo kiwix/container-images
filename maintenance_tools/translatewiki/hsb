@@ -2,6 +2,10 @@
 # Exported from translatewiki.net
 # Author: Michawiki
 
+ui.main.osxservices=Słužby
+ui.main.osxhideapp=&brand.brandShortName; schować
+ui.main.osxhideothers=Druhe schować
+ui.main.osxshowall=Wšě pokazać
 ui.main.file=Dataja
 ui.main.openFile=Dataju wočinić...
 ui.main.browseLibrary=Biblioteku přepytać
@@ -86,7 +90,7 @@ ui.preferences.save=Składować
 ui.preferences.cancel=Přetorhnyć
 ui.preferences.profileDirectory=Profilowy rjadowak
 ui.preferences.browse=Přepytać
-ui.preferences.tabs=Rajtarki sej spomjatkkować
+ui.preferences.tabs=Rajtarki sej spomjatkować
 ui.preferences.downloadCatalogs=Zdalene katalogi sćahnyć
 ui.messages.loadZimFileError="%1" njeda so začitać. Sće wy wěsty, zo to je ZIM-dataja?
 ui.messages.alreadyIndexingError=Indeksowanski proces hižo běži.

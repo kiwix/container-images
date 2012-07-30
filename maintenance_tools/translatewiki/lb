@@ -3,6 +3,9 @@
 # Author: Kelson
 # Author: Robby
 
+ui.main.osxservices=Servicer
+ui.main.osxhideothers=Anerer verstoppen
+ui.main.osxshowall=All weisen
 ui.main.file=Fichier
 ui.main.openFile=Fichier opmaachen...
 ui.main.lastOpen=Rezent opgemaach...
@@ -16,7 +19,7 @@ ui.main.selectall=Alles uwielen
 ui.main.copy=Kopéieren
 ui.main.mute=Toun aus
 ui.main.transliteration=Transliteratioun
-ui.main.preferences=Server
+ui.main.preferences=Astellungen
 ui.main.server=Server
 ui.main.display=Weisen
 ui.main.zoom=Zoom
@@ -41,6 +44,7 @@ ui.main.forward=Virun
 ui.main.home=Haaptsäit
 ui.main.searchBar=Sich-Läischt
 ui.main.search=Sichen
+ui.main.searchPlaceholder=Gitt den Text fir ze sichen hei an ...
 ui.main.findInText=Am Text sichen
 ui.main.bookmarks=Favoriten
 ui.main.results.title=Resultater vum Sichen
@@ -69,11 +73,13 @@ ui.main.library.filterBy.author=Auteur
 ui.main.library.filterBy.author.all=All
 ui.main.library.filterBy.publisher=Editeur
 ui.main.library.filterBy.publisher.all=All
+ui.main.library.filterBy.lessThan=Manner wéi
 ui.preferences.preferences=Astellungen
 ui.preferences.save=Späicheren
 ui.preferences.cancel=Ofbriechen
 ui.preferences.browse=Duerchsichen
 ui.preferences.tabs=Sech un d'Tabben erënneren
+ui.preferences.downloadCatalogs=Extern(e) Katalog(en) eroflueden
 ui.messages.loadZimFileError='%1' kann net geluede ginn. Sidd Dir sécher datt et en ZIM-Fichier ass?
 ui.messages.alreadyIndexingError=Et ass schonn eng Indexéierung amgaang.
 ui.messages.noResultsError=Keng Resultater fir dës Ufro.
@@ -96,3 +102,6 @@ ui.messages.newContentAvailableInvitation=Et sinn nei Inhalter do fir erofzelued
 ui.messages.preparingContentDownload=D'Erofluede gëtt virbereet...
 ui.messages.contentDownloadFinished=D'Eroflueden vu (n) '%1'  ass fäerdeg.
 ui.messages.feedback=Feedback
+ui.messages.library=Bibliothéik
+ui.messages.fullscreen=Ganzen Ecran
+ui.messages.quitFullscreen=Aus dem Modus vum ganzen Ecran erausgoen

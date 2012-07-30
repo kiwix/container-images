@@ -3,6 +3,10 @@
 # Author: Deacon1289
 # Author: 아라
 
+ui.main.osxservices=서비스
+ui.main.osxhideapp=&brand.brandShortName; 숨기기
+ui.main.osxhideothers=기타 숨기기
+ui.main.osxshowall=모두 보기
 ui.main.file=파일
 ui.main.openFile=파일 열기...
 ui.main.browseLibrary=라이브러리 보기

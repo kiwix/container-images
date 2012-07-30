@@ -3,6 +3,7 @@
 # Author: BeginaFelicysym
 # Author: Olgak85
 # Author: Sp5uhe
+# Author: Woytecr
 
 ui.main.cssdirection=ltr
 ui.main.file=Plik
@@ -34,6 +35,7 @@ ui.main.transliteration.accesskey=T
 # Fuzzy
 ui.main.preferences=Preferencje
 ui.main.preferences.accesskey=s
+ui.main.server=Serwer
 ui.main.display=Widok
 ui.main.display.accesskey=W
 ui.main.zoom=Powiększenie
@@ -110,6 +112,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Wszystko
 ui.main.library.filterBy.publisher=Wydawca
 ui.main.library.filterBy.publisher.all=Wszystko
+ui.main.library.filterBy.lessThan=Mniej niż
 ui.preferences.preferences=Preferencje
 ui.preferences.save=Zapisz
 ui.preferences.cancel=Anuluj

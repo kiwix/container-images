@@ -4,6 +4,10 @@
 # Author: Jim-by
 # Author: Renessaince
 
+ui.main.osxservices=Сэрвісы
+ui.main.osxhideapp=Схаваць &brand.brandShortName;
+ui.main.osxhideothers=Схаваць іншыя
+ui.main.osxshowall=Паказаць усе
 ui.main.file=Файл
 ui.main.openFile=Адкрыць файл…
 ui.main.browseLibrary=Праглядзець бібліятэку
@@ -82,6 +86,7 @@ ui.main.library.filterBy.author=Аўтару
 ui.main.library.filterBy.author.all=Усе
 ui.main.library.filterBy.publisher=Выдавецтву
 ui.main.library.filterBy.publisher.all=Усе
+ui.main.library.filterBy.lessThan=Меней чым
 ui.preferences.preferences=Налады
 ui.preferences.save=Захаваць
 ui.preferences.cancel=Скасаваць
@@ -116,3 +121,8 @@ ui.messages.newContentAvailableInvitation=Для загрузкі даступн
 ui.messages.preparingContentDownload=Падрыхтоўка да загрузкі…
 ui.messages.contentDownloadFinished=Загрузка «%1» скончаная.
 ui.messages.feedback=Водгук
+ui.messages.library=Бібліятэка
+ui.messages.fullscreen=На ўвесь экран
+ui.messages.quitFullscreen=Выйсьці з рэжыму поўнага экрану
+ui.messages.integrityCheckSuccessful=Цэльнасьць файла была пасьпяхова правераная.
+ui.messages.integrityCheckFailed=Памылка праверкі цэльнасьці. Ваш файл пашкоджаны.

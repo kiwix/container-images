@@ -1,5 +1,6 @@
 # Messages for Russian (русский)
 # Exported from translatewiki.net
+# Author: DCamer
 # Author: Dim Grits
 # Author: Eleferen
 # Author: Eugrus
@@ -10,11 +11,16 @@
 # Author: Александр Сигачёв
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Сервисы
+ui.main.osxhideapp=Скрыть &brand.brandShortName;
+ui.main.osxhideothers=Скрыть другие
+ui.main.osxshowall=Показать все
 ui.main.file=Файл
 ui.main.file.accesskey=F
 ui.main.openFile=Открыть файл ...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Просмотр библиотеки
+ui.main.hideLibrary=Скрыть библиотеку
 ui.main.lastOpen=Недавно открытые ...
 ui.main.saveFile=Сохранить страницу как...
 ui.main.saveFile.accesskey=S
@@ -82,6 +88,7 @@ ui.main.forward=Вперед
 ui.main.home=В начало
 ui.main.searchBar=Панель поиска
 ui.main.search=Поиск
+ui.main.searchPlaceholder=Введите текст для поиска...
 ui.main.findInText=Найти в тексте
 ui.main.noSearchBar=Поиск требует индексированного файла ZIM
 ui.main.bookmarks=Закладки
@@ -116,6 +123,7 @@ ui.main.library.filterBy.author=Автор
 ui.main.library.filterBy.author.all=Все
 ui.main.library.filterBy.publisher=Издатель
 ui.main.library.filterBy.publisher.all=Все
+ui.main.library.filterBy.lessThan=Меньше чем
 ui.preferences.preferences=Параметры
 ui.preferences.save=Сохранить
 ui.preferences.cancel=Отмена
@@ -150,4 +158,8 @@ ui.messages.newContentAvailableInvitation=Новый контент доступ
 ui.messages.preparingContentDownload=Подготовка к загрузке…
 ui.messages.contentDownloadFinished=Загрузка завершена на '%1'.
 ui.messages.feedback=Обратная связь
+ui.messages.library=Библиотека
 ui.messages.fullscreen=На весь экран
+ui.messages.quitFullscreen=Выход из полноэкранного режима
+ui.messages.integrityCheckSuccessful=Целостность файла был успешна проверена.
+ui.messages.integrityCheckFailed=Сбой проверки целостности. Ваш файл поврежден.

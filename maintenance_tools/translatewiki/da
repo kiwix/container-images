@@ -5,6 +5,10 @@
 # Author: Peter Alberti
 # Author: Tjernobyl
 
+ui.main.osxservices=Tjenester
+ui.main.osxhideapp=Skjul &brand.brandShortName;
+ui.main.osxhideothers=Skjul øvrige
+ui.main.osxshowall=Vis alle
 ui.main.file=Fil
 ui.main.openFile=Åbn fil...
 ui.main.browseLibrary=Gennemse bibliotek

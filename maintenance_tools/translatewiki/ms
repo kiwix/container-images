@@ -3,6 +3,10 @@
 # Author: Anakmalaysia
 # Author: Kelson
 
+ui.main.osxservices=Perkhidmatan
+ui.main.osxhideapp=Sorokkan &brand.brandShortName;
+ui.main.osxhideothers=Sorokkan yang Lain
+ui.main.osxshowall=Paparkan Semua
 ui.main.file=Fail
 ui.main.openFile=Buka fail...
 ui.main.browseLibrary=Semak imbas perpustakaan
