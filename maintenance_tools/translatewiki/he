@@ -5,6 +5,9 @@
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=שירותים
+ui.main.osxhideapp=להציג &brand.brandShortName;
+ui.main.osxhideothers=להציג אחרים
+ui.main.osxshowall=להציג הכול
 ui.main.file=קובץ
 ui.main.file.accesskey=F
 ui.main.openFile=פתיחת קובץ...
