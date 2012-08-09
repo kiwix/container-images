@@ -1,6 +1,7 @@
 # Messages for Danish (dansk)
 # Exported from translatewiki.net
 # Author: Gorbi
+# Author: Hylle
 # Author: Kelson
 # Author: Peter Alberti
 # Author: Tjernobyl
@@ -32,6 +33,7 @@ ui.main.zoom=Zoom
 ui.main.zoomin=Forstør
 ui.main.zoomout=Formindsk
 ui.main.zoomorig=Oprindelig størrelse
+ui.main.invertedColors=Inverterede farver
 ui.main.language=Sprog
 ui.main.skin=Udseende
 ui.main.statusbar=Statuslinje
@@ -95,6 +97,10 @@ ui.preferences.profileDirectory=Profilmappe
 ui.preferences.browse=Gennemse
 ui.preferences.tabs=Husk faneblade
 ui.preferences.downloadCatalogs=Hent eksterne kataloger ned
+ui.server.load=Indlæs
+ui.server.start=Start
+ui.server.stop=Stop
+ui.server.close=Luk
 ui.messages.loadZimFileError=Kunne ikke indlæse '%1'. Er du sikker på, det er en ZIM-fil?
 ui.messages.alreadyIndexingError=En indekseringsproces kører allerede.
 ui.messages.noResultsError=Ingen resultater for denne forespørgsel.

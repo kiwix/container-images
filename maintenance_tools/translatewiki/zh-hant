@@ -4,10 +4,16 @@
 # Author: Ianbu
 # Author: Kelson
 # Author: Lauhenry
+# Author: Simon Shek
 
+ui.main.osxservices=服務
+ui.main.osxhideapp=隱藏 &brand.brandShortName;
+ui.main.osxhideothers=隱藏其他
+ui.main.osxshowall=顯示全部
 ui.main.file=檔案
 ui.main.openFile=開啟檔案…
 ui.main.browseLibrary=瀏覽檔案庫
+ui.main.hideLibrary=隱藏圖書館
 ui.main.lastOpen=最近使用...
 ui.main.saveFile=另存為...
 ui.main.print=列印
@@ -46,6 +52,7 @@ ui.main.forward=前進
 ui.main.home=首頁
 ui.main.searchBar=搜索欄
 ui.main.search=搜尋
+ui.main.searchPlaceholder=在這裡輸入要搜索的文字...
 ui.main.findInText=在文本中搜尋
 ui.main.noSearchBar=搜索需要索引的ZIM文件
 ui.main.bookmarks=書籤
@@ -80,12 +87,18 @@ ui.main.library.filterBy.author=作者
 ui.main.library.filterBy.author.all=全部
 ui.main.library.filterBy.publisher=出版商
 ui.main.library.filterBy.publisher.all=全部
+ui.main.library.filterBy.lessThan=小於
 ui.preferences.preferences=偏好設定
 ui.preferences.save=儲存
 ui.preferences.cancel=取消
 ui.preferences.profileDirectory=資料目錄
 ui.preferences.browse=瀏覽
 ui.preferences.tabs=記住簽頁
+ui.preferences.downloadCatalogs=下載遠端目錄
+ui.server.load=載入
+ui.server.start=開始
+ui.server.stop=停止
+ui.server.close=關閉
 ui.messages.loadZimFileError=「%1」無法載入。您確認它是ZIM檔案嗎？
 ui.messages.alreadyIndexingError=索引已在進行中。
 ui.messages.noResultsError=查無結果。
@@ -113,3 +126,8 @@ ui.messages.newContentAvailableInvitation=有新內容可以下載。您想看�
 ui.messages.preparingContentDownload=準備下載…
 ui.messages.contentDownloadFinished=「1％」已完成下載。
 ui.messages.feedback=回饋
+ui.messages.library=圖書館
+ui.messages.fullscreen=全螢幕
+ui.messages.quitFullscreen=退出全螢幕模式
+ui.messages.integrityCheckSuccessful=成功地檢查檔案完整性。
+ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損壞。

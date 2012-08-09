@@ -1,13 +1,18 @@
-# Messages for Slovak (Slovenčina)
+# Messages for Slovak (slovenčina)
 # Exported from translatewiki.net
 # Author: Helix84
 # Author: Kelson
 # Author: Kusavica
 # Author: Wizzard
 
+ui.main.osxservices=Služby
+ui.main.osxhideapp=Skryť &brand.brandShortName;
+ui.main.osxhideothers=Skryť ostatné
+ui.main.osxshowall=Zobraziť všetko
 ui.main.file=Súbor
 ui.main.openFile=Otvoriť súbor...
 ui.main.browseLibrary=Prehľadávať knižnicu
+ui.main.hideLibrary=Skryť knižnicu
 ui.main.lastOpen=Nedávno otvorené...
 ui.main.saveFile=Uložiť stránku ako...
 ui.main.print=Tlačiť
@@ -17,6 +22,8 @@ ui.main.edit=Upraviť
 ui.main.find=Hľadať na stránke...
 ui.main.selectall=Vybrať všetky
 ui.main.copy=Kopírovať
+ui.main.mute=Stlmiť
+ui.main.audible=Zosilniť
 ui.main.transliteration=Transliterácia
 ui.main.preferences=Nastavenia
 ui.main.server=Server
@@ -25,6 +32,7 @@ ui.main.zoom=Zväčšenie
 ui.main.zoomin=Zväčšiť
 ui.main.zoomout=Znížiť
 ui.main.zoomorig=Pôvodná veľkosť
+ui.main.invertedColors=Obrátiť farby
 ui.main.language=Jazyk
 ui.main.skin=Téma vzhľadu
 ui.main.statusbar=Stavový riadok
@@ -45,6 +53,7 @@ ui.main.forward=Dopredu
 ui.main.home=Domov
 ui.main.searchBar=Vyhľadávací panel
 ui.main.search=Hľadať
+ui.main.searchPlaceholder=Zadajte text, ktorý chcete hladať...
 ui.main.findInText=Nájsť v texte
 ui.main.noSearchBar=Hľadanie vyžaduje indexovaný súbor ZIM
 ui.main.bookmarks=Záložky
@@ -60,16 +69,37 @@ ui.main.defaultset=Predvolená množina
 ui.main.saveImageAs=Uložiť obrázok ako...
 ui.main.openLinkInNewTab=Otvoriť odkaz v novej záložke
 ui.main.searchFor=Hľadať
+ui.main.copyLinkAddress=Skopírovať adresu odkazu
 ui.main.close=Zatvoriť
+ui.main.library.myLibrary=Moja knižnica
+ui.main.library.getNewFiles=Získať nové súbory
+ui.main.library.searchZimFiles=Hľadať súbory ZIM
+ui.main.library.sortBy=Zoradiť podľa
+ui.main.library.sortBy.title=Názvu
+ui.main.library.sortBy.size=Veľkosti
+ui.main.library.sortBy.date=Dátumu
+ui.main.library.sortBy.author=Autora
+ui.main.library.sortBy.publisher=Vydavateľa
+ui.main.library.filterBy=Filtrovať podľa
+ui.main.library.filterBy.fileSize=Veľkosti súboru
+ui.main.library.filterBy.language=Jazyka
 ui.main.library.filterBy.language.all=Všetky
+ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Všetky
+ui.main.library.filterBy.publisher=Vydavateľ
 ui.main.library.filterBy.publisher.all=Všetky
+ui.main.library.filterBy.lessThan=Menej ako
 ui.preferences.preferences=Nastavenia
 ui.preferences.save=Uložiť
 ui.preferences.cancel=Zrušiť
 ui.preferences.profileDirectory=Adresár profilu
 ui.preferences.browse=Prehliadať
 ui.preferences.tabs=Uložiť záložky
+ui.preferences.downloadCatalogs=Stiahnuť vzdialený katalóg
+ui.server.load=Načítať
+ui.server.start=Štart
+ui.server.stop=Stop
+ui.server.close=Zavrieť
 ui.messages.loadZimFileError=Nedá sa načítať „$1“. Naozaj toto je súbor ZIM?
 ui.messages.alreadyIndexingError=Vytváranie indexu je už spustené.
 ui.messages.noResultsError=Žiadne výsledky pre túto požiadavku.
@@ -97,3 +127,8 @@ ui.messages.newContentAvailableInvitation=Existuje nový obsah k dispozícii na 
 ui.messages.preparingContentDownload=Pripravuje sa preberanie...
 ui.messages.contentDownloadFinished=Sťahovanie „%1“ je dokončené.
 ui.messages.feedback=Spätná väzba
+ui.messages.library=Knižnica
+ui.messages.fullscreen=Celá obrazovka
+ui.messages.quitFullscreen=Ukončiť režim celej obrazovky
+ui.messages.integrityCheckSuccessful=Integrita súborov bola úspešne overená.
+ui.messages.integrityCheckFailed=Kontrola integrity zlyhala. Súbor je poškodený.

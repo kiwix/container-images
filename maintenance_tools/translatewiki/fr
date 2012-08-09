@@ -3,6 +3,7 @@
 # Author: Boniface
 # Author: DavidL
 # Author: Gomoko
+# Author: Jean-Frédéric
 # Author: Kelson
 # Author: Od1n
 # Author: Verdy p
@@ -54,6 +55,7 @@ ui.main.zoomout=Réduire
 ui.main.zoomout.accesskey=R
 ui.main.zoomorig=Normal
 ui.main.zoomorig.accesskey=N
+ui.main.invertedColors=Couleurs inversées
 ui.main.language=Langue
 ui.main.language.accesskey=L
 ui.main.skin=Habillage
@@ -129,6 +131,10 @@ ui.preferences.profileDirectory=Répertoire du profil
 ui.preferences.browse=Parcourir
 ui.preferences.tabs=Se souvenir des onglets ouverts en quittant Kiwix
 ui.preferences.downloadCatalogs=Télécharger le(s) catalogue(s) distant
+ui.server.load=Charger
+ui.server.start=Début
+ui.server.stop=Arrêt
+ui.server.close=Fermer
 ui.messages.loadZimFileError=Impossible de charger le fichier ZIM '%1'. Peut-être ce fichier est-il invalide ?
 ui.messages.alreadyIndexingError=Un processus d'indexation est déjà en cours.
 ui.messages.noResultsError=Il n'y a pas de résultats pour cette recherche.

@@ -1,11 +1,17 @@
 # Messages for Oriya (ଓଡ଼ିଆ)
 # Exported from translatewiki.net
+# Author: Jnanaranjan Sahu
 # Author: Psubhashish
 # Author: Sukarna0
 
+ui.main.osxservices=ସେବାଗୁଡିକ
+ui.main.osxhideapp=&brand.brandShortName ଲୁଚାଇବେ;
+ui.main.osxhideothers=ଅନ୍ୟ ସବୁକୁ ଲୁଚାଇବେ
+ui.main.osxshowall=ସବୁ ଦେଖିବେ
 ui.main.file=ଫାଇଲ
 ui.main.openFile=ଫାଇଲଟି ଖୋଲିବେ...
 ui.main.browseLibrary=ଲାଇବ୍ରେରୀ ଦେଖ
+ui.main.hideLibrary=ପାଠାଗାର ଲୁଚାଇବେ
 ui.main.lastOpen=ନଗଦ ଖୋଲାଯାଇଥିବା...
 ui.main.saveFile=ପୃଷ୍ଠାଟି ଏହି ନାମରେ ସାଇତିବେ...
 ui.main.print=ପ୍ରିଣ୍ଟ କରିବେ
@@ -15,14 +21,17 @@ ui.main.edit=ଏହାକୁ ବଦଳାନ୍ତୁ
 ui.main.find=ପୃଷ୍ଠା ଅନୁସାରେ ଖୋଜିବେ...
 ui.main.selectall=ସବୁକୁ ବାଛିବେ
 ui.main.copy=ନକଲ
+ui.main.mute=ବନ୍ଦ
+ui.main.audible=ଶୁଣିବାଯୋଗ୍ୟ
 ui.main.transliteration=ଲିପି ଅନ୍ତରଣ
-# Fuzzy
-ui.main.preferences=ପସନ୍ଦସବୁ
+ui.main.preferences=ପସନ୍ଦଗୁଡିକ
+ui.main.server=ସର୍ଭର
 ui.main.display=ଦେଖଣା
 ui.main.zoom=ବଡ଼କରି ଦେଖାଇବେ
 ui.main.zoomin=ବଡ଼କରିବେ
 ui.main.zoomout=ଛୋଟ କରିବେ
 ui.main.zoomorig=ମୂଳ ଆକାର
+ui.main.invertedColors=ବଦଳାଯାଇଥିବା ରଙ୍ଗଗୁଡିକ
 ui.main.language=ଭାଷା
 ui.main.skin=ବହିରାବରଣ
 ui.main.statusbar=ସ୍ଥିତି ପଟିକା
@@ -43,6 +52,7 @@ ui.main.forward=ଆଗକୁ
 ui.main.home=ମୂଳ ଜାଗା
 ui.main.searchBar=ଖୋଜା ପଟିକା
 ui.main.search=ଖୋଜିବେ
+ui.main.searchPlaceholder=ଖୋଜିବା ପାଇଁ ଚାହୁଁଥିବା ଶବ୍ଦଟିକୁ ଏଠାରେ ଲେଖନ୍ତୁ
 ui.main.findInText=ଲେଖାରେ ଖୋଜିବେ
 ui.main.noSearchBar=ଖୋଜିବା ନିମନ୍ତେ ଏକ ସୂଚି କରାହୋଇଥିବା ZIM ଫାଇଲ ଲୋଡ଼ା
 ui.main.bookmarks=ବହିଚିହ୍ନକ
@@ -77,12 +87,18 @@ ui.main.library.filterBy.author=ଲେଖକ
 ui.main.library.filterBy.author.all=ସବୁ
 ui.main.library.filterBy.publisher=ପ୍ରକାଶକ
 ui.main.library.filterBy.publisher.all=ସବୁ
+ui.main.library.filterBy.lessThan=ତାଠୁ କମ
 ui.preferences.preferences=ପସନ୍ଦସବୁ
 ui.preferences.save=ସାଇତିବେ
 ui.preferences.cancel=ନାକଚ
 ui.preferences.profileDirectory=ପ୍ରଫାଇଲ ତାଲିକା
 ui.preferences.browse=ଖୋଜିବା
 ui.preferences.tabs=ଟାବ୍ ଗୁଡ଼ିକୁ ମନେ ରଖନ୍ତୁ.
+ui.preferences.downloadCatalogs=ଅନ୍ୟ ଜାଗାରେ ଥିବା ଦେଖଣାଟିକୁ ଡାଉନଲୋଡ କରନ୍ତୁ
+ui.server.load=ଲୋଡ କରନ୍ତୁ
+ui.server.start=ଆରମ୍ଭ
+ui.server.stop=ବନ୍ଦ
+ui.server.close=ବନ୍ଦ କରିବେ
 ui.messages.loadZimFileError='%1'କୁ ଧାରଣ କରିପାରିଲୁଁ ନାହିଁ । ଏହା ଏକ ZIM ବୋଲି ଆପଣ ନିଶ୍ଚିତ ତ?
 ui.messages.alreadyIndexingError=ଏକ ସୂଚି ତିଆରି କାମ ଆଗରୁ ଚାଲୁଅଛି ।
 ui.messages.noResultsError=ଏହି ଖୋଜା ପାଇଁ କିଛି ଫଳାଫଳ ମିଳିଲା ନାହିଁ ।
@@ -110,3 +126,8 @@ ui.messages.newContentAvailableInvitation=ଡାଉନଲୋଡ ପାଇଁ ନ
 ui.messages.preparingContentDownload=ଡାଉନଲୋଡ ପାଇଁ ପ୍ରସ୍ତୁତି ଚାଲିଛି. . .
 ui.messages.contentDownloadFinished=ଡାଉନଲୋଡ ର ୧% ଶେଷ.
 ui.messages.feedback=ମତାମତ
+ui.messages.library=ପାଠାଗାର
+ui.messages.fullscreen=ପୁରା ସ୍କ୍ରିନ
+ui.messages.quitFullscreen=ପୁରା ସ୍କ୍ରିନ ମୋଡରୁ ଓହରି ଆସିବେ
+ui.messages.integrityCheckSuccessful=ଫାଇଲର ପୂର୍ଣ୍ଣତା ସଫଳ ଭାବେ ପରୀକ୍ଷଣ ହେଲା ।
+ui.messages.integrityCheckFailed=ପୂର୍ଣ୍ଣତା ପରୀକ୍ଷଣ ବିଫଳ ହେଲା । ଆପଣଙ୍କ ଫାଇଲରେ ତ୍ରୁଟି ଅଛି ।

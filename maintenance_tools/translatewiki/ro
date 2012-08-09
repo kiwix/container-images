@@ -3,8 +3,13 @@
 # Author: Firilacroco
 # Author: Kelson
 # Author: Minisarm
+# Author: Stelistcristi
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Servicii
+ui.main.osxhideapp=Ascunde &brand.brandShortName;
+ui.main.osxhideothers=Ascunde celelalte
+ui.main.osxshowall=Arată toate
 ui.main.file=Fișier
 ui.main.file.accesskey=F
 ui.main.openFile=Deschide un fișier...
@@ -37,6 +42,7 @@ ui.main.zoom=Zoom
 ui.main.zoomin=Mărește
 ui.main.zoomout=Micșorează
 ui.main.zoomorig=Dimensiune originală
+ui.main.invertedColors=Culori inversate
 ui.main.language=Limbă
 ui.main.skin=Aspect
 ui.main.statusbar=Bara de stare
@@ -92,6 +98,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Toate
 ui.main.library.filterBy.publisher=Editură
 ui.main.library.filterBy.publisher.all=Toate
+ui.main.library.filterBy.lessThan=Mai puţin de
 ui.preferences.preferences=Preferințe
 ui.preferences.save=Salvează
 ui.preferences.cancel=Revocare
@@ -99,6 +106,10 @@ ui.preferences.profileDirectory=Dosar de profil
 ui.preferences.browse=Răsfoiește
 ui.preferences.tabs=Memorează filele
 ui.preferences.downloadCatalogs=Descarcă catalogul(oagele) la distanță
+ui.server.load=Încarcă
+ui.server.start=Începe
+ui.server.stop=Opreşte
+ui.server.close=Închide
 ui.messages.loadZimFileError=Imposibil de încărcat „%1”. Sunteți sigur că acesta este un fișier ZIM?
 ui.messages.alreadyIndexingError=Un proces de indexare rulează deja.
 ui.messages.noResultsError=Niciun rezultat pentru această interogare.

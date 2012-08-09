@@ -2,15 +2,21 @@
 # Exported from translatewiki.net
 # Author: BeginaFelicysym
 # Author: Olgak85
+# Author: Przemub
 # Author: Sp5uhe
 # Author: Woytecr
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Usługi
+ui.main.osxhideapp=Ukryj &brand.brandShortName;
+ui.main.osxhideothers=Ukryj inne
+ui.main.osxshowall=Pokaż wszystko
 ui.main.file=Plik
 ui.main.file.accesskey=P
 ui.main.openFile=Otwórz plik...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Przeglądaj biblioteki
+ui.main.hideLibrary=Ukryj biblioteki
 ui.main.lastOpen=Ostatnio otwierane...
 ui.main.saveFile=Zapisz stronę jako...
 ui.main.saveFile.accesskey=Z
@@ -32,7 +38,6 @@ ui.main.mute=Wycisz
 ui.main.audible=Dźwiękowy
 ui.main.transliteration=Transliteracja
 ui.main.transliteration.accesskey=T
-# Fuzzy
 ui.main.preferences=Preferencje
 ui.main.preferences.accesskey=s
 ui.main.server=Serwer
@@ -46,6 +51,7 @@ ui.main.zoomout=Pomniejsz
 ui.main.zoomout.accesskey=-
 ui.main.zoomorig=Rozmiar pierwotny
 ui.main.zoomorig.accesskey=0
+ui.main.invertedColors=Odwrócone kolory
 ui.main.language=Język
 ui.main.language.accesskey=J
 ui.main.skin=Skórka
@@ -78,6 +84,7 @@ ui.main.forward=Ponów
 ui.main.home=Strona główna
 ui.main.searchBar=Pole wyszukiwania
 ui.main.search=Szukaj
+ui.main.searchPlaceholder=Wpisz tekst, aby wyszukać...
 ui.main.findInText=Znajdź w tekście
 ui.main.noSearchBar=Wyszukiwanie wymaga zindeksowanego pliku ZIM
 ui.main.bookmarks=Zakładki
@@ -119,6 +126,11 @@ ui.preferences.cancel=Anuluj
 ui.preferences.profileDirectory=Katalogu profilu
 ui.preferences.browse=Przeglądaj
 ui.preferences.tabs=Zapamiętaj zakładki
+ui.preferences.downloadCatalogs=Pobierz katalog(i) zdalny(e)
+ui.server.load=Wczytaj
+ui.server.start=Start
+ui.server.stop=Stop
+ui.server.close=Zamknij
 ui.messages.loadZimFileError=Nie można wczytać „%1“. Czy to na pewno plik w formacie ZIM?
 ui.messages.alreadyIndexingError=Trwa właśnie proces indeksowania.
 ui.messages.noResultsError=Brak wyników dla wpisanego zapytania.
@@ -146,3 +158,8 @@ ui.messages.newContentAvailableInvitation=Nowe treści są gotowe do pobrania. C
 ui.messages.preparingContentDownload=Trwa przygotowywanie pobierania...
 ui.messages.contentDownloadFinished=Ukończono pobieranie w '%1'
 ui.messages.feedback=Opinie
+ui.messages.library=Biblioteka
+ui.messages.fullscreen=Pełny ekran
+ui.messages.quitFullscreen=Wyjdź z trybu pełnego ekranu
+ui.messages.integrityCheckSuccessful=Integralność pliku została pomyślnie sprawdzona.
+ui.messages.integrityCheckFailed=Sprawdzanie integralności nie powiodło się. Plik jest uszkodzony.

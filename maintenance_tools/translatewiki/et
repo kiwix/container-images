@@ -15,7 +15,6 @@ ui.main.find=Otsi leheküljelt...
 ui.main.selectall=Vali kõik
 ui.main.copy=Kopeeri
 ui.main.transliteration=Transliteratsioon
-# Fuzzy
 ui.main.preferences=Eelistused
 ui.main.display=Vaade
 ui.main.zoom=Suurendamine
