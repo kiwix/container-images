@@ -1,13 +1,19 @@
 # Messages for Albanian (shqip)
 # Exported from translatewiki.net
+# Author: FatosMorina
 # Author: Kelson
 # Author: Marinari
 # Author: Mjbmr
 # Author: Olsi
 
+ui.main.osxservices=Shërbimet
+ui.main.osxhideapp=Fshih &brand.brandShorName;
+ui.main.osxhideothers=Fshih të tjerat
+ui.main.osxshowall=Paraqiti të gjitha
 ui.main.file=Dosja
 ui.main.openFile=Hap dosjen
 ui.main.browseLibrary=Shfleto librarinë
+ui.main.hideLibrary=Fshih biblotekën
 ui.main.lastOpen=Hapur kohët e fundit...
 ui.main.saveFile=Ruaj faqen si ...
 ui.main.print=Shtyp
@@ -21,11 +27,13 @@ ui.main.mute=Ndal zërin
 ui.main.audible=I Ndëgjuesëm
 ui.main.transliteration=Transliterim
 ui.main.preferences=Parapëlqimet
+ui.main.server=Serveri
 ui.main.display=Shfaq
 ui.main.zoom=Zmadho
 ui.main.zoomin=Zgjero
 ui.main.zoomout=Zvogëlo
 ui.main.zoomorig=Madhësia origjinale
+ui.main.invertedColors=Ngjyrat e ndërruara
 ui.main.language=Gjuha
 ui.main.skin=Pamja
 ui.main.statusbar=Shiriti i gjendjes
@@ -46,6 +54,7 @@ ui.main.forward=Përpara
 ui.main.home=Faqja Krzesore
 ui.main.searchBar=Shiriti kërkues
 ui.main.search=Kërko
+ui.main.searchPlaceholder=Shkruani tekstin për të kërkuar këtu...
 ui.main.findInText=Kërko në tekst
 ui.main.noSearchBar=Kërkimi kërkon ZIM dokumentin e indeksuar
 ui.main.bookmarks=Faqe-shenjues
@@ -80,6 +89,7 @@ ui.main.library.filterBy.author=Autori
 ui.main.library.filterBy.author.all=Të gjitha
 ui.main.library.filterBy.publisher=Publikuesi
 ui.main.library.filterBy.publisher.all=Të gjitha
+ui.main.library.filterBy.lessThan=Më pak se
 ui.preferences.preferences=Parapëlqimet
 ui.preferences.save=Ruaj
 ui.preferences.cancel=Anulo
@@ -87,6 +97,10 @@ ui.preferences.profileDirectory=Regjistri i profilit
 ui.preferences.browse=Shfleto
 ui.preferences.tabs=Mba mend skedat
 ui.preferences.downloadCatalogs=Shkarko katalogun (-gjet) ne distancë
+ui.server.load=Ngarko
+ui.server.start=Fillo
+ui.server.stop=Ndalo
+ui.server.close=Mbylle
 ui.messages.loadZimFileError=E pamundur për të ngarkuar '%1' Jeni i sigurt se ky është ZIM dokument ?
 ui.messages.alreadyIndexingError=Procesi i indeksimit tashmë është në veprim
 ui.messages.noResultsError=Nuk ka rezultat për këtë pyetje
@@ -114,3 +128,8 @@ ui.messages.newContentAvailableInvitation=Ka përmbajtje të reja të mundshme p
 ui.messages.preparingContentDownload=Duke përgatitur shkarkimin...
 ui.messages.contentDownloadFinished=Shkarkimi prej '$1' ka përfunduar.
 ui.messages.feedback=Përshtypja
+ui.messages.library=Bibloteka
+ui.messages.fullscreen=Ekrani i plotë
+ui.messages.quitFullscreen=Dil nga ekrani i plotë
+ui.messages.integrityCheckSuccessful=Tërësia e skedarit është kontrolluar me sukses.
+ui.messages.integrityCheckFailed=Kontrillimi i tërësishëm dështoi. Skedari juaj është i korruptuar.

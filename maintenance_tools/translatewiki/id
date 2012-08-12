@@ -5,6 +5,10 @@
 # Author: Kelson
 # Author: Kenrick95
 
+ui.main.osxservices=Layanan
+ui.main.osxhideapp=Sembunyikan &brand.brandShortName;
+ui.main.osxhideothers=Sembunyikan Lainnya
+ui.main.osxshowall=Tampilkan Semua
 ui.main.file=Berkas
 ui.main.openFile=Buka berkas...
 ui.main.browseLibrary=Jelajah perpustakaan
@@ -28,6 +32,7 @@ ui.main.zoom=Perbesaran
 ui.main.zoomin=Perbesar
 ui.main.zoomout=Perkecil
 ui.main.zoomorig=Ukuran asli
+ui.main.invertedColors=Warna terbalik
 ui.main.language=Bahasa
 ui.main.skin=Kulit
 ui.main.statusbar=Bar status
@@ -83,6 +88,7 @@ ui.main.library.filterBy.author=Penulis
 ui.main.library.filterBy.author.all=Semua
 ui.main.library.filterBy.publisher=Penerbit
 ui.main.library.filterBy.publisher.all=Semua
+ui.main.library.filterBy.lessThan=Kurang dari
 ui.preferences.preferences=Preferensi
 ui.preferences.save=Simpan
 ui.preferences.cancel=Batal
@@ -90,6 +96,10 @@ ui.preferences.profileDirectory=Direktori profil
 ui.preferences.browse=Jelajahi
 ui.preferences.tabs=Ingat tab
 ui.preferences.downloadCatalogs=Unduh katalog jauh
+ui.server.load=Muat
+ui.server.start=Mulai
+ui.server.stop=Berhenti
+ui.server.close=Tutup
 ui.messages.loadZimFileError=Tidak dapat memuat '%1' Apakah Anda yakin ini adalah berkas ZIM?
 ui.messages.alreadyIndexingError=Sebuah proses pengindeksan sudah berjalan.
 ui.messages.noResultsError=Tidak ada hasil untuk permintaan ini.

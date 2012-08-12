@@ -6,8 +6,10 @@
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
+# Author: Shirayuki
 # Author: Yanmiao liu
 
+ui.main.osxshowall=全部显示
 ui.main.file=文件
 ui.main.openFile=打开文件
 ui.main.browseLibrary=浏览库
@@ -93,6 +95,9 @@ ui.preferences.profileDirectory=配置文件目录
 ui.preferences.browse=浏览
 ui.preferences.tabs=记住标签页
 ui.preferences.downloadCatalogs=下载远程目录
+ui.server.start=开始
+ui.server.stop=停止
+ui.server.close=关闭
 ui.messages.loadZimFileError=无法载入'%1'，您确认它是ZIM文件吗？
 ui.messages.alreadyIndexingError=索引进行中。
 ui.messages.noResultsError=查无结果。

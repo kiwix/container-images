@@ -24,7 +24,6 @@ ui.main.copy=පිටපත් කරන්න
 ui.main.mute=නිශ්ශබ්ද කරන්න
 ui.main.audible=කනට ඇසෙන
 ui.main.transliteration=අක්ෂර පරිවර්තනය
-# Fuzzy
 ui.main.preferences=අභිරුචි
 ui.main.server=සර්වරය
 ui.main.display=පෙන්වීම

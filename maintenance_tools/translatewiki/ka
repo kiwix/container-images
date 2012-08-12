@@ -3,9 +3,13 @@
 # Author: David1010
 # Author: ITshnik
 
+ui.main.osxservices=სერვისები
+ui.main.osxhideothers=სხვების დამალვა
+ui.main.osxshowall=ყველას ჩვენება
 ui.main.file=ფაილი
 ui.main.openFile=ფაილის გახსნა...
 ui.main.browseLibrary=ბიბლიოთეკის დათვალიერება
+ui.main.hideLibrary=ბიბლიოთეკის დამალვა
 ui.main.lastOpen=ბოლოს გახსნილი...
 ui.main.saveFile=გვერდის შენახვა როგორც...
 ui.main.print=დაბეჭვდა
@@ -18,8 +22,8 @@ ui.main.copy=ასლის შექმნა
 ui.main.mute=უხმო
 ui.main.audible=ხმით
 ui.main.transliteration=ტრანსლიტერაცია
-# Fuzzy
 ui.main.preferences=კონფიგურაცია
+ui.main.server=სერვერი
 ui.main.display=ჩვენება
 ui.main.zoom=ზომა
 ui.main.zoomin=გადიდება
@@ -85,6 +89,10 @@ ui.preferences.cancel=გაუქმება
 ui.preferences.profileDirectory=პროფილის დირექტორია
 ui.preferences.browse=დათვალიერება
 ui.preferences.tabs=ჩანართების დამახსოვრება
+ui.server.load=ჩატვირთვა
+ui.server.start=დაწყება
+ui.server.stop=შეჩერება
+ui.server.close=დახურვა
 ui.messages.loadZimFileError=შეუძლებელია ფაილის '%1' ჩატვირთვა. დარწმუნებული ხართ, რომ ეს ZIM ფაილია?
 ui.messages.alreadyIndexingError=ინდექსირების პროცესი უკვე გაშვებულია.
 ui.messages.noResultsError=ვერცერთი შედეგი ვერ მოიძებნა ამ მოთხოვნაზე
@@ -112,3 +120,6 @@ ui.messages.newContentAvailableInvitation=ახალი შემცველ�
 ui.messages.preparingContentDownload=მზადება ჩამოტვირთვისთვის...
 ui.messages.contentDownloadFinished='%1' ჩამოტვირთულია.
 ui.messages.feedback=უკუკავშირი
+ui.messages.library=ბიბლიოთეკა
+ui.messages.fullscreen=მთელ ეკრანზე
+ui.messages.quitFullscreen=მთლიანი ეკრანის რეჟიმიდან გამოსვლა
