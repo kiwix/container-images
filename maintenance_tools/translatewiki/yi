@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: פוילישער
+# Author: පසිඳු කාවින්ද
 
 ui.main.file=טעקע
 ui.main.openFile=עפֿענען טעקע…
@@ -86,6 +87,7 @@ ui.preferences.cancel=אַנולירן
 ui.preferences.profileDirectory=פראפֿיל ארכיוו
 ui.preferences.browse=דורכזוכן
 ui.preferences.tabs=געדענקען טאבן
+ui.server.close=שליסן
 ui.messages.loadZimFileError=נישט מעגלעך אנצולאָדן '%1'. זענט איר זיכער אז דאס איז א ZIM טעקע?
 ui.messages.alreadyIndexingError=אן אינדעקסירן פראצעס האט שוין אנגעהויבן.
 ui.messages.noResultsError=קיין רעזולטאטן נישט געטראפֿן.

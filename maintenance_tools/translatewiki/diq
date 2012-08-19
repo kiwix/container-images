@@ -1,9 +1,10 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
 # Author: Erdemaslancan
+# Author: Kelson
 
 ui.main.osxservices=Serwisi
-ui.main.osxhideapp=&brand.brandShortName bınımne;
+ui.main.osxhideapp=&brand.brandShortName; bınımne
 ui.main.osxhideothers=Êbina Bınımnê
 ui.main.osxshowall=Pêron Bımocne
 ui.main.file=Dosya

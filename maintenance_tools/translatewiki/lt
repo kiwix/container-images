@@ -3,11 +3,14 @@
 # Author: Eitvys200
 # Author: Ignas693
 
+ui.main.osxservices=Paslaugos
+ui.main.osxhideapp=Slėpti &brand.brandShortName;
 ui.main.osxhideothers=Slėpti Kitus
 ui.main.osxshowall=Rodyti Viską
 ui.main.file=Failas
 ui.main.openFile=Atidaryti failą...
 ui.main.browseLibrary=Naršyti biblioteką
+ui.main.hideLibrary=Slėpti biblioteka
 ui.main.lastOpen=Neseniai atidaryti...
 ui.main.saveFile=Įrašyti puslapį kaip...
 ui.main.print=Spausdinti
@@ -17,6 +20,8 @@ ui.main.edit=Redaguoti
 ui.main.find=Paieškos puslapyje...
 ui.main.selectall=Pasirinkti visus
 ui.main.copy=Kopijuoti
+ui.main.mute=Nutildyti
+ui.main.audible=Girdimas
 ui.main.transliteration=Transliteracijos
 # Fuzzy
 ui.main.preferences=Nustatymai
@@ -26,6 +31,7 @@ ui.main.zoom=Padidinti
 ui.main.zoomin=Perdėti
 ui.main.zoomout=Sumažinti
 ui.main.zoomorig=Originalus dydis
+ui.main.invertedColors=Apverstos spalvos
 ui.main.language=Kalba
 ui.main.skin=Oda
 ui.main.statusbar=Būsenos juostoje
@@ -46,6 +52,7 @@ ui.main.forward=Pirmyn
 ui.main.home=Pradžia
 ui.main.searchBar=Paieškos juostą
 ui.main.search=Paieška
+ui.main.searchPlaceholder=Įveskite tekstą, kurio norite ieškoti čia...
 ui.main.findInText=Rasti tekste
 ui.main.noSearchBar=Paieškos reikalauja indeksuojami ZIM failo
 ui.main.bookmarks=Žymės
@@ -87,6 +94,11 @@ ui.preferences.cancel=Atšaukti
 ui.preferences.profileDirectory=Profilis katalogas
 ui.preferences.browse=Naršyti
 ui.preferences.tabs=Prisiminti skirtukus
+ui.preferences.downloadCatalogs=Atsisiųsti nuotolinių katalogų(s)
+ui.server.load=Įkrauti
+ui.server.start=Pradėti
+ui.server.stop=Sustabdyti
+ui.server.close=Uždaryti
 ui.messages.loadZimFileError=Nepavyko įkelti "% 1" Ar čia tikrai ZIM failas?
 ui.messages.alreadyIndexingError=Indeksavimo procesas jau veikia.
 ui.messages.noResultsError=Šios užklausos rezultatų.
@@ -117,3 +129,5 @@ ui.messages.feedback=Atsiliepimas
 ui.messages.library=Biblioteka
 ui.messages.fullscreen=Visas ekranas
 ui.messages.quitFullscreen=Išeiti iš viso ekrano režimo
+ui.messages.integrityCheckSuccessful=Failo vientisumas buvo sėkmingai patikrintas.
+ui.messages.integrityCheckFailed=Vientisumo tikrinimas nepavyko. Jūsų failas yra sugadintas.

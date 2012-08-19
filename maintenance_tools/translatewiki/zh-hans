@@ -9,6 +9,9 @@
 # Author: Shirayuki
 # Author: Yanmiao liu
 
+ui.main.osxservices=服务
+ui.main.osxhideapp=隐藏&brand.brandShortName;
+ui.main.osxhideothers=隐藏其他
 ui.main.osxshowall=全部显示
 ui.main.file=文件
 ui.main.openFile=打开文件
@@ -33,6 +36,7 @@ ui.main.zoom=缩放
 ui.main.zoomin=放大
 ui.main.zoomout=缩小
 ui.main.zoomorig=原始尺寸
+ui.main.invertedColors=反转色
 ui.main.language=界面语言
 ui.main.skin=皮肤
 ui.main.statusbar=状态栏
@@ -88,6 +92,7 @@ ui.main.library.filterBy.author=作者
 ui.main.library.filterBy.author.all=全选
 ui.main.library.filterBy.publisher=出版人
 ui.main.library.filterBy.publisher.all=全选
+ui.main.library.filterBy.lessThan=小于
 ui.preferences.preferences=参数设置
 ui.preferences.save=保存
 ui.preferences.cancel=取消
@@ -95,6 +100,7 @@ ui.preferences.profileDirectory=配置文件目录
 ui.preferences.browse=浏览
 ui.preferences.tabs=记住标签页
 ui.preferences.downloadCatalogs=下载远程目录
+ui.server.load=载入
 ui.server.start=开始
 ui.server.stop=停止
 ui.server.close=关闭

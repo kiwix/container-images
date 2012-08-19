@@ -1,6 +1,7 @@
 # Messages for Vietnamese (Tiếng Việt)
 # Exported from translatewiki.net
 # Author: Minh Nguyen
+# Author: පසිඳු කාවින්ද
 
 ui.main.osxservices=Dịch vụ
 ui.main.osxhideapp=Ẩn &brand.brandShortName;
@@ -48,6 +49,7 @@ ui.main.zoomout=Thu nhỏ
 ui.main.zoomout.accesskey=n
 ui.main.zoomorig=Kích thước Mặc định
 ui.main.zoomorig.accesskey=M
+ui.main.invertedColors=Đảo màu
 ui.main.language=Ngôn ngữ
 ui.main.language.accesskey=N
 ui.main.skin=Hình dạng
@@ -123,6 +125,10 @@ ui.preferences.profileDirectory=Thư mục Hồ sơ
 ui.preferences.browse=Duyệt
 ui.preferences.tabs=Nhớ các thẻ
 ui.preferences.downloadCatalogs=Tải về mục lục từ xa
+ui.server.load=Tải
+ui.server.start=Bắt đầu
+ui.server.stop=Ngừng
+ui.server.close=Đóng
 ui.messages.loadZimFileError=Không thể tải “%1”. Bạn có chắc chắn đây là một tập tin ZIM?
 ui.messages.alreadyIndexingError=Đã đang chạy quá trình lập chỉ mục.
 ui.messages.noResultsError=Truy vấn này không có kết quả nào.
