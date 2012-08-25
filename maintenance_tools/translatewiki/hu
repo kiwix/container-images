@@ -4,6 +4,7 @@
 # Author: Hunyadym
 
 ui.main.osxservices=Szolgáltatások
+ui.main.osxhideapp=Elrejt &brand.brandShortName;
 ui.main.osxhideothers=Egyebek elrejtése
 ui.main.osxshowall=Összes megjelenítése
 ui.main.file=Fájl
