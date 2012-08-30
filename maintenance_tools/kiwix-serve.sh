@@ -17,7 +17,7 @@ do
 done
 
 # Go trough all ZIM files, build idx file and library.xml
-for ZIM in `find $ZIM_DIRECTORY -name "*.zim" | grep -v "0.8"`
+for ZIM in `find $ZIM_DIRECTORY -name "*.zim" | grep -v "0.8/"`
 do
     echo $ZIM
     BASE=`echo $ZIM | sed -e "s/.*\///g"`
