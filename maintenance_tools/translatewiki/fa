@@ -4,6 +4,7 @@
 # Author: Mjbmr
 # Author: Reza1615
 # Author: ZxxZxxZ
+# Author: جواد
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
@@ -126,6 +127,7 @@ ui.preferences.cancel=لغو
 ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.browse=مرور
 ui.preferences.tabs=به‌خاطرسپردن زبانه‌ها
+ui.preferences.downloadCatalogs=دانلود کالانما(ها) از راه دور
 ui.server.load=بارگیری
 ui.server.start=آغاز
 ui.server.stop=توقف

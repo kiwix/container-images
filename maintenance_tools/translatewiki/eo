@@ -2,11 +2,17 @@
 # Exported from translatewiki.net
 # Author: Airon90
 # Author: Amire80
+# Author: Objectivesea
 # Author: Yekrats
 
+ui.main.osxservices=Servaĵoj
+ui.main.osxhideapp=Kaŝi &brand.brandShortName;
+ui.main.osxhideothers=Kaŝi aliajn
+ui.main.osxshowall=Montri ĉiun
 ui.main.file=Dosiero
 ui.main.openFile=Malfermi dosieron...
 ui.main.browseLibrary=Rigardi bibliotekon
+ui.main.hideLibrary=Kaŝi libraron
 ui.main.lastOpen=Freŝe malfermitaj...
 ui.main.saveFile=Konservi paĝon kiel...
 ui.main.print=Presi
@@ -19,13 +25,14 @@ ui.main.copy=Kopii
 ui.main.mute=Mutigi
 ui.main.audible=Aŭdebligi
 ui.main.transliteration=Transliterumado
-# Fuzzy
-ui.main.preferences=Agordoj
+ui.main.preferences=Preferoj
+ui.main.server=Servilo
 ui.main.display=Montri
 ui.main.zoom=Pligrandigilo
 ui.main.zoomin=Pligrandigi
 ui.main.zoomout=Malpligrandigi
 ui.main.zoomorig=Origina grando
+ui.main.invertedColors=Invertiĝaj koloroj
 ui.main.language=Lingvo
 ui.main.skin=Etoso
 ui.main.statusbar=Statbreto
@@ -46,6 +53,7 @@ ui.main.forward=Antaŭen
 ui.main.home=Hejmo
 ui.main.searchBar=Serĉbreto
 ui.main.search=Serĉi
+ui.main.searchPlaceholder=Jen tajpi la tekston serĉi...
 ui.main.findInText=Trovi en teksto
 ui.main.noSearchBar=Serĉo petas indeksitan ZIM-dosieron
 ui.main.bookmarks=Legosignoj
@@ -80,12 +88,18 @@ ui.main.library.filterBy.author=Aŭtoro
 ui.main.library.filterBy.author.all=Ĉio
 ui.main.library.filterBy.publisher=Eldonejo
 ui.main.library.filterBy.publisher.all=Ĉio
+ui.main.library.filterBy.lessThan=Malpli ol
 ui.preferences.preferences=Agordoj
 ui.preferences.save=Konservi
 ui.preferences.cancel=Nuligi
 ui.preferences.profileDirectory=Profila dosierujo
 ui.preferences.browse=Foliumi
 ui.preferences.tabs=Memori langetojn
+ui.preferences.downloadCatalogs=Elŝuti forkatalogo(j)n
+ui.server.load=Alŝuti
+ui.server.start=Komenci
+ui.server.stop=Halti
+ui.server.close=Fermi
 ui.messages.loadZimFileError=Neeblas ŝarĝi '%1' Ĉu vu certas, ke ĝi estas ZIM-dosiero?
 ui.messages.alreadyIndexingError=Indeksa procezo estas jam rulanta
 ui.messages.noResultsError=Neniu rezulto pri ĉi tiu peto
@@ -113,3 +127,8 @@ ui.messages.newContentAvailableInvitation=Ekzistas novajn enhavojn dispone por e
 ui.messages.preparingContentDownload=Preparas elŝuti...
 ui.messages.contentDownloadFinished=Elŝuto de '%1' finiĝis.
 ui.messages.feedback=Sugestoj
+ui.messages.library=Libraro
+ui.messages.fullscreen=Plenekrane
+ui.messages.quitFullscreen=Eliri la plenekranan modalon
+ui.messages.integrityCheckSuccessful=La integrecon de la dosiero sukcese kontrolis.
+ui.messages.integrityCheckFailed=La kontrolo de integreco malsukcesis. Via dosiero koruptiĝis.
