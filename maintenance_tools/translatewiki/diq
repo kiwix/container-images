@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Erdemaslancan
 # Author: Kelson
+# Author: Mirzali
 
 ui.main.osxservices=Serwisi
 ui.main.osxhideapp=&brand.brandShortName; bınımne
@@ -42,11 +43,11 @@ ui.main.randomArticle=Wesiqaya ke raşt amê
 ui.main.checkIntegrity=Cerbiya pêroneyin
 ui.main.purgeHistory=Verenayışe newekerdışi
 ui.main.help=Peşti
-ui.main.feedback=Peydrıstış
+ui.main.feedback=Peydrışten
 ui.main.reportabug=Xırabin bırışê
-ui.main.requestafeature=Xaseya waşten de
+ui.main.requestafeature=Yew xısusiyet bıweşene
 ui.main.about=Heq dê &brand.brandShortName;
-ui.main.back=peyd şo
+ui.main.back=Peyser
 ui.main.forward=Aser ke
 ui.main.home=Keye
 ui.main.searchBar=Sıvura cı geyrayışi
@@ -124,7 +125,7 @@ ui.messages.newContentAvailable=Barkerdenê newey tede estê.
 ui.messages.newContentAvailableInvitation=Barkerdenê newey tede estê. Şıma qayılê êna bıvinê?
 ui.messages.preparingContentDownload=Verineri rone
 ui.messages.contentDownloadFinished=Ronayıs dı '%1' qedya
-ui.messages.feedback=peydrıstış
+ui.messages.feedback=Peydrışten
 ui.messages.library=Kıtıbxane
 ui.messages.fullscreen=Tam asenge
 ui.messages.quitFullscreen=Tam asenge modi ra bıvıciye
