@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Giro720
 # Author: Kelson
+# Author: Luckas Blade
 # Author: Luigipiccoli
 # Author: MetalBrasil
 # Author: Pedroca cerebral
@@ -9,6 +10,10 @@
 # Author: TheGabrielZaum
 # Author: 555
 
+ui.main.osxservices=Serviços
+ui.main.osxhideapp=Ocultar &brand.brandShortName;
+ui.main.osxhideothers=Ocultar outros
+ui.main.osxshowall=Mostrar todos
 ui.main.file=Arquivo
 ui.main.openFile=Abrir arquivo...
 ui.main.browseLibrary=Navegar na biblioteca
@@ -32,6 +37,7 @@ ui.main.zoom=Zoom
 ui.main.zoomin=Ampliar
 ui.main.zoomout=Reduzir
 ui.main.zoomorig=Tamanho original
+ui.main.invertedColors=Cores invertidas
 ui.main.language=Língua
 ui.main.skin=Aparência
 ui.main.statusbar=Barra de status
@@ -52,6 +58,7 @@ ui.main.forward=Avançar
 ui.main.home=Início
 ui.main.searchBar=Buscador
 ui.main.search=Buscar
+ui.main.searchPlaceholder=Digite o texto a pesquisar aqui...
 ui.main.findInText=Buscar no texto
 ui.main.noSearchBar=A busca requer um arquivo ZIM indexado
 ui.main.bookmarks=Favoritos
@@ -86,6 +93,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Todos
 ui.main.library.filterBy.publisher=Editora
 ui.main.library.filterBy.publisher.all=Todas
+ui.main.library.filterBy.lessThan=Menos de
 ui.preferences.preferences=Preferências
 ui.preferences.save=Salvar
 ui.preferences.cancel=Cancelar
@@ -93,6 +101,10 @@ ui.preferences.profileDirectory=Diretório do perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Lembrar abas
 ui.preferences.downloadCatalogs=Baixar catálogo(s) remoto(s)
+ui.server.load=Carregar
+ui.server.start=Iniciar
+ui.server.stop=Parar
+ui.server.close=Fechar
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está ocorrendo.
 ui.messages.noResultsError=Nenhum resultado para esta consulta.
@@ -120,3 +132,8 @@ ui.messages.newContentAvailableInvitation=Há novos conteúdos disponíveis para
 ui.messages.preparingContentDownload=Preparando download...
 ui.messages.contentDownloadFinished=O download de '%1' terminou.
 ui.messages.feedback=Comentários
+ui.messages.library=Biblioteca
+ui.messages.fullscreen=Tela inteira
+ui.messages.quitFullscreen=Sair do modo de tela inteira
+ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
+ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.

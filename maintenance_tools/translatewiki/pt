@@ -1,17 +1,23 @@
 # Messages for Portuguese (português)
 # Exported from translatewiki.net
 # Author: Giro720
+# Author: Luckas Blade
 # Author: Malafaya
 # Author: McDutchie
 # Author: Waldir
 # Author: 555
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Serviços
+ui.main.osxhideapp=Ocultar &brand.brandShortName;
+ui.main.osxhideothers=Ocultar outros
+ui.main.osxshowall=Mostrar todos
 ui.main.file=Ficheiro
 ui.main.file.accesskey=F
 ui.main.openFile=Abrir ficheiro...
 ui.main.openFile.accesskey=A
 ui.main.browseLibrary=Explorar a biblioteca
+ui.main.hideLibrary=Ocultar a biblioteca
 ui.main.lastOpen=Aberto recentemente...
 ui.main.saveFile=Gravar página como...
 ui.main.saveFile.accesskey=S
@@ -35,6 +41,7 @@ ui.main.transliteration=Translineação
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferências
 ui.main.preferences.accesskey=s
+ui.main.server=Servidor
 ui.main.display=Ver
 ui.main.display.accesskey=V
 ui.main.zoom=Zoom
@@ -45,6 +52,7 @@ ui.main.zoomout=Reduzir
 ui.main.zoomout.accesskey=R
 ui.main.zoomorig=Tamanho original
 ui.main.zoomorig.accesskey=T
+ui.main.invertedColors=Cores invertidas
 ui.main.language=Língua
 ui.main.language.accesskey=L
 ui.main.skin=Aparência
@@ -77,6 +85,7 @@ ui.main.forward=Avançar
 ui.main.home=Início
 ui.main.searchBar=Barra de pesquisa
 ui.main.search=Pesquisar
+ui.main.searchPlaceholder=Digite o texto a pesquisar aqui...
 ui.main.findInText=Procurar no texto
 ui.main.noSearchBar=A pesquisa requere um ficheiro Zim indexado
 ui.main.bookmarks=Favoritos
@@ -111,6 +120,7 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Todos
 ui.main.library.filterBy.publisher=Editora
 ui.main.library.filterBy.publisher.all=Todas
+ui.main.library.filterBy.lessThan=Menos de
 ui.preferences.preferences=Preferências
 ui.preferences.save=Gravar
 ui.preferences.cancel=Cancelar
@@ -118,6 +128,10 @@ ui.preferences.profileDirectory=Diretório de perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Memorizar os separadores
 ui.preferences.downloadCatalogs=Descarregar catálogo(s) remoto(s)
+ui.server.load=Carregar
+ui.server.start=Iniciar
+ui.server.stop=Parar
+ui.server.close=Fechar
 ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem a certeza de que é um ficheiro ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está a correr.
 ui.messages.noResultsError=Nenhum resultado para esta pesquisa.
@@ -145,3 +159,8 @@ ui.messages.newContentAvailableInvitation=Há novos conteúdos disponíveis para
 ui.messages.preparingContentDownload=A preparar o descarregamento...
 ui.messages.contentDownloadFinished=O descarregamento de '%1' terminou.
 ui.messages.feedback=Comentários
+ui.messages.library=Biblioteca
+ui.messages.fullscreen=Tela inteira
+ui.messages.quitFullscreen=Sair do modo de tela inteira
+ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
+ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
