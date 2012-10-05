@@ -7,6 +7,7 @@
     gives easy access to vbox usefull functions. '''
 
 import os
+import sys
 import subprocess
 from optparse import OptionParser
 
@@ -190,9 +191,13 @@ def main():
     parser.add_option("--ssh", action="callback", callback=ssh, type="str", \
                       metavar="VM", \
                       help="connects via SSH to the VM named [VM].")
+    
+    # Show help if no argument
+    if len(sys.argv)==1:
+        parser.print_help()
+        sys.exit(1)
 
     (options, args) = parser.parse_args()
-
 
 if __name__ == '__main__':
     main()
