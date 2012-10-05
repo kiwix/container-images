@@ -78,6 +78,17 @@ class VirtualMachine(object):
             subprocess.Popen([self.MANAGE, 'controlvm',
                               self.name, 'acpipowerbutton'])
 
+    def export(self):
+        if self.name.lower() == 'arm':
+            print "Still unable to export a Qemu VM."
+        else:
+            if self.isrunning():
+                print "Please stop the VM before exporting it."
+            else:
+                p1 = subprocess.Popen([self.MANAGE, 'export', self.name, 
+                              '--output', self.name + '.ova'])
+                p1.wait()
+
     def info(self):
         if self.name.lower() == 'arm':
             pass
@@ -139,6 +150,10 @@ def stop(option, opt_str, value, parser, *args, **kwargs):
     vm = VirtualMachine.get(value)
     vm.stop()
 
+def export(option, opt_str, value, parser, *args, **kwargs):
+
+    vm = VirtualMachine.get(value)
+    vm.export()
 
 def info(option, opt_str, value, parser, *args, **kwargs):
 
@@ -191,6 +206,9 @@ def main():
     parser.add_option("--ssh", action="callback", callback=ssh, type="str", \
                       metavar="VM", \
                       help="connects via SSH to the VM named [VM].")
+    parser.add_option("--export", action="callback", callback=export, type="str", \
+                      metavar="VM", \
+                      help="export VM to the file called [VM].ova.")
     
     # Show help if no argument
     if len(sys.argv)==1:
