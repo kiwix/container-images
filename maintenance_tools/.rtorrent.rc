@@ -1,0 +1,24 @@
+session = /home/kelson/rtorrent/session/
+directory = /home/kelson/rtorrent/inbox/
+check_hash = yes
+safe_sync = yes
+schedule = watch_directory,5,5,load_start=/home/kelson/rtorrent/watch//*.torrent
+
+# Remove untied (closed) torrents from the list
+schedule = untied_directory,5,5,remove_untied=
+
+# Maximum and minimum number of peers to connect to per torrent.
+min_peers = 32000
+max_peers = 32000
+
+# Same as above but for seeding completed torrents (-1 = same as downloading)
+min_peers_seed = -1
+max_peers_seed = -1
+
+# Download rates
+download_rate = 0
+upload_rate = 0
+
+#dht
+dht = on
+dht_port = 6883
