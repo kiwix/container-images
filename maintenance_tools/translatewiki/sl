@@ -1,6 +1,7 @@
 # Messages for Slovenian (slovenščina)
 # Exported from translatewiki.net
 # Author: Dbc334
+# Author: Eleassar
 # Author: Kelson
 
 ui.main.osxservices=Storitve
@@ -120,7 +121,7 @@ ui.messages.information=Informacije
 ui.messages.indexing=Indeksiranje
 ui.messages.selectBookmarkSet=Izberite datoteko množice zaznamkov
 ui.messages.nameBookmarkSet=Vnesite ime datoteke množice zaznamkov
-ui.messages.newContentAvailable=Za prenos so na voljo nove vsebine.
+ui.messages.newContentAvailable=Na razpolago so nove vsebine za prenos.
 ui.messages.newContentAvailableInvitation=Za prenos so na voljo nove vsebine. Si jih želite ogledati?
 ui.messages.preparingContentDownload=Pripravljanje prenosa ...
 ui.messages.contentDownloadFinished=Prenos »$1« je dokončan.

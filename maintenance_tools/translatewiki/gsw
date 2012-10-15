@@ -4,6 +4,10 @@
 # Author: Als-Holder
 # Author: 80686
 
+ui.main.osxservices=Dienscht
+ui.main.osxhideapp=&brand.brandShortName; uusblände
+ui.main.osxhideothers=Anderi uusblände
+ui.main.osxshowall=Alli aazeige
 ui.main.file=Datei
 ui.main.openFile=Datei uffmache...
 ui.main.browseLibrary=Bibliothek duresüeche
@@ -27,6 +31,7 @@ ui.main.zoom=Zoome
 ui.main.zoomin=Größer
 ui.main.zoomout=Chliiner
 ui.main.zoomorig=Orginalgrößi
+ui.main.invertedColors=Invertierti Farbgebig
 ui.main.language=Sproch
 ui.main.skin=Benutzeroberflechi
 ui.main.statusbar=Schtatusliischte
@@ -82,13 +87,18 @@ ui.main.library.filterBy.author=Autor
 ui.main.library.filterBy.author.all=Alli
 ui.main.library.filterBy.publisher=Verleger
 ui.main.library.filterBy.publisher.all=Alli
+ui.main.library.filterBy.lessThan=Weniger wie
 ui.preferences.preferences=Yystellige
 ui.preferences.save=Spychere
 ui.preferences.cancel=Abbräche
 ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Blättre
-ui.preferences.tabs=Reiter merke
+ui.preferences.tabs=Ryter merke
 ui.preferences.downloadCatalogs=Externi Katalog abelade
+ui.server.load=Lade
+ui.server.start=Aafange
+ui.server.stop=Aahebe
+ui.server.close=Zuemache
 ui.messages.loadZimFileError='%1' cha nit glade wärde. Sin Sie sicher, ass es e ZIM-Datei isch?
 ui.messages.alreadyIndexingError=S lauft scho ne Indizierig.
 ui.messages.noResultsError=S isch nüt gfunde worde.
