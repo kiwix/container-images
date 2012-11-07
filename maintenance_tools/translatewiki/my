@@ -1,10 +1,11 @@
 # Messages for Burmese (မြန်မာဘာသာ)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Minnyoonthit
 # Author: Parabaik
 
 ui.main.osxservices=ဝန်ဆောင်မှုများ
-ui.main.osxhideapp=&brand.brandShortName ဖယ်ပေးရန်
+ui.main.osxhideapp=&brand.brandShortName; ဖယ်ပေးရန်
 ui.main.osxhideothers=အခြားအရာများ ဖယ်ပေးရန်။
 ui.main.osxshowall=အားလုံးပြရန်
 ui.main.file=ဖိုင်
