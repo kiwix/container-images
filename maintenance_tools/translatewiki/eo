@@ -2,17 +2,18 @@
 # Exported from translatewiki.net
 # Author: Airon90
 # Author: Amire80
+# Author: Blahma
 # Author: Objectivesea
 # Author: Yekrats
 
-ui.main.osxservices=Servaĵoj
+ui.main.osxservices=Servoj
 ui.main.osxhideapp=Kaŝi &brand.brandShortName;
 ui.main.osxhideothers=Kaŝi aliajn
 ui.main.osxshowall=Montri ĉiun
 ui.main.file=Dosiero
 ui.main.openFile=Malfermi dosieron...
 ui.main.browseLibrary=Rigardi bibliotekon
-ui.main.hideLibrary=Kaŝi libraron
+ui.main.hideLibrary=Kaŝi bibliotekon
 ui.main.lastOpen=Freŝe malfermitaj...
 ui.main.saveFile=Konservi paĝon kiel...
 ui.main.print=Presi
@@ -32,7 +33,7 @@ ui.main.zoom=Pligrandigilo
 ui.main.zoomin=Pligrandigi
 ui.main.zoomout=Malpligrandigi
 ui.main.zoomorig=Origina grando
-ui.main.invertedColors=Invertiĝaj koloroj
+ui.main.invertedColors=Inversigitaj koloroj
 ui.main.language=Lingvo
 ui.main.skin=Etoso
 ui.main.statusbar=Statbreto
@@ -46,16 +47,16 @@ ui.main.purgeHistory=Vakigi kronologion
 ui.main.help=Helpo
 ui.main.feedback=Sugestoj
 ui.main.reportabug=Raporti cimon
-ui.main.requestafeature=Peti pri trajto
+ui.main.requestafeature=Peti funkcion
 ui.main.about=Pri &brand.brandShortName;
 ui.main.back=Reen
 ui.main.forward=Antaŭen
 ui.main.home=Hejmo
 ui.main.searchBar=Serĉbreto
 ui.main.search=Serĉi
-ui.main.searchPlaceholder=Jen tajpi la tekston serĉi...
+ui.main.searchPlaceholder=Entajpu la serĉotan tekston...
 ui.main.findInText=Trovi en teksto
-ui.main.noSearchBar=Serĉo petas indeksitan ZIM-dosieron
+ui.main.noSearchBar=Serĉo postulas indeksitan ZIM-dosieron
 ui.main.bookmarks=Legosignoj
 ui.main.results.title=Serĉrezultoj
 ui.main.bmkLabel=Legosignoj:
@@ -65,7 +66,7 @@ ui.main.newbmk=Krei novan legosignaron
 ui.main.mark=Marki ĉi tiun paĝon
 ui.main.unmark=Malmarki elektitajn
 ui.main.reload=Reŝarĝi legosignaron
-ui.main.defaultset=Apriora aro
+ui.main.defaultset=Defaŭlta aro
 ui.main.saveImageAs=Konservi bildon kiel...
 ui.main.openLinkInNewTab=Malfermi ligilon en nova langeto
 ui.main.searchFor=Serĉi
@@ -81,7 +82,7 @@ ui.main.library.sortBy.date=Dato
 ui.main.library.sortBy.author=Aŭtoro
 ui.main.library.sortBy.publisher=Eldonejo
 ui.main.library.filterBy=Filtri laŭ
-ui.main.library.filterBy.fileSize=Grandeco de dosiero
+ui.main.library.filterBy.fileSize=Dosiergrandeco
 ui.main.library.filterBy.language=Lingvo
 ui.main.library.filterBy.language.all=Ĉio
 ui.main.library.filterBy.author=Aŭtoro
@@ -122,13 +123,13 @@ ui.messages.information=Informo
 ui.messages.indexing=Indeksanta
 ui.messages.selectBookmarkSet=Elekti legosignaron
 ui.messages.nameBookmarkSet=Tajpi dosiernomon de legosignaro
-ui.messages.newContentAvailable=Ekzistas novajn enhavojn dispone por elŝuti.
-ui.messages.newContentAvailableInvitation=Ekzistas novajn enhavojn dispone por elŝuti. Ĉu vi volas vidi ilin?
-ui.messages.preparingContentDownload=Preparas elŝuti...
+ui.messages.newContentAvailable=Nova enhavo disponeblas por elŝuto.
+ui.messages.newContentAvailableInvitation=Nova enhavo disponeblas por elŝuto. Ĉu vi volas vidi ĝin?
+ui.messages.preparingContentDownload=Preparanta elŝuton...
 ui.messages.contentDownloadFinished=Elŝuto de '%1' finiĝis.
 ui.messages.feedback=Sugestoj
 ui.messages.library=Libraro
 ui.messages.fullscreen=Plenekrane
-ui.messages.quitFullscreen=Eliri la plenekranan modalon
-ui.messages.integrityCheckSuccessful=La integrecon de la dosiero sukcese kontrolis.
+ui.messages.quitFullscreen=Eliri la plenekranan reĝimon
+ui.messages.integrityCheckSuccessful=La integreco de la dosiero sukcese kontroliĝis.
 ui.messages.integrityCheckFailed=La kontrolo de integreco malsukcesis. Via dosiero koruptiĝis.
