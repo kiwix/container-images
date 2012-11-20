@@ -2,17 +2,23 @@
 # Exported from translatewiki.net
 # Author: AS
 # Author: Alex Khimich
+# Author: Base
 # Author: Dim Grits
 # Author: Kelson
 # Author: Probil
 # Author: Дар'я Козлова
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Сервіси
+ui.main.osxhideapp=Приховати &brand.brandShortName;
+ui.main.osxhideothers=Приховати інші
+ui.main.osxshowall=Показати усі
 ui.main.file=Файл
 ui.main.file.accesskey=F
 ui.main.openFile=Відкрити файл ...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Огляд бібліотеки
+ui.main.hideLibrary=Приховати бібліотеку
 ui.main.lastOpen=Нещодавно відкриті ...
 ui.main.saveFile=Зберегти сторінку як...
 ui.main.saveFile.accesskey=S
@@ -34,10 +40,10 @@ ui.main.mute=Без звуку
 ui.main.audible=Зі звуком
 ui.main.transliteration=Транслітерація
 ui.main.transliteration.accesskey=T
-# Fuzzy
 ui.main.preferences=Параметри
 # Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Сервер
 ui.main.display=Показати
 ui.main.display.accesskey=D
 ui.main.zoom=Масштаб
@@ -48,6 +54,7 @@ ui.main.zoomout=Зменшити
 ui.main.zoomout.accesskey=R
 ui.main.zoomorig=Вихідний розмір
 ui.main.zoomorig.accesskey=O
+ui.main.invertedColors=Інвертувати кольори
 ui.main.language=Мова
 ui.main.language.accesskey=L
 ui.main.skin=Оформлення
@@ -80,6 +87,7 @@ ui.main.forward=Вперед
 ui.main.home=Головна
 ui.main.searchBar=Панель пошуку
 ui.main.search=Знайти
+ui.main.searchPlaceholder=Введіть текст для пошуку…
 ui.main.findInText=Знайти в тексті
 ui.main.noSearchBar=Пошук вимагає індексованого файлу ZIM
 ui.main.bookmarks=Закладки
@@ -114,12 +122,18 @@ ui.main.library.filterBy.author=Автор
 ui.main.library.filterBy.author.all=Всі
 ui.main.library.filterBy.publisher=Видавець
 ui.main.library.filterBy.publisher.all=Всі
+ui.main.library.filterBy.lessThan=Менш ніж
 ui.preferences.preferences=Уподобання
 ui.preferences.save=Зберегти
 ui.preferences.cancel=Скасувати
 ui.preferences.profileDirectory=Папка профілю користувача
 ui.preferences.browse=Огляд
 ui.preferences.tabs=Збережені вкладки
+ui.preferences.downloadCatalogs=Завантажити віддалений каталог(и)
+ui.server.load=Завантажити
+ui.server.start=Розпочати
+ui.server.stop=Зупинити
+ui.server.close=Закрити
 ui.messages.loadZimFileError=Не вдається завантажити "% 1" Ви впевнені що це ZIM-файл?
 ui.messages.alreadyIndexingError=Процес індексування вже запущений.
 ui.messages.noResultsError=Немає результатів за цим запитом.
@@ -147,3 +161,8 @@ ui.messages.newContentAvailableInvitation=Новий контент, досту�
 ui.messages.preparingContentDownload=Підготовка завантаження...
 ui.messages.contentDownloadFinished=Завантаження завершене на "%1".
 ui.messages.feedback=Зворотний зв'язок
+ui.messages.library=Бібліотека
+ui.messages.fullscreen=На весь екран
+ui.messages.quitFullscreen=Вийти з повноекранного режиму
+ui.messages.integrityCheckSuccessful=Цілісність файлу було успішно перевірено
+ui.messages.integrityCheckFailed=Збій перевірки цілісності. Ваш файл пошкоджено.
