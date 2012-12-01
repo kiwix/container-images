@@ -1,5 +1,6 @@
 # Messages for Lithuanian (lietuvių)
 # Exported from translatewiki.net
+# Author: Cyklopas
 # Author: Eitvys200
 # Author: Ignas693
 
@@ -23,7 +24,6 @@ ui.main.copy=Kopijuoti
 ui.main.mute=Nutildyti
 ui.main.audible=Girdimas
 ui.main.transliteration=Transliteracijos
-# Fuzzy
 ui.main.preferences=Nustatymai
 ui.main.server=Serveris
 ui.main.display=Rodyti
