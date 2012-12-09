@@ -1,6 +1,6 @@
 #!/usr/bin/php
 <?php
-require_once("piwik/libs/PiwikTracker/PiwikTracker.php");
+require_once("../libs/PiwikTracker/PiwikTracker.php");
 
 /* Classes */
 class LogParser
@@ -121,7 +121,9 @@ function isAlreadyStored($logHash) {
 
 /* Remove directories and icon requests */
 function shouldBeStored($path) {
-  if (!preg_match("/^.*\.\w{3,}$/i", $path) 
+  if (!preg_match("/^.*\.\w{3,}$/i", $path)
+      || preg_match("/^.*\.md5$/i", $path)
+      || preg_match("/^.*\.mirrorlist$/i", $path)
       || strpos($path, "favicon") != false 
       || strpos($path, "icons") != false
       || strpos($path, "robots.txt") != false) {
@@ -189,17 +191,27 @@ date_default_timezone_set("UTC");
 /* Get last insertion date */
 $lastPiwikInsertionTime = getLastPiwikInsertionTime();
 
-/* Read files */
+/* Sort files and remove the too old ones */
+$sortedLogFiles = Array();
 foreach ($logFiles as $logFile) {
   global $duplicateDelay;
-  $parser = new LogParser();
+  $logFileTime = filemtime($logFile);
 
   /* Check if the logFile is not too old, we are only interested in
    logs which are 30 days before the lastPiwikiInsertionTime */
-  $fileTime = filemtime($logFile);
-  if ($lastPiwikInsertionTime - $fileTime > $duplicateDelay) {
+  if ($lastPiwikInsertionTime - $logFileTime > $duplicateDelay) {
     echo "File '$logFile' is too old, it will be skiped.\n";
-  } elseif ($parser->openLogFile($logFile)) {
+  } else {
+    $sortedLogFiles[filemtime($logFile)] = $logFile;
+  }
+}
+ksort($sortedLogFiles);
+
+/* Read files */
+foreach ($sortedLogFiles as $logFile) {
+  $parser = new LogParser();
+
+  if ($parser->openLogFile($logFile)) {
     echo "File '$logFile' opened.\n";
     while ($line = $parser->getLine()) {
       $logHash = $parser->formatLine($line);
