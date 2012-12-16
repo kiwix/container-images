@@ -3,7 +3,10 @@
 # Author: Akkhaporn
 # Author: Ariesanywhere
 # Author: Horus
+# Author: Nullzero
 
+ui.main.osxhideothers=ซ่อนอื่น ๆ
+ui.main.osxshowall=แสดงทั้งหมด
 ui.main.file=แฟ้ม
 ui.main.openFile=เปิดแฟ้ม...
 ui.main.browseLibrary=เปิดดูคลังดาวน์โหลด
@@ -26,6 +29,7 @@ ui.main.zoom=ย่อ-ขยาย
 ui.main.zoomin=ขยาย
 ui.main.zoomout=ย่อ
 ui.main.zoomorig=ขนาดเดิม
+ui.main.invertedColors=กลับสี
 ui.main.language=ภาษา
 ui.main.skin=ชุดตกแต่ง
 ui.main.statusbar=แถบสถานะ
@@ -80,6 +84,7 @@ ui.main.library.filterBy.author=ผู้แต่ง
 ui.main.library.filterBy.author.all=ทั้งหมด
 ui.main.library.filterBy.publisher=ผู้เผยแพร่
 ui.main.library.filterBy.publisher.all=ทั้งหมด
+ui.main.library.filterBy.lessThan=น้อยกว่า
 ui.preferences.preferences=การตั้งค่า
 ui.preferences.save=บันทึก
 ui.preferences.cancel=ยกเลิก
@@ -113,3 +118,5 @@ ui.messages.newContentAvailableInvitation=มีเนื้อหาใหม�
 ui.messages.preparingContentDownload=กำลังเตรียมดาวน์โหลด...
 ui.messages.contentDownloadFinished=ดาวน์โหลด '%1' เสร็จเรียบร้อยแล้ว.
 ui.messages.feedback=คำติชม
+ui.messages.fullscreen=เต็มหน้าจอ
+ui.messages.quitFullscreen=ออกจากโหมดเต็มหน้าจอ

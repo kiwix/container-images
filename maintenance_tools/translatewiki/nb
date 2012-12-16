@@ -1,11 +1,17 @@
 # Messages for Norwegian Bokmål (norsk (bokmål)‎)
 # Exported from translatewiki.net
+# Author: EvenT
 # Author: Laaknor
 # Author: Nghtwlkr
 
+ui.main.osxservices=Tjenester
+ui.main.osxhideapp=Skjul &brand.brandShortName;
+ui.main.osxhideothers=Skjul andre
+ui.main.osxshowall=Vis alle
 ui.main.file=Fil
 ui.main.openFile=Åpne fil …
 ui.main.browseLibrary=Bla gjennom biblioteket
+ui.main.hideLibrary=Skjul bibliotek
 ui.main.lastOpen=Nylig åpnet …
 ui.main.saveFile=Lagre siden som …
 ui.main.print=Skriv ut
@@ -25,6 +31,7 @@ ui.main.zoom=Zoom
 ui.main.zoomin=Forstørr
 ui.main.zoomout=Forminsk
 ui.main.zoomorig=Opprinnelig størrelse
+ui.main.invertedColors=Inverse farger
 ui.main.language=Språk
 ui.main.skin=Utseende
 ui.main.statusbar=Statuslinje
@@ -45,6 +52,7 @@ ui.main.forward=Fremover
 ui.main.home=Hjem
 ui.main.searchBar=Søkelinje
 ui.main.search=Søk
+ui.main.searchPlaceholder=Skriv søketeksten her...
 ui.main.findInText=Finn i tekst
 ui.main.noSearchBar=Søk krever en indeksert Zim-fil
 ui.main.bookmarks=Bokmerker
@@ -79,6 +87,7 @@ ui.main.library.filterBy.author=Forfatter
 ui.main.library.filterBy.author.all=Alle
 ui.main.library.filterBy.publisher=Utgiver
 ui.main.library.filterBy.publisher.all=Alle
+ui.main.library.filterBy.lessThan=Mindre enn
 ui.preferences.preferences=Innstillinger
 ui.preferences.save=Lagre
 ui.preferences.cancel=Avbryt
@@ -86,6 +95,10 @@ ui.preferences.profileDirectory=Profilkatalog
 ui.preferences.browse=Bla gjennom
 ui.preferences.tabs=Husk faner
 ui.preferences.downloadCatalogs=Last ned ekstern(e) katalog(er)
+ui.server.load=Last
+ui.server.start=Start
+ui.server.stop=Stopp
+ui.server.close=Lukk
 ui.messages.loadZimFileError=Kan ikke laste «%1». Er du sikker på at dette er en ZIM-fil?
 ui.messages.alreadyIndexingError=En indekseringsprosess kjører allerede.
 ui.messages.noResultsError=Ingen resultater for dette søket.
@@ -113,3 +126,8 @@ ui.messages.newContentAvailableInvitation=Nytt innhold er tilgjengelig for nedla
 ui.messages.preparingContentDownload=Forbereder nedlasting …
 ui.messages.contentDownloadFinished=Nedlasting av «%1» er ferdig.
 ui.messages.feedback=Tilbakemelding
+ui.messages.library=Bibliotek
+ui.messages.fullscreen=Full skjerm
+ui.messages.quitFullscreen=Avslutt fullskjermmodus
+ui.messages.integrityCheckSuccessful=Filintegriteten ble sjekket og funnet i orden.
+ui.messages.integrityCheckFailed=Filintegriteten ble sjekket og funnet å være skadet.
