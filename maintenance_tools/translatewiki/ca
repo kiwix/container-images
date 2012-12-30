@@ -1,16 +1,22 @@
-# Messages for Catalan (Català)
+# Messages for Catalan (català)
 # Exported from translatewiki.net
+# Author: Arnaugir
 # Author: Gemmaa
 # Author: McDutchie
 # Author: SMP
 # Author: Solde
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=Serveis
+ui.main.osxhideapp=Amaga &brand.brandShortName;
+ui.main.osxhideothers=Amaga altres
+ui.main.osxshowall=Mostra-ho tot
 ui.main.file=Fitxer
 ui.main.file.accesskey=F
 ui.main.openFile=Obre...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=Navegar Biblioteca
+ui.main.hideLibrary=Amaga la Biblioteca
 ui.main.lastOpen=Oberts recentment...
 ui.main.saveFile=Desa pàgina com a...
 ui.main.saveFile.accesskey=D
@@ -28,10 +34,14 @@ ui.main.selectall=Selecciona-ho tot
 ui.main.selectall.accesskey=a
 ui.main.copy=Copia
 ui.main.copy.accesskey=p
+ui.main.mute=Mut
+ui.main.audible=Perceptible
 ui.main.transliteration=Transliteració
 ui.main.transliteration.accesskey=T
-ui.main.preferences=Preferences
+ui.main.preferences=Preferències
+# Fuzzy
 ui.main.preferences.accesskey=n
+ui.main.server=Servidor
 ui.main.display=Visualitza
 ui.main.display.accesskey=V
 ui.main.zoom=Zoom
@@ -42,6 +52,7 @@ ui.main.zoomout=Redueix
 ui.main.zoomout.accesskey=R
 ui.main.zoomorig=Mida original
 ui.main.zoomorig.accesskey=o
+ui.main.invertedColors=Colors invertits
 ui.main.language=Idioma
 ui.main.language.accesskey=I
 ui.main.skin=Skin
@@ -74,6 +85,7 @@ ui.main.forward=Enadvant
 ui.main.home=Pàgina d'inici
 ui.main.searchBar=Barra de cerca
 ui.main.search=Cerca
+ui.main.searchPlaceholder=Escriviu el text que voleu cercar aquí...
 ui.main.findInText=Cercar en el text
 ui.main.noSearchBar=La cerca necessita un fitxer ZIM indexat
 ui.main.bookmarks=Adreces d'interès
@@ -89,13 +101,37 @@ ui.main.defaultset=Grup predeterminat
 ui.main.saveImageAs=Desa imatge com a...
 ui.main.openLinkInNewTab=Obre l'enllaç en una pestanya nova
 ui.main.searchFor=Buscar
+ui.main.copyLinkAddress=Copia l'adreça d'enllaç
 ui.main.close=Close
+ui.main.library.myLibrary=La meva biblioteca
+ui.main.library.getNewFiles=Obtenir nous fitxers
+ui.main.library.searchZimFiles=Cerca fitxers ZIM
+ui.main.library.sortBy=Ordena per
+ui.main.library.sortBy.title=Títol
+ui.main.library.sortBy.size=Mida
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Autor
+ui.main.library.sortBy.publisher=Editor
+ui.main.library.filterBy=Filtrar per
+ui.main.library.filterBy.fileSize=Mida del fitxer
+ui.main.library.filterBy.language=Idioma
+ui.main.library.filterBy.language.all=Tots
+ui.main.library.filterBy.author=Autor
+ui.main.library.filterBy.author.all=Tots
+ui.main.library.filterBy.publisher=Editor
+ui.main.library.filterBy.publisher.all=Tots
+ui.main.library.filterBy.lessThan=Menys de
 ui.preferences.preferences=Preferences
 ui.preferences.save=Save
 ui.preferences.cancel=Cancel
 ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.preferences.tabs=Recordeu tabs
+ui.preferences.downloadCatalogs=Descarregar catàlegs remots
+ui.server.load=Carrega
+ui.server.start=Inicia
+ui.server.stop=Atura
+ui.server.close=Tanca
 ui.messages.loadZimFileError=No s'ha pogut carregar '%1' Estàs segur que és un fitxer ZIM?
 ui.messages.alreadyIndexingError=Ja s'està executant un procés d'indexació.
 ui.messages.noResultsError=No s'han trobat resultats per aquesta cerca.
@@ -123,3 +159,8 @@ ui.messages.newContentAvailableInvitation=Hi ha nou contingut disponible per des
 ui.messages.preparingContentDownload=S'està preparant el descarregar...
 ui.messages.contentDownloadFinished=La descàrrega de "% 1" s'acaba.
 ui.messages.feedback=Comentaris
+ui.messages.library=Biblioteca
+ui.messages.fullscreen=Pantalla sencera
+ui.messages.quitFullscreen=Surt del mode de pantalla sencera
+ui.messages.integrityCheckSuccessful=La integritat del fitxer s'ha comprovat correctament.
+ui.messages.integrityCheckFailed=Ha fallat la comprovació d'integritat. El seu arxiu està corrupte.

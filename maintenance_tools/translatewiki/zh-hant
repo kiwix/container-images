@@ -4,6 +4,7 @@
 # Author: Ianbu
 # Author: Kelson
 # Author: Lauhenry
+# Author: Shirayuki
 # Author: Simon Shek
 
 ui.main.osxservices=服務
@@ -24,6 +25,7 @@ ui.main.find=搜尋網頁 ...
 ui.main.selectall=全選
 ui.main.copy=複製
 ui.main.mute=靜音
+ui.main.audible=有聲
 ui.main.transliteration=音譯
 ui.main.preferences=偏好設定
 ui.main.server=伺服器
@@ -32,6 +34,7 @@ ui.main.zoom=縮放
 ui.main.zoomin=放大
 ui.main.zoomout=縮小
 ui.main.zoomorig=原本大小
+ui.main.invertedColors=反轉色
 ui.main.language=語言
 ui.main.skin=外觀
 ui.main.statusbar=狀態欄

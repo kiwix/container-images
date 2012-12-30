@@ -1,11 +1,16 @@
 # Messages for Kannada (ಕನ್ನಡ)
 # Exported from translatewiki.net
 # Author: Abhirama
+# Author: Akoppad
 # Author: Nayvik
 
+ui.main.osxservices=ಸೇವೆಗಳು
+ui.main.osxhideothers=ಬೇರೆಯದನ್ನು ಅಡಗಿಸಿ
+ui.main.osxshowall=ಎಲ್ಲಾ ತೋರಿಸಿ
 ui.main.file=ಕಡತ
 ui.main.openFile=ಕಡತವನ್ನು ಉದ್ಘಾಟಿಸಿ...
 ui.main.browseLibrary=ಗ್ರಂಥಾಲಯವನ್ನು ವಿಹರಿಸಿ
+ui.main.hideLibrary=ಗ್ರಂಥಾಲಯವನ್ನು  ಅಡಗಿಸಿ
 ui.main.lastOpen=ಇತ್ತೀಚೆಗೆ ಉದ್ಘಾಟಿಸಲ್ಪಟ್ಟಂತಹ...
 ui.main.saveFile=ಪುಟಸಂರಕ್ಷಣೆಯನ್ನು ಈ ರೀತಿ ಮಾಡಿ...
 ui.main.print=ಮುದ್ರಿಸು
@@ -20,6 +25,7 @@ ui.main.audible=ಕೇಳಿಸುವ
 ui.main.transliteration=ಲಿಪ್ಯಂತರಣ
 # Fuzzy
 ui.main.preferences=ಪ್ರಾಶಸ್ತ್ಯಗಳು
+ui.main.server=ಸರ್ವರ್
 ui.main.display=ಪ್ರದರ್ಶಿಸು
 ui.main.zoom=ಸಮೀಪೀಕರಣ/ದೂರೀಕರಣ
 ui.main.zoomin=ವರ್ಧಿಸು
@@ -45,6 +51,7 @@ ui.main.forward=ಮುಂದಿನ
 ui.main.home=ಮುಖ್ಯಪುಟ
 ui.main.searchBar=ಅನ್ವೇಷಣಾಪಟ್ಟಿ
 ui.main.search=ಅನ್ವೇಷಿಸಿ
+ui.main.searchPlaceholder=ಹುಡುಕಲು ಪದಗಳನ್ನು ನಮೂದಿಸಿ
 ui.main.findInText=ಪಠ್ಯದಲ್ಲಿ ಹುಡುಕಿ
 ui.main.noSearchBar=ಈ ಅನ್ವೇಷಣೆಗೆ ಅನುಕ್ರಮಣಿತವಾದ ಜ಼ಿಮ್(ZIM) ಕಡತದ ಅವಶ್ಯಕತೆ ಇದೆ
 ui.main.bookmarks=ಓದುಗುರುತುಗಳು
@@ -79,12 +86,16 @@ ui.main.library.filterBy.author=ಕರ್ತೃ
 ui.main.library.filterBy.author.all=ಎಲ್ಲಾ
 ui.main.library.filterBy.publisher=ಪ್ರಕಾಶಕ
 ui.main.library.filterBy.publisher.all=ಎಲ್ಲಾ
+ui.main.library.filterBy.lessThan=ಇದಕ್ಕಿಂತ ಕಡಿಮೆ
 ui.preferences.preferences=ಪ್ರಾಶಸ್ತ್ಯಗಳು
 ui.preferences.save=ಸಂರಕ್ಷಿಸಿ
 ui.preferences.cancel=ರದ್ದುಗೊಳಿಸಿ
 ui.preferences.profileDirectory=ಸಂಕ್ಷಿಪ್ತ ವ್ಯಕ್ತಿಚಿತ್ರದ ಕೋಶ
 ui.preferences.browse=ವಿಹರಿಸಿ
 ui.preferences.tabs=ಟ್ಯಾಬ್ಗಳನ್ನು ನೆನಪಿನಲ್ಲಿಡಿ
+ui.server.start=ಆರಂಭ
+ui.server.stop=ನಿಲ್ಲಿಸಿ
+ui.server.close=ಮುಚ್ಚಿ
 ui.messages.loadZimFileError='%1' ಉತ್ಪೂರಿತವಾಗುತ್ತಿಲ್ಲ. ಇದು ಜ಼ಿಮ್(ZIM) ಕಡತವೆಂದು ಖಚಿತವೇನು?
 ui.messages.alreadyIndexingError=ಅನುಕ್ರಮಣಿಕೆಯ ಪ್ರಕ್ರಿಯೆ ಈಗಾಗಲೇ ಚಾಲ್ತಿಯಲ್ಲಿದೆ.
 ui.messages.noResultsError=ಈ ಪ್ರಶ್ನೆಗೆ ಯಾವುದೇ ಫಲಿತಾಂಶಗಳಿಲ್ಲ.
@@ -112,3 +123,8 @@ ui.messages.newContentAvailableInvitation=ಹೊಸ ವಿಷಯಗಳು ಡೌ
 ui.messages.preparingContentDownload=ಡೌನ್ಲೋಡ್ ಗೆ ತಯಾರಿಯಾಗುತ್ತಿದೆ...
 ui.messages.contentDownloadFinished='%1'ನ ಡೌನ್ಲೋಡ್ ಮುಗಿದಿದೆ.
 ui.messages.feedback=ಪ್ರತಿಕ್ರಿಯೆ
+ui.messages.library=ಗ್ರಂಥಾಲಯ
+ui.messages.fullscreen=ಪೂರ್ಣಪರದೆ
+ui.messages.quitFullscreen=ಪೂರ್ಣ ತೆರೆಯನ್ನು ನಿರ್ಗಮಿಸಿ
+ui.messages.integrityCheckSuccessful=ಪೂರ್ಣತೆ ಪರೀಕ್ಷೆಯನ್ನು ಸಂಪೂರ್ಣಗೊಳಿಸಲಾಗಿದೆ
+ui.messages.integrityCheckFailed=ಪೂರ್ಣತೆ ಪರೀಕ್ಷೆಯಲ್ಲಿ ವಿಫಲವಾಗಿದೆ. ನಿಮ್ಮ ಫೈಲ್ ಕೆಟ್ಟೋಗಿದೆ.

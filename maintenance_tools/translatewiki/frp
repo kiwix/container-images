@@ -141,3 +141,6 @@ ui.messages.contentDownloadFinished=Tèlèchargement de « %1 » chavonâ.
 ui.messages.feedback=Avis
 ui.messages.library=Bibliotèca
 ui.messages.fullscreen=Plen ècran
+ui.messages.quitFullscreen=Quitar la fôrma plen ècran
+ui.messages.integrityCheckSuccessful=L’entègritât du fichiér est étâye controlâye avouéc reusséta.
+ui.messages.integrityCheckFailed=Lo contrôlo de l’entègritât du fichiér at pas reussi. Lo fichiér est corrompu.

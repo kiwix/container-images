@@ -3,6 +3,7 @@
 # Author: Avjoska
 # Author: Pikne
 
+ui.main.osxservices=Teenused
 ui.main.osxhideothers=Peida ülejäänud
 ui.main.osxshowall=Näita kõiki
 ui.main.file=Fail
@@ -121,3 +122,4 @@ ui.messages.contentDownloadFinished=Üksuse '%1' allalaadimine on lõpule jõudn
 ui.messages.feedback=Tagasiside
 ui.messages.library=Raamatukogu
 ui.messages.fullscreen=Täisekraan
+ui.messages.quitFullscreen=Välju täisekraani režiimist

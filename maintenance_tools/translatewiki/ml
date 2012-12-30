@@ -1,14 +1,19 @@
 # Messages for Malayalam (മലയാളം)
 # Exported from translatewiki.net
+# Author: Anoopan
 # Author: Praveenp
 # Author: Vaikoovery
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=സേവനങ്ങൾ
+ui.main.osxhideothers=മറ്റുള്ളവ മറയ്ക്കുക
+ui.main.osxshowall=എല്ലാം കാണിക്കുക
 ui.main.file=പ്രമാണം
 ui.main.file.accesskey=ഫ
 ui.main.openFile=പ്രമാണം തുറക്കുക...
 ui.main.openFile.accesskey=ത
 ui.main.browseLibrary=പ്രമാണശേഖരത്തിൽ തിരയുക
+ui.main.hideLibrary=ലൈബ്രറി മറയ്ക്കുക
 ui.main.lastOpen=സമീപകാലത്ത് തുറന്നതു്...
 ui.main.saveFile=താള്‍ സൂക്ഷിക്കുക...
 ui.main.saveFile.accesskey=സ
@@ -27,6 +32,7 @@ ui.main.selectall.accesskey=എ
 ui.main.copy=പകര്‍ത്തുക
 ui.main.copy.accesskey=പ
 ui.main.mute=നിശബ്ദമാക്കുക
+ui.main.audible=കേൾക്കാവുന്നത്
 ui.main.transliteration=ലിപ്യന്തരണം
 ui.main.transliteration.accesskey=ല
 ui.main.preferences=ക്രമീകരണങ്ങൾ
@@ -75,6 +81,7 @@ ui.main.forward=മുന്നോട്ടു്
 ui.main.home=ആസ്ഥാനം
 ui.main.searchBar=തിരച്ചില്‍ പട്ട
 ui.main.search=തിരയുക
+ui.main.searchPlaceholder=തിരയാൻ ഇവിടെ എഴുതുക
 ui.main.findInText=എഴുത്തിൽ തിരയുക
 ui.main.noSearchBar=തിരയുന്നതിനു് സൂചികാവത്കരിച്ച സിം (ZIM) പ്രമാണം ആവശ്യമാണു്
 ui.main.bookmarks=ബൂക്ക്മാർക്കുകൾ
@@ -92,11 +99,16 @@ ui.main.openLinkInNewTab=കണ്ണി പുതിയ ടാബിൽ തു�
 ui.main.searchFor=തിരയുക
 ui.main.copyLinkAddress=കണ്ണിയുടെ വിലാസം പകർത്തുക
 ui.main.close=അടയ്ക്കുക
+ui.main.library.myLibrary=എന്റെ ഗ്രന്ഥപ്പുര
+ui.main.library.getNewFiles=പുതിയ ഫയലുകൾ സ്വീകരിക്കുക
+ui.main.library.searchZimFiles=സിം ഫയലുകൾ തിരയുക
+ui.main.library.sortBy=ക്രമപ്പെടുത്തുക
 ui.main.library.sortBy.title=ശീർഷകം
 ui.main.library.sortBy.size=വലിപ്പം
 ui.main.library.sortBy.date=തീയതി
 ui.main.library.sortBy.author=രചയിതാവ്
 ui.main.library.sortBy.publisher=പ്രസാധകർ
+ui.main.library.filterBy=തിരയുക
 ui.main.library.filterBy.fileSize=പ്രമാണത്തിന്റെ വലിപ്പം
 ui.main.library.filterBy.language=ഭാഷ
 ui.main.library.filterBy.language.all=എല്ലാം
@@ -110,6 +122,7 @@ ui.preferences.cancel=റദ്ദാക്കുക
 ui.preferences.profileDirectory=പ്രൊഫൈല്‍ ഡയറക്ടറി
 ui.preferences.browse=പരതുക
 ui.preferences.tabs=ടാബുകൾ ഓർമ്മിക്കുക
+ui.server.close=അടയ്ക്കുക
 ui.messages.loadZimFileError='%1' തുറക്കാന്‍ കഴിയുന്നില്ല. ഇതൊരു Zim ഫയല്‍ തന്നെയാണെന്നുറപ്പാണോ?
 ui.messages.alreadyIndexingError=ഒരു ഇന്‍ഡെക്സിങ്ങ് പ്രക്രിയ നടന്നുകൊണ്ടിരിക്കുന്നു.
 ui.messages.noResultsError=ഈ തിരച്ചിലില്‍ ഒന്നും കണ്ടെത്താനായില്ല.
@@ -137,3 +150,6 @@ ui.messages.newContentAvailableInvitation=പുതിയ ഉള്ളടക്�
 ui.messages.preparingContentDownload=ഡൗൺലോഡ് ചെയ്യുവാൻ തയ്യാറെടുക്കുന്നു...
 ui.messages.contentDownloadFinished='%1' ഡൗൺലോഡ് ചെയ്തിരിക്കുന്നു
 ui.messages.feedback=പ്രതികരണം
+ui.messages.library=ഗ്രന്ഥപ്പുര
+ui.messages.fullscreen=പൂർണ്ണസ്ക്രീൻ
+ui.messages.quitFullscreen=പൂർണ സ്ക്രീനിൽ നിന്ന് പുറത്തു കടക്കുക

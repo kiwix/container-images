@@ -4,6 +4,7 @@
 # Author: Stephenwanjau
 
 ui.main.osxservices=Huduma
+ui.main.osxhideapp=Ficha &brand.brandShortName;
 ui.main.osxhideothers=Ficha zingine
 ui.main.osxshowall=Onyesha yote
 ui.main.file=Faili
@@ -92,6 +93,7 @@ ui.preferences.cancel=Batilisha
 ui.preferences.profileDirectory=Saraka ya profaili
 ui.preferences.browse=Vinjari
 ui.preferences.tabs=Kumbuka tabo
+ui.preferences.downloadCatalogs=Pakua orodha ya (za) mbali
 ui.server.load=Pakia
 ui.server.start=Anza
 ui.server.stop=Wacha
@@ -100,12 +102,14 @@ ui.messages.loadZimFileError=Haikuweza kupakua '%1'. Una uhakika hii ni faili ya
 ui.messages.alreadyIndexingError=Mchakato wa kutengeneza faharasa tayari umeanza.
 ui.messages.noResultsError=Hakuna matokeo kwa hoja hii.
 ui.messages.loadArticleError=Haiwezi kupakia nakala hii.
+ui.messages.noActiveZimFile=Hakuna faili ya ZIM uliyopakua, tafadhali pakia faili kwanza.
 ui.messages.indexZimFileConfirm=Faili hii haina faharasa ya kutafuta. Kutengeneza faharasa hi yaweza kuchukua dakika chahe. Je, unataka kutengeneza faharasa ya faili hii ya ZIM sasa?
 ui.messages.abortIndexingConfirm=Mchakato wa kutengeneza faharasa unaendelea. Una uhakika unataka kuacha sasa?
 ui.messages.restartConfirm=%1 inahitaji kuanzishwa upya tena. Unataka kufanya hivo sasa?
 ui.messages.endOfIndexing=Mchakato wa kutengeneza faharasa umekamilika.
 ui.messages.removeProfileConfirm=Je, unataka kuondoa profaili yako?
 ui.messages.dontDisplayAnymore=Usionyeshe sanduku hili la mawasiliano tena.
+ui.messages.changeSkinNeedRestart=Kubadilisha ngozi, programu tumizi lazima ianzishwe tena.Anzisha programu tumizi upya?
 ui.messages.confirm=Yakinisha
 ui.messages.no=hakuna
 ui.messages.yes=ndiyo
@@ -125,3 +129,4 @@ ui.messages.library=Maktaba
 ui.messages.fullscreen=Skrini nzima
 ui.messages.quitFullscreen=Toka kwa modi ya Skrini nzima
 ui.messages.integrityCheckSuccessful=Uadilifu wa faili umeangaliwa kwa mafanikio.
+ui.messages.integrityCheckFailed=Ukaguzi wa uadilifu hakufaulu. Faili yako ni imevurugika.

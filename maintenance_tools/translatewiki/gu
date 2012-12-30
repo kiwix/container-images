@@ -1,6 +1,7 @@
 # Messages for Gujarati (ગુજરાતી)
 # Exported from translatewiki.net
 # Author: Ankit
+# Author: Ashok modhvadia
 # Author: Dsvyas
 # Author: Haritosh
 # Author: KartikMistry
@@ -38,7 +39,7 @@ ui.main.language=ભાષા
 ui.main.skin=ફલક
 ui.main.statusbar=સ્તીથી દર્શાવાની જગ્યા
 ui.main.resultsbar=પરિણામ દર્શાવાની જગ્યા
-ui.main.tabs=નાકા
+ui.main.tabs=ટૅબ્સ
 ui.main.fullscreen=આખી સ્ક્રીન
 ui.main.tools=ઉપકરણ
 ui.main.randomArticle=કોઈપણ એક લેખ

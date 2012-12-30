@@ -1,9 +1,14 @@
 # Messages for Nepali (नेपाली)
 # Exported from translatewiki.net
+# Author: Krish Dulal
 # Author: RajeshPandey
 # Author: सरोज कुमार ढकाल
 
 ui.main.cssdirection=ltr
+ui.main.osxservices=सेवाहरू
+ui.main.osxhideapp=लुकाउने &brand.brandShortName;
+ui.main.osxhideothers=अन्य लुकाउने
+ui.main.osxshowall=सबै देखाउने
 ui.main.file=फाइल
 ui.main.file.accesskey=फ
 ui.main.openFile=फाइल खोल्ने
@@ -29,8 +34,7 @@ ui.main.copy=प्रतिलिपी गर्ने
 ui.main.copy.accesskey=प
 ui.main.transliteration=अनुवर्ण
 ui.main.transliteration.accesskey=अ
-# Fuzzy
-ui.main.preferences=प्राथमिकता
+ui.main.preferences=प्राथमिकताहरू
 # Fuzzy
 ui.main.preferences.accesskey=त
 ui.main.display=दृश्य
@@ -142,3 +146,4 @@ ui.messages.newContentAvailableInvitation=केही सामग्री अ
 ui.messages.preparingContentDownload=अधोभरणको तयारी हुँदैछ...
 ui.messages.contentDownloadFinished='%1' अधोभरण पूरा भयो ।
 ui.messages.feedback=पृष्ठ पोषण
+ui.messages.library=पुस्तकालय

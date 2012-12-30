@@ -3,6 +3,7 @@
 # Author: Amir a57
 # Author: Arjanizary
 # Author: E THP
+# Author: Mousa
 
 ui.main.osxservices=خیدمتلر
 ui.main.osxhideapp=گیزلت &brand.brandShortName;
@@ -17,9 +18,9 @@ ui.main.saveFile=صحیفه‌نی ... کیمی ساخلا
 ui.main.print=یازدیر
 ui.main.printPdf=کیمی یازدیر PDF
 ui.main.quit=چیخیش
-ui.main.edit=دَییش
+ui.main.edit=دَییشدیر
 ui.main.find=صحیفه‌ده ایچینده آختار...
-ui.main.selectall=هاممیین سئچ
+ui.main.selectall=هامیسین سئچ
 ui.main.copy=گوتور
 ui.main.mute=سوسغون
 ui.main.audible=سَسلی
