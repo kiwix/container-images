@@ -2,9 +2,10 @@
 # Exported from translatewiki.net
 # Author: Ansumang
 # Author: Hemant wikikosh1
+# Author: Kelson
 
 ui.main.osxservices=सेवाः
-ui.main.osxhideapp=&brand.brandShortName इत्येतत् गोप्यताम्;
+ui.main.osxhideapp=&brand.brandShortName; इत्येतत् गोप्यताम्
 ui.main.osxhideothers=अन्ये गोप्यन्ताम्
 ui.main.osxshowall=सर्वे दर्श्यन्ताम्
 ui.main.file=सञ्चिका
@@ -45,7 +46,7 @@ ui.main.help=साहाय्यम्
 ui.main.feedback=प्रतिक्रिया
 ui.main.reportabug=बग आवेदनं करोति
 ui.main.requestafeature=सुविधार्थं निवेद्यताम्
-ui.main.about=&brand.brandShortName इत्येतद्विषये;
+ui.main.about=&brand.brandShortName; इत्येतद्विषये
 ui.main.back=प्रतिपद्यते
 ui.main.forward=अग्रे गच्छतु
 ui.main.home=गृहम्

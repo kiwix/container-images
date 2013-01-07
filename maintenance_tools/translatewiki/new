@@ -1,9 +1,10 @@
 # Messages for Newari (नेपाल भाषा)
 # Exported from translatewiki.net
 # Author: Eukesh
+# Author: Kelson
 
 ui.main.osxservices=सेवात
-ui.main.osxhideapp=&brand.brandShortName सुचुकादिसँ;
+ui.main.osxhideapp=&brand.brandShortName; सुचुकादिसँ
 ui.main.osxhideothers=मेमेगु सुचुकादिसँ
 ui.main.osxshowall=सकल क्यनादिसँ
 ui.main.file=फाइल

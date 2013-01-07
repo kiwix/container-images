@@ -1,6 +1,7 @@
 # Messages for Swahili (Kiswahili)
 # Exported from translatewiki.net
 # Author: Baba Tabita
+# Author: Kwisha
 # Author: Stephenwanjau
 
 ui.main.osxservices=Huduma
@@ -35,7 +36,7 @@ ui.main.language=Lugha
 ui.main.skin=Ngozi
 ui.main.statusbar=Mwambaa wa hali
 ui.main.resultsbar=Mwambaa wa matokeo
-ui.main.tabs=Tagi
+ui.main.tabs=Tabo
 ui.main.fullscreen=Skrini nzima
 ui.main.tools=Zana
 ui.main.randomArticle=Ukurasa wa bahati

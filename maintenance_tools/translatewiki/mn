@@ -1,9 +1,10 @@
 # Messages for Mongolian (монгол)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Wisdom
 
 ui.main.osxservices=Үйлчилгээ
-ui.main.osxhideapp=&brand.brandShortName -г хаа;
+ui.main.osxhideapp=&brand.brandShortName; -г хаа
 ui.main.osxhideothers=Бусдыг хаа
 ui.main.osxshowall=Бүгдийг харах
 ui.main.file=Файл
@@ -44,7 +45,7 @@ ui.main.help=Тусламж
 ui.main.feedback=Санал зөвлөмж
 ui.main.reportabug=Bug явуулах
 ui.main.requestafeature=Шинээр функц оруулах
-ui.main.about=&brand.brandShortName -ы тухай;
+ui.main.about=&brand.brandShortName; -ы тухай
 ui.main.back=Буцах
 ui.main.forward=Дараагийх
 ui.main.home=Нүүр

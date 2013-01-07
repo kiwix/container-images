@@ -1,5 +1,6 @@
 # Messages for Fiji Hindi (Latin script) (Fiji Hindi)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Thakurji
 
 ui.main.osxservices=Sewa
@@ -44,7 +45,7 @@ ui.main.help=Madat
 ui.main.feedback=Sujhao
 ui.main.reportabug=Ek bug ke report karo
 ui.main.requestafeature=Ek feature ke report karo
-ui.main.about=&brand.brandShortName ke baare me;
+ui.main.about=&brand.brandShortName; ke baare me
 ui.main.back=Piichhe
 ui.main.forward=Aage
 ui.main.home=Ghare

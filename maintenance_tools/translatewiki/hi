@@ -5,6 +5,7 @@
 # Author: Nikhilsheth
 # Author: Siddhartha Ghai
 
+ui.main.osxshowall=सभी दिखाएँ
 ui.main.file=फ़ाइल
 ui.main.openFile=फ़ाइल खोलें...
 ui.main.browseLibrary=लायब्रेरी ब्राउज़ करें
@@ -87,6 +88,10 @@ ui.preferences.cancel=रद्द करें
 ui.preferences.profileDirectory=प्रोफ़ाइल निर्देशिका
 ui.preferences.browse=ब्राउज़ करें
 ui.preferences.tabs=पट्टीयाँ याद रखें
+ui.server.load=लोड
+ui.server.start=आरम्भ
+ui.server.stop=रोकें
+ui.server.close=बंद करें
 ui.messages.loadZimFileError='% 1' को लोड करने में अक्षम है। क्या आप सुनिश्चित कर सकते हैं कि यह एक ZIM फाइल है?
 ui.messages.alreadyIndexingError=एक सूचीकरण प्रक्रिया पहले से ही चल रही  है।
 ui.messages.noResultsError=इस क्वेरी के लिए कोई परिणाम नहीं है ।
