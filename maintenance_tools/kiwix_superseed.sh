@@ -11,7 +11,7 @@ fi
 TORRENT_DIR=/home/kelson/rtorrent/watch/
 INBOX_DIR=/home/kelson/rtorrent/inbox/
 WEB_DIR=http://download.kiwix.org/
-SYNC_DIRS="archive/kiwix archive/moulinwiki portable zim/0.9 zim/other"
+SYNC_DIRS="archive/kiwix archive/moulinwiki portable zim/0.9 zim/other other"
 
 for DIR in $SYNC_DIRS
 do
