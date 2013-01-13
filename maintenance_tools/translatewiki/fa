@@ -1,6 +1,7 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
 # Author: Leyth
+# Author: Mehran
 # Author: Mjbmr
 # Author: Reza1615
 # Author: ZxxZxxZ
@@ -22,7 +23,7 @@ ui.main.saveFile=...ذخیره صفحه به عنوان
 ui.main.saveFile.accesskey=S
 ui.main.print=چاپ
 ui.main.print.accesskey=P
-ui.main.printPdf=چاپ به‌صورت پی‌دی‌اف
+ui.main.printPdf=چاپ در قالب پی‌دی‌اف
 ui.main.printPdf.accesskey=D
 ui.main.quit=خروج
 ui.main.quit.accesskey=Q
@@ -41,7 +42,7 @@ ui.main.transliteration.accesskey=T
 ui.main.preferences=ترجیحات
 # Fuzzy
 ui.main.preferences.accesskey=n
-ui.main.server=کارگزار
+ui.main.server=سرور
 ui.main.display=نمایش
 ui.main.display.accesskey=D
 ui.main.zoom=اندازه‌نمایی
@@ -85,7 +86,7 @@ ui.main.forward=جلو
 ui.main.home=خانه
 ui.main.searchBar=نوار جستجو
 ui.main.search=جستجو
-ui.main.searchPlaceholder=برای جستجو متنی در اینجا بنویسید ...
+ui.main.searchPlaceholder=متن مورد نظر را جهت جستجو وارد کنید ...
 ui.main.findInText=جستجو در متن
 ui.main.noSearchBar=جستجو نیاز به یک فایل ZIM فهرست بندی شده دارد
 ui.main.bookmarks=نشانکها
