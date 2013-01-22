@@ -1,9 +1,11 @@
 # Messages for Georgian (ქართული)
 # Exported from translatewiki.net
 # Author: David1010
+# Author: EternalLaka
 # Author: ITshnik
 
 ui.main.osxservices=სერვისები
+ui.main.osxhideapp=&brand.brandShortName;-ის დამალვა
 ui.main.osxhideothers=სხვების დამალვა
 ui.main.osxshowall=ყველას ჩვენება
 ui.main.file=ფაილი
@@ -49,6 +51,7 @@ ui.main.forward=გაგზავნა
 ui.main.home=შინ
 ui.main.searchBar=საძიებო ველი
 ui.main.search=ძიება
+ui.main.searchPlaceholder=შეიყვანეთ საძიებო ტექსტი...
 ui.main.findInText=ძიება ტექსტში
 ui.main.noSearchBar=ძიება მოითხოვს ინდექსირებულ ZIM ფაილს
 ui.main.bookmarks=სანიშნები
@@ -83,6 +86,7 @@ ui.main.library.filterBy.author=ავტორი
 ui.main.library.filterBy.author.all=ყველა
 ui.main.library.filterBy.publisher=გამომქვეყნებელი
 ui.main.library.filterBy.publisher.all=ყველა
+ui.main.library.filterBy.lessThan=ნაკლები ვიდრე
 ui.preferences.preferences=კონფიგურაცია
 ui.preferences.save=შენახვა
 ui.preferences.cancel=გაუქმება
@@ -123,3 +127,5 @@ ui.messages.feedback=უკუკავშირი
 ui.messages.library=ბიბლიოთეკა
 ui.messages.fullscreen=მთელ ეკრანზე
 ui.messages.quitFullscreen=მთლიანი ეკრანის რეჟიმიდან გამოსვლა
+ui.messages.integrityCheckSuccessful=ფაილის მთლიანობა წარმატებით შემოწმდა
+ui.messages.integrityCheckFailed=მთლიანობის შემოწმების შეცდომა. თქვენი ფაილი დაზიანებულია.
