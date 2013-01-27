@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Als-Chlämens
 # Author: Als-Holder
+# Author: Geitost
 # Author: 80686
 
 ui.main.osxservices=Dienscht
@@ -100,14 +101,14 @@ ui.server.start=Aafange
 ui.server.stop=Aahebe
 ui.server.close=Zuemache
 ui.messages.loadZimFileError='%1' cha nit glade wärde. Sin Sie sicher, ass es e ZIM-Datei isch?
-ui.messages.alreadyIndexingError=S lauft scho ne Indizierig.
+ui.messages.alreadyIndexingError=S lauft scho ne Indexierig.
 ui.messages.noResultsError=S isch nüt gfunde worde.
 ui.messages.loadArticleError=Selli Syte cha nit glade wärde.
 ui.messages.noActiveZimFile=S isch kei aktivi ZIM-Datei glade, Si müen zerscht eini lade.
-ui.messages.indexZimFileConfirm=Selli Datei het no kei Suech-Index. Eine go mache bruucht e baar Minute. Wenn Sie die ZIM-Datei jetz indiziere?
-ui.messages.abortIndexingConfirm=S lauft scho e Indizierig. Sin Sie sicher, ass Sie jetz es abbräche un zuemache wenn?
+ui.messages.indexZimFileConfirm=Selli Datei het no kei Suech-Index. Eine go mache bruucht e baar Minute. Wenn Sie die ZIM-Datei jetz indexiere?
+ui.messages.abortIndexingConfirm=S lauft scho e Indexierig. Sin Sie sicher, ass Sie jetz es abbräche un zuemache wenn?
 ui.messages.restartConfirm=%1 sött me neu schtarte. Wenn Sie des jetz grad mache?
-ui.messages.endOfIndexing=D Indizierig isch färdig.
+ui.messages.endOfIndexing=D Indexierig isch färdig.
 ui.messages.removeProfileConfirm=Wotte Sie Ihre Profil lösche?
 ui.messages.dontDisplayAnymore=Sell Fänschter nümme aazeige.
 ui.messages.changeSkinNeedRestart=Go d Oberflechi ändere, mueß d Aawändig nej gstartet wäre. Nejstart?
@@ -118,7 +119,7 @@ ui.messages.ok=OK
 ui.messages.cancel=Abbräche
 ui.messages.error=Fähler
 ui.messages.information=Information
-ui.messages.indexing=Indizierig
+ui.messages.indexing=Indexierig …
 ui.messages.selectBookmarkSet=Läsezeichedatei usswähle
 ui.messages.nameBookmarkSet=Gän Sie de Name vo de Läsezeichedatei ii
 ui.messages.newContentAvailable=Es git neui Inhalt, wo de abelade chasch.

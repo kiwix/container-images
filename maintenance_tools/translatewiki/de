@@ -1,5 +1,6 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
+# Author: Geitost
 # Author: Jan Luca
 # Author: Kelson
 # Author: Kghbln
@@ -149,7 +150,7 @@ ui.messages.ok=Okay
 ui.messages.cancel=Abbrechen
 ui.messages.error=Fehler
 ui.messages.information=Information
-ui.messages.indexing=Indiziere …
+ui.messages.indexing=Indexiere …
 ui.messages.selectBookmarkSet=Lesezeichendatei auswählen
 ui.messages.nameBookmarkSet=Den Namen der Lesezeichendatei eingeben
 ui.messages.newContentAvailable=Es sind neue Inhalte zum Herunterladen vorhanden.
