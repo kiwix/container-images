@@ -28,7 +28,8 @@ class LogParser
       $formatedLog['method'] = $logs[7];
       $formatedLog['path'] = $logs[8];
       $formatedLog['protocol'] = $logs[9];
-      $formatedLog['status'] = $logs[10] == "302" || $logs[10] == "301" ? "200" : $logs[10];
+#      $formatedLog['status'] = $logs[10] == "302" || $logs[10] == "301" ? "200" : $logs[10];
+      $formatedLog['status'] = $logs[10];
       $formatedLog['bytes'] = $logs[11];
       $formatedLog['referer'] = str_replace('"', "", $logs[12]);
       $formatedLog['agent'] = $logs[13];
@@ -215,7 +216,11 @@ foreach ($sortedLogFiles as $logFile) {
     echo "File '$logFile' opened.\n";
     while ($line = $parser->getLine()) {
       $logHash = $parser->formatLine($line);
-      if (shouldBeStored($logHash["path"]) && !isAlreadyStored($logHash) && $logHash["unixtime"] > $lastPiwikInsertionTime) {
+      if (shouldBeStored($logHash["path"]) && 
+	  $logHash["status"] != '404' &&
+	  $logHash["status"] != '301' &&
+	  !isAlreadyStored($logHash) && 
+	  $logHash["unixtime"] > $lastPiwikInsertionTime) {
 	saveInPiwik($logHash);
       }
     }
