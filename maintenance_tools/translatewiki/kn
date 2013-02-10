@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Abhirama
 # Author: Akoppad
+# Author: Kelson
 # Author: Nayvik
 
 ui.main.osxservices=ಸೇವೆಗಳು
@@ -45,7 +46,7 @@ ui.main.help=ಸಹಾಯ
 ui.main.feedback=ಪ್ರತಿಕ್ರಿಯೆ
 ui.main.reportabug=ದೋಷವನ್ನು ವರದಿ ಮಾಡಿ
 ui.main.requestafeature=ಸ್ವರೂಪವನ್ನು ವಿನಂತಿಸಿಕೊಳ್ಳಿ
-ui.main.about=&brand.brandಎಂಬ ಕಿರುಹೆಸರಿನ ಕುರಿತು;
+ui.main.about=&brand.brandShortName;ಎಂಬ ಕಿರುಹೆಸರಿನ ಕುರಿತು;
 ui.main.back=ಹಿಂದಕ್ಕೆ
 ui.main.forward=ಮುಂದಿನ
 ui.main.home=ಮುಖ್ಯಪುಟ

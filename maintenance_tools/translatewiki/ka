@@ -3,6 +3,7 @@
 # Author: David1010
 # Author: EternalLaka
 # Author: ITshnik
+# Author: Kelson
 
 ui.main.osxservices=სერვისები
 ui.main.osxhideapp=&brand.brandShortName;-ის დამალვა
@@ -31,6 +32,7 @@ ui.main.zoom=ზომა
 ui.main.zoomin=გადიდება
 ui.main.zoomout=შემცირება
 ui.main.zoomorig=თავდაპირველი ზომა
+ui.main.invertedColors=შებრუნებული ფერები
 ui.main.language=ენა
 ui.main.skin=იერსახე
 ui.main.statusbar=სტატუსის ველი
@@ -45,7 +47,7 @@ ui.main.help=დახმარება
 ui.main.feedback=უკუკავშირი
 ui.main.reportabug=დარღვევის შეტყობინება
 ui.main.requestafeature=ფუნქციის მოთხოვნა
-ui.main.about=&brand.brandShortName-ის შესახებ;
+ui.main.about=&brand.brandShortName;-ის შესახებ
 ui.main.back=უკან
 ui.main.forward=გაგზავნა
 ui.main.home=შინ
@@ -93,6 +95,7 @@ ui.preferences.cancel=გაუქმება
 ui.preferences.profileDirectory=პროფილის დირექტორია
 ui.preferences.browse=დათვალიერება
 ui.preferences.tabs=ჩანართების დამახსოვრება
+ui.preferences.downloadCatalogs=შორეული კატალოგ(ებ)ის გადმოწერა
 ui.server.load=ჩატვირთვა
 ui.server.start=დაწყება
 ui.server.stop=შეჩერება

@@ -4,9 +4,14 @@
 # Author: Lloffiwr
 # Author: Pwyll
 
+ui.main.osxservices=Gwasanaethau
+ui.main.osxhideapp=Cuddio &brand.brandShortName;
+ui.main.osxhideothers=Cuddio'r Lleill
+ui.main.osxshowall=Dangos y Cwbl
 ui.main.file=Ffeil
 ui.main.openFile=Agor ffeil...
 ui.main.browseLibrary=Pori'r llyfrgell
+ui.main.hideLibrary=Cuddio'r llyfrgell
 ui.main.lastOpen=Agorwyd yn ddiweddar...
 ui.main.saveFile=Cadw'r dudalen fel...
 ui.main.print=Argraffu
@@ -21,7 +26,7 @@ ui.main.audible=Sain
 ui.main.transliteration=Trawslythrennol
 ui.main.preferences=Dewisiadau
 ui.main.server=Gweinydd
-ui.main.display=Arddangos
+ui.main.display=Golwg
 ui.main.zoom=Chwyddo
 ui.main.zoomin=Chwyddo
 ui.main.zoomout=Lleihau
@@ -40,7 +45,7 @@ ui.main.help=Cymorth
 ui.main.feedback=Adborth
 ui.main.reportabug=Adrodd nam
 ui.main.requestafeature=Gwneud cais am nodwedd
-ui.main.about=Amdano &brand.brandShortName;
+ui.main.about=Am &brand.brandShortName;
 ui.main.back=Yn ôl
 ui.main.forward=Anfon ymlaen
 ui.main.home=Hafan

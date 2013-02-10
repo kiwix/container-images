@@ -1,5 +1,6 @@
 # Messages for Bashkir (башҡортса)
 # Exported from translatewiki.net
+# Author: Assele
 # Author: Haqmar
 # Author: Kelson
 # Author: Roustammr
@@ -74,7 +75,7 @@ ui.main.close=Ябырға
 ui.main.library.myLibrary=Китапханам
 ui.main.library.getNewFiles=Яңы файлдар алырға
 ui.main.library.searchZimFiles=ZIM файлдар эҙләү
-ui.main.library.sortBy=Теҙеү
+ui.main.library.sortBy=Тәртипләштереү
 ui.main.library.sortBy.title=Исем
 ui.main.library.sortBy.size=Үлсәм
 ui.main.library.sortBy.date=Дата
