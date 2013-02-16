@@ -4,12 +4,16 @@
 # Author: Ariesanywhere
 # Author: Horus
 # Author: Nullzero
+# Author: Villagescience
 
+ui.main.osxservices=บริการ
+ui.main.osxhideapp=ซ่อน &brand.brandShortName;
 ui.main.osxhideothers=ซ่อนอื่น ๆ
 ui.main.osxshowall=แสดงทั้งหมด
 ui.main.file=แฟ้ม
 ui.main.openFile=เปิดแฟ้ม...
 ui.main.browseLibrary=เปิดดูคลังดาวน์โหลด
+ui.main.hideLibrary=ซ่อนรายการ
 ui.main.lastOpen=เปิดล่าสุด...
 ui.main.saveFile=บันทึกหน้าเป็น...
 ui.main.print=พิมพ์
@@ -22,8 +26,8 @@ ui.main.copy=คัดลอก
 ui.main.mute=ปิดเสียง
 ui.main.audible=มีเสียง
 ui.main.transliteration=การทับศัพท์
-# Fuzzy
-ui.main.preferences=ตั้งค่า
+ui.main.preferences=การตั้งค่า
+ui.main.server=เซิร์ฟเวอร์
 ui.main.display=แสดงผล
 ui.main.zoom=ย่อ-ขยาย
 ui.main.zoomin=ขยาย
@@ -50,6 +54,7 @@ ui.main.forward=ถัดไป
 ui.main.home=หน้าแรก
 ui.main.searchBar=แถบค้นหา
 ui.main.search=ค้นหา
+ui.main.searchPlaceholder=พิมพ์ข้อความการค้นหาที่นี่...
 ui.main.findInText=ค้นหาในข้อความ
 ui.main.noSearchBar=การค้นหาต้องมีการจัดทำดัชนีแฟ้ม ZIM
 ui.main.bookmarks=ที่คั่นหน้าเว็บ
@@ -91,6 +96,11 @@ ui.preferences.cancel=ยกเลิก
 ui.preferences.profileDirectory=ไดเรกทอรีโปรไฟล์
 ui.preferences.browse=เรียกดู
 ui.preferences.tabs=จำแท็บนี้ไว้
+ui.preferences.downloadCatalogs=ดาวน์โหลดบัญชีรายชื่อระยะไกล
+ui.server.load=โหลด
+ui.server.start=เริ่ม
+ui.server.stop=หยุด
+ui.server.close=ปิด
 ui.messages.loadZimFileError=ไม่สามารถโหลด '%1' คุณแน่ใจนี้เป็นไฟล์ ZIM?
 ui.messages.alreadyIndexingError=กระบวนการจัดทำดัชนีกำลังทำงานอยู่
 ui.messages.noResultsError=ไม่มีผลลัพธ์สำหรับคำถามนี้
@@ -118,5 +128,8 @@ ui.messages.newContentAvailableInvitation=มีเนื้อหาใหม�
 ui.messages.preparingContentDownload=กำลังเตรียมดาวน์โหลด...
 ui.messages.contentDownloadFinished=ดาวน์โหลด '%1' เสร็จเรียบร้อยแล้ว.
 ui.messages.feedback=คำติชม
+ui.messages.library=รายการ
 ui.messages.fullscreen=เต็มหน้าจอ
 ui.messages.quitFullscreen=ออกจากโหมดเต็มหน้าจอ
+ui.messages.integrityCheckSuccessful=การตรวจสอบความสมบูรณ์ของไฟล์ตรวจสอบแก้ไขเรียบร้อยแล้ว
+ui.messages.integrityCheckFailed=การตรวจสอบความสมบูรณ์ของไฟล์ล้มเหลว

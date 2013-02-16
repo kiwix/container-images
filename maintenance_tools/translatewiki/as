@@ -5,6 +5,7 @@
 # Author: Nilamdyuti
 
 ui.main.osxservices=সেৱাসমূহ
+ui.main.osxhideapp=&brand.brandShortName; লুকুৱাওক
 ui.main.osxhideothers=অন্যবোৰ লুকাই থওক
 ui.main.osxshowall=সকলোবোৰ দেখুৱাওক
 ui.main.file=ফাইল
@@ -23,7 +24,6 @@ ui.main.copy=অনুলিপি
 ui.main.mute=নিঃশব্দ
 ui.main.audible=শ্রবনযোগ্য
 ui.main.transliteration=প্রতিবর্ণীকৰণ
-# Fuzzy
 ui.main.preferences=পছন্দসমূহ
 ui.main.server=চাৰ্ভাৰ
 ui.main.display=প্রদর্শন
