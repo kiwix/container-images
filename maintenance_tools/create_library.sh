@@ -20,7 +20,7 @@ do
 	if [ "$?" -eq "1" ]
 	then
 	    echo "Inserting $FILE ..."
-	    kiwix-manage $LIBRARYFILE add $FILE --zimPathToSave="" --url=http://download.kiwix.org/zim/$DIR/$FILE.metalink
+	    kiwix-manage $LIBRARYFILE add $FILE --zimPathToSave="" --url=http://download.kiwix.org/zim/$DIR/$FILE.meta4
 	fi
     done
 done
