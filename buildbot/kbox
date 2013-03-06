@@ -65,6 +65,13 @@ class VirtualMachine(object):
             subprocess.Popen([self.QEMU])
         else:
             subprocess.Popen([self.HEADLESS, '--startvm', self.name, 
+                              '--vrdp', 'off'])
+
+    def startWithExport(self):
+        if self.name.lower() == 'arm':
+            subprocess.Popen([self.QEMU])
+        else:
+            subprocess.Popen([self.HEADLESS, '--startvm', self.name, 
                               '--vrdp', 'config'])
 
     def stop(self):
@@ -144,6 +151,11 @@ def start(option, opt_str, value, parser, *args, **kwargs):
     vm = VirtualMachine.get(value)
     vm.start()
 
+def startWithExport(option, opt_str, value, parser, *args, **kwargs):
+
+    vm = VirtualMachine.get(value)
+    vm.startWithExport()
+
 
 def stop(option, opt_str, value, parser, *args, **kwargs):
 
@@ -197,6 +209,9 @@ def main():
     parser.add_option("--start", action="callback", callback=start, \
                       type="str", metavar="VM", \
                       help="starts the VM named [VM].")
+    parser.add_option("--start-with-export", action="callback", callback=startWithExport, \
+                      type="str", metavar="VM", \
+                      help="starts the VM named [VM] with export display (vrdp).")
     parser.add_option("--stop", action="callback", callback=stop, type="str", \
                       metavar="VM", \
                       help="sends shutdown to the VM named [VM].")
