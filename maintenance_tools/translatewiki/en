@@ -122,6 +122,7 @@ ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.preferences.tabs=Remember tabs
 ui.preferences.downloadCatalogs=Download remote catalog(s)
+ui.preferences.neverAskToIndex=Never ask to index
 ui.server.load=Load
 ui.server.start=Start
 ui.server.stop=Stop
