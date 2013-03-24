@@ -65,6 +65,7 @@ ui.main.randomArticle=Random article
 ui.main.randomArticle.accesskey=R
 ui.main.checkIntegrity=Integrity check
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Launch indexing
 ui.main.purgeHistory=Purge history
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Help
