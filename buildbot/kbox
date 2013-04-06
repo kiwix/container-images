@@ -13,8 +13,7 @@ from optparse import OptionParser
 
 
 # configure following
-machines = ['ubuntu32', 'ubuntu64', 'osx', 'fedora', 'arm', 'win32', 'debian32', 'debian64']
-ips = {
+machines = {
     'ubuntu32': '192.168.5.50',
     'ubuntu64': '192.168.5.51',
     'osx': '192.168.5.52',
@@ -24,6 +23,7 @@ ips = {
     'arm': '192.168.5.56',
     'debian32': '192.168.5.57',
     'debian64': '192.168.5.58',
+    'precise64': '192.168.5.59',
 }
 
 
@@ -64,19 +64,19 @@ class VirtualMachine(object):
         if self.name.lower() == 'arm':
             subprocess.Popen([self.QEMU])
         else:
-            subprocess.Popen([self.HEADLESS, '--startvm', self.name, 
+            subprocess.Popen([self.HEADLESS, '--startvm', self.name,
                               '--vrdp', 'off'])
 
     def startWithExport(self):
         if self.name.lower() == 'arm':
             subprocess.Popen([self.QEMU])
         else:
-            subprocess.Popen([self.HEADLESS, '--startvm', self.name, 
+            subprocess.Popen([self.HEADLESS, '--startvm', self.name,
                               '--vrdp', 'config'])
 
     def stop(self):
         if self.name.lower() == 'osx':
-            ip = ips.get(self.name, None)
+            ip = machines.get(self.name, None)
             if ip:
                 subprocess.Popen('%s dev@%s "sudo /sbin/shutdown -h now"' % (self.SSH, ip), shell=True)
         elif self.name.lower() == 'arm':
@@ -92,7 +92,7 @@ class VirtualMachine(object):
             if self.isrunning():
                 print "Please stop the VM before exporting it."
             else:
-                p1 = subprocess.Popen([self.MANAGE, 'export', self.name, 
+                p1 = subprocess.Popen([self.MANAGE, 'export', self.name,
                               '--output', self.name + '.ova'])
                 p1.wait()
 
@@ -181,7 +181,7 @@ def ssh(option, opt_str, value, parser, *args, **kwargs):
     if value == 'arm':
         os.execl('/usr/bin/ssh', 'ssh', "dev@localhost", "-p", "5022")
     else:
-        ip = ips.get(value, None)
+        ip = machines.get(value, None)
         if ip:
             os.execl('/usr/bin/ssh', 'ssh', "dev@%s" % ip)
 
@@ -189,7 +189,7 @@ def ssh(option, opt_str, value, parser, *args, **kwargs):
 def main():
 
     # instanciate VMs
-    for name in machines:
+    for name in machines.keys():
         VirtualMachine(name)
 
     parser = OptionParser()
@@ -224,7 +224,7 @@ def main():
     parser.add_option("--export", action="callback", callback=export, type="str", \
                       metavar="VM", \
                       help="export VM to the file called [VM].ova.")
-    
+
     # Show help if no argument
     if len(sys.argv)==1:
         parser.print_help()
