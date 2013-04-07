@@ -4,6 +4,7 @@
 # Author: Jan Luca
 # Author: Kelson
 # Author: Kghbln
+# Author: Metalhead64
 
 ui.main.cssdirection=ltr
 ui.main.osxservices=Dienste
@@ -70,6 +71,7 @@ ui.main.randomArticle=Zufälliger Artikel
 ui.main.randomArticle.accesskey=Z
 ui.main.checkIntegrity=Integritätsprüfung
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Indexierung starten
 ui.main.purgeHistory=Verlauf löschen
 ui.main.purgeHistory.accesskey=G
 ui.main.help=Hilfe
@@ -127,6 +129,7 @@ ui.preferences.profileDirectory=Profilverzeichnis
 ui.preferences.browse=Durchsuchen
 ui.preferences.tabs=Reiter merken
 ui.preferences.downloadCatalogs=Externe(n) Katalog(e) herunterladen
+ui.preferences.neverAskToIndex=Nie nach Indexierung fragen
 ui.server.load=Laden
 ui.server.start=Starten
 ui.server.stop=Stoppen
@@ -138,6 +141,8 @@ ui.messages.loadArticleError=Dieser Artikel kann nicht geladen werden.
 ui.messages.noActiveZimFile=Es ist keine aktive ZIM-Datei vorhanden. Sie müssen zuerst eine Datei laden.
 ui.messages.indexZimFileConfirm=Diese Datei enthält keinen Suchindex. Diesen zu erstellen kann mehrere Minuten dauern. Möchten Sie die ZIM-Datei jetzt indexieren?
 ui.messages.abortIndexingConfirm=Ein Indexierungsprozess wird momentan durchgeführt. Sind Sie sicher, dass Sie diesen Vorgang beenden und nun abbrechen wollen?
+ui.messages.removeContentConfirm=Sind Sie sicher, dass Sie diesen Eintrag von der Liste und allen zugehörigen Dateien entfernen wollen?
+ui.messages.dontDeleteContentFiles=Nicht die Inhaltsdatei (ZIM) löschen.
 ui.messages.restartConfirm=%1 muss neu gestartet werden. Wollen Sie dies nun tun?
 ui.messages.endOfIndexing=Der Indexierungsprozess ist beendet.
 ui.messages.removeProfileConfirm=Möchten Sie Ihr Profil entfernen?

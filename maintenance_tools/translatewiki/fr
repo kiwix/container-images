@@ -5,6 +5,7 @@
 # Author: Gomoko
 # Author: Jean-Frédéric
 # Author: Kelson
+# Author: Metroitendo
 # Author: Od1n
 # Author: Verdy p
 # Author: Wyz
@@ -74,6 +75,7 @@ ui.main.randomArticle=Article au hasard
 ui.main.randomArticle.accesskey=A
 ui.main.checkIntegrity=Vérifier l'intégrité du contenu
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Lancer l'indexation
 ui.main.purgeHistory=Purger l'historique
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Aide
@@ -131,6 +133,7 @@ ui.preferences.profileDirectory=Répertoire du profil
 ui.preferences.browse=Parcourir
 ui.preferences.tabs=Se souvenir des onglets ouverts en quittant Kiwix
 ui.preferences.downloadCatalogs=Télécharger le(s) catalogue(s) distant
+ui.preferences.neverAskToIndex=Ne jamais demander d'indexer
 ui.server.load=Charger
 ui.server.start=Début
 ui.server.stop=Arrêt
@@ -142,6 +145,8 @@ ui.messages.loadArticleError=Impossible d'afficher cet article.
 ui.messages.noActiveZimFile=Aucun fichier ZIM chargé, merci d'en ouvrir un avant toute chose.
 ui.messages.indexZimFileConfirm=Voulez-vous indexer votre fichier ZIM maintenant, cela peut prendre de nombreuses minutes ?
 ui.messages.abortIndexingConfirm=Un processus d'indexation est en cours ; fermer Kiwix l'interrompra. Êtes-vous certain de vouloir continuer ?
+ui.messages.removeContentConfirm=Êtes-vous sûr de vouloir supprimer cette entrée de la liste ainsi que tous les fichiers associés ?
+ui.messages.dontDeleteContentFiles=Ne pas supprimer le fichier de contenu (ZIM).
 ui.messages.restartConfirm=%1 doit être redémarré. Voulez-vous le faire maintenant ?
 ui.messages.endOfIndexing=Le processus d'indexation est terminé.
 ui.messages.removeProfileConfirm=Voulez-vous supprimer votre profil ?

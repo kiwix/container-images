@@ -1,6 +1,7 @@
 # Messages for Polish (polski)
 # Exported from translatewiki.net
 # Author: BeginaFelicysym
+# Author: Chrumps
 # Author: Olgak85
 # Author: Przemub
 # Author: Sp5uhe
@@ -70,6 +71,7 @@ ui.main.randomArticle=Losowy artykuł
 ui.main.randomArticle.accesskey=L
 ui.main.checkIntegrity=Sprawdzenie integralności
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Rozpocznij indeksowanie
 ui.main.purgeHistory=Wyczyść historię
 ui.main.purgeHistory.accesskey=W
 ui.main.help=Pomoc
@@ -138,6 +140,8 @@ ui.messages.loadArticleError=Nie można załadować wybranego artykułu.
 ui.messages.noActiveZimFile=Nie wybrano żadnego pliku ZIM, proszę najpierw jakiś wczytać.
 ui.messages.indexZimFileConfirm=W tym plik brak jest indeksów służących do wyszukiwania. Utworzenie nowego może zająć kilka minut. Czy chcesz teraz zindeksować plik ZIM?
 ui.messages.abortIndexingConfirm=Trwa właśnie proces indeksowania. Czy chcesz wyjść i przerwać indeksowanie?
+ui.messages.removeContentConfirm=Czy na pewno chcesz usunąć ten wpis z listy i wszystkie związane z nim pliki?
+ui.messages.dontDeleteContentFiles=Nie usuwaj zawartości pliku (ZIM).
 ui.messages.restartConfirm=%1 wymaga restartu. Czy chcesz uruchomić ponownie teraz?
 ui.messages.endOfIndexing=Zakończono indeksowanie.
 ui.messages.removeProfileConfirm=Czy chcesz usunąć swój profil?
