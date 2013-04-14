@@ -1,9 +1,10 @@
 # Messages for Uyghur (Arabic script) (ئۇيغۇرچە)
 # Exported from translatewiki.net
+# Author: Kelson
 # Author: Sahran
 
 ui.main.osxservices=مۇلازىمەتلەر
-ui.main.osxhideapp=&brand.brandShortName نى يوشۇر:
+ui.main.osxhideapp=&brand.brandShortName; نى يوشۇر
 ui.main.osxhideothers=باشقىلارنى يوشۇر
 ui.main.osxshowall=ھەممىنى كۆرسەت
 ui.main.file=ھۆججەت
@@ -44,7 +45,7 @@ ui.main.help=ياردەم
 ui.main.feedback=قايتۇرما ئىنكاس
 ui.main.reportabug=خاتالىق دوكلاتى
 ui.main.requestafeature=ئىقتىدار ئىلتىماسى
-ui.main.about=&brand.brandShortName ھەققىدە:
+ui.main.about=&brand.brandShortName; ھەققىدە
 ui.main.back=ئالدىغا
 ui.main.forward=ئالدىغا
 ui.main.home=باش بەت

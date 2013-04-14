@@ -1,11 +1,12 @@
-# Messages for Oriya (ଓଡ଼ିଆ)
+# Messages for Oriya (ଓଡ଼ିଆ)
 # Exported from translatewiki.net
 # Author: Jnanaranjan Sahu
+# Author: Kelson
 # Author: Psubhashish
 # Author: Sukarna0
 
 ui.main.osxservices=ସେବାଗୁଡିକ
-ui.main.osxhideapp=&brand.brandShortName ଲୁଚାଇବେ;
+ui.main.osxhideapp=&brand.brandShortName; ଲୁଚାଇବେ
 ui.main.osxhideothers=ଅନ୍ୟ ସବୁକୁ ଲୁଚାଇବେ
 ui.main.osxshowall=ସବୁ ଦେଖିବେ
 ui.main.file=ଫାଇଲ
@@ -46,7 +47,7 @@ ui.main.help=ସହଯୋଗ
 ui.main.feedback=ମତାମତ
 ui.main.reportabug=Bug ଟିଏ ଦାଖଲ କରିବେ
 ui.main.requestafeature=ଏକ ସୁବିଧା ନିମନ୍ତେ ଅନୁରୋଧ କରିବେ
-ui.main.about=&brand.brandShortName ବାବଦରେ;
+ui.main.about=&brand.brandShortName; ବାବଦରେ
 ui.main.back=ପଛକୁ
 ui.main.forward=ଆଗକୁ
 ui.main.home=ମୂଳ ଜାଗା

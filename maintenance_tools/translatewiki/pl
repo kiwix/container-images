@@ -5,6 +5,7 @@
 # Author: Olgak85
 # Author: Przemub
 # Author: Sp5uhe
+# Author: Ty221
 # Author: Woytecr
 
 ui.main.cssdirection=ltr
@@ -129,6 +130,7 @@ ui.preferences.profileDirectory=Katalogu profilu
 ui.preferences.browse=Przeglądaj
 ui.preferences.tabs=Zapamiętaj zakładki
 ui.preferences.downloadCatalogs=Pobierz katalog(i) zdalny(e)
+ui.preferences.neverAskToIndex=Nigdy nie pytaj o indeksowanie
 ui.server.load=Wczytaj
 ui.server.start=Start
 ui.server.stop=Stop
