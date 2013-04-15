@@ -3,7 +3,7 @@
 ZIM_DIRECTORY=/var/www/download.kiwix.org/zim/
 IDX_DIRECTORY=/var/www/library.kiwix.org/
 LIBRARY_PATH=/var/www/library.kiwix.org/library.xml
-ALIAS_PATH=/var/www/kiwix/maintenance_tools/contents.alias
+ALIAS_PATH=/var/www/kiwix/maintenance/maintenance_tools/contents.alias
 ALIAS_DIRECTORY=$IDX_DIRECTORY
 PORT=4200
 
@@ -54,5 +54,10 @@ then
 fi
 
 # Start kiwix-serve
-echo "Starting kiwix-serve"
-kiwix-serve --verbose --library --port=$PORT $LIBRARY_PATH
+echo "Running kiwix-serve..."
+while true
+do 
+    kiwix-serve --verbose --library --port=$PORT $LIBRARY_PATH
+    sleep 10
+done
+
