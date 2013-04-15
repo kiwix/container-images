@@ -5,6 +5,7 @@
 # Author: Eleferen
 # Author: Eugrus
 # Author: Ignatus
+# Author: Iluvatar
 # Author: Kelson
 # Author: Lvova
 # Author: Renessaince
@@ -75,6 +76,7 @@ ui.main.randomArticle=Случайная статья
 ui.main.randomArticle.accesskey=R
 ui.main.checkIntegrity=Проверка целостности
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Запуск индексации
 ui.main.purgeHistory=Очистить историю
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Справка
@@ -132,6 +134,7 @@ ui.preferences.profileDirectory=Каталог профиля
 ui.preferences.browse=Обзор
 ui.preferences.tabs=Запомнить закладки
 ui.preferences.downloadCatalogs=Скачать удалённый(-ые) каталог(и)
+ui.preferences.neverAskToIndex=Никогда не запрашивать индексацию
 ui.server.load=Загрузить
 ui.server.start=Запустить
 ui.server.stop=Остановить
@@ -143,6 +146,8 @@ ui.messages.loadArticleError=Не удается загрузить эту ст�
 ui.messages.noActiveZimFile=Нет активного ZIM файла, пожалуйста загрузите его сначала.
 ui.messages.indexZimFileConfirm=Этот файл не включает поисковый индекс. Создание такового может занять несколько минут. Вы хотите индексировать файл ZIM сейчас?
 ui.messages.abortIndexingConfirm=В настоящее время запущен процесс индексирования. Вы уверены, что хотите выйти и прервать его?
+ui.messages.removeContentConfirm=Вы уверены, что хотите удалить эту запись из списка, и все связанные с ней файлы?
+ui.messages.dontDeleteContentFiles=Не удалять ZIM-файлы.
 ui.messages.restartConfirm=%1 должна  быть перезапущена. Вы хотите сделать это сейчас?
 ui.messages.endOfIndexing=Процесс индексирования закончен.
 ui.messages.removeProfileConfirm=Вы хотите удалить свой профиль?

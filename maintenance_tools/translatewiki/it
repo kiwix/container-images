@@ -141,6 +141,7 @@ ui.messages.loadArticleError=Impossibile caricare questa pagina.
 ui.messages.noActiveZimFile=Non c'è nessun file ZIM attivo: caricane uno, prima.
 ui.messages.indexZimFileConfirm=Vuoi indicizzare il tuo file ZIM ora?
 ui.messages.abortIndexingConfirm=C'è un processo di indicizzazione in corso, sei sicuro di voler uscire e interromperlo ora?
+ui.messages.removeContentConfirm=Sei sicuro di voler rimuovere questa voce dall'elenco e tutti i file correlati?
 ui.messages.restartConfirm=%1 deve essere riavviato. Vuoi farlo adesso?
 ui.messages.endOfIndexing=Il processo di indicizzazione è terminato.
 ui.messages.removeProfileConfirm=Vuoi cancellare il tuo profilo?

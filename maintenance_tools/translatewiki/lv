@@ -105,6 +105,7 @@ ui.messages.loadArticleError=Šo rakstu nevar ielādēt.
 ui.messages.noActiveZimFile=Nav aktīvu ZIM failu, lūdzu, vispirms kādu ielādējiet.
 ui.messages.indexZimFileConfirm=Šajā failā nav meklēšanas indeksa. Tā izveide var aizņemt vairākas minūtes. Vai jūs vēlaties indeksēt ZIM failu tagad?
 ui.messages.abortIndexingConfirm=Šobrīd darbojas indeksēšanas process. Vai tiešām vēlaties iziet un pārtraukt to?
+ui.messages.dontDeleteContentFiles=Nedzēst satura (ZIM) failu.
 ui.messages.restartConfirm=%1 ir jāpārstartē. Vai jūs vēlaties to darīt tagad?
 ui.messages.endOfIndexing=Indeksēšanas process ir pabeigts.
 ui.messages.removeProfileConfirm=Vai jūs vēlaties dzēst savu profilu?

@@ -1,6 +1,7 @@
 # Messages for Brazilian Portuguese (português do Brasil)
 # Exported from translatewiki.net
 # Author: Giro720
+# Author: Gusta
 # Author: Kelson
 # Author: Luckas Blade
 # Author: Luigipiccoli
@@ -47,6 +48,7 @@ ui.main.fullscreen=Tela inteira
 ui.main.tools=Ferramentas
 ui.main.randomArticle=Artigo aleatório
 ui.main.checkIntegrity=Verificação de integridade
+ui.main.launchIndexing=Iniciar indexamento
 ui.main.purgeHistory=Limpar histórico
 ui.main.help=Ajuda
 ui.main.feedback=Comentários
@@ -101,6 +103,7 @@ ui.preferences.profileDirectory=Diretório do perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Lembrar abas
 ui.preferences.downloadCatalogs=Baixar catálogo(s) remoto(s)
+ui.preferences.neverAskToIndex=Nunca pedir para indexar
 ui.server.load=Carregar
 ui.server.start=Iniciar
 ui.server.stop=Parar
@@ -112,6 +115,8 @@ ui.messages.loadArticleError=Não foi possível carregar este artigo.
 ui.messages.noActiveZimFile=Nenhum arquivo ZIM ativo, por favor carregue um primeiro.
 ui.messages.indexZimFileConfirm=Este arquivo não inclui um índice de pesquisa. Criar um pode levar alguns minutos. Você quer indexar o arquivo ZIM agora?
 ui.messages.abortIndexingConfirm=Um processo de indexação está atualmente ocorrendo. Você tem certeza que você quer sair e abortar agora?
+ui.messages.removeContentConfirm=Você tem certeza que quer remover esta entrada da lista e todos os arquivos relacionados?
+ui.messages.dontDeleteContentFiles=Não apague o conteúdo do arquivo (ZIM).
 ui.messages.restartConfirm=%1 precisa ser reiniciado. Você quer fazer isso agora?
 ui.messages.endOfIndexing=O processo de indexação está concluído.
 ui.messages.removeProfileConfirm=Você quer remover seu perfil?

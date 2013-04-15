@@ -1,6 +1,7 @@
 # Messages for Portuguese (português)
 # Exported from translatewiki.net
 # Author: Giro720
+# Author: Gusta
 # Author: Luckas Blade
 # Author: Malafaya
 # Author: McDutchie
@@ -128,6 +129,7 @@ ui.preferences.profileDirectory=Diretório de perfil
 ui.preferences.browse=Navegar
 ui.preferences.tabs=Memorizar os separadores
 ui.preferences.downloadCatalogs=Descarregar catálogo(s) remoto(s)
+ui.preferences.neverAskToIndex=Nunca peça para indexar
 ui.server.load=Carregar
 ui.server.start=Iniciar
 ui.server.stop=Parar
@@ -139,6 +141,8 @@ ui.messages.loadArticleError=Incapaz de carregar o artigo.
 ui.messages.noActiveZimFile=Nenhum ficheiro ZIM ativo, por favor carregue um primeiro.
 ui.messages.indexZimFileConfirm=Este ficheiro não inclui um índice de pesquisa. A sua criação poderá demorar vários minutos. Deseja indexar o ficheiro ZIM agora?
 ui.messages.abortIndexingConfirm=Um processo de indexação está a correr neste momento, tem a certeza de que quer desistir e abortá-lo agora?
+ui.messages.removeContentConfirm=Tem a certeza de que deseja remover esta entrada da lista e todos os arquivos relacionados?
+ui.messages.dontDeleteContentFiles=Não exclua o arquivo de conteúdo (ZIM).
 ui.messages.restartConfirm=%1 necessita de ser reiniciado. Deseja fazê-lo agora?
 ui.messages.endOfIndexing=O processo de indexação terminou.
 ui.messages.removeProfileConfirm=Quer remover o seu perfil agora?
