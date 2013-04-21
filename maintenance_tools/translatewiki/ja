@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Anakmalaysia
 # Author: Kelson
+# Author: Naohiro19
 # Author: Schu
 # Author: Shirayuki
 # Author: 青子守歌
@@ -108,6 +109,7 @@ ui.messages.loadArticleError=この記事を読み込むことができません
 ui.messages.noActiveZimFile=アクティブな ZIM ファイルがありません。最初のファイルをロードしてください。
 ui.messages.indexZimFileConfirm=このファイルは検索インデックスを含んでいません。作成には数分かかる場合があります。ZIMファイルのインデックスを今すぐ作成しますか?
 ui.messages.abortIndexingConfirm=インデックス作成プロセスが現在実行中です。本当にこれを終了させて中止しますか?
+ui.messages.dontDeleteContentFiles=コンテンツ (ZIM) ファイルは削除しないでください。
 ui.messages.restartConfirm=%1 は再起動する必要があります。今すぐに再起動しますか?
 ui.messages.endOfIndexing=インデックス作成プロセスは完了しています。
 ui.messages.removeProfileConfirm=プロファイルを削除しますか?
