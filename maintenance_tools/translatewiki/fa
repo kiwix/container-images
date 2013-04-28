@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Leyth
 # Author: Mehran
+# Author: Mhsgame
 # Author: Mjbmr
 # Author: Reza1615
 # Author: ZxxZxxZ
@@ -72,6 +73,7 @@ ui.main.randomArticle=مقاله تصادفی
 ui.main.randomArticle.accesskey=R
 ui.main.checkIntegrity=بررسی یکپارچگی
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=راه اندازی نمایه سازی
 ui.main.purgeHistory=پاکسازی تاریخچه
 ui.main.purgeHistory.accesskey=P
 ui.main.help=کمک
@@ -129,6 +131,7 @@ ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.browse=مرور
 ui.preferences.tabs=به‌خاطرسپردن زبانه‌ها
 ui.preferences.downloadCatalogs=دانلود کالانما(ها) از راه دور
+ui.preferences.neverAskToIndex=هرگز از شاخه نپرسید
 ui.server.load=بارگیری
 ui.server.start=آغاز
 ui.server.stop=توقف
@@ -140,6 +143,8 @@ ui.messages.loadArticleError=قادر به بارگذاری مقاله نمی ب
 ui.messages.noActiveZimFile=فایل فعال ZIM پیدا نشد، ابتدا آن را بارگذاری نمایید.
 ui.messages.indexZimFileConfirm=آیا میخواهید که اکنون فایل ZIM خود را فهرست بندی کنید؟
 ui.messages.abortIndexingConfirm=فرایند فهرست بندی در حال اجراست، آیا مطمئنید که میخواهید آنرا خاتمه داده و خارج شوید؟
+ui.messages.removeContentConfirm=مطمئن هستید که میخواهید این مطلب و همه ی فایل های مرتبط را حذف کنید؟
+ui.messages.dontDeleteContentFiles=محتوای (ZIM) یک فایل را حذف نکنید.
 ui.messages.restartConfirm=%1باید ریست گردد. آیا میخواهید آنرا انجام دهید؟
 ui.messages.endOfIndexing=فرایند فهرست بندی تمام شد.
 ui.messages.removeProfileConfirm=آیا می خواهید که پروفایل خود را حذف کنید?
