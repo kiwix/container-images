@@ -3,6 +3,7 @@
 # Author: Giro720
 # Author: Gusta
 # Author: Kelson
+# Author: Luckas
 # Author: Luckas Blade
 # Author: Luigipiccoli
 # Author: MetalBrasil
@@ -108,7 +109,7 @@ ui.server.load=Carregar
 ui.server.start=Iniciar
 ui.server.stop=Parar
 ui.server.close=Fechar
-ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem certeza de que é um ficheiro ZIM?
+ui.messages.loadZimFileError=Não foi possível carregar '%1' Tem certeza de que é um arquivo ZIM?
 ui.messages.alreadyIndexingError=Um processo de indexação já está ocorrendo.
 ui.messages.noResultsError=Nenhum resultado para esta consulta.
 ui.messages.loadArticleError=Não foi possível carregar este artigo.
