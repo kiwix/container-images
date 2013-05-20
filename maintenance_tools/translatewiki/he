@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Amire80
 # Author: Inkbug
+# Author: YaronSh
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=שירותים
@@ -68,6 +69,7 @@ ui.main.randomArticle=ערך אקראי
 ui.main.randomArticle.accesskey=R
 ui.main.checkIntegrity=בדיקת שלמות
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=הפעלת עדכון האינדקס
 ui.main.purgeHistory=מחיקת היסטוריה
 ui.main.purgeHistory.accesskey=P
 ui.main.help=עזרה
@@ -125,6 +127,7 @@ ui.preferences.profileDirectory=תיקיית פרופיל
 ui.preferences.browse=עיון
 ui.preferences.tabs=לזכור לשוניות
 ui.preferences.downloadCatalogs=הורדת קטלוגים מרוחקים
+ui.preferences.neverAskToIndex=לעולם לא לבקש להוסיף לאינדקס
 ui.server.load=לטעון
 ui.server.start=להתחיל
 ui.server.stop=לעצור
@@ -136,6 +139,8 @@ ui.messages.loadArticleError=לא הצלחתי לטעון את הפריט הזה
 ui.messages.noActiveZimFile=אין קובץ ZIM פעיל. נא לטעון קובץ תחילה.
 ui.messages.indexZimFileConfirm=לקובץ הזה אין אינדקס לחיפוש. יצירת אינדקס עשויה לקחת מספר דקות. האם ליצור קובץ אינדקס עכשיו?
 ui.messages.abortIndexingConfirm=יצירת אינדקס בעיצומה כרגע; האם לבטלה ולצאת מהתוכנה בכל זאת?
+ui.messages.removeContentConfirm=האם להסיר את הרשומה הזאת מהרשימה יחד עם כל הקבצים הקשורים אליה?
+ui.messages.dontDeleteContentFiles=לא למחוק את קובץ התוכן (ZIM).
 ui.messages.restartConfirm=%1 זקוקה לאתחול. האם לאתחל?
 ui.messages.endOfIndexing=יצירת האינדקס נשלמה.
 ui.messages.removeProfileConfirm=האם ברצונך להסיר את פרופיל המשתמש הזה?

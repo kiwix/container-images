@@ -109,6 +109,7 @@ ui.messages.loadArticleError=Na wesiqaya bar nêbena.
 ui.messages.noActiveZimFile=ZIM dosya aktiv niya, recay ma ju da sıfti barkerê.
 ui.messages.indexZimFileConfirm=Na dosya raten da cıgeyrayışi dı nêravêrena.ÇEnd deka miyan dı ke şeno vırazo.Raten dı şımayê ZIM dosya wazenê?
 ui.messages.abortIndexingConfirm=Karfiyanışê ratnayışi newke gurweyêno.Şıma qayılê enewke bıvıciyê u enewke bıterkne?
+ui.messages.removeContentConfirm=Şıma qayıle ena cıkewtışra tepla dosyaya peron wedarno?
 ui.messages.dontDeleteContentFiles=Zerrekê (ZIM) dosya meesterê
 ui.messages.restartConfirm=İhtiyacê %1 do fına dest pêkiyo. Wa newke bo?
 ui.messages.endOfIndexing=Zerey proci qedya
