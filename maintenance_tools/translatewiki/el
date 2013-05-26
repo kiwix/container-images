@@ -46,6 +46,7 @@ ui.main.preferences=Προτιμήσεις
 # Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.server=Διακομιστής
+ui.main.server.accesskey=δ\n\
 ui.main.display=Εμφάνιση
 ui.main.display.accesskey=D
 ui.main.zoom=Εστίαση
