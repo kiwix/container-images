@@ -1,11 +1,12 @@
 # Messages for Uzbek (oʻzbekcha)
 # Exported from translatewiki.net
 # Author: CoderSI
+# Author: Sociologist
 
 ui.main.osxservices=Xizmatlar
 ui.main.osxhideapp=&brand.brandShortName;ni yashirish
 ui.main.osxhideothers=Boshqalarni yashirish
-ui.main.osxshowall=Hammasini ko‘rsatish
+ui.main.osxshowall=Hammasini koʻrsatish
 ui.main.file=Fayl
 ui.main.openFile=Faylni ochish...
 ui.main.browseLibrary=Kutubxonani koʻrish

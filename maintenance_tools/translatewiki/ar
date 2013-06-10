@@ -8,6 +8,7 @@
 # Author: Meno25
 # Author: Mutarjem horr
 # Author: OsamaK
+# Author: عبد الحق فارح
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
@@ -76,6 +77,7 @@ ui.main.randomArticle=مقالة عشوائية
 ui.main.randomArticle.accesskey=R
 ui.main.checkIntegrity=إفحص الإستقامة
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=بدء الفهرسة
 ui.main.purgeHistory=إستنزاف التاريخ
 ui.main.purgeHistory.accesskey=P
 ui.main.help=المساعدة
@@ -129,6 +131,7 @@ ui.preferences.cancel=ألغِ
 ui.preferences.browse=تصفّح
 ui.preferences.tabs=تذكّر الألسنة
 ui.preferences.downloadCatalogs=نزّل دفتر/دفاتر مصور/ة بعيد/ة
+ui.preferences.neverAskToIndex=لا تطلب أبدًا إلى الفهرس
 ui.server.load=حمّل
 ui.server.start=إبدأ
 ui.server.stop=قفّ
@@ -139,6 +142,8 @@ ui.messages.noResultsError=لا نتائج لهذا الطلب.
 ui.messages.loadArticleError=غير قادر على تحميل هذه المقالة.
 ui.messages.noActiveZimFile=ليس هناك ملف ZIM شغال, إفتح واحدأً أولاً.
 ui.messages.abortIndexingConfirm=هناك عملية فهرسة تجري الآن، هل أنت متأكد أنك تريد الخروج وإجهاض العملية الآن؟
+ui.messages.removeContentConfirm=هل أنت متأكد من أنك تريد إزالة هذا الإدخال من القائمة وجميع الملفات ذات الصلة؟
+ui.messages.dontDeleteContentFiles=لا تقم بحذف محتوى الملف (ZIM).
 ui.messages.restartConfirm=%1 بحاجة إلى إعادة التشغيل، هل تريد القيام بذلك الآن؟
 ui.messages.endOfIndexing=عملية الفهرسة إنتهت.
 ui.messages.dontDisplayAnymore=لا تعرض صندوق الحوار هذا بعد الآن.

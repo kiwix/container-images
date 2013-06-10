@@ -1,6 +1,7 @@
 # Messages for Serbian (Cyrillic script) (српски (ћирилица)‎)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Milicevic01
 # Author: Rancher
 
 ui.main.osxservices=Услуге
@@ -105,6 +106,7 @@ ui.messages.loadArticleError=Не могу да учитам овај члана
 ui.messages.noActiveZimFile=Нема активне ZIM датотеке. Учитајте је.
 ui.messages.indexZimFileConfirm=Ова датотека не садржи попис претраге. Стварање пописа може потрајати неколико минута. Желите ли да попишете ZIM датотеку сада?
 ui.messages.abortIndexingConfirm=Пописивање је већ покренуто. Желите ли да обуставите радњу?
+ui.messages.removeContentConfirm=Јесте ли сигурни да желите да уклоните овај унос из листе и све повезане датотеке?
 ui.messages.restartConfirm=%1 треба поновно покретање. Желите ли да наставите?
 ui.messages.endOfIndexing=Пописивање је завршено.
 ui.messages.removeProfileConfirm=Желите ли да уклоните свој профил?

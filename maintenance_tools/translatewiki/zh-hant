@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Anakmalaysia
 # Author: Ianbu
+# Author: Justincheng12345
 # Author: Kelson
 # Author: Lauhenry
 # Author: Shirayuki
@@ -44,6 +45,7 @@ ui.main.fullscreen=全螢幕
 ui.main.tools=工具
 ui.main.randomArticle=隨機文章
 ui.main.checkIntegrity=完整性檢查
+ui.main.launchIndexing=啟動索引
 ui.main.purgeHistory=清除歷史
 ui.main.help=說明
 ui.main.feedback=回饋
@@ -98,6 +100,7 @@ ui.preferences.profileDirectory=資料目錄
 ui.preferences.browse=瀏覽
 ui.preferences.tabs=記住簽頁
 ui.preferences.downloadCatalogs=下載遠端目錄
+ui.preferences.neverAskToIndex=不要詢問就索引
 ui.server.load=載入
 ui.server.start=開始
 ui.server.stop=停止
@@ -109,6 +112,8 @@ ui.messages.loadArticleError=無法加載這篇文章。
 ui.messages.noActiveZimFile=沒有打開的ZIM檔案，請先加載一件ZIM檔案。
 ui.messages.indexZimFileConfirm=此檔案不包含搜尋索引。創建索引可能耗費幾分鐘時間。你想索引ZIM檔案嗎？
 ui.messages.abortIndexingConfirm=索引進程正在進行中。您確定要退出並放棄它嗎？
+ui.messages.removeContentConfirm=您確實想從清單中刪除此項以及所有相關檔案？
+ui.messages.dontDeleteContentFiles=不要刪除內容（ZIM）檔。
 ui.messages.restartConfirm=%1需要重新啟動。您想現在這樣做嗎？
 ui.messages.endOfIndexing=索引進程完成。
 ui.messages.removeProfileConfirm=您是否想移除您的資料？
