@@ -4,6 +4,7 @@
 # Author: Fitoschido
 # Author: Kelson
 # Author: Platonides
+# Author: VegaDark
 # Author: Vivaelcelta
 
 ui.main.cssdirection=ltr
@@ -71,6 +72,7 @@ ui.main.randomArticle=Página aleatoria
 ui.main.randomArticle.accesskey=P
 ui.main.checkIntegrity=Comprobar integridad
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Inicializar indexación
 ui.main.purgeHistory=Purgar historial
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Ayuda
@@ -128,6 +130,7 @@ ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Examinar
 ui.preferences.tabs=Recordar las pestañas
 ui.preferences.downloadCatalogs=Descargar catálogo(s) remoto(s)
+ui.preferences.neverAskToIndex=Nunca preguntar para indexar
 ui.server.load=Cargar
 ui.server.start=Iniciar
 ui.server.stop=Detener
@@ -139,6 +142,8 @@ ui.messages.loadArticleError=No se puede cargar este artículo.
 ui.messages.noActiveZimFile=No hay ningún archivo ZIM activo. Debe cargar uno primero.
 ui.messages.indexZimFileConfirm=Este archivo no incluye un índice de búsqueda. El crear uno tomará algunos minutos. ¿Quiere indizar el archivo ZIM ahora?
 ui.messages.abortIndexingConfirm=Un proceso de indización ya está en marcha, ¿está seguro de que quiere terminarlo y cerrar ahora?
+ui.messages.removeContentConfirm=¿Está seguro que quiere eliminar esta entrada de la lista y todos los archivos relacionados?
+ui.messages.dontDeleteContentFiles=No eliminar el archivo de contenido (ZIM).
 ui.messages.restartConfirm=Es necesario reiniciar %1. ¿Quiere hacerlo ahora?
 ui.messages.endOfIndexing=Ha terminado el proceso de indización.
 ui.messages.removeProfileConfirm=¿Quiere eliminar su perfil?

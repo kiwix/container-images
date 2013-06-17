@@ -1,5 +1,6 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
+# Author: Ebraminio
 # Author: Leyth
 # Author: Mehran
 # Author: Mhsgame
@@ -147,7 +148,7 @@ ui.messages.removeContentConfirm=مطمئن هستید که میخواهید ا�
 ui.messages.dontDeleteContentFiles=محتوای (ZIM) یک فایل را حذف نکنید.
 ui.messages.restartConfirm=%1باید ریست گردد. آیا میخواهید آنرا انجام دهید؟
 ui.messages.endOfIndexing=فرایند فهرست بندی تمام شد.
-ui.messages.removeProfileConfirm=آیا می خواهید که پروفایل خود را حذف کنید?
+ui.messages.removeProfileConfirm=آیا می‌خواهید که پروفایل خود را حذف کنید?
 ui.messages.dontDisplayAnymore=از این پس دیگر این پیغام را نشان نده.
 ui.messages.changeSkinNeedRestart=برای تغییر پوسته، برنامه دوباره راه‌اندازی می‌شود. آیا باید راه‌اندازی مجدد گردد؟
 ui.messages.confirm=تایید
