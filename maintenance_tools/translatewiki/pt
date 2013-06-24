@@ -73,6 +73,7 @@ ui.main.randomArticle=Artigo aleatório
 ui.main.randomArticle.accesskey=A
 ui.main.checkIntegrity=Verificação de integridade
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Iniciar indexação
 ui.main.purgeHistory=Limpar histórico
 ui.main.purgeHistory.accesskey=P
 ui.main.help=Ajuda
