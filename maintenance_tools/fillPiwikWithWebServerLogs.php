@@ -135,7 +135,7 @@ function shouldBeStored($path) {
 
 /* Save in Piwik */
 function saveInPiwik($logHash) {
-  echo $logHash["ip"]." ".$logHash["utcdatetime"]." ".$logHash["path"]."\n";
+  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]."\n";
   global $idSite, $webUrl, $piwikUrl, $tokenAuth;
   $t = new PiwikTracker($idSite, $piwikUrl);
   $t->setUserAgent($logHash["agent"]);
