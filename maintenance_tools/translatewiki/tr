@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Cekli829
 # Author: Emperyan
+# Author: Man lise
 # Author: Szoszv
 # Author: VikipediBilgini
 
@@ -42,6 +43,7 @@ ui.main.fullscreen=Tam ekran
 ui.main.tools=Araçlar
 ui.main.randomArticle=Rastgele madde
 ui.main.checkIntegrity=Bütünlük denetimi
+ui.main.launchIndexing=Dizin oluşturmayı başlatmak
 ui.main.purgeHistory=Geçmişi temizle
 ui.main.help=Yardım
 ui.main.feedback=Geri bildirim
@@ -96,6 +98,7 @@ ui.preferences.profileDirectory=Profil dizini
 ui.preferences.browse=Gözat
 ui.preferences.tabs=Sekmeleri hatırla
 ui.preferences.downloadCatalogs=Uzaktan katalog(lar)ı indir
+ui.preferences.neverAskToIndex=Dizin oluşturmak için bir daha sorma
 ui.server.load=Yükle
 ui.server.start=Başla
 ui.server.stop=Dur
@@ -107,7 +110,9 @@ ui.messages.loadArticleError=Makale yüklenemedi.
 ui.messages.noActiveZimFile=Hiç ZIM dosyası aktif değil, lütfen önce bir tane yükleyin.
 ui.messages.indexZimFileConfirm=Bu dosya bir arama indeksi içermiyor. Bir tane oluşturmak birkaç dakika alabilir. ZIM dosyasını şimdi indekslemek istiyor musunuz?
 ui.messages.abortIndexingConfirm=Şu anda bir indeksleme işlemi yürütülüyor. Çıkış yapmak ve işlemi kesmek istediğinizden emin misiniz?
-ui.messages.restartConfirm=%1 yeniden başlatılmalı. Bunu şimdi yapmak istiyor musunuz?
+ui.messages.removeContentConfirm=Bu listeden ve ilgili tüm dosyaları kaldırmak istemenizden emin misiniz?
+ui.messages.dontDeleteContentFiles=İçerik (zım) dosyasını silmeyin.
+ui.messages.restartConfirm=Yeniden başlatılmaya %1 gerek. Şimdi yapmak istiyor musunuz?
 ui.messages.endOfIndexing=İndeksleme işlemi bitirildi.
 ui.messages.removeProfileConfirm=Profilinizi kaldırmak istiyor musunuz?
 ui.messages.dontDisplayAnymore=Bu iletişim kutusunu bir daha gösterme.

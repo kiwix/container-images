@@ -3,6 +3,7 @@
 # Author: Cyklopas
 # Author: Eitvys200
 # Author: Ignas693
+# Author: Mantak111
 
 ui.main.osxservices=Paslaugos
 ui.main.osxhideapp=Slėpti &brand.brandShortName;
@@ -41,6 +42,7 @@ ui.main.fullscreen=Visas ekranas
 ui.main.tools=Priemonės
 ui.main.randomArticle=Atsitiktinis straipsnis
 ui.main.checkIntegrity=Vientisumo tikrinimas
+ui.main.launchIndexing=Pradėti indeksuoti
 ui.main.purgeHistory=Puslapio istorija
 ui.main.help=Pagalba
 ui.main.feedback=Atsiliepimas
@@ -95,6 +97,7 @@ ui.preferences.profileDirectory=Profilis katalogas
 ui.preferences.browse=Naršyti
 ui.preferences.tabs=Prisiminti skirtukus
 ui.preferences.downloadCatalogs=Atsisiųsti nuotolinių katalogų(s)
+ui.preferences.neverAskToIndex=Niekada neprašyti indekso
 ui.server.load=Įkrauti
 ui.server.start=Pradėti
 ui.server.stop=Sustabdyti
@@ -106,6 +109,8 @@ ui.messages.loadArticleError=Nepavyko įkelti šio straipsnio.
 ui.messages.noActiveZimFile=Nėra aktyvaus ZIM failo, prašome ji paleisti.
 ui.messages.indexZimFileConfirm=Šis failas nėra paieškos indeksą. Kurti vieną gali užtrukti kelias minutes. Ar norite indeksuoti ZIM failą dabar?
 ui.messages.abortIndexingConfirm=Šiuo metu veikia indeksavimo procesą. Ar tikrai norite baigti ir nutraukti dabar?
+ui.messages.removeContentConfirm=Ar tikrai norite pašalinti šį įrašą iš sąrašo ir visus su juo susijusius failus?
+ui.messages.dontDeleteContentFiles=Nepanaikinkite turinio (ZIM) failą.
 ui.messages.restartConfirm=% 1 turi būti perkrautas. Ar norite tai padaryti dabar?
 ui.messages.endOfIndexing=Indeksavimo procesas yra baigtas.
 ui.messages.removeProfileConfirm=Ar norite pašalinti savo profilį?

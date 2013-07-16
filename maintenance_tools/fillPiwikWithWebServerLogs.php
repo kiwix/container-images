@@ -28,7 +28,6 @@ class LogParser
       $formatedLog['method'] = $logs[7];
       $formatedLog['path'] = $logs[8];
       $formatedLog['protocol'] = $logs[9];
-#      $formatedLog['status'] = $logs[10] == "302" || $logs[10] == "301" ? "200" : $logs[10];
       $formatedLog['status'] = $logs[10];
       $formatedLog['bytes'] = $logs[11];
       $formatedLog['referer'] = str_replace('"', "", $logs[12]);
@@ -102,7 +101,7 @@ class LogParser
 
 /* Usage() */
 function usage() {
-  echo "fillPiwikWithWebServerLogs.php --idSite=1 --webUrl=http://download.kiwix.org --piwikUrl=http://stats.kiwix.org/piwik/piwik/ --tokenAuth=b9a7f2d030888a9a0b5d31a02da56ca2 [--followLog] download.access.log*\n";
+  echo "fillPiwikWithWebServerLogs.php --idSite=1 --webUrl=http://download.kiwix.org --piwikUrl=http://stats.kiwix.org/piwik/piwik/ --tokenAuth=b9a7f2d030888a9a0b5d31a02da56ca2 [--filter=\"\/A\/\"] [--followLog] [--countSimilarRequests] download.access.log*\n";
   exit(1);
 }
 
@@ -121,7 +120,7 @@ function isAlreadyStored($logHash) {
 }
 
 /* Remove directories and icon requests */
-function shouldBeStored($path) {
+function shouldBeStored($path, $filter) {
   if (!preg_match("/^.*\.\w{3,}$/i", $path)
       || preg_match("/^.*\.md5$/i", $path)
       || preg_match("/^.*\.mirrorlist$/i", $path)
@@ -130,6 +129,13 @@ function shouldBeStored($path) {
       || strpos($path, "robots.txt") != false) {
     return false;
   }
+
+  if ($filter) {
+    if (!preg_match("/$filter/", $path)) {
+      return false;
+    }
+  }
+
   return true;
 }
 
@@ -159,23 +165,27 @@ function getLastPiwikInsertionTime() {
 }
 
 /* Get options */
-$options = getopt("", Array("idSite:", "webUrl:", "piwikUrl:", "tokenAuth:", "followLog"));
+$options = getopt("", Array("idSite:", "webUrl:", "filter:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests"));
 
 /* Check options */
 $idSite = "";
 $webUrl = "";
 $piwikUrl = "";
 $tokenAuth = "";
+$filter = "";
 $followLog = false;
+$countSimilarRequests = false;
 if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["piwikUrl"]) || empty($options["tokenAuth"])) {
   usage();
 } else {
-  global $idSite, $webUrl, $piwikUrl, $tokenAuth, $followLog;
+  global $idSite, $webUrl, $filter, $piwikUrl, $tokenAuth, $followLog, $countSimilarRequests;
   $idSite = $options["idSite"];
   $webUrl = $options["webUrl"];
   $piwikUrl = $options["piwikUrl"];
   $tokenAuth = $options["tokenAuth"];
+  $filter = $options["filter"];
   $followLog = array_key_exists("followLog", $options);
+  $countSimilarRequests = array_key_exists("countSimilarRequests", $options);
 }
 
 /* Get files to parse */
@@ -183,6 +193,49 @@ $logFiles = Array();
 foreach (array_slice($argv, 1, sizeof($argv)-1) as $arg) {
   if (!preg_match("/^--.*$/i", $arg)) {
     array_push($logFiles, $arg);
+  }
+}
+
+/* Check if file don't share the same filetime */
+$duplicateLogFiles = Array();
+foreach ($logFiles as $logFile) {
+  $logFileTime = filemtime($logFile);
+  if (array_key_exists($logFileTime, $duplicateLogFiles)) {
+    array_push($duplicateLogFiles[$logFileTime], $logFile);
+  } else {
+    $duplicateLogFiles[$logFileTime] = array( $logFile );
+  }
+}
+
+/* If many files have the same filetime, then try to change it based
+ on the last log time */
+if (count($duplicateLogFiles) != count($logFiles)) {
+  echo "Many files have the same filetime, should I try to reset them based on the last log time (yes/no)?";
+  $handle = fopen ("php://stdin","r");
+  $line = fgets($handle);
+  if(trim($line) != 'yes'){
+    echo "Aborting...\n";
+    exit(1);
+  } else {
+    foreach ($duplicateLogFiles as $logFiles) {
+      if (count($logFiles) > 1) {
+	foreach ($logFiles as $logFile) {
+	  $parser = new LogParser();
+	  $newFileTime;
+	  if ($parser->openLogFile($logFile)) {
+	    while ($line = $parser->getLine()) {
+	      $logHash = $parser->formatLine($line);
+	      if ($logHash["unixtime"]) {
+		$newFileTime = $logHash["unixtime"];
+	      }
+	    }
+	  }
+	  $parser->closeLogFile();
+	  touch($logFile, $newFileTime, $newFileTime);
+	  echo "Set new filetime $newFileTime to '$logFile'\n";
+	}
+      }
+    }
   }
 }
 
@@ -203,23 +256,29 @@ foreach ($logFiles as $logFile) {
   if ($lastPiwikInsertionTime - $logFileTime > $duplicateDelay) {
     echo "File '$logFile' is too old, it will be skiped.\n";
   } else {
-    $sortedLogFiles[filemtime($logFile)] = $logFile;
+    if (array_key_exists($logFileTime, $sortedLogFiles)) {
+      echo "File '$logFile' has the same filetime than '$sortedLogFiles[$logFileTime]'. Unable to continue.\n";
+      exit(1);
+    } else {
+      $sortedLogFiles[$logFileTime] = $logFile;
+    }
   }
 }
 ksort($sortedLogFiles);
 
 /* Read files */
 foreach ($sortedLogFiles as $logFile) {
+  global $filter;
   $parser = new LogParser();
 
   if ($parser->openLogFile($logFile)) {
     echo "File '$logFile' opened.\n";
     while ($line = $parser->getLine()) {
       $logHash = $parser->formatLine($line);
-      if (shouldBeStored($logHash["path"]) && 
+      if (shouldBeStored($logHash["path"], $filter) && 
 	  $logHash["status"] != '404' &&
 	  $logHash["status"] != '301' &&
-	  !isAlreadyStored($logHash) && 
+	  ($countSimilarRequests || !isAlreadyStored($logHash)) && 
 	  $logHash["unixtime"] > $lastPiwikInsertionTime) {
 	saveInPiwik($logHash);
       }

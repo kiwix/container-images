@@ -3,6 +3,7 @@
 # Author: EugeneZelenko
 # Author: Jim-by
 # Author: Renessaince
+# Author: Wizardist
 
 ui.main.osxservices=Сэрвісы
 ui.main.osxhideapp=Схаваць &brand.brandShortName;
@@ -41,6 +42,7 @@ ui.main.fullscreen=На ўвесь экран
 ui.main.tools=Інструмэнты
 ui.main.randomArticle=Выпадковы артыкул
 ui.main.checkIntegrity=Праверка цэласнасьці
+ui.main.launchIndexing=Пачаць індэксаваньне
 ui.main.purgeHistory=Ачысьціць гісторыю
 ui.main.help=Дапамога
 ui.main.feedback=Водгук
@@ -95,6 +97,7 @@ ui.preferences.profileDirectory=Дырэкторыя профілю
 ui.preferences.browse=Прагляд
 ui.preferences.tabs=Памятаць закладкі
 ui.preferences.downloadCatalogs=Загрузіць аддалены(я) каталёг(і)
+ui.preferences.neverAskToIndex=Ніколі не пытаць пра індэксаваньне
 ui.server.load=Загрузіць
 ui.server.start=Старт
 ui.server.stop=Спыніць

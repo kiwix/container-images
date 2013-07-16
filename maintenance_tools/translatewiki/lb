@@ -109,3 +109,4 @@ ui.messages.feedback=Feedback
 ui.messages.library=Bibliothéik
 ui.messages.fullscreen=Ganzen Ecran
 ui.messages.quitFullscreen=Aus dem Modus vum ganzen Ecran erausgoen
+ui.messages.integrityCheckFailed=D'Integratiounskontroll huet e Feeler gewisen. Äre Fichier ass korrupt.

@@ -1,6 +1,7 @@
 # Messages for 한국어 (조선) (한국어 (조선))
 # Exported from translatewiki.net
 # Author: Deacon1289
+# Author: 아라
 
 ui.main.osxservices=봉사
 ui.main.osxhideapp=&brand.brandShortName; 숨기기
@@ -54,7 +55,7 @@ ui.main.searchPlaceholder=검색할 본문을 여기에 입력하십시오...
 ui.main.findInText=원문에서 찾기
 ui.main.noSearchBar=찾기를 위한 색인된 ZIM자료기록철이 필요합니다.
 ui.main.bookmarks=자료 표시점
-ui.main.results.title=자료 검색결과 결아 찾기
+ui.main.results.title=찾기 결과
 ui.main.bmkLabel=자료 표시점:
 ui.main.notesLabel=표시 쪽지
 ui.main.loadbmk=여러 표시점 데려오기
