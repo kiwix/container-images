@@ -6,6 +6,7 @@
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
+# Author: Qiyue2001
 # Author: Shirayuki
 # Author: Yanmiao liu
 
@@ -46,6 +47,7 @@ ui.main.fullscreen=全屏
 ui.main.tools=工具
 ui.main.randomArticle=随机条目
 ui.main.checkIntegrity=完整性检查
+ui.main.launchIndexing=启动索引
 ui.main.purgeHistory=清空历史
 ui.main.help=帮助
 ui.main.feedback=反馈
@@ -100,6 +102,7 @@ ui.preferences.profileDirectory=配置文件目录
 ui.preferences.browse=浏览
 ui.preferences.tabs=记住标签页
 ui.preferences.downloadCatalogs=下载远程目录
+ui.preferences.neverAskToIndex=不询问就开始索引
 ui.server.load=载入
 ui.server.start=开始
 ui.server.stop=停止
@@ -111,6 +114,8 @@ ui.messages.loadArticleError=无法载入该文章。
 ui.messages.noActiveZimFile=无打开的ZIM文件，请先加载。
 ui.messages.indexZimFileConfirm=该文件未包含搜索索引。创建索引可能会耗费数分钟时间。您是否想现在就为ZIM文件创建索引？
 ui.messages.abortIndexingConfirm=正在索引中。您确认现在要退出并终止它吗？
+ui.messages.removeContentConfirm=您确定要从清单中删除此项以及所有相关档案？
+ui.messages.dontDeleteContentFiles=请不要删除内容 (ZIM) 文件。
 ui.messages.restartConfirm=%1需要重启动。您是否希望现在重启？
 ui.messages.endOfIndexing=索引完成。
 ui.messages.removeProfileConfirm=您是否想移除您的配置文件？

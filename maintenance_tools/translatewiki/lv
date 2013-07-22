@@ -1,6 +1,7 @@
 # Messages for Latvian (latviešu)
 # Exported from translatewiki.net
 # Author: GreenZeb
+# Author: Jmg.cmdi
 # Author: Papuass
 
 ui.main.osxservices=Pakalpojumi
@@ -40,6 +41,7 @@ ui.main.fullscreen=Pilnekrāna režīms
 ui.main.tools=Rīki
 ui.main.randomArticle=Nejaušs raksts
 ui.main.checkIntegrity=Integritātes pārbaude
+ui.main.launchIndexing=Uzsākt indeksēšanu
 ui.main.purgeHistory=Notīrīt vēsturi
 ui.main.help=Palīdzība
 ui.main.feedback=Atsauksmes
@@ -105,6 +107,7 @@ ui.messages.loadArticleError=Šo rakstu nevar ielādēt.
 ui.messages.noActiveZimFile=Nav aktīvu ZIM failu, lūdzu, vispirms kādu ielādējiet.
 ui.messages.indexZimFileConfirm=Šajā failā nav meklēšanas indeksa. Tā izveide var aizņemt vairākas minūtes. Vai jūs vēlaties indeksēt ZIM failu tagad?
 ui.messages.abortIndexingConfirm=Šobrīd darbojas indeksēšanas process. Vai tiešām vēlaties iziet un pārtraukt to?
+ui.messages.removeContentConfirm=Vai tiešām vēlaties noņemt šo ievadni no saraksta un visus saistītos failus?
 ui.messages.dontDeleteContentFiles=Nedzēst satura (ZIM) failu.
 ui.messages.restartConfirm=%1 ir jāpārstartē. Vai jūs vēlaties to darīt tagad?
 ui.messages.endOfIndexing=Indeksēšanas process ir pabeigts.
