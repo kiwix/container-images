@@ -3,6 +3,7 @@
 # Author: Helix84
 # Author: Kelson
 # Author: Kusavica
+# Author: Teslaton
 # Author: Wizzard
 
 ui.main.osxservices=Služby
@@ -42,6 +43,7 @@ ui.main.fullscreen=Celá obrazovka
 ui.main.tools=Nástroje
 ui.main.randomArticle=Náhodný článok
 ui.main.checkIntegrity=Kontrola integrity
+ui.main.launchIndexing=Spustiť indexovanie
 ui.main.purgeHistory=Vyčistiť históriu
 ui.main.help=Pomocník
 ui.main.feedback=Spätná väzba
@@ -96,6 +98,7 @@ ui.preferences.profileDirectory=Adresár profilu
 ui.preferences.browse=Prehliadať
 ui.preferences.tabs=Uložiť záložky
 ui.preferences.downloadCatalogs=Stiahnuť vzdialený katalóg
+ui.preferences.neverAskToIndex=Nikdy sa nepýtať na indexovanie
 ui.server.load=Načítať
 ui.server.start=Štart
 ui.server.stop=Stop
@@ -107,6 +110,8 @@ ui.messages.loadArticleError=Nemožno načítať tento článok.
 ui.messages.noActiveZimFile=Žiadny aktívny súbor ZIM. Prosím, najskôr nejaký načítajte.
 ui.messages.indexZimFileConfirm=Tento súbor neobsahuje vyhľadávací index. Jeho vytvorenie môže trvať niekoľko minút. Chcete sa vytvoriť index súboru ZIM teraz?
 ui.messages.abortIndexingConfirm=Vytváranie indexu v súčasnej dobe beží. Naozaj chcete skončiť a to teraz ho prerušiť?
+ui.messages.removeContentConfirm=Naozaj chcete odstrániť túto položku zo zoznamu a všetkých súvisiacich súborov?
+ui.messages.dontDeleteContentFiles=Neodstraňujte obsah súboru (ZIM).
 ui.messages.restartConfirm=%1 je potrebné reštartovať. Chcete to urobiť hneď?
 ui.messages.endOfIndexing=Vytváranie indexu je hotové.
 ui.messages.removeProfileConfirm=Chcete odstrániť svoj profil?
