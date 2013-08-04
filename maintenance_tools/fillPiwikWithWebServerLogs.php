@@ -183,7 +183,7 @@ if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["pi
   $webUrl = $options["webUrl"];
   $piwikUrl = $options["piwikUrl"];
   $tokenAuth = $options["tokenAuth"];
-  $filter = $options["filter"];
+  $filter = array_key_exists("filter", $options) ? $options["filter"] : '';
   $followLog = array_key_exists("followLog", $options);
   $countSimilarRequests = array_key_exists("countSimilarRequests", $options);
 }
@@ -244,6 +244,14 @@ date_default_timezone_set("UTC");
 
 /* Get last insertion date */
 $lastPiwikInsertionTime = getLastPiwikInsertionTime();
+if (!$lastPiwikInsertionTime) {
+  echo "Script was unable to unable to retrieve the date of last log insertion. Is that normal? Do you want to continue (yes/no)?";
+  $handle = fopen ("php://stdin","r");
+  $line = fgets($handle);
+  if(trim($line) != 'yes') {
+    exit(1);
+  }
+}
 
 /* Sort files and remove the too old ones */
 $sortedLogFiles = Array();
