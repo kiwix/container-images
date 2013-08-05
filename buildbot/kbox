@@ -91,6 +91,13 @@ class VirtualMachine(object):
             subprocess.Popen([self.MANAGE, 'controlvm',
                               self.name, 'acpipowerbutton'])
 
+    def kill(self):
+        if self.name.lower() == 'arm':
+            subprocess.Popen([self.QEMU_HALT])
+        else:
+            subprocess.Popen([self.MANAGE, 'controlvm',
+                              self.name, 'poweroff'])
+
     def export(self):
         if self.name.lower() == 'arm':
             print "Still unable to export a Qemu VM."
@@ -168,6 +175,11 @@ def stop(option, opt_str, value, parser, *args, **kwargs):
     vm = VirtualMachine.get(value)
     vm.stop()
 
+def kill(option, opt_str, value, parser, *args, **kwargs):
+
+    vm = VirtualMachine.get(value)
+    vm.kill()
+
 def export(option, opt_str, value, parser, *args, **kwargs):
 
     vm = VirtualMachine.get(value)
@@ -221,6 +233,9 @@ def main():
     parser.add_option("--stop", action="callback", callback=stop, type="str", \
                       metavar="VM", \
                       help="sends shutdown to the VM named [VM].")
+    parser.add_option("--kill", action="callback", callback=kill, type="str", \
+                      metavar="VM", \
+                      help="sends poweroff to the VM named [VM].")
     parser.add_option("--info", action="callback", callback=info, type="str", \
                       metavar="VM", \
                       help="displays info for the VM named [VM].")
