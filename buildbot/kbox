@@ -189,7 +189,7 @@ def ssh(option, opt_str, value, parser, *args, **kwargs):
     else:
         ip = machines.get(value, None)
         if ip:
-            os.execl('/usr/bin/ssh', 'ssh', "dev@%s" % ip)
+            os.execl('/usr/bin/ssh', 'ssh', "dev@%s" % value)
 
 
 def main():
