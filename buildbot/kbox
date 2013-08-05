@@ -11,6 +11,12 @@ import sys
 import subprocess
 from optparse import OptionParser
 
+def get_homedir(username):
+    p = subprocess.Popen(["getent", "passwd", username], stdout=subprocess.PIPE)
+    out, err = p.communicate()
+    return out.split(':')[5]
+
+BB_HOMEDIR = get_homedir("buildbot")
 
 # configure following
 machines = {
@@ -34,9 +40,9 @@ class VirtualMachine(object):
     MANAGE = '/usr/bin/VBoxManage'
     GREP = '/usr/bin/grep'
     SSH = '/usr/bin/ssh'
-    QEMU = '/home/buildbot/vms/launch_qemu'
-    QEMU_RUNNING = '/home/buildbot/vms/is_qemu_running'
-    QEMU_HALT = '/home/buildbot/vms/halt_qemu'
+    QEMU = '%s/vms/launch_qemu' % BB_HOMEDIR
+    QEMU_RUNNING = '%s/vms/is_qemu_running' % BB_HOMEDIR
+    QEMU_HALT = '%s/vms/halt_qemu' % BB_HOMEDIR
 
     def __call__(self, *args, **kw):
         ins = VirtualMachine(*args, **kw)
