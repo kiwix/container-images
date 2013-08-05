@@ -84,7 +84,7 @@ class VirtualMachine(object):
         if self.name.lower() == 'osx':
             ip = machines.get(self.name, None)
             if ip:
-                subprocess.Popen('%s dev@%s "sudo /sbin/shutdown -h now"' % (self.SSH, ip), shell=True)
+                subprocess.Popen('%s dev@%s "sudo /sbin/shutdown -h now"' % (self.SSH, self.name), shell=True)
         elif self.name.lower() == 'arm':
             subprocess.Popen([self.QEMU_HALT])
         else:
