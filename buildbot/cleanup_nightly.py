@@ -7,8 +7,8 @@ import shutil
 from datetime import date, timedelta
 
 MAX_AGE = 30
-DIRS = ['/var/www/download.kiwix.org/src/nightly',
-        '/var/www/download.kiwix.org/bin/nightly']
+DIRS = ['/var/www/download.kiwix.org/nightly/src',
+        '/var/www/download.kiwix.org/nightly/bin']
 
 # use argv[1] as max_age if provided
 if len(sys.argv) > 1:
@@ -44,4 +44,4 @@ for target in DIRS:
         # now we know we must delete it.
         print(u"removing: %s" % os.path.join(target, folder))
         shutil.rmtree(os.path.join(target, folder))
-        
+
