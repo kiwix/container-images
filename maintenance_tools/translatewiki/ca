@@ -1,5 +1,6 @@
 # Messages for Catalan (català)
 # Exported from translatewiki.net
+# Author: Alvaro Vidal-Abarca
 # Author: Arnaugir
 # Author: Gemmaa
 # Author: McDutchie
@@ -71,6 +72,7 @@ ui.main.randomArticle=Article a l'atzar
 ui.main.randomArticle.accesskey=Z
 ui.main.checkIntegrity=Integrity check
 ui.main.checkIntegrity.accesskey=k
+ui.main.launchIndexing=Iniciar la indexació
 ui.main.purgeHistory=Netejar historial
 ui.main.purgeHistory.accesskey=N
 ui.main.help=Ajuda
@@ -128,6 +130,7 @@ ui.preferences.profileDirectory=Profile directory
 ui.preferences.browse=Browse
 ui.preferences.tabs=Recordeu tabs
 ui.preferences.downloadCatalogs=Descarregar catàlegs remots
+ui.preferences.neverAskToIndex=No preguntar mai per la indexació
 ui.server.load=Carrega
 ui.server.start=Inicia
 ui.server.stop=Atura
@@ -139,6 +142,8 @@ ui.messages.loadArticleError=No s'ha pogut carregar aquest article
 ui.messages.noActiveZimFile=No hi ha cap fitxer ZIM actiu, si us plau carrega'n un abans.
 ui.messages.indexZimFileConfirm=Vols indexar el teu fitxer ZIM ara?
 ui.messages.abortIndexingConfirm=Actualment s'està executant un procés d'indexació, estàs segur que vols sortir i abortar-lo?
+ui.messages.removeContentConfirm=Estàs segur que vols esborrar aquesta entrada de la llista i de tots els fitxers relacionats?
+ui.messages.dontDeleteContentFiles=No esborrar el fitxer de contingut (ZIM).
 ui.messages.restartConfirm=Es necessita reiniciar %1. Vols fer-ho ara?
 ui.messages.endOfIndexing=S'ha acabat el procés d'indexació.
 ui.messages.removeProfileConfirm=Vols eliminar el teu perfil?

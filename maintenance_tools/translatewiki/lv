@@ -96,6 +96,7 @@ ui.preferences.profileDirectory=Profila direktorija
 ui.preferences.browse=Pārlūkot
 ui.preferences.tabs=Atcerēties cilnes
 ui.preferences.downloadCatalogs=Lejupielādēt attālos katalogus
+ui.preferences.neverAskToIndex=Nekad nejautāt, vai indeksēt
 ui.server.load=Ielādēt
 ui.server.start=Sākt
 ui.server.stop=Apturēt
