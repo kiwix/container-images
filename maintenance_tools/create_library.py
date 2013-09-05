@@ -55,11 +55,21 @@ def listFilesRecursive(dir):
     for folder in listDir(dir):
         filelist.extend(listFilesRecursive(os.path.join(dir,folder)))
     return filelist
+
 def usage():
     print "Usage: "
     print "A tool to build library files to Kiwix"
     print "Supports adding diff files"
     print "Usage: create_library.py <library path> "
+
+#Function to return only the filename if the entire path of the file is passed:
+def filename(file):
+    op=""
+    for i in range(len(file)-1,-1,-1):
+        if(file[i]=='/'):
+            return op
+        op=file[i]+op
+    return op
 
 
 
@@ -88,12 +98,12 @@ if __name__ == "__main__":
                 if(file[-4:]==".zim"):
                     print "Adding file "+file+" to library..."
                     localFileName= file[len(rootDir)+1:]
-                    runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url=http://download.kiwix.org/zim/'+localFileName+ '.meta4 origId= "" ')
+                    runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url http://download.kiwix.org/zim/'+localFileName+ '.meta4 --origId= "" ')
     for file in listFilesRecursive(diffFolder):
             if(file[-4:]==".zim"):
                 print "Adding file "+file+" to library..."
                 localFileName= file[len(rootDir)+1:]
-                runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url=http://download.kiwix.org/zim/'+localFileName+ '.meta4 origId= '+file[:-15])
+                runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url http://download.kiwix.org/zim/'+localFileName+ '.meta4 --origId '+filename(file)[:-15])
 
 
 
