@@ -82,6 +82,8 @@ def compareZimFiles(file1,file2):
         return False
     if(Creator(file1)!=Creator(file2)):
         return False
+    if(Language(file1)!=Language(file2)):
+        return False
     return True
 
 #Method to return the UUID of the zim file.
@@ -95,6 +97,14 @@ def UUID(filename):
 #Method to return the Title of the ZIM file
 def Title(filename):
     op=runCommand("zimdump -u M/Title -d "+filename)
+    if(len(op)!=0):
+        return op[0]
+    else:
+        return ""
+
+#Method to return the Language of the ZIM file
+def Language(filename):
+    op=runCommand("zimdump -u M/Language -d "+filename)
     if(len(op)!=0):
         return op[0]
     else:
