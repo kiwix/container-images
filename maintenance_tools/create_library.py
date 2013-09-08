@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #Written by Kiran mathew Koshy.
 
 
@@ -9,19 +8,24 @@ import sys
 import subprocess 
 
 
-#Name of the folder in which the diff files will be kept.
-#The diff Folder should be inside the library.
-diffFolderName="diff"
 
-rootDir="/var/www/download.kiwix.org/zim/"
-libFile="/var/www/download.kiwix.org/zim/library.xml"
-diffFolder=rootDir+'/'+diffFolderName
+#Location of kiwix library.
+global rootDir
+
+#Location of diff_folder:
+global diffFolder
+
+#Library File.
+global libFile
 
 #URL Base, will be added to the directory to obtain the download URL.
-urlBase="http://download.kiwix.org/zim"
-if(urlBase[len(urlBase)-1]!='/'):
-    urlBase=urlBase+"/"
+urlBase="http://download.kiwix.org/zim/"
 
+def usage():
+    print "Usage: "
+    print "A tool to build library files to Kiwix"
+    print "Supports adding diff files"
+    print "Usage: create_library.py --dir <library path> --diff <Diff folder> --lib <libfile>"
 
 
 #Executes a command and returns the output
@@ -57,11 +61,6 @@ def listFilesRecursive(dir):
         filelist.extend(listFilesRecursive(os.path.join(dir,folder)))
     return filelist
 
-def usage():
-    print "Usage: "
-    print "A tool to build library files to Kiwix"
-    print "Supports adding diff files"
-    print "Usage: create_library.py <library path> "
 
 #Function to return only the filename if the entire path of the file is passed:
 def filename(file):
@@ -76,16 +75,63 @@ def filename(file):
 
 #Main  function:
 if __name__ == "__main__":
-    if(len(sys.argv)>=2):
-    	if(sys.argv[1]=="--help" or sys.argv[1]=="-h"):
-       	    usage()
-            sys.exit(0)
+    
+    global rootDir
+    global diffFolder
+    global libFile
+
+    if(len(sys.argv)<2):
+        print "Not enough arguments"
+        usage()
+        sys.exit(0)
+
+    
+    for word in sys.argv:
+        if(word=="-h"):
+            usage()
+            exit(0)
+        if(word=="--help"):
+            usage()
+            exit(0)
+    
+    for i in range(0,len(sys.argv)):
+        if(sys.argv[i]=="--dir"):
+            if(i<(len(sys.argv)-1)):
+                rootDir=sys.argv[i+1]
+        if(sys.argv[i]=="--diff"):
+            if(i<(len(sys.argv)-1)):
+                diffFolder=sys.argv[i+1]
+        if(sys.argv[i]=="--lib"):
+            if(i<(len(sys.argv)-1)):
+                libFile=sys.argv[i+1]
+    #If the zimdiff variable does not exist:
+    if(('rootDir' in globals())==False):
+        print "Not enough arguments (root directory)"
+        usage()
+        sys.exit(0)
+    
+    #If the zimdiff variable does not exist:
+    if(('diffFolder' in globals())==False):
+        print "Not enough arguments (diff Folder)"
+        usage()
+        sys.exit(0)
+
+    #If the zimdiff variable does not exist:
+    if(('libFile' in globals())==False):
+        print "Not enough arguments (library File)"
+        usage()
+        sys.exit(0)
+    
     if(os.path.isdir(rootDir)==False):
         print "[ERROR] Library Folder does not exist."
         sys.exit(0)
     if(os.path.isdir(diffFolder)==False):
         print "[ERROR] Diff Folder does not exist."
-        sys.exit(0)    
+        sys.exit(0)   
+    
+    rootDir=os.path.abspath(rootDir)
+    diffFolder=os.path.abspath(diffFolder)
+    libFile=os.path.abspath(libFile)
     print "[INFO] Library Folder: "+rootDir
     print "[INFO] Library File: "+ libFile
     print "[INFO] URL Base: "+urlBase
