@@ -1,4 +1,3 @@
-#!/usr/bin/python
 #Written by Kiran mathew Koshy
 
 #Program for computing the diff files of different versions of the zim files.
@@ -22,12 +21,6 @@ global rootDir
 global diffFolder
 
 
-#Usage
-def usage():
-    print "Script to compute the diff_files between zim files in a directory using zimdiff"
-    print "Usage: 'python compute_diff.py' --dir <Library Directory> --diff <diff Folder> --zimdiff <zimdiff_dir> "
-    print "Zimdiff directory is required if zimdiff is not installed in the system"
-
 #Executes a command and returns the output
 def runCommand(command):
     p=subprocess.Popen(command,shell=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
@@ -35,7 +28,6 @@ def runCommand(command):
     for line in p.stdout.readlines():
         op.append(line)
     return op
-
 
 #Check if zimdiff is installed or not.
 #Runs a shell command 'zimdiff'
@@ -54,7 +46,6 @@ def checkZimdiff():
             return False
     return True
 
-
 #Function to return all folders in a folder.
 def listDir(dir):
     folders=[]
@@ -66,7 +57,7 @@ def listDir(dir):
 #Function to return all files in a folder
 def listFiles(dir):
     files=[]
-    for i in os.listdir(dir):
+    for i in os.listdir(dir): 
         if(os.path.isfile(os.path.join(dir,i))):
             files.append(os.path.join(dir,i))
     return files
@@ -78,7 +69,8 @@ def listZimFilesRecursive(dir):
         if(file[-4:]==".zim"):
             filelist.append(file)
     for folder in listDir(dir):
-        filelist.extend(listZimFilesRecursive(os.path.join(dir,folder)))
+        if(os.path.join(dir,folder)!=diffFolder):
+            filelist.extend(listZimFilesRecursive(os.path.join(dir,folder)))
     return filelist
 
 #Compares two zim files to see if they are of the same origin
@@ -102,23 +94,34 @@ def UUID(filename):
 #Method to return the Title of the ZIM file
 def Title(filename):
     op=runCommand("zimdump -u M/Title -d "+filename)
-    print filename
-    return op[0]
+    if(len(op)!=0):
+        return op[0]
+    else:
+        return ""
 
 #Method to return the publisher of the ZIM file
 def Publisher(filename):
     op=runCommand("zimdump -u M/Publisher -d "+filename)
-    return op[0]
+    if(len(op)!=0):
+        return op[0]
+    else:
+        return ""
 
 #Method to return the Creator of the ZIM file:
 def Creator(filename):
     op=runCommand("zimdump -u M/Creator -d "+filename)
-    return op[0]
+    if(len(op)!=0):
+        return op[0]
+    else:
+        return ""
 
 #Method to return the date of the file.
 def date(filename):
     op=runCommand("zimdump -u M/Date -d "+filename)
-    return op[0]
+    if(len(op)!=0):
+        return op[0]
+    else:
+        return ""
 
 def isDiffFile(fileName):
     for file in listFiles(diffFolder):
@@ -136,8 +139,15 @@ def diffFileName(start_file,end_file):
 
 
 def createDiffFile(startFile,endFile):
-    print zimdiffDir+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
-    runCommand(zimdiffDir+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
+    #print zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
+    runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
+
+
+#Usage
+def usage():
+    print "Script to compute the diff_files between zim files in a directory using zimdiff"
+    print "Usage: 'python compute_diff.py' --dir <Library Directory> --diff <diff Folder> --zimdiff <zimdiff_dir> "
+    print "Zimdiff directory is required if zimdiff is not installed in the system"
 
 #Main function: 
 if __name__ == "__main__":
@@ -197,22 +207,16 @@ if __name__ == "__main__":
         if(os.path.isfile(zimdiff)==False):
             print "[ERROR] zimdiff binary does not exist."
             sys.exit(0)    
-    print os.path.join(os.getcwd(),rootDir)
     rootDir=os.path.abspath(rootDir)
     diffFolder=os.path.abspath(diffFolder)
     print "[INFO] Library Folder: "+rootDir
     print "[INFO] Diff Folder: "+diffFolder
     print "[INFO] Parsing library Folder.."
-    folders=listDir(rootDir)
-    folders.sort()
-    for i in range(0, len(folders)):
-        if(folders[i]!=diffFolder):
-            print "Searching folder "+folders[i]
-            for file in listZimFilesRecursive(folders[i]):
-                for j in range(0,i):
-                    if(folders[j]!=diffFolder):
-                        for oldFile in listZimFilesRecursive(folders[j]):
-                            if(compareZimFiles(oldFile,file)==True):
-                                print "Older version of "+file+" detected: "+oldFile
-                                if(isDiffFile(diffFileName(oldFile,file))==False):
-                                    createDiffFile(oldFile,file)
+    files=listZimFilesRecursive(rootDir)
+    files.sort(key = date)
+    for i in range(0, len(files)):
+        for j in range(0,i):
+            if(compareZimFiles(files[j],files[i])==True):
+                print "Older version of "+files[i]+" detected: "+files[j]
+                if(isDiffFile(diffFileName(files[j],files[i]))==False):
+                    createDiffFile(files[j],files[i])
