@@ -14,20 +14,19 @@ import os
 import subprocess 
 import sys
 
-#Important: since zimdiff is not part of zimlib yet, add the directory to zimdiff here :
-zimdiffDir= "zimdiff"
-
+#zimdiff Binary :
+global zimdiff
 #Location of kiwix library.
-rootDir="/var/www/download.kiwix.org/zim/"
-
+global rootDir
 #Location of diff_folder:
-diffFolderName="diff"
-diffFolder=rootDir+'/'+diffFolderName
+global diffFolder
+
 
 #Usage
 def usage():
     print "Script to compute the diff_files between zim files in a directory using zimdiff"
-    print "Usage: 'python compute_diff.py' "
+    print "Usage: 'python compute_diff.py' --dir <Library Directory> --diff <diff Folder> --zimdiff <zimdiff_dir> "
+    print "Zimdiff directory is required if zimdiff is not installed in the system"
 
 #Executes a command and returns the output
 def runCommand(command):
@@ -36,6 +35,25 @@ def runCommand(command):
     for line in p.stdout.readlines():
         op.append(line)
     return op
+
+
+#Check if zimdiff is installed or not.
+#Runs a shell command 'zimdiff'
+#IF the words 'not ' and 'found' are present in the output, and if the output is a single line, then zimdiff is not present in the system.
+def checkZimdiff():
+    op=runCommand("zimdiff")
+    nt=False
+    found=False
+    if(len(op)==1):
+        for word in op[0].split():
+            if(word=="not"):
+                nt=True
+            if(word=="found"):
+                found=True
+        if(nt and found):
+            return False
+    return True
+
 
 #Function to return all folders in a folder.
 def listDir(dir):
@@ -123,16 +141,65 @@ def createDiffFile(startFile,endFile):
 
 #Main function: 
 if __name__ == "__main__":
-    if(len(sys.argv)>=2):
-    	if(sys.argv[1]=="--help" or sys.argv[1]=="-h"):
-       	    usage()
+    global zimdiff
+    global rootDir
+    global diffFolder
+    if(len(sys.argv)<2):
+        print "Not enough arguments"
+        usage()
+        sys.exit(0)
+    for word in sys.argv:
+        if(word=="-h"):
+            usage()
+            exit(0)
+        if(word=="--help"):
+            usage()
+            exit(0)
+    for i in range(0,len(sys.argv)):
+        if(sys.argv[i]=="--dir"):
+            if(i<(len(sys.argv)-1)):
+                rootDir=sys.argv[i+1]
+        if(sys.argv[i]=="--diff"):
+            if(i<(len(sys.argv)-1)):
+                diffFolder=sys.argv[i+1]
+        if(sys.argv[i]=="--zimdiff"):
+            if(i<(len(sys.argv)-1)):
+                zimdiff=sys.argv[i+1]
+    
+    #If the zimdiff variable does not exist:
+    if(('rootDir' in globals())==False):
+        print "Not enough arguments (root directory)"
+        usage()
+        sys.exit(0)
+      
+    #If the zimdiff variable does not exist:
+    if(('diffFolder' in globals())==False):
+        print "Not enough arguments (diff Folder)"
+        usage()
+        sys.exit(0)
+
+    #If the zimdiff variable does not exist:
+    if(('zimdiff' in globals())==False):
+        if(checkZimdiff()):
+            zimdiff="zimdiff"  
+        else:
+            print "Not enough arguments(zimdiff binary)"
+            usage()
             sys.exit(0)
+       
     if(os.path.isdir(rootDir)==False):
         print "[ERROR] Library Folder does not exist."
         sys.exit(0)
     if(os.path.isdir(diffFolder)==False):
         print "[ERROR] Diff Folder does not exist."
         sys.exit(0)    
+    if(checkZimdiff()==False):
+        if(os.path.isfile(zimdiff)==False):
+            print "[ERROR] zimdiff binary does not exist."
+            sys.exit(0)    
+    print os.path.join(os.getcwd(),rootDir)
+    rootDir=os.path.abspath(rootDir)
+    diffFolder=os.path.abspath(diffFolder)
     print "[INFO] Library Folder: "+rootDir
     print "[INFO] Diff Folder: "+diffFolder
     print "[INFO] Parsing library Folder.."
