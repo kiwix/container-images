@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #Written by Kiran mathew Koshy
 
 #Program for computing the diff files of different versions of the zim files.
@@ -123,7 +124,7 @@ def createDiffFile(startFile,endFile):
 #Main function: 
 if __name__ == "__main__":
     if(len(sys.argv)>=2):
-    	if(sys.argv[1]=="--help"):
+    	if(sys.argv[1]=="--help" or sys.argv[1]=="-h"):
        	    usage()
             sys.exit(0)
     if(os.path.isdir(rootDir)==False):
