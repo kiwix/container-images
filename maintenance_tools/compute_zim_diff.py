@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #Written by Kiran mathew Koshy
 
 #Program for computing the diff files of different versions of the zim files.
