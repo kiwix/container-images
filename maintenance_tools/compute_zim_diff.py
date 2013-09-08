@@ -76,6 +76,22 @@ def listZimFilesRecursive(dir):
 
 #Compares two zim files to see if they are of the same origin
 def compareZimFiles(file1,file2):
+    if(Title(file1)==""):
+        return False
+    if(Title(file2)==""):
+        return False
+    if(Publisher(file1)==""):
+        return False
+    if(Publisher(file2)==""):
+        return False
+    if(Creator(file1)==""):
+        return False
+    if(Creator(file2)==""):
+        return False
+    if(Language(file1)==""):
+        return False
+    if(Language(file2)==""):
+        return False
     if(Title(file1)!=Title(file2)):
         return False
     if(Publisher(file1)!=Publisher(file2)):
