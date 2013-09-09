@@ -114,41 +114,41 @@ def UUID(filename):
 def Title(filename):
     op=runCommand("zimdump -u M/Title -d "+filename)
     if(len(op)!=0):
-        return op[0]
-    else:
-        return ""
+        if(op[0]!="article index out of range"):
+            return op[0]
+    return ""
 
 #Method to return the Language of the ZIM file
 def Language(filename):
     op=runCommand("zimdump -u M/Language -d "+filename)
     if(len(op)!=0):
-        return op[0]
-    else:
-        return ""
+        if(op[0]!="article index out of range"):
+            return op[0]
+    return ""
 
 #Method to return the publisher of the ZIM file
 def Publisher(filename):
     op=runCommand("zimdump -u M/Publisher -d "+filename)
     if(len(op)!=0):
-        return op[0]
-    else:
-        return ""
+        if(op[0]!="article index out of range"):
+            return op[0]
+    return ""
 
 #Method to return the Creator of the ZIM file:
 def Creator(filename):
     op=runCommand("zimdump -u M/Creator -d "+filename)
     if(len(op)!=0):
-        return op[0]
-    else:
-        return ""
+        if(op[0]!="article index out of range"):
+            return op[0]
+    return ""
 
 #Method to return the date of the file.
 def date(filename):
     op=runCommand("zimdump -u M/Date -d "+filename)
     if(len(op)!=0):
-        return op[0]
-    else:
-        return ""
+        if(op[0]!="article index out of range"):
+            return op[0]
+    return ""
 
 def isDiffFile(fileName):
     for file in listFiles(diffFolder):
