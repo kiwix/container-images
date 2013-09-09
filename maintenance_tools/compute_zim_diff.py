@@ -110,11 +110,19 @@ def UUID(filename):
             return op[i][6:len(op[i])][:-1]
     return ""
 
+def contains(string,substr):
+    for i in string.split():
+        if(i==substr):
+            return True
+    return False
+
 #Method to return the Title of the ZIM file
 def Title(filename):
     op=runCommand("zimdump -u M/Title -d "+filename)
     if(len(op)!=0):
-        if(op[0]!="article index out of range"):
+        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
+            return ""
+        else:
             return op[0]
     return ""
 
@@ -122,7 +130,9 @@ def Title(filename):
 def Language(filename):
     op=runCommand("zimdump -u M/Language -d "+filename)
     if(len(op)!=0):
-        if(op[0]!="article index out of range"):
+        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
+            return ""
+        else:
             return op[0]
     return ""
 
@@ -130,7 +140,9 @@ def Language(filename):
 def Publisher(filename):
     op=runCommand("zimdump -u M/Publisher -d "+filename)
     if(len(op)!=0):
-        if(op[0]!="article index out of range"):
+        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
+            return ""
+        else:
             return op[0]
     return ""
 
@@ -138,7 +150,9 @@ def Publisher(filename):
 def Creator(filename):
     op=runCommand("zimdump -u M/Creator -d "+filename)
     if(len(op)!=0):
-        if(op[0]!="article index out of range"):
+        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
+            return ""
+        else:
             return op[0]
     return ""
 
@@ -146,7 +160,9 @@ def Creator(filename):
 def date(filename):
     op=runCommand("zimdump -u M/Date -d "+filename)
     if(len(op)!=0):
-        if(op[0]!="article index out of range"):
+        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
+            return ""
+        else:
             return op[0]
     return ""
 
