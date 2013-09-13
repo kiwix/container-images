@@ -188,7 +188,7 @@ def diffFileName(start_file,end_file):
 def createDiffFile(startFile,endFile):
     #print zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
     op=runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
-    print op
+    #print op
 
 #Usage
 def usage():
