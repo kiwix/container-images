@@ -102,6 +102,20 @@ def compareZimFiles(file1,file2):
         return False
     return True
 
+
+#Method to return if the output returned by a shell command to zimdiff is invalid or not.
+def isValidOutput(op):
+    #article index out of range
+    if(contains(op,"article") and contains(op,"index") and contains(op,"out") and contains(op,"of") and contains(op,"range")):
+        return False
+
+    #error reading zim-file header
+    if(contains(op,"error") and contains(op,"reading")):
+        return False
+    return True
+
+#error reading zim-file header
+
 #Method to return the UUID of the zim file.
 def UUID(filename):
     op=runCommand("zimdump "+filename+" -F")
@@ -120,9 +134,7 @@ def contains(string,substr):
 def Title(filename):
     op=runCommand("zimdump -u M/Title -d "+filename)
     if(len(op)!=0):
-        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
-            return ""
-        else:
+        if(isValidOutput(op[0])):
             return op[0]
     return ""
 
@@ -130,9 +142,7 @@ def Title(filename):
 def Language(filename):
     op=runCommand("zimdump -u M/Language -d "+filename)
     if(len(op)!=0):
-        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
-            return ""
-        else:
+        if(isValidOutput(op[0])):
             return op[0]
     return ""
 
@@ -140,9 +150,7 @@ def Language(filename):
 def Publisher(filename):
     op=runCommand("zimdump -u M/Publisher -d "+filename)
     if(len(op)!=0):
-        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
-            return ""
-        else:
+        if(isValidOutput(op[0])):
             return op[0]
     return ""
 
@@ -150,9 +158,7 @@ def Publisher(filename):
 def Creator(filename):
     op=runCommand("zimdump -u M/Creator -d "+filename)
     if(len(op)!=0):
-        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
-            return ""
-        else:
+        if(isValidOutput(op[0])):
             return op[0]
     return ""
 
@@ -160,9 +166,7 @@ def Creator(filename):
 def date(filename):
     op=runCommand("zimdump -u M/Date -d "+filename)
     if(len(op)!=0):
-        if(contains(op[0],"article") and contains(op[0],"index") and contains(op[0],"out") and contains(op[0],"of") and contains(op[0],"range")):
-            return ""
-        else:
+        if(isValidOutput(op[0])):
             return op[0]
     return ""
 
@@ -183,8 +187,8 @@ def diffFileName(start_file,end_file):
 
 def createDiffFile(startFile,endFile):
     #print zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
-    runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
-
+    op=runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
+    print op
 
 #Usage
 def usage():
