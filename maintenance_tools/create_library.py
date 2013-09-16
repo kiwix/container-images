@@ -24,7 +24,8 @@ def usage():
     print "Usage: "
     print "A tool to build library files to Kiwix"
     print "Supports adding diff files"
-    print "Usage: create_library.py --dir <library path> --diff <Diff folder> --lib <libfile>"
+    print "Usage: create_library.py --dir <library1> --dir <library2> --diff <Diff folder> --lib <libfile>"
+    print "Multiple library directories can be specified"
 
 
 #Executes a command and returns the output
