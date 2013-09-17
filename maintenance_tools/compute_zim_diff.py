@@ -193,7 +193,8 @@ def createDiffFile(startFile,endFile):
 #Usage
 def usage():
     print "Script to compute the diff_files between zim files in a directory using zimdiff"
-    print "Usage: 'python compute_diff.py' --dir <Library1> --dir <Library2> --diff <diff Folder> --zimdiff <zimdiff_dir> "
+    print "Usage: 'python compute_diff.py' --dir=<Library1> --dir=<Library2> --diff=<diff Folder> --zimdiff=<zimdiff_dir> "
+    print "Usage: 'python compute_diff.py' -d <Library1> -d <Library2> -f <diff Folder> -z <zimdiff_dir> "
     print "Multiple library directories can be specified"
     print "Zimdiff directory is required if zimdiff is not installed in the system"
 
@@ -216,13 +217,19 @@ if __name__ == "__main__":
             usage()
             exit(0)
     for i in range(0,len(sys.argv)):
-        if(sys.argv[i]=="--dir"):
+        if(sys.argv[i][:6]=="--dir="):
+            rootList.append(sys.argv[i][6:])
+        if(sys.argv[i]=="-d"):
             if(i<(len(sys.argv)-1)):
                 rootList.append(sys.argv[i+1])
-        if(sys.argv[i]=="--diff"):
+        if(sys.argv[i][:7]=="--diff="):
+                diffFolder=sys.argv[i][7:]
+        if(sys.argv[i]=="-f"):
             if(i<(len(sys.argv)-1)):
                 diffFolder=sys.argv[i+1]
-        if(sys.argv[i]=="--zimdiff"):
+        if(sys.argv[i][:10]=="--zimdiff="):
+                zimdiff=sys.argv[i][10:]
+        if(sys.argv[i]=="-z"):
             if(i<(len(sys.argv)-1)):
                 zimdiff=sys.argv[i+1]
     

@@ -24,7 +24,8 @@ def usage():
     print "Usage: "
     print "A tool to build library files to Kiwix"
     print "Supports adding diff files"
-    print "Usage: create_library.py --dir <library1> --dir <library2> --diff <Diff folder> --lib <libfile>"
+    print "Usage: create_library.py --dir=<library1> --dir=<library2> --lib=<libfile>"
+    print "Usage: create_library.py -d <library1> -d <library2> -l <libfile>"
     print "Multiple library directories can be specified"
 
 
@@ -34,7 +35,6 @@ def runCommand(command):
     op=[]
     for line in p.stdout.readlines():
         op.append(line)
-        print line
     return op
 
 #Function to return all folders in a folder.
@@ -95,10 +95,14 @@ if __name__ == "__main__":
             exit(0)
     
     for i in range(0,len(sys.argv)):
-        if(sys.argv[i]=="--dir"):
+        if(sys.argv[i][:6]=="--dir="):
+            rootList.append(sys.argv[i][6:])
+        if(sys.argv[i]=="-d"):
             if(i<(len(sys.argv)-1)):
                 rootList.append(sys.argv[i+1])
-        if(sys.argv[i]=="--lib"):
+        if(sys.argv[i][:6]=="--lib="):
+            libFile=sys.argv[i][6:]
+        if(sys.argv[i]=="-l"):
             if(i<(len(sys.argv)-1)):
                 libFile=sys.argv[i+1]
     #If the rootList variable does not exist:
