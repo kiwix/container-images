@@ -34,6 +34,7 @@ def runCommand(command):
     op=[]
     for line in p.stdout.readlines():
         op.append(line)
+        print line
     return op
 
 #Function to return all folders in a folder.
@@ -118,6 +119,7 @@ if __name__ == "__main__":
     for i in range(0, len(rootList)):
         rootList[i]=os.path.abspath(rootList[i])
     libFile=os.path.abspath(libFile)
+    runCommand('rm '+libFile)
     print "[INFO] Library Folders: "
     for directory in rootList: 
         print directory 
