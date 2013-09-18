@@ -171,7 +171,10 @@ def date(filename):
     return ""
 
 def isDiffFile(fileName):
+    fileName=os.path.join(diffFolder,fileName)
+    print "Filename: "+fileName
     for file in listFiles(diffFolder):
+        print "File: "+file
         if(fileName==file):
             return True
     return False
@@ -188,8 +191,6 @@ def diffFileName(start_file,end_file):
 def createDiffFile(startFile,endFile):
     #print zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
     op=runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
-    #print op
-
 #Usage
 def usage():
     print "Script to compute the diff_files between zim files in a directory using zimdiff"
