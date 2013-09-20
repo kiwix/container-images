@@ -99,15 +99,7 @@ class LogParser
   }
 } 
 
-/* Usage() */
-function usage() {
-  echo "fillPiwikWithWebServerLogs.php --idSite=1 --webUrl=http://download.kiwix.org --piwikUrl=http://stats.kiwix.org/piwik/piwik/ --tokenAuth=b9a7f2d030888a9a0b5d31a02da56ca2 [--filter=\"\/A\/\"] [--followLog] [--countSimilarRequests] download.access.log*\n";
-  exit(1);
-}
-
 /* Check if there is already a request stored for that (avoid duplicates) */
-$duplicateHash = Array();
-$duplicateDelay = 60 * 60 * 24 * 31;
 function isAlreadyStored($logHash) {
   global $duplicateHash, $duplicateDelay;
   $key = $logHash["ip"].$logHash["path"];
@@ -121,11 +113,8 @@ function isAlreadyStored($logHash) {
 
 /* Remove directories and icon requests */
 function shouldBeStored($path, $filter) {
-  if (!preg_match("/^.*\.\w{3,}$/i", $path)
-      || preg_match("/^.*\.md5$/i", $path)
-      || preg_match("/^.*\.mirrorlist$/i", $path)
-      || strpos($path, "favicon") != false 
-      || strpos($path, "icons") != false
+  if (strpos($path, "favicon.") != false 
+      || strpos($path, "icons/") != false
       || strpos($path, "robots.txt") != false) {
     return false;
   }
@@ -164,6 +153,12 @@ function getLastPiwikInsertionTime() {
   return 0;
 }
 
+/* Usage() */
+function usage() {
+  echo "fillPiwikWithWebServerLogs.php --idSite=1 --webUrl=http://download.kiwix.org --piwikUrl=http://stats.kiwix.org/piwik/piwik/ --tokenAuth=b9a7f2d030888a9a0b5d31a02da56ca2 [--filter=\"\/A\/\"] [--followLog] [--countSimilarRequests] download.access.log*\n";
+  exit(1);
+}
+
 /* Get options */
 $options = getopt("", Array("idSite:", "webUrl:", "filter:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests"));
 
@@ -187,6 +182,8 @@ if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["pi
   $followLog = array_key_exists("followLog", $options);
   $countSimilarRequests = array_key_exists("countSimilarRequests", $options);
 }
+$duplicateHash = Array();
+$duplicateDelay = $countSimilarRequests ? 0 : 60 * 60 * 24 * 31;
 
 /* Get files to parse */
 $logFiles = Array();
