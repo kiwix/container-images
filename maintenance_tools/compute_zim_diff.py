@@ -171,7 +171,10 @@ def date(filename):
     return ""
 
 def isDiffFile(fileName):
+    fileName=os.path.join(diffFolder,fileName)
+    print "Filename: "+fileName
     for file in listFiles(diffFolder):
+        print "File: "+file
         if(fileName==file):
             return True
     return False
@@ -188,12 +191,12 @@ def diffFileName(start_file,end_file):
 def createDiffFile(startFile,endFile):
     #print zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile))
     op=runCommand(zimdiff+' '+startFile+' '+endFile+' '+os.path.join(diffFolder,diffFileName(startFile,endFile)))
-    #print op
-
 #Usage
 def usage():
     print "Script to compute the diff_files between zim files in a directory using zimdiff"
-    print "Usage: 'python compute_diff.py' --dir <Library Directory> --diff <diff Folder> --zimdiff <zimdiff_dir> "
+    print "Usage: 'python compute_diff.py' --dir=<Library1> --dir=<Library2> --diff=<diff Folder> --zimdiff=<zimdiff_dir> "
+    print "Usage: 'python compute_diff.py' -d <Library1> -d <Library2> -f <diff Folder> -z <zimdiff_dir> "
+    print "Multiple library directories can be specified"
     print "Zimdiff directory is required if zimdiff is not installed in the system"
 
 #Main function: 
@@ -201,6 +204,8 @@ if __name__ == "__main__":
     global zimdiff
     global rootDir
     global diffFolder
+    rootList=[]
+    diffList=[]
     if(len(sys.argv)<2):
         print "Not enough arguments"
         usage()
@@ -213,18 +218,24 @@ if __name__ == "__main__":
             usage()
             exit(0)
     for i in range(0,len(sys.argv)):
-        if(sys.argv[i]=="--dir"):
+        if(sys.argv[i][:6]=="--dir="):
+            rootList.append(sys.argv[i][6:])
+        if(sys.argv[i]=="-d"):
             if(i<(len(sys.argv)-1)):
-                rootDir=sys.argv[i+1]
-        if(sys.argv[i]=="--diff"):
+                rootList.append(sys.argv[i+1])
+        if(sys.argv[i][:7]=="--diff="):
+                diffFolder=sys.argv[i][7:]
+        if(sys.argv[i]=="-f"):
             if(i<(len(sys.argv)-1)):
                 diffFolder=sys.argv[i+1]
-        if(sys.argv[i]=="--zimdiff"):
+        if(sys.argv[i][:10]=="--zimdiff="):
+                zimdiff=sys.argv[i][10:]
+        if(sys.argv[i]=="-z"):
             if(i<(len(sys.argv)-1)):
                 zimdiff=sys.argv[i+1]
     
     #If the zimdiff variable does not exist:
-    if(('rootDir' in globals())==False):
+    if(len(rootList)==0):
         print "Not enough arguments (root directory)"
         usage()
         sys.exit(0)
@@ -243,27 +254,35 @@ if __name__ == "__main__":
             print "Not enough arguments(zimdiff binary)"
             usage()
             sys.exit(0)
-       
-    if(os.path.isdir(rootDir)==False):
-        print "[ERROR] Library Folder does not exist."
-        sys.exit(0)
+    for directory in rootList:
+        if(os.path.isdir(directory)==False):
+            print "[ERROR] Library Folder does not exist."
+            sys.exit(0)
+
     if(os.path.isdir(diffFolder)==False):
         print "[ERROR] Diff Folder does not exist."
         sys.exit(0)    
+
     if(checkZimdiff()==False):
         if(os.path.isfile(zimdiff)==False):
             print "[ERROR] zimdiff binary does not exist."
-            sys.exit(0)    
-    rootDir=os.path.abspath(rootDir)
+            sys.exit(0)
+    for i in range(0,len(rootList)):    
+        rootList[i]=os.path.abspath(rootList[i])
     diffFolder=os.path.abspath(diffFolder)
-    print "[INFO] Library Folder: "+rootDir
+    print "[INFO] Library Folders: "
+    for directory in rootList:
+        print directory
     print "[INFO] Diff Folder: "+diffFolder
     print "[INFO] Parsing library Folder.."
-    files=listZimFilesRecursive(rootDir)
-    files.sort(key = date)
-    for i in range(0, len(files)):
-        for j in range(0,i):
-            if(compareZimFiles(files[j],files[i])==True):
-                print "Older version of "+files[i]+" detected: "+files[j]
-                if(isDiffFile(diffFileName(files[j],files[i]))==False):
-                    createDiffFile(files[j],files[i])
+    for directory in rootList:
+        rootDir=directory
+        print "Parsing "+rootDir
+        files=listZimFilesRecursive(rootDir)
+        files.sort(key = date)
+        for i in range(0, len(files)):
+            for j in range(0,i):
+                if(compareZimFiles(files[j],files[i])==True):
+                    print "Older version of "+files[i]+" detected: "+files[j]
+                    if(isDiffFile(diffFileName(files[j],files[i]))==False):
+                        createDiffFile(files[j],files[i])

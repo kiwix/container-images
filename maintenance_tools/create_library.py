@@ -14,9 +14,6 @@ import subprocess
 #Location of kiwix library.
 global rootDir
 
-#Location of diff_folder:
-global diffFolder
-
 #Library File.
 global libFile
 
@@ -27,7 +24,9 @@ def usage():
     print "Usage: "
     print "A tool to build library files to Kiwix"
     print "Supports adding diff files"
-    print "Usage: create_library.py --dir <library path> --diff <Diff folder> --lib <libfile>"
+    print "Usage: create_library.py --dir=<library1> --dir=<library2> --lib=<libfile>"
+    print "Usage: create_library.py -d <library1> -d <library2> -l <libfile>"
+    print "Multiple library directories can be specified"
 
 
 #Executes a command and returns the output
@@ -79,9 +78,8 @@ def filename(file):
 if __name__ == "__main__":
     
     global rootDir
-    global diffFolder
     global libFile
-
+    rootList=[]
     if(len(sys.argv)<2):
         print "Not enough arguments"
         usage()
@@ -97,62 +95,50 @@ if __name__ == "__main__":
             exit(0)
     
     for i in range(0,len(sys.argv)):
-        if(sys.argv[i]=="--dir"):
+        if(sys.argv[i][:6]=="--dir="):
+            rootList.append(sys.argv[i][6:])
+        if(sys.argv[i]=="-d"):
             if(i<(len(sys.argv)-1)):
-                rootDir=sys.argv[i+1]
-        if(sys.argv[i]=="--diff"):
-            if(i<(len(sys.argv)-1)):
-                diffFolder=sys.argv[i+1]
-        if(sys.argv[i]=="--lib"):
+                rootList.append(sys.argv[i+1])
+        if(sys.argv[i][:6]=="--lib="):
+            libFile=sys.argv[i][6:]
+        if(sys.argv[i]=="-l"):
             if(i<(len(sys.argv)-1)):
                 libFile=sys.argv[i+1]
-    #If the zimdiff variable does not exist:
-    if(('rootDir' in globals())==False):
+    #If the rootList variable does not exist:
+    if(len(rootList)==0):
         print "Not enough arguments (root directory)"
         usage()
         sys.exit(0)
-    
-    #If the zimdiff variable does not exist:
-    if(('diffFolder' in globals())==False):
-        print "Not enough arguments (diff Folder)"
-        usage()
-        sys.exit(0)
 
-    #If the zimdiff variable does not exist:
+    #If the libfile variable does not exist:
     if(('libFile' in globals())==False):
         print "Not enough arguments (library File)"
         usage()
         sys.exit(0)
-    
-    if(os.path.isdir(rootDir)==False):
-        print "[ERROR] Library Folder does not exist."
-        sys.exit(0)
-    if(os.path.isdir(diffFolder)==False):
-        print "[ERROR] Diff Folder does not exist."
-        sys.exit(0)   
-    
-    rootDir=os.path.abspath(rootDir)
-    diffFolder=os.path.abspath(diffFolder)
+    for directory in rootList: 
+        if(os.path.isdir(directory)==False):
+            print "[ERROR] Library Folder does not exist: "+directory
+            sys.exit(0)
+    for i in range(0, len(rootList)):
+        rootList[i]=os.path.abspath(rootList[i])
     libFile=os.path.abspath(libFile)
-    print "[INFO] Library Folder: "+rootDir
+    runCommand('rm '+libFile)
+    print "[INFO] Library Folders: "
+    for directory in rootList: 
+        print directory 
     print "[INFO] Library File: "+ libFile
     print "[INFO] URL Base: "+urlBase
-    print "[INFO] Diff Folder: "+diffFolder
-    print "[INFO] Parsing library Folder.."
-    folders= listDir(rootDir)
-    folders.sort()
-    for folder in folders:
-        if(folder!=diffFolder):
-            for file in listFilesRecursive(folder):
-                if(file[-4:]==".zim"):
-                    print "Adding file "+file+" to library..."
-                    localFileName= file[len(rootDir)+1:]
-                    runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url http://download.kiwix.org/zim/'+localFileName+ '.meta4 --origId= "" ')
-    for file in listFilesRecursive(diffFolder):
+    for directory in rootList:
+        #print "Parsing "+directory
+        rootDir=directory
+        print "[INFO] Parsing library Folder.."
+        folders= listDir(rootDir)
+        for file in listFilesRecursive(rootDir):
+            print file
             if(file[-4:]==".zim"):
                 print "Adding file "+file+" to library..."
                 localFileName= file[len(rootDir)+1:]
-                runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url http://download.kiwix.org/zim/'+localFileName+ '.meta4 --origId '+filename(file)[:-15])
-
+                runCommand('kiwix-manage '+ libFile+' add '+file+' --zimPathToSave="" --url http://download.kiwix.org/zim/'+localFileName+ '.meta4 ')
 
 
