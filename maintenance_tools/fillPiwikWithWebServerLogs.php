@@ -186,6 +186,7 @@ $duplicateHash = Array();
 $duplicateDelay = $countSimilarRequests ? 0 : 60 * 60 * 24 * 31;
 
 /* Get files to parse */
+echo "Parse command line arguments...\n";
 $logFiles = Array();
 foreach (array_slice($argv, 1, sizeof($argv)-1) as $arg) {
   if (!preg_match("/^--.*$/i", $arg)) {
@@ -194,6 +195,7 @@ foreach (array_slice($argv, 1, sizeof($argv)-1) as $arg) {
 }
 
 /* Check if file don't share the same filetime */
+echo "Check if we can trust log files timestamps...\n";
 $duplicateLogFiles = Array();
 foreach ($logFiles as $logFile) {
   $logFileTime = filemtime($logFile);
@@ -240,6 +242,7 @@ if (count($duplicateLogFiles) != count($logFiles)) {
 date_default_timezone_set("UTC");
 
 /* Get last insertion date */
+echo "Get last insertion time...\n";
 $lastPiwikInsertionTime = getLastPiwikInsertionTime();
 if (!$lastPiwikInsertionTime) {
   echo "Script was unable to unable to retrieve the date of last log insertion. Is that normal? Do you want to continue (yes/no)?";
@@ -251,6 +254,7 @@ if (!$lastPiwikInsertionTime) {
 }
 
 /* Sort files and remove the too old ones */
+echo "Sort log files and remove old ones from the list...\n";
 $sortedLogFiles = Array();
 foreach ($logFiles as $logFile) {
   global $duplicateDelay;
@@ -272,6 +276,7 @@ foreach ($logFiles as $logFile) {
 ksort($sortedLogFiles);
 
 /* Read files */
+echo "Read log files...\n";
 foreach ($sortedLogFiles as $logFile) {
   global $filter;
   $parser = new LogParser();
