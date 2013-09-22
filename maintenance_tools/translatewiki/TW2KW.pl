@@ -26,7 +26,12 @@ my $duplicates = {
     "android.ui.menu_randomarticle" => "ui.main.randomArticle",
     "android.ui.menu_help" => "ui.main.help",
     "android.ui.menu_search" => "ui.main.search",
+    "android.ui.search_label" => "ui.main.search",
     "android.ui.menu_searchintext" => "ui.main.findInText",
+    "android.ui.menu_settings" => "ui.preferences.preferences",
+    "android.ui.pref_display_title" => "ui.main.display",
+    "android.ui.pref_zoom_dialogtitle" => "android.ui.pref_zoom_title",
+    "android.ui.menu_exit" => "ui.main.quit",
 };
 
 # Get console line arguments
@@ -121,33 +126,36 @@ foreach my $language (@languages) {
     writeFile($localePath."main.properties", $languageMainPropertiesSource);
 
     # Update android xml file
-    my $androidHash = getLocaleHash($content, "android\.ui\.|");
-    my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
-    my $languageAndroidSource = $languageAndroidSourceMaster;
- 
-    while ($tmpLanguageAndroidSource =~ /<(string\-array|string)(.*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/string\-array|<\/string)>/smg) {
-	my $tag = $1;
-	my $middle1 = $2;
-	my $name = $3;
-	my $middle2 = $4;
-	my $value = $5;
-	my $last = $6;
-
-	if (exists($androidHash->{$name})) {
-	    $value = $androidHash->{$name};
-	} elsif (exists($duplicates->{"android.ui.".$name}) && 
-		 exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
-	    $value = $globalHash->{$duplicates->{"android.ui.".$name}};
+    if (length($language) <= 2 ) {
+	my $androidHash = getLocaleHash($content, "android\.ui\.|");
+	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
+	my $languageAndroidSource = $languageAndroidSourceMaster;
+	
+	while ($tmpLanguageAndroidSource =~ /<(string\-array|string)(.*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/string\-array|<\/string)>/smg) {
+	    my $tag = $1;
+	    my $middle1 = $2;
+	    my $name = $3;
+	    my $middle2 = $4;
+	    my $value = $5;
+	    my $last = $6;
+	    
+	    if (exists($androidHash->{$name})) {
+		$value = $androidHash->{$name};
+	    } elsif (exists($duplicates->{"android.ui.".$name}) && 
+		     exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
+		$value = $globalHash->{$duplicates->{"android.ui.".$name}};
+		$value =~ s/'/\\'/gm;
+	    }
+	    
+	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6\E/$tag$middle1$name$middle2$value$last/mg;
 	}
 	
-	$languageAndroidSource =~ s/\Q$1$2$3$4$5$6\E/$tag$middle1$name$middle2$value$last/mg;
+	$localePath = $path."/android/res/values-".$language;
+	if (! -d $localePath) {
+	    mkdir($localePath);
+	}
+	writeFile($localePath."/strings.xml", $languageAndroidSource);
     }
-
-    $localePath = $path."/android/res/values-".$language;
-    if (-d $localePath) {
-	mkdir($localePath);
-    }
-    writeFile($localePath."/strings.xml", $languageAndroidSource);
 }
 
 sub getLocaleHash {
@@ -164,7 +172,7 @@ sub getLocaleHash {
 
 sub writeFile {
     my $file = shift;
-	my $data = shift;
+    my $data = shift;
     
     open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
     print FILE $data;
