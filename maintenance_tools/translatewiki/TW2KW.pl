@@ -19,6 +19,14 @@ my $duplicates = {
     "ui.messages.browseLibrary" => "ui.main.browseLibrary",
     "ui.messages.hideLibrary" => "ui.main.hideLibrary",
     "ui.messages.fullscreen" => "ui.main.fullscreen",
+    "android.ui.menu_openfile" => "ui.main.openFile",
+    "android.ui.menu_back" => "ui.main.back",
+    "android.ui.menu_forward" => "ui.main.forward",
+    "android.ui.menu_home" => "ui.main.home",
+    "android.ui.menu_randomarticle" => "ui.main.randomArticle",
+    "android.ui.menu_help" => "ui.main.help",
+    "android.ui.menu_search" => "ui.main.search",
+    "android.ui.menu_searchintext" => "ui.main.findInText",
 };
 
 # Get console line arguments
@@ -55,6 +63,7 @@ if ($allLanguages eq "tw" || $allLanguages eq "kw") {
 # Initialize master files to use as template
 my $languageMainDtdSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.dtd");
 my $languageMainPropertiesSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.properties");
+my $languageAndroidSourceMaster = readFile($path."/android/res/values/strings.xml");
 
 # Update Kiwix locales
 foreach my $language (@languages) {
@@ -110,6 +119,35 @@ foreach my $language (@languages) {
 	$languageMainPropertiesSource =~ s/\Q$1$2$3\E/$name$middle$value/;
     }
     writeFile($localePath."main.properties", $languageMainPropertiesSource);
+
+    # Update android xml file
+    my $androidHash = getLocaleHash($content, "android\.ui\.|");
+    my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
+    my $languageAndroidSource = $languageAndroidSourceMaster;
+ 
+    while ($tmpLanguageAndroidSource =~ /<(string\-array|string)(.*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/string\-array|<\/string)>/smg) {
+	my $tag = $1;
+	my $middle1 = $2;
+	my $name = $3;
+	my $middle2 = $4;
+	my $value = $5;
+	my $last = $6;
+
+	if (exists($androidHash->{$name})) {
+	    $value = $androidHash->{$name};
+	} elsif (exists($duplicates->{"android.ui.".$name}) && 
+		 exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
+	    $value = $globalHash->{$duplicates->{"android.ui.".$name}};
+	}
+	
+	$languageAndroidSource =~ s/\Q$1$2$3$4$5$6\E/$tag$middle1$name$middle2$value$last/mg;
+    }
+
+    $localePath = $path."/android/res/values-".$language;
+    if (-d $localePath) {
+	mkdir($localePath);
+    }
+    writeFile($localePath."/strings.xml", $languageAndroidSource);
 }
 
 sub getLocaleHash {
