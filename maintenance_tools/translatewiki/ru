@@ -8,6 +8,7 @@
 # Author: Iluvatar
 # Author: Kelson
 # Author: Lvova
+# Author: Okras
 # Author: Renessaince
 # Author: Александр Сигачёв
 
@@ -173,3 +174,6 @@ ui.messages.fullscreen=На весь экран
 ui.messages.quitFullscreen=Выход из полноэкранного режима
 ui.messages.integrityCheckSuccessful=Целостность файла был успешна проверена.
 ui.messages.integrityCheckFailed=Сбой проверки целостности. Ваш файл поврежден.
+android.ui.error_articlenotfoun=Ошибка: Загрузка статьи \"%1$s\" не удалась.
+android.ui.error_articleurlnotfound=Ошибка: Загрузка статьи (Url: %1$s) не удалась.
+android.ui.pref_nightmode=Ночной режим

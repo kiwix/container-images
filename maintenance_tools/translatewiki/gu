@@ -138,3 +138,4 @@ ui.messages.fullscreen=પૂર્ણ સ્ક્રીન
 ui.messages.quitFullscreen=પૂર્ણ સ્ક્રીન સ્થિતિમાંથી બહાર નીકળો
 ui.messages.integrityCheckSuccessful=ફાઇલની અખંડતા સફળતાપૂર્વક ચકાસાઇ.
 ui.messages.integrityCheckFailed=અખંડતા ચકાસણી નિષ્ફળ. તમારી ફાઇલ ખરાબ છે.
+android.ui.pref_nightmode=રાત્રિ સ્થિતિ

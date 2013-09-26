@@ -6,6 +6,7 @@
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
+# Author: Liuxinyu970226
 # Author: Qiyue2001
 # Author: Shirayuki
 # Author: Yanmiao liu
@@ -141,3 +142,4 @@ ui.messages.fullscreen=全屏
 ui.messages.quitFullscreen=退出全屏模式
 ui.messages.integrityCheckSuccessful=成功地检查文件完整性。
 ui.messages.integrityCheckFailed=文件完整性检查失败。您的文件已损坏。
+android.ui.articlesearch_hint=通过类型查找条目

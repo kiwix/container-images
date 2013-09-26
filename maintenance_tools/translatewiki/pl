@@ -169,3 +169,4 @@ ui.messages.fullscreen=Pełny ekran
 ui.messages.quitFullscreen=Wyjdź z trybu pełnego ekranu
 ui.messages.integrityCheckSuccessful=Integralność pliku została pomyślnie sprawdzona.
 ui.messages.integrityCheckFailed=Sprawdzanie integralności nie powiodło się. Plik jest uszkodzony.
+android.ui.pref_nightmode=Tryb nocny

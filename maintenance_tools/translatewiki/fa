@@ -6,6 +6,7 @@
 # Author: Mhsgame
 # Author: Mjbmr
 # Author: Reza1615
+# Author: Rtemis
 # Author: ZxxZxxZ
 # Author: جواد
 
@@ -56,7 +57,7 @@ ui.main.zoomout.accesskey=R
 ui.main.zoomorig=اندازه اصلی
 ui.main.zoomorig.accesskey=O
 ui.main.invertedColors=رنگ‌ها وارونه شده‌اند
-ui.main.language=زبان
+ui.main.language=تغییر زبان
 ui.main.language.accesskey=L
 ui.main.skin=پوسته
 ui.main.skin.accesskey=S
