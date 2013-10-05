@@ -3,6 +3,7 @@
 # Author: Caliberoviv
 # Author: Karthi.dr
 # Author: Shanmugamp7
+# Author: கௌசிக் பிரபு
 
 ui.main.osxservices=சேவைகள்
 ui.main.osxhideapp=மறை &brand.brandShortName;
@@ -131,3 +132,4 @@ ui.messages.fullscreen=முழு திரை
 ui.messages.quitFullscreen=முழு திரை வகையிலிருந்து வெளியேறு
 ui.messages.integrityCheckSuccessful=கோப்பு நேர்மை வெற்றிகரமாக சரிபார்க்கப் பட்டது.
 ui.messages.integrityCheckFailed=நேர்மை சரிபார்ப்பு தோல்வியடைந்தது. உங்கள் கோப்பு ஒழுங்கற்றுள்ளது.
+android.ui.choose_file=ZIM கோப்பை தேர்விசெய் (*.zim)

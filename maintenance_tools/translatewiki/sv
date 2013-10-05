@@ -1,6 +1,7 @@
 # Messages for Swedish (svenska)
 # Exported from translatewiki.net
 # Author: Fluff
+# Author: Jopparn
 # Author: Kelson
 # Author: Lokal Profil
 # Author: Warrakkk
@@ -137,3 +138,15 @@ ui.messages.fullscreen=Helskärm
 ui.messages.quitFullscreen=Avsluta helskärmsläge
 ui.messages.integrityCheckSuccessful=Filintegritetskontrollen lyckades.
 ui.messages.integrityCheckFailed=Filintegritetskontrollen misslyckades. Din fil är skadad.
+android.ui.articlesearch_hint=Skriv för att kolla upp artiklar
+android.ui.choose_file=Välj en ZIM-innehållsfil (*.zim)
+android.ui.error_nozimfilesfound=Inga ZIM-filer hittades på din enhet.\nTa en titt på hjälpsidan för att få hjälp om hur man läser in innehåll i Kiwix.\nOm du lade in en ZIM-fil på din enhet/externa minne bör du kanske prova igen om någon minut eller starta om din enhet.
+android.ui.error_filenotfound=Fel: Den valda ZIM-filen kunde inte hittas.
+android.ui.error_fileinvalid=Fel: Den valda filen är inte en giltig ZIM-fil.
+android.ui.error_articlenotfoun=Fel: Kunde inte läsa in artikeln \"%1$s\".
+android.ui.error_articleurlnotfound=Fel: Inläsning av artikel (url: %1$s) misslyckades.
+android.ui.pref_zoom_title=Zoomnivå
+android.ui.pref_zoom_enable=Zoomkontrollerna
+android.ui.pref_zoom_enable_summary=Visa en zoomknapp längst ned i det högra hörnet på skärmen
+android.ui.pref_nightmode=Nattläge
+android.ui.pref_nightmode_summary=Visa artiklar med inverterade färger

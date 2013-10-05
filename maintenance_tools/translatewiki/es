@@ -3,6 +3,7 @@
 # Author: Armando-Martin
 # Author: Fitoschido
 # Author: Kelson
+# Author: Ovruni
 # Author: Platonides
 # Author: VegaDark
 # Author: Vivaelcelta
@@ -169,3 +170,6 @@ ui.messages.fullscreen=Pantalla completa
 ui.messages.quitFullscreen=Salir del modo de pantalla completa
 ui.messages.integrityCheckSuccessful=Se comprobó con éxito la integridad del archivo.
 ui.messages.integrityCheckFailed=Error en la comprobación de integridad. El archivo está dañado.
+android.ui.pref_zoom_title=Nivel de zoom
+android.ui.pref_zoom_enable=Controles de zoom
+android.ui.pref_nightmode=Modo nocturno
