@@ -1,6 +1,7 @@
 # Messages for Traditional Chinese (中文（繁體）‎)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Cwlin0416
 # Author: Ianbu
 # Author: Justincheng12345
 # Author: Kelson
@@ -84,7 +85,7 @@ ui.main.library.sortBy.size=大小
 ui.main.library.sortBy.date=日期
 ui.main.library.sortBy.author=作者
 ui.main.library.sortBy.publisher=出版商
-ui.main.library.filterBy=過濾方式
+ui.main.library.filterBy=搜尋依
 ui.main.library.filterBy.fileSize=檔案大小
 ui.main.library.filterBy.language=語言
 ui.main.library.filterBy.language.all=全部
