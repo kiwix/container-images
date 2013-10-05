@@ -141,6 +141,7 @@ foreach my $language (@languages) {
 	    
 	    if (exists($androidHash->{$name})) {
 		$value = $androidHash->{$name};
+		$value =~ s/'/\\'/gm;
 	    } elsif (exists($duplicates->{"android.ui.".$name}) && 
 		     exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
 		$value = $globalHash->{$duplicates->{"android.ui.".$name}};
