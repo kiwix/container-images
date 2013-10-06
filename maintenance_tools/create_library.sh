@@ -18,8 +18,15 @@ do
       for FILE in `find . -name "*zim"`
       do
 	FILE=`echo "$FILE" | sed -e "s/\.\///"`
-	grep $FILE .ignore > /dev/null
-	if [ "$?" -eq "1" ]
+	FOUND=1
+
+	if [ -f .ignore ]
+	then
+	    grep $FILE .ignore > /dev/null
+	    FOUND=$?
+	fi
+
+	if [ "$FOUND" -eq "1" ]
 	then
 	    echo "Inserting $FILE ..."
 	    kiwix-manage $LIBRARYFILE add $FILE --zimPathToSave="" --url=http://download.kiwix.org/zim/$DIR/$FILE.meta4
