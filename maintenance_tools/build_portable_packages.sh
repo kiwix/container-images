@@ -2,7 +2,7 @@
 
 TARGET_DIR=/var/www/download.kiwix.org/portable/
 SCRIPT=/var/www/kiwix/tools/tools/scripts/buildDistributionFile.pl
-SYNC_DIRS="zim/0.9 zim/other"
+SYNC_DIRS="zim/0.9 zim/other zim/wikipedia"
 KIWIX_VERSION=`ls -la /var/www/download.kiwix.org/bin/unstable | cut -d " " -f10 | sed -e 's/_/-/g' | sed -e 's/\///g'` 
 
 cd /var/www/kiwix/tools/scripts
