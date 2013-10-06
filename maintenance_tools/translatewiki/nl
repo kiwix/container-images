@@ -167,3 +167,7 @@ ui.messages.fullscreen=Volledig scherm
 ui.messages.quitFullscreen=Volledig schermmodus verlaten
 ui.messages.integrityCheckSuccessful=De bestandsintegriteit is gecontroleerd.
 ui.messages.integrityCheckFailed=De integriteitscontrole is mislukt. Uw bestand is beschadigd.
+android.ui.articlesearch_hint=Voer tekst in om pagina's te zoeken
+android.ui.choose_file=Selecteer een ZIM inhoudsbestand (*.zim)
+android.ui.pref_zoom_title=Zoomniveau
+android.ui.pref_nightmode=Nachtmodus
