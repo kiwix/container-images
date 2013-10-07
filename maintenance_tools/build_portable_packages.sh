@@ -23,7 +23,7 @@ do
     for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
-	if [ ! -f "$TARGET$DIR$ZIPFILE" ]
+	if [ ! -f "$TARGET$DIR/$ZIPFILE" ]
 	then
 	    echo "Building $ZIPFILE..."
 	    cd `dirname "$SCRIPT"`
@@ -34,6 +34,5 @@ do
 	else
 	    echo "Skipping $ZIPFILE..."
 	fi
-	exit;
     done
 done
