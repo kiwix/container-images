@@ -1,6 +1,7 @@
 # Messages for Korean (한국어)
 # Exported from translatewiki.net
 # Author: Deacon1289
+# Author: Hym411
 # Author: 아라
 
 ui.main.osxservices=서비스
@@ -134,3 +135,4 @@ ui.messages.fullscreen=전체 화면
 ui.messages.quitFullscreen=전체 화면 모드에서 나가기
 ui.messages.integrityCheckSuccessful=파일 무결성을 성공적으로 확인했습니다.
 ui.messages.integrityCheckFailed=무결성 검사를 실패했습니다. 파일은 손상되었습니다.
+android.ui.pref_nightmode=야간 모드
