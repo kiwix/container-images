@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Giro720
 # Author: Gusta
+# Author: Hamilton Abreu
 # Author: Luckas
 # Author: Luckas Blade
 # Author: Malafaya
@@ -15,7 +16,7 @@ ui.main.osxservices=Serviços
 ui.main.osxhideapp=Ocultar &brand.brandShortName;
 ui.main.osxhideothers=Ocultar outros
 ui.main.osxshowall=Mostrar todos
-ui.main.file=Arquivo
+ui.main.file=Ficheiro
 ui.main.file.accesskey=F
 ui.main.openFile=Abrir ficheiro...
 ui.main.openFile.accesskey=A
@@ -126,7 +127,7 @@ ui.main.library.filterBy.publisher=Editora
 ui.main.library.filterBy.publisher.all=Todas
 ui.main.library.filterBy.lessThan=Menos de
 ui.preferences.preferences=Preferências
-ui.preferences.save=Salvar
+ui.preferences.save=Gravar
 ui.preferences.cancel=Cancelar
 ui.preferences.profileDirectory=Diretório de perfil
 ui.preferences.browse=Navegar

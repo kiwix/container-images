@@ -4,6 +4,7 @@
 # Author: Emperyan
 # Author: Man lise
 # Author: Szoszv
+# Author: Trockya
 # Author: VikipediBilgini
 
 ui.main.osxservices=Hizmetler
@@ -137,3 +138,15 @@ ui.messages.fullscreen=Tam ekran
 ui.messages.quitFullscreen=Tam ekran modundan çık
 ui.messages.integrityCheckSuccessful=Dosya bütünlüğü başarıyla kontrol edildi.
 ui.messages.integrityCheckFailed=Bütünlük denetimi başarısız oldu. Dosyanız bozuk.
+android.ui.articlesearch_hint=Makalelerde aranacak kelimeyi yazın
+android.ui.choose_file=Bir ZIM İçerik Dosyası seçin (*.zim)
+android.ui.error_nozimfilesfound=Cihazınızda bir ZIM dosyası bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
+android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.
+android.ui.error_fileinvalid=Hata: Seçili dosya geçerli bir ZIM dosyası değil.
+android.ui.error_articlenotfoun=Hata: \"%1$s\" makalesinin yüklemesi başarısız.
+android.ui.error_articleurlnotfound=Hata: (Url: %1$s) makalesinin yüklemesi başarısız.
+android.ui.pref_zoom_title=Zum seviyesi
+android.ui.pref_zoom_enable=Zum kontrolleri
+android.ui.pref_zoom_enable_summary=Ekranın sağ alt köşesinde bir zum butonu görüntüle
+android.ui.pref_nightmode=Gece modu
+android.ui.pref_nightmode_summary=Makaleleri dönüştürülmüş renklerle göster
