@@ -174,3 +174,5 @@ android.ui.pref_zoom_enable=Zoom controls
 android.ui.pref_zoom_enable_summary=Display a zoom button in the screen bottom right corner
 android.ui.pref_nightmode=Night mode
 android.ui.pref_nightmode_summary=Show articles with reverted colors
+android.ui.pref_info_title=Information
+android.ui.pref_info_version=Version
