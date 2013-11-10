@@ -1,14 +1,15 @@
 # Messages for Bambara (bamanankan)
 # Exported from translatewiki.net
 # Author: Boukary
+# Author: Kelson
 # Author: Rgaudin
 
 ui.main.osxservices=Services
-ui.main.osxhideapp=Brand.brandShortName kun
+ui.main.osxhideapp=&Brand.brandShortName; kun
 ui.main.osxhideothers=Tɔw dogo
 ui.main.osxshowall=A bɛɛ jira
 ui.main.file=Fisiyew
-ui.main.openFile=fisiye dayɛlɛn
+ui.main.openFile=Fisiye dayɛlɛn
 ui.main.browseLibrary=Taa gafeso kɔnɔ
 ui.main.hideLibrary=Gafeso dogo
 ui.main.lastOpen=Min dayɛlɛnna laban na
@@ -42,11 +43,11 @@ ui.main.randomArticle=Laala kunnafoni
 ui.main.checkIntegrity=Kɔnɔta bɛɛlajɛlen sɛgɛsɛgɛ
 ui.main.launchIndexing=Ɛndɛkisasiyɔn daminɛ
 ui.main.purgeHistory=Tariku kɔrɔlen bɔ yen
-ui.main.help=dɛmɛ
+ui.main.help=Dɛmɛ
 ui.main.feedback=Hakilinanta
 ui.main.reportabug=Gɛlɛya dɔ jira
-ui.main.requestafeature=kɛta dɔ ɲininkali kɛ
-ui.main.about=Brand.brandShortName kun,
+ui.main.requestafeature=Kɛta dɔ ɲininkali kɛ
+ui.main.about=&Brand.brandShortName; kun,
 ui.main.back=Segin kɔfɛ
 ui.main.forward=Taa ɲɛfɛ
 ui.main.home=Soba

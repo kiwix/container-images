@@ -1,5 +1,6 @@
 # Messages for Italian (italiano)
 # Exported from translatewiki.net
+# Author: Ale.salmo
 # Author: Aushulz
 # Author: Beta16
 # Author: Inskatolata
@@ -106,7 +107,7 @@ ui.main.openLinkInNewTab=Apri il collegamento in una nuova scheda
 ui.main.searchFor=Ricerca
 ui.main.copyLinkAddress=Copia l'indirizzo del collegamento
 ui.main.close=Chiudi
-ui.main.library.myLibrary=Mia biblioteca
+ui.main.library.myLibrary=La mia libreria
 ui.main.library.getNewFiles=Ottieni nuovi file
 ui.main.library.searchZimFiles=Cerca file ZIM
 ui.main.library.sortBy=Ordina per

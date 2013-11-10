@@ -139,4 +139,6 @@ android.ui.articlesearch_hint=문서를 찾아보는 종류
 android.ui.choose_file=ZIM 콘텐츠 파일 (*.zim) 선택
 android.ui.error_nozimfilesfound=장치에서 ZIM 파일이 발견되지 않았습니다.\n도움말에서 콘텐츠를 어떻게 키윅스로 불러오는지 알아보세요.\n만약 파일을 외장 디스크나 기기에 넣었다면, 몇분 후 재시도하거나 재부팅해 보세요.
 android.ui.error_filenotfound=오류: 선택된 ZIM 파일을 찾을 수 없습니다
+android.ui.error_fileinvalid=에러: 선택한 파일은 올바른 ZIM 파일이 아닙니다.
+android.ui.pref_zoom_title=확대/축소 수준
 android.ui.pref_nightmode=야간 모드
