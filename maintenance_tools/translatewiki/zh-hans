@@ -10,6 +10,7 @@
 # Author: Liuxinyu970226
 # Author: Qiyue2001
 # Author: Shirayuki
+# Author: Xiaomingyan
 # Author: Yanmiao liu
 
 ui.main.osxservices=服务
@@ -32,7 +33,7 @@ ui.main.copy=复制
 ui.main.mute=静音
 ui.main.audible=有声
 ui.main.transliteration=音译转写
-ui.main.preferences=参数设置
+ui.main.preferences=设置
 ui.main.server=服务器
 ui.main.display=显示
 ui.main.zoom=缩放
@@ -97,7 +98,7 @@ ui.main.library.filterBy.author.all=全选
 ui.main.library.filterBy.publisher=出版人
 ui.main.library.filterBy.publisher.all=全选
 ui.main.library.filterBy.lessThan=小于
-ui.preferences.preferences=参数设置
+ui.preferences.preferences=设置
 ui.preferences.save=保存
 ui.preferences.cancel=取消
 ui.preferences.profileDirectory=配置文件目录
