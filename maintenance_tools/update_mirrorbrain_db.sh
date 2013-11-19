@@ -40,6 +40,16 @@ mb scan -d portable/wikisource your.org > /dev/null 2>&1
 mb scan -d portable/wikivoyage your.org > /dev/null 2>&1
 mb scan -d portable/wiktionary your.org > /dev/null 2>&1
 
+# Scan the Mirrorservice.org mirror
+mb scan -d zim/wikipedia mirrorservice.org > /dev/null 2>&1
+mb scan -d zim/wikisource mirrorservice.org > /dev/null 2>&1
+mb scan -d zim/wikivoyage mirrorservice.org > /dev/null 2>&1
+mb scan -d zim/wiktionary mirrorservice.org > /dev/null 2>&1
+mb scan -d portable/wikipedia mirrorservice.org > /dev/null 2>&1
+mb scan -d portable/wikisource mirrorservice.org > /dev/null 2>&1
+mb scan -d portable/wikivoyage mirrorservice.org > /dev/null 2>&1
+mb scan -d portable/wiktionary mirrorservice.org > /dev/null 2>&1
+
 # scan the Kiwix first mirror
 for DIR in $DIRS
 do

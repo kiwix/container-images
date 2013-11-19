@@ -3,6 +3,7 @@
 # Author: Alvaro Vidal-Abarca
 # Author: Arnaugir
 # Author: Gemmaa
+# Author: Grondin
 # Author: McDutchie
 # Author: SMP
 # Author: Solde
@@ -83,7 +84,7 @@ ui.main.requestafeature=Demanar noves característiques
 ui.main.about=Quant a &brand.brandShortName;
 ui.main.about.accesskey=Q
 ui.main.back=Endarrere
-ui.main.forward=Enadvant
+ui.main.forward=Endavant
 ui.main.home=Pàgina d'inici
 ui.main.searchBar=Barra de cerca
 ui.main.search=Cerca
@@ -104,7 +105,7 @@ ui.main.saveImageAs=Desa imatge com a...
 ui.main.openLinkInNewTab=Obre l'enllaç en una pestanya nova
 ui.main.searchFor=Buscar
 ui.main.copyLinkAddress=Copia l'adreça d'enllaç
-ui.main.close=Close
+ui.main.close=Tanca
 ui.main.library.myLibrary=La meva biblioteca
 ui.main.library.getNewFiles=Obtenir nous fitxers
 ui.main.library.searchZimFiles=Cerca fitxers ZIM
@@ -123,11 +124,11 @@ ui.main.library.filterBy.author.all=Tots
 ui.main.library.filterBy.publisher=Editor
 ui.main.library.filterBy.publisher.all=Tots
 ui.main.library.filterBy.lessThan=Menys de
-ui.preferences.preferences=Preferences
-ui.preferences.save=Save
-ui.preferences.cancel=Cancel
+ui.preferences.preferences=Preferències
+ui.preferences.save=Desa
+ui.preferences.cancel=Canceŀla
 ui.preferences.profileDirectory=Profile directory
-ui.preferences.browse=Browse
+ui.preferences.browse=Navega
 ui.preferences.tabs=Recordeu tabs
 ui.preferences.downloadCatalogs=Descarregar catàlegs remots
 ui.preferences.neverAskToIndex=No preguntar mai per la indexació
@@ -169,3 +170,13 @@ ui.messages.fullscreen=Pantalla sencera
 ui.messages.quitFullscreen=Surt del mode de pantalla sencera
 ui.messages.integrityCheckSuccessful=La integritat del fitxer s'ha comprovat correctament.
 ui.messages.integrityCheckFailed=Ha fallat la comprovació d'integritat. El seu arxiu està corrupte.
+android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
+android.ui.error_filenotfound=Error: no s'ha trobat el fitxer ZIP.
+android.ui.error_fileinvalid=Error: el fitxer seleccionat no és un fitxer ZIM vàlid.
+android.ui.error_articlenotfoun=Error: fracàs de la càrrega de l'article \"%1$s\".
+android.ui.error_articleurlnotfound=Error: fracàs de la càrrega de l'article (Url: %1$s).
+android.ui.pref_zoom_title=Nivell de zoom
+android.ui.pref_zoom_enable=Controls de zoom
+android.ui.pref_zoom_enable_summary=Mostrar un botó de zoom a la part inferior dreta de la pantalla
+android.ui.pref_nightmode=Mode nocturn
+android.ui.pref_nightmode_summary=Mostrar els articles amb colors inverses
