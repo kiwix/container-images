@@ -173,7 +173,6 @@ ui.messages.integrityCheckFailed=Ha fallat la comprovació d'integritat. El seu 
 android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
 android.ui.error_filenotfound=Error: no s'ha trobat el fitxer ZIP.
 android.ui.error_fileinvalid=Error: el fitxer seleccionat no és un fitxer ZIM vàlid.
-android.ui.error_articlenotfoun=Error: fracàs de la càrrega de l'article \"%1$s\".
 android.ui.error_articleurlnotfound=Error: fracàs de la càrrega de l'article (Url: %1$s).
 android.ui.pref_zoom_title=Nivell de zoom
 android.ui.pref_zoom_enable=Controls de zoom

@@ -140,7 +140,6 @@ android.ui.choose_file=Seleicione un ficheru de conteníu ZIM (*.zim)
 android.ui.error_nozimfilesfound=Nun s'alcontró nengún ficheru ZIM nel preséu.\nEche-y una güeyada a la páxina d'ayuda pa saber cómo se carga conteníu en Kiwix.\nSi yá punxo un ficheru ZIM nel preséu/ nel almacenamientu esternu, pue volver a intentalo nun minutu o reaniciar el preséu.
 android.ui.error_filenotfound=Error: Nun pudo alcontrase'l ficheru ZIM seleicionáu.
 android.ui.error_fileinvalid=Error: El ficheru seleicionáu nun ye un ficheru ZIM válidu.
-android.ui.error_articlenotfoun=Error: Falló la carga del artículu \"%1$s\".
 android.ui.error_articleurlnotfound=Error: Falló la carga del artículu (Url: %1$s).
 android.ui.pref_zoom_title=Nivel de zoom
 android.ui.pref_zoom_enable=Controles de zoom

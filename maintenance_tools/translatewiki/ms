@@ -139,7 +139,6 @@ android.ui.choose_file=Pilih Fail Kandungan ZIM (*.zim)
 android.ui.error_nozimfilesfound=Tidak terdapat fail ZIM di dalam peranti anda.\nSila baca halaman Bantuan untuk mendapat petua untuk cara memuatkan kandungan ke dalam Kiwix.\nJika benar anda meletakkan fail ZIM di dalam peranti/storan luaran anda, apa kata anda cuba lagi sebentar kemudian atau me-restart peranti anda.
 android.ui.error_filenotfound=Ralat: Fail ZIM yang terpilih tidak dapat ditemui.
 android.ui.error_fileinvalid=Ralat: Fail yang terpilih bukan fail ZIM yang sah.
-android.ui.error_articlenotfoun=Ralat: Rencana \"%1$s\" gagal dimuatkan.
 android.ui.error_articleurlnotfound=Ralat: Rencana (Url: %1$s) gagal dimuatkan.
 android.ui.pref_zoom_title=Takat zum
 android.ui.pref_zoom_enable=Kawalan zum

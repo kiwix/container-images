@@ -173,7 +173,6 @@ android.ui.choose_file=Wähle eine ZIM-Inhaltsdatei aus (*.zim)
 android.ui.error_nozimfilesfound=Es wurden keine ZIM-Dateien auf deinem Gerät gefunden.\nSchau auf den Hilfeseiten nach, um Lösungen zum Laden von Inhalt in Kiwix zu erhalten.\nFalls sich eine ZIM-Datei auf deinem Gerät/externen Speicher befindet, kannst du es in einer Minute erneut versuchen oder dein Gerät neu starten.
 android.ui.error_filenotfound=Fehler: Die ausgewählte ZIM-Datei konnte nicht gefunden werden.
 android.ui.error_fileinvalid=Fehler: Die ausgewählte Datei ist keine gültige ZIM-Datei.
-android.ui.error_articlenotfoun=Fehler: Das Laden des Artikels \"%1$s\" ist fehlgeschlagen.
 android.ui.error_articleurlnotfound=Fehler: Das Laden des Artikels (URL: %1$s) ist fehlgeschlagen.
 android.ui.pref_zoom_title=Vergrößerungsstufe
 android.ui.pref_zoom_enable=Zoom-Steuerung

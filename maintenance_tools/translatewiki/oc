@@ -139,7 +139,6 @@ android.ui.choose_file=Seleccionar un fichièr de contengut ZIM (*.zim)
 android.ui.error_nozimfilesfound=Cap de fichièr ZIM es pas estat trobat sus vòstra maquina.\nGetatz un còp d’uèlh a la pagina d’ajuda per aver d'instruccions sul biais de cargar de contengut dins Kiwix.\nS'avètz mes un fichièr ZIM sus vòstre emmagazinatge intèrne o extèrne, podètz tornar ensajar dins una minuta o reamodar vòstre aparelh.
 android.ui.error_filenotfound=Error : Lo fichièr ZIM seleccionat es introbable.
 android.ui.error_fileinvalid=Error : Lo fichièr seleccionat es pas un fichièr ZIM valid.
-android.ui.error_articlenotfoun=Error : Lo cargament de l’article \"%1$s\" a fracassat.
 android.ui.error_articleurlnotfound=Error : Lo cargament de l’article (Url: %1$s) a fracassat.
 android.ui.pref_zoom_title=Nivèl de zoom
 android.ui.pref_zoom_enable=Contraròtles del zoom

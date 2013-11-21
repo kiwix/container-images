@@ -145,7 +145,6 @@ android.ui.choose_file=Vyberte obsahový soubor ZIM (*.zim)
 android.ui.error_nozimfilesfound=Na zařízení nenalezeny soubory ZIM.\nPro vodítka, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu a nebo po restartu zařízení.
 android.ui.error_filenotfound=Chyba: Nelze najít vybraný soubor ZIM.
 android.ui.error_fileinvalid=Chyba: Vybraný soubor není platným souborem ZIM.
-android.ui.error_articlenotfoun=Chyba: Načtení článku \ " %1$s \" se nezdařilo.
 android.ui.error_articleurlnotfound=Chyba: Načtení článku (Url: %1$s ) se nezdařilo.
 android.ui.pref_zoom_title=Úroveň zvětšení
 android.ui.pref_zoom_enable=Ovládání přiblížení

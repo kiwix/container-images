@@ -143,7 +143,6 @@ android.ui.choose_file=Vælg en ZIM indholdsfil (*.zim)
 android.ui.error_nozimfilesfound=Ingen ZIM filer fundet på enheden.\nTag et kig på hjælpesiden for at få anvisninger om, hvordan man indlæser indhold i Kiwix.\nHvis du har sat en ZIM fil på din enhed/ekstern, kan du prøve igen i et minut eller genstarte din enhed.
 android.ui.error_filenotfound=Fejl: Den valgte ZIM fil blev ikke fundet.
 android.ui.error_fileinvalid=Fejl: Den valgte fil er ikke en gyldig ZIM fil.
-android.ui.error_articlenotfoun=Fejl: Indlæsning af artikel \"%1$s\" mislykkedes.
 android.ui.error_articleurlnotfound=Fejl: Indlæsning af artikel (Url: %1$s) mislykkedes.
 android.ui.pref_zoom_title=Zoom-niveau
 android.ui.pref_zoom_enable=Zoom kontrol

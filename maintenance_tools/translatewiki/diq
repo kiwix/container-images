@@ -141,7 +141,6 @@ android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
 android.ui.error_nozimfilesfound=Zihzda şıma de ZIM dosya çıniya.\nKiwix're zerrek bar kerdışi re Talimata berkerdışi  bıvine.\nNara ke cihazda şıma de /ğerici çımey depoy estose Uca de Bı geyre ZIm dosya da ğo, çen deqa miyande fına bıcerbne yana cihaze ğo fına akeri.
 android.ui.error_filenotfound=Ğeta: Weçinayi dosyaya ZIM'i nivineyi.
 android.ui.error_fileinvalid=Ğeta: Weçinayi dosya zu dosyaya ZIM'i niya.
-android.ui.error_articlenotfoun=Ğeta:ber kerdışa wesiqa da \"%1$s\" 'i nebi
 android.ui.error_articleurlnotfound=Ğeta:bar kerdışa wesiqer da (Url: %1$s)'i nebi.
 android.ui.pref_zoom_title=Sewiyey zumer
 android.ui.pref_zoom_enable=Kontrola zumer

@@ -151,7 +151,6 @@ android.ui.choose_file=Alegeți un fișier cu conținut ZIM (*.zim)
 android.ui.error_nozimfilesfound=Nu s-au găsit fișiere ZIM pe dispozitivul dumneavoastră.\nConsultați pagina de ajutor pentru detalii despre încărcarea conținutului în Kiwix.\nDacă totuși ați stocat un fișier ZIM pe dispozitivul dv./stocarea dv. externă, puteți reîncerca peste un minut sau puteți reporni dispozitivul.
 android.ui.error_filenotfound=Eroare: Fișierul ZIM selectat nu poate fi găsit.
 android.ui.error_fileinvalid=Eroare: Fișierul selectat nu este un fișier ZIM valid.
-android.ui.error_articlenotfoun=Eroare: Încărcarea articolului \"%1$s\" nu a reușit.
 android.ui.error_articleurlnotfound=Eroare: Încărcarea articolului (Url: %1$s) nu a reușit.
 android.ui.pref_zoom_title=Nivel de zoom
 android.ui.pref_zoom_enable=Controale de zoom

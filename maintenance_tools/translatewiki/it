@@ -176,7 +176,6 @@ android.ui.choose_file=Seleziona un file di contenuto ZIM (*.zim)
 android.ui.error_nozimfilesfound=Nessun file ZIM trovano sul tuo dispositivo.\nLeggi la pagina di aiuto per ottenere indicazioni su come caricare il contenuto in Kiwix.\nSe ha inserito un file ZIM sul tuo dispositivo, potresti ritentare fra un minuto o riavviare il dispositivo.
 android.ui.error_filenotfound=Errore: il file ZIM selezionato non è stato trovato.
 android.ui.error_fileinvalid=Errore: il file selezionato non è un file ZIM valido.
-android.ui.error_articlenotfoun=Errore: caricamento della voce \"%1$s\" non riuscita.
 android.ui.error_articleurlnotfound=Errore: caricamento della voce (url: %1$s) non riuscita.
 android.ui.pref_zoom_title=Livello di zoom
 android.ui.pref_zoom_enable=Controlli zoom

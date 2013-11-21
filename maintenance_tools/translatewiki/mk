@@ -138,7 +138,6 @@ android.ui.choose_file=Изберете ZIM-податотека (*.zim)
 android.ui.error_nozimfilesfound=На уредот не се најдени ZIM-податотеки.\nПогледајте ја страницата за помош за да дознаете како да ставите содржини во Kiwix.\nАко сепак имате ставено ZIM-податотека во уредот/надворешниот склад, обидете се повторно за една минута или превклучете го уредот.
 android.ui.error_filenotfound=Грешка: Не ја најдов избраната ZIM-податотека.
 android.ui.error_fileinvalid=Грешка: Одбраната податотека не е вежачка ZIM-податотека.
-android.ui.error_articlenotfoun=Грешка: Не успеав да ја вчитам статијата \"%1$s\".
 android.ui.error_articleurlnotfound=Грешка: Не успеав да ја вчитам статијата (URL: %1$s).
 android.ui.pref_zoom_title=Ниво на приближеност
 android.ui.pref_zoom_enable=Контроли за размер

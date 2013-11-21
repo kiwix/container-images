@@ -138,7 +138,6 @@ ui.messages.integrityCheckFailed=統合のチェックに失敗しました。�
 android.ui.articlesearch_hint=記事の検索
 android.ui.error_filenotfound=エラー: 選択した ZIM ファイルが見つかりませんでした。
 android.ui.error_fileinvalid=エラー: 選択したファイルは有効な ZIM ファイルではありません。
-android.ui.error_articlenotfoun=エラー: 記事「%1$s」を読み込めませんでした。
 android.ui.error_articleurlnotfound=エラー: 記事 (URL: %1$s) を読み込めませんでした。
 android.ui.pref_zoom_title=ズーム レベル
 android.ui.pref_zoom_enable=ズーム コントロール

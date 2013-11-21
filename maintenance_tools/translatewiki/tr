@@ -143,7 +143,6 @@ android.ui.choose_file=Bir ZIM İçerik Dosyası seçin (*.zim)
 android.ui.error_nozimfilesfound=Cihazınızda bir ZIM dosyası bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
 android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.
 android.ui.error_fileinvalid=Hata: Seçili dosya geçerli bir ZIM dosyası değil.
-android.ui.error_articlenotfoun=Hata: \"%1$s\" makalesinin yüklemesi başarısız.
 android.ui.error_articleurlnotfound=Hata: (Url: %1$s) makalesinin yüklemesi başarısız.
 android.ui.pref_zoom_title=Zum seviyesi
 android.ui.pref_zoom_enable=Zum kontrolleri

@@ -137,7 +137,6 @@ ui.messages.integrityCheckFailed=د بشپړتابه بياکتنه نابريا
 android.ui.choose_file=د ZIM مېنځپانگې يوه دوتنه ټاکل (*.zim)
 android.ui.error_filenotfound=تېروتنه: ستاسې ټاکلې ZIM دوتنه و نه موندل شوه.
 android.ui.error_fileinvalid=تېروتنه: ستاسې ټاکلې دوتنه يوه کره ZIM دوتنه نه ده.
-android.ui.error_articlenotfoun=تېروتنه: ليکنه برسېرېدنه \"%1$s\" نابريالئ شوه.
 android.ui.error_articleurlnotfound=تېروتنه: ليکنه برسېرېدنه (يو آر ال: %1$s) نابريالئ شوه.
 android.ui.pref_nightmode=د شپې بڼه
 android.ui.pref_nightmode_summary=رنگ اړول شوې ليکنې ښکاره کول
