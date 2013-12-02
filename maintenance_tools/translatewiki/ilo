@@ -126,6 +126,7 @@ ui.messages.contentDownloadFinished=Ti pinagikarga iti '%1' ket nalpasen.
 ui.messages.feedback=Pagarupan
 ui.messages.library=Biblioteka
 ui.messages.fullscreen=Sibubukel a pagkitaan
+# Fuzzy
 ui.messages.quitFullscreen=Rummuar ti moda a napno a pagkitaan
 ui.messages.integrityCheckSuccessful=Ti kinapudno ti papeles ket nagballigi a kinita.
 ui.messages.integrityCheckFailed=Ti panagkita ti kinapudno ket napaay. Ti papelesmo ket nadadael.

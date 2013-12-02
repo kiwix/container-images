@@ -169,6 +169,7 @@ ui.messages.contentDownloadFinished=O descarregamento de '%1' terminou.
 ui.messages.feedback=Comentários
 ui.messages.library=Biblioteca
 ui.messages.fullscreen=Tela inteira
+# Fuzzy
 ui.messages.quitFullscreen=Sair do modo de tela inteira
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.

@@ -133,6 +133,7 @@ ui.messages.contentDownloadFinished=Ronayıs dı '%1' qedya
 ui.messages.feedback=Peydrışten
 ui.messages.library=Kıtıbxane
 ui.messages.fullscreen=Tam asenge
+# Fuzzy
 ui.messages.quitFullscreen=Tam asenge modi ra bıvıciye
 ui.messages.integrityCheckSuccessful=Dosya pêro zaf kontrol biya.
 ui.messages.integrityCheckFailed=Kontrolê cı nêbıyo. Dosyay şıma xerpiyaya.

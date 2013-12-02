@@ -121,6 +121,7 @@ ui.messages.contentDownloadFinished=اكتمل تنزيل '%1'.
 ui.messages.feedback=mole7adhat
 ui.messages.library=المكتبة
 ui.messages.fullscreen=كامل الشاشة
+# Fuzzy
 ui.messages.quitFullscreen=إنهاء وضع كامل الشاشة
 ui.messages.integrityCheckSuccessful=تم التأكد بنجاح من تكامل الملف.
 ui.messages.integrityCheckFailed=فشل التحقق من التكامل. الملف معطوب.

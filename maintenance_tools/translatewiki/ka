@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished='%1' ჩამოტვირთულია
 ui.messages.feedback=უკუკავშირი
 ui.messages.library=ბიბლიოთეკა
 ui.messages.fullscreen=მთელ ეკრანზე
+# Fuzzy
 ui.messages.quitFullscreen=მთლიანი ეკრანის რეჟიმიდან გამოსვლა
 ui.messages.integrityCheckSuccessful=ფაილის მთლიანობა წარმატებით შემოწმდა
 ui.messages.integrityCheckFailed=მთლიანობის შემოწმების შეცდომა. თქვენი ფაილი დაზიანებულია.

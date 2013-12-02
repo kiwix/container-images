@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished=Shkarkimi prej '$1' ka përfunduar.
 ui.messages.feedback=Përshtypja
 ui.messages.library=Bibloteka
 ui.messages.fullscreen=Ekrani i plotë
+# Fuzzy
 ui.messages.quitFullscreen=Dil nga ekrani i plotë
 ui.messages.integrityCheckSuccessful=Tërësia e skedarit është kontrolluar me sukses.
 ui.messages.integrityCheckFailed=Kontrillimi i tërësishëm dështoi. Skedari juaj është i korruptuar.

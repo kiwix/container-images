@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished=Gole ngunduh '%1' uwis rampung.
 ui.messages.feedback=Umpan balik
 ui.messages.library=Perpustakan
 ui.messages.fullscreen=Layar kebak
+# Fuzzy
 ui.messages.quitFullscreen=Metu sekang mode layar kebak
 ui.messages.integrityCheckSuccessful=Katenanan berkas wis kasil dipriksa.
 ui.messages.integrityCheckFailed=Gole mriksa katenanan gagal. Berkase Rika ruwag.

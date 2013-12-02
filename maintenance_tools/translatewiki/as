@@ -125,4 +125,5 @@ ui.messages.contentDownloadFinished='%1' : ডাউনলোড শেষ |
 ui.messages.feedback=মন্তব্য
 ui.messages.library=পুথিভৰাল
 ui.messages.fullscreen=সম্পূৰ্ণ স্ক্ৰীণ
+# Fuzzy
 ui.messages.quitFullscreen=পূৰ্ণাঙ্গ স্ক্ৰীণ বন্ধ কৰক

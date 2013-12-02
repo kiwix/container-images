@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished=Telecargament de "%1" acabat.
 ui.messages.feedback=Vejaires e comentaris
 ui.messages.library=Bibliotèca
 ui.messages.fullscreen=Ecran complet
+# Fuzzy
 ui.messages.quitFullscreen=Quitar lo mòde ecran complet
 ui.messages.integrityCheckSuccessful=L'integritat del fichièr es estada verificada amb succès.
 ui.messages.integrityCheckFailed=La verificacion de l'integritat del fichièr a fracassat. Lo fichièr es corromput.

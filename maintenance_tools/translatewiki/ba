@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished='%1' күсерелде.
 ui.messages.feedback=Кире бәйләнеш
 ui.messages.library=Китапхана
 ui.messages.fullscreen=Тулы экран
+# Fuzzy
 ui.messages.quitFullscreen=Тулы экран режимынан сығырға
 ui.messages.integrityCheckSuccessful=Файл бөтөнлөгө уңышлы тикшерелде
 ui.messages.integrityCheckFailed=Бөтөнлөк тикшереү хатаһы. Файл боҙолған.

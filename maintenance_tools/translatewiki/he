@@ -163,6 +163,7 @@ ui.messages.contentDownloadFinished=הורדת '%1' הסתיימה.
 ui.messages.feedback=משוב
 ui.messages.library=ספרייה
 ui.messages.fullscreen=מסך מלא
+# Fuzzy
 ui.messages.quitFullscreen=יציאה ממצב מסך מלא
 ui.messages.integrityCheckSuccessful=שלמות הקובץ נבדקה בהצלחה.
 ui.messages.integrityCheckFailed=בדיקת השלמות נכשלה. הקובץ מקולקל.

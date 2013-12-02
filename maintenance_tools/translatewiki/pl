@@ -4,6 +4,7 @@
 # Author: Chrumps
 # Author: Olgak85
 # Author: Przemub
+# Author: Rzuwig
 # Author: Sp5uhe
 # Author: Ty221
 # Author: Woytecr
@@ -169,4 +170,7 @@ ui.messages.fullscreen=Pełny ekran
 ui.messages.quitFullscreen=Wyjdź z trybu pełnego ekranu
 ui.messages.integrityCheckSuccessful=Integralność pliku została pomyślnie sprawdzona.
 ui.messages.integrityCheckFailed=Sprawdzanie integralności nie powiodło się. Plik jest uszkodzony.
+android.ui.button_backtotop=Powrót do góry
 android.ui.pref_nightmode=Tryb nocny
+android.ui.pref_info_version=Wersja
+android.ui.pref_backtotop=Powrót do góry

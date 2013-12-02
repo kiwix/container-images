@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished=Cwblhawyd lawrlwytho '%1'.
 ui.messages.feedback=Adborth
 ui.messages.library=Llyfrgell
 ui.messages.fullscreen=Sgrin lawn
+# Fuzzy
 ui.messages.quitFullscreen=Gadael y modd sgrin lawn
 ui.messages.integrityCheckSuccessful=Llwyddwyd i wirio bod y ffeil yn gyfan.
 ui.messages.integrityCheckFailed=Methodd y gwirio ar gyfanrwydd y ffeil. Mae eich ffeil yn llwgr.

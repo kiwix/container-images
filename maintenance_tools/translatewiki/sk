@@ -134,6 +134,7 @@ ui.messages.contentDownloadFinished=Sťahovanie „%1“ je dokončené.
 ui.messages.feedback=Spätná väzba
 ui.messages.library=Knižnica
 ui.messages.fullscreen=Celá obrazovka
+# Fuzzy
 ui.messages.quitFullscreen=Ukončiť režim celej obrazovky
 ui.messages.integrityCheckSuccessful=Integrita súborov bola úspešne overená.
 ui.messages.integrityCheckFailed=Kontrola integrity zlyhala. Súbor je poškodený.

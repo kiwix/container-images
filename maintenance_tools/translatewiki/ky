@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished=Жүктөө '%1' бүттү
 ui.messages.feedback=Кайтарма жооп
 ui.messages.library=Китепкана
 ui.messages.fullscreen=Толук көрүнүшү
+# Fuzzy
 ui.messages.quitFullscreen=Толук көрүнүштөн чыгуу
 ui.messages.integrityCheckSuccessful=Файл бүтүмдүгү ийгиликтүү текшерилди.
 ui.messages.integrityCheckFailed=Файлдын бүтүмдүүлүгүндө ката бар. Сиздин файл бузук.

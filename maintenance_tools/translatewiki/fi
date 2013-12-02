@@ -157,6 +157,7 @@ ui.messages.contentDownloadFinished=%1 on ladattu.
 ui.messages.feedback=Palaute
 ui.messages.library=Kirjasto
 ui.messages.fullscreen=Koko näyttö
+# Fuzzy
 ui.messages.quitFullscreen=Poistu koko näytön tilasta
 ui.messages.integrityCheckSuccessful=Tiedoston eheys tarkistettiin onnistuneesti.
 ui.messages.integrityCheckFailed=Eheyden tarkistus epäonnistui. Tiedosto on vioittunut.

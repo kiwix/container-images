@@ -126,6 +126,7 @@ ui.messages.contentDownloadFinished=Datoteka '%1' je preuzeta.
 ui.messages.feedback=Povratna informacija
 ui.messages.library=Knjižnica
 ui.messages.fullscreen=Preko cijelog zaslona
+# Fuzzy
 ui.messages.quitFullscreen=Izađi iz prikaza preko cijelog zaslona
 ui.messages.integrityCheckSuccessful=Integritet datoteka je uspješno provjeren.
 ui.messages.integrityCheckFailed=Datoteka nije valjana. Datoteka s podatcima je oštećena.

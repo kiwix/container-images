@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished=آلماسی«%1» گوتولدو.
 ui.messages.feedback=گئری‌بسلمه
 ui.messages.library=کیتاب‌ائوی
 ui.messages.fullscreen=صحیفه‌نین بوتونلد
+# Fuzzy
 ui.messages.quitFullscreen=صحیفه‌نی بو حالتدن چیخاد
 ui.messages.integrityCheckSuccessful=فايل بوتؤولويو چئک اولموشدور .
 ui.messages.integrityCheckFailed=بوتؤولويو چئک ائدیله بیله‌مدی. سیزین فایل خاراب دیر.

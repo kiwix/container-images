@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished=Elŝuto de '%1' finiĝis.
 ui.messages.feedback=Sugestoj
 ui.messages.library=Libraro
 ui.messages.fullscreen=Plenekrane
+# Fuzzy
 ui.messages.quitFullscreen=Eliri la plenekranan reĝimon
 ui.messages.integrityCheckSuccessful=La integreco de la dosiero sukcese kontroliĝis.
 ui.messages.integrityCheckFailed=La kontrolo de integreco malsukcesis. Via dosiero koruptiĝis.

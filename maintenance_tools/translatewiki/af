@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished=Aflaai van "%1" is voltooi.
 ui.messages.feedback=Terugvoer
 ui.messages.library=Biblioteek
 ui.messages.fullscreen=Volle skerm
+# Fuzzy
 ui.messages.quitFullscreen=Sluit volskerm
 ui.messages.integrityCheckSuccessful=Die lêer se integriteit is gekontroleer.
 ui.messages.integrityCheckFailed=Die integriteitstoets het gefaal. U lêer is korrup.

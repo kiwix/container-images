@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished=Ìrùsílẹ̀ '%1' ti parí.
 ui.messages.feedback=Ìdáhùn ìbéèrè
 ui.messages.library=Ibiàmúlò
 ui.messages.fullscreen=Ojúìran kíkúnrẹ́rẹ́
+# Fuzzy
 ui.messages.quitFullscreen=Ìjáde kúrò ní ojúìran kíkúnrẹ́rẹ́
 ui.messages.integrityCheckSuccessful=Ìyẹ̀wò odidi fáìlì yọrí sí rere.
 ui.messages.integrityCheckFailed=Ìyẹ̀wò odidi fáìlì kùnà. Fáìlì yín ti bàjẹ́.

@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished=د '%1' ښکته کول بشپړ شو.
 ui.messages.feedback=غبرگون
 ui.messages.library=کتابتون
 ui.messages.fullscreen=ډکه پرده
+# Fuzzy
 ui.messages.quitFullscreen=د بشپړ پردې ښکارېدنې نه وتل
 ui.messages.integrityCheckSuccessful=د دوتنې بشپړتابه په برياليتوب سره وکتل شو.
 ui.messages.integrityCheckFailed=د بشپړتابه بياکتنه نابريالۍ شوه. ستاسې دوتنه خرابه ده.

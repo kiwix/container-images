@@ -127,6 +127,7 @@ ui.messages.contentDownloadFinished=Таталтын '%1' хувь нь гүйц
 ui.messages.feedback=Санал зөвлөмж
 ui.messages.library=Сан
 ui.messages.fullscreen=Дэлгэц дүүргэн харах
+# Fuzzy
 ui.messages.quitFullscreen=Энгийн хэлбэрт шилжих
 ui.messages.integrityCheckSuccessful=Файлын эвдрэлийн шалгалт хийгдэж дууслаа.
 ui.messages.integrityCheckFailed=Файлын эвдрэлийн шалгалт хийхэд алдаа гарлаа. Файл эвдэрсэн байна.

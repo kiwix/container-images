@@ -141,6 +141,7 @@ ui.messages.contentDownloadFinished=“$1”已下载完成。
 ui.messages.feedback=反馈
 ui.messages.library=库
 ui.messages.fullscreen=全屏
+# Fuzzy
 ui.messages.quitFullscreen=退出全屏模式
 ui.messages.integrityCheckSuccessful=成功地检查文件完整性。
 ui.messages.integrityCheckFailed=文件完整性检查失败。您的文件已损坏。

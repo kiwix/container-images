@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished=چۈشۈرۈش '%1' تاماملاندى.
 ui.messages.feedback=قايتۇرما ئىنكاس
 ui.messages.library=ئامبار
 ui.messages.fullscreen=پۈتۈن ئېكران
+# Fuzzy
 ui.messages.quitFullscreen=پۈتۈن ئېكران ھالەتتىن چېكىن
 ui.messages.integrityCheckSuccessful=ھۆججەت مۇكەممەللىكى مۇۋەپپەقىيەتلىك تەكشۈرۈلدى.
 ui.messages.integrityCheckFailed=ھۆججەت مۇكەممەللىكىنى تەكشۈرەلمىدى. ھۆججىتىڭىز بۇزۇلغان.

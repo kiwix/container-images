@@ -126,6 +126,7 @@ ui.messages.contentDownloadFinished=Ngunduh '%1' geus réngsé.
 ui.messages.feedback=Eupan balik
 ui.messages.library=Pabukon
 ui.messages.fullscreen=Layar pinuh
+# Fuzzy
 ui.messages.quitFullscreen=Kaluar ti modeu layar pinuh
 ui.messages.integrityCheckSuccessful=Integritas berkas geus dipariksa.
 ui.messages.integrityCheckFailed=Pamariksaan integritas gagal. Berkas anjeun dikorup.

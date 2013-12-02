@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished='%1' siap dimuat turun.
 ui.messages.feedback=Maklum Balas
 ui.messages.library=Perpustakaan
 ui.messages.fullscreen=Skrin penuh
+# Fuzzy
 ui.messages.quitFullscreen=Keluar dari ragam skrin penuh
 ui.messages.integrityCheckSuccessful=Integriti fail berjaya diperiksa.
 ui.messages.integrityCheckFailed=Integriti fail tidak dapat disemak. Fail anda sudah tercemar.

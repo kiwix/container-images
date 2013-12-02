@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished=Niðurtøka (download) av '%1' er liðug.
 ui.messages.feedback=Afturmeldingar
 ui.messages.library=Bókasavn
 ui.messages.fullscreen=Fullan skerm
+# Fuzzy
 ui.messages.quitFullscreen=Far burtur frá fullum skermi
 ui.messages.integrityCheckSuccessful=Tað eydnaðist at kanna integritetin hjá fíluni.
 ui.messages.integrityCheckFailed=Integritets eftirlitið miseydnaðist. Tín fíla er oyðiløgd.

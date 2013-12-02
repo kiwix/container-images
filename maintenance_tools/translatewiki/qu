@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished='%1' chaqnamusqañam.
 ui.messages.feedback=Willapuykuna
 ui.messages.library=Qillqakunantin
 ui.messages.fullscreen=Hunt'a qhawana pampa
+# Fuzzy
 ui.messages.quitFullscreen=Hunt'a qhawana pampamanta lluqsiy
 ui.messages.integrityCheckSuccessful=Willañiqip allin kayninqa aypalla llanchisqañam.
 ui.messages.integrityCheckFailed=Allin kay llanchiyqa qullurqunmi. Willañiqiykiqa manam allinchu.

@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished=ଡାଉନଲୋଡ ର ୧% ଶେଷ.
 ui.messages.feedback=ମତାମତ
 ui.messages.library=ପାଠାଗାର
 ui.messages.fullscreen=ପୁରା ସ୍କ୍ରିନ
+# Fuzzy
 ui.messages.quitFullscreen=ପୁରା ସ୍କ୍ରିନ ମୋଡରୁ ଓହରି ଆସିବେ
 ui.messages.integrityCheckSuccessful=ଫାଇଲର ପୂର୍ଣ୍ଣତା ସଫଳ ଭାବେ ପରୀକ୍ଷଣ ହେଲା ।
 ui.messages.integrityCheckFailed=ପୂର୍ଣ୍ଣତା ପରୀକ୍ଷଣ ବିଫଳ ହେଲା । ଆପଣଙ୍କ ଫାଇଲରେ ତ୍ରୁଟି ଅଛି ।

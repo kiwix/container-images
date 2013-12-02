@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished='%1' is fäädesch eronger jelaade.
 ui.messages.feedback=Röckmäldonge
 ui.messages.library=Bibliotheek
 ui.messages.fullscreen=Op der janze Beldscherm jonn
+# Fuzzy
 ui.messages.quitFullscreen=Nit mieh janze Beldscherm nämme
 ui.messages.integrityCheckSuccessful=Di Dattei wood jeprööv, se schingk nit kappott ze sin.
 ui.messages.integrityCheckFailed=Di Dattei wood jeprööv. Se es kappott.

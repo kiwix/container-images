@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished="%1" telesariziyeli banna.
 ui.messages.feedback=Hakilinanta
 ui.messages.library=Gafeso
 ui.messages.fullscreen=Ekaran fa
+# Fuzzy
 ui.messages.quitFullscreen=Bɔ ekaran falen na
 ui.messages.integrityCheckSuccessful=Fisiye bɛɛlajɛlen sɛgɛsɛgɛra ka ɲɛ.
 ui.messages.integrityCheckFailed=fisiye bɛɛlajɛlen sɛgɛsɛrɛli danna sira la. Fisiye maɲi.

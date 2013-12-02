@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished=Prenos »$1« je dokončan.
 ui.messages.feedback=Povratna informacija
 ui.messages.library=Knjižnica
 ui.messages.fullscreen=Celozaslonski način
+# Fuzzy
 ui.messages.quitFullscreen=Izhod iz celozaslonskega načina
 ui.messages.integrityCheckSuccessful=Celovitost datoteke sem uspešno preveril.
 ui.messages.integrityCheckFailed=Preverjanje celovitosti ni uspelo. Vaša datoteka je pokvarjena.

@@ -137,6 +137,7 @@ ui.messages.contentDownloadFinished=1٪ زبراثقال مکمل۔
 ui.messages.feedback=آپ کی رائے
 ui.messages.library=مکتبہ
 ui.messages.fullscreen=مکمل تظاہرہ
+# Fuzzy
 ui.messages.quitFullscreen=اندازِ مکمل تظاہرہ کو ختم کریں
 ui.messages.integrityCheckSuccessful=سالمیت ملف کی پڑتال کامیابی کے ساتھ مکمل ہوگئی۔
 ui.messages.integrityCheckFailed=سالمیت ملف کی پڑتال ناکام۔ آپ کی فائل خراب ہے۔

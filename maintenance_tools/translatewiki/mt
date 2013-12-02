@@ -126,6 +126,7 @@ ui.messages.contentDownloadFinished=Tniżżil ta' '%1' huwa lest.
 ui.messages.feedback=Rispons
 ui.messages.library=Librerija
 ui.messages.fullscreen=Skrin sħiħ
+# Fuzzy
 ui.messages.quitFullscreen=Oħroġ mill-modalità ta' skrin sħiħ
 ui.messages.integrityCheckSuccessful=L-integrità tal-fajl ġiet iċċekkjata b'suċċess.
 ui.messages.integrityCheckFailed=L-integrità tal-fajl falliet. Il-fajl tiegħek huwa ħażin.
