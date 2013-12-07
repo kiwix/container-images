@@ -3,6 +3,7 @@
 # Author: Erdemaslancan
 # Author: Gorizon
 # Author: Kelson
+# Author: Marmase
 # Author: Mirzali
 
 ui.main.osxservices=Serwisi
@@ -133,10 +134,10 @@ ui.messages.contentDownloadFinished=Ronayıs dı '%1' qedya
 ui.messages.feedback=Peydrışten
 ui.messages.library=Kıtıbxane
 ui.messages.fullscreen=Tam asenge
-# Fuzzy
-ui.messages.quitFullscreen=Tam asenge modi ra bıvıciye
+ui.messages.quitFullscreen=Tam asenge ra bıvıciye
 ui.messages.integrityCheckSuccessful=Dosya pêro zaf kontrol biya.
 ui.messages.integrityCheckFailed=Kontrolê cı nêbıyo. Dosyay şıma xerpiyaya.
+android.ui.button_backtotop=Şo Serni
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
 android.ui.error_nozimfilesfound=Zihzda şıma de ZIM dosya çıniya.\nKiwix're zerrek bar kerdışi re Talimata berkerdışi  bıvine.\nNara ke cihazda şıma de /ğerici çımey depoy estose Uca de Bı geyre ZIm dosya da ğo, çen deqa miyande fına bıcerbne yana cihaze ğo fına akeri.
@@ -148,3 +149,6 @@ android.ui.pref_zoom_enable=Kontrola zumer
 android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dezu butona zumi bıasne
 android.ui.pref_nightmode=Moda şewer
 android.ui.pref_nightmode_summary=Wesiqi çerğbiyayış rengana bıasne
+android.ui.pref_info_title=Melumat
+android.ui.pref_info_version=Versiyon
+android.ui.pref_backtotop=Şo Serni
