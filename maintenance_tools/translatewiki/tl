@@ -159,6 +159,7 @@ ui.messages.contentDownloadFinished=Tapos na ang pagkakarga ng '%1'.
 ui.messages.feedback=Tugon
 ui.messages.library=Aklatan
 ui.messages.fullscreen=Buong panooran
+# Fuzzy
 ui.messages.quitFullscreen=Huwag buong panooran
 ui.messages.integrityCheckSuccessful=Matagumpay ang pagsusuri ng pagiging buo ng talaksan.
 ui.messages.integrityCheckFailed=Nabigo ang pagsusuri ng pagkabuo. May sira ang talaksan mo.

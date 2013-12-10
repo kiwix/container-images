@@ -131,6 +131,7 @@ ui.messages.contentDownloadFinished=Ël dëscariament ëd ''%1'' a l'é livrà.
 ui.messages.feedback=Artorn
 ui.messages.library=Librerìa
 ui.messages.fullscreen=Scren antregh
+# Fuzzy
 ui.messages.quitFullscreen=Seurte da la manera a scren antregh
 ui.messages.integrityCheckSuccessful=L'integrità dl'archivi a l'é stàita controlà da bin.
 ui.messages.integrityCheckFailed=Ël contròl d'antegrità a l'ha falì. Tò archivi a l'é danegià.

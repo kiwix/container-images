@@ -127,6 +127,7 @@ ui.messages.contentDownloadFinished=Окырније орохнијә быә б�
 ui.messages.feedback=Әлоғә гәтеј
 ui.messages.library=Китобхонә
 ui.messages.fullscreen=Бә екран овинҹыније
+# Fuzzy
 ui.messages.quitFullscreen=Овинҹынијә екранику беше
 ui.messages.integrityCheckSuccessful=Фајли битовәти де ованди дәвинә кардә быә.
 ui.messages.integrityCheckFailed=Битовәти дәвинә кардејәдә сәһв пәјдо бе. Шымә фајл појмол быә.

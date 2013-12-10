@@ -129,6 +129,7 @@ ui.messages.contentDownloadFinished=S Abelade vo '%1' isch fertig.
 ui.messages.feedback=Ruggmeldige
 ui.messages.library=Bibliothek
 ui.messages.fullscreen=Vollbildschirm
+# Fuzzy
 ui.messages.quitFullscreen=Vollbildmodus beende
 ui.messages.integrityCheckSuccessful=D Integrität vo de Datei isch mit Erfolg überprieft worde.
 ui.messages.integrityCheckFailed=D Integritätspriefig isch fehlgschlo. Die Datei isch bschädigt.

@@ -1,5 +1,6 @@
 # Messages for Vietnamese (Tiếng Việt)
 # Exported from translatewiki.net
+# Author: Baonguyen21022003
 # Author: Minh Nguyen
 # Author: පසිඳු කාවින්ද
 
@@ -162,6 +163,25 @@ ui.messages.contentDownloadFinished=Đã hoàn tất tải về “%1”.
 ui.messages.feedback=Phản hồi
 ui.messages.library=Thư viện
 ui.messages.fullscreen=Toàn màn hình
-ui.messages.quitFullscreen=Thoát chế độ toàn màn hình
+ui.messages.quitFullscreen=Thoát ra toàn màn hình
 ui.messages.integrityCheckSuccessful=Đã kiểm tra thành công tính toàn vẹn của tập tin.
 ui.messages.integrityCheckFailed=Việc kiểm tra tính toàn vẹn đã thất bại. Tập tin của bạn bị hỏng.
+android.ui.button_backtotop=Trở lên Đầu trang
+android.ui.articlesearch_hint=Gõ để tra cứu bài
+android.ui.choose_file=Chọn một Tập tin Nội dung ZIM (*.zim)
+andoird.ui.rescan_fs=Tìm thẻ SD lần nữa
+android.ui.rescan_fs_warning=Đang tìm tập tin ZIM, xin vui lòng chờ…
+android.ui.error_nozimfilesfound=Không tìm thấy tập tin ZIM trên thiết bị của bạn.\nHãy đọc Trang Trợ giúp để biết cách tải nội dung vào Kiwix.\nNếu bạn có đưa tập tin ZIM vào thiết bị hoặc bộ nhớ ngoài của bạn, hãy thử lại sau hoặc khởi động lại thiết bị của bạn.
+android.ui.error_filenotfound=Lỗi: Không tìm thấy tập tin ZIM đã chọn
+android.ui.error_fileinvalid=Lỗi: Tập tin đã chọn không phải là tập tin ZIM hợp lệ.
+android.ui.error_articlenotfound=Lỗi: Thất bại khi tải bài viết “%1$s”.
+android.ui.error_articleurlnotfound=Lỗi: Việc tải bài (URL: %1$s) bị thất bại.
+android.ui.pref_zoom_title=Mức thu phóng
+android.ui.pref_zoom_enable=Điều khiển thu phóng
+android.ui.pref_zoom_enable_summary=Hiện nút thu phóng ở góc phải bên dưới của màn hình
+android.ui.pref_nightmode=Chế độ ban đêm
+android.ui.pref_nightmode_summary=Đảo ngược màu sắc trong bài
+android.ui.pref_info_title=Thông tin
+android.ui.pref_info_version=Phiên bản
+android.ui.pref_backtotop=Trở lên Đầu trang
+android.ui.pref_backtotop_summary=Hiển thị nút ở cuối trang để di chuyển lên trên cùng

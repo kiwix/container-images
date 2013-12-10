@@ -1,11 +1,13 @@
-# Messages for Czech (česky)
+# Messages for Czech (čeština)
 # Exported from translatewiki.net
+# Author: Chmee2
 # Author: Jachym
 # Author: Jezevec
 # Author: Jkjk
 # Author: Kelson
 # Author: Mormegil
 # Author: Reaperman
+# Author: Tchoř
 # Author: Utar
 
 ui.main.osxservices=Služby
@@ -136,6 +138,21 @@ ui.messages.contentDownloadFinished=Stahování „%1“ je dokončeno.
 ui.messages.feedback=Zpětná vazba
 ui.messages.library=Knihovna
 ui.messages.fullscreen=Celá obrazovka
+# Fuzzy
 ui.messages.quitFullscreen=Ukončit celoobrazovkový režim
 ui.messages.integrityCheckSuccessful=Integrita souboru byl úspěšně zkontrolována.
 ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.
+android.ui.articlesearch_hint=Pro vyhledání článků pište
+android.ui.choose_file=Vyberte obsahový soubor ZIM (*.zim)
+android.ui.error_nozimfilesfound=Na zařízení nenalezeny soubory ZIM.\nPro vodítka, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu a nebo po restartu zařízení.
+android.ui.error_filenotfound=Chyba: Nelze najít vybraný soubor ZIM.
+android.ui.error_fileinvalid=Chyba: Vybraný soubor není platným souborem ZIM.
+android.ui.error_articlenotfound=Chyba: Načtení článku \"%1$s\" se nezdařilo.
+android.ui.error_articleurlnotfound=Chyba: Načtení článku (Url: %1$s ) se nezdařilo.
+android.ui.pref_zoom_title=Úroveň zvětšení
+android.ui.pref_zoom_enable=Ovládání přiblížení
+android.ui.pref_zoom_enable_summary=Zobrazit tlačítko přiblížení v pravém dolním rohu obrazovky
+android.ui.pref_nightmode=Noční režim
+android.ui.pref_nightmode_summary=Zobrazuje stránky v obrácených barvách.
+android.ui.pref_info_title=Informace
+android.ui.pref_info_version=Verze

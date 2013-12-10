@@ -132,6 +132,9 @@ ui.messages.contentDownloadFinished=Echuet eo pellgargañ '%1'.
 ui.messages.feedback=Sonjoù
 ui.messages.library=Levraoueg
 ui.messages.fullscreen=Skramm leun
+# Fuzzy
 ui.messages.quitFullscreen=Kuitaat ar mod skramm leun
 ui.messages.integrityCheckSuccessful=Gwiriet eo bet anterinded ar restr ervat.
 ui.messages.integrityCheckFailed=C'hwitet eo bet gwiriañ anterinded ar restr. Brein eo-hi.
+android.ui.pref_info_title=Titouroù
+android.ui.pref_info_version=Stumm

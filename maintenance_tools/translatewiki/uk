@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: AS
 # Author: Alex Khimich
+# Author: Andriykopanytsia
 # Author: Base
 # Author: Dim Grits
 # Author: Kelson
@@ -170,3 +171,22 @@ ui.messages.fullscreen=На весь екран
 ui.messages.quitFullscreen=Вийти з повноекранного режиму
 ui.messages.integrityCheckSuccessful=Цілісність файлу було успішно перевірено
 ui.messages.integrityCheckFailed=Збій перевірки цілісності. Ваш файл пошкоджено.
+android.ui.button_backtotop=Назад догори
+android.ui.articlesearch_hint=Наберіть для пошуку статей
+android.ui.choose_file=Виберіть файл вмісту ZIM (*.zim)
+andoird.ui.rescan_fs=Просканувати SD-карту
+android.ui.rescan_fs_warning=Сканування ZIM-файлів, будь ласка, зачекайте...
+android.ui.error_nozimfilesfound=Файлів ZIM не знайдено на вашому пристрої.\nПогляньте на сторінку допомогти, щоб отримати вказівки, як завантажувати вміст у Kiwix.\nЯкщо ви поклали файл ZIM на ваш пристрій/зовнішній носій, то можете повторити за хвилину або перезапустити пристрій.
+android.ui.error_filenotfound=Помилка: вибраний ZIM файл неможливо знайти.
+android.ui.error_fileinvalid=Помилка: вибраний файл не є вірним файлом ZIM.
+android.ui.error_articlenotfound=Помилка: завантаження статті \"%1$s\" не вдалося.
+android.ui.error_articleurlnotfound=Помилка: завантаження статті (Url: %1$s) не вдалося.
+android.ui.pref_zoom_title=Рівень масштабування
+android.ui.pref_zoom_enable=Управління масштабом
+android.ui.pref_zoom_enable_summary=Відображати кнопку масштаб у нижньому правому куті екрану
+android.ui.pref_nightmode=Нічний режим
+android.ui.pref_nightmode_summary=Показати статті з повернутими кольорами
+android.ui.pref_info_title=Інформація
+android.ui.pref_info_version=Версія
+android.ui.pref_backtotop=Наверх
+android.ui.pref_backtotop_summary=Відображати кнопки в кінці сторінки для прокрутки вгору

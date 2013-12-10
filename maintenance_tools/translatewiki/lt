@@ -133,6 +133,7 @@ ui.messages.contentDownloadFinished=Atsisiųsti iš '% 1' baigtas.
 ui.messages.feedback=Atsiliepimas
 ui.messages.library=Biblioteka
 ui.messages.fullscreen=Visas ekranas
+# Fuzzy
 ui.messages.quitFullscreen=Išeiti iš viso ekrano režimo
 ui.messages.integrityCheckSuccessful=Failo vientisumas buvo sėkmingai patikrintas.
 ui.messages.integrityCheckFailed=Vientisumo tikrinimas nepavyko. Jūsų failas yra sugadintas.

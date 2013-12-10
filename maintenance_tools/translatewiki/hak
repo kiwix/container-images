@@ -130,6 +130,7 @@ ui.messages.contentDownloadFinished=「1％」已完成下載。
 ui.messages.feedback=返饋
 ui.messages.library=庫
 ui.messages.fullscreen=全螢幕
+# Fuzzy
 ui.messages.quitFullscreen=退出全螢幕模式
 ui.messages.integrityCheckSuccessful=成功檢查文件个完整性。
 ui.messages.integrityCheckFailed=文件完整性檢查失敗。汝个文件損壞。

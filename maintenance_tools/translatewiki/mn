@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: Wisdom
+# Author: Zorigt
 
 ui.main.osxservices=Үйлчилгээ
 ui.main.osxhideapp=&brand.brandShortName; -г хаа
@@ -127,6 +128,6 @@ ui.messages.contentDownloadFinished=Таталтын '%1' хувь нь гүйц
 ui.messages.feedback=Санал зөвлөмж
 ui.messages.library=Сан
 ui.messages.fullscreen=Дэлгэц дүүргэн харах
-ui.messages.quitFullscreen=Энгийн хэлбэрт шилжих
+ui.messages.quitFullscreen=Бүтэн дэлгэцээр үзүүлэхийг болиулах
 ui.messages.integrityCheckSuccessful=Файлын эвдрэлийн шалгалт хийгдэж дууслаа.
 ui.messages.integrityCheckFailed=Файлын эвдрэлийн шалгалт хийхэд алдаа гарлаа. Файл эвдэрсэн байна.

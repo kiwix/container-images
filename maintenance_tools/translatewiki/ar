@@ -164,6 +164,7 @@ ui.messages.preparingContentDownload=تحضير التنزيل جاري...
 ui.messages.contentDownloadFinished=إنتهى تنزيل '%1'.
 ui.messages.library=المكتبة
 ui.messages.fullscreen=ملء الشاشة
+# Fuzzy
 ui.messages.quitFullscreen=أنهي نمط ملء الشاشة
 ui.messages.integrityCheckSuccessful=تم فحص إستقامة الملف بنجاح.
 ui.messages.integrityCheckFailed=فشل عند فحص الإستقامة. إنّ ملفك فاسد.

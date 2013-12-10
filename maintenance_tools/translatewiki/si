@@ -77,7 +77,7 @@ ui.main.library.sortBy=මෙසේ පෙළගස්වන්න
 ui.main.library.sortBy.title=මාතෘකාව
 ui.main.library.sortBy.size=විශාලත්වය
 ui.main.library.sortBy.date=දිනය
-ui.main.library.sortBy.author=කර්තෘ
+ui.main.library.sortBy.author=කතෘ
 ui.main.library.sortBy.publisher=ප්‍රකාශකයා
 ui.main.library.filterBy=මෙසේ පෙරන්න
 ui.main.library.filterBy.fileSize=ගොනුවේ විශාලත්වය
@@ -128,6 +128,7 @@ ui.messages.contentDownloadFinished='%1' හී බාගැනීම සම්�
 ui.messages.feedback=ප්‍රතිචාරය
 ui.messages.library=පුස්තකාලය
 ui.messages.fullscreen=පූර්ණ තිරය
+# Fuzzy
 ui.messages.quitFullscreen=පූර්ණ තිර ආකාරයෙන් ඉවත් වන්න
 ui.messages.integrityCheckSuccessful=ගොනු සම්පූර්ණත්වය සාර්ථකව පිරික්සන ලදී.
 ui.messages.integrityCheckFailed=සම්පූර්ණත්ව පරික්ෂාව අසාර්ථකයි. ඔබේ ගොනුව දුෂ්ප්‍රතිපන්න වී ඇත.

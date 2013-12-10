@@ -96,6 +96,7 @@ ui.preferences.profileDirectory=Profila direktorija
 ui.preferences.browse=Pārlūkot
 ui.preferences.tabs=Atcerēties cilnes
 ui.preferences.downloadCatalogs=Lejupielādēt attālos katalogus
+ui.preferences.neverAskToIndex=Nekad nejautāt, vai indeksēt
 ui.server.load=Ielādēt
 ui.server.start=Sākt
 ui.server.stop=Apturēt
@@ -131,6 +132,8 @@ ui.messages.contentDownloadFinished='%1' lejupielāde ir pabeigta.
 ui.messages.feedback=Atsauksmes
 ui.messages.library=Bibliotēka
 ui.messages.fullscreen=Pilnekrāna režīms
+# Fuzzy
 ui.messages.quitFullscreen=Iziet no pilnekrāna režīma
 ui.messages.integrityCheckSuccessful=Faila integritāte veiksmīgi pārbaudīta.
 ui.messages.integrityCheckFailed=Integritātes pārbaude neizdevās. Jūsu fails ir bojāts.
+android.ui.pref_nightmode=Nakts režīms

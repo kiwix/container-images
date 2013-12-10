@@ -132,6 +132,7 @@ ui.messages.contentDownloadFinished=Nedlasting av «%1» er ferdig.
 ui.messages.feedback=Tilbakemelding
 ui.messages.library=Bibliotek
 ui.messages.fullscreen=Full skjerm
+# Fuzzy
 ui.messages.quitFullscreen=Avslutt fullskjermmodus
 ui.messages.integrityCheckSuccessful=Filintegriteten ble sjekket og funnet i orden.
 ui.messages.integrityCheckFailed=Filintegriteten ble sjekket og funnet å være skadet.

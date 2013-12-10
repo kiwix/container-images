@@ -126,6 +126,7 @@ ui.messages.contentDownloadFinished=Ngundhuh rampung '%1'
 ui.messages.feedback=Lebon
 ui.messages.library=Perpustakan
 ui.messages.fullscreen=Layar kebak
+# Fuzzy
 ui.messages.quitFullscreen=Metu saka modé layar kebak
 ui.messages.integrityCheckSuccessful=Katenanan berkas wis kasil dipriksa.
 ui.messages.integrityCheckFailed=Pepestèn katenanan gagal. Berkas Sampéyan rusak.

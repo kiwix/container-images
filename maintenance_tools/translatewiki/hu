@@ -127,6 +127,7 @@ ui.messages.contentDownloadFinished='%1' letöltése befejeződött.
 ui.messages.feedback=Visszajelzés
 ui.messages.library=Könyvtár
 ui.messages.fullscreen=Teljes képernyő
+# Fuzzy
 ui.messages.quitFullscreen=Kilépés a teljes képernyős üzemmódból
 ui.messages.integrityCheckSuccessful=A fájl integritás ellenőrzése sikeresen végrehajtva.
 ui.messages.integrityCheckFailed=Az integritás ellenőrzése sikertelen. A fájl sérült.

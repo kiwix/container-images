@@ -128,6 +128,7 @@ ui.messages.contentDownloadFinished=Datoteka „%1“ je preuzeta.
 ui.messages.feedback=Povratna informacija
 ui.messages.library=Biblioteka
 ui.messages.fullscreen=Ceo ekran
+# Fuzzy
 ui.messages.quitFullscreen=Izađi iz celog ekrana
 ui.messages.integrityCheckSuccessful=Datoteka je celovita.
 ui.messages.integrityCheckFailed=Datoteka nije celovita. Oštećena je.

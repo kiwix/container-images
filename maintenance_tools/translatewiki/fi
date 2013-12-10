@@ -5,6 +5,7 @@
 # Author: Nedergard
 # Author: Nike
 # Author: Olli
+# Author: Silvonen
 
 ui.main.osxservices=Palvelut
 ui.main.osxhideapp=Piilota &brand.brandShortName;
@@ -157,6 +158,9 @@ ui.messages.contentDownloadFinished=%1 on ladattu.
 ui.messages.feedback=Palaute
 ui.messages.library=Kirjasto
 ui.messages.fullscreen=Koko näyttö
+# Fuzzy
 ui.messages.quitFullscreen=Poistu koko näytön tilasta
 ui.messages.integrityCheckSuccessful=Tiedoston eheys tarkistettiin onnistuneesti.
 ui.messages.integrityCheckFailed=Eheyden tarkistus epäonnistui. Tiedosto on vioittunut.
+android.ui.choose_file=Valitse ZIM-sisältötiedosto (*.zim)
+android.ui.pref_info_version=Versio

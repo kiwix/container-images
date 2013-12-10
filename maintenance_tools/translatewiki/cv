@@ -127,6 +127,7 @@ ui.messages.contentDownloadFinished=«%1» тиесе илнĕ.
 ui.messages.feedback=Хире-хирӗҫ ҫыхӑну
 ui.messages.library=Вулавăш
 ui.messages.fullscreen=Тулли экран
+# Fuzzy
 ui.messages.quitFullscreen=Тулли мар экран
 ui.messages.integrityCheckSuccessful=Файлăн пĕтĕмлĕхĕ ăнăçлă тĕрĕсленĕ.
 ui.messages.integrityCheckFailed=Пĕтĕмлĕх тĕрĕслевĕ пиçмен. Сирĕн файл çĕмрĕк.

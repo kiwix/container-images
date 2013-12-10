@@ -3,6 +3,7 @@
 # Author: Erdemaslancan
 # Author: Gorizon
 # Author: Kelson
+# Author: Marmase
 # Author: Mirzali
 
 ui.main.osxservices=Serwisi
@@ -40,11 +41,11 @@ ui.main.resultsbar=Sıvura neticeyan
 ui.main.tabs=Tabi
 ui.main.fullscreen=Tam asenge
 ui.main.tools=Xecetî
-ui.main.randomArticle=Wesiqaya ke raşt amê
+ui.main.randomArticle=Wesiqaya raştami
 ui.main.checkIntegrity=Cerbiya pêroneyin
 ui.main.launchIndexing=Dest be zerreki ra ke
 ui.main.purgeHistory=Verenayışe newekerdışi
-ui.main.help=Peşti
+ui.main.help=Desteg
 ui.main.feedback=Peydrışten
 ui.main.reportabug=Xırabin bırışê
 ui.main.requestafeature=Yew xısusiyet bıweşene
@@ -133,6 +134,21 @@ ui.messages.contentDownloadFinished=Ronayıs dı '%1' qedya
 ui.messages.feedback=Peydrışten
 ui.messages.library=Kıtıbxane
 ui.messages.fullscreen=Tam asenge
-ui.messages.quitFullscreen=Tam asenge modi ra bıvıciye
+ui.messages.quitFullscreen=Tam asenge ra bıvıciye
 ui.messages.integrityCheckSuccessful=Dosya pêro zaf kontrol biya.
 ui.messages.integrityCheckFailed=Kontrolê cı nêbıyo. Dosyay şıma xerpiyaya.
+android.ui.button_backtotop=Şo Serni
+android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
+android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
+android.ui.error_nozimfilesfound=Zihzda şıma de ZIM dosya çıniya.\nKiwix're zerrek bar kerdışi re Talimata berkerdışi  bıvine.\nNara ke cihazda şıma de /ğerici çımey depoy estose Uca de Bı geyre ZIm dosya da ğo, çen deqa miyande fına bıcerbne yana cihaze ğo fına akeri.
+android.ui.error_filenotfound=Ğeta: Weçinayi dosyaya ZIM'i nivineyi.
+android.ui.error_fileinvalid=Ğeta: Weçinayi dosya zu dosyaya ZIM'i niya.
+android.ui.error_articleurlnotfound=Ğeta:bar kerdışa wesiqer da (Url: %1$s)'i nebi.
+android.ui.pref_zoom_title=Sewiyey zumer
+android.ui.pref_zoom_enable=Kontrola zumer
+android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dezu butona zumi bıasne
+android.ui.pref_nightmode=Moda şewer
+android.ui.pref_nightmode_summary=Wesiqi çerğbiyayış rengana bıasne
+android.ui.pref_info_title=Melumat
+android.ui.pref_info_version=Versiyon
+android.ui.pref_backtotop=Şo Serni

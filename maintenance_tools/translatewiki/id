@@ -133,6 +133,7 @@ ui.messages.contentDownloadFinished=Selesai mengunduh '%1'
 ui.messages.feedback=Umpan balik
 ui.messages.library=Perpustakaan
 ui.messages.fullscreen=Layar penuh
+# Fuzzy
 ui.messages.quitFullscreen=Keluar dari mode layar penuh
 ui.messages.integrityCheckSuccessful=Integritas berkas telah berhasil diperiksa.
 ui.messages.integrityCheckFailed=Pemeriksaan integritas gagal. Berkas Anda rusak.

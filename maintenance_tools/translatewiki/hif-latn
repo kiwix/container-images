@@ -127,6 +127,7 @@ ui.messages.contentDownloadFinished='%1' ke dowmload khalaas hoe gais hae.
 ui.messages.feedback=Feedback do
 ui.messages.library=Library
 ui.messages.fullscreen=Puura chamrraa
+# Fuzzy
 ui.messages.quitFullscreen=Puura screen se niklo
 ui.messages.integrityCheckSuccessful=File ke integrity ke successfully check kar lewa gais hae.
 ui.messages.integrityCheckFailed=Integrity check fail hoe gais hae. Aap ke file barbaad hae.

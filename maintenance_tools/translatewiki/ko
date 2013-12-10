@@ -1,6 +1,7 @@
 # Messages for Korean (한국어)
 # Exported from translatewiki.net
 # Author: Deacon1289
+# Author: Hym411
 # Author: 아라
 
 ui.main.osxservices=서비스
@@ -17,7 +18,7 @@ ui.main.print=인쇄
 ui.main.printPdf=PDF로 인쇄
 ui.main.quit=끝내기
 ui.main.edit=편집
-ui.main.find=이 페이지에서 찾기...
+ui.main.find=페이지에서 검색...
 ui.main.selectall=모두 선택
 ui.main.copy=복사
 ui.main.mute=무음
@@ -50,13 +51,13 @@ ui.main.about=&brand.brandShortName;에 대하여
 ui.main.back=뒤로
 ui.main.forward=앞으로
 ui.main.home=처음으로
-ui.main.searchBar=찾기 막대
-ui.main.search=찾기
+ui.main.searchBar=검색 막대
+ui.main.search=검색
 ui.main.searchPlaceholder=찾을 텍스트를 여기에 입력하세요...
 ui.main.findInText=본문에서 찾기
 ui.main.noSearchBar=찾기를 위한 색인된 ZIM 파일이 필요합니다.
 ui.main.bookmarks=책갈피
-ui.main.results.title=찾기 결과
+ui.main.results.title=검색 결과
 ui.main.bmkLabel=책갈피:
 ui.main.notesLabel=책갈피 노트:
 ui.main.loadbmk=책갈피 세트 불러오기
@@ -67,12 +68,12 @@ ui.main.reload=책갈피 세트 다시 불러오기
 ui.main.defaultset=기본값 세트
 ui.main.saveImageAs=그림을 다른 이름으로 저장...
 ui.main.openLinkInNewTab=새 탭에 링크 열기
-ui.main.searchFor=을(를) 찾기
+ui.main.searchFor=검색 대상
 ui.main.copyLinkAddress=링크 주소 복사
 ui.main.close=닫기
 ui.main.library.myLibrary=내 라이브러리
 ui.main.library.getNewFiles=새 파일 얻기
-ui.main.library.searchZimFiles=ZIM 파일 찾기
+ui.main.library.searchZimFiles=ZIM 파일 검색
 ui.main.library.sortBy=정렬
 ui.main.library.sortBy.title=제목
 ui.main.library.sortBy.size=크기
@@ -91,7 +92,7 @@ ui.main.library.filterBy.lessThan=이내
 ui.preferences.preferences=환경 설정
 ui.preferences.save=저장
 ui.preferences.cancel=취소
-ui.preferences.profileDirectory=프로필 디렉토리
+ui.preferences.profileDirectory=프로필 디렉터리
 ui.preferences.browse=찾아보기
 ui.preferences.tabs=탭 저장하기
 ui.preferences.downloadCatalogs=원격 카탈로그 다운로드
@@ -131,6 +132,21 @@ ui.messages.contentDownloadFinished='%1'의 다운로드를 완료했습니다.
 ui.messages.feedback=반응
 ui.messages.library=라이브러리
 ui.messages.fullscreen=전체 화면
+# Fuzzy
 ui.messages.quitFullscreen=전체 화면 모드에서 나가기
 ui.messages.integrityCheckSuccessful=파일 무결성을 성공적으로 확인했습니다.
 ui.messages.integrityCheckFailed=무결성 검사를 실패했습니다. 파일은 손상되었습니다.
+android.ui.articlesearch_hint=문서를 찾아보는 종류
+android.ui.choose_file=ZIM 콘텐츠 파일 (*.zim) 선택
+android.ui.error_nozimfilesfound=장치에서 ZIM 파일이 발견되지 않았습니다.\n도움말에서 콘텐츠를 어떻게 키윅스로 불러오는지 알아보세요.\n만약 파일을 외장 디스크나 기기에 넣었다면, 몇분 후 재시도하거나 재부팅해 보세요.
+android.ui.error_filenotfound=오류: 선택된 ZIM 파일을 찾을 수 없습니다
+android.ui.error_fileinvalid=에러: 선택한 파일은 올바른 ZIM 파일이 아닙니다.
+android.ui.error_articlenotfound=오류: \"%1$s\" 문서를 불러오는 데 실패했습니다.
+android.ui.error_articleurlnotfound=오류: 문서(Url: %1$s)를 불러오는 데 실패했습니다.
+android.ui.pref_zoom_title=확대/축소 수준
+android.ui.pref_zoom_enable=확대 컨트롤
+android.ui.pref_zoom_enable_summary=화면 아래 오른쪽 모서리에 있는 확대 버튼을 보여줍니다
+android.ui.pref_nightmode=야간 모드
+android.ui.pref_nightmode_summary=되돌린 색으로 문서를 보여줍니다
+android.ui.pref_info_title=정보
+android.ui.pref_info_version=버전

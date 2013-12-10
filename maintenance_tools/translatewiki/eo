@@ -3,6 +3,7 @@
 # Author: Airon90
 # Author: Amire80
 # Author: Blahma
+# Author: Metraduk
 # Author: Objectivesea
 # Author: Yekrats
 
@@ -108,6 +109,7 @@ ui.messages.loadArticleError=Neeblas ŝarĝi ĉi tiun artikolon
 ui.messages.noActiveZimFile=Neniu aktiva ZIM-dosiero, bonvolu unue ŝarĝi unu
 ui.messages.indexZimFileConfirm=Ĉi tiu dosiero ne inkluzivas serĉindekson. Kreado de ĝi povas daŭri multajn minutojn. Ĉu vi volas indeksi la ZIM-dosieron nun?
 ui.messages.abortIndexingConfirm=Indeksado nune funkcias. Ĉu vi certas ke vi volas halti kaj ĉesigi ĝin nun?
+ui.messages.dontDeleteContentFiles=ne forviŝi enhavan (ZIM) dosieron.
 ui.messages.restartConfirm=%1 bezonas esti restartita. Ĉu vi volas restarti nun?
 ui.messages.endOfIndexing=La indeksado estas finita.
 ui.messages.removeProfileConfirm=Ĉu vi volas forigi vian profilon?
@@ -130,6 +132,7 @@ ui.messages.contentDownloadFinished=Elŝuto de '%1' finiĝis.
 ui.messages.feedback=Sugestoj
 ui.messages.library=Libraro
 ui.messages.fullscreen=Plenekrane
+# Fuzzy
 ui.messages.quitFullscreen=Eliri la plenekranan reĝimon
 ui.messages.integrityCheckSuccessful=La integreco de la dosiero sukcese kontroliĝis.
 ui.messages.integrityCheckFailed=La kontrolo de integreco malsukcesis. Via dosiero koruptiĝis.

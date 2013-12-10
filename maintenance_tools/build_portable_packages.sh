@@ -1,27 +1,38 @@
 #!/bin/bash
-
-TARGET_DIR=/var/www/download.kiwix.org/portable/
+SOURCE=/var/www/download.kiwix.org/zim/
+TARGET=/var/www/download.kiwix.org/portable/
+TMP=/tmp/
 SCRIPT=/var/www/kiwix/tools/tools/scripts/buildDistributionFile.pl
-SYNC_DIRS="zim/0.9 zim/other"
-KIWIX_VERSION=`ls -la /var/www/download.kiwix.org/bin/unstable | cut -d " " -f10 | sed -e 's/_/-/g' | sed -e 's/\///g'` 
+VERSION=`ls -la /var/www/download.kiwix.org/bin/unstable | cut -d " " -f10 | sed -e 's/_/-/g' | sed -e 's/\///g'` 
+EXCLUDE="0.9"
 
-cd /var/www/kiwix/tools/scripts
+SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
 
-for DIR in $SYNC_DIRS
+
+for DIR in `find "$SOURCE" -type d | sed "s/$SOURCE_ESC//" | grep -v "$EXCLUDE"`
 do
-    for FILE in `rsync -az download.kiwix.org::download.kiwix.org/$DIR/ | sed -e 's/^.* //g' | grep '\....' | grep zim`
-    do
-	FILENAME="kiwix-"$KIWIX_VERSION+`echo $FILE| sed -e 's/zim/zip/g'`
-	if [ ! -f "$TARGET_DIR"/"$FILENAME" ]
-	then
-	    echo "Building $FILENAME..."
-	    cd `dirname "$SCRIPT"`
-	    $SCRIPT --filePath="/tmp/$FILENAME" --zimPath="/var/www/download.kiwix.org/$DIR/$FILE" --type=portable
+    echo "Searching for ZIM files in '$SOURCE$DIR'"
+    DIR_ESC=`echo "$DIR/" | sed 's/\//\\\\\//g'`
 
-	    echo "Move to $TARGET_DIR"
-	    mv "/tmp/$FILENAME" "$TARGET_DIR/"
+    if [ ! -d "$TARGET$SOURCE" ]
+    then
+	echo "Creating directory '$TARGET$DIR'"
+	mkdir -p "$TARGET$DIR"
+    fi
+
+    for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
+    do
+	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
+	if [ ! -f "$TARGET$DIR/$ZIPFILE" ]
+	then
+	    echo "Building $ZIPFILE..."
+	    cd `dirname "$SCRIPT"`
+	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --type=portable
+    
+	    echo "Move $TMP$ZIPFILE to $TARGET$DIR"
+	    mv "$TMP$ZIPFILE" "$TARGET$DIR"
 	else
-	    echo "Skipping $FILENAME..."
+	    echo "Skipping $ZIPFILE..."
 	fi
     done
 done

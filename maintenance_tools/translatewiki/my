@@ -128,6 +128,7 @@ ui.messages.contentDownloadFinished=ကူးယူခြင်း၏ '%1' ပ�
 ui.messages.feedback=အကြံပေးရန်
 ui.messages.library=မှတ်ထားမှုများ
 ui.messages.fullscreen=မျက်နှာဖွင့်အပြည့်
+# Fuzzy
 ui.messages.quitFullscreen=မျက်နှာဖွင့်အပြည့်မှ ထွက်ရန်
 ui.messages.integrityCheckSuccessful=စာစုံမှု စိစစ်ခြင်းကိုအောင်မြင်စွာလုပ်ဆောင်ပြီးပါပြီ။
 ui.messages.integrityCheckFailed=စာစုံမှု စိစစ်ခြင်းလုပ်ငန်း မပြီးမြောက်ပါ။ ဖိုင်ကူးယူစဉ် အပြည့်အစုံရောက်မလာပါ။

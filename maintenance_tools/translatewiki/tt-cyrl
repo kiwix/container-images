@@ -128,6 +128,7 @@ ui.messages.contentDownloadFinished=Йөкләү '%1' тәмамланды.
 ui.messages.feedback=Аралашу
 ui.messages.library=Библиотека
 ui.messages.fullscreen=Тулы экранга
+# Fuzzy
 ui.messages.quitFullscreen=Тулы экраннан чыгу
 ui.messages.integrityCheckSuccessful=Файлның тулылыгы уңышлы тикшерелде.
 ui.messages.integrityCheckFailed=Файлның тулылыгы уңышсыз, ул бозык.

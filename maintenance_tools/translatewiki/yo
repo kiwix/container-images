@@ -105,6 +105,7 @@ ui.messages.loadArticleError=Àyọkà yìí kò ṣeé gbébọ̀wá.
 ui.messages.noActiveZimFile=Kò sí fáìlì ZIM, ẹ jọ̀wọ́ ẹ gbé kan wá.
 ui.messages.indexZimFileConfirm=Fáìlì náà kò ní atọ́ka àwáàrí. Yíò pẹ́ kí ó tó dá a. Ṣé ẹ fẹ́ dá atọ́ka fáìlì ZIM náà báyìí?
 ui.messages.abortIndexingConfirm=Ìdá atọ́ka únṣiṣẹ́ lọ́wọ́. Ṣé ẹ dájú pé ẹ fẹ́ da dúró?
+ui.messages.removeContentConfirm=Ṣé ó dá yín lójú pé ẹ fẹ́ yọ àkọsílẹ̀ yìí kúró nínú àtòjọ àti nínú gbogbo àwọn fáìlì ìbátan rẹ̀?
 ui.messages.dontDeleteContentFiles=Kó mọ́ pa fáìlì àkóónú (ZIM) rẹ́.
 ui.messages.restartConfirm=%1 gbọdọ̀ tún bẹ̀rẹ̀. Ṣé ẹ fẹ́ ṣeé nísìnyì?
 ui.messages.endOfIndexing=Ìdá atọ́ka ti parí.
@@ -128,6 +129,7 @@ ui.messages.contentDownloadFinished=Ìrùsílẹ̀ '%1' ti parí.
 ui.messages.feedback=Ìdáhùn ìbéèrè
 ui.messages.library=Ibiàmúlò
 ui.messages.fullscreen=Ojúìran kíkúnrẹ́rẹ́
+# Fuzzy
 ui.messages.quitFullscreen=Ìjáde kúrò ní ojúìran kíkúnrẹ́rẹ́
 ui.messages.integrityCheckSuccessful=Ìyẹ̀wò odidi fáìlì yọrí sí rere.
 ui.messages.integrityCheckFailed=Ìyẹ̀wò odidi fáìlì kùnà. Fáìlì yín ti bàjẹ́.
