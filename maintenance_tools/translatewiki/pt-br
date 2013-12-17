@@ -7,6 +7,7 @@
 # Author: Luckas Blade
 # Author: Luigipiccoli
 # Author: MetalBrasil
+# Author: Mordecaista
 # Author: Pedroca cerebral
 # Author: Rafael Vargas
 # Author: TheGabrielZaum
@@ -34,7 +35,7 @@ ui.main.audible=Audível
 ui.main.transliteration=Transliteração
 ui.main.preferences=Preferências
 ui.main.server=Servidor
-ui.main.display=Exibição
+ui.main.display=Exibir
 ui.main.zoom=Zoom
 ui.main.zoomin=Ampliar
 ui.main.zoomout=Reduzir
@@ -59,15 +60,15 @@ ui.main.about=Sobre &brand.brandShortName;
 ui.main.back=Voltar
 ui.main.forward=Avançar
 ui.main.home=Início
-ui.main.searchBar=Buscador
+ui.main.searchBar=Barra de busca
 ui.main.search=Buscar
 ui.main.searchPlaceholder=Digite o texto a pesquisar aqui...
 ui.main.findInText=Buscar no texto
 ui.main.noSearchBar=A busca requer um arquivo ZIM indexado
 ui.main.bookmarks=Favoritos
 ui.main.results.title=Resultados da Busca
-ui.main.bmkLabel=Favoritos
-ui.main.notesLabel=Notas dos Favoritos
+ui.main.bmkLabel=Favoritos:
+ui.main.notesLabel=Notas dos Favoritos:
 ui.main.loadbmk=Importar Favoritos
 ui.main.newbmk=Criar novo grupo de Favoritos
 ui.main.mark=Marcar esta página
@@ -82,7 +83,7 @@ ui.main.close=Fechar
 ui.main.library.myLibrary=Minha biblioteca
 ui.main.library.getNewFiles=Obter novos arquivos
 ui.main.library.searchZimFiles=Procurar por arquivos ZIM
-ui.main.library.sortBy=Classificar por
+ui.main.library.sortBy=Ordenar por
 ui.main.library.sortBy.title=Título
 ui.main.library.sortBy.size=Tamanho
 ui.main.library.sortBy.date=Data
@@ -126,11 +127,11 @@ ui.messages.changeSkinNeedRestart=Para mudar o tema, o aplicativo precisa ser re
 ui.messages.confirm=Confirmar
 ui.messages.no=Não
 ui.messages.yes=Sim
-ui.messages.ok=ok
+ui.messages.ok=OK
 ui.messages.cancel=Cancelar
 ui.messages.error=Erro
 ui.messages.information=Informação
-ui.messages.indexing=Indexação
+ui.messages.indexing=Indexando...
 ui.messages.selectBookmarkSet=Selecionar o arquivo dos Favoritos
 ui.messages.nameBookmarkSet=Insira o nome do arquivo dos Favoritos
 ui.messages.newContentAvailable=Há novos conteúdos disponíveis para download.
@@ -140,8 +141,25 @@ ui.messages.contentDownloadFinished=O download de '%1' terminou.
 ui.messages.feedback=Comentários
 ui.messages.library=Biblioteca
 ui.messages.fullscreen=Tela inteira
-# Fuzzy
 ui.messages.quitFullscreen=Sair do modo de tela inteira
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
+android.ui.button_backtotop=Voltar ao Topo
+android.ui.articlesearch_hint=Digite para procurar artigos
+android.ui.choose_file=Selecione um arquivo de conteúdo ZIM (*.zim)
+andoird.ui.rescan_fs=Reescanear cartão SD
+android.ui.rescan_fs_warning=Escaneando por arquivos ZIM, por favor aguarde...
+android.ui.error_nozimfilesfound=Nenhum arquivo ZIM foi encontrado no seu dispositivo.\nVisite a Página de Ajuda para orientações em como carregar conteúdo no Kiwix.\nSe você pôs um arquivo ZIM no seu dispositivo/armazenamento externo, você pode tentar novamente em alguns minutos ou reiniciar o seu dispositivo.
+android.ui.error_filenotfound=Erro: O arquivo ZIM selecionado não pode ser encontrado.
+android.ui.error_fileinvalid=Erro: O arquivo selecionado não é um arquivo ZIM válido.
+android.ui.error_articlenotfound=Erro: Falha no carregamento do artigo \"%1$s\".
+android.ui.error_articleurlnotfound=Erro: Falha no carregamento do artigo (Url: %1$s).
+android.ui.pref_zoom_title=Nível de Zoom
+android.ui.pref_zoom_enable=Controles de Zoom
+android.ui.pref_zoom_enable_summary=Exibe um botão de zoom no canto inferior direito da tela.
 android.ui.pref_nightmode=Modo noturno
+android.ui.pref_nightmode_summary=Mostra artigos com cores revertidas.
+android.ui.pref_info_title=Informação
+android.ui.pref_info_version=Versão
+android.ui.pref_backtotop=Voltar ao Topo
+android.ui.pref_backtotop_summary=Mostra um botão no fim da página para voltar ao topo

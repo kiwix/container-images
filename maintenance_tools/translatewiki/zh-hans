@@ -12,6 +12,7 @@
 # Author: Shirayuki
 # Author: Xiaomingyan
 # Author: Yanmiao liu
+# Author: Yfdyh000
 
 ui.main.osxservices=服务
 ui.main.osxhideapp=隐藏&brand.brandShortName;
@@ -141,18 +142,25 @@ ui.messages.contentDownloadFinished=“$1”已下载完成。
 ui.messages.feedback=反馈
 ui.messages.library=库
 ui.messages.fullscreen=全屏
-# Fuzzy
-ui.messages.quitFullscreen=退出全屏模式
+ui.messages.quitFullscreen=退出全屏
 ui.messages.integrityCheckSuccessful=成功地检查文件完整性。
 ui.messages.integrityCheckFailed=文件完整性检查失败。您的文件已损坏。
+android.ui.button_backtotop=返回顶端
 android.ui.articlesearch_hint=通过类型查找条目
 android.ui.choose_file=选择ZIM内容文件（*.zim）
+andoird.ui.rescan_fs=重新扫描 SD 卡
+android.ui.rescan_fs_warning=正在扫描 ZIM 文件，请稍候...
 android.ui.error_nozimfilesfound=您的设备上找不到ZIM文件。\n请访问我们的帮助页面了解如何往Kiwix里下载内容。\n如果您确实已经把ZIM文件放在您的设备或者外部存储上了，请您几分钟后再试一次或重启您的设备。
 android.ui.error_filenotfound=错误：找不到指定的ZIM文件。
 android.ui.error_fileinvalid=错误：指定的文件不是有效ZIM文件。
+android.ui.error_articlenotfound=错误：载入文章“%1$s”失败。
 android.ui.error_articleurlnotfound=错误：加载文章（Url: %1$s）失败。
 android.ui.pref_zoom_title=缩放级别
 android.ui.pref_zoom_enable=变焦控制
 android.ui.pref_zoom_enable_summary=在屏幕右下角显示缩放按钮
 android.ui.pref_nightmode=夜间模式
 android.ui.pref_nightmode_summary=以反色调显示文章
+android.ui.pref_info_title=信息
+android.ui.pref_info_version=版本
+android.ui.pref_backtotop=返回顶端
+android.ui.pref_backtotop_summary=在页底显示一个按钮以供返回顶端
