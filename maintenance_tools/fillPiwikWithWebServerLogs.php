@@ -5,7 +5,6 @@ require_once("../libs/PiwikTracker/PiwikTracker.php");
 /* Classes */
 class LogParser
 {
-  var $badRows;
   var $fp;
   var $fileName;
 
@@ -34,9 +33,14 @@ class LogParser
       $formatedLog['agent'] = $logs[13];
       $formatedLog['unixtime'] = strtotime($formatedLog["date"].":".$formatedLog["time"]." ".$formatedLog["timezone"]);
       $formatedLog['utcdatetime'] = date("Y-m-d H:i:s", $formatedLog['unixtime']);
-      return $formatedLog;
+
+      if (eregi('.*(bot|index|spider|crawl|wget|slurp|Mediapartners-Google).*', $formatedLog['agent'])) {
+         echo "Bot/crawler detected: ".$formatedLog['agent']."\n";
+      	 return false;
+      } else {
+      	 return $formatedLog;
+      }
     } else {
-      $this->badRows++;
       return false;
     }
   }
