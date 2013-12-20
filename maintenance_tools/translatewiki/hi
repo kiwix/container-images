@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Alolitas
 # Author: Ansumang
+# Author: Bl707
 # Author: Manu9324
 # Author: Nikhilsheth
 # Author: Siddhartha Ghai
@@ -34,6 +35,7 @@ ui.main.zoom=ज़ूम करें
 ui.main.zoomin=Magnify करें
 ui.main.zoomout=कम करें
 ui.main.zoomorig=मूल आकार
+ui.main.invertedColors=उल्टे रंग
 ui.main.language=भाषा
 ui.main.skin=त्वचा
 ui.main.statusbar=स्थिति पट्टी
@@ -43,6 +45,7 @@ ui.main.fullscreen=संपूर्ण स्क्रीन
 ui.main.tools=उपकरण
 ui.main.randomArticle=यादृच्छिक अनुच्छेद
 ui.main.checkIntegrity=अखंडता की जाँच करें
+ui.main.launchIndexing=इन्डेक्सिंग प्रारंभ करें
 ui.main.purgeHistory=इतिहास को पर्ज करें
 ui.main.help=सहायता
 ui.main.feedback=आपके सुझाव
@@ -54,6 +57,7 @@ ui.main.forward=आगे जाएँ
 ui.main.home=होम
 ui.main.searchBar=खोज पट्टी
 ui.main.search=खोजें
+ui.main.searchPlaceholder=खोजने के लिए यहाँ टेक्स्ट लिखें...
 ui.main.findInText=पाठ में खोजें
 ui.main.noSearchBar=खोज के लिए अनुक्रमणित ZIM फ़ाइल की आवश्यकता है
 ui.main.bookmarks=बुकमार्क्स
@@ -95,6 +99,8 @@ ui.preferences.cancel=रद्द करें
 ui.preferences.profileDirectory=प्रोफ़ाइल निर्देशिका
 ui.preferences.browse=ब्राउज़ करें
 ui.preferences.tabs=पट्टीयाँ याद रखें
+ui.preferences.downloadCatalogs=रिमोट कैटलॉग डाउनलोड करें
+ui.preferences.neverAskToIndex=इंडेक्स करने के लिए कभी ना पूछें
 ui.server.load=लोड
 ui.server.start=आरम्भ
 ui.server.stop=रोकें
@@ -107,6 +113,7 @@ ui.messages.noActiveZimFile=कोई सक्रिय ZIM फ़ाइल न
 ui.messages.indexZimFileConfirm=यह फ़ाइल एक खोज सूची शामिल नहीं करती है। इसे  बनाने में कई मिनट लग सकते हैं। क्या आप अब ZIM फ़ाइल अनुक्रमित करने के लिए चाहते हैं?
 ui.messages.abortIndexingConfirm=एक सूचीकरण प्रक्रिया अभी चल रही है। क्या आप निश्चित रूप से इसे बंद और निरस्त करना चाहते हैं?
 ui.messages.removeContentConfirm=क्या वाकई आप इस प्रविष्टि को सूची से निकालने के लिए चाहते हैं और सभी संबंधित फ़ाइलें?
+ui.messages.dontDeleteContentFiles=कान्टेन्ट (ZIM) फाइल नही मिटाएँ।
 ui.messages.restartConfirm=%1 को पुनरारंभ करने की आवश्यकता है। क्या आप अब यह करना चाहते हैं?
 ui.messages.endOfIndexing=सूचीकरण प्रक्रिया समाप्त हो गयी है।
 ui.messages.removeProfileConfirm=क्या आप अपनी प्रोफ़ाईल हटाना चाहते हैं?
@@ -127,3 +134,27 @@ ui.messages.newContentAvailableInvitation=नई सामग्री डाउ
 ui.messages.preparingContentDownload=डाउनलोड की तैयारी...
 ui.messages.contentDownloadFinished='% 1' का डाउनलोड समाप्त हो गया है।
 ui.messages.feedback=आपके सुझाव
+ui.messages.library=ग्रन्थालय
+ui.messages.fullscreen=पूरा स्क्रीन
+ui.messages.quitFullscreen=पूरे स्क्रीन से बाहर निकलें
+ui.messages.integrityCheckSuccessful=फ़ाइल की अखंडता की जाँच सफलतापूर्वक की गयी थी।
+ui.messages.integrityCheckFailed=फ़ाइल की अखंडता की जाँच विफल रही। आपकी फ़ाइल दूषित है।
+android.ui.button_backtotop=वापस शीर्ष पे जाएँ
+android.ui.articlesearch_hint=लेख तलाश करने के लिए लिखें
+android.ui.choose_file=एक ZIM कान्टेन्ट फ़ाइल (*.zim) का चयन करें
+andoird.ui.rescan_fs=एसडी कार्ड पुन: स्कैन करें
+android.ui.rescan_fs_warning=ZIM फ़ाइलों के लिए स्कैन किया जा रहा है, कृपया प्रतीक्षा करें...
+android.ui.error_nozimfilesfound=आपकी डिवाइस पर कोई ZIM फ़ाइल नही मिली।\nKiwix मे कान्टेन्ट लोड करने के बारे मे जानने के लिए हेल्प पृष्ठ देखें।\nयदि आपने अपने डिवाइस/इक्स्टर्नल स्टोरिज पर ZIM फ़ाइल डाली है, तो फिर से इक मिनिट मे प्रयास करें, या फिर डिवाइस पुनरारंभ करें।
+android.ui.error_filenotfound=त्रुटि: चुनी गयी ZIM फ़ाइल नही मिल सकी।
+android.ui.error_fileinvalid=त्रुटि: चुनी गयी फ़ाइल एक वैध ZIM फ़ाइल नहीं है।
+android.ui.error_articlenotfound=त्रुटि: आलेख \ " %1$s \" लोड करना विफल रहा।
+android.ui.error_articleurlnotfound=त्रुटि: आलेख (Url:  %1$s ) लोड करना विफल रहा।
+android.ui.pref_zoom_title=ज़ूम स्तर
+android.ui.pref_zoom_enable=ज़ूम नियंत्रण
+android.ui.pref_zoom_enable_summary=स्क्रीन के नीचे दायें कोने में ज़ूम बटन दिखाएँ
+android.ui.pref_nightmode=रात्रि मोड
+android.ui.pref_nightmode_summary=उल्टे रंगों के साथ लेख दिखाएँ
+android.ui.pref_info_title=जानकारी
+android.ui.pref_info_version=संस्करण
+android.ui.pref_backtotop=वापस शीर्ष पे जाएँ
+android.ui.pref_backtotop_summary=उपर तक स्क्रॉल करने के लिए पृष्ठ के अंत में एक बटन दिखाएँ
