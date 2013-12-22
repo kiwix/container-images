@@ -24,15 +24,15 @@ IS_WIN = os.name == 'nt'
 def main(argv):
 
     if len(argv) != 3:
-        print("Usage:\t{0} source_path "
+        print("Usage:\t%s source_path "
               "destination_folder destination_name\n\n"
-              "Missing arguments.".format(sys.argv[0]))
+              "Missing arguments." % sys.argv[0])
         sys.exit(1)
 
     source_path, dest_folder, dest_name = argv
 
     if not os.path.exists(source_path):
-        print("source_path not found: {}".format(source_path))
+        print("source_path not found: %s" % source_path)
 
     data = {'sname': source_path,
             'user': SCP_USER,
@@ -40,10 +40,10 @@ def main(argv):
             'folder': dest_folder,
             'dname': dest_name}
 
-    subprocess.call("scp {sname} {user}@{host}:{folder}/{dname}".format(**data).split())
+    subprocess.call(("scp {sname} {user}@{host}:{folder}/{dname}" % data).split())
 
     # make sure file is world readable
-    return subprocess.call("ssh {user}@{host} chmod +rx {folder}/{dname}".format(**data).split())
+    return subprocess.call(("ssh {user}@{host} chmod +rx {folder}/{dname}" % data).split())
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
