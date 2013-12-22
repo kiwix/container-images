@@ -34,7 +34,7 @@ def main(argv):
     if not os.path.exists(source_path):
         print("source_path not found: {}".format(source_path))
 
-    cmd = "scp {sname} {user}@{host}:{folder}{dname}".format(
+    cmd = "scp {sname} {user}@{host}:{folder}/{dname}".format(
         sname=source_path, user=SCP_USER, host=SCP_HOST,
         folder=dest_folder, dname=dest_name)
 
