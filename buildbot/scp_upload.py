@@ -43,7 +43,7 @@ def main(argv):
     subprocess.call("scp {sname} {user}@{host}:{folder}/{dname}".format(**data).split())
 
     # make sure file is world readable
-    return subprocess.call("ssh {user}@{host} 'chmod +rx {folder}/{dname}'".format(**data).split())
+    return subprocess.call("ssh {user}@{host} \"chmod +rx {folder}/{dname}\"".format(**data).split())
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
