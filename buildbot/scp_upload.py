@@ -40,10 +40,10 @@ def main(argv):
             'folder': dest_folder,
             'dname': dest_name}
 
-    subprocess.call(("scp {sname} {user}@{host}:{folder}/{dname}" % data).split())
+    subprocess.call(("scp %(sname)s %(user)s@%(host)s:%(folder)s/%(dname)s" % data).split())
 
     # make sure file is world readable
-    return subprocess.call(("ssh {user}@{host} chmod +rx {folder}/{dname}" % data).split())
+    return subprocess.call(("ssh %(user)s@%(host)s chmod +rx %(folder)s/%(dname)s" % data).split())
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
