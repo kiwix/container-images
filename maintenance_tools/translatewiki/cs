@@ -139,7 +139,6 @@ ui.messages.contentDownloadFinished=Stahování „%1“ je dokončeno.
 ui.messages.feedback=Zpětná vazba
 ui.messages.library=Knihovna
 ui.messages.fullscreen=Celá obrazovka
-# Fuzzy
 ui.messages.quitFullscreen=Ukončit celoobrazovkový režim
 ui.messages.integrityCheckSuccessful=Integrita souboru byl úspěšně zkontrolována.
 ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.
