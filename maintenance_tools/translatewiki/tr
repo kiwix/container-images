@@ -142,7 +142,6 @@ ui.messages.integrityCheckFailed=Bütünlük denetimi başarısız oldu. Dosyan�
 android.ui.button_backtotop=Başa dön
 android.ui.articlesearch_hint=Makalelerde aranacak kelimeyi yazın
 android.ui.choose_file=Bir ZIM İçerik Dosyası seçin (*.zim)
-andoird.ui.rescan_fs=SD kartı yeniden tara
 android.ui.rescan_fs_warning=ZIM dosyaları için taranıyor, lütfen bekleyin...
 android.ui.error_nozimfilesfound=Cihazınızda bir ZIM dosyası bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
 android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.

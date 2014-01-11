@@ -173,7 +173,6 @@ ui.messages.integrityCheckFailed=Ha fallat la comprovació d'integritat. El seu 
 android.ui.button_backtotop=Tornar a dalt
 android.ui.articlesearch_hint=Escriviu per buscar articles
 android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
-andoird.ui.rescan_fs=Reescanejar targeta SD
 android.ui.rescan_fs_warning=Buscant arxius ZIM, espereu si us plau...
 android.ui.error_nozimfilesfound=No s'han trobat arxius ZIM en el vostre dispositiu. Visiteu la Pàgina d'Ajuda per obtenir instruccions sobre com carregar contingut a Kiwix. Si realment vau col·locar un arxiu ZIM en el vostre dispositiu/emmagatzematge extern, podeu tornar a intentar-ho en uns moments, o reinicieu el vostre dispositiu.
 android.ui.error_filenotfound=Error: no s'ha trobat el fitxer ZIP.

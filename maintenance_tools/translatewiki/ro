@@ -149,7 +149,6 @@ ui.messages.integrityCheckFailed=Verificarea integrității fișierului a eșuat
 android.ui.button_backtotop=Începutul paginii
 android.ui.articlesearch_hint=Tastați pentru a căuta articole
 android.ui.choose_file=Alegeți un fișier cu conținut ZIM (*.zim)
-andoird.ui.rescan_fs=Rescanează cardul SD
 android.ui.rescan_fs_warning=Se caută fișiere ZIM; vă rugăm să așteptați...
 android.ui.error_nozimfilesfound=Nu s-au găsit fișiere ZIM pe dispozitivul dumneavoastră.\nConsultați pagina de ajutor pentru detalii despre încărcarea conținutului în Kiwix.\nDacă totuși ați stocat un fișier ZIM pe dispozitivul dv./stocarea dv. externă, puteți reîncerca peste un minut sau puteți reporni dispozitivul.
 android.ui.error_filenotfound=Eroare: Fișierul ZIM selectat nu poate fi găsit.

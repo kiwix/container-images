@@ -137,7 +137,6 @@ ui.messages.integrityCheckFailed=Integriti fail tidak dapat disemak. Fail anda s
 android.ui.button_backtotop=Kembali ke Atas
 android.ui.articlesearch_hint=Taip untuk mencari rencana
 android.ui.choose_file=Pilih Fail Kandungan ZIM (*.zim)
-andoird.ui.rescan_fs=Imbas semula kad SD
 android.ui.rescan_fs_warning=Sedang mengimbas untuk fail ZIM, sila tunggu...
 android.ui.error_nozimfilesfound=Tidak terdapat fail ZIM di dalam peranti anda.\nSila baca halaman Bantuan untuk mendapat petua untuk cara memuatkan kandungan ke dalam Kiwix.\nJika benar anda meletakkan fail ZIM di dalam peranti/storan luaran anda, apa kata anda cuba lagi sebentar kemudian atau me-restart peranti anda.
 android.ui.error_filenotfound=Ralat: Fail ZIM yang terpilih tidak dapat ditemui.

@@ -137,7 +137,6 @@ ui.messages.integrityCheckFailed=Houbo un erro durante a comprobación da integr
 android.ui.button_backtotop=Volver ao inicio
 android.ui.articlesearch_hint=Empece a escribir para procurar artigos
 android.ui.choose_file=Seleccione un ficheiro de contido ZIM (*.zim)
-andoird.ui.rescan_fs=Analizar de novo a tarxeta SD
 android.ui.rescan_fs_warning=Buscando os ficheiros ZIM. Agarde, por favor...
 android.ui.error_nozimfilesfound=Non se atopou ningún ficheiro ZIM no seu dispositivo.\nBote unha ollada á páxina de axuda para aprender a cargar contido no Kiwix.\nSe xa puxo o ficheiro ZIM no seu dispositivo de almacenamento interno ou externo, pode reintentalo nun minuto ou reiniciar o dispositivo.
 android.ui.error_filenotfound=Erro: Non se puido atopar o ficheiro ZIM seleccionado.

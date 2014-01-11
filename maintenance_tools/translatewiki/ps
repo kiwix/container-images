@@ -137,7 +137,6 @@ ui.messages.integrityCheckFailed=د بشپړتابه بياکتنه نابريا
 android.ui.button_backtotop=بېرته سر ته
 android.ui.articlesearch_hint=د ليکنو موندلو لپاره وټاپۍ
 android.ui.choose_file=د ZIM مېنځپانگې يوه دوتنه ټاکل (*.zim)
-andoird.ui.rescan_fs=SD کارت بياځيرڅارل
 android.ui.rescan_fs_warning=د ZIM دوتنو لپاره ځيرڅارنه، لطفاً تم شۍ...
 android.ui.error_nozimfilesfound=ستاسې په وزلې هېڅ کومه ZIM دوتنه و نه موندل شوه.\nکيويکس کې د مېنځپانگې د برسېرولو لپاره د لارښود مخ ولولۍ.\nکه تاسې په خپلې وزلې کې يو ZIM دوتنه نه وي ايښې، نو تاسې کولی شی چې يوه دقيقه وروسته يې بيا وآزمويۍ او يا هم خپله وزله سر له نوي ولگوۍ او بيا هڅه وکړۍ.
 android.ui.error_filenotfound=تېروتنه: ستاسې ټاکلې ZIM دوتنه و نه موندل شوه.
