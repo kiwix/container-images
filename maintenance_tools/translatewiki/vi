@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Baonguyen21022003
 # Author: Minh Nguyen
+# Author: Withoutaname
 # Author: පසිඳු කාවින්ද
 
 ui.main.osxservices=Dịch vụ
@@ -174,7 +175,7 @@ android.ui.button_backtotop=Trở lên Đầu trang
 android.ui.articlesearch_hint=Gõ để tra cứu bài
 android.ui.choose_file=Chọn một Tập tin Nội dung ZIM (*.zim)
 android.ui.open_in_new_tab=Mở liên kết trong thẻ mới?
-android.ui.remove_tab_confirm=Bạn có muốn đóng thẻ này?
+android.ui.remove_tab_confirm=Bạn có muốn đóng thẻ này không?
 android.ui.remove_tab=Đóng thẻ
 android.ui.rescan_fs=Tìm thẻ SD lần nữa
 android.ui.rescan_fs_warning=Đang tìm tập tin ZIM, xin vui lòng chờ…

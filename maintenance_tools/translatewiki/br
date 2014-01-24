@@ -1,5 +1,6 @@
 # Messages for Breton (brezhoneg)
 # Exported from translatewiki.net
+# Author: Fohanno
 # Author: Fulup
 # Author: Kelson
 # Author: Y-M D
@@ -136,5 +137,18 @@ ui.messages.fullscreen=Skramm leun
 ui.messages.quitFullscreen=Kuitaat ar mod skramm leun
 ui.messages.integrityCheckSuccessful=Gwiriet eo bet anterinded ar restr ervat.
 ui.messages.integrityCheckFailed=C'hwitet eo bet gwiriañ anterinded ar restr. Brein eo-hi.
+android.ui.menu_share=Rannañ gant mignoned
+android.ui.share_via=Rannañ dre...
+android.ui.button_backtotop=Penn-krec'h ar bajenn
+android.ui.articlesearch_hint=Skrivañ evit klask pennadoù
+android.ui.open_in_new_tab=Digeriñ al liamm en un ivinell nevez ?
+android.ui.remove_tab_confirm=Ha fellout a ra deoc'h dilemel an ivinell-mañ ?
+android.ui.remove_tab=Dilemel an ivinell
+android.ui.rescan_fs=Adskannañ ar gartenn SD
+android.ui.pref_zoom_title=Live zoum
+android.ui.pref_zoom_enable=Kontrolloù ar zoum
+android.ui.pref_nightmode=Mod noz
+android.ui.pref_nightmode_summary=Diskouez ar pennadoù gant livioù eilpennet
 android.ui.pref_info_title=Titouroù
 android.ui.pref_info_version=Stumm
+android.ui.pref_backtotop=Distreiñ da grec'h ar bajenn
