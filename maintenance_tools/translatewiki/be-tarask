@@ -131,7 +131,6 @@ ui.messages.contentDownloadFinished=Загрузка «%1» скончаная.
 ui.messages.feedback=Водгук
 ui.messages.library=Бібліятэка
 ui.messages.fullscreen=На ўвесь экран
-# Fuzzy
 ui.messages.quitFullscreen=Выйсьці з рэжыму поўнага экрану
 ui.messages.integrityCheckSuccessful=Цэльнасьць файла была пасьпяхова правераная.
 ui.messages.integrityCheckFailed=Памылка праверкі цэльнасьці. Ваш файл пашкоджаны.

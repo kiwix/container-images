@@ -1,5 +1,6 @@
 # Messages for Romanian (română)
 # Exported from translatewiki.net
+# Author: Banica
 # Author: Firilacroco
 # Author: Kelson
 # Author: Minisarm
@@ -14,7 +15,7 @@ ui.main.file=Fișier
 ui.main.file.accesskey=F
 ui.main.openFile=Deschide un fișier...
 ui.main.openFile.accesskey=O
-ui.main.browseLibrary=Răsfoire bibliotecă
+ui.main.browseLibrary=Răsfoiește biblioteca
 ui.main.hideLibrary=Ascunde biblioteca
 ui.main.browseLibrary.accesskey=B
 ui.main.lastOpen=Deschise recent...
@@ -146,9 +147,17 @@ ui.messages.fullscreen=Ecran complet
 ui.messages.quitFullscreen=Ieșire din ecran complet
 ui.messages.integrityCheckSuccessful=Integritatea fișierului a fost verificată cu succes.
 ui.messages.integrityCheckFailed=Verificarea integrității fișierului a eșuat. Fișierul dumneavoastră este corupt.
+android.ui.menu_share=Partajează cu prietenii
+android.ui.info_share_title=Îmi place Wikipedia offline cu Kiwix!
+android.ui.info_share_content=Îmi place Wikipedia offline cu Kiwix! Toate cunoștințele omenirii la îndemână oricând vrei! Fără Internet! http://goo.gl/h9Smkk
+android.ui.share_via=Distribuire prin...
 android.ui.button_backtotop=Începutul paginii
 android.ui.articlesearch_hint=Tastați pentru a căuta articole
 android.ui.choose_file=Alegeți un fișier cu conținut ZIM (*.zim)
+android.ui.open_in_new_tab=Deschideți legătura într-o filă nouă?
+android.ui.remove_tab_confirm=Doriți să eliminați această filă?
+android.ui.remove_tab=Eliminare filă
+android.ui.rescan_fs=Rescanează cardul SD
 android.ui.rescan_fs_warning=Se caută fișiere ZIM; vă rugăm să așteptați...
 android.ui.error_nozimfilesfound=Nu s-au găsit fișiere ZIM pe dispozitivul dumneavoastră.\nConsultați pagina de ajutor pentru detalii despre încărcarea conținutului în Kiwix.\nDacă totuși ați stocat un fișier ZIM pe dispozitivul dv./stocarea dv. externă, puteți reîncerca peste un minut sau puteți reporni dispozitivul.
 android.ui.error_filenotfound=Eroare: Fișierul ZIM selectat nu poate fi găsit.
