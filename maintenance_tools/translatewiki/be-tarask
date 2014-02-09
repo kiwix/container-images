@@ -4,6 +4,7 @@
 # Author: Jim-by
 # Author: Renessaince
 # Author: Wizardist
+# Author: Zedlik
 
 ui.main.osxservices=Сэрвісы
 ui.main.osxhideapp=Схаваць &brand.brandShortName;
@@ -71,7 +72,7 @@ ui.main.saveImageAs=Захаваць выяву як…
 ui.main.openLinkInNewTab=Адкрыць спасылку ў новай закладцы
 ui.main.searchFor=Шукаць
 ui.main.copyLinkAddress=Скапіяваць адрас спасылкі
-ui.main.close=Зачыніць
+ui.main.close=Закрыць
 ui.main.library.myLibrary=Мая бібліятэка
 ui.main.library.getNewFiles=Атрымаць новыя файлы
 ui.main.library.searchZimFiles=Пошук ZIM-файлаў

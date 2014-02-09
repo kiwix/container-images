@@ -4,6 +4,7 @@
 # Author: Emperyan
 # Author: Joseph
 # Author: Man lise
+# Author: Meelo
 # Author: Szoszv
 # Author: Trockya
 # Author: VikipediBilgini
@@ -139,9 +140,13 @@ ui.messages.fullscreen=Tam ekran
 ui.messages.quitFullscreen=Tam ekrandan çık
 ui.messages.integrityCheckSuccessful=Dosya bütünlüğü başarıyla kontrol edildi.
 ui.messages.integrityCheckFailed=Bütünlük denetimi başarısız oldu. Dosyanız bozuk.
+android.ui.menu_share=Arkadaşlarınla paylaş
+android.ui.info_share_title=Kiwix ile Çevrim Dışı Vikipedi'nin tadını çıkarıyorum!
+android.ui.share_via=Üzerinden paylaşın...
 android.ui.button_backtotop=Başa dön
 android.ui.articlesearch_hint=Makalelerde aranacak kelimeyi yazın
 android.ui.choose_file=Bir ZIM İçerik Dosyası seçin (*.zim)
+android.ui.open_in_new_tab=Bağlantı yeni sekmede açılsın mı?
 android.ui.rescan_fs_warning=ZIM dosyaları için taranıyor, lütfen bekleyin...
 android.ui.error_nozimfilesfound=Cihazınızda bir ZIM dosyası bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
 android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.

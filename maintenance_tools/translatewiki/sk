@@ -134,7 +134,10 @@ ui.messages.contentDownloadFinished=Sťahovanie „%1“ je dokončené.
 ui.messages.feedback=Spätná väzba
 ui.messages.library=Knižnica
 ui.messages.fullscreen=Celá obrazovka
-# Fuzzy
 ui.messages.quitFullscreen=Ukončiť režim celej obrazovky
 ui.messages.integrityCheckSuccessful=Integrita súborov bola úspešne overená.
 ui.messages.integrityCheckFailed=Kontrola integrity zlyhala. Súbor je poškodený.
+android.ui.menu_share=Zdielať s priaťeľmi
+android.ui.share_via=Zdielať cez...
+android.ui.pref_info_title=Informácie
+android.ui.pref_info_version=Verzia
