@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: EugeneZelenko
 # Author: Jim-by
+# Author: Red Winged Duck
 # Author: Renessaince
 # Author: Wizardist
 # Author: Zedlik
@@ -110,6 +111,8 @@ ui.messages.loadArticleError=Немагчыма загрузіць гэты ар
 ui.messages.noActiveZimFile=Няма актыўнага ZIM-файла. Калі ласка, сьпярша загрузіце яго.
 ui.messages.indexZimFileConfirm=Гэты файл ня ўтрымлівае пошукавага індэксу. Яго стварэньне можа заняць некалькі хвілін. Вы жадаеце індэксаваць ZIM-файл зараз?
 ui.messages.abortIndexingConfirm=У цяперашні момант адбываецца працэс індэксаваньня. Вы ўпэўненыя, што хочаце выйсьці і спыніць яго?
+ui.messages.removeContentConfirm=Вы ўпэўненыя, што хочаце выдаліць гэты запіс зь сьпісу, а таксама ўсе зьвязаныя зь ім файлы?
+ui.messages.dontDeleteContentFiles=Не выдаляць ZIM-файлы.
 ui.messages.restartConfirm=%1 патрабуе перазапуску. Вы жадаеце зрабіць гэта зараз?
 ui.messages.endOfIndexing=Працэс індэксаваньня скончаны.
 ui.messages.removeProfileConfirm=Вы хочаце выдаліць свой профіль?
@@ -135,3 +138,19 @@ ui.messages.fullscreen=На ўвесь экран
 ui.messages.quitFullscreen=Выйсьці з рэжыму поўнага экрану
 ui.messages.integrityCheckSuccessful=Цэльнасьць файла была пасьпяхова правераная.
 ui.messages.integrityCheckFailed=Памылка праверкі цэльнасьці. Ваш файл пашкоджаны.
+android.ui.menu_share=Падзяліцца зь сябрамі
+android.ui.info_share_title=Мне падабаецца Вікіпэдыя, даступная оф-лайн з дапамогай Kiwix!
+android.ui.info_share_content=Мне падабаецца Вікіпэдыя, даступная оф-лайн з дапамогай Kiwix! Веды ўсяго чалавецтва ў вас пад рукой, дзе б вы ні былі! Без Інтэрнэту! http://goo.gl/h9Smkk
+android.ui.share_via=Падзяліцца праз…
+android.ui.button_backtotop=Вярнуцца ўверх
+android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
+android.ui.choose_file=Абярыце ZIM-файл (*.zim)
+android.ui.open_in_new_tab=Адкрыць спасылку ў новай укладцы?
+android.ui.remove_tab_confirm=Вы сапраўды хочаце выдаліць гэтую ўкладку?
+android.ui.remove_tab=Выдаліць укладку
+android.ui.rescan_fs=Перасканаваць SD-картку
+android.ui.rescan_fs_warning=Пошук ZIM-файлаў, калі ласка, пачакайце…
+android.ui.error_nozimfilesfound=ZIM-файлы ня знойдзеныя на вашай прыладзе.\nПаглядзіце на старонцы даведкі, як загружаць зьмест у Kiwix.\nКалі вы разьмясьцілі файл на вашай прыладзе або вонкавым сховішчы, магчыма, варта паспрабаваць яшчэ раз празь некалькі імгненьняў або перазагрузіць вашую прыладу.
+android.ui.error_filenotfound=Памылка: абраны ZIM-файл ня знойдзены.
+android.ui.error_fileinvalid=Памылка: абраны файл не зьяўляецца слушным ZIM-файлам.
+android.ui.error_articlenotfound=Памылка: загрузка артыкула \«%1$s\» не атрымалася.

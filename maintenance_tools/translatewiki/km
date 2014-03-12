@@ -1,5 +1,6 @@
 # Messages for Khmer (ភាសាខ្មែរ)
 # Exported from translatewiki.net
+# Author: Sovichet
 # Author: គីមស៊្រុន
 # Author: វ័ណថារិទ្ធ
 
@@ -137,6 +138,7 @@ android.ui.error_filenotfound=កំហុស៖ ឯកសារ ZIM ដែល�
 android.ui.error_fileinvalid=កំហុស៖ ឯកសារ ZIM ដែលបានជ្រើសនេះ មិនមែនជាឯកសារ ZIM ត្រឹមត្រូវ។
 android.ui.error_articlenotfound=កំហុស៖ ទាញយកអត្ថបទ  \"%1$s\" បានបរាជ័យ។
 android.ui.error_articleurlnotfound=កំហុស៖ ទាញយកអត្ថបទ (Url: %1$s) បានបរាជ័យ។
+android.ui.pref_zoom_title=កម្រិត​ពង្រីក​បង្រួម
 android.ui.pref_nightmode=ម៉ូដអានពេលយប់
 android.ui.pref_nightmode_summary=បង្ហាញអត្ថបទជាមួយនឹងពណ៌ដើម
 android.ui.pref_info_title=ព័ត៌មាន

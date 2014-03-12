@@ -3,6 +3,7 @@
 # Author: Giro720
 # Author: Gusta
 # Author: Hamilton Abreu
+# Author: Imperadeiro98
 # Author: Luckas
 # Author: Luckas Blade
 # Author: Malafaya
@@ -27,7 +28,7 @@ ui.main.saveFile=Gravar página como...
 ui.main.saveFile.accesskey=S
 ui.main.print=Imprimir
 ui.main.print.accesskey=I
-ui.main.printPdf=Imprimir para PDF
+ui.main.printPdf=Imprimir como PDF
 ui.main.printPdf.accesskey=D
 ui.main.quit=Sair
 ui.main.quit.accesskey=R
@@ -41,7 +42,7 @@ ui.main.copy=Copiar
 ui.main.copy.accesskey=C
 ui.main.mute=Sem som
 ui.main.audible=Audível
-ui.main.transliteration=Translineação
+ui.main.transliteration=Transliteração
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferências
 ui.main.preferences.accesskey=s
@@ -169,8 +170,7 @@ ui.messages.contentDownloadFinished=O descarregamento de '%1' terminou.
 ui.messages.feedback=Comentários
 ui.messages.library=Biblioteca
 ui.messages.fullscreen=Tela inteira
-# Fuzzy
-ui.messages.quitFullscreen=Sair do modo de tela inteira
+ui.messages.quitFullscreen=Sair de ecrã inteiro
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
 android.ui.articlesearch_hint=Digite para pesquisar artigos.

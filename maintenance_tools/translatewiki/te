@@ -1,6 +1,7 @@
 # Messages for Telugu (తెలుగు)
 # Exported from translatewiki.net
 # Author: Arjunaraoc
+# Author: Chaduvari
 # Author: Veeven
 
 ui.main.osxservices=సేవలు
@@ -119,7 +120,7 @@ ui.messages.no=కాదు
 ui.messages.yes=అవును
 ui.messages.ok=సరే
 ui.messages.cancel=రద్దుచేయి
-ui.messages.error=పొరపాటు
+ui.messages.error=లోపం
 ui.messages.information=సమాచారం
 ui.messages.indexing=క్రమబద్ధీకరణ...
 ui.messages.selectBookmarkSet=ఇష్టాంశాల సమితి ఫైల్ ఎంపికచేయి
