@@ -136,6 +136,7 @@ ui.messages.integrityCheckSuccessful=د دوتنې بشپړتابه په بري�
 ui.messages.integrityCheckFailed=د بشپړتابه بياکتنه نابريالۍ شوه. ستاسې دوتنه خرابه ده.
 android.ui.menu_share=له ملگرو سره شريکول
 android.ui.info_share_title=زه د کيويکس په مرسته له پرې ليکې ويکيپېډيا خوند اخلم!
+android.ui.info_share_content=زه د کيويکس په مرسته د پرې ليکې ويکيپېډيا څخه خوند اخلم! اوس هر چېرته چې لاړ شې، انساني پوهه دې په خپل لاس کې ده! د اېنټرنېټ پرته! http://goo.gl/h9Smkk
 android.ui.share_via=د شريکولو لار ...
 android.ui.button_backtotop=بېرته سر ته
 android.ui.articlesearch_hint=د ليکنو موندلو لپاره وټاپۍ

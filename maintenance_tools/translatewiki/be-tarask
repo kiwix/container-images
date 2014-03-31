@@ -160,3 +160,7 @@ android.ui.pref_zoom_enable=Кіраваньне маштабам
 android.ui.pref_zoom_enable_summary=Паказваць кнопку маштабаваньня ў правым ніжнім куце экрану
 android.ui.pref_nightmode=Начны рэжым
 android.ui.pref_nightmode_summary=Паказваць артыкулы ў «начным рэжыме»
+android.ui.pref_info_title=Інфармацыя
+android.ui.pref_info_version=Вэрсія
+android.ui.pref_backtotop=Вярнуцца ўгару
+android.ui.pref_backtotop_summary=Паказваць кнопку ў канцы старонкі для пракручваньня ўверх
