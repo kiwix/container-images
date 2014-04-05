@@ -61,3 +61,9 @@ for DIR in $DIRS
 do
     mb scan -d "$DIR" mirror2 > /dev/null 2>&1
 done
+
+# scan the Kiwix third mirror
+for DIR in $DIRS
+do
+    mb scan -d "$DIR" mirror3 > /dev/null 2>&1
+done
