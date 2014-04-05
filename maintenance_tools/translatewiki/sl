@@ -138,7 +138,6 @@ ui.messages.integrityCheckFailed=Preverjanje celovitosti ni uspelo. Vaša datote
 android.ui.button_backtotop=Nazaj na vrh
 android.ui.articlesearch_hint=Vrsta iskanih člankov
 android.ui.choose_file=Izberite datoteko z vsebino ZIM (*.zim)
-andoird.ui.rescan_fs=Ponovno preglej kartico SD
 android.ui.error_nozimfilesfound=Na vaši napravi ni bila najdena nobena datoteka ZIM.\nZa napotke v zvezi z nalaganjem vsebine v Kiwix si poglejte Stran za pomoč.\nČe ste datoteko ZIM posneli na svojo napravo/zunanji disk, lahko ponovno poskusite po kratkem čakanju ali pa svojo napravo ponovno zaženete.
 android.ui.error_filenotfound=Napaka: izbrane datoteke ZIM ni mogoče najti.
 android.ui.error_fileinvalid=Napaka: izbrana datoteka ni veljavna datoteka ZIM.

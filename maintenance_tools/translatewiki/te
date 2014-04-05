@@ -1,6 +1,7 @@
 # Messages for Telugu (తెలుగు)
 # Exported from translatewiki.net
 # Author: Arjunaraoc
+# Author: Chaduvari
 # Author: Veeven
 
 ui.main.osxservices=సేవలు
@@ -119,7 +120,7 @@ ui.messages.no=కాదు
 ui.messages.yes=అవును
 ui.messages.ok=సరే
 ui.messages.cancel=రద్దుచేయి
-ui.messages.error=పొరపాటు
+ui.messages.error=లోపం
 ui.messages.information=సమాచారం
 ui.messages.indexing=క్రమబద్ధీకరణ...
 ui.messages.selectBookmarkSet=ఇష్టాంశాల సమితి ఫైల్ ఎంపికచేయి
@@ -131,7 +132,11 @@ ui.messages.contentDownloadFinished='%1' యొక్క దింపుకో�
 ui.messages.feedback=ప్రతిస్పందన
 ui.messages.library=గ్రంథాలయము
 ui.messages.fullscreen=నిండుతెర
-# Fuzzy
-ui.messages.quitFullscreen=పూర్తి తెర విధానము నిష్క్రమించు
+ui.messages.quitFullscreen=నిండుతెరను చాలించు
 ui.messages.integrityCheckSuccessful=ఫైల్  సరిగా వున్నట్లు నిర్ధారించబడింది.
 ui.messages.integrityCheckFailed=ఫైల్ సరిగావుందనేతనిఖీ  నిష్ఫలమైంది. మీ ఫైల్ పాడయ్యింది.
+android.ui.button_backtotop=తిరిగి పైకి
+android.ui.articlesearch_hint=వ్యాసాల్లో వెతకడానికి టైపుచెయ్యండి
+android.ui.pref_info_title=సమాచారం
+android.ui.pref_info_version=సంచిక
+android.ui.pref_backtotop=తిరిగి పైకి

@@ -139,7 +139,6 @@ ui.messages.integrityCheckFailed=D Integritätspriefig isch fehlgschlo. Die Date
 android.ui.button_backtotop=Zruck nach obe
 android.ui.articlesearch_hint=Zuem Sueche vo Artikel tippe
 android.ui.choose_file=Inhalte (ZIM-Datei *.zim) uswähle
-andoird.ui.rescan_fs=SD-Karte nonemol durchsueche
 android.ui.rescan_fs_warning=Suech ZIM-Dateie, bitte warte...
 android.ui.error_nozimfilesfound=S' sin cheini ZIM-Dateie uf Dinem Grät gfunde worde.\nLueg in de Hilfesyte noch zuem usefinde, wie me Inhalt in Kiwix lade cha.\nWenn De grad ZIM-Dateie uf Di Grät / externi Speicher glade hesch, denn versuechs in ere Minute nonemol oder start s'Grät mol neu.
 android.ui.error_filenotfound=Fehler: Di usgwählti ZIM-Datei isch nit gfunde worde.

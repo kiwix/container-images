@@ -135,5 +135,6 @@ ui.messages.fullscreen=פֿולער עקראן
 ui.messages.quitFullscreen=אוועקגיין פון פולן עקראן
 ui.messages.integrityCheckSuccessful=טעקע אינטעגריטעט דערפאלגרייך קאנטראלירט.
 ui.messages.integrityCheckFailed=טעקע אינטעגריטעט דורכגעפאלן. טעקע איז קאליע.
+android.ui.menu_share=טיילט מיט חברים
 android.ui.button_backtotop=צוריק אויבן
 android.ui.pref_zoom_title=פארגרעסערונג ניווא

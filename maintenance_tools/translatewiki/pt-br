@@ -1,5 +1,6 @@
 # Messages for Brazilian Portuguese (português do Brasil)
 # Exported from translatewiki.net
+# Author: Amgauna
 # Author: Giro720
 # Author: Gusta
 # Author: Kelson
@@ -30,7 +31,7 @@ ui.main.edit=Editar
 ui.main.find=Procurar na página...
 ui.main.selectall=Selecionar tudo
 ui.main.copy=Copiar
-ui.main.mute=Sem som
+ui.main.mute=Mudo
 ui.main.audible=Audível
 ui.main.transliteration=Transliteração
 ui.main.preferences=Preferências
@@ -41,7 +42,7 @@ ui.main.zoomin=Ampliar
 ui.main.zoomout=Reduzir
 ui.main.zoomorig=Tamanho original
 ui.main.invertedColors=Cores invertidas
-ui.main.language=Língua
+ui.main.language=Idioma
 ui.main.skin=Aparência
 ui.main.statusbar=Barra de status
 ui.main.resultsbar=Barra de resultados
@@ -123,7 +124,7 @@ ui.messages.restartConfirm=%1 precisa ser reiniciado. Você quer fazer isso agor
 ui.messages.endOfIndexing=O processo de indexação está concluído.
 ui.messages.removeProfileConfirm=Você quer remover seu perfil?
 ui.messages.dontDisplayAnymore=Não exibir mais esta caixa de diálogo.
-ui.messages.changeSkinNeedRestart=Para mudar o tema, o aplicativo precisa ser reiniciado. Reiniciar aplicativo?
+ui.messages.changeSkinNeedRestart=Para mudar o tema, o aplicativo precisa ser reiniciado. Reiniciar o aplicativo?
 ui.messages.confirm=Confirmar
 ui.messages.no=Não
 ui.messages.yes=Sim
@@ -133,7 +134,7 @@ ui.messages.error=Erro
 ui.messages.information=Informação
 ui.messages.indexing=Indexando...
 ui.messages.selectBookmarkSet=Selecionar o arquivo dos Favoritos
-ui.messages.nameBookmarkSet=Insira o nome do arquivo dos Favoritos
+ui.messages.nameBookmarkSet=Insira o nome do arquivo aos Favoritos
 ui.messages.newContentAvailable=Há novos conteúdos disponíveis para download.
 ui.messages.newContentAvailableInvitation=Há novos conteúdos disponíveis para download. Gostaria de vê-los?
 ui.messages.preparingContentDownload=Preparando download...
@@ -144,10 +145,17 @@ ui.messages.fullscreen=Tela inteira
 ui.messages.quitFullscreen=Sair do modo de tela inteira
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
+android.ui.menu_share=Compartilhar com amigos
+android.ui.info_share_title=Eu aproveito a Wikipedia offline usando Kiwix!
+android.ui.info_share_content=Eu aproveito a Wikipedia offline usando Kiwix! Todo o conhecimento humano na sua mão, onde quer que vá! Sem Internet! http://goo.gl/h9Smkk
+android.ui.share_via=Compartilhar via...
 android.ui.button_backtotop=Voltar ao Topo
 android.ui.articlesearch_hint=Digite para procurar artigos
 android.ui.choose_file=Selecione um arquivo de conteúdo ZIM (*.zim)
-andoird.ui.rescan_fs=Reescanear cartão SD
+android.ui.open_in_new_tab=Abrir link em uma nova aba?
+android.ui.remove_tab_confirm=Você quer remover essa aba?
+android.ui.remove_tab=Remover aba
+android.ui.rescan_fs=Reescanear cartão SD
 android.ui.rescan_fs_warning=Escaneando por arquivos ZIM, por favor aguarde...
 android.ui.error_nozimfilesfound=Nenhum arquivo ZIM foi encontrado no seu dispositivo.\nVisite a Página de Ajuda para orientações em como carregar conteúdo no Kiwix.\nSe você pôs um arquivo ZIM no seu dispositivo/armazenamento externo, você pode tentar novamente em alguns minutos ou reiniciar o seu dispositivo.
 android.ui.error_filenotfound=Erro: O arquivo ZIM selecionado não pode ser encontrado.

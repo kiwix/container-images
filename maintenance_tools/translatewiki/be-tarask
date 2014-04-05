@@ -2,8 +2,10 @@
 # Exported from translatewiki.net
 # Author: EugeneZelenko
 # Author: Jim-by
+# Author: Red Winged Duck
 # Author: Renessaince
 # Author: Wizardist
+# Author: Zedlik
 
 ui.main.osxservices=Сэрвісы
 ui.main.osxhideapp=Схаваць &brand.brandShortName;
@@ -71,7 +73,7 @@ ui.main.saveImageAs=Захаваць выяву як…
 ui.main.openLinkInNewTab=Адкрыць спасылку ў новай закладцы
 ui.main.searchFor=Шукаць
 ui.main.copyLinkAddress=Скапіяваць адрас спасылкі
-ui.main.close=Зачыніць
+ui.main.close=Закрыць
 ui.main.library.myLibrary=Мая бібліятэка
 ui.main.library.getNewFiles=Атрымаць новыя файлы
 ui.main.library.searchZimFiles=Пошук ZIM-файлаў
@@ -109,6 +111,8 @@ ui.messages.loadArticleError=Немагчыма загрузіць гэты ар
 ui.messages.noActiveZimFile=Няма актыўнага ZIM-файла. Калі ласка, сьпярша загрузіце яго.
 ui.messages.indexZimFileConfirm=Гэты файл ня ўтрымлівае пошукавага індэксу. Яго стварэньне можа заняць некалькі хвілін. Вы жадаеце індэксаваць ZIM-файл зараз?
 ui.messages.abortIndexingConfirm=У цяперашні момант адбываецца працэс індэксаваньня. Вы ўпэўненыя, што хочаце выйсьці і спыніць яго?
+ui.messages.removeContentConfirm=Вы ўпэўненыя, што хочаце выдаліць гэты запіс зь сьпісу, а таксама ўсе зьвязаныя зь ім файлы?
+ui.messages.dontDeleteContentFiles=Не выдаляць ZIM-файлы.
 ui.messages.restartConfirm=%1 патрабуе перазапуску. Вы жадаеце зрабіць гэта зараз?
 ui.messages.endOfIndexing=Працэс індэксаваньня скончаны.
 ui.messages.removeProfileConfirm=Вы хочаце выдаліць свой профіль?
@@ -131,7 +135,32 @@ ui.messages.contentDownloadFinished=Загрузка «%1» скончаная.
 ui.messages.feedback=Водгук
 ui.messages.library=Бібліятэка
 ui.messages.fullscreen=На ўвесь экран
-# Fuzzy
 ui.messages.quitFullscreen=Выйсьці з рэжыму поўнага экрану
 ui.messages.integrityCheckSuccessful=Цэльнасьць файла была пасьпяхова правераная.
 ui.messages.integrityCheckFailed=Памылка праверкі цэльнасьці. Ваш файл пашкоджаны.
+android.ui.menu_share=Падзяліцца зь сябрамі
+android.ui.info_share_title=Мне падабаецца Вікіпэдыя, даступная оф-лайн з дапамогай Kiwix!
+android.ui.info_share_content=Мне падабаецца Вікіпэдыя, даступная оф-лайн з дапамогай Kiwix! Веды ўсяго чалавецтва ў вас пад рукой, дзе б вы ні былі! Без Інтэрнэту! http://goo.gl/h9Smkk
+android.ui.share_via=Падзяліцца праз…
+android.ui.button_backtotop=Вярнуцца ўверх
+android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
+android.ui.choose_file=Абярыце ZIM-файл (*.zim)
+android.ui.open_in_new_tab=Адкрыць спасылку ў новай укладцы?
+android.ui.remove_tab_confirm=Вы сапраўды хочаце выдаліць гэтую ўкладку?
+android.ui.remove_tab=Выдаліць укладку
+android.ui.rescan_fs=Перасканаваць SD-картку
+android.ui.rescan_fs_warning=Пошук ZIM-файлаў, калі ласка, пачакайце…
+android.ui.error_nozimfilesfound=ZIM-файлы ня знойдзеныя на вашай прыладзе.\nПаглядзіце на старонцы даведкі, як загружаць зьмест у Kiwix.\nКалі вы разьмясьцілі файл на вашай прыладзе або вонкавым сховішчы, магчыма, варта паспрабаваць яшчэ раз празь некалькі імгненьняў або перазагрузіць вашую прыладу.
+android.ui.error_filenotfound=Памылка: абраны ZIM-файл ня знойдзены.
+android.ui.error_fileinvalid=Памылка: абраны файл не зьяўляецца слушным ZIM-файлам.
+android.ui.error_articlenotfound=Памылка: загрузка артыкула \«%1$s\» не атрымалася.
+android.ui.error_articleurlnotfound=Памылка: загрузка артыкула (Url: %1$s) не атрымалася.
+android.ui.pref_zoom_title=Узровень маштабаваньня
+android.ui.pref_zoom_enable=Кіраваньне маштабам
+android.ui.pref_zoom_enable_summary=Паказваць кнопку маштабаваньня ў правым ніжнім куце экрану
+android.ui.pref_nightmode=Начны рэжым
+android.ui.pref_nightmode_summary=Паказваць артыкулы ў «начным рэжыме»
+android.ui.pref_info_title=Інфармацыя
+android.ui.pref_info_version=Вэрсія
+android.ui.pref_backtotop=Вярнуцца ўгару
+android.ui.pref_backtotop_summary=Паказваць кнопку ў канцы старонкі для пракручваньня ўверх

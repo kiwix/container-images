@@ -1,6 +1,8 @@
 # Messages for Breton (brezhoneg)
 # Exported from translatewiki.net
+# Author: Fohanno
 # Author: Fulup
+# Author: Gwenn-Ael
 # Author: Kelson
 # Author: Y-M D
 
@@ -132,9 +134,32 @@ ui.messages.contentDownloadFinished=Echuet eo pellgargañ '%1'.
 ui.messages.feedback=Sonjoù
 ui.messages.library=Levraoueg
 ui.messages.fullscreen=Skramm leun
-# Fuzzy
-ui.messages.quitFullscreen=Kuitaat ar mod skramm leun
+ui.messages.quitFullscreen=Kuitaat ar skramm leun
 ui.messages.integrityCheckSuccessful=Gwiriet eo bet anterinded ar restr ervat.
 ui.messages.integrityCheckFailed=C'hwitet eo bet gwiriañ anterinded ar restr. Brein eo-hi.
+android.ui.menu_share=Rannañ gant mignoned
+android.ui.info_share_title=Plijout a ra din Offline gant Kiwix !
+android.ui.info_share_content=Plijout a ra din Offline gat Kiwix!Holl ouiziegezhioù Mab-den a-hed dorn e kement lec'h ma'z eot ! Hep Internet !http://goo.GL/h9Smkk
+android.ui.share_via=Rannañ dre...
+android.ui.button_backtotop=Penn-krec'h ar bajenn
+android.ui.articlesearch_hint=Skrivañ evit klask pennadoù
+android.ui.choose_file=Dibab ur restr endac'h ZIM (*.zim)
+android.ui.open_in_new_tab=Digeriñ al liamm en un ivinell nevez ?
+android.ui.remove_tab_confirm=Ha fellout a ra deoc'h dilemel an ivinell-mañ ?
+android.ui.remove_tab=Dilemel an ivinell
+android.ui.rescan_fs=Adskannañ ar gartenn SD
+android.ui.rescan_fs_warning=O tielfennañ restroù ZIM. Gortozit, mar plij
+android.ui.error_nozimfilesfound=N'eus bet kavet restr ZIM ebet en hoc'h urzhiataer.\nTaolit ur sell ouzh ar bajenn skoazell evit deskiñ penaos kargañ endalc'hadoù e Kiwix. M'ho peus lakaet ur restr Kiwix en hoc'h ardivink stokañ diabarzh pe diavaez e c'hallit klask en-dro a-benn ur vutunenn pe adloc'hit hoc'h urzhiataer.
+android.ui.error_filenotfound=Fazi : N'eus ket bet gallet kavout ar restr ZIM diuzet.
+android.ui.error_fileinvalid=Fazi : Ar restr diuzet n'eo ket ur restr ZIM reizh.
+android.ui.error_articlenotfound=Fazi : N'eus ket bet gallet kargañ an draezenn \"%1$s\"
+android.ui.error_articleurlnotfound=Fazi : N'eus ket bet gallet kargañ ar pennad \"%1$s\"
+android.ui.pref_zoom_title=Live zoum
+android.ui.pref_zoom_enable=Kontrolloù ar zoum
+android.ui.pref_zoom_enable_summary=Diskwel ur nozelenn zoumañ e korn traoñ dehoù ar skramm
+android.ui.pref_nightmode=Mod noz
+android.ui.pref_nightmode_summary=Diskouez ar pennadoù gant livioù eilpennet
 android.ui.pref_info_title=Titouroù
 android.ui.pref_info_version=Stumm
+android.ui.pref_backtotop=Distreiñ da grec'h ar bajenn
+android.ui.pref_backtotop_summary=Diskwel ur bouton e traoñ ar bajenn evit distreiñ d'an deroù
