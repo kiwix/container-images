@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Alvaro Vidal-Abarca
 # Author: Arnaugir
+# Author: Fitoschido
 # Author: Gemmaa
 # Author: Grondin
 # Author: McDutchie
@@ -160,7 +161,7 @@ ui.messages.information=Informació
 ui.messages.indexing=Indexant
 ui.messages.selectBookmarkSet=Selecciona grup d'adreces d'interès
 ui.messages.nameBookmarkSet=Insereix nom de grup d'adreces d'interès
-ui.messages.newContentAvailable=Hi ha nou contingut disponible per descarregar.
+ui.messages.newContentAvailable=Hi ha contingut nou disponible per baixar.
 ui.messages.newContentAvailableInvitation=Hi ha nou contingut disponible per descarregar. Voleu veure'ls?
 ui.messages.preparingContentDownload=S'està preparant el descarregar...
 ui.messages.contentDownloadFinished=La descàrrega de "% 1" s'acaba.
