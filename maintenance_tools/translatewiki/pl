@@ -1,5 +1,6 @@
 # Messages for Polish (polski)
 # Exported from translatewiki.net
+# Author: Alan ffm
 # Author: BeginaFelicysym
 # Author: Chrumps
 # Author: Olgak85
@@ -170,7 +171,14 @@ ui.messages.fullscreen=Pełny ekran
 ui.messages.quitFullscreen=Wyjdź z trybu pełnego ekranu
 ui.messages.integrityCheckSuccessful=Integralność pliku została pomyślnie sprawdzona.
 ui.messages.integrityCheckFailed=Sprawdzanie integralności nie powiodło się. Plik jest uszkodzony.
+android.ui.menu_share=Poleć znajomym
+android.ui.share_via=Podziel się za pośrednictwem...
 android.ui.button_backtotop=Powrót do góry
+android.ui.open_in_new_tab=Otwórz odnośnik na nowej karcie
+android.ui.remove_tab_confirm=Czy chcesz usunąć tą kartę?
+android.ui.remove_tab=Usuń kartę
+android.ui.rescan_fs=Powtórz wyszukiwanie na karcie SD
+android.ui.pref_zoom_title=Poziom powiększenia
 android.ui.pref_nightmode=Tryb nocny
 android.ui.pref_info_version=Wersja
 android.ui.pref_backtotop=Powrót do góry

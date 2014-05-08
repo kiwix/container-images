@@ -1,6 +1,7 @@
 # Messages for Indonesian (Bahasa Indonesia)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: C5st4wr6ch
 # Author: Farras
 # Author: Kelson
 # Author: Kenrick95
@@ -137,3 +138,6 @@ ui.messages.fullscreen=Layar penuh
 ui.messages.quitFullscreen=Keluar dari mode layar penuh
 ui.messages.integrityCheckSuccessful=Integritas berkas telah berhasil diperiksa.
 ui.messages.integrityCheckFailed=Pemeriksaan integritas gagal. Berkas Anda rusak.
+android.ui.choose_file=Pilih Berkas Konten ZIM (*.zim)
+android.ui.pref_zoom_title=Tingkat perbesaran
+android.ui.pref_backtotop=Kembali ke Atas
