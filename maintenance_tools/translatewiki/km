@@ -65,7 +65,6 @@ ui.main.mark=កត់ចំណាំទំព័រនេះ
 ui.main.unmark=ឈប់កត់ចំណាំទំព័រដែលបានជ្រើសយក
 ui.main.reload=ផ្ទុកកញ្ចប់ការកត់ចំណាំឡើងវិញ
 ui.main.defaultset=កញ្ចប់តាមលំនាំដើម
-ui.main.saveImageAs=រក្សាទុករូបភាពជា...
 ui.main.openLinkInNewTab=បើ់កតំណភ្ជាប់ក្នុងផ្ទាំងរងថ្មី
 ui.main.searchFor=ស្វែងរក
 ui.main.copyLinkAddress=ចំលងអាស័យដ្ឋានតំណភ្ជាប់

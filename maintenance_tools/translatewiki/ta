@@ -68,7 +68,6 @@ ui.main.mark=இப்பக்கத்தை  குறியிடு
 ui.main.unmark=தேர்ந்தெடுத்ததை குறியிட்டதை அழி
 ui.main.reload=புத்தகக்குறி அமைவை மறுபடியும் ஏற்று
 ui.main.defaultset=இயல்புநிலை அமை
-ui.main.saveImageAs=படத்தை இவ்வாறாக சேமி...
 ui.main.openLinkInNewTab=புதிய தாவலில் இணைப்பை திற
 ui.main.searchFor=இதை தேடு
 ui.main.copyLinkAddress=இணைப்பு முகவரியை நகலெடு

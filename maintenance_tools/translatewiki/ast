@@ -66,7 +66,6 @@ ui.main.mark=Amestar la páxina a marcadores
 ui.main.unmark=Desmarcar esbillaos
 ui.main.reload=Recargar el grupu de marcadores
 ui.main.defaultset=Grupu predetermináu
-ui.main.saveImageAs=Guardar imaxe como...
 ui.main.openLinkInNewTab=Abrir enllaz en llingüeta nueva
 ui.main.searchFor=Buscar
 ui.main.copyLinkAddress=Copiar la direición del enllaz

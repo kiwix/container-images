@@ -98,7 +98,6 @@ ui.main.mark=Đánh dấu Trang Này
 ui.main.unmark=Xóa Dấu trang Lựa chọn
 ui.main.reload=Tải lại Danh sách Dấu trang
 ui.main.defaultset=Danh sách Mặc định
-ui.main.saveImageAs=Lưu Hình Như…
 ui.main.openLinkInNewTab=Mở liên kết trong thẻ mới
 ui.main.searchFor=Tìm kiếm
 ui.main.copyLinkAddress=Chép địa chỉ liên kết

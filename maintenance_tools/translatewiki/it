@@ -102,7 +102,6 @@ ui.main.mark=Aggiungi questa pagina ai segnalibri
 ui.main.unmark=Togli questa pagina dai segnalibri
 ui.main.reload=Ricarica collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
-ui.main.saveImageAs=Salva immagine con nome...
 ui.main.openLinkInNewTab=Apri il collegamento in una nuova scheda
 ui.main.searchFor=Ricerca
 ui.main.copyLinkAddress=Copia l'indirizzo del collegamento

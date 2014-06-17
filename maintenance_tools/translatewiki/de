@@ -99,7 +99,6 @@ ui.main.mark=Seite markieren
 ui.main.unmark=Markierung aufheben
 ui.main.reload=Lesezeichen nochmals laden
 ui.main.defaultset=Standarddatei
-ui.main.saveImageAs=Bild speichern als ...
 ui.main.openLinkInNewTab=Link in einem neuen Fenster öffnen
 ui.main.searchFor=Suche nach
 ui.main.copyLinkAddress=Linkadresse kopieren

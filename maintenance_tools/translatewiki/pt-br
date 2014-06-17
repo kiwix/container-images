@@ -76,7 +76,6 @@ ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar a seleção
 ui.main.reload=Restabelecer grupo de Favoritos
 ui.main.defaultset=Conjunto padrão
-ui.main.saveImageAs=Salvar imagem como...
 ui.main.openLinkInNewTab=Abrir link em uma nova aba
 ui.main.searchFor=Procurar por
 ui.main.copyLinkAddress=Copiar endereço do link

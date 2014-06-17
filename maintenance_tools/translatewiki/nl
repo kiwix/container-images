@@ -98,7 +98,6 @@ ui.main.mark=Pagina markeren
 ui.main.unmark=Markering voor geselecteerde verwijderen
 ui.main.reload=Bladwijzergroep opnieuw laden
 ui.main.defaultset=Standaardgroep
-ui.main.saveImageAs=Afbeelding opslaan als...
 ui.main.openLinkInNewTab=Koppeling openen in nieuw tabblad
 ui.main.searchFor=Zoeken naar
 ui.main.copyLinkAddress=Koppelingslocatie kopiëren

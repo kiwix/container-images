@@ -68,7 +68,6 @@ ui.main.mark=Označiť túto stránku
 ui.main.unmark=Zrušiť označenie vybraných
 ui.main.reload=Znovu načítať množinu záložiek
 ui.main.defaultset=Predvolená množina
-ui.main.saveImageAs=Uložiť obrázok ako...
 ui.main.openLinkInNewTab=Otvoriť odkaz v novej záložke
 ui.main.searchFor=Hľadať
 ui.main.copyLinkAddress=Skopírovať adresu odkazu

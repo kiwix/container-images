@@ -102,7 +102,6 @@ ui.main.mark=Afegeix als preferits
 ui.main.unmark=Treu dels preferits
 ui.main.reload=Recarrega el grup de preferits
 ui.main.defaultset=Grup predeterminat
-ui.main.saveImageAs=Desa imatge com a...
 ui.main.openLinkInNewTab=Obre l'enllaç en una pestanya nova
 ui.main.searchFor=Buscar
 ui.main.copyLinkAddress=Copia l'adreça d'enllaç

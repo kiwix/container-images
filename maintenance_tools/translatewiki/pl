@@ -3,6 +3,7 @@
 # Author: Alan ffm
 # Author: BeginaFelicysym
 # Author: Chrumps
+# Author: Kelson
 # Author: Olgak85
 # Author: Przemub
 # Author: Rzuwig
@@ -102,7 +103,6 @@ ui.main.mark=Zaznacz bieżącą stronę
 ui.main.unmark=Odznacz wybrane
 ui.main.reload=Przeładuj wszystkie zakładki z bieżącego zestawu
 ui.main.defaultset=Zestaw domyślny
-ui.main.saveImageAs=Zapisz obrazek jako...
 ui.main.openLinkInNewTab=Otwórz odnośnik na nowej karcie
 ui.main.searchFor=Szukaj
 ui.main.copyLinkAddress=Kopiuj adres łącza
@@ -172,13 +172,28 @@ ui.messages.quitFullscreen=Wyjdź z trybu pełnego ekranu
 ui.messages.integrityCheckSuccessful=Integralność pliku została pomyślnie sprawdzona.
 ui.messages.integrityCheckFailed=Sprawdzanie integralności nie powiodło się. Plik jest uszkodzony.
 android.ui.menu_share=Poleć znajomym
+android.ui.info_share_title=Uwielbiam Wikipedia Offline z Kiwix!
+android.ui.info_share_content=Uwielbiam Wikipedia Offline z Kiwix! Cała wiedza ludzkości pod ręką, gdziekolwiek idziesz! Bez Internetu!
 android.ui.share_via=Podziel się za pośrednictwem...
 android.ui.button_backtotop=Powrót do góry
+android.ui.articlesearch_hint=Wpisz do wyszukiwania artykułów
+android.ui.choose_file=Wybierz plik zawartości ZIM (*.zim)
 android.ui.open_in_new_tab=Otwórz odnośnik na nowej karcie
 android.ui.remove_tab_confirm=Czy chcesz usunąć tą kartę?
 android.ui.remove_tab=Usuń kartę
 android.ui.rescan_fs=Powtórz wyszukiwanie na karcie SD
+android.ui.rescan_fs_warning=Skanowanie plików ZIM, proszę czekać...
+android.ui.error_nozimfilesfound=Nie znaleziono żadnego pliku ZIM na twoim urządzeniu. Zobaczc na stronę pomócy, aby uzyskać wskazówki jak pobierać zawartość na Kiwix. Jeśli plik ZIM jest umieszczony na urządzeniu/zewnętrznej pamięci masowej, spróbuj za chwilę lub włącz ponownie urządzenie.
+android.ui.error_filenotfound=Błąd: Wybrany plik ZIM nie został znaleziony.
+android.ui.error_fileinvalid=Błąd: Wybrany plik nie jest prawidłowym plikiem ZIM.
+android.ui.error_articlenotfound=Błąd: Ładowanie artykułu \ " %1$s \" się nie powiodło.
+android.ui.error_articleurlnotfound=Błąd: Ładowanie artykułu (Url:  %1$s ) się nie powiodło.
 android.ui.pref_zoom_title=Poziom powiększenia
+android.ui.pref_zoom_enable=Zarządzanie skali
+android.ui.pref_zoom_enable_summary=Wyświetl przycisk skali w prawym rogu ekranu
 android.ui.pref_nightmode=Tryb nocny
+android.ui.pref_nightmode_summary=Pokaż artykuły w trybie nocnym
+android.ui.pref_info_title=Informacje
 android.ui.pref_info_version=Wersja
 android.ui.pref_backtotop=Powrót do góry
+android.ui.pref_backtotop_summary=Wyświetl przycisk na końcu strony, aby przewinąć do góry

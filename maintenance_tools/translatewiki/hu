@@ -1,7 +1,9 @@
 # Messages for Hungarian (magyar)
 # Exported from translatewiki.net
+# Author: Csega
 # Author: Dj
 # Author: Hunyadym
+# Author: Kelson
 
 ui.main.osxservices=Szolgáltatások
 ui.main.osxhideapp=Elrejt &brand.brandShortName;
@@ -40,6 +42,7 @@ ui.main.fullscreen=Teljes képernyő
 ui.main.tools=Eszközök
 ui.main.randomArticle=Lap találomra
 ui.main.checkIntegrity=Sértetlenség ellenőrzése
+ui.main.launchIndexing=Indexelés elindítása
 ui.main.purgeHistory=Előzmények törlése
 ui.main.help=Súgó
 ui.main.feedback=Visszajelzés
@@ -64,7 +67,6 @@ ui.main.mark=Oldal megjelölése
 ui.main.unmark=Kijelöltek megjelölésének törlése
 ui.main.reload=!Könyvjelzőkészlet visszaátöltése
 ui.main.defaultset=Alapértelmezett készlet
-ui.main.saveImageAs=Kép mentése másként...
 ui.main.openLinkInNewTab=A hivatkozás megnyitása új lapon
 ui.main.searchFor=Keresés
 ui.main.copyLinkAddress=Hivatkozás címének másolása
@@ -94,6 +96,7 @@ ui.preferences.profileDirectory=Profilkönyvtár
 ui.preferences.browse=Tallózás
 ui.preferences.tabs=Emlékezzen a fülekre
 ui.preferences.downloadCatalogs=Távoli katalógus(ok) letöltése
+ui.preferences.neverAskToIndex=Soha ne indexeljen
 ui.server.load=Betöltés
 ui.server.start=Indítás
 ui.server.stop=Leállítás
@@ -105,6 +108,8 @@ ui.messages.loadArticleError=Nem sikerült betölteni ezt a szócikket.
 ui.messages.noActiveZimFile=Nincs aktív ZIM fájl, kérlek tölts be egyet.
 ui.messages.indexZimFileConfirm=Ez a fájl nem tartalmaz keresési indexet. Ennek létrehozása több percig is eltarthat. Létre akarod most hozni az indexet a ZIM fájlhoz?
 ui.messages.abortIndexingConfirm=Jelenleg fut egy indexelési folyamat, biztosan ki akarsz lépni és megszakítani azt?
+ui.messages.removeContentConfirm=Biztosan el szeretné távolítani ezt a bejegyzést a listáról, és az összes kapcsolódó fájlt?
+ui.messages.dontDeleteContentFiles=Ne törölje a ZIM-tartalomfájlt.
 ui.messages.restartConfirm=A(z) %1 újraindítása szükséges. Szeretnéd ezt most megtenni?
 ui.messages.endOfIndexing=Az indexelési folyamat befejeződött.
 ui.messages.removeProfileConfirm=Biztosan törölni szeretnéd a profilodat?
@@ -117,7 +122,7 @@ ui.messages.ok=OK
 ui.messages.cancel=Mégse
 ui.messages.error=Hiba
 ui.messages.information=Információ
-ui.messages.indexing=Indexelés
+ui.messages.indexing=Indexelés...
 ui.messages.selectBookmarkSet=Válaszd ki a könyvjelzőkészletet
 ui.messages.nameBookmarkSet=Adj meg egy fájlnevet a könyvjelzőkészletnek
 ui.messages.newContentAvailable=Új tartalom tölthető le.
@@ -130,3 +135,29 @@ ui.messages.fullscreen=Teljes képernyő
 ui.messages.quitFullscreen=Kilépés a teljes képernyőből
 ui.messages.integrityCheckSuccessful=A fájl integritás ellenőrzése sikeresen végrehajtva.
 ui.messages.integrityCheckFailed=Az integritás ellenőrzése sikertelen. A fájl sérült.
+android.ui.menu_share=Megosztás ismerősökkel
+android.ui.info_share_title=Kedvelem a Kiwix offline Wikipédia-olvasót!
+android.ui.info_share_content=Kedvelem a Kiwix offline Wikipédia-olvasót! Az emberiség teljes tudása kéznél van, bárhova is megy! Internetkapcsolat nélkül! http://goo.gl/h9Smkk
+android.ui.share_via=Megosztás ezzel...
+android.ui.button_backtotop=Vissza a lap tetejére
+android.ui.articlesearch_hint=Írja be a keresett cikk címét
+android.ui.choose_file=ZIM-tartalomfájl kiválasztása (*.zim)
+android.ui.open_in_new_tab=Hivatkozás megnyitása új lapon?
+android.ui.remove_tab_confirm=Eltávolítja ezt a lapot?
+android.ui.remove_tab=Lap eltávolítása
+android.ui.rescan_fs=SD-kártya újraolvasása
+android.ui.rescan_fs_warning=ZIM-fájlok beolvasása, kis türelmet...
+android.ui.error_nozimfilesfound=Nem található ZIM-fájl a készülékén. Tekintse meg a súgóoldalt, ahol útmutatót talál a Kiwix-tartalom letöltéséhez. Ha a ZIM-fájlt már átmásolta készülékére/az SD-kártyára, próbálja meg egy perc múlva ismét, vagy indítsa újra a készülékét!
+android.ui.error_filenotfound=Hiba: A kijelölt ZIM-fájl nem található.
+android.ui.error_fileinvalid=Hiba: A kijelölt fájl nem érvényes ZIM-fájl.
+android.ui.error_articlenotfound=Hiba: A(z) \"%1$s\" cikk betöltése nem sikerült.
+android.ui.error_articleurlnotfound=Hiba: A(z) (Url: %1$s) cikk betöltése nem sikerült.
+android.ui.pref_zoom_title=Nagyítási szint
+android.ui.pref_zoom_enable=Nagyítási vezérlők
+android.ui.pref_zoom_enable_summary=Nagyítás gomb megjelenítése a képernyő jobb alsó sarkában
+android.ui.pref_nightmode=Éjszakai mód
+android.ui.pref_nightmode_summary=Inverz színek használata a cikkek megjelenítéséhez
+android.ui.pref_info_title=Információ
+android.ui.pref_info_version=Verzió
+android.ui.pref_backtotop=Vissza a lap tetejére
+android.ui.pref_backtotop_summary=Gomb megjelenítése a lap alján, melynek segítségével visszatérhet a lap tetejére

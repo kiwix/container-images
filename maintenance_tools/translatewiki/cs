@@ -1,6 +1,7 @@
 # Messages for Czech (čeština)
 # Exported from translatewiki.net
 # Author: Berkas1
+# Author: Blahma
 # Author: Chmee2
 # Author: DemonioCZ
 # Author: Jachym
@@ -74,7 +75,6 @@ ui.main.mark=Označit tuto stránku
 ui.main.unmark=Odznačit vybrané
 ui.main.reload=Znovu nahrát sadu záložek
 ui.main.defaultset=Výchozí sada
-ui.main.saveImageAs=Uložit obrázek jako...
 ui.main.openLinkInNewTab=Otevřít odkaz v nové záložce
 ui.main.searchFor=Vyhledat
 ui.main.copyLinkAddress=Zkopírovat adresu odkazu
@@ -103,7 +103,7 @@ ui.preferences.cancel=Storno
 ui.preferences.profileDirectory=Profilový adresář
 ui.preferences.browse=Procházet
 ui.preferences.tabs=Uložit záložky
-ui.preferences.downloadCatalogs=Stažení vzdáleného katalogu(ů)
+ui.preferences.downloadCatalogs=Stažení vzdáleného/ých katalogu/ů
 ui.preferences.neverAskToIndex=Nikdy se neptat na indexování
 ui.server.load=Načíst
 ui.server.start=Spustit
@@ -116,7 +116,7 @@ ui.messages.loadArticleError=Nepodařilo se nahrát tento článek.
 ui.messages.noActiveZimFile=Žádný aktivní ZIM soubor, nejdříve prosím nějaký načtěte.
 ui.messages.indexZimFileConfirm=Tento soubor nezahrnuje index vyhledávání. Vytvoření nového může zabrat několik minut. Chcete soubor ZIM nyní indexovat?
 ui.messages.abortIndexingConfirm=Proces indexování momentálně probíhá. Opravdu ho chcete ukončit?
-ui.messages.removeContentConfirm=Jste si jist, že chcete odstranit tuto položku ze seznamu a všechny související souborů?
+ui.messages.removeContentConfirm=Jste si jisti, že chcete odstranit tuto položku ze seznamu a všech souvisejících souborů?
 ui.messages.dontDeleteContentFiles=Neodstraňujte obsah souboru (ZIM).
 ui.messages.restartConfirm=%1 musí být restartován. Chcete restartovat nyní?
 ui.messages.endOfIndexing=Proces indexace je hotový.
@@ -140,8 +140,8 @@ ui.messages.contentDownloadFinished=Stahování „%1“ je dokončeno.
 ui.messages.feedback=Zpětná vazba
 ui.messages.library=Knihovna
 ui.messages.fullscreen=Celá obrazovka
-ui.messages.quitFullscreen=Ukončit celoobrazovkový režim
-ui.messages.integrityCheckSuccessful=Integrita souboru byl úspěšně zkontrolována.
+ui.messages.quitFullscreen=Ukončit celou obrazovku
+ui.messages.integrityCheckSuccessful=Integrita souboru byla úspěšně zkontrolována.
 ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.
 android.ui.menu_share=Sdílet s přáteli
 android.ui.info_share_title=Baví mě Wikipedia Offline s Kiwix!
@@ -155,7 +155,7 @@ android.ui.remove_tab_confirm=Chcete smazat tuto záložku?
 android.ui.remove_tab=Smazat záložku
 android.ui.rescan_fs=Znovu načíst SD kartu
 android.ui.rescan_fs_warning=Probíhá hledání ZIM souborů, prosím čekejte...
-android.ui.error_nozimfilesfound=Na zařízení nenalezeny soubory ZIM.\nPro vodítka, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu a nebo po restartu zařízení.
+android.ui.error_nozimfilesfound=Na zařízení nebyly nalezeny soubory ZIM.\nPro pokyny, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu opakovat nebo restartovat zařízení.
 android.ui.error_filenotfound=Chyba: Nelze najít vybraný soubor ZIM.
 android.ui.error_fileinvalid=Chyba: Vybraný soubor není platným souborem ZIM.
 android.ui.error_articlenotfound=Chyba: Načtení článku \"%1$s\" se nezdařilo.

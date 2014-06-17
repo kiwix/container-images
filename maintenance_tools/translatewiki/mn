@@ -65,7 +65,6 @@ ui.main.mark=Энэ хуудсыг сана
 ui.main.unmark=Сонгосон хэсгийг бүү сана
 ui.main.reload=Тэмдэглэсэн хуудсын цуглуулгыг ахин унш
 ui.main.defaultset=Үндсэн цуглуулга
-ui.main.saveImageAs=Зурагт нэр өгч хадгал...
 ui.main.openLinkInNewTab=Холбоосыг өөр табд нээ
 ui.main.searchFor=Үүгээр хайх
 ui.main.copyLinkAddress=Хуудасны холбоосыг хуул
