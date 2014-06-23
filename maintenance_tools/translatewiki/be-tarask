@@ -69,6 +69,7 @@ ui.main.mark=Пазначыць гэтую старонку
 ui.main.unmark=Зьняць пазначэньне з вылучаных
 ui.main.reload=Перагрузіць набор закладак
 ui.main.defaultset=Набор па змоўчваньні
+ui.main.saveMediaAs=Захаваць мэдыя як…
 ui.main.openLinkInNewTab=Адкрыць спасылку ў новай закладцы
 ui.main.searchFor=Шукаць
 ui.main.copyLinkAddress=Скапіяваць адрас спасылкі

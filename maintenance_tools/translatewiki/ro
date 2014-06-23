@@ -78,6 +78,7 @@ ui.main.mark=Marchează această pagină
 ui.main.unmark=Șterge marcajul selectat
 ui.main.reload=Reîncarcă setul de semne de carte
 ui.main.defaultset=Set implicit
+ui.main.saveMediaAs=Salvează multimedia ca...
 ui.main.openLinkInNewTab=Deschide legătura într-o filă nouă
 ui.main.searchFor=Caută după textul selectat
 ui.main.copyLinkAddress=Copiază adresa legăturii

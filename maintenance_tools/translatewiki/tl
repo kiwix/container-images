@@ -1,6 +1,7 @@
 # Messages for Tagalog (Tagalog)
 # Exported from translatewiki.net
 # Author: AnakngAraw
+# Author: Jewel457
 
 ui.main.cssdirection=mula sa kaliwa papunta sa kanan
 ui.main.osxservices=Mga paglilingkod
@@ -96,7 +97,6 @@ ui.main.mark=Markahan ang pahinang ito
 ui.main.unmark=Pinili ang hindi pagmamarka
 ui.main.reload=Muling Ikarga ang Pangkat ng Pananda
 ui.main.defaultset=Pangkat ng Likas na Katakdaan
-ui.main.saveImageAs=Sagipin ang larawan bilang...
 ui.main.openLinkInNewTab=Buksan ang kawing sa bagong laylay
 ui.main.searchFor=Hanapin ang
 ui.main.copyLinkAddress=Kopyahin ang tirahan ng kawing
@@ -163,3 +163,5 @@ ui.messages.fullscreen=Buong panooran
 ui.messages.quitFullscreen=Huwag buong panooran
 ui.messages.integrityCheckSuccessful=Matagumpay ang pagsusuri ng pagiging buo ng talaksan.
 ui.messages.integrityCheckFailed=Nabigo ang pagsusuri ng pagkabuo. May sira ang talaksan mo.
+android.ui.pref_backtotop=Bumalik sa itaas
+android.ui.pref_backtotop_summary=Maglagay ng buton sa dulo ng pahina upang makagapang paitaas

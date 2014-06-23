@@ -104,6 +104,7 @@ ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar seleccionados
 ui.main.reload=Recargar el conjunto de marcadores
 ui.main.defaultset=Conjunto predeterminado
+ui.main.saveMediaAs=Guardar multimedia como…
 ui.main.openLinkInNewTab=Abrir el enlace en una nueva pestaña
 ui.main.searchFor=Buscar
 ui.main.copyLinkAddress=Copiar dirección del enlace

@@ -64,6 +64,7 @@ ui.main.mark=Tutu stronu markěrować
 ui.main.unmark=Markěrowanje za wubrany wotstronić
 ui.main.reload=Zapołožki znowa začitać
 ui.main.defaultset=Standardna skupina
+ui.main.saveMediaAs=Medij składować jako...
 ui.main.openLinkInNewTab=Wotkaz w nowym rajtarku wočinić
 ui.main.searchFor=Pytać za
 ui.main.copyLinkAddress=Wotkazowu adresu kopěrować

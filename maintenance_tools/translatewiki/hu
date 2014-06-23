@@ -67,6 +67,7 @@ ui.main.mark=Oldal megjelölése
 ui.main.unmark=Kijelöltek megjelölésének törlése
 ui.main.reload=!Könyvjelzőkészlet visszaátöltése
 ui.main.defaultset=Alapértelmezett készlet
+ui.main.saveMediaAs=Média mentése másként...
 ui.main.openLinkInNewTab=A hivatkozás megnyitása új lapon
 ui.main.searchFor=Keresés
 ui.main.copyLinkAddress=Hivatkozás címének másolása

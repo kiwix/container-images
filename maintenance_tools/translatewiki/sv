@@ -69,6 +69,7 @@ ui.main.mark=Markera denna sida
 ui.main.unmark=Avmarkera valda
 ui.main.reload=Ladda om bokmärkessamling
 ui.main.defaultset=Standardsamling
+ui.main.saveMediaAs=Spara media som...
 ui.main.openLinkInNewTab=Öppna länk i ny flik
 ui.main.searchFor=Sök efter
 ui.main.copyLinkAddress=Kopiera länkadress

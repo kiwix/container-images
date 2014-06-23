@@ -64,6 +64,7 @@ ui.main.mark=Означи ја страницава
 ui.main.unmark=Тргни обележано
 ui.main.reload=Превчит. збир обележувачи
 ui.main.defaultset=Основен збир
+ui.main.saveMediaAs=Зачувај го медиумиот како...
 ui.main.openLinkInNewTab=Отвори ја врската во ново јазиче
 ui.main.searchFor=Пребарување на
 ui.main.copyLinkAddress=Копирај ја адресата на врската

@@ -106,6 +106,7 @@ ui.main.mark=Отметить эту страницу
 ui.main.unmark=Снять пометку с выбранного
 ui.main.reload=Обновить набор закладок
 ui.main.defaultset=Установить по умолчанию
+ui.main.saveMediaAs=Сохранить медиа-содержимое как…
 ui.main.openLinkInNewTab=Открыть ссылку в новой вкладке
 ui.main.searchFor=Поиск
 ui.main.copyLinkAddress=Скопировать адрес ссылки

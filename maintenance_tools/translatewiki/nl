@@ -4,6 +4,7 @@
 # Author: McDutchie
 # Author: SPQRobin
 # Author: Siebrand
+# Author: Southparkfan
 
 ui.main.cssdirection=ltr
 ui.main.osxservices=Diensten
@@ -98,6 +99,7 @@ ui.main.mark=Pagina markeren
 ui.main.unmark=Markering voor geselecteerde verwijderen
 ui.main.reload=Bladwijzergroep opnieuw laden
 ui.main.defaultset=Standaardgroep
+ui.main.saveMediaAs=Sla media op als...
 ui.main.openLinkInNewTab=Koppeling openen in nieuw tabblad
 ui.main.searchFor=Zoeken naar
 ui.main.copyLinkAddress=Koppelingslocatie kopiëren

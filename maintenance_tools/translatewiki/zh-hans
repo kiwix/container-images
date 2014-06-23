@@ -77,6 +77,7 @@ ui.main.mark=标记此页
 ui.main.unmark=取消选中
 ui.main.reload=重新加载书签集
 ui.main.defaultset=默认设置
+ui.main.saveMediaAs=将媒体保存为…
 ui.main.openLinkInNewTab=在新标签页打开链接
 ui.main.searchFor=搜索
 ui.main.copyLinkAddress=复制链接地址

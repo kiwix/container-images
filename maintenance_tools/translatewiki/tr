@@ -6,6 +6,7 @@
 # Author: Joseph
 # Author: Man lise
 # Author: Meelo
+# Author: Sayginer
 # Author: Szoszv
 # Author: Trockya
 # Author: VikipediBilgini
@@ -72,6 +73,7 @@ ui.main.mark=Bu sayfayı işaretle
 ui.main.unmark=Seçilenin işaretini kaldır
 ui.main.reload=Yer İmlerini Yeniden Yükle
 ui.main.defaultset=Varsayılan Ayar
+ui.main.saveMediaAs=Medyayı şu şekilde kaydet...
 ui.main.openLinkInNewTab=Bağlantıyı yeni sekmede aç
 ui.main.searchFor=Bunu ara
 ui.main.copyLinkAddress=Bağlantı adresini kopyala

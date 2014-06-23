@@ -64,6 +64,7 @@ ui.main.mark=Marcar iste pagina
 ui.main.unmark=Dismarcar selection
 ui.main.reload=Recargar collection de marcapaginas
 ui.main.defaultset=Collection predefinite
+ui.main.saveMediaAs=Salveguardar multimedia como…
 ui.main.openLinkInNewTab=Aperir ligamine in nove scheda
 ui.main.searchFor=Cercar
 ui.main.copyLinkAddress=Copiar adresse del ligamine

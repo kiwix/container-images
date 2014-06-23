@@ -103,6 +103,7 @@ ui.main.mark=Marquer cette page
 ui.main.unmark=Supprimer le marque-page sélectionné
 ui.main.reload=Recharger le jeu de marque-pages
 ui.main.defaultset=Réglages par défaut
+ui.main.saveMediaAs=Enregistrer le média sous…
 ui.main.openLinkInNewTab=Ouvrir le lien dans un nouvel onglet
 ui.main.searchFor=Rechercher
 ui.main.copyLinkAddress=Copier l'adresse du lien
