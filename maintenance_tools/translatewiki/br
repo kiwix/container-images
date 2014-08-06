@@ -68,6 +68,7 @@ ui.main.mark=Merkañ ar bajenn-mañ
 ui.main.unmark=Diverkañ ar sined diuzet
 ui.main.reload=Adkargañ ar rikoù sinedoù
 ui.main.defaultset=Ma sinedoù
+ui.main.saveMediaAs=Enrollañ ar media evel...
 ui.main.openLinkInNewTab=Digeriñ al liamm en un ivinell nevez
 ui.main.searchFor=Klask
 ui.main.copyLinkAddress=Eilañ chomlec'h al liamm

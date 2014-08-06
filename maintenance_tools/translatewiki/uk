@@ -6,6 +6,7 @@
 # Author: Base
 # Author: Dim Grits
 # Author: Kelson
+# Author: Mykola Swarnyk
 # Author: Probil
 # Author: Дар'я Козлова
 
@@ -102,6 +103,7 @@ ui.main.mark=Позначити цю сторінку
 ui.main.unmark=Зняти позначку з виділених
 ui.main.reload=Перезавантажити набір закладок
 ui.main.defaultset=Встановити за замовчуванням
+ui.main.saveMediaAs=Зберегти медіафайл як...
 ui.main.openLinkInNewTab=Відкрити посилання у новій вкладці
 ui.main.searchFor=Шукати
 ui.main.copyLinkAddress=Копіювати адресу посилання

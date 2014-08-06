@@ -6,6 +6,7 @@
 # Author: Kelson
 # Author: Kenrick95
 # Author: Relly Komaruzaman
+# Author: Riemogerz
 
 ui.main.osxservices=Layanan
 ui.main.osxhideapp=Sembunyikan &brand.brandShortName;
@@ -69,6 +70,7 @@ ui.main.mark=Tandai halaman ini
 ui.main.unmark=Hapus tanda yang dipilih
 ui.main.reload=Muat ulang Set Markah
 ui.main.defaultset=Set Baku
+ui.main.saveMediaAs=Simpan media sebagai...
 ui.main.openLinkInNewTab=Buka pranala di tab baru
 ui.main.searchFor=Pencarian untuk
 ui.main.copyLinkAddress=Salin alamat pranala

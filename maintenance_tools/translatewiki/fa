@@ -103,6 +103,7 @@ ui.main.mark=این صفحه را علامت بزن
 ui.main.unmark=علامت انتخاب‌شده را بردار
 ui.main.reload=بارگذاری مجدد مجموعه نشانک
 ui.main.defaultset=تنظیمات نشانک
+ui.main.saveMediaAs=ذخیره رسانه با نام ....
 ui.main.openLinkInNewTab=بازکردن پیوند در زبانهٔ جدید
 ui.main.searchFor=جستجو برای
 ui.main.copyLinkAddress=رونویسی نشانی پیوند

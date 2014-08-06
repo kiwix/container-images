@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Ale.salmo
 # Author: Aushulz
+# Author: Bertaz
 # Author: Beta16
 # Author: Inskatolata
 # Author: Kelson
@@ -20,6 +21,7 @@ ui.main.openFile=Apri...
 ui.main.openFile.accesskey=A
 ui.main.browseLibrary=Sfoglia la libreria
 ui.main.hideLibrary=Nascondi la libreria
+ui.main.browseLibrary.accesskey=B
 ui.main.lastOpen=Aperti di recente...
 ui.main.saveFile=Salva pagina con nome...
 ui.main.saveFile.accesskey=S
@@ -42,9 +44,9 @@ ui.main.audible=Ascolta
 ui.main.transliteration=Traslitterazione
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferenze
-# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.server=Server
+ui.main.server.accesskey=s
 ui.main.display=Visualizza
 ui.main.display.accesskey=V
 ui.main.zoom=Dimensione testo
@@ -56,6 +58,7 @@ ui.main.zoomout.accesskey=D
 ui.main.zoomorig=Originale
 ui.main.zoomorig.accesskey=O
 ui.main.invertedColors=Colori invertiti
+ui.main.invertedColors.accesskey=I
 ui.main.language=Lingua
 ui.main.language.accesskey=L
 ui.main.skin=Aspetto

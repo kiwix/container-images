@@ -66,6 +66,7 @@ ui.main.mark=Označi to stran
 ui.main.unmark=Odznači izbrane
 ui.main.reload=Ponovno naloži množico zaznamkov
 ui.main.defaultset=Privzeta množica
+ui.main.saveMediaAs=Shrani predstavnost kot ...
 ui.main.openLinkInNewTab=Odpri povezavo na novem zavihku
 ui.main.searchFor=Išči
 ui.main.copyLinkAddress=Kopiraj naslov povezave

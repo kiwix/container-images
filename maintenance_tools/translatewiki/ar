@@ -7,6 +7,7 @@
 # Author: Kelson
 # Author: Malekbr
 # Author: Meno25
+# Author: Musab Moahmmed
 # Author: Mutarjem horr
 # Author: OsamaK
 # Author: عبد الحق فارح
@@ -106,6 +107,7 @@ ui.main.mark=علّم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
 ui.main.reload=أعد تحميل مجموعة المفضلة
 ui.main.defaultset=تفضيلات أصليّة
+ui.main.saveMediaAs=حفظ وسائط باسم...
 ui.main.openLinkInNewTab=افتح الوصلة في علامة تبويب جديدة
 ui.main.searchFor=إبحث عن
 ui.main.copyLinkAddress=انسخ عنوان الوصلة

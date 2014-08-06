@@ -66,6 +66,7 @@ ui.main.mark=Marcar esta páxina
 ui.main.unmark=Desmarcar a selección
 ui.main.reload=Recargar o conxunto de favoritos
 ui.main.defaultset=Conxunto predeterminado
+ui.main.saveMediaAs=Gardar o ficheiro multimedia como...
 ui.main.openLinkInNewTab=Abrir a ligazón nunha nova lapela
 ui.main.searchFor=Procurar por
 ui.main.copyLinkAddress=Copiar o enderezo da ligazón
