@@ -188,3 +188,6 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Back to Top
 android.ui.pref_backtotop_summary=Display a button at the end of the page to scroll up to the top
+android.ui.save_media_error=An error occured when trying to save the media!
+android.ui.save_media_saved=Saved media as %1$s in your Pictures folder
+
