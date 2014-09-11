@@ -27,6 +27,7 @@ my $duplicates = {
     "android.ui.menu_home" => "ui.main.home",
     "android.ui.menu_randomarticle" => "ui.main.randomArticle",
     "android.ui.menu_help" => "ui.main.help",
+    "android.ui.save_media" => "ui.main.saveMediaAs",
     "android.ui.menu_search" => "ui.main.search",
     "android.ui.search_label" => "ui.main.search",
     "android.ui.menu_searchintext" => "ui.main.findInText",
