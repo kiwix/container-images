@@ -75,6 +75,7 @@ ui.main.mark=Označit tuto stránku
 ui.main.unmark=Odznačit vybrané
 ui.main.reload=Znovu nahrát sadu záložek
 ui.main.defaultset=Výchozí sada
+ui.main.saveMediaAs=Uložit médium jako...
 ui.main.openLinkInNewTab=Otevřít odkaz v nové záložce
 ui.main.searchFor=Vyhledat
 ui.main.copyLinkAddress=Zkopírovat adresu odkazu

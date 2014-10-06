@@ -65,6 +65,7 @@ ui.main.mark=Gemari halaman ini
 ui.main.unmark=Buang yang dipilih
 ui.main.reload=Muatkan Semula Set Kegemaran
 ui.main.defaultset=Set Azali
+ui.main.saveMediaAs=Simpan media sebagai...
 ui.main.openLinkInNewTab=Buka Pautan dalam Tab Baru
 ui.main.searchFor=Cari
 ui.main.copyLinkAddress=Salin alamat pautan

@@ -1,5 +1,6 @@
 # Messages for Bengali (বাংলা)
 # Exported from translatewiki.net
+# Author: Aftab1995
 # Author: Bellayet
 # Author: Devayon
 # Author: Jayantanth
@@ -149,3 +150,7 @@ android.ui.remove_tab=ট্যাব অপসারণ
 android.ui.rescan_fs=এসডি কার্ড পুনঃস্ক্যান
 android.ui.pref_zoom_title=জুমের পর্যায়
 android.ui.pref_zoom_enable=জুম নিয়ন্ত্রণ
+android.ui.pref_nightmode=রাত্রি মোড
+android.ui.pref_info_title=তথ্য
+android.ui.pref_info_version=সংস্করণ
+android.ui.pref_backtotop=উপরে ফিরুন

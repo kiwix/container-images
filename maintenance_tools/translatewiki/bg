@@ -1,6 +1,7 @@
 # Messages for Bulgarian (български)
 # Exported from translatewiki.net
 # Author: DCLXVI
+# Author: StanProg
 # Author: Vladimir Penov
 
 ui.main.osxservices=Услуги
@@ -65,6 +66,7 @@ ui.main.mark=Отбелязване на тази страница
 ui.main.unmark=Отмаркиране на избраното
 ui.main.reload=Презареждане на група отметки
 ui.main.defaultset=Група по подразбиране
+ui.main.saveMediaAs=Съхраняване на медията като...
 ui.main.openLinkInNewTab=Отваряне на препратката в нов раздел
 ui.main.searchFor=Търсене
 ui.main.copyLinkAddress=Копиране адреса на препратката

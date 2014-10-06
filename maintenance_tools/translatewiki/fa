@@ -1,5 +1,6 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
+# Author: Alirezaaa
 # Author: Ebraminio
 # Author: Leyth
 # Author: Mehran
@@ -82,7 +83,7 @@ ui.main.help=راهنما
 ui.main.help.accesskey=H
 ui.main.feedback=بازخورد
 ui.main.reportabug=گزارش خطا
-ui.main.requestafeature=درخواست امکانات جدید
+ui.main.requestafeature=درخواست امکانات تازه
 ui.main.about=دربارهٔ &brand.brandShortName;
 ui.main.about.accesskey=A
 ui.main.back=عقب
@@ -109,7 +110,7 @@ ui.main.searchFor=جستجو برای
 ui.main.copyLinkAddress=رونویسی نشانی پیوند
 ui.main.close=بستن
 ui.main.library.myLibrary=کتابخانهٔ من
-ui.main.library.getNewFiles=دریافت پرونده‌های جدید
+ui.main.library.getNewFiles=دریافت پرونده‌های تازه
 ui.main.library.searchZimFiles=جستجو برای پرونده‌های ZIM
 ui.main.library.sortBy=مرتب‌سازی بر اساس
 ui.main.library.sortBy.title=عنوان

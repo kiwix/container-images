@@ -103,6 +103,7 @@ ui.main.mark=Zaznacz bieżącą stronę
 ui.main.unmark=Odznacz wybrane
 ui.main.reload=Przeładuj wszystkie zakładki z bieżącego zestawu
 ui.main.defaultset=Zestaw domyślny
+ui.main.saveMediaAs=Zapisz plik multimedialny jako...
 ui.main.openLinkInNewTab=Otwórz odnośnik na nowej karcie
 ui.main.searchFor=Szukaj
 ui.main.copyLinkAddress=Kopiuj adres łącza

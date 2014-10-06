@@ -65,6 +65,7 @@ ui.main.mark=Marcar aquela pagina
 ui.main.unmark=Desmarcar la seleccion
 ui.main.reload=Recargar lo juòc de marcapaginas
 ui.main.defaultset=Ensems per manca
+ui.main.saveMediaAs=Enregistrar lo mèdia jos…
 ui.main.openLinkInNewTab=Dobrir lo ligam dins un onglet novèl
 ui.main.searchFor=Recercar
 ui.main.copyLinkAddress=Copiar l'adreça del ligam
