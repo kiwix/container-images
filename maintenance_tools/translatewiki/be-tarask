@@ -164,3 +164,5 @@ android.ui.pref_info_title=Інфармацыя
 android.ui.pref_info_version=Вэрсія
 android.ui.pref_backtotop=Вярнуцца ўгару
 android.ui.pref_backtotop_summary=Паказваць кнопку ў канцы старонкі для пракручваньня ўверх
+android.ui.save_media_error=Узьнікла памылка пры захаваньні мэдыя-файла!
+android.ui.save_media_saved=Мэдыя-файл захаваны як %1$s у тэчцы вашых выяваў

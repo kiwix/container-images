@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: McDutchie
+# Author: Romaine
 # Author: SPQRobin
 # Author: Siebrand
 # Author: Southparkfan
@@ -194,3 +195,4 @@ android.ui.pref_info_title=Informatie
 android.ui.pref_info_version=Versie
 android.ui.pref_backtotop=Terug naar boven
 android.ui.pref_backtotop_summary=Aan het einde van de pagina een knop weergeven om terug te gaan naar boven
+android.ui.save_media_error=Er is een fout opgetreden bij het opslaan van de media!

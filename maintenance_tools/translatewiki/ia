@@ -159,3 +159,5 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Initio del pagina
 android.ui.pref_backtotop_summary=Monstrar un button al fin del pagina pro retornar al initio
+android.ui.save_media_error=Un error occurreva durante le salveguarda del file multimedial!
+android.ui.save_media_saved=File multimedial salveguardate como %1$s in tu dossier de imagines

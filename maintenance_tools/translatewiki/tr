@@ -168,3 +168,4 @@ android.ui.pref_info_title=Bilgi
 android.ui.pref_info_version=Sürüm
 android.ui.pref_backtotop=Başa dön
 android.ui.pref_backtotop_summary=Başa dönmek için sayfanın altında bir düğme görüntüler
+android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!

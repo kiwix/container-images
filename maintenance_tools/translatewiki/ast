@@ -161,3 +161,5 @@ android.ui.pref_info_title=Información
 android.ui.pref_info_version=Versión
 android.ui.pref_backtotop=Volver arriba
 android.ui.pref_backtotop_summary=Amosar un botón al final de la páxina pa volver al entamu
+android.ui.save_media_error=Hebo un error al intentar guardar el mediu.
+android.ui.save_media_saved=Mediu guardáu como %1$s na carpeta Imaxes

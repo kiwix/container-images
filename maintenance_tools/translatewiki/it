@@ -8,6 +8,7 @@
 # Author: Kelson
 # Author: McDutchie
 # Author: Nemo bis
+# Author: Peg60
 # Author: Ximo17
 
 ui.main.cssdirection=ltr
@@ -200,3 +201,5 @@ android.ui.pref_info_title=Informazioni
 android.ui.pref_info_version=Versione
 android.ui.pref_backtotop=Torna all'inizio
 android.ui.pref_backtotop_summary=Mostra un pulsante alla fine della pagina per scorrere fino all'inizio
+android.ui.save_media_error=Si è verificato un errore durante il salvataggio del file multimediale!
+android.ui.save_media_saved=Salvato file multimediale come %1$s nella cartella Immagini

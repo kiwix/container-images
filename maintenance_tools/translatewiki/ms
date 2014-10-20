@@ -160,3 +160,5 @@ android.ui.pref_info_title=Maklumat
 android.ui.pref_info_version=Versi
 android.ui.pref_backtotop=Kembali ke Atas
 android.ui.pref_backtotop_summary=Paparkan butang di kaki halaman untuk menskrol kembali ke atas
+android.ui.save_media_error=Ralat berlaku ketika cubaan menyimpan media!
+android.ui.save_media_saved=Menyimpan media sebagai %1$s dalam folder Gambar (Pictures) anda

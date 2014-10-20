@@ -1,6 +1,7 @@
 # Messages for Sinhala (සිංහල)
 # Exported from translatewiki.net
 # Author: Singhalawap
+# Author: Susith Chandira Gts
 # Author: පසිඳු කාවින්ද
 # Author: සුරනිමල
 # Author: හරිත
@@ -149,3 +150,5 @@ android.ui.pref_info_title=තොරතුරු
 android.ui.pref_info_version=අනුවාදය
 android.ui.pref_backtotop=නැවත උඩට
 android.ui.pref_backtotop_summary=ඉහළට උඩු අනුචලනය කිරීමට පිටුවේ අග බොත්තමක් පෙන්වන්න
+android.ui.save_media_error=මාධ්‍යය ආරක්ෂණය කිරීමට යාමේදී හටගන්නා ලදී!
+android.ui.save_media_saved=ඔබගේ පින්තුර ගොනුවෙහි %1$s ලෙස, මාධ්‍යය සුරක්ෂිත කරන ලදී

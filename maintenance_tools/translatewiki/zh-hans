@@ -7,6 +7,7 @@
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
+# Author: Linforest
 # Author: Liuxinyu970226
 # Author: Qiyue2001
 # Author: Shirayuki
@@ -172,3 +173,5 @@ android.ui.pref_info_title=信息
 android.ui.pref_info_version=版本
 android.ui.pref_backtotop=返回顶端
 android.ui.pref_backtotop_summary=在页底显示一个按钮以供返回顶端
+android.ui.save_media_error=当试图保存媒体时出错 ！
+android.ui.save_media_saved=已将媒体作为%1$s保存于您的图片文件夹中

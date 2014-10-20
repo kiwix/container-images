@@ -194,3 +194,5 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Zurück nach oben
 android.ui.pref_backtotop_summary=Zeigt einen Button am Seitenende an, um zum Anfang hochzuscrollen.
+android.ui.save_media_error=Beim Versuch, das Medium zu speichern, ist ein Fehler aufgetreten!
+android.ui.save_media_saved=Medium als %1$s in deinem Bilder-Ordner gespeichert

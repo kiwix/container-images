@@ -192,3 +192,5 @@ android.ui.pref_info_title=מידע
 android.ui.pref_info_version=גרסה
 android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
+android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
+android.ui.save_media_saved=נמדיה נשמרה בתור %1$s בתיקיית התמונות שלך

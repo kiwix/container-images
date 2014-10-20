@@ -198,3 +198,5 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Retourner au début
 android.ui.pref_backtotop_summary=Afficher un bouton en bas de la page pour revenir au début
+android.ui.save_media_error=Une erreur s&est produite en essayant d’enregistrer le média !
+android.ui.save_media_saved=Média enregistré sous %1$s dans votre dossier Images

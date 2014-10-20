@@ -193,3 +193,5 @@ android.ui.pref_info_title=Thông tin
 android.ui.pref_info_version=Phiên bản
 android.ui.pref_backtotop=Trở lên Đầu trang
 android.ui.pref_backtotop_summary=Hiển thị nút ở cuối trang để di chuyển lên trên cùng
+android.ui.save_media_error=Đã xuất hiện lỗi khi lưu phương tiện!
+android.ui.save_media_saved=Đã lưu phương tiện thành %1$s trong thư mục hình ảnh của bạn
