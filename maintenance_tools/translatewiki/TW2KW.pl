@@ -136,14 +136,14 @@ foreach my $language (@languages) {
 	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
 	my $languageAndroidSource = $languageAndroidSourceMaster;
 	
-	while ($tmpLanguageAndroidSource =~ /<(string\-array|string)(.*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/string\-array|<\/string)>/smg) {
+	while ($tmpLanguageAndroidSource =~ /<(string|item)([^\-]*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/)(string|item)>/sg) {
 	    my $tag = $1;
 	    my $middle1 = $2;
 	    my $name = $3;
 	    my $middle2 = $4;
 	    my $value = $5;
-	    my $last = $6;
-	    
+	    my $last = $6.$7;
+
 	    if (exists($androidHash->{$name})) {
 		$value = $androidHash->{$name};
 		$value =~ s/'/\\'/gm;
@@ -153,7 +153,7 @@ foreach my $language (@languages) {
 		$value =~ s/'/\\'/gm;
 	    }
 	    
-	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6\E/$tag$middle1$name$middle2$value$last/mg;
+	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6$7\E/$tag$middle1$name$middle2$value$last/mg;
 	}
 	
 	$localePath = $path."/android/res/values-".$language;
