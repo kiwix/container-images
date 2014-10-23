@@ -128,6 +128,7 @@ ui.messages.information=Інфармацыя
 ui.messages.indexing=Індэксаваньне…
 ui.messages.selectBookmarkSet=Выбраць файл з наборам закладак
 ui.messages.nameBookmarkSet=Увесьці назву файла набору закладак
+ui.messages.bookmarkReferingOtherContent=Гэтая закладка спасылаецца на іншы зьмест, ці хочаце вы загрузіць яго?
 ui.messages.newContentAvailable=Існуе новы зьмест даступны для загрузкі.
 ui.messages.newContentAvailableInvitation=Для загрузкі даступны новы зьмест. Вы жадаеце яго праглядзець?
 ui.messages.preparingContentDownload=Падрыхтоўка да загрузкі…

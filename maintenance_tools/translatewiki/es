@@ -164,6 +164,7 @@ ui.messages.information=Información
 ui.messages.indexing=Indizando…
 ui.messages.selectBookmarkSet=Seleccione un archivo de conjunto de marcadores
 ui.messages.nameBookmarkSet=Introduzca el nombre de archivo del conjunto de marcadores
+ui.messages.bookmarkReferingOtherContent=Este marcador se refiere a otro contenido. ¿Quieres cargarlo?
 ui.messages.newContentAvailable=Hay nuevos contenidos disponibles para descargar.
 ui.messages.newContentAvailableInvitation=Hay nuevos contenidos disponibles para descargar. ¿Quieres verlos?
 ui.messages.preparingContentDownload=Preparando la descarga...
