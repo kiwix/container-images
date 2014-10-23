@@ -33,6 +33,8 @@ my $duplicates = {
     "android.ui.menu_searchintext" => "ui.main.findInText",
     "android.ui.menu_settings" => "ui.preferences.preferences",
     "android.ui.pref_display_title" => "ui.main.display",
+    "android.ui.pref_language_title" => "ui.main.language",
+    "android.ui.pref_info_title" => "ui.messages.information",
     "android.ui.pref_zoom_dialogtitle" => "android.ui.pref_zoom_title",
     "android.ui.menu_exit" => "ui.main.quit",
 };
