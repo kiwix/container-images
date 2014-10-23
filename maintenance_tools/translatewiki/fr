@@ -194,6 +194,7 @@ android.ui.pref_zoom_enable=Contrôles du zoom
 android.ui.pref_zoom_enable_summary=Afficher un bouton de zoom dans le coin inférieur droit de l’écran
 android.ui.pref_nightmode=Mode nocturne
 android.ui.pref_nightmode_summary=Afficher les articles en couleurs inversées
+android.ui.pref_language_chooser=Choisir une langue
 android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Retourner au début
