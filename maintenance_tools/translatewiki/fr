@@ -162,6 +162,7 @@ ui.messages.information=Information
 ui.messages.indexing=Indexation en cours...
 ui.messages.selectBookmarkSet=Importer un jeu de marque-pages
 ui.messages.nameBookmarkSet=Créer un nom de fichier pour le jeu
+ui.messages.bookmarkReferingOtherContent=Ce signet fait référence à un autre contenu, voulez-vous le charger ?
 ui.messages.newContentAvailable=Il y a de nouveaux contenus disponibles au téléchargement.
 ui.messages.newContentAvailableInvitation=Il y a de nouveaux contenus disponibles au téléchargement. Voulez-vous les voir ?
 ui.messages.preparingContentDownload=Préparation du téléchargement...

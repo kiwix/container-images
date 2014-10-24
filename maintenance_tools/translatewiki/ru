@@ -165,6 +165,7 @@ ui.messages.information=Информация
 ui.messages.indexing=Индексация…
 ui.messages.selectBookmarkSet=Выберите файл закладок
 ui.messages.nameBookmarkSet=Введите имя файла закладок
+ui.messages.bookmarkReferingOtherContent=Эта закладка ссылается на другое содержимое. Вы хотите загрузить его?
 ui.messages.newContentAvailable=Новый контент доступен для загрузки.
 ui.messages.newContentAvailableInvitation=Новый контент доступен для скачивания. Вы хотите его увидеть?
 ui.messages.preparingContentDownload=Подготовка к загрузке…

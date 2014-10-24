@@ -165,6 +165,7 @@ ui.messages.information=Informazioni
 ui.messages.indexing=Indicizzazione
 ui.messages.selectBookmarkSet=Seleziona il file della collezione di segnalibri
 ui.messages.nameBookmarkSet=Inserisci il nome del file della collezione di segnalibri
+ui.messages.bookmarkReferingOtherContent=Questo segnalibro si riferisce a un altro contenuto, vuoi caricarlo?
 ui.messages.newContentAvailable=Ci sono nuovi contenuti disponibili per il download.
 ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili per il download. Vuoi vederli?
 ui.messages.preparingContentDownload=Preparazione del download...

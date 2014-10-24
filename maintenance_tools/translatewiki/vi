@@ -157,6 +157,7 @@ ui.messages.information=Thông tin
 ui.messages.indexing=Đang lập chỉ mục…
 ui.messages.selectBookmarkSet=Chọn tập tin Danh sách Dấu trang
 ui.messages.nameBookmarkSet=Nhập tên tập tin Danh sách Dấu trang
+ui.messages.bookmarkReferingOtherContent=Dấu trang này chỉ đến nội dung khác. Bạn có muốn tải nó không?
 ui.messages.newContentAvailable=Có sẵn nội dung mới để tải về.
 ui.messages.newContentAvailableInvitation=Có sẵn nội dung mới để tải về. Bạn có muốn xem nó không?
 ui.messages.preparingContentDownload=Đang chuyển bị tải về…

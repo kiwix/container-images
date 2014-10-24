@@ -123,6 +123,7 @@ ui.messages.information=Информации
 ui.messages.indexing=Индексирање
 ui.messages.selectBookmarkSet=Одберете податотека за збирот обележувачи
 ui.messages.nameBookmarkSet=Внесете го името на податотеката за збирот обележувачи
+ui.messages.bookmarkReferingOtherContent=Овој бележинк се повикува на друга содржина. Дали сакате да ја вчитам?
 ui.messages.newContentAvailable=Има нови содржини за преземање.
 ui.messages.newContentAvailableInvitation=Има нови содржини за преземање. Дали би сакале да ги погледате?
 ui.messages.preparingContentDownload=Го подготвувам преземањето...

@@ -137,6 +137,7 @@ ui.messages.information=Informații
 ui.messages.indexing=Se indexează
 ui.messages.selectBookmarkSet=Selectați fișierul care conține setul de semne de carte
 ui.messages.nameBookmarkSet=Introduceți numele setului de semne de carte
+ui.messages.bookmarkReferingOtherContent=Acest semn de carte se referă la alt conținut. Doriți să-l încărcați?
 ui.messages.newContentAvailable=Există conținut nou disponibil pentru descărcare.
 ui.messages.newContentAvailableInvitation=Există conținut nou disponibil pentru descărcare. Doriți să îl vedeți?
 ui.messages.preparingContentDownload=Se pregătește descărcarea...
