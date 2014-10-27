@@ -142,4 +142,6 @@ ui.messages.fullscreen=全螢幕
 ui.messages.quitFullscreen=退出全螢幕模式
 ui.messages.integrityCheckSuccessful=成功地檢查檔案完整性。
 ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損壞。
+android.ui.pref_zoom_entry_automatic=自動
+android.ui.pref_zoom_entry_large=大
 android.ui.pref_info_title=資訊
