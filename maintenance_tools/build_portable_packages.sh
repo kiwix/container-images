@@ -3,7 +3,7 @@ SOURCE=/var/www/download.kiwix.org/zim/
 TARGET=/var/www/download.kiwix.org/portable/
 TMP=/tmp/
 SCRIPT=/var/www/kiwix/tools/tools/scripts/buildDistributionFile.pl
-VERSION=`ls -la /var/www/download.kiwix.org/bin/unstable | cut -d " " -f12 | sed -e 's/_/-/g' | sed -e 's/\///g'` 
+VERSION=`readlink /var/www/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'` 
 EXCLUDE="0.9"
 
 SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
