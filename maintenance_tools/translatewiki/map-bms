@@ -64,7 +64,6 @@ ui.main.mark=Tandani kaca kiye
 ui.main.unmark=Batalna tanda sing dipilih
 ui.main.reload=Muatna maning setingan tanda
 ui.main.defaultset=Setingan asale
-ui.main.saveImageAs=Simpen gambar nganggo jeneng...
 ui.main.openLinkInNewTab=Bukak pranala nang tab sing anyar
 ui.main.searchFor=Sing digoleti
 ui.main.copyLinkAddress=Salin alamate pranala

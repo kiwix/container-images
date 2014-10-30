@@ -5,6 +5,7 @@
 # Author: Ianbu
 # Author: Justincheng12345
 # Author: Kelson
+# Author: LNDDYL
 # Author: Lauhenry
 # Author: Liuxinyu970226
 # Author: Shirayuki
@@ -57,11 +58,11 @@ ui.main.about=關於 &brand.brandShortName;
 ui.main.back=返回
 ui.main.forward=前進
 ui.main.home=首頁
-ui.main.searchBar=搜索欄
+ui.main.searchBar=搜尋列
 ui.main.search=搜尋
-ui.main.searchPlaceholder=在這裡輸入要搜索的文字...
+ui.main.searchPlaceholder=在這裡輸入要搜尋的文字...
 ui.main.findInText=在文本中搜尋
-ui.main.noSearchBar=搜索需要索引的ZIM文件
+ui.main.noSearchBar=搜尋需要索引的ZIM檔案
 ui.main.bookmarks=書籤
 ui.main.results.title=搜尋結果
 ui.main.bmkLabel=書籤
@@ -72,10 +73,9 @@ ui.main.mark=標記此頁
 ui.main.unmark=取消標記
 ui.main.reload=刷新書籤集
 ui.main.defaultset=預設設定
-ui.main.saveImageAs=另存圖像為 ...
 ui.main.openLinkInNewTab=在新頁籤打開連結
 ui.main.searchFor=搜尋
-ui.main.copyLinkAddress=複製連結地址
+ui.main.copyLinkAddress=複製連結位址
 ui.main.close=關閉
 ui.main.library.myLibrary=我的檔案庫
 ui.main.library.getNewFiles=獲取新檔案
@@ -142,4 +142,6 @@ ui.messages.fullscreen=全螢幕
 ui.messages.quitFullscreen=退出全螢幕模式
 ui.messages.integrityCheckSuccessful=成功地檢查檔案完整性。
 ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損壞。
+android.ui.pref_zoom_entry_automatic=自動
+android.ui.pref_zoom_entry_large=大
 android.ui.pref_info_title=資訊

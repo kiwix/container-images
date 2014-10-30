@@ -1,6 +1,7 @@
 # Messages for Russian (русский)
 # Exported from translatewiki.net
 # Author: DCamer
+# Author: Dağlı95
 # Author: Dim Grits
 # Author: Eleferen
 # Author: Eugrus
@@ -105,7 +106,7 @@ ui.main.mark=Отметить эту страницу
 ui.main.unmark=Снять пометку с выбранного
 ui.main.reload=Обновить набор закладок
 ui.main.defaultset=Установить по умолчанию
-ui.main.saveImageAs=Сохранить изображение как...
+ui.main.saveMediaAs=Сохранить медиа-содержимое как…
 ui.main.openLinkInNewTab=Открыть ссылку в новой вкладке
 ui.main.searchFor=Поиск
 ui.main.copyLinkAddress=Скопировать адрес ссылки
@@ -164,6 +165,7 @@ ui.messages.information=Информация
 ui.messages.indexing=Индексация…
 ui.messages.selectBookmarkSet=Выберите файл закладок
 ui.messages.nameBookmarkSet=Введите имя файла закладок
+ui.messages.bookmarkReferingOtherContent=Эта закладка ссылается на другое содержимое. Вы хотите загрузить его?
 ui.messages.newContentAvailable=Новый контент доступен для загрузки.
 ui.messages.newContentAvailableInvitation=Новый контент доступен для скачивания. Вы хотите его увидеть?
 ui.messages.preparingContentDownload=Подготовка к загрузке…
@@ -194,9 +196,16 @@ android.ui.error_articleurlnotfound=Ошибка: Загрузка статьи 
 android.ui.pref_zoom_title=Уровень масштабирования
 android.ui.pref_zoom_enable=Управления масштабированием
 android.ui.pref_zoom_enable_summary=Отображать кнопку масштабирования в правом нижнем углу экрана
+android.ui.pref_zoom_entry_automatic=Автоматически
+android.ui.pref_zoom_entry_small=Маленький
+android.ui.pref_zoom_entry_medium=Средний
+android.ui.pref_zoom_entry_large=Большой
 android.ui.pref_nightmode=Ночной режим
 android.ui.pref_nightmode_summary=Показать статьи в «ночном режиме»
+android.ui.pref_language_chooser=Выберите язык
 android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_backtotop=Вернуться наверх
 android.ui.pref_backtotop_summary=Отобразить кнопку в конце страницы для прокрутки вверх
+android.ui.save_media_error=Произошла ошибка при сохранении медиа-файла!
+android.ui.save_media_saved=Медиа-файл сохранён как %1$s в вашей папке для изображений

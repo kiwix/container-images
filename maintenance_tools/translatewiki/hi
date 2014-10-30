@@ -7,6 +7,7 @@
 # Author: Nikhilsheth
 # Author: Siddhartha Ghai
 # Author: Vdhatterwal
+# Author: संजीव कुमार
 
 ui.main.osxservices=सेवाएं
 ui.main.osxhideapp=&brand.brandShortName; छुपायें
@@ -70,7 +71,6 @@ ui.main.mark=इस पृष्ठ को चिह्नित करें
 ui.main.unmark=चयनित अचिह्नित करें
 ui.main.reload=बुकमार्क सेट पुनः लोड करें
 ui.main.defaultset=डिफ़ॉल्ट सेट
-ui.main.saveImageAs=फोटो सेव करें (के रूप में)...
 ui.main.openLinkInNewTab=लिंक खोलें नए टैब में
 ui.main.searchFor=के लिए खोजें
 ui.main.copyLinkAddress=लिंक ऐड्रेस कापी करें
@@ -139,9 +139,17 @@ ui.messages.fullscreen=पूरा स्क्रीन
 ui.messages.quitFullscreen=पूरे स्क्रीन से बाहर निकलें
 ui.messages.integrityCheckSuccessful=फ़ाइल की अखंडता की जाँच सफलतापूर्वक की गयी थी।
 ui.messages.integrityCheckFailed=फ़ाइल की अखंडता की जाँच विफल रही। आपकी फ़ाइल दूषित है।
+android.ui.menu_share=दोस्तों के साथ बांटे
+android.ui.info_share_title=मैं विकिपीडिया ऑफ़लाइन का आनंद ले रहा हूँ किविक्स के साथ!
+android.ui.info_share_content=मैं विकिपीडिया ऑफ़लाइन का आनंद ले रहा हूँ किविक्स के साथ! हाथ में पूरा मानव ज्ञान जहाँ भी तुम जाओ! इंटरनेट के बिना! http://goo.gl/h9Smkk
+android.ui.share_via=अलग माध्यम से बांटे
 android.ui.button_backtotop=वापस शीर्ष पे जाएँ
 android.ui.articlesearch_hint=लेख तलाश करने के लिए लिखें
 android.ui.choose_file=एक ZIM कान्टेन्ट फ़ाइल (*.zim) का चयन करें
+android.ui.open_in_new_tab=नए टैब में लिंक खोलें?
+android.ui.remove_tab_confirm=क्या आप इस टैब को निकालना चाहते हैं?
+android.ui.remove_tab=टैब निकालें
+android.ui.rescan_fs=एसडी कार्ड पुन: स्कैन करें
 android.ui.rescan_fs_warning=ZIM फ़ाइलों के लिए स्कैन किया जा रहा है, कृपया प्रतीक्षा करें...
 android.ui.error_nozimfilesfound=आपकी डिवाइस पर कोई ZIM फ़ाइल नही मिली।\nKiwix मे कान्टेन्ट लोड करने के बारे मे जानने के लिए हेल्प पृष्ठ देखें।\nयदि आपने अपने डिवाइस/इक्स्टर्नल स्टोरिज पर ZIM फ़ाइल डाली है, तो फिर से इक मिनिट मे प्रयास करें, या फिर डिवाइस पुनरारंभ करें।
 android.ui.error_filenotfound=त्रुटि: चुनी गयी ZIM फ़ाइल नही मिल सकी।
@@ -157,3 +165,4 @@ android.ui.pref_info_title=जानकारी
 android.ui.pref_info_version=संस्करण
 android.ui.pref_backtotop=वापस शीर्ष पे जाएँ
 android.ui.pref_backtotop_summary=उपर तक स्क्रॉल करने के लिए पृष्ठ के अंत में एक बटन दिखाएँ
+android.ui.save_media_saved=मीडिया को %1$s के रूप में अपने चित्र निदेशिका में सहेजें

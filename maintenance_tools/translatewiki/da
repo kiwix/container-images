@@ -70,7 +70,6 @@ ui.main.mark=Marker denne side
 ui.main.unmark=Fjern markering af valgte
 ui.main.reload=Genindlæs bogmærkesamling
 ui.main.defaultset=Standardsamling
-ui.main.saveImageAs=Gem billede som...
 ui.main.openLinkInNewTab=Åbn link i nyt faneblad
 ui.main.searchFor=Søg efter
 ui.main.copyLinkAddress=Kopier adressen for henvisningen

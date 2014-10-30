@@ -5,6 +5,7 @@
 # Author: Naohiro19
 # Author: Schu
 # Author: Shirayuki
+# Author: SkyDaisy9
 # Author: 青子守歌
 
 ui.main.osxservices=サービス
@@ -68,7 +69,7 @@ ui.main.mark=このページをマーク
 ui.main.unmark=選択したマークを解除
 ui.main.reload=ブックマーク設定を再読み込み
 ui.main.defaultset=既定のセット
-ui.main.saveImageAs=画像を別名で保存...
+ui.main.saveMediaAs=メディアに名前を付けて保存...
 ui.main.openLinkInNewTab=リンクを新規タブで開く
 ui.main.searchFor=検索対象:
 ui.main.copyLinkAddress=リンクのアドレスをコピー
@@ -125,6 +126,7 @@ ui.messages.information=情報
 ui.messages.indexing=インデックス中
 ui.messages.selectBookmarkSet=ブックマークを設定するファイルを選択します。
 ui.messages.nameBookmarkSet=ブックマークを設定するファイル名を入力してください
+ui.messages.bookmarkReferingOtherContent=このブックマークは他の内容を参照します。実行しますか？
 ui.messages.newContentAvailable=ダウンロードできる新しいコンテンツがあります。
 ui.messages.newContentAvailableInvitation=ダウンロードできる新しいコンテンツがあります。表示しますか?
 ui.messages.preparingContentDownload=ダウンロードを準備中...
@@ -150,8 +152,13 @@ android.ui.error_articleurlnotfound=エラー: 記事 (URL: %1$s) を読み込�
 android.ui.pref_zoom_title=ズーム レベル
 android.ui.pref_zoom_enable=ズーム コントロール
 android.ui.pref_zoom_enable_summary=画面右下隅にズーム ボタンを表示する
+android.ui.pref_zoom_entry_automatic=自動
+android.ui.pref_zoom_entry_small=小
+android.ui.pref_zoom_entry_large=大
 android.ui.pref_nightmode=夜モード
 android.ui.pref_nightmode_summary=記事を反転色で表示する
+android.ui.pref_language_chooser=言語を選択
 android.ui.pref_info_title=情報
 android.ui.pref_info_version=バージョン
 android.ui.pref_backtotop=トップに戻る
+android.ui.save_media_error=メディアを保存しようとした際にエラーが発生しました!

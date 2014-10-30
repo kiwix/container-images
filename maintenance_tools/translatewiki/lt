@@ -67,7 +67,6 @@ ui.main.mark=Pažymėti šį puslapį
 ui.main.unmark=Atžymėti pasirinktus
 ui.main.reload=Pakartotinai įkelti Žymių Rinkinį
 ui.main.defaultset=Numatytasis Rinkinys
-ui.main.saveImageAs=Išsaugoti paveikslėlį kaip...
 ui.main.openLinkInNewTab=Atidaryti saitą naujame skirtuke
 ui.main.searchFor=Ieškoti
 ui.main.copyLinkAddress=Kopijuoti nuorodos adresas

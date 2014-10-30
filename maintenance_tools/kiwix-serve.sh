@@ -26,7 +26,7 @@ do
     if [ ! -e $IDX ]
     then
 	echo "Building idx for $ZIM..."
-	kiwix-index --backend=xapian $ZIM $IDX
+	kiwix-index $ZIM $IDX
 	kiwix-compact $IDX
     fi
 
@@ -43,7 +43,7 @@ do
 
     # Add to library
     echo "Adding $BASE to library.xml..."
-    kiwix-manage $LIBRARY_PATH add $ZIM --indexPath=$IDX --indexBackend=xapian
+    kiwix-manage $LIBRARY_PATH add $ZIM --indexPath=$IDX 
 done
 
 # kill kiwix-serve instances

@@ -64,7 +64,6 @@ ui.main.mark=標記本頁
 ui.main.unmark=取消標記
 ui.main.reload=刷新書籤集
 ui.main.defaultset=預設設定
-ui.main.saveImageAs=另存圖像為 ...
 ui.main.openLinkInNewTab=在新頁籤打開連結
 ui.main.searchFor=搜尋
 ui.main.copyLinkAddress=複製連結地址

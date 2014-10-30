@@ -64,7 +64,6 @@ ui.main.mark=Seit markiere
 ui.main.unmark=Markierung uffhebe
 ui.main.reload=Lesezeiche nochmol loode
 ui.main.defaultset=Standarddatei
-ui.main.saveImageAs=Bild speichre wie ...
 ui.main.openLinkInNewTab=Link in enem neie Fenster uffmache
 ui.main.searchFor=Such noh
 ui.main.copyLinkAddress=Linkadress kopiere

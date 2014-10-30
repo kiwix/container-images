@@ -66,7 +66,6 @@ ui.main.mark=Marker denne siden
 ui.main.unmark=Fjern markering for valgte
 ui.main.reload=Last inn bokmerkesamling på nytt
 ui.main.defaultset=Standardsamling
-ui.main.saveImageAs=Lagre bilde som …
 ui.main.openLinkInNewTab=Åpne lenke i ny fane
 ui.main.searchFor=Søk etter
 ui.main.copyLinkAddress=Kopier lenkeadresse
