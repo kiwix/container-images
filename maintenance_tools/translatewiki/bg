@@ -3,6 +3,7 @@
 # Author: DCLXVI
 # Author: StanProg
 # Author: Vladimir Penov
+# Author: Vodnokon4e
 
 ui.main.osxservices=Услуги
 ui.main.osxhideapp=Скриване на &brand.brandShortName;
@@ -155,8 +156,13 @@ android.ui.error_articleurlnotfound=Грешка: Зареждането на с
 android.ui.pref_zoom_title=Ниво на мащабиране
 android.ui.pref_zoom_enable=Управление на мащаба
 android.ui.pref_zoom_enable_summary=Показване на бутон за мащабиране в долния десен ъгъл на екрана
+android.ui.pref_zoom_entry_automatic=Автоматично
+android.ui.pref_zoom_entry_small=Малък
+android.ui.pref_zoom_entry_medium=Среден
+android.ui.pref_zoom_entry_large=Голям
 android.ui.pref_nightmode=Нощен режим
 android.ui.pref_nightmode_summary=Показване на статии в "нощен режим"
+android.ui.pref_language_chooser=Избиране на език
 android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_backtotop=Връщане в началото

@@ -138,4 +138,6 @@ android.ui.share_via=இவ்வழியாக பகிர்....
 android.ui.button_backtotop=மீண்டும் மேலே
 android.ui.choose_file=ZIM கோப்பை தேர்வு செய் (*.zim)
 android.ui.remove_tab=தத்தளை நீக்கு
+android.ui.pref_zoom_entry_automatic=தன்னியக்கம்
+android.ui.pref_zoom_entry_medium=நடுத்தரம்
 android.ui.pref_backtotop=மேலே செல்லவும்

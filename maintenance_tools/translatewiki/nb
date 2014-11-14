@@ -1,5 +1,6 @@
 # Messages for Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
+# Author: E1d1eb90
 # Author: EvenT
 # Author: Laaknor
 # Author: Nghtwlkr
@@ -66,6 +67,7 @@ ui.main.mark=Marker denne siden
 ui.main.unmark=Fjern markering for valgte
 ui.main.reload=Last inn bokmerkesamling på nytt
 ui.main.defaultset=Standardsamling
+ui.main.saveMediaAs=Lagre media som...
 ui.main.openLinkInNewTab=Åpne lenke i ny fane
 ui.main.searchFor=Søk etter
 ui.main.copyLinkAddress=Kopier lenkeadresse
@@ -124,6 +126,7 @@ ui.messages.information=Informasjon
 ui.messages.indexing=Indekserer …
 ui.messages.selectBookmarkSet=Velg fil med bokmerkesamling
 ui.messages.nameBookmarkSet=Skriv inn filnavnet på bokmerkesettet
+ui.messages.bookmarkReferingOtherContent=Dette bokmerket henviser til annet innhold. Vil du laste det inn?
 ui.messages.newContentAvailable=Nytt innhold er tilgjengelig for nedlasting.
 ui.messages.newContentAvailableInvitation=Nytt innhold er tilgjengelig for nedlasting. Ønsker du å se det?
 ui.messages.preparingContentDownload=Forbereder nedlasting …
@@ -131,7 +134,39 @@ ui.messages.contentDownloadFinished=Nedlasting av «%1» er ferdig.
 ui.messages.feedback=Tilbakemelding
 ui.messages.library=Bibliotek
 ui.messages.fullscreen=Full skjerm
-# Fuzzy
-ui.messages.quitFullscreen=Avslutt fullskjermmodus
+ui.messages.quitFullscreen=Avslutt fullskjerm
 ui.messages.integrityCheckSuccessful=Filintegriteten ble sjekket og funnet i orden.
 ui.messages.integrityCheckFailed=Filintegriteten ble sjekket og funnet å være skadet.
+android.ui.menu_share=Del med venner
+android.ui.info_share_title=Jeg nyter Wikipedia offline med Kiwix!
+android.ui.info_share_content=Jeg nyter Wikipedia offline med Kiwix! Hele menneskehetens kunnskap tilgjengelig hvor enn du er! Uten internett! http://goo.gl/h9Smkk
+android.ui.share_via=Del via...
+android.ui.button_backtotop=Tilbake til toppen
+android.ui.articlesearch_hint=Skriv for å finne artikler
+android.ui.choose_file=Velg en ZIM-innholdsfil (*.zim)
+android.ui.open_in_new_tab=Åpne lenke i ny fane?
+android.ui.remove_tab_confirm=Vil du lukke denne fanen?
+android.ui.remove_tab=Lukk fanen
+android.ui.rescan_fs=Søk gjennom SD-kortet igjen
+android.ui.rescan_fs_warning=Søker etter ZIM-filer, vennligst vent...
+android.ui.error_nozimfilesfound=Ingen ZIM-filer ble funnet på din enhet. Ta en kikk på hjelpesiden for hjelp om hvordan en laster inn innhold i Kiwix. Hvis du har lastet inn en ZIM-fil på din enhet/eksterne lagring kan du forsøke på nytt om ett minutt eller omstarte enheten.
+android.ui.error_filenotfound=Feil: Den valgte ZIM-filen ble ikke funnet
+android.ui.error_fileinvalid=Feil: Den valgte filen er ikke en gyldig ZIM-fil
+android.ui.error_articlenotfound=Feil: Kunne ikke laste inn artikkelen \"%1$s\".
+android.ui.error_articleurlnotfound=Feil: Kunne ikke laste inn artikkelen (Url: %1$s).
+android.ui.pref_zoom_title=Zoom-nivå
+android.ui.pref_zoom_enable=Zoom-kontroller
+android.ui.pref_zoom_enable_summary=Vis en zoom-knapp nede til høyre i skjermbildet
+android.ui.pref_zoom_entry_automatic=Automatisk
+android.ui.pref_zoom_entry_small=Liten
+android.ui.pref_zoom_entry_medium=Medium
+android.ui.pref_zoom_entry_large=Stor
+android.ui.pref_nightmode=Nattmodus
+android.ui.pref_nightmode_summary=Vis artikler med inverterte farger
+android.ui.pref_language_chooser=Velg et språk
+android.ui.pref_info_title=Informasjon
+android.ui.pref_info_version=Versjon
+android.ui.pref_backtotop=Tilbake til toppen
+android.ui.pref_backtotop_summary=Vis en knapp nederst på siden for å returnere til toppen
+android.ui.save_media_error=En feil oppstod under lagring av mediet!
+android.ui.save_media_saved=Lagret media som %1$s i din bildemappe.
