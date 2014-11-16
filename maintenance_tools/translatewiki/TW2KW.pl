@@ -27,11 +27,14 @@ my $duplicates = {
     "android.ui.menu_home" => "ui.main.home",
     "android.ui.menu_randomarticle" => "ui.main.randomArticle",
     "android.ui.menu_help" => "ui.main.help",
+    "android.ui.save_media" => "ui.main.saveMediaAs",
     "android.ui.menu_search" => "ui.main.search",
     "android.ui.search_label" => "ui.main.search",
     "android.ui.menu_searchintext" => "ui.main.findInText",
     "android.ui.menu_settings" => "ui.preferences.preferences",
     "android.ui.pref_display_title" => "ui.main.display",
+    "android.ui.pref_language_title" => "ui.main.language",
+    "android.ui.pref_info_title" => "ui.messages.information",
     "android.ui.pref_zoom_dialogtitle" => "android.ui.pref_zoom_title",
     "android.ui.menu_exit" => "ui.main.quit",
 };
@@ -133,14 +136,14 @@ foreach my $language (@languages) {
 	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
 	my $languageAndroidSource = $languageAndroidSourceMaster;
 	
-	while ($tmpLanguageAndroidSource =~ /<(string\-array|string)(.*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/string\-array|<\/string)>/smg) {
+	while ($tmpLanguageAndroidSource =~ /<(string|item)([^\-]*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/)(string|item)>/sg) {
 	    my $tag = $1;
 	    my $middle1 = $2;
 	    my $name = $3;
 	    my $middle2 = $4;
 	    my $value = $5;
-	    my $last = $6;
-	    
+	    my $last = $6.$7;
+
 	    if (exists($androidHash->{$name})) {
 		$value = $androidHash->{$name};
 		$value =~ s/'/\\'/gm;
@@ -150,7 +153,7 @@ foreach my $language (@languages) {
 		$value =~ s/'/\\'/gm;
 	    }
 	    
-	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6\E/$tag$middle1$name$middle2$value$last/mg;
+	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6$7\E/$tag$middle1$name$middle2$value$last/mg;
 	}
 	
 	$localePath = $path."/android/res/values-".$language;

@@ -2,11 +2,13 @@
 # Exported from translatewiki.net
 # Author: Ale.salmo
 # Author: Aushulz
+# Author: Bertaz
 # Author: Beta16
 # Author: Inskatolata
 # Author: Kelson
 # Author: McDutchie
 # Author: Nemo bis
+# Author: Peg60
 # Author: Ximo17
 
 ui.main.cssdirection=ltr
@@ -20,6 +22,7 @@ ui.main.openFile=Apri...
 ui.main.openFile.accesskey=A
 ui.main.browseLibrary=Sfoglia la libreria
 ui.main.hideLibrary=Nascondi la libreria
+ui.main.browseLibrary.accesskey=B
 ui.main.lastOpen=Aperti di recente...
 ui.main.saveFile=Salva pagina con nome...
 ui.main.saveFile.accesskey=S
@@ -42,9 +45,9 @@ ui.main.audible=Ascolta
 ui.main.transliteration=Traslitterazione
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferenze
-# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.server=Server
+ui.main.server.accesskey=s
 ui.main.display=Visualizza
 ui.main.display.accesskey=V
 ui.main.zoom=Dimensione testo
@@ -56,6 +59,7 @@ ui.main.zoomout.accesskey=D
 ui.main.zoomorig=Originale
 ui.main.zoomorig.accesskey=O
 ui.main.invertedColors=Colori invertiti
+ui.main.invertedColors.accesskey=I
 ui.main.language=Lingua
 ui.main.language.accesskey=L
 ui.main.skin=Aspetto
@@ -102,7 +106,7 @@ ui.main.mark=Aggiungi questa pagina ai segnalibri
 ui.main.unmark=Togli questa pagina dai segnalibri
 ui.main.reload=Ricarica collezione di segnalibri
 ui.main.defaultset=Collezione predefinita
-ui.main.saveImageAs=Salva immagine con nome...
+ui.main.saveMediaAs=Salva file multimediale come...
 ui.main.openLinkInNewTab=Apri il collegamento in una nuova scheda
 ui.main.searchFor=Ricerca
 ui.main.copyLinkAddress=Copia l'indirizzo del collegamento
@@ -161,6 +165,7 @@ ui.messages.information=Informazioni
 ui.messages.indexing=Indicizzazione
 ui.messages.selectBookmarkSet=Seleziona il file della collezione di segnalibri
 ui.messages.nameBookmarkSet=Inserisci il nome del file della collezione di segnalibri
+ui.messages.bookmarkReferingOtherContent=Questo segnalibro si riferisce a un altro contenuto, vuoi caricarlo?
 ui.messages.newContentAvailable=Ci sono nuovi contenuti disponibili per il download.
 ui.messages.newContentAvailableInvitation=Ci sono nuovi contenuti disponibili per il download. Vuoi vederli?
 ui.messages.preparingContentDownload=Preparazione del download...
@@ -171,10 +176,17 @@ ui.messages.fullscreen=A tutto schermo
 ui.messages.quitFullscreen=Esci dalla modalità a tutto schermo
 ui.messages.integrityCheckSuccessful=L'integrità del file è stata verificata con successo.
 ui.messages.integrityCheckFailed=Il controllo dell'integrità è fallito. Il file è danneggiato.
+android.ui.menu_share=Condividi con amici
+android.ui.info_share_title=Mi piace Wikipedia Offline con Kiwix!
+android.ui.info_share_content=Mi piace Wikipedia Offline con Kiwix! Tutta la conoscenza umana a portata di mano, ovunque tu vada! Senza Internet! http://goo.gl/h9Smkk
+android.ui.share_via=Condividi tramite...
 android.ui.button_backtotop=Torna all'inizio
 android.ui.articlesearch_hint=Scrivi per ricercare le voci
 android.ui.choose_file=Seleziona un file di contenuto ZIM (*.zim)
-andoird.ui.rescan_fs=Ripeti scansione scheda SD
+android.ui.open_in_new_tab=Apri il collegamento in una nuova scheda?
+android.ui.remove_tab_confirm=Vuoi rimuovere questa scheda?
+android.ui.remove_tab=Rimuovi scheda
+android.ui.rescan_fs=Ripeti scansione scheda SD
 android.ui.rescan_fs_warning=Scansione per file ZIM, attendi...
 android.ui.error_nozimfilesfound=Nessun file ZIM trovano sul tuo dispositivo.\nLeggi la pagina di aiuto per ottenere indicazioni su come caricare il contenuto in Kiwix.\nSe ha inserito un file ZIM sul tuo dispositivo, potresti ritentare fra un minuto o riavviare il dispositivo.
 android.ui.error_filenotfound=Errore: il file ZIM selezionato non è stato trovato.
@@ -184,9 +196,16 @@ android.ui.error_articleurlnotfound=Errore: caricamento della voce (url: %1$s) n
 android.ui.pref_zoom_title=Livello di zoom
 android.ui.pref_zoom_enable=Controlli zoom
 android.ui.pref_zoom_enable_summary=Visualizza un pulsante di zoom nell'angolo inferiore destro dello schermo
+android.ui.pref_zoom_entry_automatic=Automatico
+android.ui.pref_zoom_entry_small=Piccolo
+android.ui.pref_zoom_entry_medium=Medio
+android.ui.pref_zoom_entry_large=Grande
 android.ui.pref_nightmode=Modalità notte
 android.ui.pref_nightmode_summary=Visualizza le voci con colori invertiti
+android.ui.pref_language_chooser=Scegli la lingua
 android.ui.pref_info_title=Informazioni
 android.ui.pref_info_version=Versione
 android.ui.pref_backtotop=Torna all'inizio
 android.ui.pref_backtotop_summary=Mostra un pulsante alla fine della pagina per scorrere fino all'inizio
+android.ui.save_media_error=Si è verificato un errore durante il salvataggio del file multimediale!
+android.ui.save_media_saved=Salvato file multimediale come %1$s nella cartella Immagini

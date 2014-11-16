@@ -66,7 +66,6 @@ ui.main.mark=Atzīmēt šo lapu
 ui.main.unmark=Atcelt atzīmēšanu
 ui.main.reload=Pārlādēt grāmatzīmju kopu
 ui.main.defaultset=Noklusētā kopa
-ui.main.saveImageAs=Saglabāt attēlu kā...
 ui.main.openLinkInNewTab=Atvērt saiti jaunā lapā
 ui.main.searchFor=Meklēt
 ui.main.copyLinkAddress=Kopēt saites adresi

@@ -1,5 +1,6 @@
 # Messages for Romanian (română)
 # Exported from translatewiki.net
+# Author: Banica
 # Author: Firilacroco
 # Author: Kelson
 # Author: Minisarm
@@ -14,7 +15,7 @@ ui.main.file=Fișier
 ui.main.file.accesskey=F
 ui.main.openFile=Deschide un fișier...
 ui.main.openFile.accesskey=O
-ui.main.browseLibrary=Răsfoire bibliotecă
+ui.main.browseLibrary=Răsfoiește biblioteca
 ui.main.hideLibrary=Ascunde biblioteca
 ui.main.browseLibrary.accesskey=B
 ui.main.lastOpen=Deschise recent...
@@ -65,8 +66,8 @@ ui.main.home=Acasă
 ui.main.searchBar=Bara de căutare
 ui.main.search=Căutare
 ui.main.searchPlaceholder=Introduceți aici textul de căutat...
-ui.main.findInText=Căutare în text
-ui.main.noSearchBar=Căutarea necesită un fișier Zim indexat
+ui.main.findInText=Caută în text
+ui.main.noSearchBar=Căutarea necesită un fișier ZIM indexat
 ui.main.bookmarks=Semne de carte
 ui.main.results.title=Rezultatele căutării
 ui.main.bmkLabel=Semne de carte:
@@ -77,7 +78,7 @@ ui.main.mark=Marchează această pagină
 ui.main.unmark=Șterge marcajul selectat
 ui.main.reload=Reîncarcă setul de semne de carte
 ui.main.defaultset=Set implicit
-ui.main.saveImageAs=Salvează imaginea ca...
+ui.main.saveMediaAs=Salvează multimedia ca...
 ui.main.openLinkInNewTab=Deschide legătura într-o filă nouă
 ui.main.searchFor=Caută după textul selectat
 ui.main.copyLinkAddress=Copiază adresa legăturii
@@ -136,6 +137,7 @@ ui.messages.information=Informații
 ui.messages.indexing=Se indexează
 ui.messages.selectBookmarkSet=Selectați fișierul care conține setul de semne de carte
 ui.messages.nameBookmarkSet=Introduceți numele setului de semne de carte
+ui.messages.bookmarkReferingOtherContent=Acest semn de carte se referă la alt conținut. Doriți să-l încărcați?
 ui.messages.newContentAvailable=Există conținut nou disponibil pentru descărcare.
 ui.messages.newContentAvailableInvitation=Există conținut nou disponibil pentru descărcare. Doriți să îl vedeți?
 ui.messages.preparingContentDownload=Se pregătește descărcarea...
@@ -143,18 +145,39 @@ ui.messages.contentDownloadFinished=S-a finalizat descărcarea pentru „%1”.
 ui.messages.feedback=Părere
 ui.messages.library=Bibliotecă
 ui.messages.fullscreen=Ecran complet
-# Fuzzy
-ui.messages.quitFullscreen=Ieșire din modul ecran complet
+ui.messages.quitFullscreen=Ieșire din ecran complet
 ui.messages.integrityCheckSuccessful=Integritatea fișierului a fost verificată cu succes.
 ui.messages.integrityCheckFailed=Verificarea integrității fișierului a eșuat. Fișierul dumneavoastră este corupt.
+android.ui.menu_share=Partajează cu prietenii
+android.ui.info_share_title=Îmi place Wikipedia offline cu Kiwix!
+android.ui.info_share_content=Îmi place Wikipedia offline cu Kiwix! Toate cunoștințele omenirii la îndemână oricând vrei! Fără Internet! http://goo.gl/h9Smkk
+android.ui.share_via=Distribuire prin...
+android.ui.button_backtotop=Începutul paginii
 android.ui.articlesearch_hint=Tastați pentru a căuta articole
 android.ui.choose_file=Alegeți un fișier cu conținut ZIM (*.zim)
+android.ui.open_in_new_tab=Deschideți legătura într-o filă nouă?
+android.ui.remove_tab_confirm=Doriți să eliminați această filă?
+android.ui.remove_tab=Eliminare filă
+android.ui.rescan_fs=Rescanează cardul SD
+android.ui.rescan_fs_warning=Se caută fișiere ZIM; vă rugăm să așteptați...
 android.ui.error_nozimfilesfound=Nu s-au găsit fișiere ZIM pe dispozitivul dumneavoastră.\nConsultați pagina de ajutor pentru detalii despre încărcarea conținutului în Kiwix.\nDacă totuși ați stocat un fișier ZIM pe dispozitivul dv./stocarea dv. externă, puteți reîncerca peste un minut sau puteți reporni dispozitivul.
 android.ui.error_filenotfound=Eroare: Fișierul ZIM selectat nu poate fi găsit.
 android.ui.error_fileinvalid=Eroare: Fișierul selectat nu este un fișier ZIM valid.
+android.ui.error_articlenotfound=Eroare: Încărcarea articolului \"%1$s\" nu a reușit.
 android.ui.error_articleurlnotfound=Eroare: Încărcarea articolului (Url: %1$s) nu a reușit.
 android.ui.pref_zoom_title=Nivel de zoom
 android.ui.pref_zoom_enable=Controale de zoom
 android.ui.pref_zoom_enable_summary=Afișează un buton de zoom în colțul din dreapta jos al ecranului
+android.ui.pref_zoom_entry_automatic=Automat
+android.ui.pref_zoom_entry_small=Scăzut
+android.ui.pref_zoom_entry_medium=Mediu
+android.ui.pref_zoom_entry_large=Ridicat
 android.ui.pref_nightmode=Mod de noapte
 android.ui.pref_nightmode_summary=Afișează articolele în culori inversate
+android.ui.pref_language_chooser=Alegeți o limbă
+android.ui.pref_info_title=Informații
+android.ui.pref_info_version=Versiune
+android.ui.pref_backtotop=Începutul paginii
+android.ui.pref_backtotop_summary=Afișează un buton la sfârșitul paginii pentru a reveni la începutul acesteia
+android.ui.save_media_error=A apărut o eroare în încercarea de a salva fișierul media!
+android.ui.save_media_saved=Fișierul media salvat ca %1$s în folderul Imagini

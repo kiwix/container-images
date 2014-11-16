@@ -3,6 +3,8 @@
 # Author: Giro720
 # Author: Gusta
 # Author: Hamilton Abreu
+# Author: Imperadeiro98
+# Author: Kelson
 # Author: Luckas
 # Author: Luckas Blade
 # Author: Malafaya
@@ -27,7 +29,7 @@ ui.main.saveFile=Gravar página como...
 ui.main.saveFile.accesskey=S
 ui.main.print=Imprimir
 ui.main.print.accesskey=I
-ui.main.printPdf=Imprimir para PDF
+ui.main.printPdf=Imprimir como PDF
 ui.main.printPdf.accesskey=D
 ui.main.quit=Sair
 ui.main.quit.accesskey=R
@@ -41,7 +43,7 @@ ui.main.copy=Copiar
 ui.main.copy.accesskey=C
 ui.main.mute=Sem som
 ui.main.audible=Audível
-ui.main.transliteration=Translineação
+ui.main.transliteration=Transliteração
 ui.main.transliteration.accesskey=T
 ui.main.preferences=Preferências
 ui.main.preferences.accesskey=s
@@ -103,7 +105,6 @@ ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar selecionadas
 ui.main.reload=Recarregar Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
-ui.main.saveImageAs=Guardar a imagem como ...
 ui.main.openLinkInNewTab=Abrir a ligação num novo separador
 ui.main.searchFor=Procurar por
 ui.main.copyLinkAddress=Copiar endereço do link
@@ -169,9 +170,32 @@ ui.messages.contentDownloadFinished=O descarregamento de '%1' terminou.
 ui.messages.feedback=Comentários
 ui.messages.library=Biblioteca
 ui.messages.fullscreen=Tela inteira
-# Fuzzy
-ui.messages.quitFullscreen=Sair do modo de tela inteira
+ui.messages.quitFullscreen=Sair de ecrã inteiro
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
+android.ui.menu_share=Compartilhe com amigos
+android.ui.info_share_title=Eu disfruto com o Kiwix a minha Wikipédia Offline!
+android.ui.info_share_content=Eu disfruto da Wikipédia Offline  com o Kiwix! Todo o conhecimento humano na mão vá para onder for. http://goo.gl/h9Smkk
+android.ui.share_via=Compartilhar via...
+android.ui.button_backtotop=Voltar ao Topo
 android.ui.articlesearch_hint=Digite para pesquisar artigos.
 android.ui.choose_file=Selecione um arquivo de conteúdo ZIM (*.zim)
+android.ui.open_in_new_tab=Abrir ligação num novo separador?
+android.ui.remove_tab_confirm=Deseja remover este separador?
+android.ui.remove_tab=Remover separador
+android.ui.rescan_fs=Voltar a examinar o cartão SD
+android.ui.rescan_fs_warning=Escaneando os ZIM files, por favor espere...
+android.ui.error_nozimfilesfound=Não foram encontrados or ficheiros ZIM no dispositivo.\nAtentamente reveja a Help Page para conhecer métodos e meios de como carregar conteúdo para o Kiwix.\nSe voçê já colocou o ZIM no dispotivo alvo, tente novamente no espaço de um minuto recarregar ou faça restart ao dispositivo .
+android.ui.error_filenotfound=Erro: O ficheiro ZIM selecionado não pôde ser encontrado.
+android.ui.error_fileinvalid=Erro: O ficheiro selecionado não é um ficheiro ZIM válido.
+android.ui.error_articlenotfound=Erro com: carregamento do artigo \"%1$s\" falhou.
+android.ui.error_articleurlnotfound=Erro com: carregamento do artigo, ligação (Url: %1$s) falhou.
+android.ui.pref_zoom_title=Nível de Zoom
+android.ui.pref_zoom_enable=Controlos de Zoom
+android.ui.pref_zoom_enable_summary=Exibir o botão de Zoom no canto inferior direito da imagem
+android.ui.pref_nightmode=Modo nocturno
+android.ui.pref_nightmode_summary=Mostrat artigos com cores invetidas
+android.ui.pref_info_title=Informação
+android.ui.pref_info_version=Versão
+android.ui.pref_backtotop=Voltar ao Topo
+android.ui.pref_backtotop_summary=Exibir botão no fim da página para redireccionar ao inicio da página

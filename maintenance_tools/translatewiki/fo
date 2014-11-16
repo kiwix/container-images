@@ -64,7 +64,6 @@ ui.main.mark=Markera hesa síðu
 ui.main.unmark=Tak burtur markeringarnar
 ui.main.reload=Endurinnles Bókamerkis Samling
 ui.main.defaultset=Standarsamling
-ui.main.saveImageAs=Goym mynd sum...
 ui.main.openLinkInNewTab=Lat upp leinkju í nýggjari flykru (tab)
 ui.main.searchFor=Leita eftir
 ui.main.copyLinkAddress=Avrita leinkju adressuna

@@ -2,8 +2,10 @@
 # Exported from translatewiki.net
 # Author: Alvaro Vidal-Abarca
 # Author: Arnaugir
+# Author: Fitoschido
 # Author: Gemmaa
 # Author: Grondin
+# Author: Hiperpobla
 # Author: McDutchie
 # Author: SMP
 # Author: Solde
@@ -101,7 +103,7 @@ ui.main.mark=Afegeix als preferits
 ui.main.unmark=Treu dels preferits
 ui.main.reload=Recarrega el grup de preferits
 ui.main.defaultset=Grup predeterminat
-ui.main.saveImageAs=Desa imatge com a...
+ui.main.saveMediaAs=Desa medis com...
 ui.main.openLinkInNewTab=Obre l'enllaç en una pestanya nova
 ui.main.searchFor=Buscar
 ui.main.copyLinkAddress=Copia l'adreça d'enllaç
@@ -160,7 +162,7 @@ ui.messages.information=Informació
 ui.messages.indexing=Indexant
 ui.messages.selectBookmarkSet=Selecciona grup d'adreces d'interès
 ui.messages.nameBookmarkSet=Insereix nom de grup d'adreces d'interès
-ui.messages.newContentAvailable=Hi ha nou contingut disponible per descarregar.
+ui.messages.newContentAvailable=Hi ha contingut nou disponible per baixar.
 ui.messages.newContentAvailableInvitation=Hi ha nou contingut disponible per descarregar. Voleu veure'ls?
 ui.messages.preparingContentDownload=S'està preparant el descarregar...
 ui.messages.contentDownloadFinished=La descàrrega de "% 1" s'acaba.
@@ -170,10 +172,17 @@ ui.messages.fullscreen=Pantalla sencera
 ui.messages.quitFullscreen=Surt del mode de pantalla completa
 ui.messages.integrityCheckSuccessful=La integritat del fitxer s'ha comprovat correctament.
 ui.messages.integrityCheckFailed=Ha fallat la comprovació d'integritat. El seu arxiu està corrupte.
+android.ui.menu_share=Comparteix amb amics
+android.ui.info_share_title=M'agrada Wikipedia Offline amb Kiwix!
+android.ui.info_share_content=M'agrada Wikipedia Offline amb Kiwix! Els coneixements humans sencers a la mà allà on vagis! Sense Internet! http://goo.gl/h9Smkk
+android.ui.share_via=Compartir mitjançant...
 android.ui.button_backtotop=Tornar a dalt
 android.ui.articlesearch_hint=Escriviu per buscar articles
 android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
-andoird.ui.rescan_fs=Reescanejar targeta SD
+android.ui.open_in_new_tab=Obrir l'enllaç en una pestanya nova?
+android.ui.remove_tab_confirm=Voleu suprimir aquesta pestanya?
+android.ui.remove_tab=Suprimir pestanya
+android.ui.rescan_fs=Reescanejar targeta SD
 android.ui.rescan_fs_warning=Buscant arxius ZIM, espereu si us plau...
 android.ui.error_nozimfilesfound=No s'han trobat arxius ZIM en el vostre dispositiu. Visiteu la Pàgina d'Ajuda per obtenir instruccions sobre com carregar contingut a Kiwix. Si realment vau col·locar un arxiu ZIM en el vostre dispositiu/emmagatzematge extern, podeu tornar a intentar-ho en uns moments, o reinicieu el vostre dispositiu.
 android.ui.error_filenotfound=Error: no s'ha trobat el fitxer ZIP.

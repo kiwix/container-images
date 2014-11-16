@@ -95,7 +95,6 @@ ui.main.mark=Merkitse tämä sivu
 ui.main.unmark=Poista merkintä valituista
 ui.main.reload=Lataa kirjanmerkkikokoelma uudelleen
 ui.main.defaultset=Oletuskokoelma
-ui.main.saveImageAs=Tallenna kuva nimellä...
 ui.main.openLinkInNewTab=Avaa linkki uudessa välilehdessä
 ui.main.searchFor=Etsi
 ui.main.copyLinkAddress=Kopioi linkin osoite

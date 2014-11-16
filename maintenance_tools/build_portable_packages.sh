@@ -1,4 +1,5 @@
 #!/bin/bash
+
 SOURCE=/var/www/zimfarm.kiwix.org/upload/zim2index/
 ZIMTARGET=/var/www/zimfarm.kiwix.org/upload/zim/
 ZIPTARGET=/var/www/zimfarm.kiwix.org/upload/portable/

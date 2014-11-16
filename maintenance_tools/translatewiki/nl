@@ -2,8 +2,10 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: McDutchie
+# Author: Romaine
 # Author: SPQRobin
 # Author: Siebrand
+# Author: Southparkfan
 
 ui.main.cssdirection=ltr
 ui.main.osxservices=Diensten
@@ -98,7 +100,7 @@ ui.main.mark=Pagina markeren
 ui.main.unmark=Markering voor geselecteerde verwijderen
 ui.main.reload=Bladwijzergroep opnieuw laden
 ui.main.defaultset=Standaardgroep
-ui.main.saveImageAs=Afbeelding opslaan als...
+ui.main.saveMediaAs=Sla media op als...
 ui.main.openLinkInNewTab=Koppeling openen in nieuw tabblad
 ui.main.searchFor=Zoeken naar
 ui.main.copyLinkAddress=Koppelingslocatie kopiëren
@@ -157,6 +159,7 @@ ui.messages.information=Informatie
 ui.messages.indexing=Bezig met indexeren...
 ui.messages.selectBookmarkSet=Selecteer een favorietenbestand
 ui.messages.nameBookmarkSet=Geef een naam op van het favorietenbestand
+ui.messages.bookmarkReferingOtherContent=Deze bladwijzer verwijst naar andere inhoud. Wilt u die laden?
 ui.messages.newContentAvailable=Er is nieuwe inhoud te downloaden.
 ui.messages.newContentAvailableInvitation=Er is nieuwe inhoud te downloaden. Wilt u die bekijken?
 ui.messages.preparingContentDownload=Downloaden wordt voorbereid...
@@ -167,10 +170,17 @@ ui.messages.fullscreen=Volledig scherm
 ui.messages.quitFullscreen=Volledig schermmodus verlaten
 ui.messages.integrityCheckSuccessful=De bestandsintegriteit is gecontroleerd.
 ui.messages.integrityCheckFailed=De integriteitscontrole is mislukt. Uw bestand is beschadigd.
+android.ui.menu_share=Delen met vrienden
+android.ui.info_share_title=Ik geniet van Wikipedia Offline met Kiwix!
+android.ui.info_share_content=Ik geniet van Wikipedia Offline met Kiwix! Alle menselijke kennis bij de hand waar u gaat! Zonder internet! http://goo.gl/h9Smkk
+android.ui.share_via=Delen...
 android.ui.button_backtotop=Terug naar boven
 android.ui.articlesearch_hint=Voer tekst in om pagina's te zoeken
 android.ui.choose_file=Selecteer een ZIM inhoudsbestand (*.zim)
-andoird.ui.rescan_fs=SD-kaart opnieuw scannen
+android.ui.open_in_new_tab=Koppeling openen in nieuw tabblad?
+android.ui.remove_tab_confirm=Wilt u dit tabblad verwijderen?
+android.ui.remove_tab=Tabblad verwijderen
+android.ui.rescan_fs=SD-kaart opnieuw scannen
 android.ui.rescan_fs_warning=Zoeken naar ZIM-bestanden. Even geduld...
 android.ui.error_nozimfilesfound=Er zijn geen ZIM-bestanden op uw apparaat gevonden.\nKijk op de Hulppagina voor hulp bij het laden van inhoud in Kiwix.\nAls u een ZIM-bestand op uw apparaat of externe opslag hebt gezet, probeer het dan even een aantal seconden opnieuw of herstart uw apparaat.
 android.ui.error_filenotfound=Fout: het geselecteerde ZIM-bestand kon niet gevonden worden.
@@ -180,9 +190,16 @@ android.ui.error_articleurlnotfound=Fout: Het laden van de pagina (URL: %1$s) is
 android.ui.pref_zoom_title=Zoomniveau
 android.ui.pref_zoom_enable=Besturingselementen voor zoomen
 android.ui.pref_zoom_enable_summary=Rechtsonder een zoomknop weergeven
+android.ui.pref_zoom_entry_automatic=Automatisch
+android.ui.pref_zoom_entry_small=Klein
+android.ui.pref_zoom_entry_medium=Gemiddeld
+android.ui.pref_zoom_entry_large=Groot
 android.ui.pref_nightmode=Nachtmodus
 android.ui.pref_nightmode_summary=Pagina's weergeven met omgekeerde kleuren
+android.ui.pref_language_chooser=Taal kiezen
 android.ui.pref_info_title=Informatie
 android.ui.pref_info_version=Versie
 android.ui.pref_backtotop=Terug naar boven
 android.ui.pref_backtotop_summary=Aan het einde van de pagina een knop weergeven om terug te gaan naar boven
+android.ui.save_media_error=Er is een fout opgetreden bij het opslaan van de media!
+android.ui.save_media_saved=Het bestand is opgeslagen als %1$s in uw afbeeldingenmap

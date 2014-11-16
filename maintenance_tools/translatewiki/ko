@@ -2,6 +2,8 @@
 # Exported from translatewiki.net
 # Author: Deacon1289
 # Author: Hym411
+# Author: Priviet
+# Author: Revi
 # Author: 아라
 
 ui.main.osxservices=서비스
@@ -13,7 +15,7 @@ ui.main.openFile=파일 열기...
 ui.main.browseLibrary=라이브러리 보기
 ui.main.hideLibrary=라이브러리 숨기기
 ui.main.lastOpen=최근에 사용한 항목...
-ui.main.saveFile=다른 이름으로 저장...
+ui.main.saveFile=다른 이름으로 문서 저장...
 ui.main.print=인쇄
 ui.main.printPdf=PDF로 인쇄
 ui.main.quit=끝내기
@@ -26,7 +28,7 @@ ui.main.audible=유음
 ui.main.transliteration=표기법
 ui.main.preferences=환경 설정
 ui.main.server=서버
-ui.main.display=표시
+ui.main.display=보기
 ui.main.zoom=확대/축소
 ui.main.zoomin=확대
 ui.main.zoomout=축소
@@ -63,10 +65,10 @@ ui.main.notesLabel=책갈피 노트:
 ui.main.loadbmk=책갈피 세트 불러오기
 ui.main.newbmk=새 책갈피 세트 만들기
 ui.main.mark=이 페이지 표시하기
-ui.main.unmark=이 페이지 표시 취소하기
+ui.main.unmark=선택을 표시 취소하기
 ui.main.reload=책갈피 세트 다시 불러오기
-ui.main.defaultset=기본값 세트
-ui.main.saveImageAs=그림을 다른 이름으로 저장...
+ui.main.defaultset=기본값 집합
+ui.main.saveMediaAs=다른 이름으로 미디어 저장...
 ui.main.openLinkInNewTab=새 탭에 링크 열기
 ui.main.searchFor=검색 대상
 ui.main.copyLinkAddress=링크 주소 복사
@@ -74,7 +76,7 @@ ui.main.close=닫기
 ui.main.library.myLibrary=내 라이브러리
 ui.main.library.getNewFiles=새 파일 얻기
 ui.main.library.searchZimFiles=ZIM 파일 검색
-ui.main.library.sortBy=정렬
+ui.main.library.sortBy=정렬 기준
 ui.main.library.sortBy.title=제목
 ui.main.library.sortBy.size=크기
 ui.main.library.sortBy.date=날짜
@@ -132,13 +134,22 @@ ui.messages.contentDownloadFinished='%1'의 다운로드를 완료했습니다.
 ui.messages.feedback=반응
 ui.messages.library=라이브러리
 ui.messages.fullscreen=전체 화면
-# Fuzzy
-ui.messages.quitFullscreen=전체 화면 모드에서 나가기
+ui.messages.quitFullscreen=전체 화면에서 나가기
 ui.messages.integrityCheckSuccessful=파일 무결성을 성공적으로 확인했습니다.
 ui.messages.integrityCheckFailed=무결성 검사를 실패했습니다. 파일은 손상되었습니다.
+android.ui.menu_share=친구와 공유하기
+android.ui.info_share_title=Kiwix로 위키백과 오프라인을 즐깁니다!
+android.ui.info_share_content=Kiwix로 위키백과 오프라인을 즐깁니다! 어디를 가든 당신의 손에 모든 인류 지식이! 인터넷 없이! http://goo.gl/h9Smkk
+android.ui.share_via=...을 통해 공유
+android.ui.button_backtotop=맨 위로 돌아가기
 android.ui.articlesearch_hint=문서를 찾아보는 종류
-android.ui.choose_file=ZIM 콘텐츠 파일 (*.zim) 선택
-android.ui.error_nozimfilesfound=장치에서 ZIM 파일이 발견되지 않았습니다.\n도움말에서 콘텐츠를 어떻게 키윅스로 불러오는지 알아보세요.\n만약 파일을 외장 디스크나 기기에 넣었다면, 몇분 후 재시도하거나 재부팅해 보세요.
+android.ui.choose_file=ZIM 내용 파일 (*.zim) 선택
+android.ui.open_in_new_tab=새 탭으로 링크를 여시겠습니까?
+android.ui.remove_tab_confirm=이 탭을 제거하시겠습니까?
+android.ui.remove_tab=탭 제거
+android.ui.rescan_fs=SD 카드를 다시 검색
+android.ui.rescan_fs_warning=ZIM 파일을 검색 중입니다. 잠시 기다려주세요...
+android.ui.error_nozimfilesfound=장치에서 ZIM 파일이 발견되지 않았습니다.\n도움말에서 내용을 어떻게 Kiwix로 불러오는지 알아보세요.\n만약 파일을 외장 디스크나 기기에 넣었다면, 잠시 뒤에 다시 시도하거나 자시 시작해 보세요.
 android.ui.error_filenotfound=오류: 선택된 ZIM 파일을 찾을 수 없습니다
 android.ui.error_fileinvalid=에러: 선택한 파일은 올바른 ZIM 파일이 아닙니다.
 android.ui.error_articlenotfound=오류: \"%1$s\" 문서를 불러오는 데 실패했습니다.
@@ -150,3 +161,5 @@ android.ui.pref_nightmode=야간 모드
 android.ui.pref_nightmode_summary=되돌린 색으로 문서를 보여줍니다
 android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
+android.ui.pref_backtotop=맨 위로 돌아가기
+android.ui.pref_backtotop_summary=맨 위로 돌아가는 버튼을 문서의 끝에 표시하기

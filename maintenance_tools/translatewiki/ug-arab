@@ -65,7 +65,6 @@ ui.main.mark=بۇ بەتكە بەلگە سال
 ui.main.unmark=تاللىغاننىڭ بەلگىسىنى چىقىرىۋەت
 ui.main.reload=خەتكۈچ تەڭشىكىنى قايتا يۈكلە
 ui.main.defaultset=كۆڭۈلدىكى تەڭشەك
-ui.main.saveImageAs=سۈرەتنى باشقا ئاتتا ساقلا
 ui.main.openLinkInNewTab=ئۇلانمىنى يېڭى بەتكۈچتە ئاچ
 ui.main.searchFor=ئىزدە
 ui.main.copyLinkAddress=ئۇلانما ئادرېسىنى كۆچۈر

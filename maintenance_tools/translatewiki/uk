@@ -6,6 +6,7 @@
 # Author: Base
 # Author: Dim Grits
 # Author: Kelson
+# Author: Mykola Swarnyk
 # Author: Probil
 # Author: Дар'я Козлова
 
@@ -102,7 +103,7 @@ ui.main.mark=Позначити цю сторінку
 ui.main.unmark=Зняти позначку з виділених
 ui.main.reload=Перезавантажити набір закладок
 ui.main.defaultset=Встановити за замовчуванням
-ui.main.saveImageAs=Зберегти зображення як ...
+ui.main.saveMediaAs=Зберегти медіафайл як...
 ui.main.openLinkInNewTab=Відкрити посилання у новій вкладці
 ui.main.searchFor=Шукати
 ui.main.copyLinkAddress=Копіювати адресу посилання
@@ -171,10 +172,17 @@ ui.messages.fullscreen=На весь екран
 ui.messages.quitFullscreen=Вийти з повноекранного режиму
 ui.messages.integrityCheckSuccessful=Цілісність файлу було успішно перевірено
 ui.messages.integrityCheckFailed=Збій перевірки цілісності. Ваш файл пошкоджено.
+android.ui.menu_share=Поділитися з друзями
+android.ui.info_share_title=Я люблю Вікіпедію в автономному режимі з Kiwix!
+android.ui.info_share_content=Мені подобається автономний режим Вікіпедії з Kiwix! Усі людські знання під рукою коли завгодно! Без Інтернету! http://goo.gl/h9Smkk
+android.ui.share_via=Поділитися через…
 android.ui.button_backtotop=Назад догори
 android.ui.articlesearch_hint=Наберіть для пошуку статей
 android.ui.choose_file=Виберіть файл вмісту ZIM (*.zim)
-andoird.ui.rescan_fs=Просканувати SD-карту
+android.ui.open_in_new_tab=Відкрити посилання у новій вкладці?
+android.ui.remove_tab_confirm=Ви дійсно хочете видалити цю вкладку?
+android.ui.remove_tab=Видалити вкладку
+android.ui.rescan_fs=Просканувати SD-карту
 android.ui.rescan_fs_warning=Сканування ZIM-файлів, будь ласка, зачекайте...
 android.ui.error_nozimfilesfound=Файлів ZIM не знайдено на вашому пристрої.\nПогляньте на сторінку допомогти, щоб отримати вказівки, як завантажувати вміст у Kiwix.\nЯкщо ви поклали файл ZIM на ваш пристрій/зовнішній носій, то можете повторити за хвилину або перезапустити пристрій.
 android.ui.error_filenotfound=Помилка: вибраний ZIM файл неможливо знайти.

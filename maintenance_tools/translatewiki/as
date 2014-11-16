@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Bishnu Saikia
 # Author: Devayon
+# Author: Gitartha.bordoloi
 # Author: Nilamdyuti
 
 ui.main.osxservices=সেৱাসমূহ
@@ -13,7 +14,7 @@ ui.main.openFile=ফাইল খুলক...
 ui.main.browseLibrary=লাইব্রেৰি ব্রাউজ কৰক
 ui.main.hideLibrary=পুথিভৰাল আঁৰ কৰক
 ui.main.lastOpen=বর্তমানে খোলা পৃষ্ঠা...
-ui.main.saveFile=অন্ন্য বাবে পৃষ্ঠা সংৰক্ষণ কৰক ...
+ui.main.saveFile=এই ধৰণে পৃষ্ঠা সংৰক্ষণ কৰক...
 ui.main.print=প্ৰিন্ট কৰিবলৈ
 ui.main.printPdf=পিডিএফোলোই প্রিন্ট কৰক
 ui.main.quit=বন্ধ

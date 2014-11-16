@@ -153,6 +153,9 @@ function getLastPiwikInsertionTime() {
   $xml = file_get_contents($apiUrl);
   if (preg_match('#<lastActionDateTime(?:\s+[^>]+)?>(.*?)</lastActionDateTime>#s', $xml, $matches)) {
     return strtotime($matches[1]);
+  } else {
+    echo $apiUrl."\n";
+    echo($xml."\n");
   }
   return 0;
 }

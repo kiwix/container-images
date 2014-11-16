@@ -7,17 +7,19 @@
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
+# Author: Linforest
 # Author: Liuxinyu970226
 # Author: Qiyue2001
 # Author: Shirayuki
 # Author: Xiaomingyan
 # Author: Yanmiao liu
 # Author: Yfdyh000
+# Author: Zjzengdongyang
 
 ui.main.osxservices=服务
 ui.main.osxhideapp=隐藏&brand.brandShortName;
 ui.main.osxhideothers=隐藏其他
-ui.main.osxshowall=全部显示
+ui.main.osxshowall=显示全部
 ui.main.file=文件
 ui.main.openFile=打开文件
 ui.main.browseLibrary=浏览库
@@ -55,7 +57,7 @@ ui.main.launchIndexing=启动索引
 ui.main.purgeHistory=清空历史
 ui.main.help=帮助
 ui.main.feedback=反馈
-ui.main.reportabug=错误报告
+ui.main.reportabug=报告错误
 ui.main.requestafeature=功能请求
 ui.main.about=关于&brand.brandShortName;
 ui.main.back=返回
@@ -76,7 +78,7 @@ ui.main.mark=标记此页
 ui.main.unmark=取消选中
 ui.main.reload=重新加载书签集
 ui.main.defaultset=默认设置
-ui.main.saveImageAs=保存图像为....
+ui.main.saveMediaAs=将媒体保存为…
 ui.main.openLinkInNewTab=在新标签页打开链接
 ui.main.searchFor=搜索
 ui.main.copyLinkAddress=复制链接地址
@@ -135,6 +137,7 @@ ui.messages.information=信息
 ui.messages.indexing=索引中
 ui.messages.selectBookmarkSet=选择书签集文件
 ui.messages.nameBookmarkSet=输入书签套集件名
+ui.messages.bookmarkReferingOtherContent=此书签正在参考其他内容，您想加载它么？
 ui.messages.newContentAvailable=有新内容可以下载。
 ui.messages.newContentAvailableInvitation=有新内容可以下载了。您希望查看吗？
 ui.messages.preparingContentDownload=正在准备下载...
@@ -145,10 +148,17 @@ ui.messages.fullscreen=全屏
 ui.messages.quitFullscreen=退出全屏
 ui.messages.integrityCheckSuccessful=成功地检查文件完整性。
 ui.messages.integrityCheckFailed=文件完整性检查失败。您的文件已损坏。
+android.ui.menu_share=分享给朋友
+android.ui.info_share_title=我享受离线维基百科在Kiwix中！
+android.ui.info_share_content=我享受离线维基百科在Kiwix中!无论你去哪里整个人类知识都在手边!无须联网！http://goo.gl/h9Smkk
+android.ui.share_via=共享
 android.ui.button_backtotop=返回顶端
 android.ui.articlesearch_hint=通过类型查找条目
 android.ui.choose_file=选择ZIM内容文件（*.zim）
-andoird.ui.rescan_fs=重新扫描 SD 卡
+android.ui.open_in_new_tab=在新标签页打开链接?
+android.ui.remove_tab_confirm=你想要删除此选项卡吗？
+android.ui.remove_tab=移除标签：
+android.ui.rescan_fs=重新扫描 SD 卡
 android.ui.rescan_fs_warning=正在扫描 ZIM 文件，请稍候...
 android.ui.error_nozimfilesfound=您的设备上找不到ZIM文件。\n请访问我们的帮助页面了解如何往Kiwix里下载内容。\n如果您确实已经把ZIM文件放在您的设备或者外部存储上了，请您几分钟后再试一次或重启您的设备。
 android.ui.error_filenotfound=错误：找不到指定的ZIM文件。
@@ -158,9 +168,16 @@ android.ui.error_articleurlnotfound=错误：加载文章（Url: %1$s）失败�
 android.ui.pref_zoom_title=缩放级别
 android.ui.pref_zoom_enable=变焦控制
 android.ui.pref_zoom_enable_summary=在屏幕右下角显示缩放按钮
+android.ui.pref_zoom_entry_automatic=自动
+android.ui.pref_zoom_entry_small=小
+android.ui.pref_zoom_entry_medium=中
+android.ui.pref_zoom_entry_large=大
 android.ui.pref_nightmode=夜间模式
 android.ui.pref_nightmode_summary=以反色调显示文章
+android.ui.pref_language_chooser=选择语言
 android.ui.pref_info_title=信息
 android.ui.pref_info_version=版本
 android.ui.pref_backtotop=返回顶端
 android.ui.pref_backtotop_summary=在页底显示一个按钮以供返回顶端
+android.ui.save_media_error=当试图保存媒体时出错 ！
+android.ui.save_media_saved=已将媒体作为%1$s保存于您的图片文件夹中

@@ -104,7 +104,6 @@ ui.main.mark=Σημειώστε αυτή τη σελίδα
 ui.main.unmark=Κατάργηση σήμανσης επιλεγμένο
 ui.main.reload=Επαναφόρτωση Συνόλου Σελιδοδεικτών
 ui.main.defaultset=Προεπιλεγμένο Σύνολο
-ui.main.saveImageAs=Αποθήκευση εικόνας ως...
 ui.main.openLinkInNewTab=Άνοιγμα συνδέσμου σε νέα καρτέλα
 ui.main.searchFor=Αναζήτηση για
 ui.main.copyLinkAddress=Αντιγραφή διεύθυνσης συνδέσμου
