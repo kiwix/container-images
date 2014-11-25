@@ -32,12 +32,20 @@ $MB scan -d zim/wikivoyage isoc.il > /dev/null 2>&1
 $MB scan -d zim/wiktionary isoc.il > /dev/null 2>&1
 
 # Scan the Your.org mirror
+$MB scan -d zim/wikibooks your.org > /dev/null 2>&1
+$MB scan -d zim/wikinews your.org > /dev/null 2>&1
 $MB scan -d zim/wikipedia your.org > /dev/null 2>&1
+$MB scan -d zim/wikiquote your.org > /dev/null 2>&1
 $MB scan -d zim/wikisource your.org > /dev/null 2>&1
+$MB scan -d zim/wikiversity your.org > /dev/null 2>&1
 $MB scan -d zim/wikivoyage your.org > /dev/null 2>&1
 $MB scan -d zim/wiktionary your.org > /dev/null 2>&1
+$MB scan -d portable/wikibooks your.org > /dev/null 2>&1
+$MB scan -d portable/wikinews your.org > /dev/null 2>&1
 $MB scan -d portable/wikipedia your.org > /dev/null 2>&1
+$MB scan -d portable/wikiquote your.org > /dev/null 2>&1
 $MB scan -d portable/wikisource your.org > /dev/null 2>&1
+$MB scan -d portable/wikiversity your.org > /dev/null 2>&1
 $MB scan -d portable/wikivoyage your.org > /dev/null 2>&1
 $MB scan -d portable/wiktionary your.org > /dev/null 2>&1
 
