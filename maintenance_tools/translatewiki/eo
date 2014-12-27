@@ -3,6 +3,7 @@
 # Author: Airon90
 # Author: Amire80
 # Author: Blahma
+# Author: KuboF
 # Author: Metraduk
 # Author: Objectivesea
 # Author: Yekrats
@@ -69,6 +70,7 @@ ui.main.mark=Marki ĉi tiun paĝon
 ui.main.unmark=Malmarki elektitajn
 ui.main.reload=Reŝarĝi legosignaron
 ui.main.defaultset=Defaŭlta aro
+ui.main.saveMediaAs=Konservi plurmediaĵon kiel...
 ui.main.openLinkInNewTab=Malfermi ligilon en nova langeto
 ui.main.searchFor=Serĉi
 ui.main.copyLinkAddress=Kopii ligilan adreson
@@ -127,6 +129,7 @@ ui.messages.information=Informo
 ui.messages.indexing=Indeksanta
 ui.messages.selectBookmarkSet=Elekti legosignaron
 ui.messages.nameBookmarkSet=Tajpi dosiernomon de legosignaro
+ui.messages.bookmarkReferingOtherContent=Tiu ĉi legosigno mencias alian dokumenton. Ĉu vi volas malfermi ĝin?
 ui.messages.newContentAvailable=Nova enhavo disponeblas por elŝuto.
 ui.messages.newContentAvailableInvitation=Nova enhavo disponeblas por elŝuto. Ĉu vi volas vidi ĝin?
 ui.messages.preparingContentDownload=Preparanta elŝuton...
@@ -157,9 +160,16 @@ android.ui.error_articleurlnotfound=Eraro: Ŝargado de la artikolo (Url: %1$s) f
 android.ui.pref_zoom_title=Zomnivelo
 android.ui.pref_zoom_enable=Zomregiloj
 android.ui.pref_zoom_enable_summary=Montri zombutonon en la malsupra dekstra ekranangulo
+android.ui.pref_zoom_entry_automatic=Aŭtomate
+android.ui.pref_zoom_entry_small=Malgranda
+android.ui.pref_zoom_entry_medium=Mezgranda
+android.ui.pref_zoom_entry_large=Granda
 android.ui.pref_nightmode=Nokta reĝimo
 android.ui.pref_nightmode_summary=Montri artikolojn inverskolore
+android.ui.pref_language_chooser=Elektu lingvon
 android.ui.pref_info_title=Informo
 android.ui.pref_info_version=Versio
 android.ui.pref_backtotop=Reiri al Supro
 android.ui.pref_backtotop_summary=Montri suprenan rulumilon paĝofine
+android.ui.save_media_error=Eraro okazis dum provo konservi la plurmediaĵon!
+android.ui.save_media_saved=Plumediaĵoj konservitaj kiel %1$s en via dosierujo Bildoj

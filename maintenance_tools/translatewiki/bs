@@ -1,0 +1,63 @@
+# Messages for Bosnian (bosanski)
+# Exported from translatewiki.net
+# Author: DzWiki
+# Author: Edinwiki
+
+ui.main.file=Datoteka
+ui.main.openFile=Otvori datoteku…
+ui.main.browseLibrary=Pregledaj biblioteku
+ui.main.lastOpen=Nedavno otvoreno…
+ui.main.saveFile=Sačuvaj stranicu kao…
+ui.main.print=Štampaj
+ui.main.printPdf=Štampaj kao PDF
+ui.main.quit=Izađi
+ui.main.edit=Uredi
+ui.main.find=Pretraži stranicu…
+ui.main.selectall=Odaberite sve
+ui.main.copy=Kopiraj
+ui.main.mute=Isključi zvuk
+ui.main.audible=Zvučno
+ui.main.transliteration=Preslovljavanje
+# Fuzzy
+ui.main.preferences=Postavke
+ui.main.display=Prikaz
+ui.main.zoom=Uvećaj
+ui.main.zoomin=Povećaj
+ui.main.zoomout=Umanji
+ui.main.zoomorig=Izvorna veličina
+ui.main.language=Jezik
+ui.main.skin=Izgled
+ui.main.statusbar=Statusna traka
+ui.main.resultsbar=Traka sa rezultatima
+ui.main.tabs=Jezičci
+ui.main.fullscreen=Puni ekran
+ui.main.tools=Alati
+ui.main.randomArticle=Slučajni članak
+ui.main.checkIntegrity=Provjera integriteta
+ui.main.purgeHistory=Pročisti historiju
+ui.main.help=Pomoć
+ui.main.feedback=Povratna informacija
+ui.main.reportabug=Prijavi grešku
+ui.main.back=Nazad
+ui.main.forward=Naprijed
+ui.main.home=Početna
+ui.main.search=Traži
+ui.main.results.title=Rezultati pretrage
+ui.main.close=Zatvori
+ui.main.library.myLibrary=Moja biblioteka
+ui.main.library.sortBy.title=Naslov
+ui.main.library.sortBy.size=Veličina
+ui.main.library.sortBy.date=Datum
+ui.main.library.sortBy.author=Autor
+ui.main.library.sortBy.publisher=Izdavač
+ui.main.library.filterBy.language=Jezik
+ui.main.library.filterBy.author=Autor
+ui.preferences.save=Sačuvaj
+ui.preferences.cancel=Odustani
+ui.messages.confirm=Potvrdi
+ui.messages.no=ne
+ui.messages.yes=da
+ui.messages.ok=U redu
+ui.messages.cancel=Odustani
+ui.messages.error=Greška
+ui.messages.information=Informacija

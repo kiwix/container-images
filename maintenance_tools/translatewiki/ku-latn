@@ -1,0 +1,48 @@
+# Messages for Kurdish (Latin script) (Kurdî (latînî)‎)
+# Exported from translatewiki.net
+# Author: George Animal
+# Author: Hzr
+
+ui.main.osxservices=خزمەتگوزاریەکان
+ui.main.osxshowall=پیشاندانی گشت
+ui.main.file=فایل
+ui.main.openFile=کردنەوەی فایل
+ui.main.browseLibrary=گەڕان لە کتێبخانە
+ui.main.hideLibrary=شاردنەوەی کتێبخانە
+ui.main.lastOpen=کەمێکە کراوەتەوە
+ui.main.saveFile=Rûpelê tomar bike wek...
+ui.main.print=Çap bike
+ui.main.printPdf=پرینت کردن وەک پی دی ئێف
+ui.main.quit=چونەدەرەوە
+ui.main.edit=Biguherîne
+ui.main.find=گەڕەن لە پەڕەدا
+ui.main.selectall=هەڵبژاردنی گشت
+ui.main.copy=لەبەرگرتنەوە
+ui.main.mute=بێدەنگ کردن
+ui.main.audible=دەنگدار
+ui.main.transliteration=وەرگرتنی ئاخاوتە بە هەمان دەنگ
+ui.main.preferences=هەڵبژاردەکان
+ui.main.server=سێرڤەر
+ui.main.display=پیشاندان
+ui.main.zoom=دورو نزیک خستنەوە
+ui.main.zoomin=گەورەکردن
+ui.main.zoomout=کەم کردنەوە
+ui.main.zoomorig=قەبارەی سەرەکی
+ui.main.language=Ziman
+ui.main.help=Alîkarî
+ui.main.close=Bigre
+ui.main.library.sortBy.title=Sernav
+ui.main.library.sortBy.size=Mezinbûn
+ui.main.library.filterBy.language=Ziman
+ui.main.library.filterBy.language.all=Hemû
+ui.main.library.filterBy.author.all=Hemû
+ui.main.library.filterBy.publisher.all=Hemû
+ui.preferences.save=Tomar bike
+ui.preferences.cancel=Betal bike
+ui.messages.no=na
+ui.messages.yes=erê
+ui.messages.ok=Temam
+ui.messages.cancel=Betal bike
+ui.messages.error=Çewtî
+ui.messages.information=Agahî
+ui.messages.library=Pirtûkxane

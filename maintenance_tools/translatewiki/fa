@@ -13,15 +13,15 @@
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
-ui.main.osxhideapp=پنهان‌کردن &brand.brandShortName;
-ui.main.osxhideothers=پنهان‌کردن دیگران
+ui.main.osxhideapp=پنهان کردن &brand.brandShortName;
+ui.main.osxhideothers=پنهان کردن دیگران
 ui.main.osxshowall=نمایش همه
 ui.main.file=پرونده
 ui.main.file.accesskey=F
 ui.main.openFile=گشودن پرونده...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=مرور کتابخانه
-ui.main.hideLibrary=پنهان‌کردن کتابخانه
+ui.main.hideLibrary=پنهان کردن کتابخانه
 ui.main.lastOpen=اخیراً گشوده‌شده...
 ui.main.saveFile=ذخیرهٔ صفحه به‌عنوان...
 ui.main.saveFile.accesskey=S

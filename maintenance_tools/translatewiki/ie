@@ -1,5 +1,6 @@
 # Messages for Interlingue (Interlingue)
 # Exported from translatewiki.net
+# Author: Makuba
 # Author: Renan
 
 ui.main.file=Figura
@@ -14,6 +15,7 @@ ui.main.find=Serchar in págine...
 ui.main.selectall=Selecter omni
 ui.main.copy=Copiar
 ui.main.transliteration=Transliteration
+# Fuzzy
 ui.main.preferences=Preferenties
 ui.main.display=Exposition
 ui.main.zoom=Zoom
@@ -51,7 +53,6 @@ ui.main.mark=Marcar ti págine
 ui.main.unmark=Desmarcar selectet
 ui.main.reload=Recargar complement de marcator
 ui.main.defaultset=Complement de contumacie
-ui.main.saveImageAs=Conservar figura quam...
 ui.main.close=Terminar
 ui.preferences.preferences=Preferenties
 ui.preferences.save=Conservar
@@ -80,3 +81,7 @@ ui.messages.information=Information
 ui.messages.indexing=Indexant
 ui.messages.selectBookmarkSet=Selecter file de complement de marcator
 ui.messages.nameBookmarkSet=Intrar che nómine de file de complement de marcator
+ui.messages.quitFullscreen=Cluder plen-scren
+android.ui.button_backtotop=Retro a supra
+android.ui.pref_backtotop=Retro a supra
+android.ui.pref_backtotop_summary=Monstra un taste in li fin del págine por saltar a supra.

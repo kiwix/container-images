@@ -65,7 +65,6 @@ ui.main.mark=Označi ovu stranicu
 ui.main.unmark=Poništi izabrano
 ui.main.reload=Osveži skup zabeleški
 ui.main.defaultset=Podrazumevani skup
-ui.main.saveImageAs=Sačuvaj sliku kao…
 ui.main.openLinkInNewTab=Otvori vezu u novom jezičku
 ui.main.searchFor=Traži
 ui.main.copyLinkAddress=Umnoži adresu veze

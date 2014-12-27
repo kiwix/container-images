@@ -65,7 +65,6 @@ ui.main.mark=Бу битне билгеләү
 ui.main.unmark=Сайланган биттән тамганы алу
 ui.main.reload=Кыстыргычлар төпчеген яңарту
 ui.main.defaultset=Баштагы көйләнмәләргә кайтару
-ui.main.saveImageAs=Рәсем саклау форматы ...
 ui.main.openLinkInNewTab=Сылтаманы яңа тәрәзәдә ачу
 ui.main.searchFor=Эзләү
 ui.main.copyLinkAddress=Сылтаманың юлламасын күчермәләү

@@ -1,4 +1,4 @@
-# Messages for Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+# Messages for Norwegian Nynorsk (norsk nynorsk)
 # Exported from translatewiki.net
 # Author: Nghtwlkr
 
@@ -14,6 +14,7 @@ ui.main.find=Søk i sida...
 ui.main.selectall=Velg alle
 ui.main.copy=Kopier
 ui.main.transliteration=Transliterasjon
+# Fuzzy
 ui.main.preferences=Innstillingar
 ui.main.display=Skjerm
 ui.main.zoom=Zoom
@@ -51,7 +52,6 @@ ui.main.mark=Marker denne sida
 ui.main.unmark=Fjern markering av velde
 ui.main.reload=Last inn bokmerkesamlinga att
 ui.main.defaultset=Standardsamling
-ui.main.saveImageAs=Lagre sida som...
 ui.main.close=Steng
 ui.preferences.preferences=Innstillingar
 ui.preferences.save=Lagre

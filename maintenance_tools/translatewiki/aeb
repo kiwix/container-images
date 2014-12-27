@@ -1,18 +1,20 @@
-# Messages for Tunisian Spoken Arabic (   زَوُن)
+# Messages for Tunisian Spoken Arabic (تونسي)
 # Exported from translatewiki.net
 # Author: Csisc
+# Author: Dyolf77
+# Author: GeekEmad
 
-ui.main.osxservices=5adamet
-ui.main.osxhideapp=a5fi &brand.brandShortName;
-ui.main.osxhideothers=ghathi el o5rin
-ui.main.osxshowall=warri el kol
-ui.main.file=milaf (Fichier)
-ui.main.openFile=ifta7 el fichier
-ui.main.browseLibrary=ara el maktba mte3 el wiki
-ui.main.hideLibrary=إخفاء المكتبة
-ui.main.lastOpen=elli 7allaytou ss'arlek chouiya
-ui.main.saveFile=enregistri el page ki...
-ui.main.print=itthba3
+ui.main.osxservices=Khedmèt
+ui.main.osxhideapp=Khabbi &brand.brandShortName;
+ui.main.osxhideothers=Khabbi l'okhrina
+ui.main.osxshowall=Warri el Koll
+ui.main.file=Fichié
+ui.main.openFile=Ħell el fichié
+ui.main.browseLibrary=Ħawwes fel maktba
+ui.main.hideLibrary=Khabbi el maktba
+ui.main.lastOpen=Elli mezzelt ki ħallitou...
+ui.main.saveFile=Onrejistri el pàj taħt...
+ui.main.print=Emprimi
 ui.main.printPdf=itthb3ou PDF
 ui.main.quit=o5roj
 ui.main.edit=modifi el page (baddelha)
@@ -29,6 +31,7 @@ ui.main.zoom=kabber
 ui.main.zoomin=kabber detail
 ui.main.zoomout=sagher
 ui.main.zoomorig=khat el ass'li (Taille mte3 el texte el 3adi)
+ui.main.invertedColors=couleret me3kousa
 ui.main.language=Logha
 ui.main.skin=el wejha
 ui.main.statusbar=barre elli twarrik el 7ala illi inti fiha taw
@@ -62,7 +65,6 @@ ui.main.mark=علم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
 ui.main.reload=أعد تحميل مجموعة المفضلة
 ui.main.defaultset=الخيارات المبدئية
-ui.main.saveImageAs=enregistri el page ki...
 ui.main.openLinkInNewTab=افتح الوصلة في لسان جديد
 ui.main.searchFor=barre mte3 ettelwij
 ui.main.copyLinkAddress=انسخ عنوان الوصلة

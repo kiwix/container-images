@@ -64,7 +64,6 @@ ui.main.mark=এই পৃষ্ঠা চিহ্নিত কৰক
 ui.main.unmark=নিৰ্বাচিতৰ পৰা চিহ্ন আতৰাওক
 ui.main.reload=পত্ৰচিহ্ন সংহতি পুনৰ ল'ড কৰক
 ui.main.defaultset=অবিকল্পিত সংহতি
-ui.main.saveImageAs=ছবিক এই ধৰণে সাঁচক...
 ui.main.openLinkInNewTab=সংযোগক নতুন টেবত খোলক
 ui.main.searchFor=এইটো অনুসন্ধান কৰক
 ui.main.copyLinkAddress=সংযোগ ঠিকনা কপি কৰক

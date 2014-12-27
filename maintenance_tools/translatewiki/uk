@@ -8,6 +8,7 @@
 # Author: Kelson
 # Author: Mykola Swarnyk
 # Author: Probil
+# Author: Ypryima
 # Author: Дар'я Козлова
 
 ui.main.cssdirection=ltr
@@ -162,6 +163,7 @@ ui.messages.information=Інформація
 ui.messages.indexing=Індексування
 ui.messages.selectBookmarkSet=Виберіть файл закладок
 ui.messages.nameBookmarkSet=Введіть ім'я для файла закладок
+ui.messages.bookmarkReferingOtherContent=Ця закладка відноситься до іншого контенту. Бажаєте завантажити його?
 ui.messages.newContentAvailable=Новий контент, доступний для завантаження
 ui.messages.newContentAvailableInvitation=Новий контент, доступний для завантаження. Ви хочете побачити його?
 ui.messages.preparingContentDownload=Підготовка завантаження...
@@ -192,9 +194,16 @@ android.ui.error_articleurlnotfound=Помилка: завантаження с�
 android.ui.pref_zoom_title=Рівень масштабування
 android.ui.pref_zoom_enable=Управління масштабом
 android.ui.pref_zoom_enable_summary=Відображати кнопку масштаб у нижньому правому куті екрану
+android.ui.pref_zoom_entry_automatic=Автоматично
+android.ui.pref_zoom_entry_small=Малий
+android.ui.pref_zoom_entry_medium=Середній
+android.ui.pref_zoom_entry_large=Великий
 android.ui.pref_nightmode=Нічний режим
 android.ui.pref_nightmode_summary=Показати статті з повернутими кольорами
+android.ui.pref_language_chooser=Оберіть мову
 android.ui.pref_info_title=Інформація
 android.ui.pref_info_version=Версія
 android.ui.pref_backtotop=Наверх
 android.ui.pref_backtotop_summary=Відображати кнопки в кінці сторінки для прокрутки вгору
+android.ui.save_media_error=Сталася помилка при спробі зберегти медіа!
+android.ui.save_media_saved=Медіа-файл збережений як %1$ в вашій папці для фотографій

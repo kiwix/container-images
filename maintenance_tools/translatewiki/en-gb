@@ -1,0 +1,9 @@
+# Messages for British English (British English)
+# Exported from translatewiki.net
+# Author: Captaindogfish
+# Author: Shirayuki
+
+ui.main.invertedColors=Inverted colours
+android.ui.pref_nightmode_summary=Show articles with reverted colours
+android.ui.save_media_error=An error occured when trying to save the media!
+android.ui.save_media_saved=Saved media as %1$s in your Pictures folder

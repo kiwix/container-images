@@ -2,8 +2,10 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: Robby
+# Author: Soued031
 
 ui.main.osxservices=Servicer
+ui.main.osxhideapp=&brand.brandShortName; verstoppen
 ui.main.osxhideothers=Anerer verstoppen
 ui.main.osxshowall=All weisen
 ui.main.file=Fichier
@@ -51,7 +53,6 @@ ui.main.results.title=Resultater vum Sichen
 ui.main.bmkLabel=Favoriten:
 ui.main.mark=Dës Säit markéieren
 ui.main.defaultset=Standard Astellung
-ui.main.saveImageAs=Bild späicheren als ...
 ui.main.openLinkInNewTab=Link an engem neien Tab opmaachen
 ui.main.searchFor=Sichen no:
 ui.main.copyLinkAddress=Linkadress kopéieren
@@ -88,7 +89,7 @@ ui.messages.loadZimFileError='%1' kann net geluede ginn. Sidd Dir sécher datt e
 ui.messages.alreadyIndexingError=Et ass schonn eng Indexéierung amgaang.
 ui.messages.noResultsError=Keng Resultater fir dës Ufro.
 ui.messages.loadArticleError=Dësen Artikel kann net geluede ginn.
-ui.messages.noActiveZimFile=Keen aktiven ZIM-Fichier, lued w.e.g. d'éischt esou e Fichier.
+ui.messages.noActiveZimFile=Keen aktiven ZIM-Fichier, luet w.e.g. fir d'éischt sou e Fichier.
 ui.messages.restartConfirm=%1 muss nei gestart ginn. Wëllt dir dat elo maachen?
 ui.messages.endOfIndexing=De Prozess vum Indexéieren ass fäerdeg.
 ui.messages.removeProfileConfirm=Wëllt Dir Äre Profil ewechhuelen?
@@ -108,5 +109,22 @@ ui.messages.contentDownloadFinished=D'Eroflueden vu (n) '%1'  ass fäerdeg.
 ui.messages.feedback=Feedback
 ui.messages.library=Bibliothéik
 ui.messages.fullscreen=Ganzen Ecran
-ui.messages.quitFullscreen=Aus dem Modus vum ganzen Ecran erausgoen
+ui.messages.quitFullscreen=Aus dem ganzen Ecran erausgoen
 ui.messages.integrityCheckFailed=D'Integratiounskontroll huet e Feeler gewisen. Äre Fichier ass korrupt.
+android.ui.menu_share=Mat Frënn deelen
+android.ui.info_share_title=Ech benotze Wikipedia offline mat Kiwix!
+android.ui.share_via=Deelen iwwer ...
+android.ui.button_backtotop=Zréck no uewen
+android.ui.articlesearch_hint=Tippt fir Artikelen ze sichen
+android.ui.open_in_new_tab=Link an engem neien Onglet opmaachen?
+android.ui.error_articlenotfound=Feeler: D'Luede vum Artikel  \"%1$s\" huet net funktionéiert.
+android.ui.pref_zoom_title=Niveau vum Zoom
+android.ui.pref_zoom_entry_automatic=Automatesch
+android.ui.pref_zoom_entry_small=Kleng
+android.ui.pref_zoom_entry_medium=Mëttel
+android.ui.pref_zoom_entry_large=Grouss
+android.ui.pref_language_chooser=Sicht eng Sprooch eraus
+android.ui.pref_info_title=Informatioun
+android.ui.pref_info_version=Versioun
+android.ui.pref_backtotop=Zréck no uewen
+android.ui.pref_backtotop_summary=Weist e Knäppchen ënnen op der Säit fir no uewen ze scrollen

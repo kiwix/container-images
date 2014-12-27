@@ -1,0 +1,69 @@
+# Messages for Basque (euskara)
+# Exported from translatewiki.net
+# Author: An13sa
+# Author: Subi
+# Author: Xabier Armendaritz
+
+ui.main.osxservices=Zerbitzuak
+ui.main.osxhideothers=Besteak Ezkutatu
+ui.main.file=Fitxategia
+ui.main.openFile=Fitxategi ireki...
+ui.main.saveFile=Gorde orria honela...
+ui.main.print=Inprimatu
+ui.main.printPdf=PDF gisa inprimatu
+ui.main.quit=Utzi
+ui.main.edit=Aldatu
+ui.main.find=Orrialdean bilatu...
+ui.main.selectall=Denak aukeratu
+ui.main.copy=Kopiatu
+ui.main.preferences=Hobespenak
+ui.main.server=Zerbitzaria
+ui.main.display=Erakutsi
+ui.main.zoom=Zooma
+ui.main.zoomin=Anpliatu
+ui.main.zoomorig=Jatorrizko tamaina
+ui.main.language=Hizkuntza
+ui.main.fullscreen=Pantaila osoan
+ui.main.tools=Tresnak
+ui.main.randomArticle=Ausazko artikulua
+ui.main.help=Laguntza
+ui.main.feedback=Feedback
+ui.main.back=Atzera
+ui.main.forward=Aurrera
+ui.main.home=Hasiera
+ui.main.search=Bilatu
+ui.main.bookmarks=Lastermarkak
+ui.main.mark=Orrialde hau markatu
+ui.main.close=Itxi
+ui.main.library.sortBy.title=Izenburua
+ui.main.library.sortBy.size=Tamaina
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Egilea
+ui.main.library.sortBy.publisher=Argitaletxea
+ui.main.library.filterBy.fileSize=Fitxategiaren tamaina
+ui.main.library.filterBy.language=Hizkuntza
+ui.main.library.filterBy.language.all=Guztiak
+ui.main.library.filterBy.author=Egilea
+ui.main.library.filterBy.author.all=Guztiak
+ui.main.library.filterBy.publisher=Argitaletxea
+ui.main.library.filterBy.publisher.all=Guztiak
+ui.preferences.preferences=Hobespenak
+ui.preferences.save=Gorde
+ui.preferences.cancel=Utzi
+ui.preferences.browse=Arakatu
+ui.server.load=Kargatu
+ui.server.start=Hasi
+ui.server.stop=Gelditu
+ui.server.close=Itxi
+ui.messages.confirm=Baieztatu
+ui.messages.no=ez
+ui.messages.yes=bai
+ui.messages.ok=Ados
+ui.messages.cancel=Utzi
+ui.messages.error=Errorea
+ui.messages.information=Informazioa
+ui.messages.feedback=Feedback
+ui.messages.fullscreen=Pantaila osoan
+android.ui.open_in_new_tab=Ireki lotura fitxa berri batean?
+android.ui.pref_info_title=Informazioa
+android.ui.pref_info_version=Bertsioa

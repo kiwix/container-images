@@ -25,7 +25,9 @@ ui.main.copy=复制
 ui.main.copy.accesskey=p
 ui.main.transliteration=音译
 ui.main.transliteration.accesskey=T
+# Fuzzy
 ui.main.preferences=首选项
+# Fuzzy
 ui.main.preferences.accesskey=n
 ui.main.display=显示
 ui.main.display.accesskey=D
@@ -81,7 +83,6 @@ ui.main.unmark=取消标记
 # Fuzzy
 ui.main.reload=重新设定书签组
 ui.main.defaultset=缺省书签组
-ui.main.saveImageAs=图片另存为...
 ui.main.close=关闭
 ui.preferences.preferences=首选项
 ui.preferences.save=保存

@@ -63,7 +63,6 @@ ui.main.mark=Markaan daytoy a panid
 ui.main.unmark=Ikkaten ti marka  ti napili
 ui.main.reload=Ikarga manen ti agasmang a Marka ti libro
 ui.main.defaultset=Kinasigud nga Agasmang
-ui.main.saveImageAs=Idulin ti panid a kas...
 ui.main.openLinkInNewTab=Lukatan ti panilpo iti baro nga etiketa
 ui.main.searchFor=Biruken iti
 ui.main.copyLinkAddress=Kopiaen dagiti panilpo ti pagtaengan

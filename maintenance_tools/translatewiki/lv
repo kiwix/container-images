@@ -135,4 +135,5 @@ ui.messages.fullscreen=Pilnekrāna režīms
 ui.messages.quitFullscreen=Iziet no pilnekrāna režīma
 ui.messages.integrityCheckSuccessful=Faila integritāte veiksmīgi pārbaudīta.
 ui.messages.integrityCheckFailed=Integritātes pārbaude neizdevās. Jūsu fails ir bojāts.
+android.ui.button_backtotop=Atpakaļ uz augšu
 android.ui.pref_nightmode=Nakts režīms
