@@ -37,6 +37,9 @@ my $duplicates = {
     "android.ui.pref_info_title" => "ui.messages.information",
     "android.ui.pref_zoom_dialogtitle" => "android.ui.pref_zoom_title",
     "android.ui.menu_exit" => "ui.main.quit",
+    "android.ui.menu_bookmarks" => "ui.main.bookmarks",
+    "android.ui.add_bookmark" => "ui.main.mark",
+    "android.ui.remove_bookmark" => "ui.main.unmark"
 };
 
 # Get console line arguments
