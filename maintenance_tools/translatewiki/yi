@@ -1,5 +1,6 @@
 # Messages for Yiddish (ייִדיש)
 # Exported from translatewiki.net
+# Author: Har-wradim
 # Author: Kelson
 # Author: פוילישער
 # Author: පසිඳු කාවින්ද
@@ -45,7 +46,7 @@ ui.main.launchIndexing=אנהייבן אינדעקסירן
 ui.main.purgeHistory=אויסמעקן היסטאריע
 ui.main.help=הילף
 ui.main.feedback=פֿידבעק
-ui.main.reportabug=מעלדן א פֿעלער
+ui.main.reportabug=מעלדן אַ פֿעלער
 ui.main.requestafeature=בעטן א פֿארבעסערונג
 ui.main.about=וועגן &brand.brandShortName;
 ui.main.back=צוריק
@@ -71,7 +72,7 @@ ui.main.openLinkInNewTab=עפֿענען לינק אין נײַעם טאב
 ui.main.searchFor=זוכן פֿאַר
 ui.main.copyLinkAddress=קאפירן לינק אדרעס
 ui.main.close=שליסן
-ui.main.library.myLibrary=מײַן ביבליאטעק
+ui.main.library.myLibrary=מיין ביבליאָטעק
 ui.main.library.getNewFiles=נעמען נײַע טעקעס
 ui.main.library.searchZimFiles=זוכן ZIM טעקעס
 ui.main.library.sortBy=סארטירן נאָך
