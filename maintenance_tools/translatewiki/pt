@@ -3,6 +3,7 @@
 # Author: Giro720
 # Author: Gusta
 # Author: Hamilton Abreu
+# Author: Imperadeiro90
 # Author: Imperadeiro98
 # Author: Kelson
 # Author: Luckas
@@ -193,8 +194,13 @@ android.ui.error_articleurlnotfound=Erro com: carregamento do artigo, ligação 
 android.ui.pref_zoom_title=Nível de Zoom
 android.ui.pref_zoom_enable=Controlos de Zoom
 android.ui.pref_zoom_enable_summary=Exibir o botão de Zoom no canto inferior direito da imagem
+android.ui.pref_zoom_entry_automatic=Automático
+android.ui.pref_zoom_entry_small=Pouco
+android.ui.pref_zoom_entry_medium=Médio
+android.ui.pref_zoom_entry_large=Muito
 android.ui.pref_nightmode=Modo nocturno
 android.ui.pref_nightmode_summary=Mostrat artigos com cores invetidas
+android.ui.pref_language_chooser=Escolha um idioma
 android.ui.pref_info_title=Informação
 android.ui.pref_info_version=Versão
 android.ui.pref_backtotop=Voltar ao Topo
