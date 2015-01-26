@@ -13,6 +13,7 @@
 # Author: Rafael Vargas
 # Author: Rodrigo codignoli
 # Author: TheGabrielZaum
+# Author: Webysther
 # Author: 555
 
 ui.main.osxservices=Serviços
@@ -148,6 +149,8 @@ ui.messages.quitFullscreen=Sair do modo de tela inteira
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
 android.ui.menu_share=Compartilhar com amigos
+android.ui.menu_read_aloud=Ler em voz alta
+android.ui.menu_read_aloud_stop=Parar de ler em voz alta
 android.ui.info_share_title=Eu aproveito a Wikipedia offline usando Kiwix!
 android.ui.info_share_content=Eu aproveito a Wikipedia offline usando Kiwix! Todo o conhecimento humano na sua mão, onde quer que vá! Sem Internet! http://goo.gl/h9Smkk
 android.ui.share_via=Compartilhar via...
