@@ -1,78 +1,49 @@
-#!/bin/sh
+#!/bin/bash
 
-DIRS="/ archive bin dev other portable src zim"
+# Variables & functions
+echo "Setting up variables..."
 MB=/usr/local/bin/mb
+REPO="/var/www/download.kiwix.org/"
+ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
+DIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
+WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wikktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikispecies*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*wiktionary*" | sed "s/$ESCREPO//"`
+
+function scanMirror() {
+    MIRROR=$1
+    DIRS=${!2}
+    
+    for DIR in $DIRS
+    do
+	echo "Scanning mirror '$MIRROR' at $DIR"
+	$MB scan -d "$DIR" $MIRROR > /dev/null 2>&1
+    done
+}
 
 # Clean up the db
+echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum > /dev/null 2>&1
 
 # Build hash for new files in the master directory
-$MB makehashes /var/www/download.kiwix.org/ -t /usr/share/mirrorbrain > /dev/null 2>&1
+echo "Building hash for new files..."
+$MB makehashes $REPO -t /usr/share/mirrorbrain > /dev/null 2>&1
 
 # Check if mirrors are online
+echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
 
+# scan the Kiwix mirrors
+scanMirror kiwix DIRS
+scanMirror mirror2 DIRS
+scanMirror mirror3 DIRS
+
 # Scan the Wikimedia mirror
-$MB scan -d zim/0.9 wikimedia > /dev/null 2>&1
-$MB scan -d zim/wikipedia wikimedia > /dev/null 2>&1
-$MB scan -d zim/wikisource wikimedia > /dev/null 2>&1
-$MB scan -d zim/wikivoyage wikimedia > /dev/null 2>&1
-$MB scan -d zim/wiktionary wikimedia > /dev/null 2>&1
-$MB scan -d portable/wikipedia wikimedia > /dev/null 2>&1
-$MB scan -d portable/wikisource wikimedia > /dev/null 2>&1
-$MB scan -d portable/wikivoyage wikimedia > /dev/null 2>&1
-$MB scan -d portable/wiktionary wikimedia > /dev/null 2>&1
+scanMirror wikimedia WMDIRS
 
 # Scan the ISOC Israel mirror
-$MB scan -d zim/0.9 isoc.il > /dev/null 2>&1
-$MB scan -d zim/other isoc.il > /dev/null 2>&1
-$MB scan -d zim/wikipedia isoc.il > /dev/null 2>&1
-$MB scan -d zim/wikisource isoc.il > /dev/null 2>&1
-$MB scan -d zim/wikivoyage isoc.il > /dev/null 2>&1
-$MB scan -d zim/wiktionary isoc.il > /dev/null 2>&1
+scanMirror isoc.il WMDIRS
 
 # Scan the Your.org mirror
-$MB scan -d zim/wikibooks your.org > /dev/null 2>&1
-$MB scan -d zim/wikinews your.org > /dev/null 2>&1
-$MB scan -d zim/wikipedia your.org > /dev/null 2>&1
-$MB scan -d zim/wikiquote your.org > /dev/null 2>&1
-$MB scan -d zim/wikisource your.org > /dev/null 2>&1
-$MB scan -d zim/wikiversity your.org > /dev/null 2>&1
-$MB scan -d zim/wikivoyage your.org > /dev/null 2>&1
-$MB scan -d zim/wiktionary your.org > /dev/null 2>&1
-$MB scan -d portable/wikibooks your.org > /dev/null 2>&1
-$MB scan -d portable/wikinews your.org > /dev/null 2>&1
-$MB scan -d portable/wikipedia your.org > /dev/null 2>&1
-$MB scan -d portable/wikiquote your.org > /dev/null 2>&1
-$MB scan -d portable/wikisource your.org > /dev/null 2>&1
-$MB scan -d portable/wikiversity your.org > /dev/null 2>&1
-$MB scan -d portable/wikivoyage your.org > /dev/null 2>&1
-$MB scan -d portable/wiktionary your.org > /dev/null 2>&1
+scanMirror your.org WMDIRS
 
 # Scan the Mirrorservice.org mirror
-$MB scan -d zim/wikipedia mirrorservice.org > /dev/null 2>&1
-$MB scan -d zim/wikisource mirrorservice.org > /dev/null 2>&1
-$MB scan -d zim/wikivoyage mirrorservice.org > /dev/null 2>&1
-$MB scan -d zim/wiktionary mirrorservice.org > /dev/null 2>&1
-$MB scan -d portable/wikipedia mirrorservice.org > /dev/null 2>&1
-$MB scan -d portable/wikisource mirrorservice.org > /dev/null 2>&1
-$MB scan -d portable/wikivoyage mirrorservice.org > /dev/null 2>&1
-$MB scan -d portable/wiktionary mirrorservice.org > /dev/null 2>&1
-
-# scan the Kiwix first mirror
-for DIR in $DIRS
-do
-    $MB scan -d "$DIR" kiwix > /dev/null 2>&1
-done
-
-# scan the Kiwix second mirror
-for DIR in $DIRS
-do
-    $MB scan -d "$DIR" mirror2 > /dev/null 2>&1
-done
-
-# scan the Kiwix third mirror
-for DIR in $DIRS
-do
-    $MB scan -d "$DIR" mirror3 > /dev/null 2>&1
-done
+scanMirror mirrorservice.org WMDIRS
