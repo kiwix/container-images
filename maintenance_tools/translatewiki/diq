@@ -3,6 +3,7 @@
 # Author: Erdemaslancan
 # Author: Gorizon
 # Author: Kelson
+# Author: Macofe
 # Author: Marmase
 # Author: Mirzali
 
@@ -83,7 +84,7 @@ ui.main.library.sortBy.date=Deme
 ui.main.library.sortBy.author=Nuskar
 ui.main.library.sortBy.publisher=Hesrekar
 ui.main.library.filterBy=Filtrey cı
-ui.main.library.filterBy.fileSize=Ebata dosya
+ui.main.library.filterBy.fileSize=Ebadê dosya
 ui.main.library.filterBy.language=Zıwan
 ui.main.library.filterBy.language.all=Pêro
 ui.main.library.filterBy.author=Nuskar
@@ -157,8 +158,13 @@ android.ui.error_articleurlnotfound=Xeta: Barkerdışê meqaleyê (Url: %1$s) n�
 android.ui.pref_zoom_title=Sewiyey zumer
 android.ui.pref_zoom_enable=Kontrola zumer
 android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dezu butona zumi bıasne
+android.ui.pref_zoom_entry_automatic=Otomatik
+android.ui.pref_zoom_entry_small=Werdi
+android.ui.pref_zoom_entry_medium=Miyanên
+android.ui.pref_zoom_entry_large=Gırd
 android.ui.pref_nightmode=Moda şewer
 android.ui.pref_nightmode_summary=Wesiqi çerğbiyayış rengana bıasne
+android.ui.pref_language_chooser=Yew zıwan weçine
 android.ui.pref_info_title=Melumat
 android.ui.pref_info_version=Versiyon
 android.ui.pref_backtotop=Şo Serni

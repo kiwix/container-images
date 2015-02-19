@@ -8,6 +8,7 @@
 # Author: Kelson
 # Author: Luckas
 # Author: Luckas Blade
+# Author: Macofe
 # Author: Malafaya
 # Author: McDutchie
 # Author: Waldir
@@ -106,6 +107,7 @@ ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar selecionadas
 ui.main.reload=Recarregar Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
+ui.main.saveMediaAs=Salvar media como...
 ui.main.openLinkInNewTab=Abrir a ligação num novo separador
 ui.main.searchFor=Procurar por
 ui.main.copyLinkAddress=Copiar endereço do link
@@ -175,6 +177,8 @@ ui.messages.quitFullscreen=Sair de ecrã inteiro
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
 android.ui.menu_share=Compartilhe com amigos
+android.ui.menu_read_aloud=Ler em voz alta
+android.ui.menu_read_aloud_stop=Parar de ler em voz alta
 android.ui.info_share_title=Eu disfruto com o Kiwix a minha Wikipédia Offline!
 android.ui.info_share_content=Eu disfruto da Wikipédia Offline  com o Kiwix! Todo o conhecimento humano na mão vá para onder for. http://goo.gl/h9Smkk
 android.ui.share_via=Compartilhar via...

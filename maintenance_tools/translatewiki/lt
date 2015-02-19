@@ -3,6 +3,7 @@
 # Author: Cyklopas
 # Author: Eitvys200
 # Author: Ignas693
+# Author: Macofe
 # Author: Mantak111
 
 ui.main.osxservices=Paslaugos
@@ -136,3 +137,10 @@ ui.messages.fullscreen=Visas ekranas
 ui.messages.quitFullscreen=Išeiti iš viso ekrano režimo
 ui.messages.integrityCheckSuccessful=Failo vientisumas buvo sėkmingai patikrintas.
 ui.messages.integrityCheckFailed=Vientisumo tikrinimas nepavyko. Jūsų failas yra sugadintas.
+android.ui.pref_zoom_entry_automatic=Automatinis
+android.ui.pref_zoom_entry_small=Mažas
+android.ui.pref_zoom_entry_medium=Vidutinis
+android.ui.pref_zoom_entry_large=Didelis
+android.ui.pref_language_chooser=Pasirinkite kalbą
+android.ui.pref_info_title=Informacija
+android.ui.pref_info_version=Versija

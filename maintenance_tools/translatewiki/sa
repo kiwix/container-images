@@ -3,6 +3,7 @@
 # Author: Ansumang
 # Author: Hemant wikikosh1
 # Author: Kelson
+# Author: Macofe
 # Author: NehalDaveND
 
 ui.main.osxservices=सेवाः
@@ -155,6 +156,9 @@ android.ui.error_articleurlnotfound=दोषः : (Url: %1$s) लेखस्�
 android.ui.pref_zoom_title=वीक्षणस्य (zoom) स्तरम्
 android.ui.pref_zoom_enable=वीक्षण(zoom)नियन्त्रकानि
 android.ui.pref_zoom_enable_summary=पटलस्य दक्षिणविभागे अधः वीक्षणकुड्णलं (zoom button) स्थापयतु
+android.ui.pref_zoom_entry_small=लघु
+android.ui.pref_zoom_entry_medium=माध्यमम्
+android.ui.pref_zoom_entry_large=बृहत्
 android.ui.pref_nightmode=रात्र्यवस्था
 android.ui.pref_nightmode_summary=विपरितरङ्गैः लेखः दृश्यताम्
 android.ui.pref_info_title=सूचना

@@ -1,5 +1,6 @@
 # Messages for Afrikaans (Afrikaans)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Naudefj
 # Author: SPQRobin
 
@@ -153,8 +154,13 @@ android.ui.error_articleurlnotfound=Fout: Laai van bladsy (URL: %1$s) het gefaal
 android.ui.pref_zoom_title=Zoom-vlak
 android.ui.pref_zoom_enable=Zoom-instellings
 android.ui.pref_zoom_enable_summary=Wys 'n zoom-knop regs onder op die skerm
+android.ui.pref_zoom_entry_automatic=Outomaties
+android.ui.pref_zoom_entry_small=Klein
+android.ui.pref_zoom_entry_medium=Medium
+android.ui.pref_zoom_entry_large=Groot
 android.ui.pref_nightmode=Nag-modus
 android.ui.pref_nightmode_summary=Wys artikels met omgekeerde kleure
+android.ui.pref_language_chooser=Kies 'n taal
 android.ui.pref_info_title=Inligting
 android.ui.pref_info_version=Weergawe
 android.ui.pref_backtotop=Terug na bo

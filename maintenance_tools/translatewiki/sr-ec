@@ -1,6 +1,7 @@
 # Messages for Serbian (Cyrillic script) (српски (ћирилица)‎)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Macofe
 # Author: Milicevic01
 # Author: Rancher
 
@@ -131,3 +132,10 @@ ui.messages.fullscreen=Цео екран
 ui.messages.quitFullscreen=Изађи из целог екрана
 ui.messages.integrityCheckSuccessful=Датотека је целовита.
 ui.messages.integrityCheckFailed=Датотека није целовита. Оштећена је.
+android.ui.pref_zoom_entry_automatic=Аутоматски
+android.ui.pref_zoom_entry_small=Мало
+android.ui.pref_zoom_entry_medium=Средње
+android.ui.pref_zoom_entry_large=Велико
+android.ui.pref_language_chooser=Изаберите језик
+android.ui.pref_info_title=Информације
+android.ui.pref_info_version=Верзија

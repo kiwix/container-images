@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Deacon1289
 # Author: Hym411
+# Author: Macofe
 # Author: Priviet
 # Author: Revi
 # Author: 아라
@@ -157,8 +158,13 @@ android.ui.error_articleurlnotfound=오류: 문서(Url: %1$s)를 불러오는 �
 android.ui.pref_zoom_title=확대/축소 수준
 android.ui.pref_zoom_enable=확대 컨트롤
 android.ui.pref_zoom_enable_summary=화면 아래 오른쪽 모서리에 있는 확대 버튼을 보여줍니다
+android.ui.pref_zoom_entry_automatic=자동
+android.ui.pref_zoom_entry_small=작게
+android.ui.pref_zoom_entry_medium=보통
+android.ui.pref_zoom_entry_large=크게
 android.ui.pref_nightmode=야간 모드
 android.ui.pref_nightmode_summary=되돌린 색으로 문서를 보여줍니다
+android.ui.pref_language_chooser=언어 선택
 android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
 android.ui.pref_backtotop=맨 위로 돌아가기

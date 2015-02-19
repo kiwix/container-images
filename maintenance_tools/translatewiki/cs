@@ -7,6 +7,7 @@
 # Author: Jachym
 # Author: Jezevec
 # Author: Jkjk
+# Author: Juandev
 # Author: Kelson
 # Author: Mormegil
 # Author: Reaperman
@@ -146,6 +147,8 @@ ui.messages.quitFullscreen=Ukončit celou obrazovku
 ui.messages.integrityCheckSuccessful=Integrita souboru byla úspěšně zkontrolována.
 ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.
 android.ui.menu_share=Sdílet s přáteli
+android.ui.menu_read_aloud=Číst nahlas
+android.ui.menu_read_aloud_stop=Zastavit čtení nahlas
 android.ui.info_share_title=Baví mě Wikipedia Offline s Kiwix!
 android.ui.info_share_content=Baví mě Wikipedie Offline s Kiwix! Znalosti lidstva po ruce ať jste kdekoliv! Bez internetu! http://goo.gl/h9Smkk
 android.ui.share_via=Sdílet přes...

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Ganesh Paudel
 # Author: Krish Dulal
+# Author: Macofe
 # Author: RajeshPandey
 # Author: सरोज कुमार ढकाल
 
@@ -187,8 +188,12 @@ android.ui.error_articleurlnotfound=त्रुटी: लेख खोल्�
 android.ui.pref_zoom_title=जुम स्तर
 android.ui.pref_zoom_enable=जुम नियन्त्रणहरू
 android.ui.pref_zoom_enable_summary=स्क्रिनको निम्न दाहिने कुनामा जुम बटन देखाउने
+android.ui.pref_zoom_entry_small=सानो
+android.ui.pref_zoom_entry_medium=मझौलो
+android.ui.pref_zoom_entry_large=ठूलो
 android.ui.pref_nightmode=रात्री मूड
 android.ui.pref_nightmode_summary=उल्ट्याइएको रङका लेखहरू देखाउने
+android.ui.pref_language_chooser=भाषा चुन्ने
 android.ui.pref_info_title=जानकारी
 android.ui.pref_info_version=संस्करण
 android.ui.pref_backtotop=सुरुमा जानुहोस्

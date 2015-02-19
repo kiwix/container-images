@@ -7,6 +7,7 @@
 # Author: Glavkos
 # Author: Kelson
 # Author: Kiolalis
+# Author: Macofe
 # Author: Omnipaedista
 # Author: ZaDiak
 
@@ -174,5 +175,9 @@ ui.messages.quitFullscreen=Έξοδος από πλήρη οθόνη
 ui.messages.integrityCheckSuccessful=Η ακεραιότητα του αρχείου ελέγχθηκε με επιτυχία.
 ui.messages.integrityCheckFailed=Ο έλεγχος ακεραιότητας απέτυχε. Το αρχείο είναι κατεστραμμένο.
 android.ui.button_backtotop=Επιστροφή στην κορυφή
+android.ui.pref_zoom_entry_automatic=Αυτόματη
+android.ui.pref_zoom_entry_small=Μικρό
+android.ui.pref_zoom_entry_medium=Μεσαίο
+android.ui.pref_zoom_entry_large=Μεγάλο
 android.ui.pref_info_title=Πληροφορίες
 android.ui.pref_info_version=Έκδοση

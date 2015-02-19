@@ -1,6 +1,7 @@
 # Messages for Vietnamese (Tiếng Việt)
 # Exported from translatewiki.net
 # Author: Baonguyen21022003
+# Author: Dinhxuanduyet
 # Author: Max20091
 # Author: Minh Nguyen
 # Author: Withoutaname
@@ -170,6 +171,8 @@ ui.messages.quitFullscreen=Thoát toàn màn hình
 ui.messages.integrityCheckSuccessful=Đã kiểm tra thành công tính toàn vẹn của tập tin.
 ui.messages.integrityCheckFailed=Việc kiểm tra tính toàn vẹn đã thất bại. Tập tin của bạn bị hỏng.
 android.ui.menu_share=Chia sẻ với bạn bè
+android.ui.menu_read_aloud=Đọc to
+android.ui.menu_read_aloud_stop=Dừng đọc to
 android.ui.info_share_title=Tôi thích Wikipedia Ngoại tuyến trong Kiwix!
 android.ui.info_share_content=Tôi thích Wikipedia Ngoại tuyến trong Kiwix! Đi đâu cũng có khối kiến thức chung của nhân loại! Không cần Internet! http://goo.gl/h9Smkk
 android.ui.share_via=Chia sẻ qua…

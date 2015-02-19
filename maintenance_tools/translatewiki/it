@@ -8,6 +8,7 @@
 # Author: Kelson
 # Author: McDutchie
 # Author: Nemo bis
+# Author: Nivit
 # Author: Peg60
 # Author: Ximo17
 
@@ -177,6 +178,8 @@ ui.messages.quitFullscreen=Esci dalla modalità a tutto schermo
 ui.messages.integrityCheckSuccessful=L'integrità del file è stata verificata con successo.
 ui.messages.integrityCheckFailed=Il controllo dell'integrità è fallito. Il file è danneggiato.
 android.ui.menu_share=Condividi con amici
+android.ui.menu_read_aloud=Leggi a voce alta
+android.ui.menu_read_aloud_stop=Interrompi lettura a voce alta
 android.ui.info_share_title=Mi piace Wikipedia Offline con Kiwix!
 android.ui.info_share_content=Mi piace Wikipedia Offline con Kiwix! Tutta la conoscenza umana a portata di mano, ovunque tu vada! Senza Internet! http://goo.gl/h9Smkk
 android.ui.share_via=Condividi tramite...

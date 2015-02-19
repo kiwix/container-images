@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Anakmalaysia
 # Author: Kelson
+# Author: Macofe
 # Author: Naohiro19
 # Author: Schu
 # Author: Shirayuki
@@ -154,6 +155,7 @@ android.ui.pref_zoom_enable=ズーム コントロール
 android.ui.pref_zoom_enable_summary=画面右下隅にズーム ボタンを表示する
 android.ui.pref_zoom_entry_automatic=自動
 android.ui.pref_zoom_entry_small=小
+android.ui.pref_zoom_entry_medium=標準
 android.ui.pref_zoom_entry_large=大
 android.ui.pref_nightmode=夜モード
 android.ui.pref_nightmode_summary=記事を反転色で表示する

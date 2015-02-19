@@ -1,5 +1,6 @@
 # Messages for Russian (русский)
 # Exported from translatewiki.net
+# Author: Avd2ev
 # Author: DCamer
 # Author: Dağlı95
 # Author: Dim Grits
@@ -177,6 +178,8 @@ ui.messages.quitFullscreen=Выход из полноэкранного режи
 ui.messages.integrityCheckSuccessful=Целостность файла был успешна проверена.
 ui.messages.integrityCheckFailed=Сбой проверки целостности. Ваш файл повреждён.
 android.ui.menu_share=Поделиться с друзьями
+android.ui.menu_read_aloud=Читать вслух
+android.ui.menu_read_aloud_stop=Остановить чтение вслух
 android.ui.info_share_title=Мне нравится Википедии, доступная без подключения к Интернету, с использованием Kiwix!
 android.ui.info_share_content=Мне нравится Википедии, доступная без подключения к Интернету, с использованием Kiwix! Знание всего человечества у вас под рукой, куда бы вы не поехали! Без Интернета! http://goo.GL/h9Smkk
 android.ui.share_via=Поделиться через…

@@ -1,5 +1,6 @@
 # Messages for Sinhala (සිංහල)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Singhalawap
 # Author: Susith Chandira Gts
 # Author: පසිඳු කාවින්ද
@@ -144,8 +145,13 @@ android.ui.rescan_fs=එස්ඩී පත නැවත පිරික්ස�
 android.ui.pref_zoom_title=විශාලන මට්ටම
 android.ui.pref_zoom_enable=විශාලන පාලක
 android.ui.pref_zoom_enable_summary=තිරයේ පහළ දකුණු කෙළවර විශාලන බොත්තමක් පෙන්වන්න
+android.ui.pref_zoom_entry_automatic=ස්වයංක්‍රීය
+android.ui.pref_zoom_entry_small=කුඩා
+android.ui.pref_zoom_entry_medium=මධ්‍යම
+android.ui.pref_zoom_entry_large=විශාල
 android.ui.pref_nightmode=රාත්‍රී ආකාරය
 android.ui.pref_nightmode_summary=ප්‍රතිවර්තිත වර්ණ සමග ලිපි පෙන්වන්න
+android.ui.pref_language_chooser=භාෂාවක් තෝරාගන්න
 android.ui.pref_info_title=තොරතුරු
 android.ui.pref_info_version=අනුවාදය
 android.ui.pref_backtotop=නැවත උඩට

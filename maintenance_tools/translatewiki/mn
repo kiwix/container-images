@@ -1,6 +1,7 @@
 # Messages for Mongolian (монгол)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Macofe
 # Author: Wisdom
 # Author: Zorigt
 
@@ -155,8 +156,13 @@ android.ui.error_articleurlnotfound=Алдаа: (Url: %1$s) нийтлэлийг
 android.ui.pref_zoom_title=Татах ойр хол
 android.ui.pref_zoom_enable=Ойртуулах, холдуулах тохиргоо
 android.ui.pref_zoom_enable_summary=Дэлгэцийн баруун доод буланд zoom -ын товч байрлуулах
+android.ui.pref_zoom_entry_automatic=Автомат
+android.ui.pref_zoom_entry_small=Жижиг
+android.ui.pref_zoom_entry_medium=дунд
+android.ui.pref_zoom_entry_large=Том
 android.ui.pref_nightmode=Night mode
 android.ui.pref_nightmode_summary=Нийтлэлийн үсгийн өнгийг эсрэгээр харуулах
+android.ui.pref_language_chooser=Хэлээ сонгоно уу
 android.ui.pref_info_title=Мэдээлэл
 android.ui.pref_info_version=Хувилбар
 android.ui.pref_backtotop=Хамгийн дээр оч

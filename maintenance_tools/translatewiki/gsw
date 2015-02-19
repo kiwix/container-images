@@ -3,6 +3,7 @@
 # Author: Als-Chlämens
 # Author: Als-Holder
 # Author: Geitost
+# Author: Macofe
 # Author: 80686
 
 ui.main.osxservices=Dienscht
@@ -147,6 +148,10 @@ android.ui.error_articleurlnotfound=Fehler: S' Lade vom Artikel (URL: %1$s) het 
 android.ui.pref_zoom_title=Vergrösserigsstufe
 android.ui.pref_zoom_enable=Vergrösserigsstührig
 android.ui.pref_zoom_enable_summary=E Vergrösserigschnopf unte rechts aazeige
+android.ui.pref_zoom_entry_automatic=Automatisch
+android.ui.pref_zoom_entry_small=Chlei
+android.ui.pref_zoom_entry_medium=Mittel
+android.ui.pref_zoom_entry_large=Groß
 android.ui.pref_nightmode=Nachtmodus
 android.ui.pref_nightmode_summary=Zeig d'Artikel mit umcherte Farbe
 android.ui.pref_info_title=Information

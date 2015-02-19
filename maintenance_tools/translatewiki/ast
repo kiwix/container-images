@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Esbardu
 # Author: Kelson
+# Author: Macofe
 # Author: Xuacu
 
 ui.main.osxservices=Servicios
@@ -155,8 +156,12 @@ android.ui.error_articleurlnotfound=Error: Falló la carga del artículu (Url: %
 android.ui.pref_zoom_title=Nivel de zoom
 android.ui.pref_zoom_enable=Controles de zoom
 android.ui.pref_zoom_enable_summary=Amosar un botón de zoom na esquina inferior drecha de la pantalla
+android.ui.pref_zoom_entry_small=Pequeñu
+android.ui.pref_zoom_entry_medium=Medianu
+android.ui.pref_zoom_entry_large=Grande
 android.ui.pref_nightmode=Mou nocherniegu
 android.ui.pref_nightmode_summary=Ver los artículos colos colores invertíos
+android.ui.pref_language_chooser=Escueyi una llingua
 android.ui.pref_info_title=Información
 android.ui.pref_info_version=Versión
 android.ui.pref_backtotop=Volver arriba
