@@ -1,12 +1,22 @@
 #!/bin/bash
-SOURCE=/var/www/zimfarm.kiwix.org/upload/zim2index/
-ZIMTARGET=/var/www/zimfarm.kiwix.org/upload/zim/
-ZIPTARGET=/var/www/zimfarm.kiwix.org/upload/portable/
-TMP=/media/data/prod/kiwix-maintenance/maintenance_tools/tmp/
-SCRIPT=/media/data/prod/kiwix-tools/tools/scripts/buildDistributionFile.pl
-VERSION=`readlink /var/www/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'` 
-EXCLUDE="0.9"
 
+# OLD for zimfarm.kiwix.org
+#SOURCE=/var/www/zimfarm.kiwix.org/upload/zim2index/
+#ZIMTARGET=/var/www/zimfarm.kiwix.org/upload/zim/
+#ZIPTARGET=/var/www/zimfarm.kiwix.org/upload/portable/
+#TMP=/media/data/prod/kiwix-maintenance/maintenance_tools/tmp/
+#SCRIPT=/media/data/prod/kiwix-tools/tools/scripts/buildDistributionFile.pl
+#VERSION=`readlink /var/www/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'` 
+
+# New for mwoffliner VMs
+SOURCE=/srv/upload/zim2index/
+ZIMTARGET=/srv/upload/zim/
+ZIPTARGET=/srv/upload/portable/
+TMP=/srv/kiwix-maintenance/maintenance_tools/tmp/
+SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
+VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
+
+EXCLUDE="0.9"
 SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
 
 
