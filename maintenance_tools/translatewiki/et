@@ -60,7 +60,6 @@ ui.main.mark=Märgi see lehekülg
 ui.main.unmark=Eemalda valitud märgitute seast
 ui.main.reload=Laadi järjehoidjate riba uuesti
 ui.main.defaultset=Vaikekomplekt
-ui.main.saveImageAs=Salvesta pilt nimega...
 ui.main.openLinkInNewTab=Ava link uuel kaardil
 ui.main.searchFor=Otsi fraasi
 ui.main.copyLinkAddress=Kopeeri lingi aadress
@@ -122,4 +121,5 @@ ui.messages.contentDownloadFinished=Üksuse '%1' allalaadimine on lõpule jõudn
 ui.messages.feedback=Tagasiside
 ui.messages.library=Raamatukogu
 ui.messages.fullscreen=Täisekraan
+# Fuzzy
 ui.messages.quitFullscreen=Välju täisekraani režiimist

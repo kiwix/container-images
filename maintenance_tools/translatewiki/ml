@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Akhilan
 # Author: Anoopan
+# Author: Macofe
 # Author: Praveenp
 # Author: Vaikoovery
 
@@ -186,8 +187,12 @@ android.ui.error_articleurlnotfound=പിഴവ്: (Url: %1$s) എന്ന �
 android.ui.pref_zoom_title=സൂം നിലവാരം
 android.ui.pref_zoom_enable=സൂം നിയന്ത്രണങ്ങൾ
 android.ui.pref_zoom_enable_summary=സ്ക്രീനിനു താഴെ വലതു മൂലയിലായി ഒരു സൂം ബട്ടൺ കാണിക്കുക
+android.ui.pref_zoom_entry_small=ചെറുത്
+android.ui.pref_zoom_entry_medium=ഇടത്തരം
+android.ui.pref_zoom_entry_large=വലുത്
 android.ui.pref_nightmode=രാത്രികാല മോഡ്
 android.ui.pref_nightmode_summary=ലേഖനങ്ങളുടെ നിറം നേർവിപരീതമാക്കുക
+android.ui.pref_language_chooser=ഭാഷ തിരഞ്ഞെടുക്കുക
 android.ui.pref_info_title=വിവരം
 android.ui.pref_info_version=പതിപ്പ്
 android.ui.pref_backtotop=തിരികെ മുകളിലേക്ക്

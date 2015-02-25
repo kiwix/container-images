@@ -96,7 +96,7 @@ ui.main.searchBar=شريط البحث
 ui.main.search=إبحث
 ui.main.searchPlaceholder=أدخل النص للبحث هنا...
 ui.main.findInText=إبحث في النص
-ui.main.noSearchBar=ابحث عن ملفات زيم المفهرسة
+ui.main.noSearchBar=ابحث عن ملفات ZIM المفهرسة
 ui.main.bookmarks=علامات القراءة
 ui.main.results.title=نتائج البحث
 ui.main.bmkLabel=علامات القراءة:
@@ -147,11 +147,13 @@ ui.messages.alreadyIndexingError=هناك عملية فهرسة جارية حا�
 ui.messages.noResultsError=لا نتائج لهذا الطلب.
 ui.messages.loadArticleError=غير قادر على تحميل هذه المقالة.
 ui.messages.noActiveZimFile=ليس هناك ملف ZIM شغال, إفتح واحدأً أولاً.
+ui.messages.indexZimFileConfirm=هذا الملف لا يحتوي على فهرس للبحث. لانشائه، يتطلّب ذلك العديد من الدقائق. هل تريد فهرسة ملف ZIM الآن؟
 ui.messages.abortIndexingConfirm=هناك عملية فهرسة تجري الآن، هل أنت متأكد أنك تريد الخروج وإجهاض العملية الآن؟
 ui.messages.removeContentConfirm=هل أنت متأكد من أنك تريد إزالة هذا الإدخال من القائمة وجميع الملفات ذات الصلة؟
 ui.messages.dontDeleteContentFiles=لا تقم بحذف محتوى الملف (ZIM).
 ui.messages.restartConfirm=%1 بحاجة إلى إعادة التشغيل، هل تريد القيام بذلك الآن؟
 ui.messages.endOfIndexing=عملية الفهرسة إنتهت.
+ui.messages.removeProfileConfirm=هل تريد ازالة خياراتك الشخصيّة؟
 ui.messages.dontDisplayAnymore=لا تعرض صندوق الحوار هذا بعد الآن.
 ui.messages.changeSkinNeedRestart=لتغيير الواجهة يجب إعادة التشغيل، أعد التشغيل الآن؟
 ui.messages.confirm=أكّد
@@ -164,10 +166,12 @@ ui.messages.information=معلومات
 ui.messages.indexing=الفهرسة جارية...
 ui.messages.selectBookmarkSet=اختر ملف مجموعة علامات القراءة
 ui.messages.nameBookmarkSet=أدخل اسم لمجموعة علامات القراءة.
+ui.messages.bookmarkReferingOtherContent=هذه العلامة تفضي إلى ملف آخر. هل تريد تحميله؟
 ui.messages.newContentAvailable=هناك محتويات جديدة متوفرة للتنزيل.
 ui.messages.newContentAvailableInvitation=هناك محتويات جديدة متوفرة للتنزيل. هل ترغب في رؤيتها؟
 ui.messages.preparingContentDownload=تحضير التنزيل جاري...
 ui.messages.contentDownloadFinished=إنتهى تنزيل '%1'.
+ui.messages.feedback=تعليق
 ui.messages.library=المكتبة
 ui.messages.fullscreen=ملء الشاشة
 ui.messages.quitFullscreen=إنهاء وضع الشاشة الكاملة
@@ -193,9 +197,16 @@ android.ui.error_articleurlnotfound=خطأ: تحميل المقالة (Url: %1$s
 android.ui.pref_zoom_title=مستوى التكبير/التصغير
 android.ui.pref_zoom_enable=تحكم التكبير/التصغير
 android.ui.pref_zoom_enable_summary=عرض زر تكبير/تصغير في الزاوية اليمنى أسفل الشاشة
+android.ui.pref_zoom_entry_automatic=آلي
+android.ui.pref_zoom_entry_small=صغير
+android.ui.pref_zoom_entry_medium=متوسط
+android.ui.pref_zoom_entry_large=كبير
 android.ui.pref_nightmode=الوضع الليلي
 android.ui.pref_nightmode_summary=إظهار المقالات مع الألوان المسترجعة
+android.ui.pref_language_chooser=اختر لغة
 android.ui.pref_info_title=معلومة
 android.ui.pref_info_version=نسخة
 android.ui.pref_backtotop=ارجع إلى الأعلى
 android.ui.pref_backtotop_summary=عرض زر في نهاية الصفحة للذهاب إلى أعلاها
+android.ui.save_media_error=حدث خطأ أثناء محاولة حفظ الملف!
+android.ui.save_media_saved=نمّ حفظ الملف تحت %1$s في ملف الصور الخاص بك

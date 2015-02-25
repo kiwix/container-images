@@ -8,6 +8,7 @@
 # Author: LNDDYL
 # Author: Lauhenry
 # Author: Liuxinyu970226
+# Author: Macofe
 # Author: Shirayuki
 # Author: Simon Shek
 
@@ -60,7 +61,7 @@ ui.main.forward=前進
 ui.main.home=首頁
 ui.main.searchBar=搜尋列
 ui.main.search=搜尋
-ui.main.searchPlaceholder=在這裡輸入要搜索的文字...
+ui.main.searchPlaceholder=在這裡輸入要搜尋的文字...
 ui.main.findInText=在文本中搜尋
 ui.main.noSearchBar=搜尋需要索引的ZIM檔案
 ui.main.bookmarks=書籤
@@ -142,4 +143,10 @@ ui.messages.fullscreen=全螢幕
 ui.messages.quitFullscreen=退出全螢幕模式
 ui.messages.integrityCheckSuccessful=成功地檢查檔案完整性。
 ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損壞。
+android.ui.pref_zoom_entry_automatic=自動
+android.ui.pref_zoom_entry_small=小
+android.ui.pref_zoom_entry_medium=中
+android.ui.pref_zoom_entry_large=大
+android.ui.pref_language_chooser=選擇語言
 android.ui.pref_info_title=資訊
+android.ui.pref_info_version=版本

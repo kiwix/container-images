@@ -1,7 +1,9 @@
 # Messages for Bulgarian (български)
 # Exported from translatewiki.net
 # Author: DCLXVI
+# Author: StanProg
 # Author: Vladimir Penov
+# Author: Vodnokon4e
 
 ui.main.osxservices=Услуги
 ui.main.osxhideapp=Скриване на &brand.brandShortName;
@@ -65,6 +67,7 @@ ui.main.mark=Отбелязване на тази страница
 ui.main.unmark=Отмаркиране на избраното
 ui.main.reload=Презареждане на група отметки
 ui.main.defaultset=Група по подразбиране
+ui.main.saveMediaAs=Съхраняване на медията като...
 ui.main.openLinkInNewTab=Отваряне на препратката в нов раздел
 ui.main.searchFor=Търсене
 ui.main.copyLinkAddress=Копиране адреса на препратката
@@ -123,6 +126,7 @@ ui.messages.information=Информация
 ui.messages.indexing=Индексиране...
 ui.messages.selectBookmarkSet=Изберете файл с набор отметки
 ui.messages.nameBookmarkSet=Въведете име на файла на групата отметки
+ui.messages.bookmarkReferingOtherContent=Тази отметка се отнася до друго съдържание. Искате ли да я заредите?
 ui.messages.newContentAvailable=Налични са нови съдържания за изтегляне.
 ui.messages.newContentAvailableInvitation=Налични са нови съдържания за изтегляне. Желаете ли да ги видите?
 ui.messages.preparingContentDownload=Подготовка на изтеглянето...
@@ -153,9 +157,16 @@ android.ui.error_articleurlnotfound=Грешка: Зареждането на с
 android.ui.pref_zoom_title=Ниво на мащабиране
 android.ui.pref_zoom_enable=Управление на мащаба
 android.ui.pref_zoom_enable_summary=Показване на бутон за мащабиране в долния десен ъгъл на екрана
+android.ui.pref_zoom_entry_automatic=Автоматично
+android.ui.pref_zoom_entry_small=Малък
+android.ui.pref_zoom_entry_medium=Среден
+android.ui.pref_zoom_entry_large=Голям
 android.ui.pref_nightmode=Нощен режим
 android.ui.pref_nightmode_summary=Показване на статии в "нощен режим"
+android.ui.pref_language_chooser=Избиране на език
 android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_backtotop=Връщане в началото
 android.ui.pref_backtotop_summary=Показване на бутон в края на страницата за превъртане нагоре
+android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
+android.ui.save_media_saved=Медийният файл е съхранен като %1$s във вашата папка с изображения

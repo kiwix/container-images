@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: GreenZeb
 # Author: Jmg.cmdi
+# Author: Macofe
 # Author: Papuass
 
 ui.main.osxservices=Pakalpojumi
@@ -135,4 +136,12 @@ ui.messages.fullscreen=Pilnekrāna režīms
 ui.messages.quitFullscreen=Iziet no pilnekrāna režīma
 ui.messages.integrityCheckSuccessful=Faila integritāte veiksmīgi pārbaudīta.
 ui.messages.integrityCheckFailed=Integritātes pārbaude neizdevās. Jūsu fails ir bojāts.
+android.ui.button_backtotop=Atpakaļ uz augšu
+android.ui.pref_zoom_entry_automatic=Automātiskā
+android.ui.pref_zoom_entry_small=Mazs
+android.ui.pref_zoom_entry_medium=Vidējs
+android.ui.pref_zoom_entry_large=Liels
 android.ui.pref_nightmode=Nakts režīms
+android.ui.pref_language_chooser=Izvēlies valodu
+android.ui.pref_info_title=Informācija
+android.ui.pref_info_version=Versija

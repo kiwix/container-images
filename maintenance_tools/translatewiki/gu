@@ -5,6 +5,7 @@
 # Author: Dsvyas
 # Author: Haritosh
 # Author: KartikMistry
+# Author: Macofe
 # Author: Tanmay
 
 ui.main.osxservices=સેવાઓ
@@ -152,8 +153,13 @@ android.ui.error_filenotfound=ક્ષતિ: પસંદ કરેલ ZIM ફ
 android.ui.error_fileinvalid=ક્ષતિ: પસંદ કરેલ ફાઇલ યોગ્ય ZIM ફાઇલ નથી.
 android.ui.error_articlenotfound=ક્ષતિ: લેખ \"%1$s\" લાવવાનું નિષ્ફળ ગયું.
 android.ui.error_articleurlnotfound=ક્ષતિ: લેખ (Url: %1$s) લાવવાનું નિષ્ફળ થયું.
+android.ui.pref_zoom_entry_automatic=આપોઆપ
+android.ui.pref_zoom_entry_small=નાનો
+android.ui.pref_zoom_entry_medium=માધ્યમ
+android.ui.pref_zoom_entry_large=મોટો
 android.ui.pref_nightmode=રાત્રિ સ્થિતિ
 android.ui.pref_nightmode_summary=ઉલ્ટા રંગો વડે લેખો દર્શાવો
+android.ui.pref_language_chooser=ભાષા પસંદ કરો
 android.ui.pref_info_title=માહિતી
 android.ui.pref_info_version=આવૃત્તિ
 android.ui.pref_backtotop=ટોપ પર પાછા જાઓ

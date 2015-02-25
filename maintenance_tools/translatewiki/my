@@ -65,7 +65,6 @@ ui.main.mark=ဤစာမျက်နှာကို မှတ်ထားရန
 ui.main.unmark=မှတ်သားထားသည်ကို ပယ်ဖျက်ရန်
 ui.main.reload=ဖတ်ရန်မှတ်ထားမှုများကို ပြန်ယူရန်
 ui.main.defaultset=ပုံမှန် အနေအထား
-ui.main.saveImageAs=ပုံများ သိမ်းဆည်းရန်
 ui.main.openLinkInNewTab=ဖွင့်ပြနေရာ အသစ်တွင်ဖွင့်ပါ
 ui.main.searchFor=ရှာဖွေရန်
 ui.main.copyLinkAddress=ဝဘ်လိပ်စာများ ကူးပွားရန်

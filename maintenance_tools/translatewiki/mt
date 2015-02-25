@@ -1,6 +1,7 @@
 # Messages for Maltese (Malti)
 # Exported from translatewiki.net
 # Author: Chrisportelli
+# Author: Leli Forte
 
 ui.main.osxservices=Servizzi
 ui.main.osxhideapp=Aħbi &brand.brandShortName;
@@ -63,7 +64,6 @@ ui.main.mark=Żid din il-paġna mal-werrejja
 ui.main.unmark=Neħħi din il-paġna mill-werrejja
 ui.main.reload=Erġa' tella' l-kollezzjoni tal-werrejja
 ui.main.defaultset=Kollezzjoni oriġinali
-ui.main.saveImageAs=Salva l-istampa bħala...
 ui.main.openLinkInNewTab=Iftaħ il-ħolqa f'tieqa ġdida
 ui.main.searchFor=Fittex għal
 ui.main.copyLinkAddress=Ikkopja l-indirizz tal-ħolqa
@@ -130,3 +130,4 @@ ui.messages.fullscreen=Skrin sħiħ
 ui.messages.quitFullscreen=Oħroġ mill-modalità ta' skrin sħiħ
 ui.messages.integrityCheckSuccessful=L-integrità tal-fajl ġiet iċċekkjata b'suċċess.
 ui.messages.integrityCheckFailed=L-integrità tal-fajl falliet. Il-fajl tiegħek huwa ħażin.
+android.ui.save_media_error=Sar żball meta kont qed tipprova tissejvja l-fajl multimedjali!

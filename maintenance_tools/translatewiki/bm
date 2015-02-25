@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Boukary
 # Author: Kelson
+# Author: Macofe
 # Author: Rgaudin
 
 ui.main.osxservices=Services
@@ -146,3 +147,4 @@ android.ui.pref_zoom_enable=Bonyali/dɔgɔyali kɔlɔsili
 android.ui.pref_zoom_enable_summary=Bonyali/dɔgɔyali butɔn dɔ jira ekaran kininfɛ seleke la, ka taa duguma.
 android.ui.pref_nightmode=A kɛ sufɛla ɲɛ ye.
 android.ui.pref_nightmode_summary=Kunnafoni minnu ɲɛ cogoya yɛlɛmanen don, olu jira.
+android.ui.pref_info_title=Kunnafoni

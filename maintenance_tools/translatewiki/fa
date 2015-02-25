@@ -1,5 +1,6 @@
 # Messages for Persian (فارسی)
 # Exported from translatewiki.net
+# Author: Alirezaaa
 # Author: Ebraminio
 # Author: Leyth
 # Author: Mehran
@@ -12,17 +13,17 @@
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
-ui.main.osxhideapp=پنهان‌کردن &brand.brandShortName;
-ui.main.osxhideothers=پنهان‌کردن دیگران
+ui.main.osxhideapp=پنهان کردن &brand.brandShortName;
+ui.main.osxhideothers=پنهان کردن دیگران
 ui.main.osxshowall=نمایش همه
 ui.main.file=پرونده
 ui.main.file.accesskey=F
 ui.main.openFile=گشودن پرونده...
 ui.main.openFile.accesskey=O
 ui.main.browseLibrary=مرور کتابخانه
-ui.main.hideLibrary=پنهان‌کردن کتابخانه
+ui.main.hideLibrary=پنهان کردن کتابخانه
 ui.main.lastOpen=اخیراً گشوده‌شده...
-ui.main.saveFile=ذخیرهٔ صفحه به‌عنوان...
+ui.main.saveFile=ذخیرهٔ صفحه به عنوان...
 ui.main.saveFile.accesskey=S
 ui.main.print=چاپ
 ui.main.print.accesskey=P
@@ -82,7 +83,7 @@ ui.main.help=راهنما
 ui.main.help.accesskey=H
 ui.main.feedback=بازخورد
 ui.main.reportabug=گزارش خطا
-ui.main.requestafeature=درخواست امکانات جدید
+ui.main.requestafeature=درخواست امکانات تازه
 ui.main.about=دربارهٔ &brand.brandShortName;
 ui.main.about.accesskey=A
 ui.main.back=عقب
@@ -109,7 +110,7 @@ ui.main.searchFor=جستجو برای
 ui.main.copyLinkAddress=رونویسی نشانی پیوند
 ui.main.close=بستن
 ui.main.library.myLibrary=کتابخانهٔ من
-ui.main.library.getNewFiles=دریافت پرونده‌های جدید
+ui.main.library.getNewFiles=دریافت پرونده‌های تازه
 ui.main.library.searchZimFiles=جستجو برای پرونده‌های ZIM
 ui.main.library.sortBy=مرتب‌سازی بر اساس
 ui.main.library.sortBy.title=عنوان
@@ -162,6 +163,7 @@ ui.messages.information=اطلاعات
 ui.messages.indexing=فهرست بندی
 ui.messages.selectBookmarkSet=انتخاب پرونده مجموعه نشانک
 ui.messages.nameBookmarkSet=پرونده تنظیمات نشانک را وارد کنید
+ui.messages.bookmarkReferingOtherContent=این نشانه‌گذاری مراجعه به مطالب دیگر دارد، آیا آنها را بارگیری می‌کنید؟
 ui.messages.newContentAvailable=محتویات جدیدی برای دریافت در دسترس هستند.
 ui.messages.newContentAvailableInvitation=محتویات جدیدی برای دریافت در دسترس هستند. آیا مایلید آن‌ها را ببینید؟
 ui.messages.preparingContentDownload=در حال آماده‌سازی برای درافت...
@@ -173,6 +175,8 @@ ui.messages.quitFullscreen=خروج از تمام‌صفحه
 ui.messages.integrityCheckSuccessful=یکپارچگی پرونده با موفقیت بررسی شد.
 ui.messages.integrityCheckFailed=بررسی یکپارچگی ناموفق بود. پرونده شما خراب است.
 android.ui.menu_share=اشتراک گذاری با دوستان
+android.ui.menu_read_aloud=خواندن با صدای بلند
+android.ui.menu_read_aloud_stop=توقف خواندن با صدای بلند
 android.ui.info_share_title=از ویکی‌پدیای آفلاین با کیویکس لذت بردم!
 android.ui.info_share_content=از کار کردن با کیویکس لذب بردم. استفاده از دانش بشر بدر هر کجا که بروید! بدون اینترنت! http://goo.gl/h9Smkk
 android.ui.share_via=اشتراک از طریق...
@@ -192,9 +196,16 @@ android.ui.error_articleurlnotfound=حطا: بارگیری مقالهٔ (نشا�
 android.ui.pref_zoom_title=سطح بزرگ/کوچک‌نمایی
 android.ui.pref_zoom_enable=کنترل‌های بزرگ/کوچک‌نمایی
 android.ui.pref_zoom_enable_summary=نمایش یک دکمهٔ بزرگ/کوچک‌نمایی در گوشهٔ سمت راست پایین صفحه
+android.ui.pref_zoom_entry_automatic=خودکار
+android.ui.pref_zoom_entry_small=کوچک
+android.ui.pref_zoom_entry_medium=متوسط
+android.ui.pref_zoom_entry_large=بزرگ
 android.ui.pref_nightmode=حالت شبانه
 android.ui.pref_nightmode_summary=نمایش مقاله‌ها با رنگ‌های معکوس‌شده
+android.ui.pref_language_chooser=انتخاب زبان
 android.ui.pref_info_title=اطلاعات
 android.ui.pref_info_version=نسخه
 android.ui.pref_backtotop=بازگشت به بالای صفحه
 android.ui.pref_backtotop_summary=نمایش دکمه در پایان صفحه برای انتقال به بالا
+android.ui.save_media_error=در زمان ذخیره رسانه خطایی به وجود آمد!
+android.ui.save_media_saved=ذخیره کردن رسانه  با عنوان %1$s در پوشه تصویر شما

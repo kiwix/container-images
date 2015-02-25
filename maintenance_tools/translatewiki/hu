@@ -4,6 +4,7 @@
 # Author: Dj
 # Author: Hunyadym
 # Author: Kelson
+# Author: Macofe
 
 ui.main.osxservices=Szolgáltatások
 ui.main.osxhideapp=Elrejt &brand.brandShortName;
@@ -156,9 +157,16 @@ android.ui.error_articleurlnotfound=Hiba: A(z) (Url: %1$s) cikk betöltése nem 
 android.ui.pref_zoom_title=Nagyítási szint
 android.ui.pref_zoom_enable=Nagyítási vezérlők
 android.ui.pref_zoom_enable_summary=Nagyítás gomb megjelenítése a képernyő jobb alsó sarkában
+android.ui.pref_zoom_entry_automatic=Automatikus
+android.ui.pref_zoom_entry_small=Kicsi
+android.ui.pref_zoom_entry_medium=Közepes
+android.ui.pref_zoom_entry_large=Nagy
 android.ui.pref_nightmode=Éjszakai mód
 android.ui.pref_nightmode_summary=Inverz színek használata a cikkek megjelenítéséhez
+android.ui.pref_language_chooser=Válassz nyelvet
 android.ui.pref_info_title=Információ
 android.ui.pref_info_version=Verzió
 android.ui.pref_backtotop=Vissza a lap tetejére
 android.ui.pref_backtotop_summary=Gomb megjelenítése a lap alján, melynek segítségével visszatérhet a lap tetejére
+android.ui.save_media_error=Hiba történt a média mentése közben!
+android.ui.save_media_saved=Média mentése %1s néven a Fényképek mappába

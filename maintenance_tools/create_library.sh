@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ZIMDIR=/var/www/download.kiwix.org/zim/
-LIBRARYFILE=`pwd`/library.xml
+LIBRARYFILE=/var/www/tmp.kiwix.org/library.xml
 
 # Delete file, otherwise this will be an overwrite and old values
 # will be taken in account.

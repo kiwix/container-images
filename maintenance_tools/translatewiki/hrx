@@ -1,5 +1,6 @@
 # Messages for Hunsrik (Hunsrik)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Paul Beppler
 
 ui.main.osxservices=Dienste
@@ -152,6 +153,8 @@ android.ui.error_articleurlnotfound=Fehler: Das Loode von der Artikel (URL: %1$s
 android.ui.pref_zoom_title=Vergrößerungsstufe
 android.ui.pref_zoom_enable=Zoom-Steierung
 android.ui.pref_zoom_enable_summary=En Zoombutton in der rechte unnre Ecke oonzeiche
+android.ui.pref_zoom_entry_small=Klen
+android.ui.pref_zoom_entry_large=Gross
 android.ui.pref_nightmode=Nachtmodus
 android.ui.pref_nightmode_summary=Artikel mit umgekehrte Farbe oonsiehn
 android.ui.pref_info_title=Information

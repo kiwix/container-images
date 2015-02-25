@@ -1,11 +1,22 @@
 #!/bin/bash
-SOURCE=/var/www/download.kiwix.org/zim/
-TARGET=/var/www/download.kiwix.org/portable/
-TMP=/tmp/
-SCRIPT=/var/www/kiwix/tools/tools/scripts/buildDistributionFile.pl
-VERSION=`ls -la /var/www/download.kiwix.org/bin/unstable | cut -d " " -f10 | sed -e 's/_/-/g' | sed -e 's/\///g'` 
-EXCLUDE="0.9"
 
+# OLD for zimfarm.kiwix.org
+#SOURCE=/var/www/zimfarm.kiwix.org/upload/zim2index/
+#ZIMTARGET=/var/www/zimfarm.kiwix.org/upload/zim/
+#ZIPTARGET=/var/www/zimfarm.kiwix.org/upload/portable/
+#TMP=/media/data/prod/kiwix-maintenance/maintenance_tools/tmp/
+#SCRIPT=/media/data/prod/kiwix-tools/tools/scripts/buildDistributionFile.pl
+#VERSION=`readlink /var/www/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'` 
+
+# New for mwoffliner VMs
+SOURCE=/srv/upload/zim2index/
+ZIMTARGET=/srv/upload/zim/
+ZIPTARGET=/srv/upload/portable/
+TMP=/srv/kiwix-maintenance/maintenance_tools/tmp/
+SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
+VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
+
+EXCLUDE="0.9"
 SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
 
 
@@ -14,23 +25,32 @@ do
     echo "Searching for ZIM files in '$SOURCE$DIR'"
     DIR_ESC=`echo "$DIR/" | sed 's/\//\\\\\//g'`
 
-    if [ ! -d "$TARGET$SOURCE" ]
+    if [ ! -d "$ZIPTARGET$DIR" ]
     then
-	echo "Creating directory '$TARGET$DIR'"
-	mkdir -p "$TARGET$DIR"
+	echo "Creating ZIP directory '$ZIPTARGET$DIR'"
+	mkdir -p "$ZIPTARGET$DIR"
+    fi
+
+    if [ ! -d "$ZIMTARGET$DIR" ]
+    then
+	echo "Creating ZIM directory '$ZIMTARGET$DIR'"
+	mkdir -p "$ZIMTARGET$DIR"
     fi
 
     for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
-	if [ ! -f "$TARGET$DIR/$ZIPFILE" ]
+	if [ ! -f "$ZIPTARGET$DIR/$ZIPFILE" ]
 	then
 	    echo "Building $ZIPFILE..."
 	    cd `dirname "$SCRIPT"`
-	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --type=portable
+	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
     
-	    echo "Move $TMP$ZIPFILE to $TARGET$DIR"
-	    mv "$TMP$ZIPFILE" "$TARGET$DIR"
+	    echo "Move $TMP$ZIPFILE to $ZIPTARGET$DIR"
+	    mv "$TMP$ZIPFILE" "$ZIPTARGET$DIR"
+
+	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET$DIR"
+	    mv "$SOURCE$DIR/$ZIMFILE" "$ZIMTARGET$DIR"
 	else
 	    echo "Skipping $ZIPFILE..."
 	fi

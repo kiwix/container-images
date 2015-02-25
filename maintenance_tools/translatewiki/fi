@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Crt
 # Author: Lliehu
+# Author: Macofe
 # Author: Nedergard
 # Author: Nike
 # Author: Olli
@@ -161,5 +162,13 @@ ui.messages.fullscreen=Koko näyttö
 ui.messages.quitFullscreen=Poistu koko näytön tilasta
 ui.messages.integrityCheckSuccessful=Tiedoston eheys tarkistettiin onnistuneesti.
 ui.messages.integrityCheckFailed=Eheyden tarkistus epäonnistui. Tiedosto on vioittunut.
+android.ui.button_backtotop=Takaisin alkuun
 android.ui.choose_file=Valitse ZIM-sisältötiedosto (*.zim)
+android.ui.pref_zoom_entry_automatic=Automaattinen
+android.ui.pref_zoom_entry_small=Pieni
+android.ui.pref_zoom_entry_medium=Keskikokoinen
+android.ui.pref_zoom_entry_large=Suuri
+android.ui.pref_language_chooser=Valitse kieli
+android.ui.pref_info_title=Tiedot
 android.ui.pref_info_version=Versio
+android.ui.pref_backtotop=Takaisin alkuun

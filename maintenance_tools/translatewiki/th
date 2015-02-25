@@ -67,7 +67,6 @@ ui.main.mark=ทำเครื่องหมายหน้านี้
 ui.main.unmark=ไม่ทำเครื่องหมายที่เลือก
 ui.main.reload=โหลดการตั้งค่าของที่คั่นหน้าเว็บ
 ui.main.defaultset=การตั้งค่าเริ่มต้น
-ui.main.saveImageAs=บันทึกภาพเป็น...
 ui.main.openLinkInNewTab=เปิดลิงค์ในแท็บใหม่
 ui.main.searchFor=ค้นหาเกี่ยวกับคำนี้
 ui.main.copyLinkAddress=คัดลอกที่อยู่ลิงค์

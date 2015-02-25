@@ -1,5 +1,6 @@
 # Messages for Upper Sorbian (hornjoserbsce)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Michawiki
 
 ui.main.osxservices=Słužby
@@ -153,8 +154,13 @@ android.ui.error_articleurlnotfound=Zmylk: Nastawk (Url: %1$s) njeda so začita�
 android.ui.pref_zoom_title=Skalowanski schodźenk
 android.ui.pref_zoom_enable=Skalowanske elementy
 android.ui.pref_zoom_enable_summary=Skalowanske tłóčatko w prawym delnim róžku wobrazowki zwobraznić
+android.ui.pref_zoom_entry_automatic=Awtomatiski
+android.ui.pref_zoom_entry_small=Mały
+android.ui.pref_zoom_entry_medium=Medij
+android.ui.pref_zoom_entry_large=Wulki
 android.ui.pref_nightmode=Nócny modus
 android.ui.pref_nightmode_summary=Nastawki z wobroćenymi barbami sej wobhladać
+android.ui.pref_language_chooser=Rěč wubrać
 android.ui.pref_info_title=Informacije
 android.ui.pref_info_version=Wersija
 android.ui.pref_backtotop=Wróćo horje

@@ -7,6 +7,7 @@
 # Author: Jachym
 # Author: Jezevec
 # Author: Jkjk
+# Author: Juandev
 # Author: Kelson
 # Author: Mormegil
 # Author: Reaperman
@@ -75,6 +76,7 @@ ui.main.mark=Označit tuto stránku
 ui.main.unmark=Odznačit vybrané
 ui.main.reload=Znovu nahrát sadu záložek
 ui.main.defaultset=Výchozí sada
+ui.main.saveMediaAs=Uložit médium jako...
 ui.main.openLinkInNewTab=Otevřít odkaz v nové záložce
 ui.main.searchFor=Vyhledat
 ui.main.copyLinkAddress=Zkopírovat adresu odkazu
@@ -133,6 +135,7 @@ ui.messages.information=Informace
 ui.messages.indexing=Indexování...
 ui.messages.selectBookmarkSet=Vyberte soubor sady záložek
 ui.messages.nameBookmarkSet=Zadejte název souboru sady záložek
+ui.messages.bookmarkReferingOtherContent=Tato záložka odkazuje na jiný obsah. Přejete si ji načíst?
 ui.messages.newContentAvailable=Nový obsah je k dispozici ke stažení.
 ui.messages.newContentAvailableInvitation=Nový obsah je k dispozici ke stažení. Chcete jej vidět?
 ui.messages.preparingContentDownload=Příprava stahování...
@@ -144,6 +147,8 @@ ui.messages.quitFullscreen=Ukončit celou obrazovku
 ui.messages.integrityCheckSuccessful=Integrita souboru byla úspěšně zkontrolována.
 ui.messages.integrityCheckFailed=Selhala kontrola integrity. Soubor je poškozen.
 android.ui.menu_share=Sdílet s přáteli
+android.ui.menu_read_aloud=Číst nahlas
+android.ui.menu_read_aloud_stop=Zastavit čtení nahlas
 android.ui.info_share_title=Baví mě Wikipedia Offline s Kiwix!
 android.ui.info_share_content=Baví mě Wikipedie Offline s Kiwix! Znalosti lidstva po ruce ať jste kdekoliv! Bez internetu! http://goo.gl/h9Smkk
 android.ui.share_via=Sdílet přes...
@@ -163,9 +168,16 @@ android.ui.error_articleurlnotfound=Chyba: Načtení článku (Url: %1$s ) se ne
 android.ui.pref_zoom_title=Úroveň zvětšení
 android.ui.pref_zoom_enable=Ovládání přiblížení
 android.ui.pref_zoom_enable_summary=Zobrazit tlačítko přiblížení v pravém dolním rohu obrazovky
+android.ui.pref_zoom_entry_automatic=Automatický
+android.ui.pref_zoom_entry_small=Malý
+android.ui.pref_zoom_entry_medium=Střední
+android.ui.pref_zoom_entry_large=Velký
 android.ui.pref_nightmode=Noční režim
 android.ui.pref_nightmode_summary=Zobrazuje stránky v obrácených barvách.
+android.ui.pref_language_chooser=Vyberte jazyk
 android.ui.pref_info_title=Informace
 android.ui.pref_info_version=Verze
 android.ui.pref_backtotop=Zpět na začátek
 android.ui.pref_backtotop_summary=Zobrazit tlačítko "Zpět na začátek" na konci stránky
+android.ui.save_media_error=Došlo k chybě při pokusu o uložení média!
+android.ui.save_media_saved=Uložená média jako %1$s ve složce vaše obrázky

@@ -7,6 +7,7 @@
 # Author: Kenrick95
 # Author: Relly Komaruzaman
 # Author: Riemogerz
+# Author: Rizkiahmadz
 
 ui.main.osxservices=Layanan
 ui.main.osxhideapp=Sembunyikan &brand.brandShortName;
@@ -129,6 +130,7 @@ ui.messages.information=Informasi
 ui.messages.indexing=Pengindeksan
 ui.messages.selectBookmarkSet=Pilih berkas Set Markah
 ui.messages.nameBookmarkSet=Masukkan nama berkas Set Markah
+ui.messages.bookmarkReferingOtherContent=Penanda ini mengacu ke konten lain. Apakah anda ingin memuatnya?
 ui.messages.newContentAvailable=Tersedia konten baru untuk diunduh.
 ui.messages.newContentAvailableInvitation=Tersedia konten baru untuk diunduh. Apakah Anda ingin melihatnya?
 ui.messages.preparingContentDownload=Mempersiapkan unduhan...
@@ -140,6 +142,8 @@ ui.messages.quitFullscreen=Keluar dari modus layar penuh
 ui.messages.integrityCheckSuccessful=Penyatuan berkas telah berhasil diperiksa.
 ui.messages.integrityCheckFailed=Pemeriksaan untuk penyatuan berkas gagal. Berkas Anda rusak.
 android.ui.menu_share=Bagikan dengan teman
+android.ui.menu_read_aloud=Bacakan
+android.ui.menu_read_aloud_stop=Berhenti pembacaan
 android.ui.info_share_title=Saya senang menggunakan Kiwix untuk Wikipedia Luring!
 android.ui.info_share_content=Saya senang menggunakan Kiwix untuk Wikipedia Luring! Seluruh ilmu pengetahuan dapat diakses di mana saja Anda berada tanpa Internet!
 android.ui.share_via=Berbagi melalui...
@@ -159,9 +163,16 @@ android.ui.error_articleurlnotfound=Galat: Pemuatan artikel (Url: %1$s) gagal.
 android.ui.pref_zoom_title=Tingkat perbesaran
 android.ui.pref_zoom_enable=Kontrol perbesaran
 android.ui.pref_zoom_enable_summary=Tampilkan tombol perbesaran di sudut kanan bagian bawah layar
+android.ui.pref_zoom_entry_automatic=Otomatis
+android.ui.pref_zoom_entry_small=Kecil
+android.ui.pref_zoom_entry_medium=Menengah
+android.ui.pref_zoom_entry_large=Besar
 android.ui.pref_nightmode=Modus malam
 android.ui.pref_nightmode_summary=Tampilkan artikel dengan warna terbalik
+android.ui.pref_language_chooser=Pilih bahasa
 android.ui.pref_info_title=Informasi
 android.ui.pref_info_version=Versi
 android.ui.pref_backtotop=Kembali ke Atas
 android.ui.pref_backtotop_summary=Tampilkan tombol di akhir halaman untuk menggulir ke atas
+android.ui.save_media_error=Kesalahan terjadi ketika menyimpan media!
+android.ui.save_media_saved=Simpan media sebagai %1$s pada folder Gambar

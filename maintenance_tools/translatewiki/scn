@@ -1,0 +1,41 @@
+# Messages for Sicilian (sicilianu)
+# Exported from translatewiki.net
+# Author: Aushulz
+# Author: Wikice
+
+ui.main.saveFile=Sarva paggina comu...
+ui.main.print=Stampa
+ui.main.printPdf=Stampa comu PDF
+ui.main.quit=Vatinni
+ui.main.edit=Cancia
+# Fuzzy
+ui.main.preferences=Prifirenzi
+ui.main.language=Lingua
+ui.main.skin=Aspettu
+ui.main.tools=Strumenti
+ui.main.randomArticle=Articulu a mmuzzu
+ui.main.help=Aiutu
+ui.main.back=Arreri
+ui.main.search=Va' cerca
+ui.main.results.title=Risurtati circati
+ui.main.close=Chiùi
+ui.main.library.sortBy.title=Tìtulu
+ui.main.library.sortBy.size=Grannizza
+ui.main.library.sortBy.date=Data
+ui.main.library.sortBy.author=Auturi
+ui.main.library.filterBy.language=Lingua
+ui.main.library.filterBy.language.all=Tutti
+ui.main.library.filterBy.author=Auturi
+ui.main.library.filterBy.author.all=Tutti
+ui.main.library.filterBy.publisher.all=Tutti
+ui.preferences.preferences=Prifirenzi
+ui.preferences.save=Sarva
+ui.preferences.cancel=Annulla
+ui.preferences.browse=Sfogghia
+ui.messages.confirm=Cunferma
+ui.messages.no=no
+ui.messages.yes=sè
+ui.messages.ok=OK
+ui.messages.cancel=Annulla
+ui.messages.error=Erruri
+ui.messages.information=Nfurmazzioni

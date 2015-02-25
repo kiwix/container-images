@@ -1,6 +1,7 @@
-# Messages for Belarusian (Беларуская)
+# Messages for Belarusian (беларуская)
 # Exported from translatewiki.net
 # Author: Renessaince
+# Author: Дзяніс Тутэйшы
 # Author: Хомелка
 
 ui.main.file=Файл
@@ -15,7 +16,7 @@ ui.main.find=Пошук на старонцы ...
 ui.main.selectall=Выбраць усе
 ui.main.copy=Капіраваць
 ui.main.transliteration=Транслітарацыя
-ui.main.preferences=Настаўленні
+ui.main.preferences=Настройкі
 ui.main.display=Паказаць
 ui.main.zoom=Маштаб
 ui.main.zoomin=Павялічыць
@@ -53,9 +54,8 @@ ui.main.unmark=Зняць адметку з выбранага
 # Fuzzy
 ui.main.reload=Скінуць набор закладак
 ui.main.defaultset=Усталяваць па змаўчанні
-ui.main.saveImageAs=Захаваць выяву як ...
 ui.main.close=Закрыць
-ui.preferences.preferences=Настаўленні
+ui.preferences.preferences=Настройкі
 ui.preferences.save=Запісаць
 ui.preferences.cancel=Адмена
 ui.preferences.profileDirectory=Каталог профіля

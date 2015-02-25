@@ -3,6 +3,7 @@
 # Author: Dbc334
 # Author: Eleassar
 # Author: Kelson
+# Author: Macofe
 
 ui.main.osxservices=Storitve
 ui.main.osxhideapp=Skrij &brand.brandShortName;
@@ -155,8 +156,13 @@ android.ui.error_articleurlnotfound=Napaka: nalaganje članka (url: %1$s) ni usp
 android.ui.pref_zoom_title=Raven zumiranja
 android.ui.pref_zoom_enable=Kontrolniki zumiranja
 android.ui.pref_zoom_enable_summary=V spodnjem desnem vogalu zaslona prikaži gumb za zumiranje
+android.ui.pref_zoom_entry_automatic=Samodejno
+android.ui.pref_zoom_entry_small=Majhno
+android.ui.pref_zoom_entry_medium=Medij
+android.ui.pref_zoom_entry_large=Veliko
 android.ui.pref_nightmode=Nočni način
 android.ui.pref_nightmode_summary=Prikaz člankov z obrnjenimi barvami
+android.ui.pref_language_chooser=Izberite jezik
 android.ui.pref_info_title=Informacije
 android.ui.pref_info_version=Različica
 android.ui.pref_backtotop=Nazaj na vrh

@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Jnanaranjan Sahu
 # Author: Kelson
+# Author: Macofe
 # Author: Psubhashish
 # Author: Sukarna0
 
@@ -155,8 +156,12 @@ android.ui.error_articleurlnotfound=ଅସୁବିଧା: (Url: %1$s) ପ୍ର
 android.ui.pref_zoom_title=ଜୁମ ବଢ଼ାଇବା/କମାଇବା
 android.ui.pref_zoom_enable=ଜୁମ ବଢ଼ାଇବା/କମାଇବା
 android.ui.pref_zoom_enable_summary=ସ୍କ୍ରିନର ତଳେ ଡାହାଣ ପଟେ ଏକ ଜୁମ ବଟନ ଦେଖାଇବେ
+android.ui.pref_zoom_entry_small=ଛୋଟ
+android.ui.pref_zoom_entry_medium=ମାଧ୍ୟମ
+android.ui.pref_zoom_entry_large=ବିରାଟ
 android.ui.pref_nightmode=ରାତି ମୋଡ଼
 android.ui.pref_nightmode_summary=ରଙ୍ଗର ଓଲଟା କ୍ରମରେ ପ୍ରସଙ୍ଗମାନ ଦେଖାଇବେ
+android.ui.pref_language_chooser=ଭାଷା ଚୟନ କରନ୍ତୁ
 android.ui.pref_info_title=ସୂଚନା
 android.ui.pref_info_version=ସଂସ୍କରଣ
 android.ui.pref_backtotop=ଉପରକୁ ଫେରିବେ

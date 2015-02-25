@@ -4,6 +4,7 @@
 # Author: Cekli829
 # Author: Dağlı95
 # Author: Khan27
+# Author: Macofe
 # Author: Mjbmr
 
 ui.main.osxservices=Servislər
@@ -157,8 +158,13 @@ android.ui.error_articleurlnotfound=Xəta: Məqalənin (Url: %1$s) yüklənməsi
 android.ui.pref_zoom_title=Miqyas səviyyəsi
 android.ui.pref_zoom_enable=Miqyas quraşdırılmaları
 android.ui.pref_zoom_enable_summary=Ekranın sağ alt küncündə miqyas düyməsini göstər
+android.ui.pref_zoom_entry_automatic=Avtomatik
+android.ui.pref_zoom_entry_small=Kiçik
+android.ui.pref_zoom_entry_medium=Orta
+android.ui.pref_zoom_entry_large=Geniş
 android.ui.pref_nightmode=Gecə rejimi
 android.ui.pref_nightmode_summary=Məqalələri "gecə rejimində" göstər
+android.ui.pref_language_chooser=Dili seçin
 android.ui.pref_info_title=Məlumat
 android.ui.pref_info_version=Versiya
 android.ui.pref_backtotop=Əvvələ qayıt

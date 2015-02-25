@@ -64,7 +64,6 @@ ui.main.mark=Ushbu sahifani belgilash
 ui.main.unmark=Tanlangandan belgini olib tashlash
 ui.main.reload=Xatchoʻplar toʻplamini yangilash
 ui.main.defaultset=Boshlangʻich holatga oʻrnatish
-ui.main.saveImageAs=Rasmni ... kabi saqlash
 ui.main.openLinkInNewTab=Havolani yangi bandda ochish
 ui.main.searchFor=Qidiruv
 ui.main.copyLinkAddress=Havola manzilidan nusxa olish
@@ -116,6 +115,7 @@ ui.messages.contentDownloadFinished='%1'ni yuklash tugatildi.
 ui.messages.feedback=Teskari aloqa
 ui.messages.library=Kutubxona
 ui.messages.fullscreen=Toʻliq ekran
+# Fuzzy
 ui.messages.quitFullscreen=Toʻliq ekran tartibidan chiqish
 ui.messages.integrityCheckSuccessful=Faylning butunligi muvaffaqiyatli tekshirildi.
 ui.messages.integrityCheckFailed=Butunlikni tekshirishda xatolik. Faylingiz buzilgan.

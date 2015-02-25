@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Jagwar
 # Author: Johary
+# Author: Macofe
 
 ui.main.osxservices=Sampan-draharaha
 ui.main.osxhideapp=Hanafina &brand.brandShortName;
@@ -154,6 +155,9 @@ android.ui.error_articleurlnotfound=Hadisoana: tsy nahafahana ilay lahatsoratra 
 android.ui.pref_zoom_title=Lentan'ny zoom
 android.ui.pref_zoom_enable=Famehezana zoom
 android.ui.pref_zoom_enable_summary=Aseho amin'ny sisiny ambany havanan'ny fikandra ny bokotra zoom
+android.ui.pref_zoom_entry_small=Kely
+android.ui.pref_zoom_entry_medium=Antonony
+android.ui.pref_zoom_entry_large=Lehibe
 android.ui.pref_nightmode=Fiseho amin'ny alina
 android.ui.pref_nightmode_summary=Haneho lahatsoratra amin'ny loko mivadika
 android.ui.pref_info_title=Fampahalalana

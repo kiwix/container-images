@@ -3,10 +3,12 @@
 # Author: Giro720
 # Author: Gusta
 # Author: Hamilton Abreu
+# Author: Imperadeiro90
 # Author: Imperadeiro98
 # Author: Kelson
 # Author: Luckas
 # Author: Luckas Blade
+# Author: Macofe
 # Author: Malafaya
 # Author: McDutchie
 # Author: Waldir
@@ -105,6 +107,7 @@ ui.main.mark=Marcar esta página
 ui.main.unmark=Desmarcar selecionadas
 ui.main.reload=Recarregar Conjunto de Favoritos
 ui.main.defaultset=Conjunto Padrão
+ui.main.saveMediaAs=Salvar media como...
 ui.main.openLinkInNewTab=Abrir a ligação num novo separador
 ui.main.searchFor=Procurar por
 ui.main.copyLinkAddress=Copiar endereço do link
@@ -174,6 +177,8 @@ ui.messages.quitFullscreen=Sair de ecrã inteiro
 ui.messages.integrityCheckSuccessful=A integridade do arquivo foi verificada com êxito.
 ui.messages.integrityCheckFailed=A verificação de integridade falhou. Seu arquivo está corrompido.
 android.ui.menu_share=Compartilhe com amigos
+android.ui.menu_read_aloud=Ler em voz alta
+android.ui.menu_read_aloud_stop=Parar de ler em voz alta
 android.ui.info_share_title=Eu disfruto com o Kiwix a minha Wikipédia Offline!
 android.ui.info_share_content=Eu disfruto da Wikipédia Offline  com o Kiwix! Todo o conhecimento humano na mão vá para onder for. http://goo.gl/h9Smkk
 android.ui.share_via=Compartilhar via...
@@ -193,8 +198,13 @@ android.ui.error_articleurlnotfound=Erro com: carregamento do artigo, ligação 
 android.ui.pref_zoom_title=Nível de Zoom
 android.ui.pref_zoom_enable=Controlos de Zoom
 android.ui.pref_zoom_enable_summary=Exibir o botão de Zoom no canto inferior direito da imagem
+android.ui.pref_zoom_entry_automatic=Automático
+android.ui.pref_zoom_entry_small=Pouco
+android.ui.pref_zoom_entry_medium=Médio
+android.ui.pref_zoom_entry_large=Muito
 android.ui.pref_nightmode=Modo nocturno
 android.ui.pref_nightmode_summary=Mostrat artigos com cores invetidas
+android.ui.pref_language_chooser=Escolha um idioma
 android.ui.pref_info_title=Informação
 android.ui.pref_info_version=Versão
 android.ui.pref_backtotop=Voltar ao Topo

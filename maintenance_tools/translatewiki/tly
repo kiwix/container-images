@@ -1,4 +1,4 @@
-# Messages for толышә зывон (толышә зывон)
+# Messages for Talysh (толышә зывон)
 # Exported from translatewiki.net
 # Author: Erdemaslancan
 # Author: Гусейн
@@ -64,7 +64,6 @@ ui.main.mark=Ым сәһифә нышон жәј
 ui.main.unmark=Выжнијә быәку нышон пегәтеј
 ui.main.reload=Әлфәҹинон дастә тожә кардеј
 ui.main.defaultset=Иминә кукон огәтеј
-ui.main.saveImageAs=Огәте шикили бәнә...
 ui.main.openLinkInNewTab=Тожә зијодә вәрәғәдә сәбони окардеј
 ui.main.searchFor=Нәве
 ui.main.copyLinkAddress=Сәбони унвони сурәт бекардеј

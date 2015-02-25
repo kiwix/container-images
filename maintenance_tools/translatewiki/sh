@@ -1,4 +1,4 @@
-# Messages for Serbo-Croatian (Srpskohrvatski)
+# Messages for Serbo-Croatian (srpskohrvatski / српскохрватски)
 # Exported from translatewiki.net
 # Author: OC Ripper
 
@@ -14,6 +14,7 @@ ui.main.find=Traži na stranici...
 ui.main.selectall=Odaberi sve
 ui.main.copy=Kopiraj
 ui.main.transliteration=Transliteracija
+# Fuzzy
 ui.main.preferences=Postavke
 ui.main.display=Prikaži
 ui.main.zoom=Zumiraj
@@ -52,7 +53,6 @@ ui.main.unmark=Odoznači izabrano
 # Fuzzy
 ui.main.reload=Resetiraj set oznaka
 ui.main.defaultset=Postavljeni set
-ui.main.saveImageAs=Snimi sliku kao...
 ui.main.close=Zatvori
 ui.preferences.preferences=Postavke
 ui.preferences.save=Snimi

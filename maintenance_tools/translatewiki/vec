@@ -1,4 +1,4 @@
-# Messages for vèneto (vèneto)
+# Messages for Venetian (vèneto)
 # Exported from translatewiki.net
 # Author: Alunardon90
 
@@ -58,7 +58,6 @@ ui.main.mark=Xonta sta pajina ai segnałibri
 ui.main.unmark=Cava sta pajina dai segnałibri
 ui.main.reload=Ricarga cołesion de segnałibri
 ui.main.defaultset=Cołesion predefinida
-ui.main.saveImageAs=Salva imajine come...
 ui.main.openLinkInNewTab=Verxi el cołegamento in nova scheda
 ui.main.searchFor=Serca
 ui.main.copyLinkAddress=Copia 'l indiriso del cołegamento
@@ -116,6 +115,7 @@ ui.messages.contentDownloadFinished=Descarga de '%1' conpletà.
 ui.messages.feedback=Comenti
 ui.messages.library=Archivio
 ui.messages.fullscreen=Schermo intiero
+# Fuzzy
 ui.messages.quitFullscreen=Sara ła modałità a schermo intiero
 ui.messages.integrityCheckSuccessful=L'integrità del file xe stà verifegà co suceso.
 ui.messages.integrityCheckFailed=El controło del'integrità xe fałìo. El file xe danejà.

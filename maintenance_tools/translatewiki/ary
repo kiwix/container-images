@@ -14,6 +14,7 @@ ui.main.find=qllb f-ṣṣfḫa...
 ui.main.selectall=ĥṫar kolċi
 ui.main.copy=nseĥ
 ui.main.transliteration=nasĥ ḫrfi
+# Fuzzy
 ui.main.preferences=ṫfḍilaṫ
 ui.main.display=ĝarḍ
 ui.main.zoom=zoom
@@ -51,7 +52,6 @@ ui.main.mark=marki had ṣ-ṣfḫa
 ui.main.unmark=ḫyyed lli ĥtariṫ mn mofaḍḍalaṫ
 ui.main.reload=reċarji mjmo'ṫ l-mofaḍḍalaṫ
 ui.main.defaultset=ḍḅṫ fṫiraḍi
-ui.main.saveImageAs=ḫfeḍ ṫ-ṫṣwira ka...
 ui.main.close=sedd
 ui.preferences.preferences=ṫfḍilaṫ
 ui.preferences.save=sjl

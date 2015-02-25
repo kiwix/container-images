@@ -4,8 +4,10 @@
 # Author: BeginaFelicysym
 # Author: Chrumps
 # Author: Kelson
+# Author: Macofe
 # Author: Olgak85
 # Author: Przemub
+# Author: Py64
 # Author: Rzuwig
 # Author: Sp5uhe
 # Author: Ty221
@@ -103,6 +105,7 @@ ui.main.mark=Zaznacz bieżącą stronę
 ui.main.unmark=Odznacz wybrane
 ui.main.reload=Przeładuj wszystkie zakładki z bieżącego zestawu
 ui.main.defaultset=Zestaw domyślny
+ui.main.saveMediaAs=Zapisz plik multimedialny jako...
 ui.main.openLinkInNewTab=Otwórz odnośnik na nowej karcie
 ui.main.searchFor=Szukaj
 ui.main.copyLinkAddress=Kopiuj adres łącza
@@ -191,9 +194,16 @@ android.ui.error_articleurlnotfound=Błąd: Ładowanie artykułu (Url:  %1$s ) s
 android.ui.pref_zoom_title=Poziom powiększenia
 android.ui.pref_zoom_enable=Zarządzanie skali
 android.ui.pref_zoom_enable_summary=Wyświetl przycisk skali w prawym rogu ekranu
+android.ui.pref_zoom_entry_automatic=Automatycznie
+android.ui.pref_zoom_entry_small=Mały
+android.ui.pref_zoom_entry_medium=Średni
+android.ui.pref_zoom_entry_large=Duży
 android.ui.pref_nightmode=Tryb nocny
 android.ui.pref_nightmode_summary=Pokaż artykuły w trybie nocnym
+android.ui.pref_language_chooser=Wybierz język
 android.ui.pref_info_title=Informacje
 android.ui.pref_info_version=Wersja
 android.ui.pref_backtotop=Powrót do góry
 android.ui.pref_backtotop_summary=Wyświetl przycisk na końcu strony, aby przewinąć do góry
+android.ui.save_media_error=Wystąpił błąd przy zapisywanie plików multimedialnych!
+android.ui.save_media_saved=Zapisano plik multimedialny jako %1$s w folderze Zdjęcia.

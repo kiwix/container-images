@@ -1,6 +1,7 @@
 # Messages for Lower Sorbian (dolnoserbski)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Macofe
 # Author: Michawiki
 
 ui.main.osxservices=Słužby
@@ -153,8 +154,13 @@ android.ui.error_articleurlnotfound=Zmólka: Nastawk (Url: %1$s) njedajo se zacy
 android.ui.pref_zoom_title=Skalěrowański schójźeńk
 android.ui.pref_zoom_enable=Skalowěrańske elementy
 android.ui.pref_zoom_enable_summary=Skalěrowański tłočašk w pšawem dolnem róžku wobrazowki zwobrazniś
+android.ui.pref_zoom_entry_automatic=Awtomatiski
+android.ui.pref_zoom_entry_small=Mały
+android.ui.pref_zoom_entry_medium=Srědna
+android.ui.pref_zoom_entry_large=Wjeliki
 android.ui.pref_nightmode=Nocny modus
 android.ui.pref_nightmode_summary=Nastawki z nawopacnymi barwami pokazaś
+android.ui.pref_language_chooser=Rěc wubraś
 android.ui.pref_info_title=Informacije
 android.ui.pref_info_version=Wersija
 android.ui.pref_backtotop=Slědk górjej
