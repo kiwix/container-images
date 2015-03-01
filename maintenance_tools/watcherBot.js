@@ -68,12 +68,17 @@ openzimWikiWatcher.run( function( error, articles ) {
     }
 });
 
+var lastPubDate;
 var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
 sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
 sourceforgeWatcher.on( 'new article', function( article ) {
-    var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
-    console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message);
+    var pubDate = Date.parse( article.pubDate )
+    if ( !lastPubDate || ( pubDate.getTime() > lastPubDate.getTime() ) ) {
+	lastPubDate = pubDate;
+	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
+	console.log( '[MSG]' + message );
+	ircClient.say( '#kiwix', message);
+    }
 });
 sourceforgeWatcher.run( function( error, articles ) {
     if ( error ) {
