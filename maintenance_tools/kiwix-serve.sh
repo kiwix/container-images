@@ -26,7 +26,7 @@ do
     if [ ! -e $IDX ]
     then
 	echo "Building idx for $ZIM..."
-	kiwix-index $ZIM $IDX
+	kiwix-index --verbose $ZIM $IDX
 	kiwix-compact $IDX
     fi
 
