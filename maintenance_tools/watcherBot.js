@@ -73,7 +73,7 @@ var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
 sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
 sourceforgeWatcher.on( 'new article', function( article ) {
     var pubDate = Date.parse( article.pubDate )
-    if ( !lastPubDate || ( pubDate.getTime() > lastPubDate.getTime() ) ) {
+    if ( !lastPubDate || ( pubDate > lastPubDate ) ) {
 	lastPubDate = pubDate;
 	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
 	console.log( '[MSG]' + message );
