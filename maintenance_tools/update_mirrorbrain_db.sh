@@ -47,3 +47,6 @@ scanMirror your.org WMDIRS
 
 # Scan the Mirrorservice.org mirror
 scanMirror mirrorservice.org WMDIRS
+
+# Scan the fau.de mirror
+scanMirror fau.de DIRS
