@@ -40,7 +40,8 @@ do
     for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
-	if [ ! -f "$ZIPTARGET$DIR/$ZIPFILE" ]
+	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE"`
+	if [ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" ]
 	then
 	    echo "Building $ZIPFILE..."
 	    cd `dirname "$SCRIPT"`
