@@ -1,5 +1,6 @@
 # Messages for Hungarian (magyar)
 # Exported from translatewiki.net
+# Author: Adam78
 # Author: Csega
 # Author: Dj
 # Author: Hunyadym
@@ -90,7 +91,7 @@ ui.main.library.filterBy.author=Szerző
 ui.main.library.filterBy.author.all=Mind
 ui.main.library.filterBy.publisher=Kiadó
 ui.main.library.filterBy.publisher.all=Mind
-ui.main.library.filterBy.lessThan=Kevesebb mint
+ui.main.library.filterBy.lessThan=Kevesebb, mint
 ui.preferences.preferences=Beállítások
 ui.preferences.save=Mentés
 ui.preferences.cancel=Mégse

@@ -1,6 +1,7 @@
 # Messages for German (Deutsch)
 # Exported from translatewiki.net
 # Author: Geitost
+# Author: Gromper
 # Author: Jan Luca
 # Author: Kelson
 # Author: Kghbln
@@ -134,7 +135,7 @@ ui.server.load=Laden
 ui.server.start=Starten
 ui.server.stop=Stoppen
 ui.server.close=Schließen
-ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Bist du sicher, dass dies eine ZIM-Datei ist?
+ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Sind Sie sicher, dass dies eine ZIM-Datei ist?
 ui.messages.alreadyIndexingError=Ein Indexierungsprozess wurde bereits gestartet.
 ui.messages.noResultsError=Keine Ergebnisse gefunden.
 ui.messages.loadArticleError=Dieser Artikel kann nicht geladen werden.
@@ -158,7 +159,7 @@ ui.messages.information=Information
 ui.messages.indexing=Indexiere …
 ui.messages.selectBookmarkSet=Lesezeichendatei auswählen
 ui.messages.nameBookmarkSet=Den Namen der Lesezeichendatei eingeben
-ui.messages.bookmarkReferingOtherContent=Dieses Lesezeichen bezieht sich auf einen anderen Inhalt. Möchtest du ihn laden?
+ui.messages.bookmarkReferingOtherContent=Dieses Lesezeichen bezieht sich auf einen anderen Inhalt. Möchten Sie ihn laden?
 ui.messages.newContentAvailable=Es sind neue Inhalte zum Herunterladen vorhanden.
 ui.messages.newContentAvailableInvitation=Es sind neue Inhalte zum Herunterladen vorhanden. Möchten Sie sie ansehen?
 ui.messages.preparingContentDownload=Das Herunterladen wird vorbereitet ...
@@ -179,11 +180,11 @@ android.ui.button_backtotop=Zurück nach oben
 android.ui.articlesearch_hint=Zum Suchen von Artikeln tippen
 android.ui.choose_file=Wähle eine ZIM-Inhaltsdatei aus (*.zim)
 android.ui.open_in_new_tab=Link in neuer Registerkarte öffnen?
-android.ui.remove_tab_confirm=Möchtest du diese Registerkarte entfernen?
+android.ui.remove_tab_confirm=Möchten Sie diese Registerkarte entfernen?
 android.ui.remove_tab=Registerkarte entfernen
 android.ui.rescan_fs=SD-Karte neu einlesen
 android.ui.rescan_fs_warning=Scanne ZIM-Dateien. Bitte warten …
-android.ui.error_nozimfilesfound=Es wurden keine ZIM-Dateien auf deinem Gerät gefunden.\nSchau auf den Hilfeseiten nach, um Lösungen zum Laden von Inhalt in Kiwix zu erhalten.\nFalls sich eine ZIM-Datei auf deinem Gerät/externen Speicher befindet, kannst du es in einer Minute erneut versuchen oder dein Gerät neu starten.
+android.ui.error_nozimfilesfound=Es wurden keine ZIM-Dateien auf Ihrem Gerät gefunden.\nSehen Sie auf den Hilfeseiten nach, um Lösungen zum Laden von Inhalt in Kiwix zu erhalten.\nFalls sich eine ZIM-Datei auf Ihrem Gerät/externen Speicher befindet, versuchen Sie in einer Minute erneut die Suche zu starten, oder starten Sie Ihr Gerät neu.
 android.ui.error_filenotfound=Fehler: Die ausgewählte ZIM-Datei konnte nicht gefunden werden.
 android.ui.error_fileinvalid=Fehler: Die ausgewählte Datei ist keine gültige ZIM-Datei.
 android.ui.error_articlenotfound=Fehler: Das Laden des Artikels \"%1$s\" ist fehlgeschlagen.
@@ -203,4 +204,4 @@ android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Zurück nach oben
 android.ui.pref_backtotop_summary=Zeigt einen Button am Seitenende an, um zum Anfang hochzuscrollen.
 android.ui.save_media_error=Beim Versuch, das Medium zu speichern, ist ein Fehler aufgetreten!
-android.ui.save_media_saved=Medium als %1$s in deinem Bilder-Ordner gespeichert
+android.ui.save_media_saved=Medium als %1$s in Ihrem Bilder-Ordner gespeichert

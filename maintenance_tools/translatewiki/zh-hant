@@ -11,6 +11,7 @@
 # Author: Macofe
 # Author: Shirayuki
 # Author: Simon Shek
+# Author: Wehwei
 
 ui.main.osxservices=服務
 ui.main.osxhideapp=隱藏 &brand.brandShortName;
@@ -74,6 +75,7 @@ ui.main.mark=標記此頁
 ui.main.unmark=取消標記
 ui.main.reload=刷新書籤集
 ui.main.defaultset=預設設定
+ui.main.saveMediaAs=把媒體另存為…
 ui.main.openLinkInNewTab=在新頁籤打開連結
 ui.main.searchFor=搜尋
 ui.main.copyLinkAddress=複製連結位址
@@ -132,6 +134,7 @@ ui.messages.information=資訊
 ui.messages.indexing=索引中…
 ui.messages.selectBookmarkSet=選擇書籤集檔案
 ui.messages.nameBookmarkSet=輸入書籤集檔案名
+ui.messages.bookmarkReferingOtherContent=這個書籤引用了其他內容。你要載入嗎？
 ui.messages.newContentAvailable=有新內容可以下載。
 ui.messages.newContentAvailableInvitation=有新內容可以下載。您想看一看嗎？
 ui.messages.preparingContentDownload=準備下載…
@@ -139,10 +142,14 @@ ui.messages.contentDownloadFinished=「1％」已完成下載。
 ui.messages.feedback=回饋
 ui.messages.library=圖書館
 ui.messages.fullscreen=全螢幕
-# Fuzzy
-ui.messages.quitFullscreen=退出全螢幕模式
+ui.messages.quitFullscreen=退出全螢幕
 ui.messages.integrityCheckSuccessful=成功地檢查檔案完整性。
 ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損壞。
+android.ui.menu_share=分享給朋友
+android.ui.menu_read_aloud=朗讀
+android.ui.menu_read_aloud_stop=停止朗讀
+android.ui.share_via=分享到…
+android.ui.button_backtotop=返回頂部
 android.ui.pref_zoom_entry_automatic=自動
 android.ui.pref_zoom_entry_small=小
 android.ui.pref_zoom_entry_medium=中

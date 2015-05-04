@@ -3,6 +3,7 @@
 # Author: Boniface
 # Author: DavidL
 # Author: Gomoko
+# Author: Hercule
 # Author: Jean-Frédéric
 # Author: Kelson
 # Author: Metroitendo
@@ -132,7 +133,7 @@ ui.preferences.cancel=Annuler
 ui.preferences.profileDirectory=Répertoire du profil
 ui.preferences.browse=Parcourir
 ui.preferences.tabs=Se souvenir des onglets ouverts en quittant Kiwix
-ui.preferences.downloadCatalogs=Télécharger le(s) catalogue(s) distant(s)
+ui.preferences.downloadCatalogs=Télécharger les catalogues distants
 ui.preferences.neverAskToIndex=Ne jamais demander d'indexer
 ui.server.load=Charger
 ui.server.start=Démarrer

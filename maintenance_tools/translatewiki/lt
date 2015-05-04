@@ -1,5 +1,6 @@
 # Messages for Lithuanian (lietuvių)
 # Exported from translatewiki.net
+# Author: Aswanas
 # Author: Cyklopas
 # Author: Eitvys200
 # Author: Ignas693
@@ -68,6 +69,7 @@ ui.main.mark=Pažymėti šį puslapį
 ui.main.unmark=Atžymėti pasirinktus
 ui.main.reload=Pakartotinai įkelti Žymių Rinkinį
 ui.main.defaultset=Numatytasis Rinkinys
+ui.main.saveMediaAs=Išsaugoti duomenis kaip...
 ui.main.openLinkInNewTab=Atidaryti saitą naujame skirtuke
 ui.main.searchFor=Ieškoti
 ui.main.copyLinkAddress=Kopijuoti nuorodos adresas
@@ -126,6 +128,7 @@ ui.messages.information=Informacija
 ui.messages.indexing=Indeksavimas
 ui.messages.selectBookmarkSet=Pasirinkite žymelę rinkinio failas
 ui.messages.nameBookmarkSet=Įvesti žymelės nustatyti failo vardas
+ui.messages.bookmarkReferingOtherContent=Ši žyma nurodo kitą turinį. Ar norite jį įkelti ?
 ui.messages.newContentAvailable=Yra naujo turinio persisiuntimui.
 ui.messages.newContentAvailableInvitation=Yra naujo turinio persisiuntimui. Ar norite pamatyti?
 ui.messages.preparingContentDownload=Rengiamasi atsisiųsti...
@@ -133,14 +136,41 @@ ui.messages.contentDownloadFinished=Atsisiųsti iš '% 1' baigtas.
 ui.messages.feedback=Atsiliepimas
 ui.messages.library=Biblioteka
 ui.messages.fullscreen=Visas ekranas
-# Fuzzy
 ui.messages.quitFullscreen=Išeiti iš viso ekrano režimo
 ui.messages.integrityCheckSuccessful=Failo vientisumas buvo sėkmingai patikrintas.
 ui.messages.integrityCheckFailed=Vientisumo tikrinimas nepavyko. Jūsų failas yra sugadintas.
+android.ui.menu_share=Pasidalink su draugais
+android.ui.menu_read_aloud= Skaityk garsiai
+android.ui.menu_read_aloud_stop=Nustok garsiai skaityti
+android.ui.info_share_title=Man patinka Vikipedija neprisijungus su Kiwix!
+android.ui.info_share_content=Man patinka Vikipedija neprisijungus su Kiwix! Visos žmonijos žinios po ranka, kur beeitum! Be interneto! http://goo.gl/h9Smkk
+android.ui.share_via=Dalintis per...
+android.ui.button_backtotop=Atgal į viršų
+android.ui.articlesearch_hint=Klasifikuoti kaip informacijos paieškos straipsnius
+android.ui.choose_file=Pasirinkite ZIM Turinio Failą (*.zim)
+android.ui.open_in_new_tab=Atidaryti nuorodą naujame skirtuke?
+android.ui.remove_tab_confirm=Ar tikrai norite pašalinti šį skirtuką?
+android.ui.remove_tab=Pašalinti skirtuką
+android.ui.rescan_fs=Nuskaityti iš naujo SD kortelę
+android.ui.rescan_fs_warning=Ieškoma ZIM failų, prašome palaukti...
+android.ui.error_nozimfilesfound=Jūsų prietaise ZIM failų nerasta.\nPažvelkite Pagalbos puslapį norėdami gauti nurodymus, kaip įkelti turinį į Kiwix.\nJei jūs įkėlėte ZIM failą į jūsų prietaisą/išorinę atmintį,  po minutės galite pabandyti iš naujo  arba iš naujo paleisti įrenginį.
+android.ui.error_filenotfound=Klaida: pasirinktas ZIM failas nerastas.
+android.ui.error_fileinvalid=Klaida: pasirinktas failas nėra galiojantis ZIM failas.
+android.ui.error_articlenotfound=Klaida: nepavyko įkelti straipsnio \"%1$s\" .
+android.ui.error_articleurlnotfound=Klaida: nepavyko įkelti straipsnio (Url: %1$s).
+android.ui.pref_zoom_title=Mastelio keitimo lygis
+android.ui.pref_zoom_enable=Mastelio keitimo kontrolė
+android.ui.pref_zoom_enable_summary=Rodyti mastelio keitimo mygtuką ekrano dešiniajame apatiniame kampe
 android.ui.pref_zoom_entry_automatic=Automatinis
 android.ui.pref_zoom_entry_small=Mažas
 android.ui.pref_zoom_entry_medium=Vidutinis
 android.ui.pref_zoom_entry_large=Didelis
+android.ui.pref_nightmode=Naktinis režimas
+android.ui.pref_nightmode_summary=Rodyti straipsnius su ankstesnėmis spalvomis
 android.ui.pref_language_chooser=Pasirinkite kalbą
 android.ui.pref_info_title=Informacija
 android.ui.pref_info_version=Versija
+android.ui.pref_backtotop=Atgal į viršų
+android.ui.pref_backtotop_summary=Rodyti  puslapio pabaigoje mygtuką sugrįžti į viršų
+android.ui.save_media_error=Įvyko klaida bandant išsaugoti duomenis!
+android.ui.save_media_saved=Duomenys išsaugoti jūsų Paveikslėlių aplanke kaip %1$s

@@ -3,6 +3,7 @@
 # Author: Anakmalaysia
 # Author: C5st4wr6ch
 # Author: Farras
+# Author: Iwan Novirion
 # Author: Kelson
 # Author: Kenrick95
 # Author: Relly Komaruzaman
@@ -143,7 +144,7 @@ ui.messages.integrityCheckSuccessful=Penyatuan berkas telah berhasil diperiksa.
 ui.messages.integrityCheckFailed=Pemeriksaan untuk penyatuan berkas gagal. Berkas Anda rusak.
 android.ui.menu_share=Bagikan dengan teman
 android.ui.menu_read_aloud=Bacakan
-android.ui.menu_read_aloud_stop=Berhenti pembacaan
+android.ui.menu_read_aloud_stop=Hentikan pembacaan
 android.ui.info_share_title=Saya senang menggunakan Kiwix untuk Wikipedia Luring!
 android.ui.info_share_content=Saya senang menggunakan Kiwix untuk Wikipedia Luring! Seluruh ilmu pengetahuan dapat diakses di mana saja Anda berada tanpa Internet!
 android.ui.share_via=Berbagi melalui...

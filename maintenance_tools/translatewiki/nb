@@ -1,5 +1,6 @@
 # Messages for Norwegian Bokmål (norsk bokmål)
 # Exported from translatewiki.net
+# Author: Chameleon222
 # Author: E1d1eb90
 # Author: EvenT
 # Author: Laaknor
@@ -138,6 +139,8 @@ ui.messages.quitFullscreen=Avslutt fullskjerm
 ui.messages.integrityCheckSuccessful=Filintegriteten ble sjekket og funnet i orden.
 ui.messages.integrityCheckFailed=Filintegriteten ble sjekket og funnet å være skadet.
 android.ui.menu_share=Del med venner
+android.ui.menu_read_aloud=Les høyt
+android.ui.menu_read_aloud_stop=Stopp høytlesning
 android.ui.info_share_title=Jeg nyter Wikipedia offline med Kiwix!
 android.ui.info_share_content=Jeg nyter Wikipedia offline med Kiwix! Hele menneskehetens kunnskap tilgjengelig hvor enn du er! Uten internett! http://goo.gl/h9Smkk
 android.ui.share_via=Del via...
