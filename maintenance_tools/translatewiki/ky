@@ -1,6 +1,8 @@
 # Messages for Kyrgyz (Кыргызча)
 # Exported from translatewiki.net
+# Author: Chorobek
 # Author: Growingup
+# Author: Macofe
 # Author: Maksat
 # Author: Викиней
 
@@ -66,6 +68,7 @@ ui.main.mark=Бул барактын белгилөө
 ui.main.unmark=Тандалгандардан белгисин алып салуу
 ui.main.reload=Кыстырмалардын аспабын жаңылоо
 ui.main.defaultset=Автоматтык түрдө кошуу
+ui.main.saveMediaAs=Медианы бул катары сактоо
 ui.main.openLinkInNewTab=Шилтемени жаңы кыстырмада ачуу
 ui.main.searchFor=Издөө
 ui.main.copyLinkAddress=Шилтеменин дарегин көчүрүү
@@ -124,6 +127,7 @@ ui.messages.information=Маалымат
 ui.messages.indexing=Индексациялоодо...
 ui.messages.selectBookmarkSet=Кыстырмалар файлын тандаңыз
 ui.messages.nameBookmarkSet=Кыстырмалар файлынын аталышын жазыңыз
+ui.messages.bookmarkReferingOtherContent=Бул бүктөмө башка мазмунга багыттайт. Аны жүктөп алганды каалайсызбы?
 ui.messages.newContentAvailable=Жаңы контент жүктөөгө даяр
 ui.messages.newContentAvailableInvitation=Жаңы контент жүктөөгө даяр. Сиз аны көргүңүз келеби?
 ui.messages.preparingContentDownload=Жүктөөгө даярдоо...
@@ -131,7 +135,15 @@ ui.messages.contentDownloadFinished=Жүктөө '%1' бүттү
 ui.messages.feedback=Кайтарма жооп
 ui.messages.library=Китепкана
 ui.messages.fullscreen=Толук көрүнүшү
-# Fuzzy
 ui.messages.quitFullscreen=Толук көрүнүштөн чыгуу
 ui.messages.integrityCheckSuccessful=Файл бүтүмдүгү ийгиликтүү текшерилди.
 ui.messages.integrityCheckFailed=Файлдын бүтүмдүүлүгүндө ката бар. Сиздин файл бузук.
+android.ui.menu_share=Достор менен бөлүшүү
+android.ui.menu_read_aloud=Үн чыгарып окуу
+android.ui.menu_read_aloud_stop=Үн чыгарып окууну токтотуу
+android.ui.info_share_title=Kiwix менен интернетсиз эле Уикипедияны жыргап окуйм!
+android.ui.share_via=Булл аркылуу бөлүшүү...
+android.ui.button_backtotop=Артка үстүнө
+android.ui.pref_language_chooser=Тилин тандаңыз
+android.ui.pref_info_title=Маалымат
+android.ui.pref_info_version=Версия

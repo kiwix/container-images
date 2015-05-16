@@ -1,6 +1,7 @@
 # Messages for Turkish (Türkçe)
 # Exported from translatewiki.net
 # Author: Article1
+# Author: Captantrips
 # Author: Cekli829
 # Author: Emperyan
 # Author: Joseph
@@ -132,6 +133,7 @@ ui.messages.information=Bilgi
 ui.messages.indexing=Dizin oluşturuluyor...
 ui.messages.selectBookmarkSet=Yer İmi dosyasını seç
 ui.messages.nameBookmarkSet=Yer İmi dosyasının adını gir
+ui.messages.bookmarkReferingOtherContent=Bu ayraç başka bir içerikle ilgili. Yüklemek istiyor musunuz?
 ui.messages.newContentAvailable=Yeni içerik karşıdan yükleme hazır.
 ui.messages.newContentAvailableInvitation=Yeni içerik karşıdan yüklemeye hazır. Görmek ister misiniz?
 ui.messages.preparingContentDownload=Karşıdan yüklemeye hazırlanılıyor...
@@ -143,6 +145,8 @@ ui.messages.quitFullscreen=Tam ekrandan çık
 ui.messages.integrityCheckSuccessful=Dosya bütünlüğü başarıyla kontrol edildi.
 ui.messages.integrityCheckFailed=Bütünlük denetimi başarısız oldu. Dosyanız bozuk.
 android.ui.menu_share=Arkadaşlarınla paylaş
+android.ui.menu_read_aloud=Yüksek sesle oku
+android.ui.menu_read_aloud_stop=Yüksek sesle okumayı sonlandır
 android.ui.info_share_title=Kiwix ile Çevrim Dışı Vikipedi'nin tadını çıkarıyorum!
 android.ui.info_share_content=Kiwix ile Wikipedia Offline tadını çıkarın! Bütün insan bilgi el gidersen git! Internet! http://goo.gl/h9Smkk
 android.ui.share_via=Üzerinden paylaşın...
@@ -174,3 +178,4 @@ android.ui.pref_info_version=Sürüm
 android.ui.pref_backtotop=Başa dön
 android.ui.pref_backtotop_summary=Başa dönmek için sayfanın altında bir düğme görüntüler
 android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!
+android.ui.save_media_saved=Medyanın %1$'i Resim dosyanıza kaydedildi
