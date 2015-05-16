@@ -34,7 +34,7 @@ class LogParser
       $formatedLog['unixtime'] = strtotime($formatedLog["date"].":".$formatedLog["time"]." ".$formatedLog["timezone"]);
       $formatedLog['utcdatetime'] = date("Y-m-d H:i:s", $formatedLog['unixtime']);
 
-      if (eregi('.*(bot|index|spider|crawl|wget|slurp|Mediapartners-Google).*', $formatedLog['agent'])) {
+      if (eregi('.*(bot|index|spider|crawl|wget|slurp|Mediapartners-Google|W3\ Total\ Cache|qwant|cis455mapreduce).*', $formatedLog['agent'])) {
          echo "Bot/crawler detected: ".$formatedLog['agent']."\n";
       	 return false;
       } else {
@@ -116,7 +116,7 @@ function isAlreadyStored($logHash) {
 }
 
 /* Remove directories and icon requests */
-function shouldBeStored($path, $filter) {
+function shouldBeStored($path, $filter, $filterOut) {
   if (strpos($path, "favicon.") != false 
       || strpos($path, "icons/") != false
       || strpos($path, "robots.txt") != false) {
@@ -129,12 +129,18 @@ function shouldBeStored($path, $filter) {
     }
   }
 
+  if ($filterOut) {
+    if (preg_match("/$filterOut/", $path)) {
+      return false;
+    }
+  }
+
   return true;
 }
 
 /* Save in Piwik */
 function saveInPiwik($logHash) {
-  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]."\n";
+  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")\n";
   global $idSite, $webUrl, $piwikUrl, $tokenAuth;
   $t = new PiwikTracker($idSite, $piwikUrl);
   $t->setUserAgent($logHash["agent"]);
@@ -167,7 +173,7 @@ function usage() {
 }
 
 /* Get options */
-$options = getopt("", Array("idSite:", "webUrl:", "filter:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests"));
+$options = getopt("", Array("idSite:", "webUrl:", "filter:", "filterOut:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests"));
 
 /* Check options */
 $idSite = "";
@@ -175,17 +181,19 @@ $webUrl = "";
 $piwikUrl = "";
 $tokenAuth = "";
 $filter = "";
+$filterOut = "";
 $followLog = false;
 $countSimilarRequests = false;
 if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["piwikUrl"]) || empty($options["tokenAuth"])) {
   usage();
 } else {
-  global $idSite, $webUrl, $filter, $piwikUrl, $tokenAuth, $followLog, $countSimilarRequests;
+  global $idSite, $webUrl, $filter, $filterOut, $piwikUrl, $tokenAuth, $followLog, $countSimilarRequests;
   $idSite = $options["idSite"];
   $webUrl = $options["webUrl"];
   $piwikUrl = $options["piwikUrl"];
   $tokenAuth = $options["tokenAuth"];
   $filter = array_key_exists("filter", $options) ? $options["filter"] : '';
+  $filterOut = array_key_exists("filterOut", $options) ? $options["filterOut"] : '';
   $followLog = array_key_exists("followLog", $options);
   $countSimilarRequests = array_key_exists("countSimilarRequests", $options);
 }
@@ -286,13 +294,14 @@ ksort($sortedLogFiles);
 echo "Read log files...\n";
 foreach ($sortedLogFiles as $logFile) {
   global $filter;
+  global $filterOut;
   $parser = new LogParser();
 
   if ($parser->openLogFile($logFile)) {
     echo "File '$logFile' opened.\n";
     while ($line = $parser->getLine()) {
       $logHash = $parser->formatLine($line);
-      if (shouldBeStored($logHash["path"], $filter) && 
+      if (shouldBeStored($logHash["path"], $filter, $filterOut) && 
 	  $logHash["status"] != '404' &&
 	  $logHash["status"] != '301' &&
 	  ($countSimilarRequests || !isAlreadyStored($logHash)) && 
