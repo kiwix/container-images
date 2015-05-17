@@ -11,6 +11,7 @@ use Data::Dumper;
 # get the params
 my @languages;
 my $allLanguages="";
+my $threshold=90;
 my $path;
 
 # Duplicates, are responsible to find one tranlsation in differents
@@ -45,7 +46,8 @@ my $duplicates = {
 # Get console line arguments
 GetOptions('path=s' => \$path,
 	   'language=s' => \@languages, 
-	   'allLanguages=s' => \$allLanguages
+	   'allLanguages=s' => \$allLanguages,
+	   'threshold' => \$threshold
 	   );
 
 if (!$path) {
@@ -77,64 +79,80 @@ if ($allLanguages eq "tw" || $allLanguages eq "kw") {
 my $languageMainDtdSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.dtd");
 my $languageMainPropertiesSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.properties");
 my $languageAndroidSourceMaster = readFile($path."/android/res/values/strings.xml");
+my $masterTranslationsCount = countLinesInFile("en");
 
 # Update Kiwix locales
 foreach my $language (@languages) {
     print STDERR "Doing $language...\n";
-    my $localePath = $path."/kiwix/chrome/locale/".$language."/main/";
 
-    # Create directory if necessary
-    unless ( -d $path."/kiwix/chrome/locale/".$language) { mkdir $path."/kiwix/chrome/locale/".$language; }
-    unless ( -d $path."/kiwix/chrome/locale/".$language."/main") { mkdir $path."/kiwix/chrome/locale/".$language."/main"; }
-    unless ( -f $path."/kiwix/chrome/locale/".$language."/main/help.html") { writeFile($path."/kiwix/chrome/locale/".$language."/main/help.html", "") };
+    # Check if this language should be done at all
+    my $languageTranslationsCount = countLinesInFile($language);
+    my $languageTranslationCompletion = int($languageTranslationsCount / $masterTranslationsCount * 100);
+    print STDERR "Translation completion for $language is $languageTranslationCompletion%\n";
 
     # Get translation translatewiki content
     my $content = readFile($language);
     my $globalHash = getLocaleHash($content, "|");
 
-    # Update main dtd
-    my $mainDtdHash = getLocaleHash($content, "ui\.|[^\.]+");
+    # Create/Update Kiwix for desktop localisation
+    my $localePath = $path."/kiwix/chrome/locale/".$language."/main/";
+    if ($languageTranslationCompletion > $threshold || -d $localePath) {
+	print STDERR "Creating locale file in $language for Kiwix for desktop\n";
 
-    my $languageMainDtdSource = $languageMainDtdSourceMaster;
-    while ($languageMainDtdSourceMaster =~ /(!ENTITY[ |\t]+)(.*?)([ |\t]+\")(.*?)(\")/g ) {
-	my $prefix = $1.$2.$3;
-	my $postfix = $5;
-	my $name = $2;
-	my $value = $4;
-
-	if (exists($mainDtdHash->{$name})) {
-	    $value = $mainDtdHash->{$name};
-	} elsif (exists($duplicates->{"ui.".$name}) && 
-		 exists($globalHash->{$duplicates->{"ui.".$name}})) {
-	    $value = $globalHash->{$duplicates->{"ui.".$name}};
-	}
-
-	$languageMainDtdSource =~ s/\Q$1$2$3$4$5\E/$prefix$value$postfix/;
-    }
-    writeFile($localePath."main.dtd", $languageMainDtdSource);
-
-    # Update js properties file
-    my $mainPropertiesHash = getLocaleHash($content, "ui\.messages\.|");
-    my $languageMainPropertiesSource = $languageMainPropertiesSourceMaster;
-
-    while ($languageMainPropertiesSourceMaster =~ /^([^<].*?)(\=)(.*)$/mg) {
-	my $name = $1;
-	my $middle = $2;
-	my $value = $3;
+	# Create directory if necessary
+	unless ( -d $path."/kiwix/chrome/locale/".$language) { mkdir $path."/kiwix/chrome/locale/".$language; }
+	unless ( -d $path."/kiwix/chrome/locale/".$language."/main") { mkdir $path."/kiwix/chrome/locale/".$language."/main"; }
+	unless ( -f $path."/kiwix/chrome/locale/".$language."/main/help.html") { writeFile($path."/kiwix/chrome/locale/".$language."/main/help.html", "") };
 	
-	if (exists($mainPropertiesHash->{$name})) {
-	    $value = $mainPropertiesHash->{$name};
-	} elsif (exists($duplicates->{"ui.messages.".$name}) && 
-		 exists($globalHash->{$duplicates->{"ui.messages.".$name}})) {
-	    $value = $globalHash->{$duplicates->{"ui.messages.".$name}};
-	}
+	# Update main dtd
+	my $mainDtdHash = getLocaleHash($content, "ui\.|[^\.]+");
 	
-	$languageMainPropertiesSource =~ s/\Q$1$2$3\E/$name$middle$value/;
-    }
-    writeFile($localePath."main.properties", $languageMainPropertiesSource);
+	my $languageMainDtdSource = $languageMainDtdSourceMaster;
+	while ($languageMainDtdSourceMaster =~ /(!ENTITY[ |\t]+)(.*?)([ |\t]+\")(.*?)(\")/g ) {
+	    my $prefix = $1.$2.$3;
+	    my $postfix = $5;
+	    my $name = $2;
+	    my $value = $4;
+	    
+	    if (exists($mainDtdHash->{$name})) {
+		$value = $mainDtdHash->{$name};
+	    } elsif (exists($duplicates->{"ui.".$name}) && 
+		     exists($globalHash->{$duplicates->{"ui.".$name}})) {
+		$value = $globalHash->{$duplicates->{"ui.".$name}};
+	    }
+	    
+	    $languageMainDtdSource =~ s/\Q$1$2$3$4$5\E/$prefix$value$postfix/;
+	}
+	writeFile($localePath."main.dtd", $languageMainDtdSource);
 
-    # Update android xml file
-    if (length($language) <= 2 ) {
+	# Update js properties file
+	my $mainPropertiesHash = getLocaleHash($content, "ui\.messages\.|");
+	my $languageMainPropertiesSource = $languageMainPropertiesSourceMaster;
+	
+	while ($languageMainPropertiesSourceMaster =~ /^([^<].*?)(\=)(.*)$/mg) {
+	    my $name = $1;
+	    my $middle = $2;
+	    my $value = $3;
+	    
+	    if (exists($mainPropertiesHash->{$name})) {
+		$value = $mainPropertiesHash->{$name};
+	    } elsif (exists($duplicates->{"ui.messages.".$name}) && 
+		     exists($globalHash->{$duplicates->{"ui.messages.".$name}})) {
+		$value = $globalHash->{$duplicates->{"ui.messages.".$name}};
+	    }
+	    
+	    $languageMainPropertiesSource =~ s/\Q$1$2$3\E/$name$middle$value/;
+	}
+	writeFile($localePath."main.properties", $languageMainPropertiesSource);
+    } else {
+	print STDERR "Skipping locale file in $language for Kiwix for desktop\n";
+    }
+
+    # Create/Update Android xml file
+    $localePath = $path."/android/res/values-".$language;
+    if (length($language) <= 2 && ($languageTranslationCompletion > $threshold || -d $localePath)) {
+	print STDERR "Creating locale file in $language for Kiwix for Android\n";
+
 	my $androidHash = getLocaleHash($content, "android\.ui\.|");
 	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
 	my $languageAndroidSource = $languageAndroidSourceMaster;
@@ -159,11 +177,12 @@ foreach my $language (@languages) {
 	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6$7\E/$tag$middle1$name$middle2$value$last/mg;
 	}
 	
-	$localePath = $path."/android/res/values-".$language;
 	if (! -d $localePath) {
 	    mkdir($localePath);
 	}
 	writeFile($localePath."/strings.xml", $languageAndroidSource);
+    } else {
+	print STDERR "Skipping locale file in $language for Kiwix for Android\n";
     }
 }
 
@@ -199,6 +218,20 @@ sub readFile {
     close FILE;
 
     return $data;
+}
+
+sub countLinesInFile {
+    my $path = shift;
+    my $count = 0;
+    
+    open FILE, "<:utf8", $path or die "Couldn't open file: $path";
+    while (<FILE>) {
+        $count += 1;
+    }
+    close FILE;
+
+    return $count;
+
 }
 
 exit;
