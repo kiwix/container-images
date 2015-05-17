@@ -47,11 +47,11 @@ my $duplicates = {
 GetOptions('path=s' => \$path,
 	   'language=s' => \@languages, 
 	   'allLanguages=s' => \$allLanguages,
-	   'threshold' => \$threshold
+	   'threshold=s' => \$threshold
 	   );
 
 if (!$path) {
-    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]]\n";
+    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
     exit;
 } elsif (! -d $path || ! -d $path."/kiwix/") {
     print STDERR "'$path' is not a directory, does not exist or is not the Kiwix source directory 'moulinkiwix'.\n";
@@ -88,7 +88,7 @@ foreach my $language (@languages) {
     # Check if this language should be done at all
     my $languageTranslationsCount = countLinesInFile($language);
     my $languageTranslationCompletion = int($languageTranslationsCount / $masterTranslationsCount * 100);
-    print STDERR "Translation completion for $language is $languageTranslationCompletion%\n";
+    print STDERR "Translation completion for $language is $languageTranslationCompletion% (threshold is $threshold)\n";
 
     # Get translation translatewiki content
     my $content = readFile($language);
