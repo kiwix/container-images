@@ -6,6 +6,7 @@
 # Author: Base
 # Author: Dim Grits
 # Author: Kelson
+# Author: Lxlalexlxl
 # Author: Mykola Swarnyk
 # Author: Probil
 # Author: Ypryima
@@ -175,6 +176,8 @@ ui.messages.quitFullscreen=Вийти з повноекранного режим
 ui.messages.integrityCheckSuccessful=Цілісність файлу було успішно перевірено
 ui.messages.integrityCheckFailed=Збій перевірки цілісності. Ваш файл пошкоджено.
 android.ui.menu_share=Поділитися з друзями
+android.ui.menu_read_aloud=Читати вголос
+android.ui.menu_read_aloud_stop=Зупинити читання вголос
 android.ui.info_share_title=Я люблю Вікіпедію в автономному режимі з Kiwix!
 android.ui.info_share_content=Мені подобається автономний режим Вікіпедії з Kiwix! Усі людські знання під рукою коли завгодно! Без Інтернету! http://goo.gl/h9Smkk
 android.ui.share_via=Поділитися через…
