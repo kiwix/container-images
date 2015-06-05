@@ -79,6 +79,7 @@ if ($allLanguages eq "tw" || $allLanguages eq "kw") {
 my $languageMainDtdSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.dtd");
 my $languageMainPropertiesSourceMaster = readFile($path."/kiwix/chrome/locale/en/main/main.properties");
 my $languageAndroidSourceMaster = readFile($path."/android/res/values/strings.xml");
+my $languageBrandingAndroidSourceMaster = readFile($path."/android/res/values/branding.xml");
 my $masterTranslationsCount = countLinesInFile("en");
 
 # Update Kiwix locales
@@ -181,6 +182,9 @@ foreach my $language (@languages) {
 	    mkdir($localePath);
 	}
 	writeFile($localePath."/strings.xml", $languageAndroidSource);
+
+	# Copy master branding file
+	writeFile($localePath."/branding.xml", $languageBrandingAndroidSourceMaster);
     } else {
 	print STDERR "Skipping locale file in $language for Kiwix for Android\n";
     }
