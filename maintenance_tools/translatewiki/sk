@@ -4,6 +4,7 @@
 # Author: Jaroslav.micek
 # Author: Kelson
 # Author: Kusavica
+# Author: Mikulas1
 # Author: Teslaton
 # Author: Wizzard
 
@@ -140,6 +141,8 @@ ui.messages.quitFullscreen=Ukončiť režim celej obrazovky
 ui.messages.integrityCheckSuccessful=Integrita súborov bola úspešne overená.
 ui.messages.integrityCheckFailed=Kontrola integrity zlyhala. Súbor je poškodený.
 android.ui.menu_share=Zdielať s priaťeľmi
+android.ui.menu_read_aloud=Čítať nahlas
+android.ui.menu_read_aloud_stop=Zastaviť čítanie nahlas
 android.ui.info_share_title=Užívam si Wikipédiu Offline s Kiwixom!
 android.ui.info_share_content=Užívam si Wikipédiu s Kiwixom! Celé ľudské poznanie na dosah ruky kamkoľvek idete! Bez internetu! http://goo.gl/h9Smkk
 android.ui.share_via=Zdielať cez...

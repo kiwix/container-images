@@ -11,10 +11,11 @@
 # Author: Szoszv
 # Author: Trockya
 # Author: VikipediBilgini
+# Author: Watermelon juice
 
 ui.main.osxservices=Hizmetler
 ui.main.osxhideapp=&brand.brandShortName;' gizle
-ui.main.osxhideothers=Diğerlerini gizle
+ui.main.osxhideothers=Diğerlerini Gizle
 ui.main.osxshowall=Hepsini Göster
 ui.main.file=Dosya
 ui.main.openFile=Dosya aç...
@@ -156,7 +157,7 @@ android.ui.choose_file=Bir ZIM İçerik Dosyası seçin (*.zim)
 android.ui.open_in_new_tab=Bağlantı yeni sekmede açılsın mı?
 android.ui.remove_tab_confirm=Bu sekmeyi kaldırmak istediğinizden emin misiniz?
 android.ui.remove_tab=Sekmeyi kaldır
-android.ui.rescan_fs=SD kartı yeniden Tara
+android.ui.rescan_fs=SD kartı yeniden tara
 android.ui.rescan_fs_warning=ZIM dosyaları için taranıyor, lütfen bekleyin...
 android.ui.error_nozimfilesfound=Cihazınızda bir ZIM dosyası bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
 android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.

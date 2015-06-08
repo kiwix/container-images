@@ -3,6 +3,7 @@
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
 # Author: Kelson
 
+ui.main.cssdirection=rtl
 ui.main.osxservices=چوپړونه
 ui.main.osxhideapp=سوداگريزې نخښې لنډ سوداگريز نوم پټول؛
 ui.main.osxhideothers=نور پټول

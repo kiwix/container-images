@@ -148,6 +148,7 @@ android.ui.remove_tab=אראפנעמען טאב
 android.ui.error_articlenotfound=טעות: לאדן ארטיקל  \"%1$s\" דורגעפאלן.
 android.ui.error_articleurlnotfound=טעות: לאדן ארטיקל (Url: %1$s) דורכגעפאלן.
 android.ui.pref_zoom_title=פארגרעסערונג ניווא
+android.ui.pref_zoom_enable=זום־קאנטראלן
 android.ui.pref_zoom_entry_automatic=אויטאמאטיש
 android.ui.pref_zoom_entry_small=קליין
 android.ui.pref_zoom_entry_medium=מיטל
