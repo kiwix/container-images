@@ -4,6 +4,7 @@
 # Author: Krish Dulal
 # Author: Macofe
 # Author: RajeshPandey
+# Author: राम प्रसाद जोशी
 # Author: सरोज कुमार ढकाल
 
 ui.main.cssdirection=ltr
@@ -91,7 +92,7 @@ ui.main.searchPlaceholder=खोजका लागि यहाँ टाइप
 ui.main.findInText=पाठ्यांशमा भेट्टाउने
 ui.main.noSearchBar=खोजको लागि सुचीकृत ZIM फाइलको आवश्यकता पर्छ
 ui.main.bookmarks=पुस्तक चिनोहरु
-ui.main.results.title=खोज नतिजाहरु
+ui.main.results.title=खोज नतिजाहरू
 ui.main.bmkLabel=पुस्तक चिनोहरु:
 ui.main.notesLabel=पुस्तक चिनो टिप्पणीहरु:
 ui.main.loadbmk=पुस्तक चिनो समुह आयात गर्ने
@@ -105,8 +106,8 @@ ui.main.searchFor=यसलाइ खोज्ने
 ui.main.copyLinkAddress=लिङ्क ठेगाना कपि गर्ने
 ui.main.close=बन्द गर्ने
 ui.main.library.myLibrary=मेरो पुस्तकालय
-ui.main.library.getNewFiles=नयाँ फाइलहरु लिनुहोस
-ui.main.library.searchZimFiles=ZIM फाइलहरु खोज्ने
+ui.main.library.getNewFiles=नयाँ फाइलहरू लिनुहोस्
+ui.main.library.searchZimFiles=ZIM फाइलहरू खोज्ने
 ui.main.library.sortBy=क्रम मिलाउने
 ui.main.library.sortBy.title=शीर्षक
 ui.main.library.sortBy.size=आकार
@@ -122,7 +123,7 @@ ui.main.library.filterBy.author.all=सबै
 ui.main.library.filterBy.publisher=प्रकाशक
 ui.main.library.filterBy.publisher.all=सबै
 ui.main.library.filterBy.lessThan=भन्दा कम
-ui.preferences.preferences=प्राथमिकताहरु
+ui.preferences.preferences=प्राथमिकताहरू
 ui.preferences.save=संग्रह गर्ने
 ui.preferences.cancel=रद्द गर्ने
 ui.preferences.profileDirectory=प्रोफाइल डाइरेक्टरी
