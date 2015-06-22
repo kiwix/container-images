@@ -1,5 +1,6 @@
 # Messages for Korean (한국어)
 # Exported from translatewiki.net
+# Author: Alex00728
 # Author: Deacon1289
 # Author: Hym411
 # Author: Macofe
@@ -128,6 +129,7 @@ ui.messages.information=정보
 ui.messages.indexing=색인 만드는 중...
 ui.messages.selectBookmarkSet=책갈피 세트 파일 선택
 ui.messages.nameBookmarkSet=책갈피 세트 파일 이름을 입력하세요
+ui.messages.bookmarkReferingOtherContent=이 책깔피는 다른 내용으로 연결됩니다. 불러오기를 원하십니까?
 ui.messages.newContentAvailable=다운로드 받을 수 있는 파일이 있습니다.
 ui.messages.newContentAvailableInvitation=다운로드 받을 수 있는 파일이 있습니다. 지금 보시겠습니까?
 ui.messages.preparingContentDownload=다운로드 준비 중...
@@ -139,6 +141,8 @@ ui.messages.quitFullscreen=전체 화면에서 나가기
 ui.messages.integrityCheckSuccessful=파일 무결성을 성공적으로 확인했습니다.
 ui.messages.integrityCheckFailed=무결성 검사를 실패했습니다. 파일은 손상되었습니다.
 android.ui.menu_share=친구와 공유하기
+android.ui.menu_read_aloud=소리내어 읽기
+android.ui.menu_read_aloud_stop=그만 소리내어 읽기
 android.ui.info_share_title=Kiwix로 위키백과 오프라인을 즐깁니다!
 android.ui.info_share_content=Kiwix로 위키백과 오프라인을 즐깁니다! 어디를 가든 당신의 손에 모든 인류 지식이! 인터넷 없이! http://goo.gl/h9Smkk
 android.ui.share_via=...을 통해 공유
@@ -169,3 +173,5 @@ android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
 android.ui.pref_backtotop=맨 위로 돌아가기
 android.ui.pref_backtotop_summary=맨 위로 돌아가는 버튼을 문서의 끝에 표시하기
+android.ui.save_media_error=미디어 저장하기를 시도하는 도중, 문제가 발생하였습니다!
+android.ui.save_media_saved=내 사진 폴더에 %1$s로 저장되었습니다.
