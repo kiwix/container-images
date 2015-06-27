@@ -184,7 +184,7 @@ foreach my $language (@languages) {
 	writeFile($localePath."/strings.xml", $languageAndroidSource);
 
 	# Copy master branding file
-	writeFile($localePath."/branding.xml", $languageBrandingAndroidSourceMaster);
+	#writeFile($localePath."/branding.xml", $languageBrandingAndroidSourceMaster);
     } else {
 	print STDERR "Skipping locale file in $language for Kiwix for Android\n";
     }
