@@ -4,6 +4,7 @@
 # Author: Lloffiwr
 # Author: Pwyll
 # Author: Robin Owain
+# Author: Xxglennxx
 
 ui.main.osxservices=Gwasanaethau
 ui.main.osxhideapp=Cuddio &brand.brandShortName;
@@ -96,7 +97,7 @@ ui.preferences.cancel=Canslo
 ui.preferences.profileDirectory=Cyfeiriadur proffil
 ui.preferences.browse=Pori
 ui.preferences.tabs=Cofier tabiau
-ui.preferences.downloadCatalogs=Islwytho catalog(au) allanol
+ui.preferences.downloadCatalogs=Lawrlwytho catalog(au) allanol
 ui.preferences.neverAskToIndex=Peidio byth a gofyn cael mynegeio
 ui.server.load=Llwytho
 ui.server.start=Dechrau

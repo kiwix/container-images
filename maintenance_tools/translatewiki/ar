@@ -11,6 +11,7 @@
 # Author: Mutarjem horr
 # Author: OsamaK
 # Author: عبد الحق فارح
+# Author: محمد أحمد عبد الفتاح
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
@@ -178,6 +179,8 @@ ui.messages.quitFullscreen=إنهاء وضع الشاشة الكاملة
 ui.messages.integrityCheckSuccessful=تم فحص إستقامة الملف بنجاح.
 ui.messages.integrityCheckFailed=فشل عند فحص الإستقامة. إنّ ملفك فاسد.
 android.ui.menu_share=شارك مع الأصدقاء
+android.ui.menu_read_aloud=اقرأ بصوت عال
+android.ui.menu_read_aloud_stop=توقف عن القراءة بصوت عال
 android.ui.info_share_title=أنا أستمتع بويكيبيديا بدون ربط مع كيويكس
 android.ui.info_share_content=أنا أستمتع بويكيبيديا بدون ربط باستعمال كيويكس! جل ّالمعرفة البشرية في متناول اليد أينما تذهب! دون الإنترنت! http://goo.gl/h9Smkk
 android.ui.share_via=شارك عبر...

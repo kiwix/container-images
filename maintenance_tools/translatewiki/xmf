@@ -1,6 +1,7 @@
 # Messages for Mingrelian (მარგალური)
 # Exported from translatewiki.net
 # Author: David1010
+# Author: Silovan
 
 ui.main.osxservices=სერვისები
 ui.main.osxhideapp=&brand.brandShortName;-ის დამალვა
@@ -99,6 +100,18 @@ ui.server.load=ჩატვირთვა
 ui.server.start=დაწყება
 ui.server.stop=შეჩერება
 ui.server.close=დახურვა
+ui.messages.loadZimFileError=ვაშილებე ფაილიშ '%1' დინოხარგუა. დასურო გიჩქჷნანო ნამჷ-და თენა ZIM ფაილი რე?
+ui.messages.alreadyIndexingError=ინდექსირაფაშ პროცესი ანწი გოტებული რე.
+ui.messages.noResultsError=აკა შედეგიქ ვეგორჷ თე მოთხირშოთ
+ui.messages.loadArticleError=თე სტატიაშ დინოხარგუაქ ვემიხერხინჷ.
+ui.messages.noActiveZimFile=ვაარსებენს აქტიური ZIM ფაილი, ქორთხინთ, დიო ქინახარგით თინა.
+ui.messages.indexZimFileConfirm=თე ფაილ ვეკათუანს გორუაშ ინდექსის. თიშ დორსხუაფას, შილებე, მუზმარენ წუნქ დესაჭირასჷნ. გოკონანო ZIM ფაილიშ ინდექსირაფა ასე?
+ui.messages.dontDeleteContentFiles=ვალასათ ZIM-ფაილი.
+ui.messages.restartConfirm=%1 ოხვილჷ გინოხარგუას. გოკონანო ასე გინოხარგუათი?
+ui.messages.endOfIndexing=ინდექსირაფაშ პროცესიქ გეთუ.
+ui.messages.removeProfileConfirm=თქვან პროფილიშ ლასუა გოკონანო?
+ui.messages.dontDisplayAnymore=ანწ ავამოძირა თე დიალოგურ ოსინთე.
+ui.messages.changeSkinNeedRestart=მეჯინაფონიშ ოთირალო პროგრამა ოხვილჷ გინოხარგუას. გინოხარგანთო პროგრამას?
 ui.messages.confirm=დადასტურება
 ui.messages.no=არა
 ui.messages.yes=კი
@@ -124,6 +137,15 @@ android.ui.menu_share=მეგობრებისთვის გაზია
 android.ui.menu_read_aloud=ხმამაღლა კითხვა
 android.ui.menu_read_aloud_stop=ხმამაღლა კითხვის შეჩერება
 android.ui.info_share_title=მე მომწონს ვიკიპედია ინტერნეტთან კავშირის გარეშე Kiwix-ის გამოყენებით!
+android.ui.info_share_content=მა მობწონს ვიკიპედია ინტერნეტწკჷმა რსხუშ უმუშო Kiwix-იშ გჷმორინაფათ! სოდე ოკო ვარდათინ, ნთელ კოჩობურობაშ რჩქინა თქვან ხეს რე! ინტერნეტიშ უმუშო! http://goo.gl/h9Smkk
+android.ui.button_backtotop=დაჭყაფშა დორთა
+android.ui.articlesearch_hint=გენშიონით სტატიეფიშ ოგორალო
+android.ui.choose_file=გეგშაგორით ZIM-ფაილი (*.zim)
+android.ui.rescan_fs=SD ბარათიშ კინ მაჟირაშა სკანირებაფა
+android.ui.rescan_fs_warning=ZIM-ფაილეფიშ გორუა, ქორთხინთ, ქჷმიცალით…
+android.ui.error_filenotfound=ჩილათა: გიშაგორილ ZIM-ფაილქ ვეგორჷ.
+android.ui.error_fileinvalid=ჩილათა: გიშაგორილ ფაილი ვარე თინი ZIM-ფაილი.
+android.ui.error_articlenotfound=ჩილათა: სტატიაქ \"%1$s\" ვეხარგჷ.
 android.ui.pref_zoom_title=მასშტაბირების დონე
 android.ui.pref_zoom_enable=მასშტაბირების კონტროლი
 android.ui.pref_zoom_enable_summary=მასშტაბირების ღილაკის გამოსახვა ეკრანის მარჯვენა ქვედა კუთხეში
@@ -137,3 +159,5 @@ android.ui.pref_language_chooser=აირჩიეთ ენა
 android.ui.pref_info_title=ინფორმაცია
 android.ui.pref_info_version=ვერსია
 android.ui.pref_backtotop=თავში დაბრუნება
+android.ui.pref_backtotop_summary=ხასჷლაშ ბოლოს ჟილე დორთაშ კონჭიშ ძირაფა
+android.ui.save_media_error=მედია-ფაილიშ ჩუალაშ ბორჯის ჩილათაქ მოხვადჷ!
