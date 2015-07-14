@@ -3,6 +3,7 @@
 # Author: Kelson
 # Author: McDutchie
 # Author: Romaine
+# Author: Rvlieshout
 # Author: SPQRobin
 # Author: Siebrand
 # Author: Southparkfan
@@ -23,7 +24,7 @@ ui.main.saveFile=Pagina opslaan als...
 ui.main.saveFile.accesskey=S
 ui.main.print=Afdrukken
 ui.main.print.accesskey=P
-ui.main.printPdf=Afdrukken als pdf
+ui.main.printPdf=Afdrukken als PDF
 ui.main.printPdf.accesskey=D
 ui.main.quit=Stoppen
 ui.main.quit.accesskey=Q
@@ -56,7 +57,7 @@ ui.main.zoomorig.accesskey=O
 ui.main.invertedColors=Omgekeerde kleuren
 ui.main.language=Taal
 ui.main.language.accesskey=L
-ui.main.skin=Vormgeving
+ui.main.skin=Thema
 ui.main.skin.accesskey=S
 ui.main.statusbar=Statusbalk
 ui.main.statusbar.accesskey=S

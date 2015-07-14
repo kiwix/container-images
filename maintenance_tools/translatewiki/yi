@@ -126,6 +126,7 @@ ui.messages.information=אינפֿארמאציע
 ui.messages.indexing=אינדעקסירן…
 ui.messages.selectBookmarkSet=אויסוויילן ליין־צייכן זאמלונג טעקע
 ui.messages.nameBookmarkSet=ארײַנגעבן ליין־צייכן זאמלונג טעקע־נאמען
+ui.messages.bookmarkReferingOtherContent=דער לייענצייכן באציט זיך אויף אנדער אינהאלט. איר ווילט אים ארויפלאדן?
 ui.messages.newContentAvailable=ס'איז פאראן נייער אינהאלט אראפצולאדן.
 ui.messages.newContentAvailableInvitation=עס זענען פאראן נייע אינהאלטן אראפצולאדן. צי ווילט איר זען זיי?
 ui.messages.preparingContentDownload=פֿארברייטן אראפלאד…

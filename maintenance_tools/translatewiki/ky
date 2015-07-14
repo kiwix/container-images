@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Chorobek
 # Author: Growingup
+# Author: Janatkg
 # Author: Macofe
 # Author: Maksat
 # Author: Викиней
@@ -144,6 +145,8 @@ android.ui.menu_read_aloud_stop=Үн чыгарып окууну токтоту�
 android.ui.info_share_title=Kiwix менен интернетсиз эле Уикипедияны жыргап окуйм!
 android.ui.share_via=Булл аркылуу бөлүшүү...
 android.ui.button_backtotop=Артка үстүнө
+android.ui.pref_zoom_entry_medium=Орточо
+android.ui.pref_zoom_entry_large=Чоң
 android.ui.pref_language_chooser=Тилин тандаңыз
 android.ui.pref_info_title=Маалымат
 android.ui.pref_info_version=Версия
