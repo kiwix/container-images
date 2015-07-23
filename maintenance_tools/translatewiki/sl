@@ -4,6 +4,7 @@
 # Author: Eleassar
 # Author: Kelson
 # Author: Macofe
+# Author: Yerpo
 
 ui.main.osxservices=Storitve
 ui.main.osxhideapp=Skrij &brand.brandShortName;
@@ -138,7 +139,7 @@ ui.messages.integrityCheckSuccessful=Celovitost datoteke sem uspešno preveril.
 ui.messages.integrityCheckFailed=Preverjanje celovitosti ni uspelo. Vaša datoteka je pokvarjena.
 android.ui.menu_share=Deli s prijatelji
 android.ui.info_share_title=Uživam Wikipedijo brez povezave s Kiwix!
-android.ui.info_share_content=Uživam Wikipedijo brez povezave s Kiwix! Celotno človeško znanje pri roki, kamor koli greste! Brez interneta! http://goo.gl/h9Smkk
+android.ui.info_share_content=Uživam Wikipedijo brez povezave s Kiwix! Celotno človeško znanje pri roki, kamorkoli greste! Brez interneta! http://goo.gl/h9Smkk
 android.ui.share_via=Deli na ...
 android.ui.button_backtotop=Nazaj na vrh
 android.ui.articlesearch_hint=Vrsta iskanih člankov
