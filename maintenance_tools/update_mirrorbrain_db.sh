@@ -5,7 +5,7 @@ echo "Setting up variables..."
 MB=/usr/local/bin/mb
 REPO="/var/www/download.kiwix.org/"
 ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
-DIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
+ALLDIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
 WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikispecies*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"`
 
 function scanMirror() {
@@ -32,9 +32,9 @@ echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
 
 # scan the Kiwix mirrors
-scanMirror kiwix DIRS
-scanMirror mirror2 DIRS
-scanMirror mirror3 DIRS
+scanMirror kiwix ALLDIRS
+scanMirror mirror2 ALLDIRS
+scanMirror mirror3 ALLDIRS
 
 # Scan the Wikimedia mirror
 scanMirror wikimedia WMDIRS
@@ -49,4 +49,8 @@ scanMirror your.org WMDIRS
 scanMirror mirrorservice.org WMDIRS
 
 # Scan the fau.de mirror
-scanMirror fau.de DIRS
+scanMirror fau.de ALLDIRS
+
+# Scan the NetCologne mirror
+scanMirror netcologne.de ALLDIRS
+
