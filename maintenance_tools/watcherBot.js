@@ -54,6 +54,9 @@ kiwixWikiWatcher.run( function( error, articles ) {
 	console.error( '[ERROR] ' + error );
     }
 });
+kiwixWikiWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
+});
 
 var openzimWikiWatcher = new rssWatcher( openzimWikiFeed );
 openzimWikiWatcher.set( {feed: openzimWikiFeed, interval: 120} );
@@ -67,12 +70,17 @@ openzimWikiWatcher.run( function( error, articles ) {
 	console.error( '[ERROR] ' + error );
     }
 });
+openzimWikiWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
+});
 
 var lastPubDate;
 var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
 sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
 sourceforgeWatcher.on( 'new article', function( article ) {
     var pubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastPubDate );
+    console.log( 'pubDate:' + pubDate );
     if ( !lastPubDate || ( pubDate > lastPubDate ) ) {
 	lastPubDate = pubDate;
 	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
@@ -84,6 +92,9 @@ sourceforgeWatcher.run( function( error, articles ) {
     if ( error ) {
 	console.error( '[ERROR] ' + error );
     }
+});
+sourceforgeWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
 });
 
 setInterval ( function() {
