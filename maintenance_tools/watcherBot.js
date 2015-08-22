@@ -101,7 +101,7 @@ setInterval ( function() {
     client.get('statuses/user_timeline', {screen_name: 'KiwixOffline', count: 1}, function( error, tweets, response ) {
 	if ( error ) {
 	    console.error( '[ERROR] ' + error.essage );
-	} else if ( !error && lastTwitterId != tweets[0].id_str ) {
+	} else if ( !error && tweets[0] && lastTwitterId != tweets[0].id_str ) {
 	    lastTwitterId = tweets[0].id_str;
 	    var message = '[MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
 	    console.log( '[MICROBLOG]' + message );
