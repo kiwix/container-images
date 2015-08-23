@@ -24,6 +24,7 @@ var client = new twitter({
     access_token_key: argv.accessTokenKey,
     access_token_secret: argv.accessTokenSecret
 });
+var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
 var kiwixWikiFeed = 'http://www.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss'
 var sourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
@@ -42,12 +43,28 @@ function html2txt( html ) {
 /* INIT */
 connectIrc();
 
+var kiwixItunesWatcher = new rssWatcher( kiwixItunesFeed );
+kiwixItunesWatcher.set( {feed: kiwixItunesFeed, interval: 120} );
+kiwixItunesWatcher.on( 'new article', function( article ) {
+    var message = '[ITUNES] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+    console.log( '[MSG]' + message );
+    ircClient.say( '#kiwix', message );
+});
+kiwixItunesWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR] ' + error );
+    }
+});
+kiwixItunesWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
+});
+
 var kiwixWikiWatcher = new rssWatcher( kiwixWikiFeed );
 kiwixWikiWatcher.set( {feed: kiwixWikiFeed, interval: 120} );
 kiwixWikiWatcher.on( 'new article', function( article ) {
     var message = '[WIKI] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
     console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message);
+    ircClient.say( '#kiwix', message );
 });
 kiwixWikiWatcher.run( function( error, articles ) {
     if ( error ) {
@@ -61,9 +78,9 @@ kiwixWikiWatcher.on( 'error', function( error ) {
 var openzimWikiWatcher = new rssWatcher( openzimWikiFeed );
 openzimWikiWatcher.set( {feed: openzimWikiFeed, interval: 120} );
 openzimWikiWatcher.on( 'new article', function( article ) {
-    var message = '[WIKI] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+    var message = '[OPENZIM WIKI] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
     console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message);
+    ircClient.say( '#kiwix', message );
 });
 openzimWikiWatcher.run( function( error, articles ) {
     if ( error ) {
@@ -85,7 +102,7 @@ sourceforgeWatcher.on( 'new article', function( article ) {
 	lastPubDate = pubDate;
 	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
 	console.log( '[MSG]' + message );
-	ircClient.say( '#kiwix', message);
+	ircClient.say( '#kiwix', message );
     }
 });
 sourceforgeWatcher.run( function( error, articles ) {
@@ -105,7 +122,7 @@ setInterval ( function() {
 	    lastTwitterId = tweets[0].id_str;
 	    var message = '[MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
 	    console.log( '[MICROBLOG]' + message );
-	    ircClient.say( '#kiwix', message);
+	    ircClient.say( '#kiwix', message );
 	}
     })
 }, 60000 );
