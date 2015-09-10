@@ -1,6 +1,8 @@
 # Messages for Croatian (hrvatski)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: SpeedyGonsales
+# Author: Teoo3
 
 ui.main.osxservices=Usluge
 ui.main.osxhideapp=Sakrij &brand.brandShortName;
@@ -39,6 +41,7 @@ ui.main.fullscreen=Preko cijelog zaslona
 ui.main.tools=Alati
 ui.main.randomArticle=Slučajni članak
 ui.main.checkIntegrity=Provjera valjanosti
+ui.main.launchIndexing=Pokreni indeksiranje
 ui.main.purgeHistory=Očisti povijest
 ui.main.help=Pomoć
 ui.main.feedback=Povratna informacija
@@ -92,6 +95,7 @@ ui.preferences.profileDirectory=Direktorij profila
 ui.preferences.browse=Pregledaj
 ui.preferences.tabs=Zapamti kartice
 ui.preferences.downloadCatalogs=Preuzmi udaljeni(e) katalog(e)
+ui.preferences.neverAskToIndex=Nikada ne pitaj za indeksiranje
 ui.server.load=Učitaj
 ui.server.start=Pokretanje
 ui.server.stop=Zaustavi
@@ -125,7 +129,13 @@ ui.messages.contentDownloadFinished=Datoteka '%1' je preuzeta.
 ui.messages.feedback=Povratna informacija
 ui.messages.library=Knjižnica
 ui.messages.fullscreen=Preko cijelog zaslona
-# Fuzzy
 ui.messages.quitFullscreen=Izađi iz prikaza preko cijelog zaslona
 ui.messages.integrityCheckSuccessful=Integritet datoteka je uspješno provjeren.
 ui.messages.integrityCheckFailed=Datoteka nije valjana. Datoteka s podatcima je oštećena.
+android.ui.menu_read_aloud=Pročitaj naglas
+android.ui.share_via=Podijeli pomoću...
+android.ui.button_backtotop=Natrag na vrh
+android.ui.pref_zoom_entry_automatic=Automatski
+android.ui.pref_language_chooser=Odaberite jezik
+android.ui.pref_info_title=Informacije
+android.ui.pref_info_version=Verzija
