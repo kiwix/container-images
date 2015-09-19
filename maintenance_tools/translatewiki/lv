@@ -4,6 +4,7 @@
 # Author: Jmg.cmdi
 # Author: Macofe
 # Author: Papuass
+# Author: Silraks
 
 ui.main.osxservices=Pakalpojumi
 ui.main.osxhideapp=Paslēpt &brand.brandShortName;
@@ -132,10 +133,11 @@ ui.messages.contentDownloadFinished='%1' lejupielāde ir pabeigta.
 ui.messages.feedback=Atsauksmes
 ui.messages.library=Bibliotēka
 ui.messages.fullscreen=Pilnekrāna režīms
-# Fuzzy
-ui.messages.quitFullscreen=Iziet no pilnekrāna režīma
+ui.messages.quitFullscreen=Iziet no pilnekrāna
 ui.messages.integrityCheckSuccessful=Faila integritāte veiksmīgi pārbaudīta.
 ui.messages.integrityCheckFailed=Integritātes pārbaude neizdevās. Jūsu fails ir bojāts.
+android.ui.menu_share=Dalīties ar draugiem
+android.ui.share_via=Kopīgot ar...
 android.ui.button_backtotop=Atpakaļ uz augšu
 android.ui.pref_zoom_entry_automatic=Automātiskā
 android.ui.pref_zoom_entry_small=Mazs
