@@ -36,6 +36,9 @@ scanMirror kiwix ALLDIRS
 scanMirror mirror2 ALLDIRS
 scanMirror mirror3 ALLDIRS
 
+# Scan Tunisian mirror
+scanMirror mirror.tn ALLDIRS
+
 # Scan the Wikimedia mirror
 scanMirror wikimedia WMDIRS
 
