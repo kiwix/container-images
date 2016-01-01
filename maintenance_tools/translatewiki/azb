@@ -1,8 +1,10 @@
-# Messages for South Azerbaijani (تورکجه)
+# Messages for تۆرکجه (تۆرکجه)
 # Exported from translatewiki.net
+# Author: Alp Er Tunqa
 # Author: Amir a57
 # Author: Arjanizary
 # Author: E THP
+# Author: Ebrahimi-amir
 # Author: Koroğlu
 # Author: Mousa
 
@@ -40,11 +42,11 @@ ui.main.statusbar=دوروم جوبوقو
 ui.main.resultsbar=سونوجلار جوبوقو
 ui.main.tabs=یارپاقلار
 ui.main.fullscreen=صحیفه‌نین بوتونلد
-ui.main.tools=آراجلار
+ui.main.tools=آلتلر
 ui.main.randomArticle=تصادفی مقاله
 ui.main.checkIntegrity=بیر پارچالیق تفتیشی
 ui.main.purgeHistory=گئچمیشی یئر‌به‌یئر ائله
-ui.main.help=یاردیم
+ui.main.help=کؤمک
 ui.main.feedback=گئری‌بسلمه
 ui.main.reportabug=ایشکالی بیلدیر و ساو وئر
 ui.main.requestafeature=بیر اؤزئللیک ایستئک
@@ -129,10 +131,20 @@ ui.messages.contentDownloadFinished=آلماسی«%1» گوتولدو.
 ui.messages.feedback=گئری‌بسلمه
 ui.messages.library=کیتاب‌ائوی
 ui.messages.fullscreen=صحیفه‌نین بوتونلد
-# Fuzzy
-ui.messages.quitFullscreen=صحیفه‌نی بو حالتدن چیخاد
+ui.messages.quitFullscreen=بوتون-صفحه حالتین‌دن چیخ
 ui.messages.integrityCheckSuccessful=فايل بوتؤولويو چئک اولموشدور .
 ui.messages.integrityCheckFailed=بوتؤولويو چئک ائدیله بیله‌مدی. سیزین فایل خاراب دیر.
 android.ui.menu_share=یولداشلارلا پایلاشماق
+android.ui.menu_read_aloud=اوجادان اوخو
+android.ui.menu_read_aloud_stop=اوجادان اوخودماغی دوردور
+android.ui.button_backtotop=اوسته قاییت
+android.ui.pref_zoom_entry_automatic=اوتوماتیک
+android.ui.pref_zoom_entry_small=کیچیک
+android.ui.pref_zoom_entry_medium=اورتا
+android.ui.pref_zoom_entry_large=بؤیوک
+android.ui.pref_nightmode=گئجه مودو
+android.ui.pref_language_chooser=دیل سئچین
 android.ui.pref_info_title=بیلگیلر
 android.ui.pref_info_version=نوسخه‌
+android.ui.pref_backtotop=اوسته قاییت
+android.ui.pref_backtotop_summary=صفحه‌نین سونوندا، اوسته قاییتماغا بیر دوگمه گؤستر

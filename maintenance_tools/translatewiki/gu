@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Ankit
 # Author: Ashok modhvadia
+# Author: Bhatakati aatma
 # Author: Dsvyas
 # Author: Haritosh
 # Author: KartikMistry
@@ -20,7 +21,7 @@ ui.main.lastOpen=અત્યારે ખોલેલું...
 ui.main.saveFile=પાનું આ નામથી સાચવો...
 ui.main.print=છાપો
 ui.main.printPdf=પીડીએફની રીતે સાચવો
-ui.main.quit=બહાર નીકળો
+ui.main.quit=પ્રસ્થાન
 ui.main.edit=ફેરફાર કરો
 ui.main.find=આ પાનાં ઉપર શોધો...
 ui.main.selectall=બધું પસંદ કરો

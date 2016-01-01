@@ -6,6 +6,7 @@
 # Author: Gemmaa
 # Author: Grondin
 # Author: Hiperpobla
+# Author: Jaumeortola
 # Author: Joan manel
 # Author: McDutchie
 # Author: SMP
@@ -27,7 +28,7 @@ ui.main.saveFile=Desa la pàgina amb el nom...
 ui.main.saveFile.accesskey=D
 ui.main.print=Imprimir
 ui.main.print.accesskey=p
-ui.main.printPdf=Imprimir com a PDF
+ui.main.printPdf=Imprimeix com a PDF
 ui.main.printPdf.accesskey=x
 ui.main.quit=Surt
 ui.main.quit.accesskey=S
@@ -129,7 +130,7 @@ ui.main.library.filterBy.publisher.all=Tots
 ui.main.library.filterBy.lessThan=Menys de
 ui.preferences.preferences=Preferències
 ui.preferences.save=Desar
-ui.preferences.cancel=Canceŀlar
+ui.preferences.cancel=Cancel·la
 ui.preferences.profileDirectory=Carpeta del perfil
 ui.preferences.browse=Examinar
 ui.preferences.tabs=Recordar les etiquetes

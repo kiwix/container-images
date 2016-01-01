@@ -161,6 +161,7 @@ android.ui.pref_zoom_entry_small=Yar
 android.ui.pref_zoom_entry_medium=Dhexdhexaad
 android.ui.pref_zoom_entry_large=Ballaaran
 android.ui.pref_nightmode=Habka habeenkii
+android.ui.pref_nightmode_summary=Itus maqaalada iyagoo leh midab madadaalo ah
 android.ui.pref_language_chooser=Dooro luqad
 android.ui.pref_info_title=Macluumaad
 android.ui.pref_info_version=Nuqul
