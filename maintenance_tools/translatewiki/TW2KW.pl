@@ -230,7 +230,9 @@ sub countLinesInFile {
     
     open FILE, "<:utf8", $path or die "Couldn't open file: $path";
     while (<FILE>) {
-        $count += 1;
+	if ($_ !~ ".accesskey") {
+	    $count += 1;
+	}
     }
     close FILE;
 
