@@ -1,6 +1,7 @@
 # Messages for Laki (لەکی‎)
 # Exported from translatewiki.net
 # Author: Hosseinblue
+# Author: Lakzon
 
 ui.main.osxservices=خدمات
 ui.main.osxhideapp=آشاردن/پنهان کردن &brand.brandShortName;
@@ -88,7 +89,7 @@ ui.main.library.filterBy.publisher=بۀشا کۀر-ناشر
 ui.main.library.filterBy.publisher.all=کۆل
 ui.main.library.filterBy.lessThan=کةمتر إژ
 ui.preferences.preferences=تمارزوةل/ترجیحات
-ui.preferences.save=ذخیرۀ
+ui.preferences.save=هیشتن(ذخیره)
 ui.preferences.cancel=ئآهووسانن/لغو
 ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.browse=مِنِی -گۀشتن
@@ -131,7 +132,7 @@ ui.messages.contentDownloadFinished=دریافت/گِرتن «%1» تةمام ب
 ui.messages.feedback=بازخورد
 ui.messages.library=کتاووخانة
 ui.messages.fullscreen=تمام صفحه
-ui.messages.quitFullscreen=خروج/دةرچئن إژ تمام‌صفحه
+ui.messages.quitFullscreen=دەرچێن|خروج إژ تمام‌صفحه
 ui.messages.integrityCheckSuccessful=یکپارچگی پرونده با موفقیت بررسی شد.
 ui.messages.integrityCheckFailed=بررسی یکپارچگی ناموفق بود. پرونده شما خراب است.
 android.ui.menu_share=اشتراک گذاری/بةشاکردن با دوستان
