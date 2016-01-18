@@ -1,5 +1,6 @@
 # Messages for Georgian (ქართული)
 # Exported from translatewiki.net
+# Author: BRUTE
 # Author: David1010
 # Author: EternalLaka
 # Author: ITshnik
@@ -52,7 +53,7 @@ ui.main.requestafeature=ფუნქციის მოთხოვნა
 ui.main.about=&brand.brandShortName;-ის შესახებ
 ui.main.back=უკან
 ui.main.forward=გაგზავნა
-ui.main.home=შინ
+ui.main.home=მთავარი
 ui.main.searchBar=საძიებო ველი
 ui.main.search=ძიება
 ui.main.searchPlaceholder=შეიყვანეთ საძიებო ტექსტი...
