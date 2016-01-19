@@ -48,6 +48,7 @@ printLog("Successfully checked paths.");
 # Extract destination database information
 my $destinationCustomLocalSettingsPath = $destinationPath."/LocalSettings.custom.php";
 my $destinationCustomLocalSettings = readFile($destinationCustomLocalSettingsPath);
+my $databaseServer;
 my $databaseName;
 my $databaseUsername;
 my $databasePassword;
@@ -55,6 +56,14 @@ my $databasePassword;
 if (! -f $destinationCustomLocalSettingsPath && ! -r $destinationCustomLocalSettingsPath) {
     die "'$destinationCustomLocalSettingsPath' doesn't exist or is not readable.";
 }
+
+if ($destinationCustomLocalSettings =~ /\$wgDBserver[\t ]*=[\t ]*[\'\"](.*)[\'\"]/) {
+    $databaseServer = $1;
+} else {
+    printLog("Impossible to detect database server, localhost per default");
+    $databaseServer = "localhost";
+}
+
 if ($destinationCustomLocalSettings =~ /\$wgDBname[\t ]*=[\t ]*[\'\"](.*)[\'\"]/) {
     $databaseName = $1;
 } else {
@@ -85,7 +94,7 @@ if (-f $dbBackupPath) {
     die ("Backup file '$dbBackupPath' already exists, please remove it before running this script.\n");
 }
 printLog("Backuping db at '$dbBackupPath'...");
-doSystemCommand("mysqldump --user=\"$databaseUsername\" --password=\"$databasePassword\" $databaseName | xz > $dbBackupPath");
+doSystemCommand("mysqldump --host=\"$databaseServer\" --user=\"$databaseUsername\" --password=\"$databasePassword\" $databaseName | xz > $dbBackupPath");
 printLog("Backuping files at '$filesBackupPath'...");
 doSystemCommand("cd \"$destinationPathDirname\"; tar -cvjf \"$filesBackupPath\" \"$destinationPathBasename\" > /dev/null");
 
