@@ -5,6 +5,7 @@
 # Author: EvenT
 # Author: Laaknor
 # Author: Nghtwlkr
+# Author: SuperPotato
 
 ui.main.osxservices=Tjenester
 ui.main.osxhideapp=Skjul &brand.brandShortName;
@@ -107,7 +108,7 @@ ui.messages.loadZimFileError=Kan ikke laste «%1». Er du sikker på at dette er
 ui.messages.alreadyIndexingError=En indekseringsprosess kjører allerede.
 ui.messages.noResultsError=Ingen resultater for dette søket.
 ui.messages.loadArticleError=Kan ikke laste denne artikkelen.
-ui.messages.noActiveZimFile=Ingne aktiv ZIM-fil. Last inn en først.
+ui.messages.noActiveZimFile=Ingen aktiv ZIM-fil. Last inn en først.
 ui.messages.indexZimFileConfirm=Denne filen inneholder ingen søkeindeks. Å opprette en kan ta flere minutter. Vil du indeksere din ZIM-fil nå?
 ui.messages.abortIndexingConfirm=En indekseringsprosess kjører, er du sikker på at du vil avbryte den og avslutte?
 ui.messages.removeContentConfirm=Er du sikker på at du vil fjerne denne posten i listen, og alle relaterte filer?
@@ -137,7 +138,7 @@ ui.messages.library=Bibliotek
 ui.messages.fullscreen=Full skjerm
 ui.messages.quitFullscreen=Avslutt fullskjerm
 ui.messages.integrityCheckSuccessful=Filintegriteten ble sjekket og funnet i orden.
-ui.messages.integrityCheckFailed=Filintegriteten ble sjekket og funnet å være skadet.
+ui.messages.integrityCheckFailed=Filintegritets sjekken feilet. Filen din er korrupt.
 android.ui.menu_share=Del med venner
 android.ui.menu_read_aloud=Les høyt
 android.ui.menu_read_aloud_stop=Stopp høytlesning
