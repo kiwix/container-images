@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Christian List
 # Author: Gorbi
+# Author: Hede2000
 # Author: Hylle
 # Author: Kelson
 # Author: Macofe
@@ -140,6 +141,8 @@ ui.messages.quitFullscreen=Forlad fuldskærm
 ui.messages.integrityCheckSuccessful=Det lykkedes at kontrollere filens integritet.
 ui.messages.integrityCheckFailed=Kontrollen af filens integritet mislykkedes. Din fil er beskadiget.
 android.ui.menu_share=Del med venner
+android.ui.menu_read_aloud=Læs højt
+android.ui.menu_read_aloud_stop=Stop med at læse højt
 android.ui.info_share_title=Jeg nyder Wikipedia Offline med Kiwix!
 android.ui.info_share_content=Jeg nyder Wikipedia Offline med Kiwix! Hele den menneskelige viden ved hånden, uanset hvor du er! Uden internettet! http://goo.gl/h9Smkk
 android.ui.share_via=Del via...
@@ -170,3 +173,4 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Tilbage til toppen
 android.ui.pref_backtotop_summary=Få vist en knap i slutningen af siden for at rulle op til toppen
+android.ui.save_media_error=En fejl opstod under forsøget på at gemme mediet!
