@@ -12,7 +12,7 @@ var yargs = require( 'yargs' );
 
 /* Arguments */
 var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sourceforge, twitter, wikis activities: $0' )
-    .require( ['consumerKey', 'consumerSecret', 'accessTokenKey', 'accessTokenSecret' ] )
+    .require( ['consumerKey', 'consumerSecret', 'accessTokenKey', 'accessTokenSecret', 'githubToken' ] )
     .argv;
 
 /* VARIABLES */
@@ -28,6 +28,7 @@ var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079
 var kiwixWikiFeed = 'http://www.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss'
 var sourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
+var githubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.githubToken;
 
 /* FUNCTIONS */
 function connectIrc() {
@@ -43,6 +44,24 @@ function html2txt( html ) {
 /* INIT */
 connectIrc();
 
+/* GITHUB */
+var githubWatcher = new rssWatcher( githubFeed );
+githubWatcher.set( {feed: githubFeed, interval: 120} );
+githubWatcher.on( 'new article', function( article ) {
+    var message = '[GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+    console.log( '[MSG]' + message );
+    ircClient.say( '#kiwix', message );
+});
+githubWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR] ' + error );
+    }
+});
+githubWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
+});
+
+/* ITUNES */
 var kiwixItunesWatcher = new rssWatcher( kiwixItunesFeed );
 kiwixItunesWatcher.set( {feed: kiwixItunesFeed, interval: 120} );
 kiwixItunesWatcher.on( 'new article', function( article ) {
@@ -59,6 +78,7 @@ kiwixItunesWatcher.on( 'error', function( error ) {
     console.error( '[ERROR] ' + error );
 });
 
+/* KIWIX.ORG */
 var kiwixWikiWatcher = new rssWatcher( kiwixWikiFeed );
 kiwixWikiWatcher.set( {feed: kiwixWikiFeed, interval: 120} );
 kiwixWikiWatcher.on( 'new article', function( article ) {
@@ -75,6 +95,7 @@ kiwixWikiWatcher.on( 'error', function( error ) {
     console.error( '[ERROR] ' + error );
 });
 
+/* OPENZIM.ORG */
 var openzimWikiWatcher = new rssWatcher( openzimWikiFeed );
 openzimWikiWatcher.set( {feed: openzimWikiFeed, interval: 120} );
 openzimWikiWatcher.on( 'new article', function( article ) {
@@ -91,6 +112,7 @@ openzimWikiWatcher.on( 'error', function( error ) {
     console.error( '[ERROR] ' + error );
 });
 
+/* SOURCEFORGE */
 var lastPubDate;
 var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
 sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
@@ -114,6 +136,7 @@ sourceforgeWatcher.on( 'error', function( error ) {
     console.error( '[ERROR] ' + error );
 });
 
+/* TWITTER */
 setInterval ( function() {
     client.get('statuses/user_timeline', {screen_name: 'KiwixOffline', count: 1}, function( error, tweets, response ) {
 	if ( error ) {
@@ -127,6 +150,7 @@ setInterval ( function() {
     })
 }, 60000 );
 
+/* IRC ERROR HANDLING */
 ircClient.addListener( 'error', function( error ) {
     console.log( '[ERROR] ' + error );
     lastTwitterId = undefined;
