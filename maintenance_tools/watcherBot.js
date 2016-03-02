@@ -38,19 +38,25 @@ function connectIrc() {
 }
 
 function html2txt( html ) {
-    return htmlToText.fromString( html ).replace(new RegExp(/\[[^\[]*\]/), '').replace(new RegExp(/[ ]+/), '');
+    return htmlToText.fromString( html ).replace( new RegExp( /\[[^\[]*\]/ ), '' ).replace( new RegExp( /[ ]+/ ), ' ' );
 }
 
 /* INIT */
 connectIrc();
 
 /* GITHUB */
+var lastGithubPubDate;
 var githubWatcher = new rssWatcher( githubFeed );
 githubWatcher.set( {feed: githubFeed, interval: 120} );
 githubWatcher.on( 'new article', function( article ) {
-    var message = '[GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
-    console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message );
+    var pubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastGithubPubDate );
+    console.log( 'pubDate:' + pubDate );
+    if ( !lastGithubPubDate || ( pubDate > lastGithubPubDate ) ) {
+	lastGithubPubDate = pubDate;    var message = '[GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+	console.log( '[MSG]' + message );
+	ircClient.say( '#kiwix', message );
+    }
 });
 githubWatcher.run( function( error, articles ) {
     if ( error ) {
@@ -113,15 +119,15 @@ openzimWikiWatcher.on( 'error', function( error ) {
 });
 
 /* SOURCEFORGE */
-var lastPubDate;
+var lastSourceforgePubDate;
 var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
 sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
 sourceforgeWatcher.on( 'new article', function( article ) {
     var pubDate = Date.parse( article.pubDate )
-    console.log( 'lastPuDate:' + lastPubDate );
+    console.log( 'lastPuDate:' + lastSourceforgePubDate );
     console.log( 'pubDate:' + pubDate );
-    if ( !lastPubDate || ( pubDate > lastPubDate ) ) {
-	lastPubDate = pubDate;
+    if ( !lastSourceforgePubDate || ( pubDate > lastSourceforgePubDate ) ) {
+	lastSourceforgePubDate = pubDate;
 	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
 	console.log( '[MSG]' + message );
 	ircClient.say( '#kiwix', message );
