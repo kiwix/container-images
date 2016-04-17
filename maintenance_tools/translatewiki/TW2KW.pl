@@ -14,7 +14,7 @@ my $allLanguages="";
 my $threshold=90;
 my $path;
 
-# Duplicates, are responsible to find one tranlsation in differents
+# Duplicates, are responsible to find one translation in differents
 # files. The key, is the target
 my $duplicates = {
     "ui.messages.browseLibrary" => "ui.main.browseLibrary",
@@ -40,7 +40,9 @@ my $duplicates = {
     "android.ui.menu_exit" => "ui.main.quit",
     "android.ui.menu_bookmarks" => "ui.main.bookmarks",
     "android.ui.add_bookmark" => "ui.main.mark",
-    "android.ui.remove_bookmark" => "ui.main.unmark"
+    "android.ui.remove_bookmark" => "ui.main.unmark",
+    "android.ui.menu_bookmarks_list" => "ui.main.bookmarks",
+    "android.ui.menu_rescan_fs" =>  "android.ui.rescan_fs"
 };
 
 # Get console line arguments
