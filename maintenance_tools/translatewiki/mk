@@ -169,3 +169,7 @@ android.ui.pref_backtotop=Најгоре
 android.ui.pref_backtotop_summary=Прикажувај копче за враќање најгоре на крајот од страницата
 android.ui.save_media_error=Настана грешка при зачувувањето на податотеката!
 android.ui.save_media_saved=Податотеката е зачувана во %1$s во вашата папка „Слики“
+android.ui.tts_lang_not_supported=Јазикот на оваа страница не е поддржан, или пак немате воспоставено соодветни јазични податоци. Статијата може да биде неправилно испишана.
+android.ui.go_to_play_store=Оди на Play Store
+android.ui.no_bookmarks=Нема обележувачи!
+android.ui.no_section_info=Не пронајдов содржински заглавија
