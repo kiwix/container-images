@@ -1,5 +1,6 @@
 # Messages for Tulu (ತುಳು)
 # Exported from translatewiki.net
+# Author: BHARATHESHA ALASANDEMAJALU
 # Author: VASANTH S.N.
 # Author: Vishwanatha Badikana
 
@@ -156,3 +157,5 @@ android.ui.pref_language_chooser=ಬಾಸೆನ್ ಆಯ್ಕೆ ಮಲ್ತ
 android.ui.pref_info_title=ಮಾಹಿತಿ
 android.ui.pref_info_version=ಆವೃತ್ತಿ
 android.ui.pref_backtotop=ಪಿರವುಡ್ದು ಕೊಡಿ ಮುಟ್ಟ
+android.ui.go_to_play_store=Play Store ಗ್ ಪೋಲೆ
+android.ui.no_bookmarks=ಬುಕ್ಕ ತುಪಿನವು ಇಜ್ಜಿ!

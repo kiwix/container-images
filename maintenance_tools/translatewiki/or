@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Jnanaranjan Sahu
 # Author: Kelson
+# Author: MKar
 # Author: Macofe
 # Author: Psubhashish
 # Author: Sukarna0
@@ -62,7 +63,7 @@ ui.main.bookmarks=ବୁକମାର୍କ
 ui.main.results.title=ଖୋଜା ଫଳାଫଳ
 ui.main.bmkLabel=ବୁକମାର୍କ
 ui.main.notesLabel=ବୁକମାର୍କ ଟୀକା:
-ui.main.loadbmk=ବୁକମାର୍କ ଗୋଠ ଆମଦାନୀ କରିବେ
+ui.main.loadbmk=ବୁକମାର୍କ ଗୋଠ ଆମଦାନି କରିବେ
 ui.main.newbmk=ନୂଆ ବୁକମାର୍କ ଗୋଠ ତିଆରିବେ
 ui.main.mark=ଏଇ ପୃଷ୍ଠାଟିକୁ ଚିହ୍ନିତ କରିବେ
 ui.main.unmark=ବଛାଯାଇଥିବା ବସ୍ତୁ ସବୁକୁ ବାଛିବେ ନାହିଁ

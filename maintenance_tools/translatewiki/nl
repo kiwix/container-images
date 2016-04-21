@@ -1,5 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
+# Author: Jeleniccz
 # Author: Kelson
 # Author: McDutchie
 # Author: Romaine
@@ -206,3 +207,7 @@ android.ui.pref_backtotop=Terug naar boven
 android.ui.pref_backtotop_summary=Aan het einde van de pagina een knop weergeven om terug te gaan naar boven
 android.ui.save_media_error=Er is een fout opgetreden bij het opslaan van de media!
 android.ui.save_media_saved=Het bestand is opgeslagen als %1$s in uw afbeeldingenmap
+android.ui.no_reader_application_installed=Kon geen geïnstalleerde applicatie vinden voor dit type bestand
+android.ui.go_to_play_store=Naar de Play Store gaan
+android.ui.no_bookmarks=Geen favorieten!
+android.ui.no_section_info=Geen inhoudsheaders gevonden

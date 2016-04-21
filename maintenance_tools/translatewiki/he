@@ -1,6 +1,7 @@
 # Messages for Hebrew (עברית)
 # Exported from translatewiki.net
 # Author: Amire80
+# Author: Guycn2
 # Author: Inkbug
 # Author: YaronSh
 
@@ -202,3 +203,9 @@ android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
 android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
 android.ui.save_media_saved=נמדיה נשמרה בתור %1$s בתיקיית התמונות שלך
+android.ui.tts_lang_not_supported=השפה של הדף הזה אינה נתמכת, או שלא הותקנו נתוני שפה מתאימים. ייתכן שהערך לא יהיה קריא.
+android.ui.no_reader_application_installed=לא נמצאה אפליקציה מותקנת עבור סוג הקובץ הזה
+android.ui.customapp_missing_content=האפליקציה שלך פגומה.\nייתכן שהוסרו קבצים מכרטיס ה־SD.\nיש להסיר ולהתקין מחדש את האפליקציה מחנות Play.
+android.ui.go_to_play_store=כניסה לחנות Play
+android.ui.no_bookmarks=אין סימניות!
+android.ui.request_storage=כדי לגשת לקובצי ZIM אנחנו צריכים גישה לאחסון שלך
