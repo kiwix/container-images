@@ -216,4 +216,4 @@ android.ui.customapp_missing_content=Votre application est corrompue.\nCela peut
 android.ui.go_to_play_store=Aller sur le Play Store
 android.ui.no_bookmarks=Il n'y a pas de signets
 android.ui.no_section_info=Aucun entête de contenu trouvé
-android.ui.request_storage=Pour accéder aux fichiers ZIM, nous avons besoin d&un accès à votre stockage
+android.ui.request_storage=Pour accéder aux fichiers ZIM, nous avons besoin d'un accès à votre espace de stockage

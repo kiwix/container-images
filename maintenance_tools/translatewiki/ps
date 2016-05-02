@@ -171,3 +171,6 @@ android.ui.pref_backtotop=بېرته سر ته
 android.ui.pref_backtotop_summary=د مخ په پای کې د مخ سر ته ورتللو لپاره يوه تڼۍ ښکاره کول
 android.ui.save_media_error=د رسنۍ په ساتلو کې يوه تېروتنه رامنځ ته شوه!
 android.ui.save_media_saved=رسنۍ خپل د انځورونو په ټولگه کې د %1$s په نوم ساتل
+android.ui.go_to_play_store=پلې پلورنځي ته ورځه
+android.ui.no_bookmarks=بې کتاب نښو!
+android.ui.no_section_info=هېڅ نيوليک سرليکونه نشته

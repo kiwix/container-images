@@ -177,3 +177,7 @@ android.ui.save_media_saved=Мэдыя-файл захаваны як %1$s у т
 android.ui.tts_lang_not_supported=Мова гэтай старонкі не падтрымліваецца або адпаведныя зьвесткі мовы не былі ўсталяваныя. Артыкул можа быць няправільна прачытаны.
 android.ui.no_reader_application_installed=Ня знойдзеныя ўсталяваныя праграмы для гэтага тыпу файлу
 android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым ўсталяваць яе наноў з Play Store.
+android.ui.go_to_play_store=Перайсьці ў Play Store
+android.ui.no_bookmarks=Няма закладак!
+android.ui.no_section_info=Ня знойдзеныя загалоўкі зьместу
+android.ui.request_storage=Каб атрымаць доступ да ZIM-файлаў, нам трэба мець доступ да вашага сховішча

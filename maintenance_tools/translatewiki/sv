@@ -174,3 +174,5 @@ android.ui.pref_backtotop=Tillbaka till toppen
 android.ui.pref_backtotop_summary=Visar en knapp i slutet på sidan för att rulla upp till toppen
 android.ui.save_media_error=Ett fel uppstod när media skulle sparas!
 android.ui.save_media_saved=Sparade media som %1$s i din bildmapp
+android.ui.go_to_play_store=Gå till Play Store
+android.ui.no_bookmarks=Inga bokmärken!

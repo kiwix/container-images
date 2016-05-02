@@ -208,4 +208,5 @@ android.ui.no_reader_application_installed=לא נמצאה אפליקציה מו
 android.ui.customapp_missing_content=האפליקציה שלך פגומה.\nייתכן שהוסרו קבצים מכרטיס ה־SD.\nיש להסיר ולהתקין מחדש את האפליקציה מחנות Play.
 android.ui.go_to_play_store=כניסה לחנות Play
 android.ui.no_bookmarks=אין סימניות!
+android.ui.no_section_info=לא נמצאו כותרות תוכן
 android.ui.request_storage=כדי לגשת לקובצי ZIM אנחנו צריכים גישה לאחסון שלך
