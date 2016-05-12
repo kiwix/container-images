@@ -9,6 +9,7 @@
 # Author: Lauhenry
 # Author: Liuxinyu970226
 # Author: Macofe
+# Author: Reke
 # Author: Shirayuki
 # Author: Simon Shek
 # Author: Wehwei
@@ -148,12 +149,42 @@ ui.messages.integrityCheckFailed=檔案完整性檢查失敗。您的檔案損�
 android.ui.menu_share=分享給朋友
 android.ui.menu_read_aloud=朗讀
 android.ui.menu_read_aloud_stop=停止朗讀
+android.ui.info_share_title=我用Kiwix享受離線維基百科！
+android.ui.info_share_content=我用Kiwix享受離線維基百科！無論你到哪裡，全人類的知識盡在掌中！不需要網際網路！ http://goo.gl/h9Smkk
 android.ui.share_via=分享到…
 android.ui.button_backtotop=返回頂部
+android.ui.articlesearch_hint=輸入欲查詢條目
+android.ui.choose_file=請選擇一份ZIM內容檔案 (*.zim)
+android.ui.open_in_new_tab=在新分頁打開連結？
+android.ui.remove_tab_confirm=你要移除這個分頁嗎？
+android.ui.remove_tab=移除分頁
+android.ui.rescan_fs=重新掃描 SD 卡
+android.ui.rescan_fs_warning=正在掃描 ZIM 檔，請稍候…
+android.ui.error_nozimfilesfound=在您的設備中找不到 ZIM 檔。\n請閱讀我們的幫助頁面，以了解如何將內容加載到 Kiwix 中。\n如果您已經把 ZIM 檔存入您的設備或外部儲存設備中，您可以幾分鐘之後重試一次，或是重新啟動您的設備。
+android.ui.error_filenotfound=錯誤：找不到所選的 ZIM 檔案。
+android.ui.error_fileinvalid=錯誤：所選檔案不是有效的 ZIM 檔。
+android.ui.error_articlenotfound=錯誤：載入條目 \"%1$s\" 失敗。
+android.ui.error_articleurlnotfound=錯誤：加載條目(網址：%1$s)失敗。
+android.ui.pref_zoom_title=縮放等級
+android.ui.pref_zoom_enable=縮放控制
+android.ui.pref_zoom_enable_summary=在螢幕的右下角顯示縮放按鈕
 android.ui.pref_zoom_entry_automatic=自動
 android.ui.pref_zoom_entry_small=小
 android.ui.pref_zoom_entry_medium=中
 android.ui.pref_zoom_entry_large=大
+android.ui.pref_nightmode=夜間模式
+android.ui.pref_nightmode_summary=以反白方式顯示文章
 android.ui.pref_language_chooser=選擇語言
 android.ui.pref_info_title=資訊
 android.ui.pref_info_version=版本
+android.ui.pref_backtotop=回到頁首
+android.ui.pref_backtotop_summary=在頁面底部顯示一個回到頁首的按鈕
+android.ui.save_media_error=嘗試儲存該媒體時出錯！
+android.ui.save_media_saved=已將媒體以 %1$s 儲存在你的圖片資料夾中
+android.ui.tts_lang_not_supported=本頁面不支援這個語言，或是未安裝合適的語言數據。條目可能無法正確讀取。
+android.ui.no_reader_application_installed=找不到開啟這類型檔案的應用程式
+android.ui.customapp_missing_content=你的應用程式已經受損。\n這可能在你從 SD 卡中移除檔案時發生。\n你需要從 Play Store 中卸載並重新安裝應用程式。
+android.ui.go_to_play_store=前往 Play Store
+android.ui.no_bookmarks=沒有書籤！
+android.ui.no_section_info=未找到內容標題
+android.ui.request_storage=我們需要進入你的儲存設備以訪問 ZIM 檔案。

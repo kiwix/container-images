@@ -5,6 +5,7 @@
 # Author: Arjanizary
 # Author: E THP
 # Author: Ebrahimi-amir
+# Author: Ilğım
 # Author: Koroğlu
 # Author: Mousa
 
@@ -70,7 +71,7 @@ ui.main.mark=بو صفحه‌نی دامغالا
 ui.main.unmark=سئچیلن‌لری علامتی گوتور
 ui.main.reload=نشانه مجموعه لری یئنی دن یوکلمه
 ui.main.defaultset=نیشانک‌لر اوچون تنظیم
-ui.main.saveMediaAs=مدیانی بۇ آدلا ذخیره ائت ...
+ui.main.saveMediaAs=مدیانی بۇ آدلا قئید ائت ...
 ui.main.openLinkInNewTab=يئنی نیشانی لینک آچماق
 ui.main.searchFor=آختاریش اوچون
 ui.main.copyLinkAddress=وب آدرسیندن یازی‌گوتورمم
@@ -140,9 +141,9 @@ android.ui.menu_share=یولداشلارلا پایلاشماق
 android.ui.menu_read_aloud=اوجادان اوخو
 android.ui.menu_read_aloud_stop=اوجادان اوخودماغی دوردور
 android.ui.info_share_title=کیوکس ایله آفلاین ویکی‌پدیادا منه یاپیشدی!
-android.ui.share_via=بۇنلا پایلاش...
+android.ui.share_via=بۇنونلا پایلاش...
 android.ui.button_backtotop=اوسته قاییت
-android.ui.open_in_new_tab=باغلانتی یئنی تب‌ده آچیلسین می؟
+android.ui.open_in_new_tab=باغلانتی یئنی تبده‌می آچیلسین؟
 android.ui.remove_tab_confirm=بۇ تبی سیلمک‌دن آرخایین‌میسینیز؟
 android.ui.remove_tab=تبی سیل
 android.ui.rescan_fs=SD کارتی یئنی‌دن آختار

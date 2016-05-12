@@ -213,3 +213,7 @@ android.ui.pref_backtotop=Вернуться наверх
 android.ui.pref_backtotop_summary=Отобразить кнопку в конце страницы для прокрутки вверх
 android.ui.save_media_error=Произошла ошибка при сохранении медиафайла!
 android.ui.save_media_saved=Медиафайл сохранён как %1$s в вашей папке для изображений
+android.ui.tts_lang_not_supported=Язык этой страницы не поддерживается или соответствующие языковые данные не были установлены. Эта статья не может быть правильно прочитана.
+android.ui.no_reader_application_installed=Не удалось найти установленное приложение для этого типа файлов
+android.ui.go_to_play_store=Перейти в Play Маркет
+android.ui.no_bookmarks=Нет закладок!
