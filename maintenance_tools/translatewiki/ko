@@ -6,6 +6,7 @@
 # Author: Macofe
 # Author: Priviet
 # Author: Revi
+# Author: Ykhwong
 # Author: 아라
 
 ui.main.osxservices=서비스
@@ -156,7 +157,7 @@ android.ui.rescan_fs=SD 카드를 다시 검색
 android.ui.rescan_fs_warning=ZIM 파일을 검색 중입니다. 잠시 기다려주세요...
 android.ui.error_nozimfilesfound=장치에서 ZIM 파일이 발견되지 않았습니다.\n도움말에서 내용을 어떻게 Kiwix로 불러오는지 알아보세요.\n만약 파일을 외장 디스크나 기기에 넣었다면, 잠시 뒤에 다시 시도하거나 자시 시작해 보세요.
 android.ui.error_filenotfound=오류: 선택된 ZIM 파일을 찾을 수 없습니다
-android.ui.error_fileinvalid=에러: 선택한 파일은 올바른 ZIM 파일이 아닙니다.
+android.ui.error_fileinvalid=오류: 선택한 파일은 올바른 ZIM 파일이 아닙니다.
 android.ui.error_articlenotfound=오류: \"%1$s\" 문서를 불러오는 데 실패했습니다.
 android.ui.error_articleurlnotfound=오류: 문서(Url: %1$s)를 불러오는 데 실패했습니다.
 android.ui.pref_zoom_title=확대/축소 수준
