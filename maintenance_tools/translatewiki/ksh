@@ -169,4 +169,12 @@ android.ui.pref_backtotop=Retuhr op der Sigge_Aanfang
 android.ui.pref_backtotop_summary=Donn ene Knopp aam Äng vun jeede Sigg aanzeije, dä eine widder aan der Aanfang brngk
 android.ui.save_media_error=Ene Fähler es opjetrodde beim Versohch, dat faßzehallde.
 android.ui.save_media_saved=Di Dattei es jäz als %1$s en Dingem Belderverzeijschneß faßjehallde.
+android.ui.tts_lang_not_supported=De Schprohch vun heh dä Sigg dom_mer nit ongerschtöze udder se es nit enschtallehrt, esu künnt heh dä Atikkel nt öhndlesch jelässe wähde.
+android.ui.no_reader_application_installed=Mer kunnte keij Projramm fenge, wat för di Zoot Datteij enschtallehrt woode wöhr.
+# Fuzzy
+android.ui.customapp_missing_content=Ding Projramm et kappott.\nDat kann dervun kumme, wam_mer Datteije vun SD-Kaate fott määt. Dat Projramm moß mer fott donn un neuj vum Play Store enschtallehre.
+# Fuzzy
+android.ui.go_to_play_store=Jangk nohm  Play Store.
 android.ui.no_bookmarks=Mer han keijn Lässezeijsche!
+android.ui.no_section_info=Mer han kein Koppreih met <code lang="en" xml:lang="en" dir="ltr">content</code> jefonge.
+android.ui.request_storage=Öm aan <i lang="en" xml:lang="en" dir="ltr" title="Zeno IMproved - „Zeno verbäßert“">ZIM </i>-Datteije eraan ze kumme, bruche mer ene Zohjang op Dinge Schpeijscher.
