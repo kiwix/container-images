@@ -184,3 +184,5 @@ android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluşt
 android.ui.save_media_saved=Medyanın %1$'i Resim dosyanıza kaydedildi
 android.ui.no_reader_application_installed=Bu dosya türü için yüklü bir uygulama bulunamadı
 android.ui.go_to_play_store=Play Store'a git
+android.ui.no_bookmarks=Yer imi yok
+android.ui.request_storage=ZİM dosyalara erişmek için depolama erişim ihtiyacımız var
