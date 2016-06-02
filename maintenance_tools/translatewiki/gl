@@ -176,5 +176,7 @@ android.ui.no_reader_application_installed=Non se puido atopar unha aplicación 
 android.ui.customapp_missing_content=A súa aplicación está danada.\nIsto pode suceder cando elimina ficheiros na tarxeta SD.\nDebe desinstalar e volver a instalar a aplicación desde o Play Store.
 android.ui.go_to_play_store=Ir á Play Store
 android.ui.no_bookmarks=Non hai marcadores!
+android.ui.rate_dialog_negative=Non, grazas
+android.ui.rate_dialog_neutral=Máis tarde
 android.ui.no_section_info=Non se atoparon cabeceiras de contido.
 android.ui.request_storage=Para acceder a ficheiros ZIM necesitamos ter acceso ó seu almacenamento

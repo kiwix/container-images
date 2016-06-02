@@ -3,6 +3,7 @@
 # Author: Amgauna
 # Author: Giro720
 # Author: Gusta
+# Author: HenriqueCrang
 # Author: Kelson
 # Author: Luckas
 # Author: Luckas Blade
@@ -183,3 +184,10 @@ android.ui.pref_backtotop=Voltar ao Topo
 android.ui.pref_backtotop_summary=Mostra um botão no fim da página para voltar ao topo
 android.ui.save_media_error=Um erro ocorreu enquanto a midia estava sendo salva!
 android.ui.save_media_saved=Midia salva como %1$s na sua pasta de imagens
+android.ui.tts_lang_not_supported=O idioma desta página não é suportado, ou dados do idioma apropriado não estão instalados. O artigo pode não ser lido propriamente.
+android.ui.no_reader_application_installed=Não foi possível encontrar uma aplicação instalada para esse tipo de arquivo
+android.ui.customapp_missing_content=Sua aplicação está corrompida.\nIsso pode acontecer quando você remove arquivos do cartão SD.\nVocê precisa desinstalar e reinstalar o App da Play Store.
+android.ui.go_to_play_store=Ir para Play Store
+android.ui.no_bookmarks=Sem favoritos!
+android.ui.no_section_info=Não foram encontrados cabeçalhos de conteúdo.
+android.ui.request_storage=Para acessar arquivos ZIM precisamos de acesso ao seu disco
