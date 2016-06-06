@@ -174,5 +174,7 @@ android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
 android.ui.pref_backtotop=맨 위로 돌아가기
 android.ui.pref_backtotop_summary=맨 위로 돌아가는 버튼을 문서의 끝에 표시하기
+android.ui.pref_newtab_background_title=새 탭을 백그라운드로 열기
 android.ui.save_media_error=미디어 저장하기를 시도하는 도중, 문제가 발생하였습니다!
 android.ui.save_media_saved=내 사진 폴더에 %1$s로 저장되었습니다.
+android.ui.rate_dialog_negative=아니오, 괜찮습니다

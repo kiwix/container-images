@@ -176,5 +176,6 @@ android.ui.customapp_missing_content=Ding Projramm et kappott.\nDat kann dervun 
 # Fuzzy
 android.ui.go_to_play_store=Jangk nohm  Play Store.
 android.ui.no_bookmarks=Mer han keijn Lässezeijsche!
+android.ui.rate_dialog_neutral=Schpääder
 android.ui.no_section_info=Mer han kein Koppreih met <code lang="en" xml:lang="en" dir="ltr">content</code> jefonge.
 android.ui.request_storage=Öm aan <i lang="en" xml:lang="en" dir="ltr" title="Zeno IMproved - „Zeno verbäßert“">ZIM </i>-Datteije eraan ze kumme, bruche mer ene Zohjang op Dinge Schpeijscher.
