@@ -5,6 +5,7 @@
 # Author: Ianbu
 # Author: Justincheng12345
 # Author: Kelson
+# Author: Kly
 # Author: LNDDYL
 # Author: Lauhenry
 # Author: Liuxinyu970226
@@ -179,6 +180,8 @@ android.ui.pref_info_title=資訊
 android.ui.pref_info_version=版本
 android.ui.pref_backtotop=回到頁首
 android.ui.pref_backtotop_summary=在頁面底部顯示一個回到頁首的按鈕
+android.ui.pref_newtab_background_title=以背景執行來開啟新的頁籤
+android.ui.pref_newtab_background_summary=當開啟一個新的頁籤，會以背景執行開啟
 android.ui.save_media_error=嘗試儲存該媒體時出錯！
 android.ui.save_media_saved=已將媒體以 %1$s 儲存在你的圖片資料夾中
 android.ui.tts_lang_not_supported=本頁面不支援這個語言，或是未安裝合適的語言數據。條目可能無法正確讀取。
@@ -186,5 +189,13 @@ android.ui.no_reader_application_installed=找不到開啟這類型檔案的應�
 android.ui.customapp_missing_content=你的應用程式已經受損。\n這可能在你從 SD 卡中移除檔案時發生。\n你需要從 Play Store 中卸載並重新安裝應用程式。
 android.ui.go_to_play_store=前往 Play Store
 android.ui.no_bookmarks=沒有書籤！
+android.ui.bookmarks_restored=書籤已回復
+android.ui.bookmark_added=書籤已增加
+android.ui.rate_dialog_title=請給予我們評價
+android.ui.rate_dialog_msg_1=如果您喜歡使用
+android.ui.rate_dialog_msg_2=，請花點時間評價它。感謝您的支持！
+android.ui.rate_dialog_positive=評價！
+android.ui.rate_dialog_negative=不用了，謝謝
+android.ui.rate_dialog_neutral=以後再說
 android.ui.no_section_info=未找到內容標題
 android.ui.request_storage=我們需要進入你的儲存設備以訪問 ZIM 檔案。

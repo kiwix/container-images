@@ -4,6 +4,7 @@
 # Author: Aushulz
 # Author: Bertaz
 # Author: Beta16
+# Author: Einreiher
 # Author: Inskatolata
 # Author: Kelson
 # Author: Matteocng
@@ -225,7 +226,7 @@ android.ui.bookmarks_restored=Segnalibri ripristinati
 android.ui.bookmark_added=Segnalibro aggiunto
 android.ui.rate_dialog_title=Valutaci
 android.ui.rate_dialog_msg_1=Se ti piace usare
-android.ui.rate_dialog_msg_2=, prendi un momento per valutarla. Grazie per il tuo sostegno!
+android.ui.rate_dialog_msg_2=, prenditi un momento per valutarla. Grazie per il tuo sostegno!
 android.ui.rate_dialog_positive=Valuta!
 android.ui.rate_dialog_negative=No, grazie
 android.ui.rate_dialog_neutral=Più tardi
