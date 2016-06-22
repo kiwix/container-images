@@ -202,6 +202,7 @@ android.ui.pref_info_version=גרסה
 android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
 android.ui.pref_newtab_background_title=פתיחת כרטיסייה חדשה ברקע
+android.ui.pref_newtab_background_summary=עם פתיחת לשונית חדשה, היא תיפתח ברקע
 android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
 android.ui.save_media_saved=נמדיה נשמרה בתור %1$s בתיקיית התמונות שלך
 android.ui.tts_lang_not_supported=השפה של הדף הזה אינה נתמכת, או שלא הותקנו נתוני שפה מתאימים. ייתכן שהערך לא יהיה קריא.
