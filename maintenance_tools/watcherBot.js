@@ -26,7 +26,8 @@ var client = new twitter({
 });
 var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
 var kiwixWikiFeed = 'http://www.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
-var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss'
+var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
+var openzimGitFeed = 'https://github.com/wikimedia/openzim/commits/master.atom';
 var sourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
 var githubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.githubToken;
 
@@ -115,6 +116,23 @@ openzimWikiWatcher.run( function( error, articles ) {
     }
 });
 openzimWikiWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR] ' + error );
+});
+
+/* OPENZIM GIT GITHUB */
+var openzimGitWatcher = new rssWatcher( openzimGitFeed );
+openzimGitWatcher.set( {feed: openzimGitFeed, interval: 120} );
+openzimGitWatcher.on( 'new article', function( article ) {
+    var message = '[OPENZIM GIT] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+    console.log( '[MSG]' + message );
+    ircClient.say( '#kiwix', message );
+});
+openzimGitWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR] ' + error );
+    }
+});
+openzimGitWatcher.on( 'error', function( error ) {
     console.error( '[ERROR] ' + error );
 });
 
