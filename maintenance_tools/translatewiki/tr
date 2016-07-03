@@ -5,6 +5,7 @@
 # Author: Cekli829
 # Author: Emperyan
 # Author: Joseph
+# Author: Kumkumuk
 # Author: Man lise
 # Author: McAang
 # Author: Meelo
@@ -181,3 +182,8 @@ android.ui.pref_backtotop=Başa dön
 android.ui.pref_backtotop_summary=Başa dönmek için sayfanın altında bir düğme görüntüler
 android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!
 android.ui.save_media_saved=Medyanın %1$'i Resim dosyanıza kaydedildi
+android.ui.no_reader_application_installed=Bu dosya türü için yüklü bir uygulama bulunamadı
+android.ui.go_to_play_store=Play Store'a git
+android.ui.no_bookmarks=Yer imi yok
+android.ui.rate_dialog_negative=Hayır, teşekkürler
+android.ui.request_storage=ZİM dosyalara erişmek için depolama erişim ihtiyacımız var

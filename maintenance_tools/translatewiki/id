@@ -1,6 +1,7 @@
 # Messages for Indonesian (Bahasa Indonesia)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: Arifin.wijaya
 # Author: C5st4wr6ch
 # Author: Farras
 # Author: Iwan Novirion
@@ -175,5 +176,22 @@ android.ui.pref_info_title=Informasi
 android.ui.pref_info_version=Versi
 android.ui.pref_backtotop=Kembali ke Atas
 android.ui.pref_backtotop_summary=Tampilkan tombol di akhir halaman untuk menggulir ke atas
+android.ui.pref_newtab_background_title=Buka tab baru di latar belakang
+android.ui.pref_newtab_background_summary=Ketika membuka tab baru itu akan dibuka di latar belakang
 android.ui.save_media_error=Kesalahan terjadi ketika menyimpan media!
 android.ui.save_media_saved=Simpan media sebagai %1$s pada folder Gambar
+android.ui.tts_lang_not_supported=Bahasa situs ini tidak didukung, ataupun data bahasa yang bersesuaian tidak dipasang. Artikel mungkin tidak dapat dibaca dengan benar.
+android.ui.no_reader_application_installed=Tidak dapat menemukan aplikasi yang terpasang untuk jenis berkas ini
+android.ui.customapp_missing_content=Aplikasi Anda korup.\nIni mungkin terjadi ketika Anda menghapus berkas pada kartu SD.\nAnda harus mencopot pemasangan lalu memasang kembali aplikasi tersebut dari Play Store.
+android.ui.go_to_play_store=Pergi ke Play Store
+android.ui.no_bookmarks=Tidak ada markah!
+android.ui.bookmarks_restored=Markah dipulihkan
+android.ui.bookmark_added=Markah ditambahkan
+android.ui.rate_dialog_title=Silakan Nilai Kami
+android.ui.rate_dialog_msg_1=Jika Anda menikmati menggunakan
+android.ui.rate_dialog_msg_2=, silakan luangkan waktu Anda untuk menilainya. Terima kasih atas dukungan Anda!
+android.ui.rate_dialog_positive=Nilai!
+android.ui.rate_dialog_negative=Tidak, terima kasih
+android.ui.rate_dialog_neutral=Nanti
+android.ui.no_section_info=Tidak ada judul konten yang ditemukan
+android.ui.request_storage=Untuk mengakses berkas ZIM kami membutuhkan akses ke penyimpanan Anda

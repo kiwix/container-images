@@ -1,6 +1,7 @@
 # Messages for Hebrew (עברית)
 # Exported from translatewiki.net
 # Author: Amire80
+# Author: Guycn2
 # Author: Inkbug
 # Author: YaronSh
 
@@ -200,5 +201,22 @@ android.ui.pref_info_title=מידע
 android.ui.pref_info_version=גרסה
 android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
+android.ui.pref_newtab_background_title=פתיחת כרטיסייה חדשה ברקע
+android.ui.pref_newtab_background_summary=עם פתיחת לשונית חדשה, היא תיפתח ברקע
 android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
 android.ui.save_media_saved=נמדיה נשמרה בתור %1$s בתיקיית התמונות שלך
+android.ui.tts_lang_not_supported=השפה של הדף הזה אינה נתמכת, או שלא הותקנו נתוני שפה מתאימים. ייתכן שהערך לא יהיה קריא.
+android.ui.no_reader_application_installed=לא נמצאה אפליקציה מותקנת עבור סוג הקובץ הזה
+android.ui.customapp_missing_content=האפליקציה שלך פגומה.\nייתכן שהוסרו קבצים מכרטיס ה־SD.\nיש להסיר ולהתקין מחדש את האפליקציה מחנות Play.
+android.ui.go_to_play_store=כניסה לחנות Play
+android.ui.no_bookmarks=אין סימניות!
+android.ui.bookmarks_restored=הסימניות שוחזרו
+android.ui.bookmark_added=הסימנייה נוספה
+android.ui.rate_dialog_title=אנא דרגו אותנו
+android.ui.rate_dialog_msg_1=אם אתם נהנים להשתמש
+android.ui.rate_dialog_msg_2=, אנא הקדישו רגע ודרגו את התכונה הזאת. תודה על התמיכה!
+android.ui.rate_dialog_positive=דירוג!
+android.ui.rate_dialog_negative=לא, תודה
+android.ui.rate_dialog_neutral=פעם אחרת
+android.ui.no_section_info=לא נמצאו כותרות תוכן
+android.ui.request_storage=כדי לגשת לקובצי ZIM אנחנו צריכים גישה לאחסון שלך

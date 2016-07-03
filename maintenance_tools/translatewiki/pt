@@ -11,6 +11,7 @@
 # Author: Macofe
 # Author: Malafaya
 # Author: McDutchie
+# Author: Vitorvicentevalente
 # Author: Waldir
 # Author: Wilfredor
 # Author: 555
@@ -212,3 +213,4 @@ android.ui.pref_backtotop=Voltar ao Topo
 android.ui.pref_backtotop_summary=Exibir botão no fim da página para redireccionar ao inicio da página
 android.ui.save_media_error=Ocorreu um erro ao tentar guardar o conteúdo!
 android.ui.save_media_saved=Conteúdo guardado como %1$s na sua pasta de imagens
+android.ui.rate_dialog_negative=Não, obrigado

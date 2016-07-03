@@ -1,6 +1,7 @@
 # Messages for Hungarian (magyar)
 # Exported from translatewiki.net
 # Author: Adam78
+# Author: Bencoke
 # Author: Csega
 # Author: Dj
 # Author: Hunyadym
@@ -175,3 +176,4 @@ android.ui.pref_backtotop=Vissza a lap tetejére
 android.ui.pref_backtotop_summary=Gomb megjelenítése a lap alján, melynek segítségével visszatérhetsz a lap tetejére
 android.ui.save_media_error=Hiba történt a média mentése közben!
 android.ui.save_media_saved=Média elmentve %1s néven a Fényképek mappába
+android.ui.rate_dialog_neutral=Később

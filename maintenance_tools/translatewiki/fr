@@ -8,8 +8,11 @@
 # Author: Kelson
 # Author: Metroitendo
 # Author: Od1n
+# Author: Trial
 # Author: Verdy p
+# Author: Wladek92
 # Author: Wyz
+# Author: Yasten
 
 ui.main.cssdirection=ltr
 ui.main.osxservices=Services
@@ -207,5 +210,22 @@ android.ui.pref_info_title=Information
 android.ui.pref_info_version=Version
 android.ui.pref_backtotop=Retourner au début
 android.ui.pref_backtotop_summary=Afficher un bouton en bas de la page pour revenir au début
+android.ui.pref_newtab_background_title=Ouvrir un nouvel onglet en arrière-plan
+android.ui.pref_newtab_background_summary=Lors de l'ouverture d'un nouvel onglet, il s'ouvrira en arrière-plan
 android.ui.save_media_error=Une erreur s'est produite en essayant d’enregistrer le média !
 android.ui.save_media_saved=Média enregistré sous %1$s dans votre dossier Images
+android.ui.tts_lang_not_supported=La langue de cette page n’est pas supportée, ou les données appropriées de la langue ne sont pas installées. L’article ne pourra pas être correctement lu.
+android.ui.no_reader_application_installed=Impossible de trouver une application installée pour ce type de fichier
+android.ui.customapp_missing_content=Votre application est corrompue.\nCela peut se produire quand vous supprimez des fichiers de la carte SD. Vous devez désinstaller puis réinstaller l’application depuis le Play Store.
+android.ui.go_to_play_store=Aller sur le Play Store
+android.ui.no_bookmarks=Il n'y a pas de signets
+android.ui.bookmarks_restored=Signets restaurés
+android.ui.bookmark_added=Signet ajouté
+android.ui.rate_dialog_title=Veuillez nous noter
+android.ui.rate_dialog_msg_1=Si vous aimez utiliser
+android.ui.rate_dialog_msg_2=, veuillez prendre un moment pour l'évaluer. Merci pour votre soutien !
+android.ui.rate_dialog_positive=Notez !
+android.ui.rate_dialog_negative=Non merci
+android.ui.rate_dialog_neutral=Plus tard
+android.ui.no_section_info=Aucun entête de contenu trouvé
+android.ui.request_storage=Pour accéder aux fichiers ZIM, nous avons besoin d'un accès à votre espace de stockage

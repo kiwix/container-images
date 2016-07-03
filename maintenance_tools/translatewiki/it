@@ -4,8 +4,10 @@
 # Author: Aushulz
 # Author: Bertaz
 # Author: Beta16
+# Author: Einreiher
 # Author: Inskatolata
 # Author: Kelson
+# Author: Matteocng
 # Author: McDutchie
 # Author: Nemo bis
 # Author: Nivit
@@ -86,7 +88,7 @@ ui.main.purgeHistory.accesskey=P
 ui.main.help=Aiuto
 ui.main.help.accesskey=i
 ui.main.feedback=Feedback
-ui.main.reportabug=Segnala un malfunzionamento
+ui.main.reportabug=Segnala un errore
 ui.main.requestafeature=Richiedi una funzionalità
 ui.main.about=Informazioni su &brand.brandShortName;
 ui.main.about.accesskey=n
@@ -211,5 +213,22 @@ android.ui.pref_info_title=Informazioni
 android.ui.pref_info_version=Versione
 android.ui.pref_backtotop=Torna all'inizio
 android.ui.pref_backtotop_summary=Mostra un pulsante alla fine della pagina per scorrere fino all'inizio
+android.ui.pref_newtab_background_title=Apri nuova scheda in background
+android.ui.pref_newtab_background_summary=Quando si apre una nuova scheda verrà aperta in background
 android.ui.save_media_error=Si è verificato un errore durante il salvataggio del file multimediale!
 android.ui.save_media_saved=Salvato file multimediale come %1$s nella cartella Immagini
+android.ui.tts_lang_not_supported=La lingua di questa pagina non è supportata, o i dati per il linguaggio appropriato non sono stati installati. La voce non può essere letta correttamente.
+android.ui.no_reader_application_installed=Non è stata trovata alcuna applicazione installata per questo tipo di file
+android.ui.customapp_missing_content=L'applicazione è danneggiata.\nCiò potrebbe accadere quando si rimuovono i file sulla scheda SD.\nÈ necessario disinstallare e reinstallare l'applicazione dal Play Store.
+android.ui.go_to_play_store=Vai al Play Store
+android.ui.no_bookmarks=Nessun segnalibro!
+android.ui.bookmarks_restored=Segnalibri ripristinati
+android.ui.bookmark_added=Segnalibro aggiunto
+android.ui.rate_dialog_title=Valutaci
+android.ui.rate_dialog_msg_1=Se ti piace usare
+android.ui.rate_dialog_msg_2=, prenditi un momento per valutarla. Grazie per il tuo sostegno!
+android.ui.rate_dialog_positive=Valuta!
+android.ui.rate_dialog_negative=No, grazie
+android.ui.rate_dialog_neutral=Più tardi
+android.ui.no_section_info=Nessun intestazione di contenuto trovata.
+android.ui.request_storage=Per accedere al file ZIM è necessario l'accesso al tuo spazio di archiviazione

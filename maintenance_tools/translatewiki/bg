@@ -3,6 +3,7 @@
 # Author: DCLXVI
 # Author: Miroslav35232
 # Author: StanProg
+# Author: Termininja
 # Author: Vladimir Penov
 # Author: Vodnokon4e
 
@@ -199,3 +200,6 @@ android.ui.pref_backtotop=Връщане в началото
 android.ui.pref_backtotop_summary=Показване на бутон в края на страницата за превъртане нагоре
 android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
 android.ui.save_media_saved=Медийният файл е съхранен като %1$s във вашата папка с изображения
+android.ui.rate_dialog_positive=Оцени!
+android.ui.rate_dialog_negative=Не, благодаря
+android.ui.rate_dialog_neutral=По-късно

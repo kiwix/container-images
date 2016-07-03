@@ -140,7 +140,7 @@ function shouldBeStored($path, $filter, $filterOut) {
 
 /* Save in Piwik */
 function saveInPiwik($logHash) {
-  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")\n";
+  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")... ";
   global $idSite, $webUrl, $piwikUrl, $tokenAuth;
   $t = new PiwikTracker($idSite, $piwikUrl);
   $t->setUserAgent($logHash["agent"]);
@@ -149,7 +149,19 @@ function saveInPiwik($logHash) {
   $t->setForceVisitDateTime($logHash["utcdatetime"]);
   $t->setUrlReferrer($logHash["referer"]);
   $t->setUrl($webUrl.$logHash["path"]);
-  $t->doTrackPageView(basename($logHash["path"]));
+  $HTTPResult = false;
+  $HTTPFailCount = 0;
+  do {
+    $HTTPResult = $t->doTrackPageView(basename($logHash["path"]));
+    if (!$HTTPResult) {
+      $HTTPFailCount++;
+      echo "FAIL\n";
+      echo "Unable to save (via HTTP) last log entry for the $HTTPFailCount time, retrying in a few seconds...\n";
+      sleep($HTTPFailCount);
+    } else {
+      echo "SUCCESS\n";
+    }
+  } while (!$HTTPResult); 
 }
 
 /* Get last log insertion in Piwik to avoid duplicates */

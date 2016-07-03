@@ -6,6 +6,7 @@
 # Author: KuboF
 # Author: Metraduk
 # Author: Objectivesea
+# Author: Robin van der Vliet
 # Author: Yekrats
 
 ui.main.osxservices=Servoj
@@ -175,3 +176,5 @@ android.ui.pref_backtotop=Reiri al Supro
 android.ui.pref_backtotop_summary=Montri suprenan rulumilon paĝofine
 android.ui.save_media_error=Eraro okazis dum provo konservi la plurmediaĵon!
 android.ui.save_media_saved=Plumediaĵoj konservitaj kiel %1$s en via dosierujo Bildoj
+android.ui.rate_dialog_negative=Ne, dankon
+android.ui.rate_dialog_neutral=Poste

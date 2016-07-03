@@ -48,6 +48,9 @@ scanMirror isoc.il WMDIRS
 # Scan the Your.org mirror
 scanMirror your.org WMDIRS
 
+# Scan the nd.edu mirror
+scanMirror nd.edu WMDIRS
+
 # Scan the Mirrorservice.org mirror
 scanMirror mirrorservice.org WMDIRS
 

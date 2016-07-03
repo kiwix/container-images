@@ -5,6 +5,7 @@
 # Author: Arjanizary
 # Author: E THP
 # Author: Ebrahimi-amir
+# Author: Ilğım
 # Author: Koroğlu
 # Author: Mousa
 
@@ -45,6 +46,7 @@ ui.main.fullscreen=صحیفه‌نین بوتونلد
 ui.main.tools=آلتلر
 ui.main.randomArticle=تصادفی مقاله
 ui.main.checkIntegrity=بیر پارچالیق تفتیشی
+ui.main.launchIndexing=ایندکسی باشلا
 ui.main.purgeHistory=گئچمیشی یئر‌به‌یئر ائله
 ui.main.help=کؤمک
 ui.main.feedback=گئری‌بسلمه
@@ -60,7 +62,7 @@ ui.main.searchPlaceholder=متن آختارماق اوچون بورا یازین
 ui.main.findInText=یازی ایچینده آختاریش
 ui.main.noSearchBar=آختاریش زیم فايلینی طلب ائدیر
 ui.main.bookmarks=یئر ایملری
-ui.main.results.title=آختاریش سونوجلاری
+ui.main.results.title=آختاریش نتیجه‌لری
 ui.main.bmkLabel=یئر ایملری:
 ui.main.notesLabel=دامغا قئیدلری:
 ui.main.loadbmk=پارامئترلری بووکمارکس گیریش
@@ -69,6 +71,7 @@ ui.main.mark=بو صفحه‌نی دامغالا
 ui.main.unmark=سئچیلن‌لری علامتی گوتور
 ui.main.reload=نشانه مجموعه لری یئنی دن یوکلمه
 ui.main.defaultset=نیشانک‌لر اوچون تنظیم
+ui.main.saveMediaAs=مدیانی بۇ آدلا ذخیره ائت ...
 ui.main.openLinkInNewTab=يئنی نیشانی لینک آچماق
 ui.main.searchFor=آختاریش اوچون
 ui.main.copyLinkAddress=وب آدرسیندن یازی‌گوتورمم
@@ -98,6 +101,7 @@ ui.preferences.profileDirectory=بؤلمه نمایه
 ui.preferences.browse=گؤزدن کئچیر
 ui.preferences.tabs=زبانه‌لری یادا ساخلاماق
 ui.preferences.downloadCatalogs=اوزاق Download کالانما (س)
+ui.preferences.neverAskToIndex=هئچ واخت ایندکسدن سوروشمایین
 ui.server.load=یوکله
 ui.server.start=باشلا
 ui.server.stop=دور (دایان)
@@ -109,6 +113,8 @@ ui.messages.loadArticleError=فایلی یوکله‌مک اوچون ایمکا�
 ui.messages.noActiveZimFile=ZIM  فعال فایلی تاپیلمادی،اولده اونی یوکله ین .
 ui.messages.indexZimFileConfirm=سیز ایستیرسینیز کی ایندی ZIM  فایلینیزی فهرست ائدز؟
 ui.messages.abortIndexingConfirm=فهرست ائتمک ایشی گورولمه حالیندا دیر.سیز امین سینیزمی کی ایستیرسینیز اونا سون وئریب چیخاسینیز؟
+ui.messages.removeContentConfirm=بو یازی ایله بوتون باغلی فایللاری سیلمکدن آرخایینسینیزمی؟
+ui.messages.dontDeleteContentFiles=(ZIM) محتوالی بیر فایلی سیلمه‌یین.
 ui.messages.restartConfirm=% 1 ریست اولما‌لی‌دیر. بونو ایستییرسینیز؟
 ui.messages.endOfIndexing=فهرست ائتمک ایشی باشا چاتدی.
 ui.messages.removeProfileConfirm=ایستیر‌سیز پروفایلی‌نیزی سیله سیز؟
@@ -137,7 +143,21 @@ ui.messages.integrityCheckFailed=بوتؤولويو چئک ائدیله بیله
 android.ui.menu_share=یولداشلارلا پایلاشماق
 android.ui.menu_read_aloud=اوجادان اوخو
 android.ui.menu_read_aloud_stop=اوجادان اوخودماغی دوردور
+android.ui.info_share_title=کیوکس ایله آفلاین ویکی‌پدیادا منه یاپیشدی!
+android.ui.share_via=بۇنونلا پایلاش...
 android.ui.button_backtotop=اوسته قاییت
+android.ui.articlesearch_hint=مقاله‌لری تاپماق اۆچون تایپ ائدین
+android.ui.choose_file=بیر ZIM محتوایی فایلینی سئچین (*.zim)
+android.ui.open_in_new_tab=باغلانتی یئنی تبده‌می آچیلسین؟
+android.ui.remove_tab_confirm=بۇ تبی سیلمک‌دن آرخایین‌میسینیز؟
+android.ui.remove_tab=تبی سیل
+android.ui.rescan_fs=SD کارتی یئنی‌دن آختار
+android.ui.rescan_fs_warning=ZIM فایللاری آختاریلیر، لوطفا گؤزله‌یین...
+android.ui.error_filenotfound=خطا： سئچیلمیش ZIM فایلی تاپیلمادی.
+android.ui.error_fileinvalid=خطا：سئچیلمیش فایل بیر گئچرلی ZIM فایلی دئییل.
+android.ui.error_articlenotfound=خطا：«%1$s» مقاله سی یوکلنمه دی.
+android.ui.pref_zoom_title=بؤیوتمه لولی
+android.ui.pref_zoom_enable=بؤیوتمه کونتروللاری
 android.ui.pref_zoom_entry_automatic=اوتوماتیک
 android.ui.pref_zoom_entry_small=کیچیک
 android.ui.pref_zoom_entry_medium=اورتا
@@ -148,3 +168,7 @@ android.ui.pref_info_title=بیلگیلر
 android.ui.pref_info_version=نوسخه‌
 android.ui.pref_backtotop=اوسته قاییت
 android.ui.pref_backtotop_summary=صفحه‌نین سونوندا، اوسته قاییتماغا بیر دوگمه گؤستر
+android.ui.pref_newtab_background_title=یئنی تبی بکگرانددا آچ
+android.ui.go_to_play_store=پلی استورا گئت
+android.ui.rate_dialog_negative=یوْخ، تشکورلر
+android.ui.rate_dialog_neutral=سوْنرا
