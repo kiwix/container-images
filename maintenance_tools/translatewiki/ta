@@ -1,5 +1,6 @@
 # Messages for Tamil (தமிழ்)
 # Exported from translatewiki.net
+# Author: AntanO
 # Author: Caliberoviv
 # Author: ElangoRamanujam
 # Author: Kanags
@@ -82,7 +83,7 @@ ui.main.library.sortBy=வரிசைப்படுத்து
 ui.main.library.sortBy.title=தலைப்பு
 ui.main.library.sortBy.size=அளவு
 ui.main.library.sortBy.date=தேதி
-ui.main.library.sortBy.author=பங்களிப்பாளர்
+ui.main.library.sortBy.author=ஆசிரியர்
 ui.main.library.sortBy.publisher=வெளியீட்டாளர்
 ui.main.library.filterBy=இதன்படி வடிகட்டு
 ui.main.library.filterBy.fileSize=கோப்பின் அளவு
