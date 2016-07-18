@@ -178,6 +178,8 @@ android.ui.customapp_missing_content=Ding Projramm et kappott.\nDat kann dervun 
 # Fuzzy
 android.ui.go_to_play_store=Jangk nohm  Play Store.
 android.ui.no_bookmarks=Mer han keijn Lässezeijsche!
+android.ui.bookmarks_restored=Lässezeijsche zerök jehollt
+android.ui.bookmark_added=Lässezeijsche derbei jedonn
 # Fuzzy
 android.ui.rate_dialog_msg_1=Wann De Spaß häs aan/aam <!--  https://translatewiki.net/wiki/Thread:Support/About_Kiwix:Android.ui.rate_dialog_msg_1/qqq -->
 android.ui.rate_dialog_positive=Ennschäzze!
