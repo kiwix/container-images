@@ -9,6 +9,7 @@
 # Author: Metroitendo
 # Author: Od1n
 # Author: Trial
+# Author: Urhixidur
 # Author: Verdy p
 # Author: Wladek92
 # Author: Wyz
@@ -214,7 +215,7 @@ android.ui.pref_newtab_background_title=Ouvrir un nouvel onglet en arrière-plan
 android.ui.pref_newtab_background_summary=Lors de l'ouverture d'un nouvel onglet, il s'ouvrira en arrière-plan
 android.ui.save_media_error=Une erreur s'est produite en essayant d’enregistrer le média !
 android.ui.save_media_saved=Média enregistré sous %1$s dans votre dossier Images
-android.ui.tts_lang_not_supported=La langue de cette page n’est pas supportée, ou les données appropriées de la langue ne sont pas installées. L’article ne pourra pas être correctement lu.
+android.ui.tts_lang_not_supported=La langue de cette page n’est pas prise en charge, ou les données appropriées de la langue ne sont pas installées. L’article ne pourra pas être correctement lu.
 android.ui.no_reader_application_installed=Impossible de trouver une application installée pour ce type de fichier
 android.ui.customapp_missing_content=Votre application est corrompue.\nCela peut se produire quand vous supprimez des fichiers de la carte SD. Vous devez désinstaller puis réinstaller l’application depuis le Play Store.
 android.ui.go_to_play_store=Aller sur le Play Store

@@ -10,6 +10,7 @@
 # Author: Musab Moahmmed
 # Author: Mutarjem horr
 # Author: OsamaK
+# Author: بدارين
 # Author: عبد الحق فارح
 # Author: محمد أحمد عبد الفتاح
 
@@ -192,9 +193,9 @@ android.ui.remove_tab_confirm=هل تريد إزالة علامة التبويب
 android.ui.remove_tab=إزالة علامة التبويب
 android.ui.rescan_fs=إعادة تفحص بطاقة SD
 android.ui.rescan_fs_warning=مسح لملفات زيم، الرجاء الانتظار...
-android.ui.error_nozimfilesfound=لا توجد ملفات زيم على الجهتز الخاص بك.\nالق نظرة صفحة المساعدة للحصول على الإرشادات الخاصة بكيفيّة تحميل محتوى على كيويكس.\nإذا قمت بوضع ملف زيم على الجهز الخاص بك أو وحدة التخزين الخارجيّة، ربّما أنت في حاجة إلى إعادة تشغيل الجهاز.
-android.ui.error_filenotfound=خطأ: تعذر العثور على الملف المحدد زيم.
-android.ui.error_fileinvalid=خطأ: ملف زيم المحدد ليس ملفا صالحا.
+android.ui.error_nozimfilesfound=لا توجد ملفات زيم على الجهاز الخاص بك.\nالق نظرة على صفحة المساعدة للحصول على الإرشادات الخاصة بكيفيّة تحميل محتوى إلى كيويكس.\nإذا قمت بوضع ملف زيم على الجهاز الخاص بك أو وحدة التخزين الخارجيّة، ربّما أنت في حاجة إلى إعادة تشغيل الجهاز.
+android.ui.error_filenotfound=خطأ: تعذر العثور على الملف المحدد زيم (ZIM)
+android.ui.error_fileinvalid=خطأ: ملف زيم (ZIM) المحدد ليس ملفا صالحا.
 android.ui.error_articlenotfound=خطأ: تحميل المقالة \"%1$s\" لم يتم بنجاح.
 android.ui.error_articleurlnotfound=خطأ: تحميل المقالة (Url: %1$s) لم يتم بنجاح.
 android.ui.pref_zoom_title=مستوى التكبير/التصغير
@@ -211,5 +212,22 @@ android.ui.pref_info_title=معلومة
 android.ui.pref_info_version=نسخة
 android.ui.pref_backtotop=ارجع إلى الأعلى
 android.ui.pref_backtotop_summary=عرض زر في نهاية الصفحة للذهاب إلى أعلاها
+android.ui.pref_newtab_background_title=فتح علامة تبويب جديدة في الخلفية
+android.ui.pref_newtab_background_summary=عند فتح علامة تبويب جديدة سوف تفتح في الخلفية
 android.ui.save_media_error=حدث خطأ أثناء محاولة حفظ الملف!
 android.ui.save_media_saved=نمّ حفظ الملف تحت %1$s في ملف الصور الخاص بك
+android.ui.tts_lang_not_supported=لم يتم اعتماد اللغة من هذه الصفحة، أو لم يتم تثبيت البيانات باللغة المناسبة. المقالة قد لا تتم قراءتها بشكل صحيح.
+android.ui.no_reader_application_installed=تعذر العثور على تطبيق مثبت لهذا النوع من الملفات
+android.ui.customapp_missing_content=طلبك تالف.\nقد يحدث هذا عند إزالة الملفات على بطاقة SD.\nتحتاج إلى إلغاء التثبيت ومن ثم إعادة تثبيت التطبيق من متجر Play.
+android.ui.go_to_play_store=اذهب إلى متجر Play
+android.ui.no_bookmarks=لا إشارات مرجعية!
+android.ui.bookmarks_restored=أعيدت الإشارات المرجعية
+android.ui.bookmark_added=إشارة مرجعية أضيفت
+android.ui.rate_dialog_title=يرجى تقييمنا
+android.ui.rate_dialog_msg_1=إذا كنت تتمتع باستخدام
+android.ui.rate_dialog_msg_2=يرجى ان نتوقف لحظة لتقييمنا. شكرا لدعمك!
+android.ui.rate_dialog_positive=قيّم!
+android.ui.rate_dialog_negative=لا، شكراً
+android.ui.rate_dialog_neutral=لاحقاً
+android.ui.no_section_info=لم يتم العثور على العناوين الرأسية للمحتوى
+android.ui.request_storage=من أجل الوصول إلى ملفات ZIM نحن بحاجة إلى الوصول إلى التخزين الخاصة بك
