@@ -1,5 +1,6 @@
 # Messages for Turkish (Türkçe)
 # Exported from translatewiki.net
+# Author: 1917 Ekim Devrimi
 # Author: Article1
 # Author: Captantrips
 # Author: Cekli829
@@ -180,10 +181,15 @@ android.ui.pref_info_title=Bilgi
 android.ui.pref_info_version=Sürüm
 android.ui.pref_backtotop=Başa dön
 android.ui.pref_backtotop_summary=Başa dönmek için sayfanın altında bir düğme görüntüler
+android.ui.pref_newtab_background_title=Arkaplanda yeni sekme aç
+android.ui.pref_newtab_background_summary=Yeni bir sekme açarken arka planda açılış
 android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!
 android.ui.save_media_saved=Medyanın %1$'i Resim dosyanıza kaydedildi
+android.ui.tts_lang_not_supported=Bu sayfa dili desteklenmiyor veya uygun dil veri yüklenmedi. Bu makale de, düzgün okunabilir değil.
 android.ui.no_reader_application_installed=Bu dosya türü için yüklü bir uygulama bulunamadı
+android.ui.customapp_missing_content=Uygulamanız bozuk.\nBu kaldırmak SD kartındaki dosya ortaya çıkabilir.N!Daha sonra Play Store'dan Uygulamayı yeniden kaldırmanız gerekir.
 android.ui.go_to_play_store=Play Store'a git
 android.ui.no_bookmarks=Yer imi yok
+android.ui.bookmark_added=Yer imi eklendi
 android.ui.rate_dialog_negative=Hayır, teşekkürler
 android.ui.request_storage=ZİM dosyalara erişmek için depolama erişim ihtiyacımız var

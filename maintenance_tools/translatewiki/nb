@@ -3,6 +3,7 @@
 # Author: Chameleon222
 # Author: E1d1eb90
 # Author: EvenT
+# Author: Jon Harald Søby
 # Author: Laaknor
 # Author: Nghtwlkr
 # Author: SuperPotato
@@ -172,6 +173,8 @@ android.ui.pref_info_title=Informasjon
 android.ui.pref_info_version=Versjon
 android.ui.pref_backtotop=Tilbake til toppen
 android.ui.pref_backtotop_summary=Vis en knapp nederst på siden for å returnere til toppen
+android.ui.pref_newtab_background_title=Åpne ny fane i bakgrunnen
+android.ui.pref_newtab_background_summary=Når en ny fane åpnes vil den åpnes i bakgrunnen
 android.ui.save_media_error=En feil oppstod under lagring av mediet!
 android.ui.save_media_saved=Lagret media som %1$s i din bildemappe.
 android.ui.tts_lang_not_supported=Dette språket er ikke tilgjengelig for siden eller så er ikke dette språket installert. Denne artikkelen kan kanskje ikke bli riktig lest av.
@@ -179,5 +182,13 @@ android.ui.no_reader_application_installed=Kunne ikke finne en installert app fo
 android.ui.customapp_missing_content=Appen din er korrupt.\nDette kan skje når du fjerner filer på SD-kortet.\nDu må avinstallere og installere appen igjen fra Play Butikk.
 android.ui.go_to_play_store=Gå til Play Butikk
 android.ui.no_bookmarks=Ingen bokmerker!
+android.ui.bookmarks_restored=Bokmerker gjenopprettet
+android.ui.bookmark_added=Bokmerke lagt til
+android.ui.rate_dialog_title=Gi oss en rating
+android.ui.rate_dialog_msg_1=Om du liker å bruke
+android.ui.rate_dialog_msg_2=, ta noen minutter til å gi den en rating. Takk for støtten din!
+android.ui.rate_dialog_positive=Bedøm!
+android.ui.rate_dialog_negative=Nei takk
+android.ui.rate_dialog_neutral=Senere
 android.ui.no_section_info=Ingen innholdstitteler funnet.
 android.ui.request_storage=For å få åpnet ZIM-filer trenger vi tilgang til lagringsplassen din
