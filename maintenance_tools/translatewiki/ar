@@ -12,6 +12,7 @@
 # Author: Mutarjem horr
 # Author: OsamaK
 # Author: بدارين
+# Author: ديفيد
 # Author: عبد الحق فارح
 # Author: محمد أحمد عبد الفتاح
 
@@ -74,7 +75,7 @@ ui.main.resultsbar=شريط النتائج
 ui.main.resultsbar.accesskey=R
 ui.main.tabs=ألسنة
 ui.main.tabs.accesskey=T
-ui.main.fullscreen=ملئ الشاشة
+ui.main.fullscreen=ملء الشاشة
 ui.main.fullscreen.accesskey=F
 ui.main.tools=أدوات
 ui.main.tools.accesskey=T
@@ -106,10 +107,10 @@ ui.main.bmkLabel=علامات القراءة:
 ui.main.notesLabel=ملاحظات علامات القراءة:
 ui.main.loadbmk=استورد مجموعة علامات قراءة
 ui.main.newbmk=أنشئ مجموعة علامات قراءة جديدة
-ui.main.mark=علّم هذه الصفحة
+ui.main.mark=علِّم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
 ui.main.reload=أعد تحميل مجموعة المفضلة
-ui.main.defaultset=تفضيلات أصليّة
+ui.main.defaultset=تعيين الافتراضي
 ui.main.saveMediaAs=حفظ وسائط باسم...
 ui.main.openLinkInNewTab=افتح الوصلة في علامة تبويب جديدة
 ui.main.searchFor=ابحث عن
@@ -124,7 +125,7 @@ ui.main.library.sortBy.size=الحجم
 ui.main.library.sortBy.date=التاريخ
 ui.main.library.sortBy.author=المؤلف
 ui.main.library.sortBy.publisher=الناشر
-ui.main.library.filterBy=رشّح حسب
+ui.main.library.filterBy=رشح حسب
 ui.main.library.filterBy.fileSize=حجم الملف
 ui.main.library.filterBy.language=اللغة
 ui.main.library.filterBy.language.all=الكل
@@ -137,11 +138,11 @@ ui.preferences.preferences=التفضيلات
 ui.preferences.save=احفظ
 ui.preferences.cancel=ألغِ
 ui.preferences.profileDirectory=ملف الاختيارات
-ui.preferences.browse=تصفّح
+ui.preferences.browse=تصفح
 ui.preferences.tabs=تذكر علامات التبويب
-ui.preferences.downloadCatalogs=نزّل دفتر/دفاتر مصور/ة بعيد/ة
+ui.preferences.downloadCatalogs=تنزيل دفتر/دفاتر مصور/ة بعيد/ة
 ui.preferences.neverAskToIndex=لا تطلب أبدًا إلى الفهرس
-ui.server.load=حمّل
+ui.server.load=حمِّل
 ui.server.start=ابدأ
 ui.server.stop=قف
 ui.server.close=أغلق
