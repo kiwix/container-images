@@ -140,10 +140,9 @@ function shouldBeStored($path, $filter, $filterOut) {
 
 /* Save in Piwik */
 function saveInPiwik($logHash) {
-  echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")... ";
   global $idSite, $webUrl, $piwikUrl, $tokenAuth;
   $t = new PiwikTracker($idSite, $piwikUrl);
-  $t->setUserAgent($logHash["agent"]);
+  $t->setUserAgent(substr($logHash["agent"], 0, 100));
   $t->setTokenAuth($tokenAuth);
   $t->setIp($logHash["ip"]);
   $t->setForceVisitDateTime($logHash["utcdatetime"]);
@@ -152,6 +151,7 @@ function saveInPiwik($logHash) {
   $HTTPResult = false;
   $HTTPFailCount = 0;
   do {
+    echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")... ";
     $HTTPResult = $t->doTrackPageView(basename($logHash["path"]));
     if (!$HTTPResult) {
       $HTTPFailCount++;
