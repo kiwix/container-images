@@ -12,7 +12,7 @@
 SOURCE=/srv/upload/zim2index/
 ZIMTARGET=/srv/upload/zim/
 ZIPTARGET=/srv/upload/portable/
-TMP=/srv/kiwix-maintenance/maintenance_tools/tmp/
+TMP=/data/scratch/mwoffliner/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
 VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
 
