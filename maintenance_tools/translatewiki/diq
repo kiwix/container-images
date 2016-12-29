@@ -1,7 +1,9 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
+# Author: 1917 Ekim Devrimi
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Gırd
 # Author: Kelson
 # Author: Kumkumuk
 # Author: Macofe
@@ -61,7 +63,7 @@ ui.main.searchPlaceholder=Babeta cı geyrayış dê nuşti...
 ui.main.findInText=nusn bıgeyre
 ui.main.noSearchBar=Ratnayış dı ZIM dosya cı geyrayış icab keno
 ui.main.bookmarks=Nışan
-ui.main.results.title=Neticeyê geyrayışi
+ui.main.results.title=Peyniyê cıgeyrayışi
 ui.main.bmkLabel=Nışani:
 ui.main.notesLabel=Notê nışanan:
 ui.main.loadbmk=Sazanê nışani azere de
@@ -161,13 +163,13 @@ android.ui.error_articlenotfound=Xeta: Barkerdışê meqaleyê \"%1$s\" nêbi.
 android.ui.error_articleurlnotfound=Xeta: Barkerdışê meqaleyê (Url: %1$s) nêbi.
 android.ui.pref_zoom_title=Sewiyey zumer
 android.ui.pref_zoom_enable=Kontrola zumer
-android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dezu butona zumi bıasne
+android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dı ju butona zumi bımotné
 android.ui.pref_zoom_entry_automatic=Otomatik
 android.ui.pref_zoom_entry_small=Werdi
 android.ui.pref_zoom_entry_medium=Miyanên
 android.ui.pref_zoom_entry_large=Gırd
 android.ui.pref_nightmode=Moda şewer
-android.ui.pref_nightmode_summary=Wesiqi çerğbiyayış rengana bıasne
+android.ui.pref_nightmode_summary=Meqaleya rengané çerğneyana bımotné
 android.ui.pref_language_chooser=Yew zıwan weçine
 android.ui.pref_info_title=Melumat
 android.ui.pref_info_version=Versiyon
