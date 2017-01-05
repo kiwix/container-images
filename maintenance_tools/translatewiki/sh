@@ -1,5 +1,6 @@
 # Messages for Serbo-Croatian (srpskohrvatski / српскохрватски)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: OC Ripper
 
 ui.main.file=Datoteka
@@ -54,11 +55,22 @@ ui.main.unmark=Odoznači izabrano
 ui.main.reload=Resetiraj set oznaka
 ui.main.defaultset=Postavljeni set
 ui.main.close=Zatvori
+ui.main.library.sortBy.title=Naslov
+ui.main.library.sortBy.size=Veličina
+ui.main.library.sortBy.date=Datum
+ui.main.library.sortBy.publisher=Izdavač
+ui.main.library.filterBy.fileSize=Veličina datoteke
+ui.main.library.filterBy.language=Jezik
+ui.main.library.filterBy.language.all=Sve
+ui.main.library.filterBy.author.all=Sve
+ui.main.library.filterBy.publisher=Izdavač
+ui.main.library.filterBy.publisher.all=Sve
 ui.preferences.preferences=Postavke
 ui.preferences.save=Snimi
 ui.preferences.cancel=Odustani
 ui.preferences.profileDirectory=Profiliraj direktorij
 ui.preferences.browse=Pregledaj
+ui.server.close=Zatvori
 ui.messages.loadZimFileError=Nije moguće učitati '%1' Da li ste sigurni da je ovo ZIM datoteka?
 ui.messages.alreadyIndexingError=Proces indeksiranja već traje.
 ui.messages.noResultsError=Nema rezultata za ovaj upit.
@@ -81,3 +93,5 @@ ui.messages.information=Informacija
 ui.messages.indexing=Indeksiranje
 ui.messages.selectBookmarkSet=Odaberite datoteku sa zetom oznaka
 ui.messages.nameBookmarkSet=Ubacite ime datoteke sa setom oznaka
+android.ui.pref_info_title=Informacija
+android.ui.pref_info_version=Verzija

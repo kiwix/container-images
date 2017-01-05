@@ -1,11 +1,13 @@
 # Messages for Basque (euskara)
 # Exported from translatewiki.net
 # Author: An13sa
+# Author: Macofe
 # Author: Subi
 # Author: Xabier Armendaritz
 
 ui.main.osxservices=Zerbitzuak
 ui.main.osxhideothers=Besteak Ezkutatu
+ui.main.osxshowall=Dena erakutsi
 ui.main.file=Fitxategia
 ui.main.openFile=Fitxategi ireki...
 ui.main.saveFile=Gorde orria honela...
@@ -23,18 +25,26 @@ ui.main.zoom=Zooma
 ui.main.zoomin=Anpliatu
 ui.main.zoomorig=Jatorrizko tamaina
 ui.main.language=Hizkuntza
+ui.main.tabs=Fitxak
 ui.main.fullscreen=Pantaila osoan
 ui.main.tools=Tresnak
 ui.main.randomArticle=Ausazko artikulua
 ui.main.help=Laguntza
 ui.main.feedback=Feedback
+ui.main.reportabug=Akats bat jakinarazi
 ui.main.back=Atzera
 ui.main.forward=Aurrera
 ui.main.home=Hasiera
+ui.main.searchBar=Bilaketa barra
 ui.main.search=Bilatu
+ui.main.searchPlaceholder=Bilatzeko idatzi testua hemen...
+ui.main.findInText=Testuan bilatu
 ui.main.bookmarks=Lastermarkak
+ui.main.results.title=Bilaketaren emaitzak
+ui.main.bmkLabel=Lastermarkak:
 ui.main.mark=Orrialde hau markatu
 ui.main.close=Itxi
+ui.main.library.sortBy=Honen arabera sailkatu
 ui.main.library.sortBy.title=Izenburua
 ui.main.library.sortBy.size=Tamaina
 ui.main.library.sortBy.date=Data
@@ -62,8 +72,20 @@ ui.messages.ok=Ados
 ui.messages.cancel=Utzi
 ui.messages.error=Errorea
 ui.messages.information=Informazioa
+ui.messages.preparingContentDownload=Deskarga prestatzen...
 ui.messages.feedback=Feedback
+ui.messages.library=Liburutegia
 ui.messages.fullscreen=Pantaila osoan
+ui.messages.quitFullscreen=Irten pantaila osotik
+android.ui.menu_read_aloud=Irakurri ozenki
+android.ui.button_backtotop=Gora itzuli
 android.ui.open_in_new_tab=Ireki lotura fitxa berri batean?
+android.ui.pref_zoom_title=Hurbilketa maila
+android.ui.pref_zoom_entry_automatic=Automatikoa
+android.ui.pref_zoom_entry_small=Txikia
+android.ui.pref_zoom_entry_medium=Ertaina
+android.ui.pref_zoom_entry_large=Handia
+android.ui.pref_language_chooser=Hizkuntza aukeratu
 android.ui.pref_info_title=Informazioa
 android.ui.pref_info_version=Bertsioa
+android.ui.pref_backtotop=Gora itzuli

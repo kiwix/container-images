@@ -1,6 +1,8 @@
 # Messages for Urdu (اردو)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Muhammad Shuaib
+# Author: Obaid Raza
 
 ui.main.cssdirection=rtl
 ui.main.osxservices=خدمات
@@ -136,7 +138,13 @@ ui.messages.contentDownloadFinished=1٪ زبراثقال مکمل۔
 ui.messages.feedback=آپ کی رائے
 ui.messages.library=مکتبہ
 ui.messages.fullscreen=مکمل تظاہرہ
-# Fuzzy
-ui.messages.quitFullscreen=اندازِ مکمل تظاہرہ کو ختم کریں
+ui.messages.quitFullscreen=مکمل اسکرین ختم کریں
 ui.messages.integrityCheckSuccessful=سالمیت ملف کی پڑتال کامیابی کے ساتھ مکمل ہوگئی۔
 ui.messages.integrityCheckFailed=سالمیت ملف کی پڑتال ناکام۔ آپ کی فائل خراب ہے۔
+android.ui.menu_share=دوستوں کو بھی بتائیے
+android.ui.pref_zoom_entry_small=چھوٹا
+android.ui.pref_zoom_entry_medium=درمیانے
+android.ui.pref_zoom_entry_large=بڑا
+android.ui.pref_language_chooser=ایک زبان کا انتخاب کریں
+android.ui.pref_info_title=معلومات
+android.ui.pref_info_version=ورژن

@@ -1,6 +1,7 @@
 # Messages for Punjabi (ਪੰਜਾਬੀ)
 # Exported from translatewiki.net
 # Author: Babanwalia
+# Author: Tow
 
 ui.main.osxservices=ਸੇਵਾਵਾਂ
 ui.main.osxhideapp=&brand.brandShortName; ਲੁਕਾਉ
@@ -65,6 +66,8 @@ ui.main.copyLinkAddress=ਜੋੜ ਦੇ ਪਤੇ ਦੀ ਨਕਲ ਲਉ
 ui.main.close=ਬੰਦ ਕਰੋ
 ui.main.library.myLibrary=ਮੇਰੀ ਲਾਈਬ੍ਰੇਰੀ
 ui.main.library.getNewFiles=ਨਵੀਆਂ ਫ਼ਾਈਲਾਂ ਲਵੋ
+ui.main.library.searchZimFiles=ਜ਼ਿਮ ਫ਼ਾਈਲਾਂ ਖੋਜੋ
+ui.main.library.sortBy=ਇਸ ਮੁਤਾਬਕ ਛਾਂਟੋ
 ui.main.library.sortBy.title=ਸਿਰਲੇਖ
 ui.main.library.sortBy.size=ਅਕਾਰ
 ui.main.library.sortBy.date=ਮਿਤੀ
@@ -81,6 +84,7 @@ ui.main.library.filterBy.lessThan=ਤੋਂ ਘੱਟ
 ui.preferences.preferences=ਤਰਜੀਹਾਂ
 ui.preferences.save=ਸਾਂਭੋ
 ui.preferences.cancel=ਰੱਦ ਕਰੋ
+ui.preferences.profileDirectory=ਪ੍ਰੋਫਾਈਲ ਡਾਈਰੈਕਟਰੀ
 ui.preferences.browse=ਫਰੋਲੋ
 ui.preferences.tabs=ਟੈਬਾਂ ਯਾਦ ਰੱਖੋ
 ui.server.load=ਲੱਦੋ
@@ -97,6 +101,7 @@ ui.messages.ok=ਚੰਗਾ
 ui.messages.cancel=ਰੱਦ ਕਰੋ
 ui.messages.error=ਗ਼ਲਤੀ
 ui.messages.information=ਜਾਣਕਾਰੀ
+ui.messages.indexing=ਇੰਡੈਕਸਿੰਗ...
 ui.messages.preparingContentDownload=ਉਤਾਰਾ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ...
 ui.messages.contentDownloadFinished='%1' ਦਾ ਉਤਾਰਾ ਮੁੱਕ ਗਿਆ।
 ui.messages.feedback=ਵਾਪਸੀ ਜਾਣਕਾਰੀ
@@ -106,14 +111,29 @@ ui.messages.quitFullscreen=ਪੂਰੀ ਸਕਰੀਨ ਛੱਡੋ
 ui.messages.integrityCheckSuccessful=ਫ਼ਾਈਲ ਦੀ ਪੂਰਨਤਾ ਦੀ ਪੜਤਾਲ ਸਫ਼ਲ ਹੋਈ।
 ui.messages.integrityCheckFailed=ਪੂਰਨਤਾ ਦੀ ਪੜਤਾਲ ਫੇਲ੍ਹ ਹੋਈ। ਤੁਹਾਡੀ ਫ਼ਾਈਲ ਖ਼ਰਾਬ ਹੈ।
 android.ui.menu_share=ਦੋਸਤਾਂ ਨਾਲ਼ ਸਾਂਝਾ ਕਰੋ
+android.ui.menu_read_aloud=ਉੱਚੀ ਪੜ੍ਹੋ
 android.ui.share_via=ਇਸ ਰਾਹੀਂ ਸਾਂਝਾ ਕਰੋ...
 android.ui.button_backtotop=ਸਿਖਰ ਵੱਲ ਵਾਪਸ
 android.ui.articlesearch_hint=ਲੇਖ ਵੇਖਣ ਵਾਸਤੇ ਲਿਖੋ
 android.ui.open_in_new_tab=ਜੋੜ ਨੂੰ ਨਵੀਂ ਟੈਬ ਵਿੱਚ ਖੋਲ੍ਹਣਾ ਹੈ?
 android.ui.remove_tab_confirm=ਕੀ ਤੁਸੀਂ ਇਸ ਟੈਬ ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?
 android.ui.remove_tab=ਟੈਬ ਹਟਾਉ
+android.ui.pref_zoom_title=ਜ਼ੂਮ ਪੱਧਰ
+android.ui.pref_zoom_enable=ਜ਼ੂਮ ਨਿਯੰਤਰਣ
+android.ui.pref_zoom_entry_automatic=ਆਟੋਮੈਟਿਕ
+android.ui.pref_zoom_entry_small=ਛੋਟਾ
+android.ui.pref_zoom_entry_medium=ਦਰਮਿਆਨਾ
+android.ui.pref_zoom_entry_large=ਵੱਡਾ
 android.ui.pref_nightmode=ਰਾਤ ਦਾ ਅੰਦਾਜ਼
 android.ui.pref_nightmode_summary=ਲੇਖਾਂ ਨੂੰ ਵਾਪਸ ਕੀਤੇ ਰੰਗਾਂ ਵਿੱਚ ਵਿਖਾਉ
+android.ui.pref_language_chooser=ਭਾਸ਼ਾ ਚੁਣੋ
 android.ui.pref_info_title=ਜਾਣਕਾਰੀ
 android.ui.pref_info_version=ਰੂਪ
 android.ui.pref_backtotop=ਸਿਖਰ ਵੱਲ ਵਾਪਸ
+android.ui.go_to_play_store=ਪ੍ਲੇ ਸ੍ਟੋਰ ਤੇ ਜਾਓ
+android.ui.no_bookmarks=ਕੋਈ ਬੁੱਕਮਾਰਕ ਨਹੀੰ!
+android.ui.rate_dialog_title=ਸਾਨੂੰ ਦਰਜਾ ਦਿਓ
+android.ui.rate_dialog_positive=ਮੁਲਾਂਕਣ ਕਰੋ!
+android.ui.rate_dialog_negative=ਨਹੀਂ, ਸ਼ੁਕਰੀਆ
+android.ui.rate_dialog_neutral=ਬਾਅਦ ਵਿਚ
+android.ui.no_section_info=ਕੋਈ ਸਮੱਗਰੀ ਸਿਰਲੇਖ ਨਹੀੰ ਲੱਭੇ

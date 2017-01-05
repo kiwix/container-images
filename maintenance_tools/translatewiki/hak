@@ -1,6 +1,7 @@
-# Messages for Hakka (客家語/Hak-kâ-ngî)
+# Messages for Hakka Chinese (客家語/Hak-kâ-ngî)
 # Exported from translatewiki.net
 # Author: Jetlag
+# Author: Macofe
 
 ui.main.osxservices=服務
 ui.main.osxhideapp=偋起 &brand.brandShortName;
@@ -133,3 +134,4 @@ ui.messages.fullscreen=全螢幕
 ui.messages.quitFullscreen=退出全螢幕模式
 ui.messages.integrityCheckSuccessful=成功檢查文件个完整性。
 ui.messages.integrityCheckFailed=文件完整性檢查失敗。汝个文件損壞。
+android.ui.pref_info_title=信息

@@ -3,7 +3,10 @@
 # Author: Assele
 # Author: Haqmar
 # Author: Kelson
+# Author: Macofe
 # Author: Roustammr
+# Author: Sagan
+# Author: Ләйсән
 # Author: ҒатаУлла
 
 ui.main.osxservices=Сервистар
@@ -67,6 +70,7 @@ ui.main.mark=Был битте билдәләргә
 ui.main.unmark=Һайланған биттән билдәне алырға
 ui.main.reload=Һалынмалар йыйылмаһын яңыртырға
 ui.main.defaultset=Ғәҙәттәге йыйылма
+ui.main.saveMediaAs=Медиа файлды һаҡлау форматы
 ui.main.openLinkInNewTab=Битте яңы һалынмала асырға
 ui.main.searchFor=Эҙләү
 ui.main.copyLinkAddress=Һылтанма адресын алырға
@@ -96,6 +100,7 @@ ui.preferences.profileDirectory=Профиль каталогы
 ui.preferences.browse=Байҡарға
 ui.preferences.tabs=Һалынмаларҙы хәтерҙә тоторға
 ui.preferences.downloadCatalogs=Юйылған каталогты (-тарҙы) күсереп алың
+ui.preferences.neverAskToIndex=Индексацияны бер ҡасан да һорамаҫҡа
 ui.server.load=Тейәргә
 ui.server.start=Башлат
 ui.server.stop=Туҡтат
@@ -104,9 +109,11 @@ ui.messages.loadZimFileError=«% 1» тейәп булмай, ул ысында�
 ui.messages.alreadyIndexingError=Индекслау процессы башланған инде.
 ui.messages.noResultsError=Был һорау буйынса һөҙөмтәләр юҡ.
 ui.messages.loadArticleError=Был мәҡәләне тейәп булмай.
-ui.messages.noActiveZimFile=Актив ZIM файл юҡ, зинһар уны яңынан тейәгеҙ.
+ui.messages.noActiveZimFile=Актив ZIM файл юҡ, уны яңынан тейәгеҙ.
 ui.messages.indexZimFileConfirm=Был файл эҙләү индексын үҙ эсенә алмай. Ундайҙы яһау өсөн бер нисә минут кәрәк буласаҡ. Хәҙер ZIM файлын индексларға теләйһегеҙме?
 ui.messages.abortIndexingConfirm=Әлеге ваҡытта индекслау процессы башлатылған инде. Уны туҡтатыуҙы һәм сығыуҙы раҫлайһығыҙмы?
+ui.messages.removeContentConfirm=Исемлектән был яҙманы һәм уның менән бәйле файлдарҙы юйырға теләйһегеҙме?
+ui.messages.dontDeleteContentFiles=(ZIM) файлы эстәлеген юймағыҙ.
 ui.messages.restartConfirm=%1 яңынан башлатылырға тейеш. Һеҙ уны хәҙер эшләргә теләйһегеҙме?
 ui.messages.endOfIndexing=Индекслау процессы тамамланды.
 ui.messages.removeProfileConfirm=Үҙ профилегеҙҙе юйыуҙы раҫлайһығыҙмы?
@@ -133,3 +140,7 @@ ui.messages.fullscreen=Тулы экран
 ui.messages.quitFullscreen=Тулы экран режимынан сығырға
 ui.messages.integrityCheckSuccessful=Файл бөтөнлөгө уңышлы тикшерелде
 ui.messages.integrityCheckFailed=Бөтөнлөк тикшереү хатаһы. Файл боҙолған.
+android.ui.pref_info_title=Мәғлүмәт
+android.ui.pref_info_version=Версия
+android.ui.rate_dialog_positive=Баһаларға!
+android.ui.rate_dialog_negative=Юҡ, рәхмәт
