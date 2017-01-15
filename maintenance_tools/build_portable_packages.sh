@@ -12,15 +12,14 @@
 SOURCE=/srv/upload/zim2index/
 ZIMTARGET=/srv/upload/zim/
 ZIPTARGET=/srv/upload/portable/
-TMP=/srv/tmp/
+TMP=/data/scratch/mwoffliner/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
 VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
 
-EXCLUDE="0.9"
+EXCLUDE="(0.9|indexdb.tmp)"
 SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
 
-
-for DIR in `find "$SOURCE" -type d | sed "s/$SOURCE_ESC//" | grep -v "$EXCLUDE"`
+for DIR in `find "$SOURCE" -type d | sed "s/$SOURCE_ESC//" | egrep -v "$EXCLUDE"`
 do
     echo "Searching for ZIM files in '$SOURCE$DIR'"
     DIR_ESC=`echo "$DIR/" | sed 's/\//\\\\\//g'`

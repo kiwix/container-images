@@ -1,6 +1,7 @@
 # Messages for Sundanese (Basa Sunda)
 # Exported from translatewiki.net
 # Author: Kandar
+# Author: Macofe
 
 ui.main.osxservices=Layanan
 ui.main.osxhideapp=Sumputkeun &brand.brandShortName;
@@ -129,3 +130,6 @@ ui.messages.fullscreen=Layar pinuh
 ui.messages.quitFullscreen=Kaluar ti modeu layar pinuh
 ui.messages.integrityCheckSuccessful=Integritas berkas geus dipariksa.
 ui.messages.integrityCheckFailed=Pamariksaan integritas gagal. Berkas anjeun dikorup.
+android.ui.pref_zoom_entry_small=Leutik
+android.ui.pref_info_title=Émbaran
+android.ui.pref_info_version=Vérsi

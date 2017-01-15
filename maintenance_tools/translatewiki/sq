@@ -1,7 +1,9 @@
 # Messages for Albanian (shqip)
 # Exported from translatewiki.net
+# Author: Besnik b
 # Author: FatosMorina
 # Author: Kelson
+# Author: Kosovastar
 # Author: Marinari
 # Author: Mjbmr
 # Author: Olsi
@@ -15,7 +17,7 @@ ui.main.openFile=Hap dosjen
 ui.main.browseLibrary=Shfleto librarinë
 ui.main.hideLibrary=Fshih biblotekën
 ui.main.lastOpen=Hapur kohët e fundit...
-ui.main.saveFile=Ruaj faqen si ...
+ui.main.saveFile=Ruaj faqen si...
 ui.main.print=Shtyp
 ui.main.printPdf=Shtyp në PDF
 ui.main.quit=Ndërprej
@@ -129,7 +131,6 @@ ui.messages.contentDownloadFinished=Shkarkimi prej '$1' ka përfunduar.
 ui.messages.feedback=Përshtypja
 ui.messages.library=Bibloteka
 ui.messages.fullscreen=Ekrani i plotë
-# Fuzzy
-ui.messages.quitFullscreen=Dil nga ekrani i plotë
+ui.messages.quitFullscreen=Dil nga mënyra Sa Krejt Ekrani
 ui.messages.integrityCheckSuccessful=Tërësia e skedarit është kontrolluar me sukses.
 ui.messages.integrityCheckFailed=Kontrillimi i tërësishëm dështoi. Skedari juaj është i korruptuar.

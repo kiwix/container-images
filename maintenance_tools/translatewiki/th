@@ -2,7 +2,9 @@
 # Exported from translatewiki.net
 # Author: Akkhaporn
 # Author: Ariesanywhere
+# Author: Bluegram
 # Author: Horus
+# Author: Macofe
 # Author: Nullzero
 # Author: Villagescience
 
@@ -133,3 +135,9 @@ ui.messages.fullscreen=เต็มหน้าจอ
 ui.messages.quitFullscreen=ออกจากโหมดเต็มหน้าจอ
 ui.messages.integrityCheckSuccessful=การตรวจสอบความสมบูรณ์ของไฟล์ตรวจสอบแก้ไขเรียบร้อยแล้ว
 ui.messages.integrityCheckFailed=การตรวจสอบความสมบูรณ์ของไฟล์ล้มเหลว
+android.ui.pref_zoom_entry_small=เล็ก
+android.ui.pref_info_version=รุ่น
+android.ui.bookmark_added=เพิ่มบุ๊คมาร์ค
+android.ui.rate_dialog_title=โปรดให้คะแนนเรา
+android.ui.rate_dialog_negative=ไม่ ขอบคุณ
+android.ui.rate_dialog_neutral=ทีหลัง

@@ -1,6 +1,8 @@
-# Messages for Sorani Kurdish (کوردی)
+# Messages for Central Kurdish (کوردیی ناوەندی)
 # Exported from translatewiki.net
+# Author: Asoxor
 # Author: Calak
+# Author: Diyariq
 # Author: Hzr115
 # Author: Muhammed taha
 
@@ -51,7 +53,7 @@ ui.main.mark=نیشانە بدە لەم پەڕەیە
 ui.main.searchFor=گەڕان بۆ
 ui.main.close=دایخە
 ui.main.library.myLibrary=کتێبخانەکەم
-ui.main.library.getNewFiles=بەدەسهێنانی فایلی نوێ
+ui.main.library.getNewFiles=بەدەسهێنانی پەڕگەکان نوێ
 ui.main.library.searchZimFiles=بگەڕی بۆ پەڕگەکانی ZIM
 ui.main.library.sortBy=ڕیزکردن بەپێی
 ui.main.library.sortBy.title=ناونیشان
@@ -66,11 +68,11 @@ ui.main.library.filterBy.author=نووسەر
 ui.main.library.filterBy.author.all=ھەموو
 ui.main.library.filterBy.publisher=بڵاوکار
 ui.main.library.filterBy.publisher.all=ھەموو
-ui.main.library.filterBy.lessThan=کەمتر ە
+ui.main.library.filterBy.lessThan=کەمتر ە لە
 ui.preferences.preferences=ھەڵبژاردەکان
 ui.preferences.save=پاشەکەوتی بکە
 ui.preferences.cancel=ھەڵیوەشێنەوە
-ui.preferences.browse=بگه‌ڕێ
+ui.preferences.browse=بگەڕێ
 ui.server.start=دەست پێکردن
 ui.server.stop=وەستاندن
 ui.server.close=داخستن

@@ -1,6 +1,7 @@
 # Messages for Serbian (Latin script) (srpski (latinica)‎)
 # Exported from translatewiki.net
 # Author: Kelson
+# Author: Milicevic01
 # Author: Rancher
 # Author: SpeedyGonsales
 
@@ -131,3 +132,4 @@ ui.messages.fullscreen=Ceo ekran
 ui.messages.quitFullscreen=Izađi iz celog ekrana
 ui.messages.integrityCheckSuccessful=Datoteka je celovita.
 ui.messages.integrityCheckFailed=Datoteka nije celovita. Oštećena je.
+android.ui.pref_nightmode=Noćni režim

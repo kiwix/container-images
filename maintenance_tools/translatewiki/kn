@@ -3,6 +3,7 @@
 # Author: Abhirama
 # Author: Akoppad
 # Author: Kelson
+# Author: Macofe
 # Author: Nayvik
 
 ui.main.osxservices=ಸೇವೆಗಳು
@@ -24,7 +25,6 @@ ui.main.copy=ನಕಲು ಮಾಡು
 ui.main.mute=ಮೂಕವಾಗಿಸು
 ui.main.audible=ಕೇಳಿಸುವ
 ui.main.transliteration=ಲಿಪ್ಯಂತರಣ
-# Fuzzy
 ui.main.preferences=ಪ್ರಾಶಸ್ತ್ಯಗಳು
 ui.main.server=ಸರ್ವರ್
 ui.main.display=ಪ್ರದರ್ಶಿಸು
@@ -129,3 +129,7 @@ ui.messages.fullscreen=ಪೂರ್ಣಪರದೆ
 ui.messages.quitFullscreen=ಪೂರ್ಣ ತೆರೆಯನ್ನು ನಿರ್ಗಮಿಸಿ
 ui.messages.integrityCheckSuccessful=ಪೂರ್ಣತೆ ಪರೀಕ್ಷೆಯನ್ನು ಸಂಪೂರ್ಣಗೊಳಿಸಲಾಗಿದೆ
 ui.messages.integrityCheckFailed=ಪೂರ್ಣತೆ ಪರೀಕ್ಷೆಯಲ್ಲಿ ವಿಫಲವಾಗಿದೆ. ನಿಮ್ಮ ಫೈಲ್ ಕೆಟ್ಟೋಗಿದೆ.
+android.ui.pref_zoom_entry_large=ದೊಡ್ಡದು
+android.ui.pref_language_chooser=ಭಾಷೆ ಆಯ್ದುಕೊಳ್ಳಿ
+android.ui.pref_info_title=ಮಾಹಿತಿ
+android.ui.pref_info_version=ಆವೃತ್ತಿ

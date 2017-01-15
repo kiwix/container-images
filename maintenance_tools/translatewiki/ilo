@@ -1,6 +1,7 @@
 # Messages for Iloko (Ilokano)
 # Exported from translatewiki.net
 # Author: Lam-ang
+# Author: Macofe
 
 ui.main.osxservices=Dagiti serbisio
 ui.main.osxhideapp=Ilemmeng &marka.markaNababaNagan;
@@ -129,3 +130,8 @@ ui.messages.fullscreen=Sibubukel a pagkitaan
 ui.messages.quitFullscreen=Rummuar ti moda a napno a pagkitaan
 ui.messages.integrityCheckSuccessful=Ti kinapudno ti papeles ket nagballigi a kinita.
 ui.messages.integrityCheckFailed=Ti panagkita ti kinapudno ket napaay. Ti papelesmo ket nadadael.
+android.ui.pref_zoom_entry_small=Bassit
+android.ui.pref_zoom_entry_medium=Pamay-an
+android.ui.pref_zoom_entry_large=Dakkel
+android.ui.pref_info_title=Pakaammo
+android.ui.pref_info_version=Bersion

@@ -1,5 +1,6 @@
 # Messages for Javanese (Basa Jawa)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: NoiX180
 
 ui.main.osxservices=Playanan
@@ -92,7 +93,7 @@ ui.preferences.profileDirectory=Bilik propil
 ui.preferences.browse=Tlusur
 ui.preferences.tabs=Éling tab
 ui.preferences.downloadCatalogs=Ngundhuh katalog adoh
-ui.server.load=Ngemot
+ui.server.load=Ngamot
 ui.server.start=Lekas
 ui.server.stop=Mandheg
 ui.server.close=Tutup
@@ -129,3 +130,9 @@ ui.messages.fullscreen=Layar kebak
 ui.messages.quitFullscreen=Metu saka modé layar kebak
 ui.messages.integrityCheckSuccessful=Katenanan berkas wis kasil dipriksa.
 ui.messages.integrityCheckFailed=Pepestèn katenanan gagal. Berkas Sampéyan rusak.
+android.ui.pref_zoom_entry_automatic=Otomatis
+android.ui.pref_zoom_entry_small=Cilik
+android.ui.pref_zoom_entry_large=Gedhé
+android.ui.pref_language_chooser=Pilih basa
+android.ui.pref_info_title=Informasi
+android.ui.pref_info_version=Vèrsi

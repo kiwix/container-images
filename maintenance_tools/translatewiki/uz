@@ -1,6 +1,7 @@
-# Messages for Uzbek (oʻzbekcha)
+# Messages for Uzbek (oʻzbekcha/ўзбекча)
 # Exported from translatewiki.net
 # Author: CoderSI
+# Author: Macofe
 # Author: Sociologist
 
 ui.main.osxservices=Xizmatlar
@@ -119,3 +120,7 @@ ui.messages.fullscreen=Toʻliq ekran
 ui.messages.quitFullscreen=Toʻliq ekran tartibidan chiqish
 ui.messages.integrityCheckSuccessful=Faylning butunligi muvaffaqiyatli tekshirildi.
 ui.messages.integrityCheckFailed=Butunlikni tekshirishda xatolik. Faylingiz buzilgan.
+android.ui.pref_zoom_entry_small=Kichik
+android.ui.pref_zoom_entry_large=Katta
+android.ui.pref_info_title=Axborot
+android.ui.pref_info_version=Versiya

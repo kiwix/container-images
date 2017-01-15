@@ -1,7 +1,9 @@
 # Messages for 한국어 (조선) (한국어 (조선))
 # Exported from translatewiki.net
 # Author: Deacon1289
+# Author: Delim
 # Author: Priviet
+# Author: Ykhwong
 # Author: 아라
 
 ui.main.osxservices=봉사
@@ -105,7 +107,7 @@ ui.messages.alreadyIndexingError=이미 색인을 만드는중입니다.
 ui.messages.noResultsError=이 질문에 결과가 없습니다.
 ui.messages.loadArticleError=이 본문을 읽을수 없습니다.
 ui.messages.noActiveZimFile=사용 가능한 ZIM자료기록철이  없으니, ZIM자료기록철을 선택하시기를 바랍니다.
-ui.messages.indexZimFileConfirm=이 자료기록철은 색인이 안된 자료기록철입니다. 색인 만들기는 몇 분 정도 걸립니다. 지금 만들겠습니까?
+ui.messages.indexZimFileConfirm=이 파일은 검색 색인을 포함하고 있지 않습니다. 색인 만들기는 몇 분 정도 걸립니다. ZIM 파일의 색인을 지금 만드시겠습니까?
 ui.messages.abortIndexingConfirm=색인 중입니다. 취소하고 끝내겠습니까?
 ui.messages.removeContentConfirm=목록에서 이 항목과 모든 관련된 파일을 제거하겠습니까?
 ui.messages.dontDeleteContentFiles=내용 (ZIM) 파일을 삭제하지 마세요.
@@ -131,7 +133,20 @@ ui.messages.contentDownloadFinished='%1'의 내려받기가가 끝났습니다.
 ui.messages.feedback=반응
 ui.messages.library=서고
 ui.messages.fullscreen=전체 화면
-# Fuzzy
-ui.messages.quitFullscreen=전체 화면 모드에서 나가기
+ui.messages.quitFullscreen=전체 화면에서 나가기
 ui.messages.integrityCheckSuccessful=자료기록철 무결성을 성공적으로 확인하였습니다.
 ui.messages.integrityCheckFailed=무결설 검사를 실패했습니다. 자료는 손상되었습니다.
+android.ui.menu_share=친구와 공유하기
+android.ui.menu_read_aloud=소리내여 읽기
+android.ui.menu_read_aloud_stop=그만 소리내여 읽기
+android.ui.info_share_title=Kiwix로 위키백과 오프라인을 즐깁니다!
+android.ui.rescan_fs=SD 카드를 다시 검색
+android.ui.rescan_fs_warning=ZIM파일을 검색중입니다. 잠시 기다려주세요...
+android.ui.error_articlenotfound=오유: \"%1$s\" 문서를 불러오는데 실패했습니다.
+android.ui.error_articleurlnotfound=오유: 문서(Url: %1$s)를 불러오는데 실패했습니다.
+android.ui.pref_zoom_title=확대수준
+android.ui.pref_zoom_entry_automatic=자동
+android.ui.pref_zoom_entry_small=작게
+android.ui.pref_zoom_entry_medium=보통
+android.ui.pref_zoom_entry_large=크게
+android.ui.pref_nightmode=야간 모드
