@@ -10,7 +10,9 @@
 
 # New for mwoffliner VMs
 SOURCE=/srv/upload/zim2index/
+ZIMTARGETTMP=/srv/upload/
 ZIMTARGET=/srv/upload/zim/
+ZIPTARGETTMP=/srv/upload/
 ZIPTARGET=/srv/upload/portable/
 TMP=/srv/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
@@ -50,11 +52,13 @@ do
 	    cd `dirname "$SCRIPT"`
 	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
     
-	    echo "Move $TMP$ZIPFILE to $ZIPTARGET$DIR"
-	    mv "$TMP$ZIPFILE" "$ZIPTARGET$DIR"
+	    echo "Move $TMP/$ZIPFILE to $ZIPTARGET/$DIR"
+	    mv "$TMP/$ZIPFILE" "$ZIPTARGETTMP"
+	    mv "$ZIPTARGETTMP/$ZIPFILE" "$ZIPTARGET/$DIR"
 
-	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET$DIR"
-	    mv "$SOURCE$DIR/$ZIMFILE" "$ZIMTARGET$DIR"
+	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET/$DIR"
+	    mv "$SOURCE$DIR/$ZIMFILE" "$ZIMTARGETTMP"
+	    mv "$ZIMTARGETTMP/$ZIMFILE" "$ZIMTARGET/$DIR"
 
 	    echo "Removing lock file $LOCKFILE"
 	    rm -rf "$LOCKFILE"
