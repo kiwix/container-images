@@ -12,7 +12,7 @@
 SOURCE=/srv/upload/zim2index/
 ZIMTARGET=/srv/upload/zim/
 ZIPTARGET=/srv/upload/portable/
-TMP=/data/scratch/mwoffliner/tmp/
+TMP=/srv/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
 VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
 
@@ -40,7 +40,7 @@ do
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
 	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE"`
-	LOCKFILE="$SOURCE$DIR/.$ZIMFILE_"
+	LOCKFILE="$SOURCE$DIR/.${ZIMFILE}_"
 	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" ]]
 	then
 	    echo "Creating lock file $LOCKFILE"
