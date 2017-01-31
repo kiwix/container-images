@@ -41,7 +41,7 @@ do
     for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
-	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE"`
+	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE" 2> /dev/null`
 	LOCKFILE="$SOURCE$DIR/.${ZIMFILE}_"
 	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" ]]
 	then
