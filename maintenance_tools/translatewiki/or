@@ -6,6 +6,7 @@
 # Author: Macofe
 # Author: Psubhashish
 # Author: Sukarna0
+# Author: Susant purohit
 
 ui.main.osxservices=ସୁବିଧାମାନ
 ui.main.osxhideapp=&brand.brandShortName; ଲୁଚାଇବେ
@@ -45,7 +46,7 @@ ui.main.tools=ଉପକରଣ
 ui.main.randomArticle=ଯାହିତାହି ପ୍ରସଙ୍ଗ
 ui.main.checkIntegrity=ଅଖଣ୍ଡତା ପରଖ
 ui.main.launchIndexing=ସୂଚୀ ଆରମ୍ଭ କରନ୍ତୁ
-ui.main.purgeHistory=ଇତିହାସ ସତେଜ କରିବେ
+ui.main.purgeHistory=ଇତିହାସ ଶୁଦ୍ଧ କରିବେ
 ui.main.help=ସହଯୋଗ
 ui.main.feedback=ମତାମତ
 ui.main.reportabug=ବଗ ଦାଖଲ କରିବେ
@@ -66,7 +67,7 @@ ui.main.notesLabel=ବୁକମାର୍କ ଟୀକା:
 ui.main.loadbmk=ବୁକମାର୍କ ଗୋଠ ଆମଦାନି କରିବେ
 ui.main.newbmk=ନୂଆ ବୁକମାର୍କ ଗୋଠ ତିଆରିବେ
 ui.main.mark=ଏଇ ପୃଷ୍ଠାଟିକୁ ଚିହ୍ନିତ କରିବେ
-ui.main.unmark=ବଛାଯାଇଥିବା ବସ୍ତୁ ସବୁକୁ ବାଛିବେ ନାହିଁ
+ui.main.unmark=ବଛାଯାଇଥିବା ବସ୍ତୁ ସବୁକୁ ଅଣଚିହ୍ନିତ କରିବେ
 ui.main.reload=ବୁକମାର୍କ ଗୋଠକୁ ଆଉଥରେ ଲୋଡ କରିବେ
 ui.main.defaultset=ଆପେଆପେ ଥିବା ଗୋଠ
 ui.main.saveMediaAs=ମେଡ଼ିଅକୁ ସାଇତିବେ
