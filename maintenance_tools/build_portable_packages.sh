@@ -43,7 +43,7 @@ do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
 	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE"`
 	LOCKFILE="$SOURCE$DIR/.${ZIMFILE}_"
-	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" ]]
+	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" && -f "$SOURCE$DIR/$ZIMFILE" ]]
 	then
 	    echo "Creating lock file $LOCKFILE"
 	    touch "$LOCKFILE"
