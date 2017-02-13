@@ -12,7 +12,7 @@
 SOURCE=/srv/upload/zim2index/
 ZIMTARGETTMP=/srv/upload/
 ZIMTARGET=/srv/upload/zim/
-ZIPTARGETTMP=/srv/upload/
+ZIPTARGETTMP=/srv/upload/tmp/
 ZIPTARGET=/srv/upload/portable/
 TMP=/srv/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
