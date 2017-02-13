@@ -43,6 +43,17 @@ do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
 	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE" 2> /dev/null`
 	LOCKFILE="$SOURCE$DIR/.${ZIMFILE}_"
+
+	# Check if we have enough free space
+	ZIMFILESIZE=`stat --printf="%s" "$SOURCE$DIR/$ZIMFILE"`
+	FREESPACE=`df "$TMP" | awk 'NR==2 {print $4}'`
+	MAXZIMFILESIZE=`echo "$FREESPACE/3" | bc`
+	if [[ "$ZIMFILESIZE" -gt "$MAXZIMFILESIZE" ]]
+	then
+	    echo "$ZIMFILE is too big to compute its portable ZIP file here."
+	    continue
+	fi
+
 	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" && -f "$SOURCE$DIR/$ZIMFILE" ]]
 	then
 	    echo "Creating lock file $LOCKFILE"
