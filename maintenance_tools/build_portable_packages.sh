@@ -47,7 +47,7 @@ do
 	# Check if we have enough free space
 	ZIMFILESIZE=`stat --printf="%s" "$SOURCE$DIR/$ZIMFILE"`
 	FREESPACE=`df "$TMP" | awk 'NR==2 {print $4}'`
-	MAXZIMFILESIZE=`echo "$FREESPACE/3" | bc`
+	MAXZIMFILESIZE=`echo "$FREESPACE * 1024 / 2" | bc`
 	if [[ "$ZIMFILESIZE" -gt "$MAXZIMFILESIZE" ]]
 	then
 	    echo "$ZIMFILE is too big to compute its portable ZIP file here."
@@ -61,10 +61,9 @@ do
 
 	    echo "Building $ZIPFILE..."
 	    cd `dirname "$SCRIPT"`
-	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
+	    $SCRIPT --filePath="$ZIPTARGETTMP/$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
     
-	    echo "Move $TMP/$ZIPFILE to $ZIPTARGET/$DIR"
-	    mv "$TMP/$ZIPFILE" "$ZIPTARGETTMP"
+	    echo "Move $ZIPTARGETTMP/$ZIPFILE to $ZIPTARGET/$DIR"
 	    mv "$ZIPTARGETTMP/$ZIPFILE" "$ZIPTARGET/$DIR"
 
 	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET/$DIR"
