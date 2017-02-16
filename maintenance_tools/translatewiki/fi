@@ -181,6 +181,7 @@ android.ui.remove_tab_confirm=Haluatko poistaa tämän välilehden?
 android.ui.remove_tab=Poista välilehti
 android.ui.rescan_fs=Skannaa SD-kortti uudelleen
 android.ui.rescan_fs_warning=Skannataan ZIM-tiedostoja, ole hyvä ja odota...
+android.ui.error_nozimfilesfound=ZIM-tiedostoja ei löytynyt laitteestasi.\nKatso Ohje-sivua saadaksesi ohjeet siitä, miten ladata sisältöä Kiwixiin.\nJos et laita ZIM-tiedostoa laitteeseen/ulkoiseen tallennistilaan, saatat joutua yrittämään uudelleen hetken kuluttua tai käynnistämään laitteesi uudelleen.
 android.ui.error_filenotfound=Virhe: valittua ZIM-tiedostoa ei löytynyt.
 android.ui.error_fileinvalid=Virhe: valittu tiedosto ei ole kelvollinen ZIM-tiedosto.
 android.ui.error_articlenotfound=Virhe: Artikkelin \"%1$s\" lataus epäonnistui.
