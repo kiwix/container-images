@@ -32,8 +32,6 @@ echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
 
 # scan the Kiwix mirrors
-scanMirror kiwix ALLDIRS
-scanMirror mirror2 ALLDIRS
 scanMirror mirror3 ALLDIRS
 
 # Scan Tunisian mirror
@@ -48,15 +46,11 @@ scanMirror isoc.il WMDIRS
 # Scan the Your.org mirror
 scanMirror your.org WMDIRS
 
-# Scan the nd.edu mirror
-scanMirror nd.edu WMDIRS
+# Scan the nluug.nl mirror
+scanMirror nluug.nl ALLDIRS
 
 # Scan the Mirrorservice.org mirror
 scanMirror mirrorservice.org WMDIRS
 
 # Scan the fau.de mirror
 scanMirror fau.de ALLDIRS
-
-# Scan the NetCologne mirror
-scanMirror netcologne.de ALLDIRS
-
