@@ -4,14 +4,13 @@ baseroot=/var/www/download.kiwix.org/nightly
 today=`date +%F`
 
 # remove old folders
-find ${baseroot}/ -mindepth 2 -maxdepth 2 -type d -mtime +30 -exec rm -rf {} \;
+find ${baseroot}/ -mindepth 1 -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \;
 
 # create today's date folder if not exist
-mkdir -p ${baseroot}/{src,bin}/${today}
+mkdir -p ${baseroot}/${today}
 
 # remove previous latest link
-rm -f ${baseroot}/{src,bin}/latest
+rm -f ${baseroot}/latest
 
 # recreate symlink
-ln -s ${baseroot}/src/${today} ${baseroot}/src/latest
-ln -s ${baseroot}/bin/${today} ${baseroot}/bin/latest
+ln -s ${baseroot}/${today} ${baseroot}/latest
