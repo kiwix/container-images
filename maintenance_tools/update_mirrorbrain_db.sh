@@ -7,6 +7,7 @@ REPO="/var/www/download.kiwix.org/"
 ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
 ALLDIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
 WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikispecies*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"`
+ZIMDIRS=`find "$REPO" -type d | grep "${REPO}zim"| sed "s/$ESCREPO//"`
 
 function scanMirror() {
     MIRROR=$1
@@ -30,6 +31,9 @@ $MB makehashes $REPO -t /usr/share/mirrorbrain > /dev/null 2>&1
 # Check if mirrors are online
 echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
+
+# Scan the dotsrc.org mirror
+scanMirror dotsrc.org ZIMDIRS
 
 # scan the Kiwix mirrors
 scanMirror mirror3 ALLDIRS
