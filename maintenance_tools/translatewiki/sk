@@ -4,6 +4,7 @@
 # Author: Jaroslav.micek
 # Author: Kelson
 # Author: Kusavica
+# Author: Lexected
 # Author: Mikulas1
 # Author: Teslaton
 # Author: Wizzard
@@ -177,6 +178,9 @@ android.ui.pref_newtab_background_title=Otvoriť novú kartu na pozadí
 android.ui.pref_newtab_background_summary=Pri otvorení novej karty bude karta otvorená na pozadí
 android.ui.save_media_error=Pri ukladaní došlo k chybe!
 android.ui.save_media_saved=Médiá uložené ako %1$s v priečinku Obrázky
+android.ui.tts_lang_not_supported=Jazyk tejto stránky buď nie je podporovaný, alebo neboli nainštalované príslušné jazykové balíčky. Článok nemusí byť správne prečítaný.
+android.ui.no_reader_application_installed=Nebola nájdená nainštalovaná aplikácia pre tento typ súboru
+android.ui.customapp_missing_content=Vaša aplikácia je poškodená.\nToto sa stáva, keď vymažete súbory na SD Karte.\nMusíte odinštalovať a potom znovu nainštalovať aplikáciu z Obchodu Play.
 android.ui.go_to_play_store=Prejsť do Obchodu Play
 android.ui.no_bookmarks=Žiadne záložky!
 android.ui.bookmarks_restored=Záložky boli obnovené
@@ -187,4 +191,5 @@ android.ui.rate_dialog_msg_2=, prosím, obetujte chvíľu vášho času a ohodno
 android.ui.rate_dialog_positive=Ohodnotiť
 android.ui.rate_dialog_negative=Nie, vďaka
 android.ui.rate_dialog_neutral=Neskôr
+android.ui.no_section_info=Neboly nájdené hlavičky obsahu (content headers)
 android.ui.request_storage=Na prístup k súborom typu ZIM potrebujeme prístup k vášmu úložisku
