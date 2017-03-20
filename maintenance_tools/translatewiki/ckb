@@ -6,6 +6,7 @@
 # Author: Hzr115
 # Author: Lost Whispers
 # Author: Muhammed taha
+# Author: Sarchia
 
 ui.main.osxservices=خزمەتگوزاریەکان
 ui.main.osxhideothers=شاردنەوەی ئەوانی تر
@@ -110,6 +111,7 @@ ui.messages.feedback=بەردەنگ
 ui.messages.library=کتێبخانە
 ui.messages.fullscreen=پڕ بە شاشە
 ui.messages.quitFullscreen=چونە دەرەوە لە پڕ بەشاشە
+android.ui.pref_zoom_entry_automatic=خۆکار
 android.ui.pref_zoom_entry_small=بچووک
 android.ui.pref_zoom_entry_medium=مامناوەند
 android.ui.pref_zoom_entry_large=گەورە
@@ -122,3 +124,5 @@ android.ui.pref_backtotop=گەڕانەوە بۆ سەرەوە
 android.ui.pref_newtab_background_title=تابێکی نوێ لە پشتینەدا بکەرەوە
 android.ui.pref_newtab_background_summary=لەکاتی کردنەوەی تابێکی نوێ لە پشتینەدا دەکرێتەوە
 android.ui.save_media_error=ھەڵەیەک ڕوویدا لەکاتی ھەوڵدان لە خەزێنەکردنی میدیاکە!
+android.ui.rate_dialog_negative=نا، سپاس
+android.ui.rate_dialog_neutral=دواتر
