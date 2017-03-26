@@ -16,6 +16,8 @@ my $backupPath;
 my $silent;
 my $cmd;
 my $date = strftime("%Y%m%d", localtime);
+my $scriptPath = abs_path($0);
+my $backupScriptPath = dirname($scriptPath)."/backupMediawikiInstance.pl";
 
 # Get console line arguments
 GetOptions('sourcePath=s' => \$sourcePath,
@@ -83,20 +85,7 @@ if ($destinationCustomLocalSettings =~ /\$wgDBpassword[\t ]*=[\t ]*[\'\"](.*)[\'
 }
 
 # Backup files and database
-my $destinationPathBasename = basename($destinationPath);
-my $destinationPathDirname = dirname($destinationPath);
-my $filesBackupPath = $backupPath."/".$date."_".$databaseName."_files.tar.xz";
-my $dbBackupPath = $backupPath."/".$date."_".$databaseName."_db.sql.xz";
-if (-f $filesBackupPath) {
-    die ("Backup file '$filesBackupPath' already exists, please remove it before running this script.\n");
-}
-if (-f $dbBackupPath) {
-    die ("Backup file '$dbBackupPath' already exists, please remove it before running this script.\n");
-}
-printLog("Backuping db at '$dbBackupPath'...");
-doSystemCommand("mysqldump --host=\"$databaseServer\" --user=\"$databaseUsername\" --password=\"$databasePassword\" $databaseName | xz > $dbBackupPath");
-printLog("Backuping files at '$filesBackupPath'...");
-doSystemCommand("cd \"$destinationPathDirname\"; tar -cvjf \"$filesBackupPath\" \"$destinationPathBasename\" > /dev/null");
+doSystemCommand("$backupScriptPath --mediawikiPath=$destinationPath --backupPath=$backupPath");
 
 # Copy the files
 printLog("Copying files...");
