@@ -1,6 +1,7 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
 # Author: 1917 Ekim Devrimi
+# Author: Asmen
 # Author: Erdemaslancan
 # Author: Gorizon
 # Author: Gırd
@@ -147,7 +148,7 @@ android.ui.menu_read_aloud=Be veng ra bıwane
 android.ui.menu_read_aloud_stop=Bevengrawendış caverde
 android.ui.info_share_title=Ezo Kiwik'a çerxteber wikiya keyf kena!
 android.ui.info_share_content=Ez Wikipediya be Kiwix ra oflayn wanenan. Zanışiya merdımi her ca de bınê desti dera. Bêinternet! http://goo.gl/h9Smkk
-android.ui.share_via=sera bıhesırne
+android.ui.share_via=... sera bare ke
 android.ui.button_backtotop=Şo Serni
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
