@@ -5,6 +5,7 @@
 # Author: Milicevic01
 # Author: Rancher
 # Author: Srdjan m
+# Author: Zoranzoki21
 
 ui.main.osxservices=Услуге
 ui.main.osxhideapp=Сакриј &brand.brandShortName;
@@ -171,5 +172,22 @@ android.ui.pref_info_title=Информације
 android.ui.pref_info_version=Верзија
 android.ui.pref_backtotop=Назад на врх
 android.ui.pref_backtotop_summary=Прикажи дугме на крају странице како би се могли отићи на врх
+android.ui.pref_newtab_background_title=Отвори нов таб у позадини
+android.ui.pref_newtab_background_summary=Када отвараш нови таб он ће бити отворен у позадии
 android.ui.save_media_error=Дошло је до грешке при чувању мултимедије!
 android.ui.save_media_saved=Сачувана мултимедија као %1$s у вашој фасцикли Слике
+android.ui.tts_lang_not_supported=Језик на овој страници није подржан, или одговарајући језички подаци нису инсталирани. Чланак не може бити исправно прочитан.
+android.ui.no_reader_application_installed=Није могуће наћи инсталирану апликацију за ову врсту датотеке
+android.ui.customapp_missing_content=Ваша апликација је оштећена.\nОво се може десити када уклоните датотеке на СД картици.\nТреба да деинсталирате а затим поново инсталирате апликацију из Гугл Плеј продавнице.
+android.ui.go_to_play_store=Иди на Плеј Продавницу
+android.ui.no_bookmarks=Нема букмаркова!
+android.ui.bookmarks_restored=Букмаркови обновљени
+android.ui.bookmark_added=Букмаркови додати
+android.ui.rate_dialog_title=Молимо Вас да нас оцените
+android.ui.rate_dialog_msg_1=Ако уживате користећи
+android.ui.rate_dialog_msg_2=, молимо сачекајте моменат да оцените. Хвала на подршци!
+android.ui.rate_dialog_positive=Оцени!
+android.ui.rate_dialog_negative=Не, хвала
+android.ui.rate_dialog_neutral=Касније
+android.ui.no_section_info=Не могу да пронађем странице са садржајем.
+android.ui.request_storage=Да приступите ZIM датотекама потребан је приступ твојој меморији
