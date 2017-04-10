@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kandar
 # Author: Macofe
+# Author: Uchup19
 
 ui.main.osxservices=Layanan
 ui.main.osxhideapp=Sumputkeun &brand.brandShortName;
@@ -32,7 +33,7 @@ ui.main.zoomout=Leutikan
 ui.main.zoomorig=Ukuran asli
 ui.main.invertedColors=Kelir dibalik
 ui.main.language=Basa
-ui.main.skin=Kulit
+ui.main.skin=Kalakop
 ui.main.statusbar=Bar status
 ui.main.resultsbar=Bar hasil
 ui.main.tabs=Tab
@@ -108,7 +109,7 @@ ui.messages.restartConfirm=%1 kudu dibuka ulang. Rék ayeuna?
 ui.messages.endOfIndexing=Prosés ngindéks geus réngsé.
 ui.messages.removeProfileConfirm=Rék ngahapus profil anjeun?
 ui.messages.dontDisplayAnymore=Ulah témbongkeun deui ieu kotak dialog.
-ui.messages.changeSkinNeedRestart=Pikeun ngaganti kulit, aplikasina kudu dibuka ulang. Buka ulang aplikasi?
+ui.messages.changeSkinNeedRestart=Pikeun ngaganti kalakop, aplikasina kudu dibalikan deui. Balikan deui aplikasina?
 ui.messages.confirm=Konfirmasi
 ui.messages.no=henteu
 ui.messages.yes=enya
