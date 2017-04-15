@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "twitter": "",
+    "irc": "",
+    "rss-watcher": "",
+    "html-to-text": "",
+    "yargs": ""
+  }
+}
