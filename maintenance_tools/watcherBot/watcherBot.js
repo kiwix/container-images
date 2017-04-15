@@ -157,7 +157,7 @@ openzimGithubWatcher.on( 'new article', function( article ) {
 	lastOpenzimGithubPubDate = openzimGithubPubDate;
 	var message = '[OPENZIM GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
 	console.log( '[MSG]' + message );
-	ircClient.say( '#openzim', message );
+	ircClient.say( '#kiwix', message );
     }
 });
 openzimGithubWatcher.run( function( error, articles ) {
@@ -205,7 +205,7 @@ ideascubeFramagitWatcher.on( 'error', function( error ) {
 
 /* IRC ERROR HANDLING */
 ircClient.addListener( 'error', function( error ) {
-    console.log( '[ERROR IRC] ' + error );
+    console.error( '[ERROR IRC] ' + error.command );
     lastTwitterId = undefined;
     setTimeout( connectIrc, 300000 );
 });
