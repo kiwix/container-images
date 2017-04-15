@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: AlimanRuna
 # Author: Kelson
+# Author: Macofe
 
 ui.main.osxservices=Sirwiykuna
 ui.main.osxhideapp=&brand.brandShortName;-ta pakay
@@ -131,4 +132,8 @@ ui.messages.fullscreen=Hunt'a qhawana pampa
 ui.messages.quitFullscreen=Hunt'a qhawana pampamanta lluqsiy
 ui.messages.integrityCheckSuccessful=Willañiqip allin kayninqa aypalla llanchisqañam.
 ui.messages.integrityCheckFailed=Allin kay llanchiyqa qullurqunmi. Willañiqiykiqa manam allinchu.
+android.ui.pref_zoom_entry_small=Huch'uy
+android.ui.pref_zoom_entry_large=Hatun
 android.ui.pref_nightmode=Tuta laya
+android.ui.pref_info_title=Willay
+android.ui.pref_info_version=Musuqchasqa

@@ -89,7 +89,7 @@ ui.main.library.filterBy.publisher.all=Jeeder Ein
 ui.main.library.filterBy.lessThan=Winnijer wi
 ui.preferences.preferences=Enschtällonge
 ui.preferences.save=Faßhalde
-ui.preferences.cancel=Ophüre
+ui.preferences.cancel=Ophühre
 ui.preferences.profileDirectory=Verzeijschneß mem Profihl
 ui.preferences.browse=Aanluure
 ui.preferences.tabs=Tabbulatoore behallde
@@ -168,6 +168,7 @@ android.ui.pref_info_version=Väsjohn
 android.ui.pref_backtotop=Retuhr op der Sigge_Aanfang
 android.ui.pref_backtotop_summary=Donn ene Knopp aam Äng vun jeede Sigg aanzeije, dä eine widder aan der Aanfang brngk
 android.ui.pref_newtab_background_title=Maach ene neuje Rigger em Hengerjrond op
+android.ui.pref_newtab_background_summary=Wann ene neuje Rigger opjemaat weed, dann em Hengerjrond.
 android.ui.save_media_error=Ene Fähler es opjetrodde beim Versohch, dat faßzehallde.
 android.ui.save_media_saved=Di Dattei es jäz als %1$s en Dingem Belderverzeijschneß faßjehallde.
 android.ui.tts_lang_not_supported=De Schprohch vun heh dä Sigg dom_mer nit ongerschtöze udder se es nit enschtallehrt, esu künnt heh dä Atikkel nt öhndlesch jelässe wähde.
@@ -177,6 +178,10 @@ android.ui.customapp_missing_content=Ding Projramm et kappott.\nDat kann dervun 
 # Fuzzy
 android.ui.go_to_play_store=Jangk nohm  Play Store.
 android.ui.no_bookmarks=Mer han keijn Lässezeijsche!
+android.ui.bookmarks_restored=Lässezeijsche zerök jehollt
+android.ui.bookmark_added=Lässezeijsche derbei jedonn
+# Fuzzy
+android.ui.rate_dialog_msg_1=Wann De Spaß häs aan/aam <!--  https://translatewiki.net/wiki/Thread:Support/About_Kiwix:Android.ui.rate_dialog_msg_1/qqq -->
 android.ui.rate_dialog_positive=Ennschäzze!
 android.ui.rate_dialog_negative=Danke. Nää.
 android.ui.rate_dialog_neutral=Schpääder

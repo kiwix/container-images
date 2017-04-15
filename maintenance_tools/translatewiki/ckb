@@ -1,8 +1,12 @@
-# Messages for Sorani Kurdish (کوردی)
+# Messages for Central Kurdish (کوردیی ناوەندی)
 # Exported from translatewiki.net
+# Author: Asoxor
 # Author: Calak
+# Author: Diyariq
 # Author: Hzr115
+# Author: Lost Whispers
 # Author: Muhammed taha
+# Author: Sarchia
 
 ui.main.osxservices=خزمەتگوزاریەکان
 ui.main.osxhideothers=شاردنەوەی ئەوانی تر
@@ -33,25 +37,34 @@ ui.main.zoom=گەورەو بچوک کردن
 ui.main.zoomin=گەورەکردن
 ui.main.zoomout=کەم کردنەوە
 ui.main.zoomorig=قەبارەی بنەڕەتی
+ui.main.invertedColors=ڕەنگەکان پێچەوانە بکەرەوە
 ui.main.language=زمان
 ui.main.skin=پێستە
 ui.main.resultsbar=شریتی ئاکامەکان
 ui.main.fullscreen=پر بە شاشە
+ui.main.tools=ئامرازەکان
 ui.main.randomArticle=وتاری هەڕەمەکی
 ui.main.purgeHistory=مێژووی پەڕە
 ui.main.help=یارمەتی
+ui.main.feedback=بەردەنگ
+ui.main.reportabug=سکاڵای کێشەیەک بدە
+ui.main.requestafeature=داوای ئامرازێک بکە
 ui.main.back=بۆ دواوە
 ui.main.forward=بۆ بەرەوە
 ui.main.home=ماڵەوە
 ui.main.searchBar=شریتی گەڕان
 ui.main.search=گەڕان
+ui.main.searchPlaceholder=بۆ گەڕان نووسینەکە لێرە بنووسە...
 ui.main.findInText=دۆزینەوە لە تێکستدا
 ui.main.results.title=ئاکامەکانی گەڕان
 ui.main.mark=نیشانە بدە لەم پەڕەیە
+ui.main.saveMediaAs=میدیا خەزن بکە وەک...
+ui.main.openLinkInNewTab=بەستەرەکە لە تابێکی نوێدا بکەرەوە
 ui.main.searchFor=گەڕان بۆ
+ui.main.copyLinkAddress=لەبەرگرتنەوەی ناونیشانی بەستەر
 ui.main.close=دایخە
 ui.main.library.myLibrary=کتێبخانەکەم
-ui.main.library.getNewFiles=بەدەسهێنانی فایلی نوێ
+ui.main.library.getNewFiles=بەدەسهێنانی پەڕگەکان نوێ
 ui.main.library.searchZimFiles=بگەڕی بۆ پەڕگەکانی ZIM
 ui.main.library.sortBy=ڕیزکردن بەپێی
 ui.main.library.sortBy.title=ناونیشان
@@ -59,6 +72,7 @@ ui.main.library.sortBy.size=قەبارە
 ui.main.library.sortBy.date=ڕێکەوت
 ui.main.library.sortBy.author=نووسەر
 ui.main.library.sortBy.publisher=بڵاوکار
+ui.main.library.filterBy=پێناسەی پاڵوێنە
 ui.main.library.filterBy.fileSize=قەبارەی پەڕگە
 ui.main.library.filterBy.language=زمان
 ui.main.library.filterBy.language.all=ھەموو
@@ -66,23 +80,49 @@ ui.main.library.filterBy.author=نووسەر
 ui.main.library.filterBy.author.all=ھەموو
 ui.main.library.filterBy.publisher=بڵاوکار
 ui.main.library.filterBy.publisher.all=ھەموو
-ui.main.library.filterBy.lessThan=کەمتر ە
+ui.main.library.filterBy.lessThan=کەمتر ە لە
 ui.preferences.preferences=ھەڵبژاردەکان
 ui.preferences.save=پاشەکەوتی بکە
 ui.preferences.cancel=ھەڵیوەشێنەوە
-ui.preferences.browse=بگه‌ڕێ
+ui.preferences.browse=بگەڕێ
+ui.preferences.tabs=تابەکانت بەبیر بێتەوە
+ui.server.load=باربکە
 ui.server.start=دەست پێکردن
 ui.server.stop=وەستاندن
 ui.server.close=داخستن
+ui.messages.loadZimFileError=ناتوانرێت %1 بار بکرێت. ئایا دڵنیایت کە ئەمە پەڕگەیەکی ZIMە؟
+ui.messages.loadArticleError=ناتوانرێت ئەم وتارە بار بکرێت.
+ui.messages.dontDeleteContentFiles=ناوەڕۆکی پەڕگەی (ZIM) مەسڕەوە.
+ui.messages.restartConfirm=پێویستە %1 دووبارە بکرێتەوە. دەتەوێت ئێستا بیکەیت؟
+ui.messages.removeProfileConfirm=دەتەوێت ھەژمارەکەت لاببەیت؟
+ui.messages.changeSkinNeedRestart=بۆ گۆڕینی سکین، بەرنامەکە دەبێت دووبارە بکرێتەوە. بەرنامەکە دووبارە دەکەیتەوە؟
 ui.messages.confirm=جەخت کردنەوە
 ui.messages.no=نەخێر
+ui.messages.yes=بەڵێ
 ui.messages.ok=بەڵێ
 ui.messages.cancel=پەشیمان بوونەوە
 ui.messages.error=هەڵە
+ui.messages.information=زانیاری
+ui.messages.newContentAvailable=ناوەڕۆکی تر ھەن ئامادەن بۆ داگرتن.
+ui.messages.newContentAvailableInvitation=ناوەڕۆکی تر ھەن ئامادەن بۆ داگرتن. دەتەوێت بیانبینیت؟
 ui.messages.preparingContentDownload=ئامادەکردنی داگرتن
+ui.messages.contentDownloadFinished=%1ی داگرتنەکە کۆتایی پێھاتووە.
+ui.messages.feedback=بەردەنگ
+ui.messages.library=کتێبخانە
 ui.messages.fullscreen=پڕ بە شاشە
 ui.messages.quitFullscreen=چونە دەرەوە لە پڕ بەشاشە
+android.ui.pref_zoom_entry_automatic=خۆکار
+android.ui.pref_zoom_entry_small=بچووک
+android.ui.pref_zoom_entry_medium=مامناوەند
+android.ui.pref_zoom_entry_large=گەورە
 android.ui.pref_nightmode=بەکەرهێنانی شەو
+android.ui.pref_nightmode_summary=وتارەکان بیشان بدە بە ڕەنگی پێچەوانە
+android.ui.pref_language_chooser=ھەڵبژاردنی زمان
 android.ui.pref_info_title=زانیاری
 android.ui.pref_info_version=وەشان
 android.ui.pref_backtotop=گەڕانەوە بۆ سەرەوە
+android.ui.pref_newtab_background_title=تابێکی نوێ لە پشتینەدا بکەرەوە
+android.ui.pref_newtab_background_summary=لەکاتی کردنەوەی تابێکی نوێ لە پشتینەدا دەکرێتەوە
+android.ui.save_media_error=ھەڵەیەک ڕوویدا لەکاتی ھەوڵدان لە خەزێنەکردنی میدیاکە!
+android.ui.rate_dialog_negative=نا، سپاس
+android.ui.rate_dialog_neutral=دواتر

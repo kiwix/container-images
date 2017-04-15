@@ -7,9 +7,12 @@
 # Author: Kelson
 # Author: Malekbr
 # Author: Meno25
+# Author: Moud hosny
 # Author: Musab Moahmmed
 # Author: Mutarjem horr
 # Author: OsamaK
+# Author: بدارين
+# Author: ديفيد
 # Author: عبد الحق فارح
 # Author: محمد أحمد عبد الفتاح
 
@@ -48,7 +51,7 @@ ui.main.transliteration=تحويل لغة الكتابة
 ui.main.transliteration.accesskey=T
 ui.main.preferences=تفضيلات
 ui.main.preferences.accesskey=n
-ui.main.server=الخادوم
+ui.main.server=الخادم
 ui.main.server.accesskey=s
 ui.main.display=عرض
 ui.main.display.accesskey=D
@@ -72,13 +75,13 @@ ui.main.resultsbar=شريط النتائج
 ui.main.resultsbar.accesskey=R
 ui.main.tabs=ألسنة
 ui.main.tabs.accesskey=T
-ui.main.fullscreen=ملئ الشاشة
+ui.main.fullscreen=ملء الشاشة
 ui.main.fullscreen.accesskey=F
 ui.main.tools=أدوات
 ui.main.tools.accesskey=T
 ui.main.randomArticle=مقالة عشوائية
 ui.main.randomArticle.accesskey=R
-ui.main.checkIntegrity=إفحص الإستقامة
+ui.main.checkIntegrity=التحقق من التكامل
 ui.main.checkIntegrity.accesskey=k
 ui.main.launchIndexing=بدء الفهرسة
 ui.main.purgeHistory=مسح تاريخ التصفح
@@ -94,9 +97,9 @@ ui.main.back=رجوع
 ui.main.forward=التالي
 ui.main.home=الصفحة الرئيسية
 ui.main.searchBar=شريط البحث
-ui.main.search=إبحث
+ui.main.search=ابحث
 ui.main.searchPlaceholder=أدخل النص للبحث هنا...
-ui.main.findInText=إبحث في النص
+ui.main.findInText=ابحث في النص
 ui.main.noSearchBar=ابحث عن ملفات ZIM المفهرسة
 ui.main.bookmarks=علامات القراءة
 ui.main.results.title=نتائج البحث
@@ -104,13 +107,13 @@ ui.main.bmkLabel=علامات القراءة:
 ui.main.notesLabel=ملاحظات علامات القراءة:
 ui.main.loadbmk=استورد مجموعة علامات قراءة
 ui.main.newbmk=أنشئ مجموعة علامات قراءة جديدة
-ui.main.mark=علّم هذه الصفحة
+ui.main.mark=علِّم هذه الصفحة
 ui.main.unmark=أزل تعليم المحدد
 ui.main.reload=أعد تحميل مجموعة المفضلة
-ui.main.defaultset=تفضيلات أصليّة
+ui.main.defaultset=تعيين الافتراضي
 ui.main.saveMediaAs=حفظ وسائط باسم...
 ui.main.openLinkInNewTab=افتح الوصلة في علامة تبويب جديدة
-ui.main.searchFor=إبحث عن
+ui.main.searchFor=ابحث عن
 ui.main.copyLinkAddress=انسخ عنوان الوصلة
 ui.main.close=أغلق
 ui.main.library.myLibrary=مكتبتي
@@ -122,7 +125,7 @@ ui.main.library.sortBy.size=الحجم
 ui.main.library.sortBy.date=التاريخ
 ui.main.library.sortBy.author=المؤلف
 ui.main.library.sortBy.publisher=الناشر
-ui.main.library.filterBy=رشّح حسب
+ui.main.library.filterBy=رشح حسب
 ui.main.library.filterBy.fileSize=حجم الملف
 ui.main.library.filterBy.language=اللغة
 ui.main.library.filterBy.language.all=الكل
@@ -132,15 +135,15 @@ ui.main.library.filterBy.publisher=الناشر
 ui.main.library.filterBy.publisher.all=الكل
 ui.main.library.filterBy.lessThan=أقل من
 ui.preferences.preferences=التفضيلات
-ui.preferences.save=إحفظ
+ui.preferences.save=احفظ
 ui.preferences.cancel=ألغِ
 ui.preferences.profileDirectory=ملف الاختيارات
-ui.preferences.browse=تصفّح
+ui.preferences.browse=تصفح
 ui.preferences.tabs=تذكر علامات التبويب
-ui.preferences.downloadCatalogs=نزّل دفتر/دفاتر مصور/ة بعيد/ة
+ui.preferences.downloadCatalogs=تنزيل دفتر/دفاتر مصور/ة بعيد/ة
 ui.preferences.neverAskToIndex=لا تطلب أبدًا إلى الفهرس
-ui.server.load=حمّل
-ui.server.start=إبدأ
+ui.server.load=حمِّل
+ui.server.start=ابدأ
 ui.server.stop=قف
 ui.server.close=أغلق
 ui.messages.loadZimFileError=غير قادر على تحميل '%1'. هل أنت متأكد أن هذا هو ملف ZIM؟
@@ -154,7 +157,7 @@ ui.messages.removeContentConfirm=هل أنت متأكد من أنك تريد إ�
 ui.messages.dontDeleteContentFiles=لا تقم بحذف محتوى الملف (ZIM).
 ui.messages.restartConfirm=%1 بحاجة إلى إعادة التشغيل، هل تريد القيام بذلك الآن؟
 ui.messages.endOfIndexing=عملية الفهرسة إنتهت.
-ui.messages.removeProfileConfirm=هل تريد ازالة خياراتك الشخصيّة؟
+ui.messages.removeProfileConfirm=هل تريد إزالة ملفك الخاص؟
 ui.messages.dontDisplayAnymore=لا تعرض صندوق الحوار هذا بعد الآن.
 ui.messages.changeSkinNeedRestart=لتغيير الواجهة يجب إعادة التشغيل، أعد التشغيل الآن؟
 ui.messages.confirm=أكّد
@@ -171,13 +174,13 @@ ui.messages.bookmarkReferingOtherContent=هذه العلامة تفضي إلى �
 ui.messages.newContentAvailable=هناك محتويات جديدة متوفرة للتنزيل.
 ui.messages.newContentAvailableInvitation=هناك محتويات جديدة متوفرة للتنزيل. هل ترغب في رؤيتها؟
 ui.messages.preparingContentDownload=تحضير التنزيل جاري...
-ui.messages.contentDownloadFinished=إنتهى تنزيل '%1'.
+ui.messages.contentDownloadFinished=انتهى تنزيل '%1'.
 ui.messages.feedback=تعليق
 ui.messages.library=المكتبة
 ui.messages.fullscreen=ملء الشاشة
 ui.messages.quitFullscreen=إنهاء وضع الشاشة الكاملة
-ui.messages.integrityCheckSuccessful=تم فحص إستقامة الملف بنجاح.
-ui.messages.integrityCheckFailed=فشل عند فحص الإستقامة. إنّ ملفك فاسد.
+ui.messages.integrityCheckSuccessful=تم فحص تكامل الملف بنجاح.
+ui.messages.integrityCheckFailed=فشل عند فحص تكامل الملف . ملفك تالف.
 android.ui.menu_share=شارك مع الأصدقاء
 android.ui.menu_read_aloud=اقرأ بصوت عال
 android.ui.menu_read_aloud_stop=توقف عن القراءة بصوت عال
@@ -192,9 +195,9 @@ android.ui.remove_tab_confirm=هل تريد إزالة علامة التبويب
 android.ui.remove_tab=إزالة علامة التبويب
 android.ui.rescan_fs=إعادة تفحص بطاقة SD
 android.ui.rescan_fs_warning=مسح لملفات زيم، الرجاء الانتظار...
-android.ui.error_nozimfilesfound=لا توجد ملفات زيم على الجهتز الخاص بك.\nالق نظرة صفحة المساعدة للحصول على الإرشادات الخاصة بكيفيّة تحميل محتوى على كيويكس.\nإذا قمت بوضع ملف زيم على الجهز الخاص بك أو وحدة التخزين الخارجيّة، ربّما أنت في حاجة إلى إعادة تشغيل الجهاز.
-android.ui.error_filenotfound=خطأ: تعذر العثور على الملف المحدد زيم.
-android.ui.error_fileinvalid=خطأ: ملف زيم المحدد ليس ملفا صالحا.
+android.ui.error_nozimfilesfound=لا توجد ملفات زيم على الجهاز الخاص بك.\nالق نظرة على صفحة المساعدة للحصول على الإرشادات الخاصة بكيفيّة تحميل محتوى إلى كيويكس.\nإذا قمت بوضع ملف زيم على الجهاز الخاص بك أو وحدة التخزين الخارجيّة، ربّما أنت في حاجة إلى إعادة تشغيل الجهاز.
+android.ui.error_filenotfound=خطأ: تعذر العثور على الملف المحدد زيم (ZIM)
+android.ui.error_fileinvalid=خطأ: ملف زيم (ZIM) المحدد ليس ملفا صالحا.
 android.ui.error_articlenotfound=خطأ: تحميل المقالة \"%1$s\" لم يتم بنجاح.
 android.ui.error_articleurlnotfound=خطأ: تحميل المقالة (Url: %1$s) لم يتم بنجاح.
 android.ui.pref_zoom_title=مستوى التكبير/التصغير
@@ -211,5 +214,22 @@ android.ui.pref_info_title=معلومة
 android.ui.pref_info_version=نسخة
 android.ui.pref_backtotop=ارجع إلى الأعلى
 android.ui.pref_backtotop_summary=عرض زر في نهاية الصفحة للذهاب إلى أعلاها
+android.ui.pref_newtab_background_title=فتح علامة تبويب جديدة في الخلفية
+android.ui.pref_newtab_background_summary=عند فتح علامة تبويب جديدة سوف تفتح في الخلفية
 android.ui.save_media_error=حدث خطأ أثناء محاولة حفظ الملف!
 android.ui.save_media_saved=نمّ حفظ الملف تحت %1$s في ملف الصور الخاص بك
+android.ui.tts_lang_not_supported=لم يتم اعتماد اللغة من هذه الصفحة، أو لم يتم تثبيت البيانات باللغة المناسبة. المقالة قد لا تتم قراءتها بشكل صحيح.
+android.ui.no_reader_application_installed=تعذر العثور على تطبيق مثبت لهذا النوع من الملفات
+android.ui.customapp_missing_content=طلبك تالف.\nقد يحدث هذا عند إزالة الملفات على بطاقة SD.\nتحتاج إلى إلغاء التثبيت ومن ثم إعادة تثبيت التطبيق من متجر Play.
+android.ui.go_to_play_store=اذهب إلى متجر Play
+android.ui.no_bookmarks=لا إشارات مرجعية!
+android.ui.bookmarks_restored=أعيدت الإشارات المرجعية
+android.ui.bookmark_added=إشارة مرجعية أضيفت
+android.ui.rate_dialog_title=يرجى تقييمنا
+android.ui.rate_dialog_msg_1=إذا كنت تتمتع باستخدام
+android.ui.rate_dialog_msg_2=يرجى ان نتوقف لحظة لتقييمنا. شكرا لدعمك!
+android.ui.rate_dialog_positive=قيّم!
+android.ui.rate_dialog_negative=لا، شكراً
+android.ui.rate_dialog_neutral=لاحقاً
+android.ui.no_section_info=لم يتم العثور على العناوين الرأسية للمحتوى
+android.ui.request_storage=من أجل الوصول إلى ملفات ZIM نحن بحاجة إلى الوصول إلى التخزين الخاصة بك

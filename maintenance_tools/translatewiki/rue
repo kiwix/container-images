@@ -1,6 +1,7 @@
 # Messages for Rusyn (русиньскый)
 # Exported from translatewiki.net
 # Author: Gazeb
+# Author: KHMELNYTSKYIA
 # Author: Kelson
 
 ui.main.osxservices=Службы
@@ -126,7 +127,9 @@ ui.messages.contentDownloadFinished=Скачаня „%1“ докінчене.
 ui.messages.feedback=Одозва
 ui.messages.library=Книжніця
 ui.messages.fullscreen=Цїла образовка
-# Fuzzy
 ui.messages.quitFullscreen=Зохабити цїлообразовковый режім
 ui.messages.integrityCheckSuccessful=Інтеґріта файлу была успішно сконтролёвана.
 ui.messages.integrityCheckFailed=Контроля інтеґріты файлу ся не вдала. Ваш файл пошкодженый.
+android.ui.go_to_play_store=Перейти до Play Store
+android.ui.rate_dialog_negative=Ні, дякую
+android.ui.rate_dialog_neutral=Май потом

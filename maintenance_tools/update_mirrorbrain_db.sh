@@ -7,6 +7,7 @@ REPO="/var/www/download.kiwix.org/"
 ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
 ALLDIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
 WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikispecies*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"`
+ZIMDIRS=`find "$REPO" -type d | grep "${REPO}zim"| sed "s/$ESCREPO//"`
 
 function scanMirror() {
     MIRROR=$1
@@ -31,9 +32,10 @@ $MB makehashes $REPO -t /usr/share/mirrorbrain > /dev/null 2>&1
 echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
 
+# Scan the dotsrc.org mirror
+scanMirror dotsrc.org ZIMDIRS
+
 # scan the Kiwix mirrors
-scanMirror kiwix ALLDIRS
-scanMirror mirror2 ALLDIRS
 scanMirror mirror3 ALLDIRS
 
 # Scan Tunisian mirror
@@ -48,15 +50,11 @@ scanMirror isoc.il WMDIRS
 # Scan the Your.org mirror
 scanMirror your.org WMDIRS
 
-# Scan the nd.edu mirror
-scanMirror nd.edu WMDIRS
+# Scan the nluug.nl mirror
+scanMirror nluug.nl ALLDIRS
 
 # Scan the Mirrorservice.org mirror
 scanMirror mirrorservice.org WMDIRS
 
 # Scan the fau.de mirror
 scanMirror fau.de ALLDIRS
-
-# Scan the NetCologne mirror
-scanMirror netcologne.de ALLDIRS
-

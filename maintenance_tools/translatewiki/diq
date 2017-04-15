@@ -1,7 +1,10 @@
 # Messages for Zazaki (Zazaki)
 # Exported from translatewiki.net
+# Author: 1917 Ekim Devrimi
+# Author: Asmen
 # Author: Erdemaslancan
 # Author: Gorizon
+# Author: Gırd
 # Author: Kelson
 # Author: Kumkumuk
 # Author: Macofe
@@ -43,7 +46,7 @@ ui.main.resultsbar=Sıvura neticeyan
 ui.main.tabs=Tabi
 ui.main.fullscreen=Tam asenge
 ui.main.tools=Xecetî
-ui.main.randomArticle=Wesiqaya raştami
+ui.main.randomArticle=Nuşteyo raştamey
 ui.main.checkIntegrity=Cerbiya pêroneyin
 ui.main.launchIndexing=Dest be zerreki ra ke
 ui.main.purgeHistory=Verenayışe newekerdışi
@@ -61,7 +64,7 @@ ui.main.searchPlaceholder=Babeta cı geyrayış dê nuşti...
 ui.main.findInText=nusn bıgeyre
 ui.main.noSearchBar=Ratnayış dı ZIM dosya cı geyrayış icab keno
 ui.main.bookmarks=Nışan
-ui.main.results.title=Neticeyê geyrayışi
+ui.main.results.title=Peyniyê cıgeyrayışi
 ui.main.bmkLabel=Nışani:
 ui.main.notesLabel=Notê nışanan:
 ui.main.loadbmk=Sazanê nışani azere de
@@ -102,13 +105,13 @@ ui.preferences.tabs=na tab xo vira mekeri
 ui.preferences.downloadCatalogs=Duri ra katalog(an) ronê
 ui.preferences.neverAskToIndex=Seba zerreki qet pers me ke
 ui.server.load=Bar ke
-ui.server.start=Serokne
+ui.server.start=Sergend
 ui.server.stop=Vınd
 ui.server.close=Racnê
 ui.messages.loadZimFileError='%1' bar nêbiya. Şıma rınd zanê ena ZIM dosyaya?
 ui.messages.alreadyIndexingError=Zerey proci newe wane no
 ui.messages.noResultsError=Çiyo dp wına çınyo
-ui.messages.loadArticleError=Na wesiqaya bar nêbena.
+ui.messages.loadArticleError=No nuşte nêşeno bar bıbo.
 ui.messages.noActiveZimFile=ZIM dosya aktiv niya, recay ma ju da sıfti barkerê.
 ui.messages.indexZimFileConfirm=Na dosya raten da cıgeyrayışi dı nêravêrena.ÇEnd deka miyan dı ke şeno vırazo.Raten dı şımayê ZIM dosya wazenê?
 ui.messages.abortIndexingConfirm=Yew karê zerreki nıka guriyeno. Şıma qayılê ke bıveciyê û nê gurey ra bıtexeliyê?
@@ -145,7 +148,7 @@ android.ui.menu_read_aloud=Be veng ra bıwane
 android.ui.menu_read_aloud_stop=Bevengrawendış caverde
 android.ui.info_share_title=Ezo Kiwik'a çerxteber wikiya keyf kena!
 android.ui.info_share_content=Ez Wikipediya be Kiwix ra oflayn wanenan. Zanışiya merdımi her ca de bınê desti dera. Bêinternet! http://goo.gl/h9Smkk
-android.ui.share_via=sera bıhesırne
+android.ui.share_via=... sera bare ke
 android.ui.button_backtotop=Şo Serni
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
@@ -161,13 +164,13 @@ android.ui.error_articlenotfound=Xeta: Barkerdışê meqaleyê \"%1$s\" nêbi.
 android.ui.error_articleurlnotfound=Xeta: Barkerdışê meqaleyê (Url: %1$s) nêbi.
 android.ui.pref_zoom_title=Sewiyey zumer
 android.ui.pref_zoom_enable=Kontrola zumer
-android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dezu butona zumi bıasne
+android.ui.pref_zoom_enable_summary=Kışta raşt bınida asengi dı ju butona zumi bımotné
 android.ui.pref_zoom_entry_automatic=Otomatik
 android.ui.pref_zoom_entry_small=Werdi
 android.ui.pref_zoom_entry_medium=Miyanên
 android.ui.pref_zoom_entry_large=Gırd
 android.ui.pref_nightmode=Moda şewer
-android.ui.pref_nightmode_summary=Wesiqi çerğbiyayış rengana bıasne
+android.ui.pref_nightmode_summary=Meqaleya rengané çerğneyana bımotné
 android.ui.pref_language_chooser=Yew zıwan weçine
 android.ui.pref_info_title=Melumat
 android.ui.pref_info_version=Versiyon

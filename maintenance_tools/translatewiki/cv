@@ -1,5 +1,6 @@
 # Messages for Chuvash (Чӑвашла)
 # Exported from translatewiki.net
+# Author: Macofe
 # Author: Salam
 
 ui.main.cssdirection=ltr
@@ -130,3 +131,5 @@ ui.messages.fullscreen=Тулли экран
 ui.messages.quitFullscreen=Тулли мар экран
 ui.messages.integrityCheckSuccessful=Файлăн пĕтĕмлĕхĕ ăнăçлă тĕрĕсленĕ.
 ui.messages.integrityCheckFailed=Пĕтĕмлĕх тĕрĕслевĕ пиçмен. Сирĕн файл çĕмрĕк.
+android.ui.pref_info_title=Тӗплӗнрех
+android.ui.pref_info_version=Верси

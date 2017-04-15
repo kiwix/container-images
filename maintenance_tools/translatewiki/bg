@@ -6,6 +6,7 @@
 # Author: Termininja
 # Author: Vladimir Penov
 # Author: Vodnokon4e
+# Author: АдмиралАнимЕ
 
 ui.main.cssdirection=ltr : скрипт от ляво на дясно
 ui.main.osxservices=Услуги
@@ -61,7 +62,7 @@ ui.main.skin.accesskey=С
 ui.main.statusbar=Лента на състоянието
 ui.main.statusbar.accesskey=С
 ui.main.resultsbar=Лента с резултатите
-ui.main.tabs=Табове
+ui.main.tabs=Подпрозорци
 ui.main.fullscreen=Цял екран
 ui.main.tools=Инструменти
 ui.main.randomArticle=Случайна статия
@@ -148,7 +149,7 @@ ui.messages.confirm=Потвърждаване
 ui.messages.no=не
 ui.messages.yes=да
 ui.messages.ok=Добре
-ui.messages.cancel=Отказване
+ui.messages.cancel=Отказ
 ui.messages.error=Грешка
 ui.messages.information=Информация
 ui.messages.indexing=Индексиране...
@@ -198,8 +199,13 @@ android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_backtotop=Връщане в началото
 android.ui.pref_backtotop_summary=Показване на бутон в края на страницата за превъртане нагоре
+android.ui.pref_newtab_background_title=Отваряне на нов подпрозорец в заден план
 android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
 android.ui.save_media_saved=Медийният файл е съхранен като %1$s във вашата папка с изображения
+android.ui.no_bookmarks=Няма отметки!
+android.ui.rate_dialog_title=Моля, оценете ни
+android.ui.rate_dialog_msg_1=Ако ви допадна
+android.ui.rate_dialog_msg_2=,моля, отделете малко време, за да го оцените. Благодаря за подкрепата!
 android.ui.rate_dialog_positive=Оцени!
 android.ui.rate_dialog_negative=Не, благодаря
 android.ui.rate_dialog_neutral=По-късно

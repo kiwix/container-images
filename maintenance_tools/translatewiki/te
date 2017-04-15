@@ -4,6 +4,7 @@
 # Author: Chaduvari
 # Author: Kiranmayee
 # Author: Veeven
+# Author: WP MANIKHANTA
 # Author: రహ్మానుద్దీన్
 
 ui.main.osxservices=సేవలు
@@ -171,5 +172,22 @@ android.ui.pref_info_title=సమాచారం
 android.ui.pref_info_version=సంచిక
 android.ui.pref_backtotop=తిరిగి పైకి
 android.ui.pref_backtotop_summary=పేజీ చివర్లో పేజీ మొదటికి చేరుకునే బొత్తమును చూపండి
+android.ui.pref_newtab_background_title=కొత్త ట్యబ్ ను వెనుకస్థలంలో తెరవండి
+android.ui.pref_newtab_background_summary=ఎప్పుడైతే కొత్త ట్యాబ్ ను తెరుస్తారో అప్పుడు అది వెనుకస్థలంలో తెరుచుకుంటుంది.
 android.ui.save_media_error=మీడియాను భద్రపరచడంలో తప్పు జరిగింది.
 android.ui.save_media_saved=మీడియాని మీ బొమ్మల సంచయంలోని %1$s వద్ద భద్రపరచాము
+android.ui.tts_lang_not_supported=ఈ పేజి నందు ఈ భాష సహకరించదు లేదా తగిన భాష ఇన్స్టాల్ చేయలేదు.బహుస ఈ పేజి ని చదువలేరు.
+android.ui.no_reader_application_installed=ఈ దస్త్రం చూపడానికి సహకరించే ఎప్ప్ ఇన్స్టాల్ చేయలేదు.
+android.ui.customapp_missing_content=మీ దస్త్రం పాడైనది.\nబహుశా ఈ దస్త్రం SD card నుండి తొలగించబడింది.\nమీరు మీ ఎప్ప్ ని తొలగించి మరల Play Store నుండి దిగుమతి చేసుకోవాలి.
+android.ui.go_to_play_store=Play Store నకు వెళ్ళండి
+android.ui.no_bookmarks=పుస్తకగుర్తులు లేవు!
+android.ui.bookmarks_restored=పుస్తకగుర్తులు పునఃనిల్వచేయబడింది
+android.ui.bookmark_added=పుస్తకగుర్తులు జతచేయబడింది
+android.ui.rate_dialog_title=దయచేసి మమల్ని నక్షత్రాలతో వెలకట్టండి
+android.ui.rate_dialog_msg_1=మీరు ఒకవేళ ఉపయోగిస్తు ఆనందిస్తున్నారా
+android.ui.rate_dialog_msg_2=, మమల్ని నక్షత్రాలతో వెల కట్టడానికి చర్య తీసుకోండి.మమల్ని సహకరించినందుకు ధన్యవాదములు!
+android.ui.rate_dialog_positive=నక్షత్రాలతో వెల కట్టు!
+android.ui.rate_dialog_negative=వద్దు, ధన్యవాదములు
+android.ui.rate_dialog_neutral=తరువాత
+android.ui.no_section_info=వ్యాస శీరిక్ష కనుగోనలేదు
+android.ui.request_storage=ZIM Filesలో పోందుపరచడానికి మేము మీ నిల్వ లను పోందుపరచాలి

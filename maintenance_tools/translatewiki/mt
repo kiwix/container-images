@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Chrisportelli
 # Author: Leli Forte
+# Author: Macofe
 
 ui.main.osxservices=Servizzi
 ui.main.osxhideapp=Aħbi &brand.brandShortName;
@@ -130,4 +131,10 @@ ui.messages.fullscreen=Skrin sħiħ
 ui.messages.quitFullscreen=Oħroġ mill-modalità ta' skrin sħiħ
 ui.messages.integrityCheckSuccessful=L-integrità tal-fajl ġiet iċċekkjata b'suċċess.
 ui.messages.integrityCheckFailed=L-integrità tal-fajl falliet. Il-fajl tiegħek huwa ħażin.
+android.ui.pref_zoom_entry_small=Żgħir
+android.ui.pref_zoom_entry_medium=Medju
+android.ui.pref_zoom_entry_large=Kbir
+android.ui.pref_language_chooser=Agħżel lingwa
+android.ui.pref_info_title=Informazzjoni
+android.ui.pref_info_version=Verżjoni
 android.ui.save_media_error=Sar żball meta kont qed tipprova tissejvja l-fajl multimedjali!

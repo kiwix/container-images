@@ -6,6 +6,7 @@
 # Author: ITshnik
 # Author: Kelson
 # Author: Macofe
+# Author: Otogi
 
 ui.main.osxservices=სერვისები
 ui.main.osxhideapp=&brand.brandShortName;-ის დამალვა
@@ -174,3 +175,12 @@ android.ui.pref_backtotop=თავში დაბრუნება
 android.ui.pref_backtotop_summary=გვერდის ბოლოში ზევით დაბრუნების ღილაკის ჩვენება
 android.ui.save_media_error=მედია-ფაილის შენახვისას მოხდა შეცდომა!
 android.ui.save_media_saved=მედია-ფაილის თქვენი სურათების საქაღალდეში შენახვა როგორც %1$
+android.ui.go_to_play_store=Play მარკეტში გადასვლა
+android.ui.no_bookmarks=სანიშნები არ არის!
+android.ui.bookmarks_restored=სანიშნეები აღდგენილია
+android.ui.bookmark_added=სანიშნი დამატებულია
+android.ui.rate_dialog_title=გთხოვთ, შეგვაფასეთ
+android.ui.rate_dialog_msg_1=თუ თქვენ მოგწონთ
+android.ui.rate_dialog_positive=შეფასება!
+android.ui.rate_dialog_negative=არა, გმადლობთ
+android.ui.rate_dialog_neutral=მოგვიანებით

@@ -6,6 +6,7 @@
 # Author: Mehran
 # Author: Mhsgame
 # Author: Mjbmr
+# Author: Namo
 # Author: Reza1615
 # Author: Rtemis
 # Author: ZxxZxxZ
@@ -166,7 +167,7 @@ ui.messages.nameBookmarkSet=پرونده تنظیمات نشانک را وارد
 ui.messages.bookmarkReferingOtherContent=این نشانه‌گذاری مراجعه به مطالب دیگر دارد، آیا آنها را بارگیری می‌کنید؟
 ui.messages.newContentAvailable=محتویات جدیدی برای دریافت در دسترس هستند.
 ui.messages.newContentAvailableInvitation=محتویات جدیدی برای دریافت در دسترس هستند. آیا مایلید آن‌ها را ببینید؟
-ui.messages.preparingContentDownload=در حال آماده‌سازی برای درافت...
+ui.messages.preparingContentDownload=در حال آماده‌سازی برای دریافت...
 ui.messages.contentDownloadFinished=دریافت «%1» به پایان رسید.
 ui.messages.feedback=بازخورد
 ui.messages.library=کتابخانه

@@ -1,6 +1,7 @@
 # Messages for Brazilian Portuguese (português do Brasil)
 # Exported from translatewiki.net
 # Author: Amgauna
+# Author: Freeedusoft
 # Author: Giro720
 # Author: Gusta
 # Author: HenriqueCrang
@@ -64,8 +65,8 @@ ui.main.about=Sobre &brand.brandShortName;
 ui.main.back=Voltar
 ui.main.forward=Avançar
 ui.main.home=Início
-ui.main.searchBar=Barra de busca
-ui.main.search=Buscar
+ui.main.searchBar=Barra de pesquisa
+ui.main.search=Pesquisar
 ui.main.searchPlaceholder=Digite o texto a pesquisar aqui...
 ui.main.findInText=Buscar no texto
 ui.main.noSearchBar=A busca requer um arquivo ZIM indexado
@@ -182,6 +183,8 @@ android.ui.pref_info_title=Informação
 android.ui.pref_info_version=Versão
 android.ui.pref_backtotop=Voltar ao Topo
 android.ui.pref_backtotop_summary=Mostra um botão no fim da página para voltar ao topo
+android.ui.pref_newtab_background_title=Abrir nova aba em segundo plano
+android.ui.pref_newtab_background_summary=Ao abrir uma nova aba, ela será aberta em segundo plano
 android.ui.save_media_error=Um erro ocorreu enquanto a midia estava sendo salva!
 android.ui.save_media_saved=Midia salva como %1$s na sua pasta de imagens
 android.ui.tts_lang_not_supported=O idioma desta página não é suportado, ou dados do idioma apropriado não estão instalados. O artigo pode não ser lido propriamente.
@@ -189,5 +192,13 @@ android.ui.no_reader_application_installed=Não foi possível encontrar uma apli
 android.ui.customapp_missing_content=Sua aplicação está corrompida.\nIsso pode acontecer quando você remove arquivos do cartão SD.\nVocê precisa desinstalar e reinstalar o App da Play Store.
 android.ui.go_to_play_store=Ir para Play Store
 android.ui.no_bookmarks=Sem favoritos!
+android.ui.bookmarks_restored=Favoritos restaurados
+android.ui.bookmark_added=Favorito adicionado
+android.ui.rate_dialog_title=Por favor nos avalie
+android.ui.rate_dialog_msg_1=Se você gosta de usar
+android.ui.rate_dialog_msg_2=, por favor leve um momento para avaliá-lo. Obrigado por seu apoio!
+android.ui.rate_dialog_positive=Avalie!
+android.ui.rate_dialog_negative=Não, obrigado
+android.ui.rate_dialog_neutral=Mais tarde
 android.ui.no_section_info=Não foram encontrados cabeçalhos de conteúdo.
 android.ui.request_storage=Para acessar arquivos ZIM precisamos de acesso ao seu disco

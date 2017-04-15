@@ -1,5 +1,6 @@
 # Messages for Portuguese (português)
 # Exported from translatewiki.net
+# Author: Freeedusoft
 # Author: Giro720
 # Author: Gusta
 # Author: Hamilton Abreu
@@ -211,6 +212,22 @@ android.ui.pref_info_title=Informação
 android.ui.pref_info_version=Versão
 android.ui.pref_backtotop=Voltar ao Topo
 android.ui.pref_backtotop_summary=Exibir botão no fim da página para redireccionar ao inicio da página
+android.ui.pref_newtab_background_title=Abrir nova aba em segundo plano
+android.ui.pref_newtab_background_summary=Ao abrir uma nova aba, ela será aberta em segundo plano
 android.ui.save_media_error=Ocorreu um erro ao tentar guardar o conteúdo!
 android.ui.save_media_saved=Conteúdo guardado como %1$s na sua pasta de imagens
+android.ui.tts_lang_not_supported=Nao existe suporte para o idioma dessa página, ou os dados de idioma apropriados não foram instalados. O artigo pode não ser lido corretamente.
+android.ui.no_reader_application_installed=Não foi possível encontrar um aplicativo instalado para este tipo de arquivo.
+android.ui.customapp_missing_content=Seu aplicativo está corrompido.\nIsto pode acontecer quando você remove arquivos de seu cartão SD.\nÉ preciso desinstalar o aplicativo e depois reinstalá-lo da Play Store.
+android.ui.go_to_play_store=Ir à Play Store
+android.ui.no_bookmarks=Não há favoritos!
+android.ui.bookmarks_restored=Favoritos restaurados
+android.ui.bookmark_added=Favorito adicionado
+android.ui.rate_dialog_title=Por Favor, Avalie-Nos
+android.ui.rate_dialog_msg_1=Se você gosta de usar
+android.ui.rate_dialog_msg_2=, por favor leve um momento para avaliá-lo. Obrigado por seu apoio!
+android.ui.rate_dialog_positive=Avalie!
 android.ui.rate_dialog_negative=Não, obrigado
+android.ui.rate_dialog_neutral=Mais tarde
+android.ui.no_section_info=Não foram encontrados cabeçalhos de conteúdo
+android.ui.request_storage=Para aceder a arquivos ZIM, precisamos de acesso ao seu armazenamento

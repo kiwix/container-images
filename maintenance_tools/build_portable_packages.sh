@@ -10,17 +10,18 @@
 
 # New for mwoffliner VMs
 SOURCE=/srv/upload/zim2index/
+ZIMTARGETTMP=/srv/upload/
 ZIMTARGET=/srv/upload/zim/
+ZIPTARGETTMP=/srv/upload/tmp/
 ZIPTARGET=/srv/upload/portable/
-TMP=/srv/kiwix-maintenance/maintenance_tools/tmp/
+TMP=/srv/tmp/
 SCRIPT=/srv/kiwix-tools/tools/scripts/buildDistributionFile.pl
 VERSION=`readlink /srv/download.kiwix.org/bin/unstable | sed -e 's/_/-/g' | sed -e 's/\///g'`
 
-EXCLUDE="0.9"
+EXCLUDE="(0.9|indexdb.tmp)"
 SOURCE_ESC=`echo "$SOURCE" | sed 's/\//\\\\\//g'`
 
-
-for DIR in `find "$SOURCE" -type d | sed "s/$SOURCE_ESC//" | grep -v "$EXCLUDE"`
+for DIR in `find "$SOURCE" -type d | sed "s/$SOURCE_ESC//" | egrep -v "$EXCLUDE"`
 do
     echo "Searching for ZIM files in '$SOURCE$DIR'"
     DIR_ESC=`echo "$DIR/" | sed 's/\//\\\\\//g'`
@@ -40,18 +41,37 @@ do
     for ZIMFILE in `find "$SOURCE$DIR" -maxdepth 1 -name '*.zim' -type f | sed "s/$SOURCE_ESC$DIR_ESC//"`
     do
 	ZIPFILE="kiwix-"$VERSION+`echo $ZIMFILE | sed -e 's/zim/zip/g'`
-	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE"`
-	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" ]]
+	ACCESSED=`lsof "$SOURCE$DIR/$ZIMFILE" 2> /dev/null`
+	LOCKFILE="$SOURCE$DIR/.${ZIMFILE}_"
+
+	# Check if we have enough free space
+	ZIMFILESIZE=`stat --printf="%s" "$SOURCE$DIR/$ZIMFILE"`
+	FREESPACE=`df "$TMP" | awk 'NR==2 {print $4}'`
+	MAXZIMFILESIZE=`echo "$FREESPACE * 1024 / 2" | bc`
+	if [[ "$ZIMFILESIZE" -gt "$MAXZIMFILESIZE" ]]
 	then
+	    echo "$ZIMFILE is too big to compute its portable ZIP file here."
+	    continue
+	fi
+
+	if [[ ! -f "$ZIPTARGET$DIR/$ZIPFILE" && ! "$ACCESSED" && ! -f "$LOCKFILE" && -f "$SOURCE$DIR/$ZIMFILE" ]]
+	then
+	    echo "Creating lock file $LOCKFILE"
+	    touch "$LOCKFILE"
+
 	    echo "Building $ZIPFILE..."
 	    cd `dirname "$SCRIPT"`
-	    $SCRIPT --filePath="$TMP$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
+	    $SCRIPT --filePath="$ZIPTARGETTMP/$ZIPFILE" --zimPath="$SOURCE$DIR/$ZIMFILE" --tmpDirectory="$TMP" --type=portable --downloadMirror=download_dev_mirror
     
-	    echo "Move $TMP$ZIPFILE to $ZIPTARGET$DIR"
-	    mv "$TMP$ZIPFILE" "$ZIPTARGET$DIR"
+	    echo "Move $ZIPTARGETTMP/$ZIPFILE to $ZIPTARGET/$DIR"
+	    mv "$ZIPTARGETTMP/$ZIPFILE" "$ZIPTARGET/$DIR"
 
-	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET$DIR"
-	    mv "$SOURCE$DIR/$ZIMFILE" "$ZIMTARGET$DIR"
+	    echo "Move $SOURCE$DIR/$ZIMFILE to $ZIMTARGET/$DIR"
+	    mv "$SOURCE$DIR/$ZIMFILE" "$ZIMTARGETTMP"
+	    mv "$ZIMTARGETTMP/$ZIMFILE" "$ZIMTARGET/$DIR"
+
+	    echo "Removing lock file $LOCKFILE"
+	    rm -rf "$LOCKFILE"
 	else
 	    echo "Skipping $ZIPFILE..."
 	fi

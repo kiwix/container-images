@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: AnakngAraw
 # Author: Jewel457
+# Author: Macofe
 
 ui.main.cssdirection=mula sa kaliwa papunta sa kanan
 ui.main.osxservices=Mga paglilingkod
@@ -163,5 +164,11 @@ ui.messages.fullscreen=Buong panooran
 ui.messages.quitFullscreen=Huwag buong panooran
 ui.messages.integrityCheckSuccessful=Matagumpay ang pagsusuri ng pagiging buo ng talaksan.
 ui.messages.integrityCheckFailed=Nabigo ang pagsusuri ng pagkabuo. May sira ang talaksan mo.
+android.ui.pref_zoom_entry_automatic=Awtomatiko
+android.ui.pref_zoom_entry_small=Maliit
+android.ui.pref_zoom_entry_large=Malaki
+android.ui.pref_language_chooser=Pumili ng wika
+android.ui.pref_info_title=Kabatiran
+android.ui.pref_info_version=Bersyon
 android.ui.pref_backtotop=Bumalik sa itaas
 android.ui.pref_backtotop_summary=Maglagay ng buton sa dulo ng pahina upang makagapang paitaas

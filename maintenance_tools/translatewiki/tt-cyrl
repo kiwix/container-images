@@ -15,7 +15,7 @@ ui.main.hideLibrary=Барсында ябу
 ui.main.lastOpen=Күптән түгел ачылганнар ...
 ui.main.saveFile=Битне саклау форматы ...
 ui.main.print=Бастыру
-ui.main.printPdf=PDF'та бастыру
+ui.main.printPdf=PDF иттереп бастыру
 ui.main.quit=Чыгу
 ui.main.edit=Үзгәртү
 ui.main.find=Биттә эзләү...
@@ -127,7 +127,6 @@ ui.messages.contentDownloadFinished=Йөкләү '%1' тәмамланды.
 ui.messages.feedback=Аралашу
 ui.messages.library=Библиотека
 ui.messages.fullscreen=Тулы экранга
-# Fuzzy
-ui.messages.quitFullscreen=Тулы экраннан чыгу
+ui.messages.quitFullscreen=Тулы экран режимыннан чыгу
 ui.messages.integrityCheckSuccessful=Файлның тулылыгы уңышлы тикшерелде.
 ui.messages.integrityCheckFailed=Файлның тулылыгы уңышсыз, ул бозык.

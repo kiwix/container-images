@@ -3,6 +3,7 @@
 # Author: Kelson
 # Author: Lionslayer
 # Author: Minnyoonthit
+# Author: Ninjastrikers
 # Author: Parabaik
 
 ui.main.osxservices=ဝန်ဆောင်မှုများ
@@ -53,7 +54,7 @@ ui.main.back=နောက်ပြန်
 ui.main.forward=ရှေ့ပြန်သွားရန်
 ui.main.home=ပင်မ
 ui.main.searchBar=ရှာဖွေရန် နေရာ
-ui.main.search=ရှာ​ဖွေ​ရန်​
+ui.main.search=ရှာဖွေရန်
 ui.main.searchPlaceholder=ရှာဖွေလို့သော စာသားကို ဒီမှာ ရိုက်ပါ...
 ui.main.findInText=စာပိုဒ်ထဲတွင် ရှာရန်
 ui.main.noSearchBar=ရှာဖွေမှုပြုလုပ်ရန်အတွက် ကြိုတင်ပြင်ဆင်ထားသော ZIM ဖိုင်တစ်ခု လိုအပ်ပါသည်။
@@ -172,3 +173,8 @@ android.ui.pref_backtotop=ထိပ်ဆုံးသို့ ပြန်သ�
 android.ui.pref_backtotop_summary=ထိပ်ဆုံးသို့ပြန်သွားရန်အတွက် စာမျက်နှာ၏အောက်ဆုံးတွင် ခလုတ်တစ်ခု ပြပါ။
 android.ui.save_media_error=မီဒီယာဖိုင်ကို သိမ်းရန်ကြိုးစားနေစဉ် အမှားတစ်ခု ဖြစ်ပေါ်သွားသည်။
 android.ui.save_media_saved=သင့် Pictures ဖိုင်တွဲထဲတွင် မီဒီယာဖိုင်ကို %1$s အဖြစ် သိမ်းပြီးဖြစ်သည်။
+android.ui.go_to_play_store=Play စတိုးသို့ သွားရန်
+android.ui.no_bookmarks=စာညှပ်မှတ်ထားခြင်း မရှိ!
+android.ui.bookmarks_restored=စာညှပ်မှတ်များ ပြန်သိုလှောင်ပြီး
+android.ui.bookmark_added=စာညှပ်မှတ် ထည့်ပေါင်းပြီး
+android.ui.rate_dialog_title=ကျေးဇူးပြု၍ ကျွန်ုပ်တို့အား အဆင့်သတ်မှတ်ပေးပါ

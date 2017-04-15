@@ -1,6 +1,7 @@
 # Messages for Estonian (eesti)
 # Exported from translatewiki.net
 # Author: Avjoska
+# Author: Macofe
 # Author: Pikne
 
 ui.main.osxservices=Teenused
@@ -123,3 +124,10 @@ ui.messages.library=Raamatukogu
 ui.messages.fullscreen=Täisekraan
 # Fuzzy
 ui.messages.quitFullscreen=Välju täisekraani režiimist
+android.ui.pref_zoom_entry_automatic=Automaatne
+android.ui.pref_zoom_entry_small=Väike
+android.ui.pref_zoom_entry_medium=Keskmine
+android.ui.pref_zoom_entry_large=Suur
+android.ui.pref_language_chooser=Vali keel
+android.ui.pref_info_title=Teave
+android.ui.pref_info_version=Versioon
