@@ -12,7 +12,7 @@ var yargs = require( 'yargs' );
 
 /* Arguments */
 var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sourceforge, twitter, wikis activities: $0' )
-    .require( ['consumerKey', 'consumerSecret', 'accessTokenKey', 'accessTokenSecret', 'githubToken' ] )
+    .require( ['consumerKey', 'consumerSecret', 'accessTokenKey', 'accessTokenSecret', 'kiwixGithubToken', 'openzimGithubToken' ] )
     .argv;
 
 /* VARIABLES */
@@ -24,12 +24,16 @@ var client = new twitter({
     access_token_key: argv.accessTokenKey,
     access_token_secret: argv.accessTokenSecret
 });
-var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
+
+var kiwixGithubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.kiwixGithubToken;
 var kiwixWikiFeed = 'http://www.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
+var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
+var kiwixSourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
+
+var openzimGithubFeed = 'https://github.com/organizations/openzim/kelson42.private.atom?token=' + argv.openzimGithubToken;
 var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
-var openzimGitFeed = 'https://github.com/wikimedia/openzim/commits/master.atom';
-var sourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
-var githubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.githubToken;
+
+var ideascubeFramagitFeed = 'https://framagit.org/ideascube.atom';
 
 /* FUNCTIONS */
 function connectIrc() {
@@ -45,30 +49,62 @@ function html2txt( html ) {
 /* INIT */
 connectIrc();
 
-/* GITHUB */
-var lastGithubPubDate;
-var githubWatcher = new rssWatcher( githubFeed );
-githubWatcher.set( {feed: githubFeed, interval: 120} );
-githubWatcher.on( 'new article', function( article ) {
-    var pubDate = Date.parse( article.pubDate )
-    console.log( 'lastPuDate:' + lastGithubPubDate );
-    console.log( 'pubDate:' + pubDate );
-    if ( !lastGithubPubDate || ( pubDate > lastGithubPubDate ) ) {
-	lastGithubPubDate = pubDate;    var message = '[GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+/* TWITTER */
+setInterval ( function() {
+    client.get('statuses/user_timeline', {screen_name: 'KiwixOffline', count: 1}, function( error, tweets, response ) {
+	if ( error ) {
+	    console.error( '[ERROR] ' + error.essage );
+	} else if ( !error && tweets[0] && lastTwitterId != tweets[0].id_str ) {
+	    lastTwitterId = tweets[0].id_str;
+	    var message = '[KIWIX MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
+	    console.log( '[KIWIX MICROBLOG]' + message );
+	    ircClient.say( '#kiwix', message );
+	}
+    })
+}, 60000 );
+
+/* KIWIX GITHUB */
+var lastKiwixGithubPubDate;
+var kiwixGithubWatcher = new rssWatcher( kiwixGithubFeed );
+kiwixGithubWatcher.set( {feed: kiwixGithubFeed, interval: 120} );
+kiwixGithubWatcher.on( 'new article', function( article ) {
+    var kiwixGithubPubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastKiwixGithubPubDate );
+    console.log( 'pubDate:' + kiwixGithubPubDate );
+    if ( !lastKiwixGithubPubDate || ( kiwixGithubPubDate > lastKiwixGithubPubDate ) ) {
+	lastKiwixGithubPubDate = kiwixGithubPubDate;
+	var message = '[KIWIX GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
 	console.log( '[MSG]' + message );
 	ircClient.say( '#kiwix', message );
     }
 });
-githubWatcher.run( function( error, articles ) {
+kiwixGithubWatcher.run( function( error, articles ) {
     if ( error ) {
-	console.error( '[ERROR] ' + error );
+	console.error( '[ERROR KIWIX GITHUB] ' + error );
     }
 });
-githubWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
+kiwixGithubWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR KIWIX GITHUB] ' + error );
 });
 
-/* ITUNES */
+/* KIWIX WIKI */
+var kiwixWikiWatcher = new rssWatcher( kiwixWikiFeed );
+kiwixWikiWatcher.set( {feed: kiwixWikiFeed, interval: 120} );
+kiwixWikiWatcher.on( 'new article', function( article ) {
+    var message = '[KIWIX WIKI] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+    console.log( '[MSG]' + message );
+    ircClient.say( '#kiwix', message );
+});
+kiwixWikiWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR KIWIX WIKI] ' + error );
+    }
+});
+kiwixWikiWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR KIWIX WIKI] ' + error );
+});
+
+/* KIWIX ITUNES */
 var kiwixItunesWatcher = new rssWatcher( kiwixItunesFeed );
 kiwixItunesWatcher.set( {feed: kiwixItunesFeed, interval: 120} );
 kiwixItunesWatcher.on( 'new article', function( article ) {
@@ -78,31 +114,62 @@ kiwixItunesWatcher.on( 'new article', function( article ) {
 });
 kiwixItunesWatcher.run( function( error, articles ) {
     if ( error ) {
-	console.error( '[ERROR] ' + error );
+	console.error( '[ERROR KIWIX ITUNES] ' + error );
     }
 });
 kiwixItunesWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
+    console.error( '[ERROR KIWIX ITUNES] ' + error );
 });
 
-/* KIWIX.ORG */
-var kiwixWikiWatcher = new rssWatcher( kiwixWikiFeed );
-kiwixWikiWatcher.set( {feed: kiwixWikiFeed, interval: 120} );
-kiwixWikiWatcher.on( 'new article', function( article ) {
-    var message = '[WIKI] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
-    console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message );
-});
-kiwixWikiWatcher.run( function( error, articles ) {
-    if ( error ) {
-	console.error( '[ERROR] ' + error );
+/* KIWIX SOURCEFORGE */
+var lastKiwixSourceforgePubDate;
+var kiwixSourceforgeWatcher = new rssWatcher( kiwixSourceforgeFeed );
+kiwixSourceforgeWatcher.set( {feed: kiwixSourceforgeFeed, interval: 120} );
+kiwixSourceforgeWatcher.on( 'new article', function( article ) {
+    var kiwixSourceforgePubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastKiwixSourceforgePubDate );
+    console.log( 'pubDate:' + kiwixSourceforgePubDate );
+    if ( !lastKiwixSourceforgePubDate || ( kiwixSourceforgePubDate > lastKiwixSourceforgePubDate ) ) {
+	lastKiwixSourceforgePubDate = kiwixSourceforgePubDate;
+	var message = '[KIWIX SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
+	console.log( '[MSG]' + message );
+	ircClient.say( '#kiwix', message );
     }
 });
-kiwixWikiWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
+kiwixSourceforgeWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR KIWIX SOURCEFORGE] ' + error );
+    }
+});
+kiwixSourceforgeWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR KIWIX SOURCEFORGE] ' + error );
 });
 
-/* OPENZIM.ORG */
+/* OPENZIM GITHUB */
+var lastOpenzimGithubPubDate;
+var openzimGithubWatcher = new rssWatcher( openzimGithubFeed );
+openzimGithubWatcher.set( {feed: openzimGithubFeed, interval: 120} );
+openzimGithubWatcher.on( 'new article', function( article ) {
+    var openzimGithubPubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastOpenzimGithubPubDate );
+    console.log( 'pubDate:' + openzimGithubPubDate );
+    if ( !lastOpenzimGithubPubDate || ( openzimGithubPubDate > lastOpenzimGithubPubDate ) ) {
+	lastOpenzimGithubPubDate = openzimGithubPubDate;
+	var message = '[OPENZIM GITHUB] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+	console.log( '[MSG]' + message );
+	ircClient.say( '#openzim', message );
+    }
+});
+openzimGithubWatcher.run( function( error, articles ) {
+    if ( error ) {
+	console.error( '[ERROR OPENZIM GITHUB] ' + error );
+    }
+});
+openzimGithubWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR OPENZIM GITHUB] ' + error );
+});
+
+/* OPENZIM WIKI */
 var openzimWikiWatcher = new rssWatcher( openzimWikiFeed );
 openzimWikiWatcher.set( {feed: openzimWikiFeed, interval: 120} );
 openzimWikiWatcher.on( 'new article', function( article ) {
@@ -112,71 +179,33 @@ openzimWikiWatcher.on( 'new article', function( article ) {
 });
 openzimWikiWatcher.run( function( error, articles ) {
     if ( error ) {
-	console.error( '[ERROR] ' + error );
+	console.error( '[ERROR OPENZIM WIKI] ' + error );
     }
 });
 openzimWikiWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
+    console.error( '[ERROR OPENZIM WIKI] ' + error );
 });
 
-/* OPENZIM GIT GITHUB */
-var openzimGitWatcher = new rssWatcher( openzimGitFeed );
-openzimGitWatcher.set( {feed: openzimGitFeed, interval: 120} );
-openzimGitWatcher.on( 'new article', function( article ) {
-    var message = '[OPENZIM GIT] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+/* IDEASCUBE FRAMAGIT */
+var ideascubeFramagitWatcher = new rssWatcher( ideascubeFramagitFeed );
+ideascubeFramagitWatcher.set( {feed:ideascubeFramagitFeed, interval: 120} );
+ideascubeFramagitWatcher.on( 'new article', function( article ) {
+    var message = '[IDEASCUBE FRAMAGIT] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
     console.log( '[MSG]' + message );
     ircClient.say( '#kiwix', message );
 });
-openzimGitWatcher.run( function( error, articles ) {
+ideascubeFramagitWatcher.run( function( error, articles ) {
     if ( error ) {
-	console.error( '[ERROR] ' + error );
+	console.error( '[ERROR IDEASCUBE FRAMAGIT] ' + error );
     }
 });
-openzimGitWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
+ideascubeFramagitWatcher.on( 'error', function( error ) {
+    console.error( '[ERROR IDEASCUBE FRAMAGIT] ' + error );
 });
-
-/* SOURCEFORGE */
-var lastSourceforgePubDate;
-var sourceforgeWatcher = new rssWatcher( sourceforgeFeed );
-sourceforgeWatcher.set( {feed: sourceforgeFeed, interval: 120} );
-sourceforgeWatcher.on( 'new article', function( article ) {
-    var pubDate = Date.parse( article.pubDate )
-    console.log( 'lastPuDate:' + lastSourceforgePubDate );
-    console.log( 'pubDate:' + pubDate );
-    if ( !lastSourceforgePubDate || ( pubDate > lastSourceforgePubDate ) ) {
-	lastSourceforgePubDate = pubDate;
-	var message = '[SOURCEFORGE] ' + html2txt( article.summary ) +  ' -- ' + article.link + ' --';
-	console.log( '[MSG]' + message );
-	ircClient.say( '#kiwix', message );
-    }
-});
-sourceforgeWatcher.run( function( error, articles ) {
-    if ( error ) {
-	console.error( '[ERROR] ' + error );
-    }
-});
-sourceforgeWatcher.on( 'error', function( error ) {
-    console.error( '[ERROR] ' + error );
-});
-
-/* TWITTER */
-setInterval ( function() {
-    client.get('statuses/user_timeline', {screen_name: 'KiwixOffline', count: 1}, function( error, tweets, response ) {
-	if ( error ) {
-	    console.error( '[ERROR] ' + error.essage );
-	} else if ( !error && tweets[0] && lastTwitterId != tweets[0].id_str ) {
-	    lastTwitterId = tweets[0].id_str;
-	    var message = '[MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
-	    console.log( '[MICROBLOG]' + message );
-	    ircClient.say( '#kiwix', message );
-	}
-    })
-}, 60000 );
 
 /* IRC ERROR HANDLING */
 ircClient.addListener( 'error', function( error ) {
-    console.log( '[ERROR] ' + error );
+    console.log( '[ERROR IRC] ' + error );
     lastTwitterId = undefined;
     setTimeout( connectIrc, 300000 );
 });
