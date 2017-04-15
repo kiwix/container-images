@@ -26,7 +26,7 @@ var client = new twitter({
 });
 
 var kiwixGithubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.kiwixGithubToken;
-var kiwixWikiFeed = 'http://www.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
+var kiwixWikiFeed = 'http://wiki.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
 var kiwixSourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
 
