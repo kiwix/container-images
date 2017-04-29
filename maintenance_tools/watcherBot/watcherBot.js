@@ -187,12 +187,19 @@ openzimWikiWatcher.on( 'error', function( error ) {
 });
 
 /* IDEASCUBE FRAMAGIT */
+var lastIdeascubeFramagitPubDate;
 var ideascubeFramagitWatcher = new rssWatcher( ideascubeFramagitFeed );
 ideascubeFramagitWatcher.set( {feed:ideascubeFramagitFeed, interval: 120} );
 ideascubeFramagitWatcher.on( 'new article', function( article ) {
-    var message = '[IDEASCUBE FRAMAGIT] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
-    console.log( '[MSG]' + message );
-    ircClient.say( '#kiwix', message );
+    var ideascubeFramagitPubDate = Date.parse( article.pubDate )
+    console.log( 'lastPuDate:' + lastIdeascubeFramagitPubDate );
+    console.log( 'pubDate:' + lastIdeascubeFramagitPubDate );
+    if ( !lastIdeascubeFramagitPubDate || ( ideascubeFramagitPubDate > lastIdeascubeFramagitPubDate ) ) {
+	lastIdeascubeFramagitPubDate = ideascubeFramagitPubDate;
+	var message = '[IDEASCUBE FRAMAGIT] ' + html2txt( article.title ) + ' by ' + html2txt( article.author ) + ' -- ' + article.link + ' --';
+	console.log( '[MSG]' + message );
+	ircClient.say( '#kiwix', message );
+    }
 });
 ideascubeFramagitWatcher.run( function( error, articles ) {
     if ( error ) {

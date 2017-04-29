@@ -14,6 +14,7 @@
 # Author: Szoszv
 # Author: Trockya
 # Author: VikipediBilgini
+# Author: Vito Genovese
 # Author: Watermelon juice
 
 ui.main.osxservices=Hizmetler
@@ -62,7 +63,7 @@ ui.main.requestafeature=Bir özellik iste
 ui.main.about=&brand.brandShortName; Hakkında
 ui.main.back=Geri
 ui.main.forward=İleri
-ui.main.home=Ana Sayfa
+ui.main.home=Anasayfa
 ui.main.searchBar=Arama çubuğu
 ui.main.search=Ara
 ui.main.searchPlaceholder=Aramak için metni buraya girin...
