@@ -316,6 +316,7 @@ foreach ($sortedLogFiles as $logFile) {
       if (shouldBeStored($logHash["path"], $filter, $filterOut) && 
 	  $logHash["status"] != '404' &&
 	  $logHash["status"] != '301' &&
+	  $logHash["method"] != 'HEAD' &&
 	  ($countSimilarRequests || !isAlreadyStored($logHash)) && 
 	  $logHash["unixtime"] > $lastPiwikInsertionTime) {
 	saveInPiwik($logHash);
