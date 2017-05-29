@@ -2,10 +2,16 @@
 # Exported from translatewiki.net
 # Author: DzWiki
 # Author: Edinwiki
+# Author: Srdjan m
 
+ui.main.osxservices=Usluge
+ui.main.osxhideapp=Sakrij &brand.brandShortName;
+ui.main.osxhideothers=Sakrij ostale
+ui.main.osxshowall=Prikaži sve
 ui.main.file=Datoteka
 ui.main.openFile=Otvori datoteku…
 ui.main.browseLibrary=Pregledaj biblioteku
+ui.main.hideLibrary=Sakrij biblioteku
 ui.main.lastOpen=Nedavno otvoreno…
 ui.main.saveFile=Sačuvaj stranicu kao…
 ui.main.print=Štampaj
@@ -18,15 +24,16 @@ ui.main.copy=Kopiraj
 ui.main.mute=Isključi zvuk
 ui.main.audible=Zvučno
 ui.main.transliteration=Preslovljavanje
-# Fuzzy
 ui.main.preferences=Postavke
+ui.main.server=Server
 ui.main.display=Prikaz
 ui.main.zoom=Uvećaj
 ui.main.zoomin=Povećaj
 ui.main.zoomout=Umanji
 ui.main.zoomorig=Izvorna veličina
+ui.main.invertedColors=Obrnute boje
 ui.main.language=Jezik
-ui.main.skin=Izgled
+ui.main.skin=Tema
 ui.main.statusbar=Statusna traka
 ui.main.resultsbar=Traka sa rezultatima
 ui.main.tabs=Jezičci
@@ -45,13 +52,16 @@ ui.main.search=Traži
 ui.main.results.title=Rezultati pretrage
 ui.main.close=Zatvori
 ui.main.library.myLibrary=Moja biblioteka
+ui.main.library.sortBy=Sortiraj po
 ui.main.library.sortBy.title=Naslov
 ui.main.library.sortBy.size=Veličina
 ui.main.library.sortBy.date=Datum
 ui.main.library.sortBy.author=Autor
 ui.main.library.sortBy.publisher=Izdavač
+ui.main.library.filterBy=Filtriraj po
 ui.main.library.filterBy.language=Jezik
 ui.main.library.filterBy.author=Autor
+ui.preferences.preferences=Postavke
 ui.preferences.save=Sačuvaj
 ui.preferences.cancel=Odustani
 ui.messages.confirm=Potvrdi

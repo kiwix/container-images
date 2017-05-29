@@ -7,6 +7,7 @@
 # Author: Kelson
 # Author: Malekbr
 # Author: Meno25
+# Author: Mido
 # Author: Moud hosny
 # Author: Musab Moahmmed
 # Author: Mutarjem horr
@@ -173,7 +174,7 @@ ui.messages.nameBookmarkSet=أدخل اسم لمجموعة علامات القر
 ui.messages.bookmarkReferingOtherContent=هذه العلامة تفضي إلى ملف آخر. هل تريد تحميله؟
 ui.messages.newContentAvailable=هناك محتويات جديدة متوفرة للتنزيل.
 ui.messages.newContentAvailableInvitation=هناك محتويات جديدة متوفرة للتنزيل. هل ترغب في رؤيتها؟
-ui.messages.preparingContentDownload=تحضير التنزيل جاري...
+ui.messages.preparingContentDownload=جارٍ تحضير التنزيل...
 ui.messages.contentDownloadFinished=انتهى تنزيل '%1'.
 ui.messages.feedback=تعليق
 ui.messages.library=المكتبة
