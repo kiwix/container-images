@@ -32,11 +32,14 @@ $MB makehashes $REPO -t /usr/share/mirrorbrain > /dev/null 2>&1
 echo "Checking if mirrors are online..."
 mirrorprobe > /dev/null 2>&1
 
+# Scan the ftp.acc.umu.se mirror
+scanMirror ftp.acc.umu.se ZIMDIRS
+
 # Scan the dotsrc.org mirror
 scanMirror dotsrc.org ZIMDIRS
 
 # scan the Kiwix mirrors
-scanMirror mirror3 ALLDIRS
+scanMirror mirror ALLDIRS
 
 # Scan Tunisian mirror
 scanMirror mirror.tn ALLDIRS
