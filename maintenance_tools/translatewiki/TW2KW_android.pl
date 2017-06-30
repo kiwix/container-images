@@ -56,7 +56,7 @@ if (!$path) {
     print STDERR "usage: ./TW2KW_android.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
     exit;
 } elsif (! -d $path || ! -d $path."/app/src/main/res") {
-    print STDERR "'$path' is not a kiwix-android directory, does not exist or is not the Kiwix source directory 'moulinkiwix'.\n";
+    print STDERR "'$path' does not exist or is not a kiwix-android directory.\n";
     exit;
 }
 
@@ -110,8 +110,9 @@ foreach my $language (@languages) {
 	    my $middle2 = $4;
 	    my $value = $5;
 	    my $last = $6.$7;
-
+	    my $original_entry = "$1$2$3$4$5$6$7";
 	    my $master_value = $value;
+
 	    if (exists($androidHash->{$name})) {
 		$value = $androidHash->{$name};
 		$value =~ s/'/\\'/gm;
@@ -121,10 +122,14 @@ foreach my $language (@languages) {
 		$value =~ s/'/\\'/gm;
 	    }
 
+	    # XML escape the vlaue
+	    $value =~ s/</&lt;/sg;
+	    $value =~ s/>/&gt;/sg;
+
 	    if ($value ne $master_value) {
-		$languageAndroidSource =~ s/\Q$1$2$3$4$5$6$7\E/$tag$middle1$name$middle2$value$last/;
+		$languageAndroidSource =~ s/\Q$original_entry\E/$tag$middle1$name$middle2$value$last/;
 	    } else {
-		$languageAndroidSource =~ s/[ ]*\Q<$1$2$3$4$5$6$7>\E//;
+		$languageAndroidSource =~ s/[ ]*\Q<$original_entry>\E//;
 	    }
 	}
 
