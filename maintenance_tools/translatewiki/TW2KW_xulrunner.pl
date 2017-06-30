@@ -30,7 +30,7 @@ GetOptions('path=s' => \$path,
 	   );
 
 if (!$path) {
-    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
+    print STDERR "usage: ./TW2KW_xulrunner.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
     exit;
 } elsif (! -d $path || ! -d $path."/kiwix/") {
     print STDERR "'$path' is not a directory, does not exist or is not the Kiwix source directory 'moulinkiwix'.\n";
