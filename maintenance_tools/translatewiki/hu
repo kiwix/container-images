@@ -1,6 +1,7 @@
 # Messages for Hungarian (magyar)
 # Exported from translatewiki.net
 # Author: Adam78
+# Author: Bencemac
 # Author: Bencoke
 # Author: Csega
 # Author: Dj
@@ -12,7 +13,6 @@
 android.ui.articlesearch_hint=Írd be a keresett cikk címét
 android.ui.bookmark_added=Könyvjelző hozzáadva
 android.ui.bookmarks_restored=Könyvjelzők visszaállítva
-# Fuzzy
 android.ui.button_backtotop=Vissza a lap tetejére
 # Fuzzy
 android.ui.choose_file=ZIM-tartalomfájl kiválasztása (*.zim)
@@ -29,8 +29,7 @@ android.ui.menu_read_aloud=Hangosan felolvas
 android.ui.menu_read_aloud_stop=Felolvasás megállítása
 # Fuzzy
 android.ui.menu_rescan_fs=SD-kártya újraolvasása
-# Fuzzy
-android.ui.no_bookmarks=Nincs könyvjelző!
+android.ui.no_bookmarks=Nincsenek könyvjelzők!
 android.ui.no_reader_application_installed=Nem található telepített alkalmazás ehhez a fájltípushoz
 # Fuzzy
 android.ui.no_section_info=Nem található tartalomfejléc

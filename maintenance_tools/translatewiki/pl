@@ -23,6 +23,8 @@ android.ui.button_backtotop=Powrót do góry
 android.ui.choose_file=Wybierz plik zawartości ZIM (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Twoja aplikacja jest uszkodzona.\nMoże to być spowodowane usuwaniem plików z karty SD.\nNależy odinstalować i zainstalować ponownie tę aplikacje ze Sklepu Play.
+android.ui.delete_recent_search_item=Usunąć ten obiekt?
+android.ui.delete_specific_zim=Usunąć ten plik?
 android.ui.did_you_know=Czy wiesz, że?
 android.ui.error_articlenotfound=Błąd: Ładowanie artykułu \ " %1$s \" się nie powiodło.
 android.ui.error_articleurlnotfound=Błąd: Ładowanie artykułu (Url:  %1$s ) się nie powiodło.
@@ -31,18 +33,23 @@ android.ui.error_filenotfound=Błąd: Wybrany plik ZIM nie został znaleziony.
 # Fuzzy
 android.ui.error_nozimfilesfound=Nie znaleziono żadnego pliku ZIM na twoim urządzeniu. Zobaczc na stronę pomócy, aby uzyskać wskazówki jak pobierać zawartość na Kiwix. Jeśli plik ZIM jest umieszczony na urządzeniu/zewnętrznej pamięci masowej, spróbuj za chwilę lub włącz ponownie urządzenie.
 android.ui.go_to_play_store=Przejdź do Sklepu Play
+android.ui.help_20=Dziękujemy za wybranie Kiwix!
+android.ui.menu_fullscreen=Pełny ekran
+android.ui.menu_help=Pomoc
 android.ui.menu_read_aloud=Czytaj na głos
 android.ui.menu_read_aloud_stop=Zatrzymaj czytanie na głos
 # Fuzzy
 android.ui.menu_rescan_fs=Powtórz wyszukiwanie na karcie SD
 # Fuzzy
 android.ui.no_bookmarks=Brak zakładek!
+android.ui.no_files_here=Tu nie ma plików
 android.ui.no_reader_application_installed=Nie udało się znaleźć zainstalowanego programu dla tego typu plików
 # Fuzzy
 android.ui.no_section_info=Nie znaleziono nagłówków treści
 android.ui.open_in_new_tab=Otwórz odnośnik na nowej karcie
 android.ui.pref_backtotop=Powrót do góry
 android.ui.pref_backtotop_summary=Wyświetl przycisk na końcu strony, aby przewinąć do góry
+android.ui.pref_credits_title=Twórcy
 android.ui.pref_info_title=Informacje
 android.ui.pref_info_version=Wersja
 android.ui.pref_language_chooser=Wybierz język
@@ -73,7 +80,11 @@ android.ui.rescan_fs_warning=Skanowanie plików ZIM, proszę czekać...
 android.ui.save_media_error=Wystąpił błąd przy zapisywanie plików multimedialnych!
 # Fuzzy
 android.ui.save_media_saved=Zapisano plik multimedialny jako %1$s w folderze Zdjęcia.
+android.ui.search_widget_text=Szukaj w Kiwix
+android.ui.space_available=Dostępne miejsce:
 android.ui.tts_lang_not_supported=Język tej strony nie jest obsługiwany lub nie zostały zainstalowane odpowiednie dane języka. Ten artykuł może nie być poprawnie odczytywany.
+android.ui.tts_resume=Podsumuj
+android.ui.zim_already_downloading=Zim już rozpoczął pobieranie
 ui.main.about.accesskey=O
 ui.main.about=O &brand.brandShortName;
 ui.main.audible=Dźwiękowy

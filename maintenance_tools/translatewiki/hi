@@ -5,6 +5,7 @@
 # Author: Bl707
 # Author: Manu9324
 # Author: Nikhilsheth
+# Author: Sfic
 # Author: Siddhartha Ghai
 # Author: Vdhatterwal
 # Author: संजीव कुमार
@@ -14,22 +15,37 @@ android.ui.articlesearch_hint=लेख तलाश करने के लि�
 android.ui.button_backtotop=वापस शीर्ष पे जाएँ
 # Fuzzy
 android.ui.choose_file=एक ZIM कान्टेन्ट फ़ाइल (*.zim) का चयन करें
+android.ui.delete_specific_zim=इस फ़ाइल को हटाएँ?
+android.ui.did_you_know=क्या आप जानते हैं?
+android.ui.download_close=बंद करें
 android.ui.error_articlenotfound=त्रुटि: आलेख \ " %1$s \" लोड करना विफल रहा।
 android.ui.error_articleurlnotfound=त्रुटि: आलेख (Url:  %1$s ) लोड करना विफल रहा।
 android.ui.error_fileinvalid=त्रुटि: चुनी गयी फ़ाइल एक वैध ZIM फ़ाइल नहीं है।
 android.ui.error_filenotfound=त्रुटि: चुनी गयी ZIM फ़ाइल नही मिल सकी।
 # Fuzzy
 android.ui.error_nozimfilesfound=आपकी डिवाइस पर कोई ZIM फ़ाइल नही मिली।\nKiwix मे कान्टेन्ट लोड करने के बारे मे जानने के लिए हेल्प पृष्ठ देखें।\nयदि आपने अपने डिवाइस/इक्स्टर्नल स्टोरिज पर ZIM फ़ाइल डाली है, तो फिर से इक मिनिट मे प्रयास करें, या फिर डिवाइस पुनरारंभ करें।
+android.ui.local_zims=डिवाइस
+android.ui.menu_back=पीछे
+android.ui.menu_fullscreen=पूरा स्क्रीन
+android.ui.menu_help=सहायता
+android.ui.menu_home=घर
 android.ui.menu_read_aloud=पढ़ा कर सुनें
 android.ui.menu_read_aloud_stop=पढ़ा कर सुनना समाप्त करें
 # Fuzzy
 android.ui.menu_rescan_fs=एसडी कार्ड पुन: स्कैन करें
+android.ui.next=अगला
+android.ui.no=नहीं
+android.ui.no_files_here=कोई फ़ाइल नहीं है
 android.ui.open_in_new_tab=नए टैब में लिंक खोलें?
 android.ui.pref_backtotop=वापस शीर्ष पे जाएँ
 android.ui.pref_backtotop_summary=उपर तक स्क्रॉल करने के लिए पृष्ठ के अंत में एक बटन दिखाएँ
+android.ui.pref_clear_all_history_title=इतिहास साफ़ करें
+android.ui.pref_credits_title=श्रेय
+android.ui.pref_current_folder=वर्तमान फोल्डर
 android.ui.pref_info_title=जानकारी
 android.ui.pref_info_version=संस्करण
 android.ui.pref_language_chooser=भाषा चुनें
+android.ui.pref_language_title=भाषा
 android.ui.pref_nightmode=रात्रि मोड
 # Fuzzy
 android.ui.pref_nightmode_summary=उल्टे रंगों के साथ लेख दिखाएँ
@@ -40,12 +56,16 @@ android.ui.pref_zoom_entry_automatic=स्वतः
 android.ui.pref_zoom_entry_large=बड़ा
 android.ui.pref_zoom_entry_medium=मध्यम
 android.ui.pref_zoom_entry_small=लघु
+android.ui.remote_zims=ऑनलाइन
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM फ़ाइलों के लिए स्कैन किया जा रहा है, कृपया प्रतीक्षा करें...
 # Fuzzy
 android.ui.save_media_error=मीडिया को सहेजते समय एक त्रुटि आयी।
 # Fuzzy
 android.ui.save_media_saved=मीडिया को %1$s के रूप में अपने चित्र निदेशिका में सहेजें
+android.ui.search_label=खोजें
+android.ui.time_day=दिन
+android.ui.yes=हाँ
 ui.main.about=के बारे में &brand.brandShortName;
 ui.main.audible=सुनाई देने लायक
 ui.main.back=पीछे जाएँ

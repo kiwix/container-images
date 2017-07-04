@@ -50,9 +50,13 @@ android.ui.error_nozimfilesfound=在您的設備中找不到內容。\n請閱讀
 android.ui.go_to_play_store=前往 Play Store
 android.ui.got_it=了解
 android.ui.help_12=如何使用較大的 ZIM 檔案？
+android.ui.help_16=\u2022 在微軟視窗系統：HJ-Split
+android.ui.help_17=\u2022 在蘋果 Mac OSX 系統：Split&Concat
+android.ui.help_18=\u2022 在帶有終端機的 GNU/Linux 系統：split --bytes=4000M my_big_file.zim
 android.ui.help_20=感謝您選擇使用 Kiwix！
 android.ui.help_2=Kiwix 是在做什麼？
 android.ui.help_5=內容在哪裡？
+android.ui.help_6=我們的內容託管在 kiwix 網站上。
 android.ui.local_zims=裝置
 android.ui.menu_back=返回
 android.ui.menu_bookmarks=書籤
