@@ -92,6 +92,7 @@ android.ui.pref_newtab_background_title=Отвори ново јазиче во 
 android.ui.pref_nightmode=Ноќен режим
 android.ui.pref_nightmode_summary=Прикажувај ги статиите во обратни бои
 android.ui.pref_storage=Склад
+android.ui.pref_wifi_only=Презеај содржини само преку WiFi
 android.ui.pref_zoom_dialog=Приближеност
 android.ui.pref_zoom_enable=Контроли за размер
 android.ui.pref_zoom_entry_automatic=Автоматски
