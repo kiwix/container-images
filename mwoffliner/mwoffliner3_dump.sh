@@ -8,6 +8,9 @@ MWOFFLINER="mwoffliner --format= --format=novid --format=nopic $ARGS"
 MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
+# RationalWiki
+$MWOFFLINER --mwUrl=http://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
+
 # Vikidia
 $MWOFFLINER --mwUrl=https://fr.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
 $MWOFFLINER --mwUrl=https://es.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
@@ -40,7 +43,7 @@ wget "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WP1_0_Icon.svg/2
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia 0.8" --customZimDescription="Wikipedia 45.000 best articles with pictures" --customMainPage="Wikipedia:Version_0.8" --customZimFavicon="$SCRIPT_DIR/wp1.png" --articleList="$SCRIPT_DIR/selections/wp1-0.8.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikem
-$MWOFFLINER --mwUrl=http://www.wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other
+$MWOFFLINER --mwUrl=http://www.wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/
 
 # WikiMed
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" --path=w --exploration=5 --namespace=1 | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine" &&
