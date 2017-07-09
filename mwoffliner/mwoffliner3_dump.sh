@@ -158,4 +158,7 @@ $MWOFFLINER --customZimTitle="Wikivoyage - Europe" --articleList=europe --mwUrl=
 $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikinews
-$MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/
+$MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/ &&
+
+# Ekopedia
+$MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid --outputDirectory=$ZIM2INDEX/other/
