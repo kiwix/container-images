@@ -161,4 +161,7 @@ $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktio
 $MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/ &&
 
 # Ekopedia
-$MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid --outputDirectory=$ZIM2INDEX/other/
+$MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
+
+# Kochwiki
+$MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid
