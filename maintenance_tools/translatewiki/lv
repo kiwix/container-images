@@ -8,6 +8,10 @@
 
 # Fuzzy
 android.ui.button_backtotop=Atpakaļ uz augšu
+android.ui.delete_specific_zim=Dzēst šo failu?
+android.ui.did_you_know=Vai tu zināji?
+android.ui.menu_help=Palīdzība
+android.ui.open=Atvērt
 android.ui.pref_info_title=Informācija
 android.ui.pref_info_version=Versija
 android.ui.pref_language_chooser=Izvēlies valodu
@@ -16,6 +20,9 @@ android.ui.pref_zoom_entry_automatic=Automātiskā
 android.ui.pref_zoom_entry_large=Liels
 android.ui.pref_zoom_entry_medium=Vidējs
 android.ui.pref_zoom_entry_small=Mazs
+android.ui.tts_resume=turpināt
+android.ui.undo=Atsaukt
+android.ui.zim_downloads=Lejupielādē
 ui.main.about=Par &brand.brandShortName;
 ui.main.audible=Dzirdams
 ui.main.back=Atpakaļ
