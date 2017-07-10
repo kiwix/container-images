@@ -1,11 +1,9 @@
 #!/bin/sh
 
 ZIM2INDEX=/srv/upload/zim2index/
-SCRIPT=`readlink -f $0/../`
-SCRIPT_DIR=`dirname "$SCRIPT"`
 ARGS="--adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
-MWOFFLINER="$SCRIPT_DIR/mwoffliner.js --format= --format=nopic $ARGS"
-MWMATRIXOFFLINER="$SCRIPT_DIR/mwmatrixoffliner.js --mwUrl=https://meta.wikimedia.org/ $ARGS"
+MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
+MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # Wikipedia in Arabic
 $MWOFFLINER --mwUrl="https://ar.wikipedia.org/" --parsoidUrl="https://ar.wikipedia.org/api/rest_v1/page/html/" --customMainPage="مستخدم:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
