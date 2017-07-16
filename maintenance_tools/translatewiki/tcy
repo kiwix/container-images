@@ -6,6 +6,7 @@
 
 android.ui.articlesearch_hint=ತೂಪಿನ ಲೇಕನೊಲೆನ್ ಟೈಪ್ ಮಲ್ಪಿ
 android.ui.button_backtotop=ಪಿರ ಮಿತ್ತ್ ತೂಲೆ
+android.ui.clear_all_history_dialog_title=ಇತಿಹಾಸೊನ್ ಮಾಜಾಲೆ
 android.ui.delete=ಮಾಜಾಲೆ
 android.ui.deleted_message=ಮಾಜಾಯಿನ
 android.ui.did_you_know=ಈರೆಗ್ ಗೊತ್ತುಂಡೇ?
@@ -31,8 +32,7 @@ android.ui.menu_search=ಲೇಕನೊ ನಾಡ್ಲೆ
 android.ui.menu_settings=ಸಂಯೋಜನೆಲು
 android.ui.next=ನನತಾ
 android.ui.no=ಇಜ್ಜಿ
-# Fuzzy
-android.ui.no_bookmarks=ಬುಕ್ಕ ತುಪಿನವು ಇಜ್ಜಿ!
+android.ui.no_bookmarks=ಗುರ್ತು ಪಾಡಿನ ಪುಟಕುಲು ಇಜ್ಜಿ
 android.ui.open=ತೋಜಾಲೇ
 android.ui.open_in_new_tab=ಪೊಸ ಪಟ್ಟಿಡ್ ಕೊಂಡಿ ಬಿಚ್ಚಾಲೆ
 android.ui.pref_backtotop=ಪಿರವುಡ್ದು ಕೊಡಿ ಮುಟ್ಟ
@@ -53,6 +53,7 @@ android.ui.pref_zoom_entry_medium=ಮಾಧ್ಯಮೊ
 android.ui.pref_zoom_entry_small=ಎಲ್ಯ
 android.ui.pref_zoom_sub_title=ಮಲ್ಲೆ ಮಲ್ಪುಲೆ
 android.ui.previous=ದುಂಬುತಾ
+android.ui.proceed=ಮುಂದುವರಿಪುಲೆ
 android.ui.search_label=ನಾಡ್‍ಲೆ
 android.ui.time_day=ದಿನೊ
 android.ui.time_hour=h
@@ -62,7 +63,9 @@ android.ui.tts_pause=ಉಂತಲೇ
 android.ui.tts_stop=ಉಂತಾಲೆ
 android.ui.undo=ದುಂಬುದಲೆಕೊ
 android.ui.yes=ಅಂದ್
+android.ui.zim_downloads=ದಿಂಜೊಂದುಂಡು
 android.ui.zim_file_downloaded=ಡೌನ್‍ಲೋಡ್ ಅಂಡ್
+android.ui.zim_file_downloading=ದಿಂಜೊಂದುಂಡು
 ui.main.about=ಬಗೆಟ್ ಬುಕ್ಕೊ ಮುದ್ರೆಡ್.ಮುದ್ರೆದ ಎಲ್ಯ ಪುದರ್
 ui.main.audible=ಕೇನಲೆ
 ui.main.back=ಪಿರ

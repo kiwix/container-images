@@ -46,7 +46,10 @@ foreach my $language (@languages) {
     # Put everything which is not android in
     my $old = readFile($language);
     for (split(/^/, $old)) {
-	$txt .= $_ if ($_ !~ /^android\.ui/sg)
+	if ($_ !~ /^android\.ui/sg) {
+	    my $line = $_;
+	    $txt .= $line =~ /\n$/ ? $line : $line . "\n";
+	}
     }
     
     $source = readFile($mainPath);

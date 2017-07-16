@@ -10,48 +10,61 @@
 # Author: Jkjk
 # Author: Juandev
 # Author: Kelson
+# Author: Meliganai
 # Author: Mormegil
 # Author: Reaperman
 # Author: Tchoř
 # Author: Utar
 # Author: Walter Klosse
 
+android.ui.add_bookmark=Přidat záložku
 android.ui.articlesearch_hint=Pro vyhledání článků pište
 android.ui.bookmark_added=Záložka přidána
 android.ui.bookmarks_restored=Záložky obnoveny
-# Fuzzy
 android.ui.button_backtotop=Zpět na začátek
-# Fuzzy
-android.ui.choose_file=Vyberte obsahový soubor ZIM (*.zim)
-# Fuzzy
+android.ui.choose_file=Vyberte obsahový soubor (*.zim)
+android.ui.clear_recent_and_tabs_history_dialog=Jste si jistí, že chcete smazat svou historii vyhledávání a resetovat všechny aktivní záložky?
 android.ui.customapp_missing_content=Vaše aplikace je poškozena. To se může stát, jestliže jste {{GENDER:|odstranil|odstranila|odstranil(a)}} soubory z SD karty. Musíte aplikaci odinstalovat a pak ji znovu nainstalovat z Play Store.
+android.ui.delete_recent_search_item=Smazat tuto položku?
+android.ui.delete_specific_zim=Smazat tento soubor?
+android.ui.did_you_know=Věděli jste, že...?
+android.ui.download_no_space=Nedostatečný prostor ke stažení tohoto souboru.
 android.ui.error_articlenotfound=Chyba: Načtení článku \"%1$s\" se nezdařilo.
 android.ui.error_articleurlnotfound=Chyba: Načtení článku (Url: %1$s ) se nezdařilo.
 android.ui.error_fileinvalid=Chyba: Vybraný soubor není platným souborem ZIM.
 android.ui.error_filenotfound=Chyba: Nelze najít vybraný soubor ZIM.
-# Fuzzy
-android.ui.error_nozimfilesfound=Na zařízení nebyly nalezeny soubory ZIM.\nPro pokyny, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu opakovat nebo restartovat zařízení.
+android.ui.error_nozimfilesfound=Na zařízení nebyl nalezen žádný obsah.\nPro pokyny, jak nahrávat do Kiwixu obsah, se podívejte na stránku nápovědy.\nPokud jste na své zařízení nebo externí paměť opravdu nahráli soubor ZIM, můžete zkusit načtení za minutu opakovat nebo restartovat zařízení.
 android.ui.go_to_play_store=Přejděte do Play Store
+android.ui.help_12=Jak použít velké ZIM soubory?
+android.ui.help_16=\u2022 v Microsoft Windows: HJ-Split
+android.ui.help_20=Děkujeme, že jste si vybrali Kiwix!
+android.ui.help_21=Děkujeme, že jste s námi, a oceníme, když nám napíšete jakoukoli zpětnou vazbu nebo návrhy na android@kiwix.org.
+android.ui.menu_fullscreen=Celá obrazovka
+android.ui.menu_help=Nápověda
 android.ui.menu_read_aloud=Číst nahlas
 android.ui.menu_read_aloud_stop=Zastavit čtení nahlas
 # Fuzzy
 android.ui.menu_rescan_fs=Znovu načíst SD kartu
-# Fuzzy
-android.ui.no_bookmarks=Žádné záložky!
+android.ui.menu_zim_manager=Získat obsah
+android.ui.no_bookmarks=Žádné záložky
+android.ui.no_files_here=Zde nejsou žádné soubory
 android.ui.no_reader_application_installed=Pro tento typ souboru nebylo možné najít nainstalovanou aplikaci
-# Fuzzy
 android.ui.no_section_info=Nebyly nalezeny žádné hlavičky obsahu.
+android.ui.open=Otevřít
 android.ui.open_in_new_tab=Otevřít odkaz v nové záložce?
 android.ui.pref_backtotop=Zpět na začátek
 android.ui.pref_backtotop_summary=Zobrazit tlačítko "Zpět na začátek" na konci stránky
+android.ui.pref_credits=Přispěvatelé a licence
+android.ui.pref_credits_title=O souboru
+android.ui.pref_full_text_search_summary=Povolit aplikaci vyhledávat v textu uvnitř článků. Pozor, může to vyhledávání značně zpomalit.
 android.ui.pref_info_title=Informace
 android.ui.pref_info_version=Verze
 android.ui.pref_language_chooser=Vyberte jazyk
 android.ui.pref_newtab_background_summary=Otevře novou záložku na pozadí
 android.ui.pref_newtab_background_title=Otevřít novou kartu na pozadí
 android.ui.pref_nightmode=Noční režim
-# Fuzzy
 android.ui.pref_nightmode_summary=Zobrazuje stránky v obrácených barvách.
+android.ui.pref_wifi_only=Stahovat obsah pouze přes WiFi
 # Fuzzy
 android.ui.pref_zoom_dialog=Úroveň zvětšení
 android.ui.pref_zoom_enable=Ovládání přiblížení
@@ -65,15 +78,21 @@ android.ui.rate_dialog_negative=Ne, děkuji
 android.ui.rate_dialog_neutral=Později
 android.ui.rate_dialog_positive=Ohodnotit!
 android.ui.rate_dialog_title=Prosím ohodnoťte nás
-# Fuzzy
-android.ui.request_storage=Pro přístup k ZIM souborům potřebujeme přístup k vašemu úložišti.
-# Fuzzy
-android.ui.rescan_fs_warning=Probíhá hledání ZIM souborů, prosím čekejte...
-# Fuzzy
+android.ui.request_storage=Pro přístup k obsahu offline potřebujeme přístup k vašemu úložišti.
+android.ui.rescan_fs_warning=Probíhá hledání obsahu ke stažení, prosím čekejte…
 android.ui.save_media_error=Došlo k chybě při pokusu o uložení média!
-# Fuzzy
-android.ui.save_media_saved=Multimediální soubory uložené jako %1$s ve vaší složce s obrázky
+android.ui.save_media_saved=Multimediální soubory uložené jako %s ve složce Android/media/org.kiwix.../
+android.ui.search_label=Vyhledávání
+android.ui.time_left=Vlevo
 android.ui.tts_lang_not_supported=Jazyk této stránky není podporován nebo odpovídající jazyková data nejsou nainstalována. Článek nemusí být správně přečten.
+android.ui.tts_not_enabled=Výstup textu na řeč není u tohoto ZIM souboru umožněn
+android.ui.tts_pause=Pozastavit
+android.ui.tts_resume=Obnovit
+android.ui.undo=Zpět
+android.ui.wifi_only_title=Povolit stahování obsahu přes mobilní připojení?
+android.ui.zim_already_downloading=Zim už se stahuje
+android.ui.zim_downloads=Stahování
+android.ui.zim_file_downloaded=Staženo
 ui.main.about=O &brand.brandShortName;
 ui.main.audible=Zesílit
 ui.main.back=Zpět
