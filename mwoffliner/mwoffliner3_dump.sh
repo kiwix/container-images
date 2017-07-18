@@ -171,4 +171,4 @@ echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
 echo "Warrington" >> test.articles &&
 wget https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Test_art.png/320px-Test_art.png &&
-mwoffliner --adminEmail=kelson@kiwix.org --mwUrl=https://fr.wikipedia.org/ --mobileLayout --format= --articleList=test.articles --verbose --customZimTitle=Test --customZimDescription="ZIM file for testing purpose" --customZimFavicon=320px-Test_art.png --outputDirectory=$ZIM2INDEX/../zim/wikipedia/
+mwoffliner --withZimFullTextIndex --adminEmail=kelson@kiwix.org --mwUrl=https://fr.wikipedia.org/ --mobileLayout --format= --articleList=test.articles --verbose --customZimTitle=Test --customZimDescription="ZIM file for testing purpose" --customZimFavicon=320px-Test_art.png --outputDirectory=$ZIM2INDEX/../zim/wikipedia/
