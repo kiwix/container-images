@@ -1,5 +1,6 @@
 # Messages for Dutch (Nederlands)
 # Exported from translatewiki.net
+# Author: Festina90
 # Author: Jeleniccz
 # Author: Kelson
 # Author: McDutchie
@@ -25,6 +26,8 @@ android.ui.error_filenotfound=Fout: het geselecteerde ZIM-bestand kon niet gevon
 # Fuzzy
 android.ui.error_nozimfilesfound=Er zijn geen ZIM-bestanden op uw apparaat gevonden.\nKijk op de Hulppagina voor hulp bij het laden van inhoud in Kiwix.\nAls u een ZIM-bestand op uw apparaat of externe opslag hebt gezet, probeer het dan even een aantal seconden opnieuw of herstart uw apparaat.
 android.ui.go_to_play_store=Naar de Play Store gaan
+android.ui.help_6=Onze inhoud is ondergebracht op de Kiwix website
+android.ui.language_count=(%1$d)
 android.ui.menu_read_aloud=Voorlezen
 android.ui.menu_read_aloud_stop=Stoppen met voorlezen
 # Fuzzy
@@ -35,6 +38,8 @@ android.ui.no_reader_application_installed=Kon geen geïnstalleerde applicatie v
 # Fuzzy
 android.ui.no_section_info=Geen inhoudsheaders gevonden
 android.ui.open_in_new_tab=Koppeling openen in nieuw tabblad?
+android.ui.pref_autonightmode=Geautomatiseerde nachtmodus
+android.ui.pref_autonightmode_summary=Automatisch veranderen tussen de dag- en nachtmodus
 android.ui.pref_backtotop=Terug naar boven
 android.ui.pref_backtotop_summary=Aan het einde van de pagina een knop weergeven om terug te gaan naar boven
 android.ui.pref_info_title=Informatie
@@ -67,6 +72,7 @@ android.ui.save_media_error=Er is een fout opgetreden bij het opslaan van de med
 # Fuzzy
 android.ui.save_media_saved=Het bestand is opgeslagen als %1$s in uw afbeeldingenmap
 android.ui.tts_lang_not_supported=De taak van deze pagina wordt niet ondersteund, of de juiste taalgegevens zijn niet geïnstalleerd. De pagina kan niet correct gelezen worden.
+android.ui.zim_novid=Geen video's
 ui.main.about.accesskey=A
 ui.main.about=Over &brand.brandShortName;
 ui.main.audible=Geluid aanzetten

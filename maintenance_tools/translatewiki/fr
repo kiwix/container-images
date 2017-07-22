@@ -8,6 +8,7 @@
 # Author: Kelson
 # Author: Metroitendo
 # Author: Od1n
+# Author: The RedBurn
 # Author: Trial
 # Author: Urhixidur
 # Author: Verdy p
@@ -22,7 +23,7 @@ android.ui.bookmark_added=Signet ajouté
 android.ui.bookmark_removed=Favori supprimé
 android.ui.bookmarks_restored=Signets restaurés
 android.ui.button_backtotop=Retour en haut de la page
-android.ui.choose_file=Sélectionner un fichier de contenu ZIM (*.zim)
+android.ui.choose_file=Sélectionner un fichier de contenu (*.zim)
 android.ui.clear_all_history_dialog_title=Effacer tout l’historique
 android.ui.clear_recent_and_tabs_history_dialog=Êtes-vous sûr de vouloir supprimer votre historique de recherche et de réinitialiser tous les onglets actifs ?
 android.ui.clear_recent_history_dialog=Êtes-vous sûr de vouloir supprimer votre historique de recherche ?
@@ -52,7 +53,7 @@ android.ui.error_articlenotfound=Erreur : Échec au chargement de l’article «
 android.ui.error_articleurlnotfound=Erreur : Le chargement de l’article (Url: %1$s) a échoué.
 android.ui.error_fileinvalid=Erreur : Le fichier sélectionné n’est pas un fichier ZIM valide.
 android.ui.error_filenotfound=Erreur : Le fichier ZIM sélectionné est introuvable.
-android.ui.error_nozimfilesfound=Aucun fichier ZIM n’a été trouvé sur votre machine.\nJetez un coup d’œil à la page d’aide pour avoir des instructions sur la manière de charger du contenu dans Kiwix.\nSi vous avez mis un fichier ZIM sur votre stockage interne ou externe, vous pouvez réessayer dans une minute ou redémarrer votre appareil.
+android.ui.error_nozimfilesfound=Aucun contenu n’a été trouvé sur votre machine.\nJetez un coup d’œil à la page d’aide pour avoir des instructions sur la manière de charger du contenu dans Kiwix.\nSi vous avez mis un fichier ZIM sur votre stockage interne ou externe, vous pouvez réessayer dans une minute ou redémarrer votre appareil.
 android.ui.external_storage=Externe
 android.ui.get_library_over_network=Utiliser le réseau pour télécharger la liste de contenu (environ 6Mo).
 android.ui.go_to_play_store=Aller sur le Play Store
@@ -98,7 +99,7 @@ android.ui.menu_rescan_fs=Analyser de nouveau la carte SD
 android.ui.menu_search=Rechercher un article
 android.ui.menu_searchintext=Trouver dans la page
 android.ui.menu_settings=Options
-android.ui.menu_zim_manager=Obtenir le contenu
+android.ui.menu_zim_manager=Obtenir du contenu
 android.ui.new_tab_snackbar=Article ouvert dans un nouvel onglet
 android.ui.next=Suivant
 android.ui.no=Non
@@ -158,7 +159,7 @@ android.ui.remote_zims=En ligne
 android.ui.remove_bookmark=Supprimer le favori
 android.ui.request_storage=Pour accéder aux fichiers ZIM, nous avons besoin d'un accès à votre espace de stockage
 android.ui.request_storage_custom=Si vous voyez un avertissement recouvrant l’écran, redémarrez simplement votre appareil pour corriger.
-android.ui.rescan_fs_warning=Analyse des fichiers ZIM en cours, veuillez patienter…
+android.ui.rescan_fs_warning=Analyse du contenu téléchargeable, veuillez patienter…
 android.ui.save_media=Enregistrer le média
 android.ui.save_media_error=Une erreur s'est produite en essayant d’enregistrer le média !
 android.ui.save_media_saved=Média enregistré sous %1$s dans votre dossier Images
