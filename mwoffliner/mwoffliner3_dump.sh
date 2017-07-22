@@ -154,6 +154,9 @@ $MWOFFLINER --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivo
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikivoyage.org --path=w --exploration=8 --namespace=0 --category="Europe" | sort -u > europe &&
 $MWOFFLINER --customZimTitle="Wikivoyage - Europe" --articleList=europe --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Wikivoyage:Offline_reader_Expedition/Europe_Home_page" --outputDirectory=$ZIM2INDEX/wikivoyage/ &&
 
+# Wikivoyage DE
+$MWOFFLINER_MOBILE --mwUrl="https://de.wikivoyage.org/" --parsoidUrl="https://de.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Benutzer:Stephane_(Kiwix)/Hauptseite" --outputDirectory=$ZIM2INDEX/wikivoyage/ &&
+
 # Wiktionary
 $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
