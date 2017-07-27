@@ -48,6 +48,7 @@ android.ui.help_14=Automatikoki artxibo handiagoak deskargatzen ditu aplikazioan
 android.ui.help_15=Beste gailuren batean jaisten bazabiltza, ZIM artxiboa banatu beharko duzu hurrengo softwarea erabiltzen:
 android.ui.help_16=\u2022 On Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 Apple Macen OSX: Banatu eta Kontaktua
+android.ui.help_18=\u2022 On GNU/Linux and with the console: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Oharra: zure artxiboen izena my_big_file.zimaa, my_big_file.zimab... izan behar dute.
 android.ui.help_1=Kiwix-ek webgunean konexiorik gabe sartzeko baimena ematen dizut, esate baterako, Wikipedia modu oso laburtuan.
 android.ui.help_20=Eskerrik asko Kiwik aukeratzeagatik!
@@ -103,6 +104,7 @@ android.ui.pref_display_title=Erakutsi
 android.ui.pref_extras=Gehigarriak
 android.ui.pref_full_text_search_summary=Applikazioari baimena eman testua artikuluetan bilatzeko. Kontuz, honek bilaketa moteldu dezake.
 android.ui.pref_full_text_search_title=Testu osoa bilatu
+android.ui.pref_hidetoolbar_summary=\u2022 On GNU/Linux and with the console: split --bytes=4000M my_big_file.zim
 android.ui.pref_info_title=Informazioa
 android.ui.pref_info_version=Bertsioa
 android.ui.pref_language_chooser=Hizkuntza aukeratu
