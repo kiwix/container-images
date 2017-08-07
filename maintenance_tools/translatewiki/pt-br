@@ -44,6 +44,7 @@ android.ui.did_you_know=Você sabia?
 android.ui.download_change_storage=Seletor do dispositivo de armazenamento
 android.ui.download_close=Fechar
 android.ui.download_complete_snackbar=Download completo
+android.ui.download_no_space=Espaço insuficiente para baixar este arquivo.
 android.ui.download_pause=Pausar
 android.ui.download_paused=pausado
 android.ui.download_play=Continuar
