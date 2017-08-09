@@ -125,6 +125,7 @@ foreach my $language (@languages) {
 	    # XML escape the vlaue
 	    $value =~ s/</&lt;/sg;
 	    $value =~ s/>/&gt;/sg;
+	    $value =~ s/&/&amp;/sg;
 
 	    if ($value ne $master_value) {
 		$languageAndroidSource =~ s/\Q$original_entry\E/$tag$middle1$name$middle2$value$last/;
