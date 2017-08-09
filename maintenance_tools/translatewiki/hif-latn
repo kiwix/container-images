@@ -1,8 +1,10 @@
 # Messages for Fiji Hindi (Latin script) (Fiji Hindi)
 # Exported from translatewiki.net
+# Author: Abdul Kadir
 # Author: Kelson
 # Author: Thakurji
 
+android.ui.add_bookmark=Bookmark ke jorro
 ui.main.about=&brand.brandShortName; ke baare me
 ui.main.audible=Sunai de
 ui.main.back=Piichhe

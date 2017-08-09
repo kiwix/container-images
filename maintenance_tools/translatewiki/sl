@@ -2,41 +2,50 @@
 # Exported from translatewiki.net
 # Author: Dbc334
 # Author: Eleassar
+# Author: HairyFotr
 # Author: Kelson
 # Author: Macofe
 # Author: Yerpo
 
 android.ui.articlesearch_hint=Vrsta iskanih člankov
-# Fuzzy
 android.ui.button_backtotop=Nazaj na vrh
-# Fuzzy
-android.ui.choose_file=Izberite datoteko z vsebino ZIM (*.zim)
+android.ui.choose_file=Izberite datoteko z vsebino (*.zim)
+android.ui.confirm_stop_download_title=Ustavi prenos?
+android.ui.did_you_know=Ali ste vedeli?
+android.ui.download_complete_snackbar=Prenos končan
 android.ui.error_articlenotfound=Napaka: Nalaganje članka \"%1$s\" je spodletelo.
 android.ui.error_articleurlnotfound=Napaka: nalaganje članka (url: %1$s) ni uspelo.
 android.ui.error_fileinvalid=Napaka: izbrana datoteka ni veljavna datoteka ZIM.
 android.ui.error_filenotfound=Napaka: izbrane datoteke ZIM ni mogoče najti.
 # Fuzzy
 android.ui.error_nozimfilesfound=Na vaši napravi ni bila najdena nobena datoteka ZIM.\nZa napotke v zvezi z nalaganjem vsebine v Kiwix si poglejte Stran za pomoč.\nČe ste datoteko ZIM posneli na svojo napravo/zunanji disk, lahko ponovno poskusite po kratkem čakanju ali pa svojo napravo ponovno zaženete.
+android.ui.menu_help=Pomoč
+android.ui.menu_home=Domov
+android.ui.menu_library=Prenos datotek z vsebino
+android.ui.menu_randomarticle=Naključni članek
 # Fuzzy
 android.ui.menu_rescan_fs=Ponovno preglej kartico SD
+android.ui.no=Ne
 android.ui.open_in_new_tab=Odprem povezavo v novem zavihku?
 android.ui.pref_backtotop=Nazaj na vrh
 android.ui.pref_backtotop_summary=Na dnu strani prikaži gumb za pomik na vrh strani
 android.ui.pref_info_title=Informacije
 android.ui.pref_info_version=Različica
 android.ui.pref_language_chooser=Izberite jezik
+android.ui.pref_language_title=Jezik
 android.ui.pref_nightmode=Nočni način
-# Fuzzy
 android.ui.pref_nightmode_summary=Prikaz člankov z obrnjenimi barvami
-# Fuzzy
-android.ui.pref_zoom_dialog=Raven zumiranja
+android.ui.pref_zoom_dialog=Raven povečave
 android.ui.pref_zoom_enable=Kontrolniki zumiranja
 android.ui.pref_zoom_entry_automatic=Samodejno
 android.ui.pref_zoom_entry_large=Veliko
 android.ui.pref_zoom_entry_medium=Medij
 android.ui.pref_zoom_entry_small=Majhno
-# Fuzzy
-android.ui.rescan_fs_warning=Iskanje datotek ZIM; prosimo, počakajte ...
+android.ui.pref_zoom_sub_title=Povečava
+android.ui.rate_dialog_negative=Ne, hvala
+android.ui.rate_dialog_neutral=Kasneje
+android.ui.rescan_fs_warning=Iskanje vsebin za prenos; prosimo, počakajte ...
+android.ui.yes=Da
 ui.main.about=O &brand.brandShortName;
 ui.main.audible=Slišno
 ui.main.back=Nazaj

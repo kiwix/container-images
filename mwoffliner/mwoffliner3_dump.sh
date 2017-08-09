@@ -63,7 +63,7 @@ echo "Book:Psychiatry" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Rheumatology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Women's_health" >> "$SCRIPT_DIR/medicine" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wiki_Project_Med_Foundation_logo.svg/335px-Wiki_Project_Med_Foundation_logo.svg.png" -O "$SCRIPT_DIR/medicine.png" &&
-$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia EN medicine langlinks
 cat "$SCRIPT_DIR/medicine" | /srv/kiwix-tools/tools/scripts/listLangLinks.pl --host=en.wikipedia.org --path=w --readFromStdin --language=ja --language=as --language=bn --language=gu --language=hi --language=kn --language=ml --language=de --language=bpy --language=mr --language=lo --language=or --language=pa --language=ta --language=te --language=ur --language=fa --language=fr --language=zh --language=pt --language=ar --language=es --language=it > "$SCRIPT_DIR/medicine.langlinks"
@@ -154,6 +154,9 @@ $MWOFFLINER_MOBILE --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikivoyage.org --path=w --exploration=8 --namespace=0 --category="Europe" | sort -u > europe &&
 $MWOFFLINER_MOBILE --customZimTitle="Wikivoyage - Europe" --articleList=europe --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Wikivoyage:Offline_reader_Expedition/Europe_Home_page" --outputDirectory=$ZIM2INDEX/wikivoyage/ &&
 
+# Wikivoyage DE
+$MWOFFLINER_MOBILE --mwUrl="https://de.wikivoyage.org/" --parsoidUrl="https://de.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Benutzer:Stephane_(Kiwix)/Hauptseite" --outputDirectory=$ZIM2INDEX/wikivoyage/ &&
+
 # Wiktionary
 $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
@@ -164,4 +167,11 @@ $MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/ &&
 $MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Kochwiki
-$MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid
+$MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid &&
+
+# Test ZIM file
+echo "Sven-Åke_Johansson" > test.articles &&
+echo "Orbite_héliosynchrone" >> test.articles &&
+echo "Warrington" >> test.articles &&
+wget https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Test_art.png/320px-Test_art.png &&
+mwoffliner --withZimFullTextIndex --adminEmail=kelson@kiwix.org --mwUrl=https://fr.wikipedia.org/ --mobileLayout --format= --articleList=test.articles --verbose --customZimTitle=Test --customZimDescription="ZIM file for testing purpose" --customZimFavicon=320px-Test_art.png --outputDirectory=$ZIM2INDEX/../zim/wikipedia/

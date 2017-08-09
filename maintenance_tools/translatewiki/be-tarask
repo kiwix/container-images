@@ -10,7 +10,6 @@
 android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
 android.ui.bookmarks_restored=Закладкі адноўленыя
-# Fuzzy
 android.ui.button_backtotop=Вярнуцца ўверх
 # Fuzzy
 android.ui.choose_file=Абярыце ZIM-файл (*.zim)
