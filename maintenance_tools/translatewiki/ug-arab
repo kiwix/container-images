@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Kelson
 # Author: Sahran
+# Author: Uzdil
 
 ui.main.about=&brand.brandShortName; ھەققىدە
 ui.main.audible=ئۈنلۈك
@@ -15,7 +16,7 @@ ui.main.copy=كۆچۈر
 ui.main.copyLinkAddress=ئۇلانما ئادرېسىنى كۆچۈر
 ui.main.defaultset=كۆڭۈلدىكى تەڭشەك
 ui.main.display=كۆرسەت
-ui.main.edit=تەھرىر
+ui.main.edit=تەھرىرلەش
 ui.main.feedback=قايتۇرما ئىنكاس
 ui.main.file=ھۆججەت
 ui.main.find=بەتتىن ئىزدە…
@@ -23,7 +24,7 @@ ui.main.findInText=تېكىستتىن ئىزدە
 ui.main.forward=ئالدىغا
 ui.main.fullscreen=پۈتۈن ئېكران
 ui.main.help=ياردەم
-ui.main.hideLibrary=ئامبارنى يوشۇر
+ui.main.hideLibrary=ئامبارنى يوشۇرۇش
 ui.main.home=باش بەت
 ui.main.invertedColors=ئەسكىچە رەڭ
 ui.main.language=تىل
@@ -55,8 +56,8 @@ ui.main.noSearchBar=ئىزدەشكە ئىندېكىسلانغان ZIM ھۆججى
 ui.main.notesLabel=خەتكۈچ ئىزاھاتى:
 ui.main.openFile=ھۆججەت ئاچ…
 ui.main.openLinkInNewTab=ئۇلانمىنى يېڭى بەتكۈچتە ئاچ
-ui.main.osxhideapp=&brand.brandShortName; نى يوشۇر
-ui.main.osxhideothers=باشقىلارنى يوشۇر
+ui.main.osxhideapp=&brand.brandShortName; نى يوشۇرۇش
+ui.main.osxhideothers=باشقىلارنى يوشۇرۇش
 ui.main.osxservices=مۇلازىمەتلەر
 ui.main.osxshowall=ھەممىنى كۆرسەت
 ui.main.preferences=مايىللىق
@@ -89,7 +90,7 @@ ui.main.zoomorig=ئەسلى چوڭلۇق
 ui.main.zoomout=كىچىكلەت
 ui.messages.abortIndexingConfirm=ئىندېكىسلاش جەريانى ئىجرا قىلىنىۋاتىدۇ. سىز راستىنلا ئۇنى ھازىر توختىتىۋېتەمسىز؟
 ui.messages.alreadyIndexingError=ئىندېكىسلاش جەريانى ئىجرا قىلىنىۋاتىدۇ.
-ui.messages.cancel=ۋاز كەچ
+ui.messages.cancel=قايتىش
 ui.messages.changeSkinNeedRestart=تېرىنى ئۆزگەرتىشتە، قوللىنىشچان پىروگراممىنى قايتا قوزغىتىش زۆرۈر. قايتا قوزغىتامسىز؟
 ui.messages.confirm=جەزملە
 ui.messages.contentDownloadFinished=چۈشۈرۈش '%1' تاماملاندى.
