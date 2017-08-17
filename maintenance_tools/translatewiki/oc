@@ -6,10 +6,8 @@
 android.ui.articlesearch_hint=Picar per recercar d'articles
 android.ui.bookmark_added=Signet apondut
 android.ui.bookmarks_restored=Signets restablits
-# Fuzzy
-android.ui.button_backtotop=Naut de pagina
-# Fuzzy
-android.ui.choose_file=Seleccionar un fichièr de contengut ZIM (*.zim)
+android.ui.button_backtotop=Retorn en naut de la pagina
+android.ui.choose_file=Seleccionar un fichièr de contengut (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Vòstra aplicacion es corrompuda.\nAquò se pòt produire quand suprimissètz de fichièrs de la carta SD. Vos cal desinstallar puèi reïnstallar l’aplicacion dempuèi lo Play Store.
 android.ui.error_articlenotfound=Error : Fracàs al cargament de l’article « %1$s ».
@@ -21,12 +19,9 @@ android.ui.error_nozimfilesfound=Cap de fichièr ZIM es pas estat trobat sus vò
 android.ui.go_to_play_store=Anar sul Play Store
 android.ui.menu_read_aloud=Legir a votz nauta
 android.ui.menu_read_aloud_stop=Arrestar de legir a votz nauta
-# Fuzzy
 android.ui.menu_rescan_fs=Analisar tornarmai la carta SD
-# Fuzzy
 android.ui.no_bookmarks=I a pas de signets
 android.ui.no_reader_application_installed=Impossible de trobar una aplicacion d'installada per aqueste tipe de fichièr
-# Fuzzy
 android.ui.no_section_info=Cap d'entèsta de contengut pas trobada
 android.ui.open_in_new_tab=Dobrir lo ligam dins un onglet novèl ?
 android.ui.pref_backtotop=Retorn al començament
@@ -37,9 +32,7 @@ android.ui.pref_language_chooser=Causir una lenga
 android.ui.pref_newtab_background_summary=Al moment de la dobertura d'un onglet novèl, se dobrirà en rèireplan
 android.ui.pref_newtab_background_title=Dobrir un onglet novèl en rèireplan
 android.ui.pref_nightmode=Mòde nocturne
-# Fuzzy
 android.ui.pref_nightmode_summary=Afichar los articles en colors inversadas
-# Fuzzy
 android.ui.pref_zoom_dialog=Nivèl de zoom
 android.ui.pref_zoom_enable=Contraròtles del zoom
 android.ui.pref_zoom_entry_automatic=Automatic

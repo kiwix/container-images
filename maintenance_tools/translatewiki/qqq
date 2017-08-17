@@ -29,6 +29,7 @@ android.ui.menu_rescan_fs=Used as menu item.
 android.ui.menu_settings={{Identical|Settings}}
 android.ui.menu_zim_manager=Displayed in application menu
 android.ui.no={{Identical|No}}
+android.ui.no_bookmarks=This means "there are no bookmarks"
 android.ui.open={{Identical|Open}}
 android.ui.pref_backtotop={{Identical|Back to top}}
 android.ui.pref_display_title={{Identical|Display}}
