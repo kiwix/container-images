@@ -169,6 +169,9 @@ $MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid 
 # Kochwiki
 $MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid &&
 
+# Archlinuc wiki
+$MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" &&
+
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
