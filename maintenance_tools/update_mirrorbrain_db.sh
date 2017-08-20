@@ -36,7 +36,7 @@ mirrorprobe > /dev/null 2>&1
 scanMirror ftp.acc.umu.se ZIMDIRS
 
 # Scan the dotsrc.org mirror
-scanMirror dotsrc.org ZIMDIRS
+scanMirror dotsrc.org ALLDIRS
 
 # scan the Kiwix mirrors
 scanMirror mirror ALLDIRS
