@@ -20,29 +20,6 @@ my $duplicates = {
     "ui.messages.browseLibrary" => "ui.main.browseLibrary",
     "ui.messages.hideLibrary" => "ui.main.hideLibrary",
     "ui.messages.fullscreen" => "ui.main.fullscreen",
-    "android.ui.menu_openfile" => "ui.main.openFile",
-    "android.ui.menu_back" => "ui.main.back",
-    "android.ui.menu_fullscreen" => "ui.main.fullscreen",
-    "android.ui.menu_exitfullscreen" => "ui.messages.quitFullscreen",
-    "android.ui.menu_forward" => "ui.main.forward",
-    "android.ui.menu_home" => "ui.main.home",
-    "android.ui.menu_randomarticle" => "ui.main.randomArticle",
-    "android.ui.menu_help" => "ui.main.help",
-    "android.ui.save_media" => "ui.main.saveMediaAs",
-    "android.ui.menu_search" => "ui.main.search",
-    "android.ui.search_label" => "ui.main.search",
-    "android.ui.menu_searchintext" => "ui.main.findInText",
-    "android.ui.menu_settings" => "ui.preferences.preferences",
-    "android.ui.pref_display_title" => "ui.main.display",
-    "android.ui.pref_language_title" => "ui.main.language",
-    "android.ui.pref_info_title" => "ui.messages.information",
-    "android.ui.pref_zoom_dialog" => "android.ui.pref_zoom_title",
-    "android.ui.menu_exit" => "ui.main.quit",
-    "android.ui.menu_bookmarks" => "ui.main.bookmarks",
-    "android.ui.add_bookmark" => "ui.main.mark",
-    "android.ui.remove_bookmark" => "ui.main.unmark",
-    "android.ui.menu_bookmarks_list" => "ui.main.bookmarks",
-    "android.ui.menu_rescan_fs" =>  "android.ui.rescan_fs"
 };
 
 # Get console line arguments
@@ -53,7 +30,7 @@ GetOptions('path=s' => \$path,
 	   );
 
 if (!$path) {
-    print STDERR "usage: ./TW2KW.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
+    print STDERR "usage: ./TW2KW_xulrunner.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
     exit;
 } elsif (! -d $path || ! -d $path."/kiwix/") {
     print STDERR "'$path' is not a directory, does not exist or is not the Kiwix source directory 'moulinkiwix'.\n";
@@ -96,9 +73,8 @@ foreach my $language (@languages) {
     # Get translation translatewiki content
     my $content = readFile($language);
     my $globalHash = getLocaleHash($content, "|");
-
-    # Create/Update Kiwix for desktop localisation
     my $localePath = $path."/kiwix/chrome/locale/".$language."/main/";
+
     if ($languageTranslationCompletion > $threshold || -d $localePath) {
 	print STDERR "Creating locale file in $language for Kiwix for desktop\n";
 
@@ -150,46 +126,6 @@ foreach my $language (@languages) {
     } else {
 	print STDERR "Skipping locale file in $language for Kiwix for desktop\n";
     }
-
-    # Create/Update Android xml file
-    $localePath = $path."/android/res/values-".$language;
-    if (length($language) <= 2 && ($languageTranslationCompletion > $threshold || -d $localePath)) {
-	print STDERR "Creating locale file in $language for Kiwix for Android\n";
-
-	my $androidHash = getLocaleHash($content, "android\.ui\.|");
-	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
-	my $languageAndroidSource = $languageAndroidSourceMaster;
-	
-	while ($tmpLanguageAndroidSource =~ /<(string|item)([^\-]*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/)(string|item)>/sg) {
-	    my $tag = $1;
-	    my $middle1 = $2;
-	    my $name = $3;
-	    my $middle2 = $4;
-	    my $value = $5;
-	    my $last = $6.$7;
-
-	    if (exists($androidHash->{$name})) {
-		$value = $androidHash->{$name};
-		$value =~ s/'/\\'/gm;
-	    } elsif (exists($duplicates->{"android.ui.".$name}) && 
-		     exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
-		$value = $globalHash->{$duplicates->{"android.ui.".$name}};
-		$value =~ s/'/\\'/gm;
-	    }
-	    
-	    $languageAndroidSource =~ s/\Q$1$2$3$4$5$6$7\E/$tag$middle1$name$middle2$value$last/mg;
-	}
-	
-	if (! -d $localePath) {
-	    mkdir($localePath);
-	}
-	writeFile($localePath."/strings.xml", $languageAndroidSource);
-
-	# Copy master branding file
-	#writeFile($localePath."/branding.xml", $languageBrandingAndroidSourceMaster);
-    } else {
-	print STDERR "Skipping locale file in $language for Kiwix for Android\n";
-    }
 }
 
 sub getLocaleHash {
@@ -232,7 +168,7 @@ sub countLinesInFile {
     
     open FILE, "<:utf8", $path or die "Couldn't open file: $path";
     while (<FILE>) {
-	if ($_ !~ ".accesskey") {
+	if ($_ !~ ".accesskey" && $_ !~ "android.ui") {
 	    $count += 1;
 	}
     }
