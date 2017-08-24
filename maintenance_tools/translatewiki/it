@@ -45,7 +45,7 @@ android.ui.download_complete_snackbar=Il download è completo
 android.ui.download_no_space=Lo spazio è insufficiente per scaricare questo file.
 android.ui.download_over_network=Sei sicuro di voler iniziare il download senza una connessione WiFi?
 android.ui.download_pause=Pausa
-android.ui.download_paused=In pausa
+android.ui.download_paused=in pausa
 android.ui.download_play=Riproduci
 android.ui.download_started_library=Download iniziato...
 android.ui.download_stop=Ferma
@@ -71,7 +71,6 @@ android.ui.menu_fullscreen=A tutto schermo
 android.ui.menu_home=Pagina principale
 android.ui.menu_read_aloud=Leggi a voce alta
 android.ui.menu_read_aloud_stop=Interrompi lettura a voce alta
-# Fuzzy
 android.ui.menu_rescan_fs=Ripeti scansione scheda SD
 android.ui.menu_searchintext=Trova nella pagina
 android.ui.menu_settings=Impostazioni
@@ -99,7 +98,6 @@ android.ui.pref_newtab_background_title=Apri nuova scheda in background
 android.ui.pref_nightmode=Modalità notte
 android.ui.pref_nightmode_summary=Visualizza le voci con colori invertiti
 android.ui.pref_wifi_only=Scarica contenuto solo tramite WiFi
-# Fuzzy
 android.ui.pref_zoom_dialog=Livello di zoom
 android.ui.pref_zoom_enable=Controlli zoom
 android.ui.pref_zoom_entry_automatic=Automatico
