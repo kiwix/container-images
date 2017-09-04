@@ -7,19 +7,35 @@
 # Author: राम प्रसाद जोशी
 # Author: सरोज कुमार ढकाल
 
+android.ui.add_bookmark=पुस्तक चिनो थप्नुहोस्
+android.ui.all_history_cleared_toast=सबै इतिहास खाली गरियो
 android.ui.articlesearch_hint=लेखहरू खोज्नलाई टाइप गर्नुहोस
-# Fuzzy
-android.ui.button_backtotop=सिरानमा जाने
-# Fuzzy
-android.ui.choose_file=ZIM सामग्री फाइल (*.zim) छान्नुहोस
+android.ui.bookmark_added=पुस्तक चिनो थपियो
+android.ui.bookmark_removed=पुस्तक चिनो हटाइयो
+android.ui.bookmarks_restored=पुस्तक चिनो पुनःस्थापित गरियो
+android.ui.button_backtotop=सुरुमा जानुहोस्
+android.ui.choose_file=सामग्री फाइल छान्नुहोस् (*.zim)
+android.ui.clear_all_history_dialog_title=सबै इतिहास हटाउनुहोस्
+android.ui.confirm_stop_download_title=डाउनलोड रोक्ने हो?
+android.ui.delete=मेट्ने
+android.ui.delete_tab=ट्याब मेट्नुहोस्
+android.ui.deleted_message=मेटिएको
+android.ui.did_you_know=के तपाईँलाई थाह छ?
+android.ui.download_close=बन्द गर्नुहोस्
+android.ui.download_complete_snackbar=डाउनलोड पूरा भयो
+android.ui.download_pause=रोक्नुहोस्
+android.ui.download_paused=रोकिएको
+android.ui.download_play=बजाउनुहोस्
+android.ui.download_started_library=डाउनलोड सुरुभयो…
+android.ui.download_stop=रोक्नुहोस्
 android.ui.error_articlenotfound=त्रुटी: लेख \"%1$s\" खोल्न असफल भयो।
 android.ui.error_articleurlnotfound=त्रुटी: लेख खोल्न असफल । (Url: %1$s)
 android.ui.error_fileinvalid=त्रुटी: छानिएको फाइल मान्य ZIM फाइल होइन।
 android.ui.error_filenotfound=त्रुटी: छानिएको ZIM फाइल भेटाउन सकिएन।
 # Fuzzy
 android.ui.error_nozimfilesfound=तपाईंको उपकरणमा ZIM फाइलहरू भेटिएनन्।\nकिविक्समा सामग्री कसरी खोल्ने भन्ने विषयको निर्देशनका लागि सहायता पृष्ठमा हेर्नुहोस्।\nतपाईंले उपकरण वा बाह्य भण्डारणमा ZIM फाइल राख्नुभएको थियो भने, एक मिनटमा पुनः प्रयास गर्नुहोस् अथवा उपकरण पुनः सुरू गर्नुहोस्।
-# Fuzzy
-android.ui.menu_rescan_fs=एस डी कार्ड फेरी स्क्यान गर्ने
+android.ui.external_storage=बाह्य
+android.ui.menu_rescan_fs=एसडी कार्ड फेरी स्क्यान गर्नुहोस्
 android.ui.open_in_new_tab=लिङ्कलाइ नयाँ ट्याबमा खोल्ने?
 android.ui.pref_backtotop=सुरुमा जानुहोस्
 android.ui.pref_backtotop_summary=पृष्ठको अन्तमा सुरुमा जने बटन देखाउने
@@ -27,8 +43,7 @@ android.ui.pref_info_title=जानकारी
 android.ui.pref_info_version=संस्करण
 android.ui.pref_language_chooser=भाषा चुन्ने
 android.ui.pref_nightmode=रात्री मूड
-# Fuzzy
-android.ui.pref_nightmode_summary=उल्ट्याइएको रङका लेखहरू देखाउने
+android.ui.pref_nightmode_summary=उल्ट्याइएको रङका लेखहरू देखाउनुहोस्
 # Fuzzy
 android.ui.pref_zoom_dialog=जुम स्तर
 android.ui.pref_zoom_enable=जुम नियन्त्रणहरू
@@ -37,6 +52,11 @@ android.ui.pref_zoom_entry_medium=मझौलो
 android.ui.pref_zoom_entry_small=सानो
 # Fuzzy
 android.ui.rescan_fs_warning=कृपया पर्खनुहोस्, जिम फाइलहरू स्क्यान हुँदैछ
+android.ui.tts_pause=रोक्नुहोस्
+android.ui.tts_resume=पुनः निरन्तरता दिनुहोस्
+android.ui.tts_stop=रोक्नुहोस्
+android.ui.undo=पूर्ववत गर्ने
+android.ui.yes=हो
 ui.main.about.accesskey=बा
 ui.main.about=बारेमा &brand.brandShortName;
 ui.main.audible=सुन्न मिल्ने
