@@ -5,4 +5,4 @@ ARGS="--adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache 
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 
 # Wikipedia in English
-$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customMainPage="User:Popo_le_Chien/Kiwix" --outputDirectory=$ZIM2INDEX/wikipedia/
+$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customMainPage="User:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/
