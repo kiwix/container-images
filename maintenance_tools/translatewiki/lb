@@ -52,7 +52,6 @@ android.ui.menu_home=Haaptsäit
 android.ui.menu_randomarticle=Zoufällegen Artikel
 android.ui.menu_read_aloud=Virliesen
 android.ui.menu_read_aloud_stop=Ophale mat Virliesen
-# Fuzzy
 android.ui.menu_rescan_fs=SD-Kaart nei aliesen
 android.ui.menu_search=Artikel sichen
 android.ui.menu_searchintext=Op der Säit sichen
@@ -80,7 +79,6 @@ android.ui.pref_language_title=Sprooch
 android.ui.pref_nightmode=Nuetsmodus
 android.ui.pref_nightmode_summary=Artikele mat ëmgedréite Faarwe weisen
 android.ui.pref_wifi_only=Inhalt just iwwer WIFI eroflueden
-# Fuzzy
 android.ui.pref_zoom_dialog=Niveau vum Zoom
 android.ui.pref_zoom_enable=Zoom-Steierung
 android.ui.pref_zoom_entry_automatic=Automatesch
