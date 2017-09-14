@@ -1,6 +1,7 @@
 # Messages for Pashto (پښتو)
 # Exported from translatewiki.net
 # Author: Ahmed-Najib-Biabani-Ibrahimkhel
+# Author: Baloch Khan
 # Author: Kelson
 
 android.ui.articlesearch_hint=د ليکنو موندلو لپاره وټاپئ
@@ -19,6 +20,8 @@ android.ui.error_filenotfound=تېروتنه: ستاسې ټاکلې ZIM دوتن
 # Fuzzy
 android.ui.error_nozimfilesfound=ستاسې په وزلې هېڅ کومه ZIM دوتنه و نه موندل شوه.\nکيويکس کې د مېنځپانگې د برسېرولو لپاره د لارښود مخ ولولئ.\nکه تاسې په خپلې وزلې کې يو ZIM دوتنه نه وي ايښې، نو تاسې کولی شی چې يوه دقيقه وروسته يې بيا وآزمويئ او يا هم خپله وزله سر له نوي ولگوئ او بيا هڅه وکړئ.
 android.ui.go_to_play_store=پلې پلورنځي ته ورځه
+android.ui.menu_help=مرسته
+android.ui.menu_home=کور
 android.ui.menu_read_aloud=په جگ غږ لوستل
 android.ui.menu_read_aloud_stop=په جگ غږ لوستل درول
 # Fuzzy
@@ -60,7 +63,34 @@ android.ui.rescan_fs_warning=د ZIM دوتنو لپاره ځيرڅارنه، ل�
 android.ui.save_media_error=د رسنۍ په ساتلو کې يوه تېروتنه رامنځ ته شوه!
 # Fuzzy
 android.ui.save_media_saved=رسنۍ خپل د انځورونو په ټولگه کې د %1$s په نوم ساتل
+android.ui.search_label=پلټل
+android.ui.search_widget_text=کيويس پلټل
+android.ui.space_available=ځای شتون لري:
+android.ui.speech_not_supported=وبخښي! ستاسو وسیله د بیان انډول ملاتړ نه کوي
+android.ui.speech_prompt_text=خبري د لټون لپاره %s
+android.ui.tab_closed=ټب تړل شوی
+android.ui.time_day=ورځ
+android.ui.time_hour=ح
+android.ui.time_left=کيڼ
+android.ui.time_minute=مين
+android.ui.time_second=س
 android.ui.tts_lang_not_supported=د همدې مخ د ژبې ملاتړ نه کېږي، يا کېدای شي د کاروړ ژب اومتوک نه وي نصب شوی. دا ليکنه به په سمه توگه د لوستلو وړ نه وي.
+android.ui.tts_not_enabled=د زيم دوتنې لپاره متن ته د وینا متن ندی فعال شوی
+android.ui.tts_pause=تفریحي درونه
+android.ui.tts_resume=انتظارول
+android.ui.tts_stop=درول
+android.ui.undo=پريښودل
+android.ui.wait_for_load=منځپانګې تر وسه هم حرکت کوي
+android.ui.wifi_only_msg=که تاسو "هو" انتخاب کړئ نو تاسو به په راتلونکی کې خبرداری ورنکړئ. په هرصورت، تاسو کولی شئ دا په ترتیباتو کې بدل کړئ
+android.ui.wifi_only_title=د ګرځنده شبکې له لارې د منځپانګې ډاونلوډ ته اجازه ورکړئ؟
+android.ui.yes=هو
+android.ui.zim_already_downloading=زيم له مخې نه را ډاونلوډيږي
+android.ui.zim_file_downloaded=ډاونلوډ سو
+android.ui.zim_file_downloading=ډاونلوډيږي
+android.ui.zim_manager=د منځپانګې مدیریت
+android.ui.zim_nopic=هيڅ دوتنه نشته
+android.ui.zim_novid=هيڅ ويډيو نسته
+android.ui.zim_simple=اسان
 ui.main.about=د سوداگريزې نخښې لنډ سوداگريز نوم په اړه؛
 ui.main.audible=اورېدون وړ
 ui.main.back=پر شا
