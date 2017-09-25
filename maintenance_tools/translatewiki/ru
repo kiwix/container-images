@@ -8,6 +8,7 @@
 # Author: Eleferen
 # Author: Eugrus
 # Author: Facenapalm
+# Author: Helpau
 # Author: Ignatus
 # Author: Iluvatar
 # Author: Kaganer
@@ -26,7 +27,7 @@ android.ui.bookmarks_restored=Закладки восстановлены
 android.ui.button_backtotop=Вернуться наверх
 android.ui.choose_file=Выберите файл содержимого (*.zim)
 android.ui.clear_all_history_dialog_title=Очистить всю историю
-android.ui.clear_recent_and_tabs_history_dialog=Вы уверены, что хотите удалить историю поиска и сбросить все активные вкладки?
+android.ui.clear_recent_and_tabs_history_dialog=Вы уверены, что хотите удалить историю поиска и закрыть все активные вкладки?
 android.ui.clear_recent_history_dialog=Вы уверены, что хотите удалить историю поиска?
 android.ui.confirm_stop_download_msg=Вы уверены, что хотите остановить эту загрузку?
 android.ui.confirm_stop_download_title=Остановить загрузку?
@@ -313,7 +314,7 @@ ui.messages.abortIndexingConfirm=В настоящее время запущен
 ui.messages.alreadyIndexingError=Процесс индексирования уже запущен.
 ui.messages.bookmarkReferingOtherContent=Эта закладка ссылается на другое содержимое. Вы хотите загрузить его?
 ui.messages.cancel=Отмена
-ui.messages.changeSkinNeedRestart=Для изменения темы оформления приложение должно быть перезапущено. Перезапустить его сейчас?
+ui.messages.changeSkinNeedRestart=Для изменения темы оформления приложение должно быть перезапущено. Перезапустить?
 ui.messages.confirm=Подтвердить
 ui.messages.contentDownloadFinished=Загрузка завершена на '%1'.
 ui.messages.dontDeleteContentFiles=Не удалять ZIM-файлы.
