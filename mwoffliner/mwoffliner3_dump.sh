@@ -46,7 +46,9 @@ $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikiped
 $MWOFFLINER --mwUrl=http://www.wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/
 
 # WikiMed
-/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" --path=w --exploration=5 --namespace=1 | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_unfiltered" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_filter" &&
+grep -Fxv -f "$SCRIPT_DIR/medicine_filter" "$SCRIPT_DIR/medicine_unfiltered" | sort -u > "$SCRIPT_DIR/medicine" &&
 echo "Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Cardiology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Dermatology" >> "$SCRIPT_DIR/medicine" &&
