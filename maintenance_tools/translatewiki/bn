@@ -9,6 +9,7 @@
 # Author: Kelson
 # Author: Nasir8891
 # Author: Wikitanvir
+# Author: এম আবু সাঈদ
 
 android.ui.add_bookmark=বুকমার্ক যোগ করুন
 android.ui.all_history_cleared_toast=সমস্ত ইতিহাস মোছা হয়েছে
@@ -52,17 +53,28 @@ android.ui.external_storage=বহিঃস্থ
 android.ui.get_library_over_network=বিষয়বস্তুর তালিকা ডাউনলোড করতে নেটওয়ার্ক ব্যবহার করুন (আনুমানিক ৬ MB)
 android.ui.go_to_play_store=প্লে স্টোরে যান
 android.ui.got_it=বুঝেছি
+android.ui.help_10=আপনি আপনার পছন্দসই ZIM ফাইলগুলি অ্যাপের মধ্যে ডাউনলোড করতে পারেন বা ZIM ফাইলগুলিকে সাবধানে নির্বাচন করুন এবং আপনার এসডি কার্ডে স্থানান্তর করার আগে আপনি যে ডেস্কটপ কম্পিউটার থেকে ডাউনলোড করতে চান তা নির্ধারণ করুন।
 android.ui.help_11=অ্যাপ্লিকেশনের মাধ্যমে ডাউনলোড করা ZIM ফাইলগুলি বাহ্যিক সঞ্চয়স্থানে Kiwix নামক ফোল্ডারে অবস্থিত।
 android.ui.help_12=কিভাবে বড় ZIM ফাইল ব্যবহার করবেন?
+android.ui.help_13=যদি আপনার ZIM ফাইলটি ৪ গিগাবাইটের চেয়ে বেশি হয়, তাহলে আপনি ফাইল-সিস্টেম সীমাবদ্ধতার কারণে আপনার এসডি কার্ডে এটিকে সংরক্ষণ করতে পারবেন না।
+android.ui.help_14=স্বয়ংক্রিয়ভাবে ইন-অ্যাপ ডাউনলোড বড় ফাইলগুলিকে পরিচালনা করে, আপনার জন্য এগুলোকে বিভাজন করে।
+android.ui.help_15=আপনি যদি অন্য ডিভাইসে ডাউনলোড করে থাকেন, তাহলে নিম্নলিখিত সফটওয়্যার ব্যবহার করে আপনাকে ZIM ফাইলটি বিভক্ত করতে হবে:
 android.ui.help_16=\u2022 মাইক্রোসফট উইন্ডোজে: HJ-Split
+android.ui.help_17=\ u2022 অ্যাপল ম্যাক ওএসএক্স: বিভক্ত এবং কনক্যাট
 android.ui.help_18=\u2022 GNU/লিনাক্সে এবং কনসোলের সাথে: split --bytes=4000M my_big_file.zim
+android.ui.help_19=দ্রষ্টব্য: আপনার পছন্দের ফাইলগুলি my_big_file.jimaa, my_big_file.jimab ইত্যাদি নামে হতে হবে।
+android.ui.help_1=কিউইক্স আপনাকে অত্যন্ত সংকুচিত আকারে উইকিপিডিয়ার মতো ওয়েবসাইটগুলিতে অফলাইনে প্রবেশ করার অনুমতি দেয়।
 android.ui.help_20=কিউইক্সকে বেছে নেওয়ার জন্য ধন্যবাদ!
+android.ui.help_21=আমরা android@kiwix.org এ যে কোন প্রতিক্রিয়া বা পরামর্শ সাদরে গ্রহণ করব।
 android.ui.help_2=কিউইক্স কি কাজ করে?
+android.ui.help_3=কিউইক্স একটি অফলাইনভিত্তিক নিবন্ধ পাঠক। এটি একটি ব্রাউজারের মত অনেকটা কাজ করে কিন্তু অনলাইনে ওয়েব পৃষ্ঠাগুলিতে ঢুকার পরিবর্তে, এটি ZIM ফরম্যাটে একটি ফাইল থেকে বিষয়বস্তু পড়ে।
+android.ui.help_4=কিউইক্স মূলত উইকিপিডিয়াকে অফলাইনে সরবরাহ করার জন্য নকশা করা হয়েছে, তবে এটি অন্যান্য বিষয়গুলিও পড়ে থাকে।
 android.ui.help_5=বিষয়বস্তু কোথায়?
 android.ui.help_6=আমাদের বিষয়বস্তু কিউইক্স ওয়েবসাইটে হোস্ট করা আছে।
 android.ui.help_7=সেগুলি জিম ফাইল হিসেবে উপলব্ধ। এরকম অনেক রয়েছে:
 android.ui.help_8=\u2022 উইকিপিডিয়া প্রতিটি ভাষার জন্য আলাদাভাবে উপলব্ধ
 android.ui.help_9=\u2022 এছাড়া উইকিপিডিয়া বা উইকিসংকলনের মত অন্যান্য সামগ্রীও উপলব্ধ
+android.ui.hint_contents_drawer_message=এই নিবন্ধটির সূচী দেখতে বামদিক থেকে টেনে আনুন
 android.ui.internal_storage=অভ্যন্তরীণ
 android.ui.language_count=(%1$dটি)
 android.ui.local_zims=ডিভাইস
@@ -96,18 +108,22 @@ android.ui.no_section_info=কোন বিষয়বস্তুর শির
 android.ui.open=খুলুন
 android.ui.open_in_new_tab=নতুন ট্যাবে লিঙ্ক খোলা হবে?
 android.ui.open_partial_zim=এই ফাইলটি অসম্পূর্ণ হতে পারে। আপনি কি এটি খুলতে চেষ্টা করতে চান?
+android.ui.path_not_writable=পূর্বনির্ধারিত ব্যবহার করে, প্রয়োজনীয় ডিরেক্টরিতে প্রবেশ করতে পারবেন না। এটি ঠিক করার জন্য অ্যাপ্লিকেশন সেটিংসের মধ্যে পছন্দসই ডিরেক্টরি পুনঃনির্বাচন করুন।
 android.ui.pref_autonightmode=স্বয়ংক্রিয় রাত্রি মোড
 android.ui.pref_autonightmode_summary=স্বয়ংক্রিয়ভাবে দিন এবং রাতের মোডে স্যুইচ করুন।
 android.ui.pref_backtotop=উপরে ফিরুন
 android.ui.pref_backtotop_summary=উপরে স্ক্রল করতে পাতার শেষে একটি বোতাম প্রদর্শিত হবে
-android.ui.pref_clear_all_history_summary=সাম্প্রতিক অনুসন্ধান ও ট্যাবের ইতিহাস সাফ করুন
+android.ui.pref_clear_all_history_summary=সাম্প্রতিক অনুসন্ধান ও ট্যাবের ইতিহাস পরিষ্কার করুন
 android.ui.pref_clear_all_history_title=ইতিহাস মুছুন
 android.ui.pref_credits=অবদানকারী এবং লাইসেন্স
 android.ui.pref_credits_title=কৃতিত্ব
 android.ui.pref_current_folder=বর্তমান ফোল্ডার
 android.ui.pref_display_title=প্রদর্শন
+android.ui.pref_extras=অতিরিক্ত
+android.ui.pref_full_text_search_summary=অ্যাপ্লিকেশানসমূহ নিবন্ধগুলির মধ্যে পাঠ্য অনুসন্ধান করতে অনুমোদন দেয়। এই ধরণের সাবধানতা অনুসন্ধানটিকে যথেষ্ট মন্তর করে দিতে পারে।
 android.ui.pref_full_text_search_title=পূর্ণ লেখা অনুসন্ধান
 android.ui.pref_hidetoolbar=স্ক্রোল করার সময় সরঞ্জামদণ্ড লুকান
+android.ui.pref_hidetoolbar_summary=পৃষ্ঠাটি স্ক্রোল করার সময় সরঞ্জামদণ্ডটি লুকিয়ে রাখুন
 android.ui.pref_info_title=তথ্য
 android.ui.pref_info_version=সংস্করণ
 android.ui.pref_language_chooser=একটি ভাষা নির্বাচন করুন
@@ -133,6 +149,7 @@ android.ui.rate_dialog_negative=না, ধন্যবাদ
 android.ui.rate_dialog_neutral=পরে
 android.ui.rate_dialog_positive=মূল্যায়ন করুন!
 android.ui.rate_dialog_title=দয়া করে আমাদের মূল্যায়ন করুন
+android.ui.reboot_message=অ্যান্ড্রয়েড ৬.০ এ একটি বাগের কারণে আমাদেরকে সংগ্রহস্থলের অনুমতি প্রদান করা ছাড়াই চালিয়ে যেতে আপনার ডিভাইসটি পুনরায় চালু করতে হবে। এর ফলে সৃষ্ট অসুবিধার জন্য আমরা দুঃখিত।
 android.ui.remote_zims=অনলাইন
 android.ui.remove_bookmark=বুকমার্ক সরান
 android.ui.request_storage=অফলাইন বিষয়বস্তুতে প্রবেশ করতে আমাদের আপনার সঞ্চয়স্থলে প্রবেশাধিকার প্রয়োজন
