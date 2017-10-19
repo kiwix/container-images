@@ -7,12 +7,12 @@
 # Author: Wizardist
 # Author: Zedlik
 
+android.ui.add_bookmark=Дадаць закладку
 android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
 android.ui.bookmarks_restored=Закладкі адноўленыя
 android.ui.button_backtotop=Вярнуцца ўверх
-# Fuzzy
-android.ui.choose_file=Абярыце ZIM-файл (*.zim)
+android.ui.choose_file=Абярыце файл зьместу (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым ўсталяваць яе наноў з Play Store.
 android.ui.error_articlenotfound=Памылка: загрузка артыкула \«%1$s\» не атрымалася.
