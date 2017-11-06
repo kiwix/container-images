@@ -22,7 +22,6 @@ android.ui.error_nozimfilesfound=Зьмест ня знойдзены на ва�
 android.ui.go_to_play_store=Перайсьці ў Play Store
 android.ui.menu_read_aloud=Чытаць уголас
 android.ui.menu_read_aloud_stop=Спыніць чытаньне ўголас
-# Fuzzy
 android.ui.menu_rescan_fs=Перасканаваць SD-картку
 # Fuzzy
 android.ui.no_bookmarks=Няма закладак!
