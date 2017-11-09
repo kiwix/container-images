@@ -23,8 +23,7 @@ android.ui.go_to_play_store=Перайсьці ў Play Store
 android.ui.menu_read_aloud=Чытаць уголас
 android.ui.menu_read_aloud_stop=Спыніць чытаньне ўголас
 android.ui.menu_rescan_fs=Перасканаваць SD-картку
-# Fuzzy
-android.ui.no_bookmarks=Няма закладак!
+android.ui.no_bookmarks=Няма закладак
 android.ui.no_reader_application_installed=Ня знойдзеныя ўсталяваныя праграмы для гэтага тыпу файлу
 # Fuzzy
 android.ui.no_section_info=Ня знойдзеныя загалоўкі зьместу
