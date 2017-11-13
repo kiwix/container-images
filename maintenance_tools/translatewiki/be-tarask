@@ -25,7 +25,6 @@ android.ui.menu_read_aloud_stop=Спыніць чытаньне ўголас
 android.ui.menu_rescan_fs=Перасканаваць SD-картку
 android.ui.no_bookmarks=Няма закладак
 android.ui.no_reader_application_installed=Ня знойдзеныя ўсталяваныя праграмы для гэтага тыпу файлу
-# Fuzzy
 android.ui.no_section_info=Ня знойдзеныя загалоўкі зьместу
 android.ui.open_in_new_tab=Адкрыць спасылку ў новай укладцы?
 android.ui.pref_backtotop=Вярнуцца ўгару
