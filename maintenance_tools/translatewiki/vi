@@ -10,28 +10,21 @@
 android.ui.articlesearch_hint=Gõ để tra cứu bài
 android.ui.bookmark_added=Đã thêm dấu trang
 android.ui.bookmarks_restored=Đã phục hồi các dấu trang
-# Fuzzy
 android.ui.button_backtotop=Trở lên Đầu trang
-# Fuzzy
-android.ui.choose_file=Chọn một Tập tin Nội dung ZIM (*.zim)
-# Fuzzy
+android.ui.choose_file=Chọn một Tập tin Nội dung (*.zim)
 android.ui.customapp_missing_content=Ứng dụng bị hư hỏng.\nĐiều này có thể xảy ra sau khi bạn xóa tập tin khỏi thẻ SD.\nBạn có thể cần gỡ bỏ rồi cài đặt lại ứng dụng từ Cửa hàng Play.
 android.ui.error_articlenotfound=Lỗi: Thất bại khi tải bài viết “%1$s”.
 android.ui.error_articleurlnotfound=Lỗi: Việc tải bài (URL: %1$s) bị thất bại.
 android.ui.error_fileinvalid=Lỗi: Tập tin đã chọn không phải là tập tin ZIM hợp lệ.
 android.ui.error_filenotfound=Lỗi: Không tìm thấy tập tin ZIM đã chọn
-# Fuzzy
-android.ui.error_nozimfilesfound=Không tìm thấy tập tin ZIM trên thiết bị của bạn.\nHãy đọc Trang Trợ giúp để biết cách tải nội dung vào Kiwix.\nNếu bạn có đưa tập tin ZIM vào thiết bị hoặc bộ nhớ ngoài của bạn, hãy thử lại sau hoặc khởi động lại thiết bị của bạn.
+android.ui.error_nozimfilesfound=Không tìm thấy nội dung trên thiết bị của bạn.\nHãy đọc Trang Trợ giúp để biết cách tải nội dung vào Kiwix.\nNếu bạn có đưa tập tin ZIM vào thiết bị hoặc bộ nhớ ngoài của bạn, hãy thử lại sau hoặc khởi động lại thiết bị của bạn.
 android.ui.go_to_play_store=Đi đến Cửa hàng Play
 android.ui.menu_read_aloud=Đọc to
 android.ui.menu_read_aloud_stop=Dừng đọc to
-# Fuzzy
-android.ui.menu_rescan_fs=Tìm thẻ SD lần nữa
-# Fuzzy
-android.ui.no_bookmarks=Không có dấu trang!
+android.ui.menu_rescan_fs=Quét thẻ SD lần nữa
+android.ui.no_bookmarks=Không có Dấu trang
 android.ui.no_reader_application_installed=Không tìm thấy ứng dụng đã cài đặt ứng với kiểu tập tin này
-# Fuzzy
-android.ui.no_section_info=Không tìm thấy đầu đề nội dung
+android.ui.no_section_info=Không tìm thấy Đầu đề Nội dung
 android.ui.open_in_new_tab=Mở liên kết trong thẻ mới?
 android.ui.pref_backtotop=Trở lên Đầu trang
 android.ui.pref_backtotop_summary=Hiển thị nút ở cuối trang để di chuyển lên trên cùng
@@ -41,9 +34,7 @@ android.ui.pref_language_chooser=Chọn ngôn ngữ
 android.ui.pref_newtab_background_summary=Khi mở thẻ mới, nó sẽ mở trong nền
 android.ui.pref_newtab_background_title=Mở thẻ mới trong nền
 android.ui.pref_nightmode=Chế độ ban đêm
-# Fuzzy
 android.ui.pref_nightmode_summary=Đảo ngược màu sắc trong bài
-# Fuzzy
 android.ui.pref_zoom_dialog=Mức thu phóng
 android.ui.pref_zoom_enable=Điều khiển thu phóng
 android.ui.pref_zoom_entry_automatic=Tự động
@@ -56,14 +47,10 @@ android.ui.rate_dialog_negative=Thôi
 android.ui.rate_dialog_neutral=Lát nữa
 android.ui.rate_dialog_positive=Đánh giá!
 android.ui.rate_dialog_title=Xin vui lòng Đánh giá Chúng tôi
-# Fuzzy
-android.ui.request_storage=Để truy cập các tập tin ZIM, chúng tôi cần được phép truy cập thiết bị lưu trữ của bạn
-# Fuzzy
-android.ui.rescan_fs_warning=Đang tìm tập tin ZIM, xin vui lòng chờ…
-# Fuzzy
+android.ui.request_storage=Để truy cập các nội dung ngoại tuyến, chúng tôi cần được phép truy cập thiết bị lưu trữ của bạn
+android.ui.rescan_fs_warning=Đang tìm nội dung có thể tải về, xin vui lòng chờ…
 android.ui.save_media_error=Đã xuất hiện lỗi khi lưu phương tiện!
-# Fuzzy
-android.ui.save_media_saved=Đã lưu phương tiện thành %1$s trong thư mục hình ảnh của bạn
+android.ui.save_media_saved=Đã lưu phương tiện thành %s trong thư mục hình ảnh Android/media/org.kiwix…/
 android.ui.tts_lang_not_supported=Ngôn ngữ của trang này không được hỗ trợ, hoặc dữ liệu ngôn ngữ thích hợp chưa được cài đặt. Có thể không có khả năng đọc bài.
 ui.main.about.accesskey=G
 ui.main.about=Giới thiệu &brand.brandShortName;

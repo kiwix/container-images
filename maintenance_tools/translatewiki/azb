@@ -13,27 +13,20 @@
 android.ui.articlesearch_hint=مقاله‌لری تاپماق اۆچون تایپ ائدین
 android.ui.bookmark_added=بوکمارک آرتیریلدی
 android.ui.bookmarks_restored=بوکمارکلار ذخیره اولوندو.
-# Fuzzy
 android.ui.button_backtotop=اوسته قاییت
-# Fuzzy
-android.ui.choose_file=بیر ZIM محتوایی فایلینی سئچین (*.zim)
-# Fuzzy
+android.ui.choose_file=بیر  محتوایی فایلینی سئچین (*.zim)
 android.ui.customapp_missing_content=برنامه نیز ایشکاللیدیر.\nبو، خاریجی حافظه دن فایللاری سیلنده اوز وئره بیلر.\nبرنامه نی سیلیب، پلی استوردان یئنیدن نصب ائدین.
 android.ui.error_articlenotfound=خطا：«%1$s» مقاله سی یوکلنمه دی.
 android.ui.error_articleurlnotfound=خطا：(Url: %1$s) مقاله سی یوکلنمه دی.
 android.ui.error_fileinvalid=خطا：سئچیلمیش فایل بیر گئچرلی ZIM فایلی دئییل.
 android.ui.error_filenotfound=خطا： سئچیلمیش ZIM فایلی تاپیلمادی.
-# Fuzzy
-android.ui.error_nozimfilesfound=دستگاهینیزدا هئچ بیر ZIM فایلی تاپیلمادی.\nمحتوالاری کیویکسده نئجه آپلود ائتمگی اؤیرنمک اوچون کؤمک صفحه سینه باخین.\nدستگاه/خاریجی حافظه نیزده ZIM فایلی قویورسانیز، نئچه دقیقه سونرا یئنیدن ایمتحان ائدین یوخسا دستگاهینیزی ریستارت ائدین.
+android.ui.error_nozimfilesfound=دستگاهینیزدا هئچ بیر موحتوالی فایلی تاپیلمادی.\nمحتوالاری کیویکسده نئجه آپلود ائتمگی اؤیرنمک اوچون کؤمک صفحه سینه باخین.\nدستگاه/خاریجی حافظه نیزده ZIM فایلی قویورسانیز، نئچه دقیقه سونرا یئنیدن ایمتحان ائدین یوخسا دستگاهینیزی ریستارت ائدین.
 android.ui.go_to_play_store=پلی استورا گئت
 android.ui.menu_read_aloud=اوجادان اوخو
 android.ui.menu_read_aloud_stop=اوجادان اوخودماغی دوردور
-# Fuzzy
 android.ui.menu_rescan_fs=SD کارتی یئنی‌دن آختار
-# Fuzzy
-android.ui.no_bookmarks=هئچ بیر بوکمارک یوخدور!
+android.ui.no_bookmarks=هئچ بیر بوکمارک یوخدور
 android.ui.no_reader_application_installed=بو نوع فایل اوچون بیر نصب اولونموش برنامه تاپیلمادی
-# Fuzzy
 android.ui.no_section_info=هئچ بیر مؤحتوا باشلیغی تاپیلمادی
 android.ui.open_in_new_tab=باغلانتی یئنی تبده‌می آچیلسین؟
 android.ui.pref_backtotop=اوسته قاییت
@@ -44,9 +37,7 @@ android.ui.pref_language_chooser=دیل سئچین
 android.ui.pref_newtab_background_summary=یئنی تب آچیلاندا، بکگرانددا آچیلاجاق
 android.ui.pref_newtab_background_title=یئنی تبی بکگرانددا آچ
 android.ui.pref_nightmode=گئجه مودو
-# Fuzzy
 android.ui.pref_nightmode_summary=ترس ائدیلمیش بوْیالارلا مقاله‌لری گؤستر
-# Fuzzy
 android.ui.pref_zoom_dialog=بؤیوتمه لولی
 android.ui.pref_zoom_enable=بؤیوتمه کونتروللاری
 android.ui.pref_zoom_entry_automatic=اوتوماتیک
@@ -59,14 +50,10 @@ android.ui.rate_dialog_negative=یوْخ، تشکورلر
 android.ui.rate_dialog_neutral=سوْنرا
 android.ui.rate_dialog_positive=رۆتبه‌لندیر!
 android.ui.rate_dialog_title=لۆطفاً بیزی رۆتبه‌لندیرین
-# Fuzzy
-android.ui.request_storage=ZIM فایل‌لارینا چاتماق اۆچون، آنبارینیزا ال تاپمالی‌ییق.
-# Fuzzy
-android.ui.rescan_fs_warning=ZIM فایللاری آختاریلیر، لوطفا گؤزله‌یین...
-# Fuzzy
+android.ui.request_storage=آفلاین فایل‌لارینا چاتماق اۆچون، آنبارینیزا ال تاپمالی‌ییق.
+android.ui.rescan_fs_warning=اندیریلن فایللاری آختاریلیر، لوطفا گؤزله‌یین...
 android.ui.save_media_error=بۇ مِدیانی ذخیره ائدنده بیر خطا باش وئردی!
-# Fuzzy
-android.ui.save_media_saved=مدیا %1$s آدی ایله عکسلر فولدرینیزده ذخیره اولوندو.
+android.ui.save_media_saved=مدیا Android/media/org.kiwix.../ فولدرینیزده ذخیره اولوندو.
 android.ui.tts_lang_not_supported=بۇ صفحه‌نین دیلی ساپوْرتلانماییر٬ یا دا موناسیب دیل دئیتاسی نصب اوْلونماییبدیر. مقاله احتیماللا اوْخونولماز اوْلا بیلر.
 ui.main.about=برئندی حاقیندا. قیسا  برئند آدی؛
 ui.main.audible=سَسلی

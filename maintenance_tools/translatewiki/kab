@@ -15,6 +15,7 @@ android.ui.button_backtotop=Uɣal d asawen
 android.ui.choose_file=Fren afaylu n umiḍan (*.zim)
 android.ui.clear_all_history_dialog_title=Sfeḍ akk amazray
 android.ui.clear_recent_history_dialog=Tebɣiḍ ad tsefḍeḍ amazray-ik n unadi?
+android.ui.confirm_stop_download_title=Seḥbes asider?
 android.ui.delete=Kkes
 android.ui.delete_recent_search_item=Ad kksed aferdis-agi?
 android.ui.delete_specific_zim=Ad mhud asebtar-agi?

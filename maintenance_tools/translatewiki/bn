@@ -9,10 +9,11 @@
 # Author: Kelson
 # Author: Nasir8891
 # Author: Wikitanvir
+# Author: আজিজ
 # Author: এম আবু সাঈদ
 
 android.ui.add_bookmark=বুকমার্ক যোগ করুন
-android.ui.all_history_cleared_toast=সমস্ত ইতিহাস মোছা হয়েছে
+android.ui.all_history_cleared_toast=সমস্ত ইতিহাস সাফ করা হয়ছে
 android.ui.articlesearch_hint=নিবন্ধ দেখতে টাইপ করুন
 android.ui.bookmark_added=বুকমার্ক যোগ হয়েছে
 android.ui.bookmark_removed=বুকমার্ক সরানো হয়েছে
@@ -211,7 +212,7 @@ ui.main.hideLibrary=লাইব্রেরী লুকাও
 ui.main.home=প্রধান পাতা
 ui.main.invertedColors=বিপরীত রং
 ui.main.language=ভাষা
-ui.main.lastOpen=বর্তমানে খোলা রয়েছে...
+ui.main.lastOpen=সাম্প্রতি খোলা রয়েছে...
 ui.main.launchIndexing=নির্ঘণ্ট প্রকাশ করা হচ্ছে
 ui.main.library.filterBy.author.all=সমস্ত
 ui.main.library.filterBy.author=লেখক
