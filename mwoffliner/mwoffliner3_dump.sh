@@ -36,7 +36,7 @@ $MWOFFLINER_MOBILE --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_India_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/india" &&
 /srv/kiwix-tools/tools/scripts/compareLists.pl --file1=india --file2=films --mode=inter > boolywood &&
 wget "https://upload.wikimedia.org/wikipedia/commons/0/01/Bollywoodbarnstar.png" -O "$SCRIPT_DIR/bollywood.png" &&
-$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Bollywood" --customZimDescription="All Wikipedia article about Indian cinema" --customMainPage="Bollywood" --customZimFavicon="$SCRIPT_DIR/bollywood.png" --articleList="$SCRIPT_DIR/bollywood" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Bollywood" --customZimDescription="All Wikipedia article about Indian cinema" --customMainPage="Wikipedia:WikiProject_Film/Offline_Bollywood" --customZimFavicon="$SCRIPT_DIR/bollywood.png" --articleList="$SCRIPT_DIR/bollywood" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia EN WP1 0.8
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WP1_0_Icon.svg/240px-WP1_0_Icon.svg.png" -O "$SCRIPT_DIR/wp1.png" &&
