@@ -8,6 +8,7 @@
 # Author: Jayantanth
 # Author: Kelson
 # Author: Nasir8891
+# Author: Rasal Lia
 # Author: Wikitanvir
 # Author: আজিজ
 # Author: এম আবু সাঈদ
@@ -212,7 +213,7 @@ ui.main.hideLibrary=লাইব্রেরী লুকাও
 ui.main.home=প্রধান পাতা
 ui.main.invertedColors=বিপরীত রং
 ui.main.language=ভাষা
-ui.main.lastOpen=সাম্প্রতি খোলা রয়েছে...
+ui.main.lastOpen=সাম্প্রতি খোলা ...
 ui.main.launchIndexing=নির্ঘণ্ট প্রকাশ করা হচ্ছে
 ui.main.library.filterBy.author.all=সমস্ত
 ui.main.library.filterBy.author=লেখক
