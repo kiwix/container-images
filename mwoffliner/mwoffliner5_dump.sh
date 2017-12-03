@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ZIM2INDEX=/srv/upload/zim2index/
-ARGS="--adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
+ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 
 # Wikipedia in English
