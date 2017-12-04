@@ -9,7 +9,7 @@ MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # RationalWiki
-$MWOFFLINER --mwUrl=http://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
+$MWOFFLINER --mwUrl=https://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Vikidia
 VIKIDIA_ARGS="--outputDirectory=$ZIM2INDEX/vikidia/ --addNamespaces=102"
