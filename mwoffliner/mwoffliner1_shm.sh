@@ -6,7 +6,9 @@ MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # Wikibooks
-$MWMATRIXOFFLINER --project=wikibooks --outputDirectory=$ZIM2INDEX/wikibooks/ &&
+WIKIBOOKS_ARGS="--outputDirectory=$ZIM2INDEX/wikibooks/"
+$MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --languageInverter --language="(en)" &&
+$MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --addNamespaces="112" --language="en" &&
 
 # Wikispecies
 $MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM2INDEX/wikispecies/ &&
