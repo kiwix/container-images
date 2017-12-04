@@ -12,14 +12,15 @@ MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 $MWOFFLINER --mwUrl=http://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Vikidia
-$MWOFFLINER --mwUrl=https://fr.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://es.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://eu.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://it.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://en.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://ca.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://ru.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
-$MWOFFLINER --mwUrl=https://scn.vikidia.org/ --outputDirectory=$ZIM2INDEX/vikidia/ &&
+VIKIDIA_ARGS="--outputDirectory=$ZIM2INDEX/vikidia/ --addNamespaces=102"
+$MWOFFLINER --mwUrl=https://fr.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://es.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://eu.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://it.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://en.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://ca.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://ru.vikidia.org/ $VIKIDIA_ARGS &&
+$MWOFFLINER --mwUrl=https://scn.vikidia.org/ $VIKIDIA_ARGS &&
 
 # Wikipedia FR Tunisie
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=fr.wikipedia.org --path=w --exploration=5 --namespace=1 --category="Évaluation_des_articles_sur_la_Tunisie" | sed 's/Discussion://' | sort -u > "$SCRIPT_DIR/tunisie" &&
