@@ -44,7 +44,7 @@ wget "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WP1_0_Icon.svg/2
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia 0.8" --customZimDescription="Wikipedia 45.000 best articles" --customMainPage="Wikipedia:Version_0.8" --customZimFavicon="$SCRIPT_DIR/wp1.png" --articleList="$SCRIPT_DIR/selections/wp1-0.8.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikem
-$MWOFFLINER --mwUrl=http://www.wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/
+$MWOFFLINER --mwUrl=https://wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/
 
 # Maths
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Mathematics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_unfiltered" &&
