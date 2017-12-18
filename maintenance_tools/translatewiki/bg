@@ -50,9 +50,7 @@ android.ui.pref_language_chooser=Избиране на език
 android.ui.pref_newtab_background_summary=При отварянето на нов подпрозорец, той ще се отвори във фонов режим
 android.ui.pref_newtab_background_title=Отваряне на нов подпрозорец в заден план
 android.ui.pref_nightmode=Нощен режим
-# Fuzzy
-android.ui.pref_nightmode_summary=Показване на статии в "нощен режим"
-# Fuzzy
+android.ui.pref_nightmode_summary=Показване на статии в „нощен режим“
 android.ui.pref_zoom_dialog=Ниво на мащабиране
 android.ui.pref_zoom_enable=Управление на мащаба
 android.ui.pref_zoom_entry_automatic=Автоматично
@@ -66,14 +64,10 @@ android.ui.rate_dialog_neutral=По-късно
 android.ui.rate_dialog_positive=Оцени!
 android.ui.rate_dialog_title=Моля, оценете ни
 android.ui.remove_bookmark=Премахване на отметка
-# Fuzzy
-android.ui.request_storage=За достъп до ZIM-файлове, ни е нужен достъп до файловото Ви хранилище
-# Fuzzy
-android.ui.rescan_fs_warning=Сканиране на ZIM файлове, моля, изчакайте...
-# Fuzzy
+android.ui.request_storage=За достъп до офлайн съдържание, ни е нужен достъп до файловото Ви хранилище
+android.ui.rescan_fs_warning=Сканиране на файлове за сваляне, моля, изчакайте...
 android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
-# Fuzzy
-android.ui.save_media_saved=Медийният файл е съхранен като %1$s във вашата папка с изображения
+android.ui.save_media_saved=Медийният файл е съхранен под името %s в Android/media/org.kiwix.../
 android.ui.search_label=Търсене
 android.ui.search_widget_text=Търсене в Kiwix
 android.ui.time_day=ден
