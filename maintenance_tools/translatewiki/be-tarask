@@ -36,7 +36,6 @@ android.ui.pref_newtab_background_summary=Пры адкрыцьці новай �
 android.ui.pref_newtab_background_title=Адкрыць новую ўкладку на фоне
 android.ui.pref_nightmode=Начны рэжым
 android.ui.pref_nightmode_summary=Паказваць артыкулы ў інвэртаваных колерах
-# Fuzzy
 android.ui.pref_zoom_dialog=Узровень маштабаваньня
 android.ui.pref_zoom_enable=Кіраваньне маштабам
 android.ui.pref_zoom_entry_automatic=Аўтаматычна
