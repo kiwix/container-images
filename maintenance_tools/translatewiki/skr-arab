@@ -4,6 +4,7 @@
 
 android.ui.add_bookmark=بک مارک شامل کرو
 android.ui.bookmark_added=بک مارک شامل تھی ڳیا
+android.ui.button_backtotop=واپس اُتے ون٘ڄو
 android.ui.clear_all_history_dialog_title=ساری تاریخ صاف کرو
 android.ui.confirm_stop_download_title=ڈاؤن لوڈ روکوں؟
 android.ui.delete=مٹاؤ
@@ -43,8 +44,10 @@ android.ui.no=کو
 android.ui.no_bookmarks=بک مارک کائنی
 android.ui.no_files_here=اتھ کوئی فائلاں کائنی
 android.ui.open=کھولو
+android.ui.pref_backtotop=واپس اُتے ون٘ڄو
 android.ui.pref_clear_all_history_title=تاریخچہ مٹاؤ
 android.ui.pref_display_title=ڈسپلے
+android.ui.pref_extras=فالتو
 android.ui.pref_info_title=معلومات
 android.ui.pref_info_version=ورژن
 android.ui.pref_language_chooser=زبان چݨو
@@ -61,6 +64,7 @@ android.ui.previous=پچھلا
 android.ui.rate_dialog_negative=کو، شکریہ
 android.ui.rate_dialog_neutral=بعد وچ
 android.ui.remote_zims=آن لائن
+android.ui.remove_bookmark=کتابْنِشان مٹاؤ
 android.ui.save_media=میڈیا بچاؤ
 android.ui.search_label=ڳولو
 android.ui.search_widget_text=کیوکس وچ ڳولو
