@@ -48,8 +48,7 @@ android.ui.rate_dialog_negative=Не, дзякуй
 android.ui.rate_dialog_neutral=Пазьней
 android.ui.rate_dialog_positive=Ацаніць!
 android.ui.rate_dialog_title=Калі ласка, ацаніце нас
-# Fuzzy
-android.ui.request_storage=Каб атрымаць доступ да ZIM-файлаў, нам трэба мець доступ да вашага сховішча
+android.ui.request_storage=Каб атрымаць доступ да зьместу оф-лайн, нам трэба мець доступ да вашага сховішча
 # Fuzzy
 android.ui.rescan_fs_warning=Пошук ZIM-файлаў, калі ласка, пачакайце…
 # Fuzzy

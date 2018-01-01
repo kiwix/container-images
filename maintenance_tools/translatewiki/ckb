@@ -9,11 +9,23 @@
 # Author: Sarchia
 # Author: Épine
 
+android.ui.add_bookmark=زیادکردنی بووکمارک
+android.ui.all_history_cleared_toast=ھەموو مێژووەکە سڕدرایەوە
 android.ui.articlesearch_hint=بنووسە بۆ گەڕان بەدوای وتاردا
-# Fuzzy
+android.ui.bookmark_added=بووکمارک زیادکرا
+android.ui.bookmark_removed=بووکمارک سڕدرایەوە
+android.ui.bookmarks_restored=بووکمارکەکان ھێنرانەوە
 android.ui.button_backtotop=گەڕانەوە بۆ سەرەوە
+android.ui.delete=سڕینەوە
+android.ui.delete_specific_zim_toast=پەڕگە سڕدرایەوە
+android.ui.did_you_know=زانیبووت؟
+android.ui.download_pause=ڕاگرتن
+android.ui.download_paused=ڕاگیرا
+android.ui.download_started_library=داگرتن دەستیپێکرد...
+android.ui.download_stop=وەستاندن
 # Fuzzy
 android.ui.error_nozimfilesfound=ھیچ پەڕگەیەکی ZIM نەدۆزرایەوە لەسەر دیڤایسەکەت.
+android.ui.menu_home=ماڵەوە
 android.ui.menu_read_aloud=بە بەرزی بیخوێنەوە
 android.ui.menu_read_aloud_stop=بووستە لە خوێندنەوە
 android.ui.open_in_new_tab=بەستەرەکە لە تابێکی نوێدا بکرێتەوە؟
