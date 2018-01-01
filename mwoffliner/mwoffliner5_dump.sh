@@ -3,6 +3,7 @@
 ZIM2INDEX=/srv/upload/zim2index/
 ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
+MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 
 # Bulbagarden
 $MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --aocalParsoid --speed=0.1 --outputDirectory=$ZIM2INDEX/other/ &&
