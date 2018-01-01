@@ -6,7 +6,7 @@ MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 
 # Bulbagarden
-$MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --aocalParsoid --speed=0.1 --outputDirectory=$ZIM2INDEX/other/ &&
+$MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --localParsoid --speed=0.1 --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Bollywood
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Film_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/films" &&
