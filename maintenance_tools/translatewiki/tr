@@ -5,11 +5,13 @@
 # Author: Captantrips
 # Author: Cekli829
 # Author: Emperyan
+# Author: Hedda
 # Author: Joseph
 # Author: Kumkumuk
 # Author: Man lise
 # Author: McAang
 # Author: Meelo
+# Author: Rapsar
 # Author: Sayginer
 # Author: Szoszv
 # Author: Trockya
@@ -124,7 +126,7 @@ android.ui.pref_clear_all_history_title=Geçmişi temizle
 android.ui.pref_credits=Emeği Geçenler ve Lisanlar
 android.ui.pref_credits_title=Katkıda bulunanlar
 android.ui.pref_current_folder=Mevcut Klasör
-android.ui.pref_display_title=Görünüm
+android.ui.pref_display_title=Görüntüle
 android.ui.pref_extras=Ekstralar
 android.ui.pref_full_text_search_summary=Uygulamanın metni makaleler içinde aramasına izin ver. Dikkat, bu işlem aramayı büyük oranda yavaşlatabilir.
 android.ui.pref_full_text_search_title=Tam Metin Arama
@@ -134,23 +136,23 @@ android.ui.pref_info_title=Bilgi
 android.ui.pref_info_version=Sürüm
 android.ui.pref_language_chooser=Bir dil seçin
 android.ui.pref_language_title=Dil
-android.ui.pref_newtab_background_summary=Yeni bir sekme açarken arka planda açılacak
+android.ui.pref_newtab_background_summary=Yeni bir sekme açtığınızda, sekme arka planda açılacak
 android.ui.pref_newtab_background_title=Yeni sekmeyi arka planda aç
 android.ui.pref_nightmode=Gece modu
-android.ui.pref_nightmode_summary=Makaleleri dönüştürülmüş renklerle göster
+android.ui.pref_nightmode_summary=Maddeleri ters çevrilmiş renklerle göster
 android.ui.pref_storage=Depolama
 android.ui.pref_wifi_only=İçeriği yalnızca WiFi kullanarak indir
-android.ui.pref_zoom_dialog=Zum seviyesi
-android.ui.pref_zoom_enable=Zum kontrolleri
+android.ui.pref_zoom_dialog=Yakınlaştırma düzeyi
+android.ui.pref_zoom_enable=Yakınlaştırma denetimi
 android.ui.pref_zoom_entry_automatic=Otomatik
 android.ui.pref_zoom_entry_large=Büyük
 android.ui.pref_zoom_entry_medium=Orta
 android.ui.pref_zoom_entry_small=Küçük
-android.ui.pref_zoom_sub_title=Zum
+android.ui.pref_zoom_sub_title=Yakınlaştır
 android.ui.previous=Önceki
 android.ui.proceed=Devam et
 android.ui.rate_dialog_msg_1=Eğer kullanırken keyif alıyorsanız
-android.ui.rate_dialog_msg_2=Lütfen bir dakikanızı ayırarak değerlendirin. Desteğiniz için teşekkürler!
+android.ui.rate_dialog_msg_2=Lütfen bir dakikanızı ayırarak bunu değerlendirin. Desteğiniz için teşekkürler!
 android.ui.rate_dialog_negative=Hayır, teşekkürler
 android.ui.rate_dialog_neutral=Sonra
 android.ui.rate_dialog_positive=Değerlendirin!
@@ -161,7 +163,7 @@ android.ui.remove_bookmark=Yer imi kaldır
 android.ui.request_storage=Çevrimdışı içeriğe erişmek için belleğinize erişmemiz gerekmektedir.
 android.ui.request_storage_custom=Ekranın üstünde bir uyarı görürseniz çözüm için cihazınızı yeniden başlatın.
 android.ui.rescan_fs_warning=İndirilebilir içerik aranıyor, lütfen bekleyin...
-android.ui.save_media=Medya'yı Kaydet
+android.ui.save_media=Ortam Dosyasını Kaydet
 android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!
 android.ui.save_media_saved=Medyayı %s olarak şuraya kaydet Android/media/org.kiwix.../
 android.ui.search_label=Ara
@@ -181,8 +183,8 @@ android.ui.tts_pause=duraklat
 android.ui.tts_resume=devam et
 android.ui.tts_stop=dur
 android.ui.undo=Geri al
-android.ui.wait_for_load=İçerik Hala Yükleniyor
-android.ui.wifi_only_msg=Eğer "Evet"i seçerseniz ileride uyarılmayacaksınız. Ancak Seçenekler'den her zaman bunu değiştirebilirsiniz
+android.ui.wait_for_load=İçerik Hâlâ Yükleniyor
+android.ui.wifi_only_msg=Eğer "Evet"i seçerseniz ileride uyarı almayacaksınız. Ancak Ayarlar kısmından her zaman bunu değiştirebilirsiniz
 android.ui.wifi_only_title=İçeriğin mobil ağ kullanılarak indirilmesine izin verilsin mi?
 android.ui.yes=Evet
 android.ui.zim_already_downloading=Zim zaten indiriliyor
@@ -204,7 +206,7 @@ ui.main.close=Kapat
 ui.main.copy=Kopyala
 ui.main.copyLinkAddress=Bağlantı adresini kopyala
 ui.main.defaultset=Varsayılan Ayar
-ui.main.display=Göster
+ui.main.display=Görüntüle
 ui.main.edit=Düzenle
 ui.main.feedback=Geri bildirim
 ui.main.file=Dosya
@@ -282,10 +284,10 @@ ui.messages.abortIndexingConfirm=Şu anda bir indeksleme işlemi yürütülüyor
 ui.messages.alreadyIndexingError=Bir dizin oluşturma işlemi zaten yürütülüyor.
 ui.messages.bookmarkReferingOtherContent=Bu yer imi başka bir içerikle ilgili. Yüklemek istiyor musunuz?
 ui.messages.cancel=İptal
-ui.messages.changeSkinNeedRestart=Görünümü değiştirmek için uygulama yeniden başlatılmalıdır. Yeniden başlat?
+ui.messages.changeSkinNeedRestart=Görünümü değiştirmek için uygulama yeniden başlatılmalıdır. Yeniden başlatılsın mı?
 ui.messages.confirm=Onayla
 ui.messages.contentDownloadFinished='%1''in karşıdan yüklemesi tamamlandı.
-ui.messages.dontDeleteContentFiles=İçerik (zım) dosyasını silmeyin.
+ui.messages.dontDeleteContentFiles=İçerik (ZIM) dosyasını silmeyin.
 ui.messages.dontDisplayAnymore=Bu iletişim kutusunu bir daha gösterme.
 ui.messages.endOfIndexing=İndeksleme işlemi bitirildi.
 ui.messages.error=Hata
