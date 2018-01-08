@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SCRIPT=`readlink -f $0/../`
+SCRIPT_DIR=`dirname "$SCRIPT"`
 ZIM2INDEX=/srv/upload/zim2index/
 ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
