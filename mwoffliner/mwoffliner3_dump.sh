@@ -8,6 +8,9 @@ MWOFFLINER="mwoffliner --format= --format=novid --format=nopic $ARGS"
 MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
+# Gentoo
+$MWOFFLINER --mwUrl=https://wiki.installgentoo.com --localParsoid --mwApiPath=api.php --mwWikiPath=index.php --outputDirectory=$ZIM2INDEX/other/ &&
+
 # RationalWiki
 $MWOFFLINER --mwUrl=https://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ --speed=0.5 &&
 
