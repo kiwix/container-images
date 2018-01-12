@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SCRIPT=`readlink -f $0/../`
+SCRIPT_DIR=`dirname "$SCRIPT"`
 ZIM2INDEX=/srv/upload/zim2index/
 ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
@@ -11,7 +13,7 @@ $MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --localParsoid --speed=0
 # Bollywood
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Film_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/films" &&
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_India_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/india" &&
-/srv/kiwix-tools/tools/scripts/compareLists.pl --file1=india --file2=films --mode=inter > boolywood &&
+/srv/kiwix-tools/tools/scripts/compareLists.pl --file1=india --file2=films --mode=inter > bollywood &&
 wget "https://upload.wikimedia.org/wikipedia/commons/0/01/Bollywoodbarnstar.png" -O "$SCRIPT_DIR/bollywood.png" &&
 $MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Bollywood" --customZimDescription="All Wikipedia article about Indian cinema" --customMainPage="Wikipedia:WikiProject_Film/Offline_Bollywood" --customZimFavicon="$SCRIPT_DIR/bollywood.png" --articleList="$SCRIPT_DIR/bollywood" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
