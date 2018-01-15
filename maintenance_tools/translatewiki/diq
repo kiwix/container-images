@@ -14,10 +14,8 @@
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.bookmark_added=Cay debiyay
 android.ui.bookmarks_restored=Cayan timar ke
-# Fuzzy
-android.ui.button_backtotop=Şo Serni
-# Fuzzy
-android.ui.choose_file=Zu ZIM zerrk dosya weçine (*.zim)
+android.ui.button_backtotop=Şo serêniye
+android.ui.choose_file=Yew dosyay zerreki weçine (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Aplikasyona şıma verêna,. \nEna belki zi şıma çı wext ke dosyay berê SDKart miyan ravêrena.  Şıma rê Play Store  ra aplikasyona xo rocane  kerdış yana fına barkerdış icab keno
 android.ui.delete=Bestere
@@ -52,13 +50,14 @@ android.ui.pref_newtab_background_title=Peyrenger tab da newi de ake
 android.ui.pref_nightmode=Moda şewer
 # Fuzzy
 android.ui.pref_nightmode_summary=Meqaleya rengané çerğneyana bımotné
-# Fuzzy
-android.ui.pref_zoom_dialog=Sewiyey zumer
+android.ui.pref_zoom_dialog=Sewiyay nêzdikerdışi
 android.ui.pref_zoom_enable=Kontrola zumer
 android.ui.pref_zoom_entry_automatic=Otomatik
 android.ui.pref_zoom_entry_large=Gırd
 android.ui.pref_zoom_entry_medium=Miyanên
 android.ui.pref_zoom_entry_small=Werdi
+android.ui.pref_zoom_sub_title=Nêzdikerdış
+android.ui.previous=Verên
 android.ui.rate_dialog_msg_1=Qayılê bıkarnê se
 android.ui.rate_dialog_msg_2=, reca kem deqekê nısbi kerê.  Qandê destegi teşekur kem
 android.ui.rate_dialog_negative=Nê, teşekur
