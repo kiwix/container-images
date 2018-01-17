@@ -42,7 +42,8 @@ my $duplicates = {
     "android.ui.add_bookmark" => "ui.main.mark",
     "android.ui.remove_bookmark" => "ui.main.unmark",
     "android.ui.menu_bookmarks_list" => "ui.main.bookmarks",
-    "android.ui.menu_rescan_fs" =>  "android.ui.rescan_fs"
+    "android.ui.menu_rescan_fs" =>  "android.ui.rescan_fs",
+    "android.ui.zim_manager" => "ui.messages.library"
 };
 
 # Get console line arguments
