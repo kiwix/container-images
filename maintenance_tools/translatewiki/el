@@ -96,6 +96,7 @@ android.ui.zim_already_downloading=Το Zim εγκαθίσταται ήδη
 android.ui.zim_downloads=Λήψη...
 android.ui.zim_file_downloaded=Εγκατεστημένο
 android.ui.zim_file_downloading=Λήψη...
+# Fuzzy
 android.ui.zim_manager=Διαχείριση περιεχομένου
 android.ui.zim_nopic=Χωρίς εικόνες
 android.ui.zim_novid=Χωρίς βίντεο

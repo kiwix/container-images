@@ -183,6 +183,7 @@ android.ui.zim_already_downloading=Zim overfører allerede
 android.ui.zim_downloads=Henter
 android.ui.zim_file_downloaded=Hentet
 android.ui.zim_file_downloading=Henter
+# Fuzzy
 android.ui.zim_manager=Indholdshåndtering
 android.ui.zim_nopic=Ingen billeder
 android.ui.zim_novid=Ingen videoer

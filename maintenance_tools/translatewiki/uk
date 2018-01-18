@@ -185,6 +185,7 @@ android.ui.zim_already_downloading=ZIM вже завантажується
 android.ui.zim_downloads=Завантаження
 android.ui.zim_file_downloaded=Завантажено
 android.ui.zim_file_downloading=Завантаження
+# Fuzzy
 android.ui.zim_manager=Управління контентом
 android.ui.zim_nopic=Без зображень
 android.ui.zim_novid=Немає відео

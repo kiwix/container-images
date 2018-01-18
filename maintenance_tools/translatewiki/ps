@@ -87,6 +87,7 @@ android.ui.yes=هو
 android.ui.zim_already_downloading=زيم له مخې نه را ډاونلوډيږي
 android.ui.zim_file_downloaded=ډاونلوډ سو
 android.ui.zim_file_downloading=ډاونلوډيږي
+# Fuzzy
 android.ui.zim_manager=د منځپانګې مدیریت
 android.ui.zim_nopic=هيڅ دوتنه نشته
 android.ui.zim_novid=هيڅ ويډيو نسته

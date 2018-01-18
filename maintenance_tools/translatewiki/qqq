@@ -52,6 +52,7 @@ android.ui.time_left=Note that this single word is misleading to several possibl
 android.ui.tts_stop={{Identical|Stop}}
 android.ui.undo={{Identical|Undo}}
 android.ui.yes={{Identical|Yes}}
+android.ui.zim_manager={{Identical|Library}}
 ui.main.about=With the menu entry "About", the user opens a modal dialog box giving detailed information about the software and their developers.\n\n<gallery>\nFile:Kiwix-ui.main.about-0.png\nFile:Kiwix-ui.main.about-1.png\n</gallery>
 ui.main.audible=Contextual menu item for HTML5 videos
 ui.main.back={{Identical|Back}}

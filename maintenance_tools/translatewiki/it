@@ -121,6 +121,7 @@ android.ui.tts_lang_not_supported=La lingua di questa pagina non è supportata, 
 android.ui.tts_pause=pausa
 android.ui.undo=Annulla
 android.ui.yes=Sì
+# Fuzzy
 android.ui.zim_manager=Gestione dei contenuti
 ui.main.about.accesskey=n
 ui.main.about=Informazioni su &brand.brandShortName;

@@ -8,10 +8,12 @@
 # Author: Eleferen
 # Author: Eugrus
 # Author: Facenapalm
+# Author: Gehhrr
 # Author: Helpau
 # Author: Ignatus
 # Author: Iluvatar
 # Author: Kaganer
+# Author: Kareyac
 # Author: Kelson
 # Author: Lvova
 # Author: Okras
@@ -41,6 +43,7 @@ android.ui.delete_tab=Удалить вкладку
 android.ui.delete_zim_failed=Извините, мы не смогли удалить этот файл. Вместо этого вам стоит попробовать использовать файловый менеджер.
 android.ui.deleted_message=удалено
 android.ui.did_you_know=Вы знали?
+android.ui.do_not_ask_anymore=Больше не спрашивай
 android.ui.download_change_storage=Выбор носителя информации
 android.ui.download_close=Закрыть
 android.ui.download_complete_snackbar=Загрузка завершена
@@ -115,6 +118,7 @@ android.ui.no_section_info=Не Найдены Заголовки Содержи
 android.ui.open=Открыть
 android.ui.open_in_new_tab=Открыть ссылку в новой вкладке?
 android.ui.open_partial_zim=Этот файл может быть незавершённым. Вы хотите попробовать открыть его?
+android.ui.other_languages=Другие языки:
 android.ui.path_not_writable=Нет доступа к желаемой директории, используя значение по умолчанию. Чтобы исправить это, выберите желаемую директорию заново в настройках приложения.
 android.ui.pref_autonightmode=Автоматический ночной режим
 android.ui.pref_autonightmode_summary=Автоматически переключать между дневным и ночным режимами.
@@ -190,7 +194,7 @@ android.ui.zim_already_downloading=Zim уже загружается
 android.ui.zim_downloads=Загрузка
 android.ui.zim_file_downloaded=Загружено
 android.ui.zim_file_downloading=Загрузка
-android.ui.zim_manager=Управление содержимым
+android.ui.zim_manager=Библиотека
 android.ui.zim_nopic=Без картинок
 android.ui.zim_novid=Нет видео
 android.ui.zim_simple=Простой

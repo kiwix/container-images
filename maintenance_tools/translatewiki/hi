@@ -183,6 +183,7 @@ android.ui.zim_already_downloading=Zim पहले से ही डाउन�
 android.ui.zim_downloads=डाउनलोड हो रहा
 android.ui.zim_file_downloaded=डाउनलोड हो गया
 android.ui.zim_file_downloading=डाउनलोड हो रहा
+# Fuzzy
 android.ui.zim_manager=सामग्री प्रबंधन
 android.ui.zim_nopic=चित्र नहीं
 android.ui.zim_novid=चलचित्र नहीं

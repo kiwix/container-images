@@ -185,6 +185,7 @@ android.ui.zim_already_downloading=Zim ইতিমধ্যে ডাউনল�
 android.ui.zim_downloads=ডাউনলোড হচ্ছে
 android.ui.zim_file_downloaded=ডাউনলোড হয়েছে
 android.ui.zim_file_downloading=ডাউনলোড হচ্ছে
+# Fuzzy
 android.ui.zim_manager=বিষয়বস্তু ব্যবস্থাপনা
 android.ui.zim_nopic=ছবি নেই
 android.ui.zim_novid=কোন ভিডিও নেই

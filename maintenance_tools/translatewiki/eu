@@ -154,6 +154,7 @@ android.ui.zim_already_downloading=Zim-a deskargatzen ari da
 android.ui.zim_downloads=Jaisten
 android.ui.zim_file_downloaded=Jaitsita
 android.ui.zim_file_downloading=Jaisten
+# Fuzzy
 android.ui.zim_manager=Kudeaketa Edukia
 android.ui.zim_nopic=Ez dago argazkirik
 android.ui.zim_novid=Bideorik ez

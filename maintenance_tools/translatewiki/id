@@ -184,6 +184,7 @@ android.ui.zim_already_downloading=Zim sedang diunduh
 android.ui.zim_downloads=Mengunduh
 android.ui.zim_file_downloaded=Diunduh
 android.ui.zim_file_downloading=Mengunduh
+# Fuzzy
 android.ui.zim_manager=Manajemen Konten
 android.ui.zim_nopic=Tanpa Gambar
 android.ui.zim_novid=Tanpa Video

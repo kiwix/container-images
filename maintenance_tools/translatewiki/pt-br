@@ -192,6 +192,7 @@ android.ui.zim_already_downloading=Zim já está baixando
 android.ui.zim_downloads=Baixando
 android.ui.zim_file_downloaded=Baixado
 android.ui.zim_file_downloading=Baixando
+# Fuzzy
 android.ui.zim_manager=Administração de Conteúdo
 android.ui.zim_nopic=Sem Imagens
 android.ui.zim_novid=Sem Vídeos

@@ -191,6 +191,7 @@ android.ui.zim_already_downloading=Zim zaten indiriliyor
 android.ui.zim_downloads=İndiriliyor
 android.ui.zim_file_downloaded=İndirildi
 android.ui.zim_file_downloading=İndiriliyor
+# Fuzzy
 android.ui.zim_manager=İçerik Yönetimi
 android.ui.zim_nopic=Resim yok
 android.ui.zim_novid=Video yok

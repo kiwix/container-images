@@ -182,6 +182,7 @@ android.ui.zim_already_downloading=Zim이 이미 다운로드 중입니다
 android.ui.zim_downloads=다운로드 중
 android.ui.zim_file_downloaded=다운로드되었습니다
 android.ui.zim_file_downloading=다운로드 중
+# Fuzzy
 android.ui.zim_manager=내용 관리
 android.ui.zim_nopic=그림 없음
 android.ui.zim_novid=동영상 없음

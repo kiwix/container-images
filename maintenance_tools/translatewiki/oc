@@ -126,6 +126,7 @@ android.ui.yes=Òc
 android.ui.zim_downloads=En cors de telecargament
 android.ui.zim_file_downloaded=Telecargat
 android.ui.zim_file_downloading=En cors de telecargament
+# Fuzzy
 android.ui.zim_manager=Gestion del contengut
 android.ui.zim_nopic=Sens imatges
 android.ui.zim_novid=Pas cap de vidèo

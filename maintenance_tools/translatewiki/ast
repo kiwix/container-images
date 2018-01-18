@@ -177,6 +177,7 @@ android.ui.zim_already_downloading=El zim yá ta descargando
 android.ui.zim_downloads=Descargando
 android.ui.zim_file_downloaded=Descargóse
 android.ui.zim_file_downloading=Descargando
+# Fuzzy
 android.ui.zim_manager=Alministración de conteníu
 android.ui.zim_nopic=Nun hai imáxenes
 android.ui.zim_novid=Nun hai videos

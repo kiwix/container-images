@@ -75,6 +75,7 @@ android.ui.save_media_error=حدث خطأ أثناء محاولة حفظ الم�
 # Fuzzy
 android.ui.save_media_saved=نمّ حفظ الملف تحت %1$s في ملف الصور الخاص بك
 android.ui.tts_lang_not_supported=لم يتم اعتماد اللغة من هذه الصفحة، أو لم يتم تثبيت البيانات باللغة المناسبة. المقالة قد لا تتم قراءتها بشكل صحيح.
+android.ui.your_languages=اللغات المختارة:
 ui.main.about.accesskey=A
 ui.main.about=حول &brand.brandShortName;
 ui.main.audible=مسموعة
