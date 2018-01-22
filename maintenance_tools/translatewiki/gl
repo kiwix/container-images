@@ -1,5 +1,6 @@
 # Messages for Galician (galego)
 # Exported from translatewiki.net
+# Author: Athena in Wonderland
 # Author: Elisardojm
 # Author: Kelson
 # Author: Toliño
@@ -27,6 +28,7 @@ android.ui.delete_tab=Eliminar pestana
 android.ui.delete_zim_failed=Non podemos eliminar este ficheiro. Debería probar cun administrador de ficheiros.
 android.ui.deleted_message=borrado
 android.ui.did_you_know=Sabía que...?
+android.ui.do_not_ask_anymore=Non preguntar máis
 android.ui.download_change_storage=Selector de dispositivo de almacenamento
 android.ui.download_close=Pechar
 android.ui.download_complete_snackbar=Descarga completa
@@ -42,6 +44,8 @@ android.ui.error_articleurlnotfound=Erro: Non se puido cargar o artigo (URL: %1$
 android.ui.error_fileinvalid=Erro: O ficheiro seleccionado non é un ficheiro ZIM válido.
 android.ui.error_filenotfound=Erro: Non se puido atopar o ficheiro ZIM seleccionado.
 android.ui.error_nozimfilesfound=Non se atopou ningún contido no seu dispositivo.\nBote unha ollada á páxina de axuda para aprender a cargar contido no Kiwix.\nSe xa puxo o ficheiro ZIM no seu dispositivo de almacenamento interno ou externo, pode reintentalo nun minuto ou reiniciar o dispositivo.
+android.ui.external_link_popup_dialog_message=Estás introducindo unha ligazón externa. Isto pode xerar gastos por transferencia de datos ou simplemente non funcionará cando está desconectado. Aínda quere continuar?
+android.ui.external_link_popup_dialog_title=Introducindo ligazón externa
 android.ui.external_storage=Externo
 android.ui.get_library_over_network=Usar a rede para descargar a lista de contido. (Aproximadamente 6MB)
 android.ui.go_to_play_store=Ir á Play Store
@@ -101,17 +105,22 @@ android.ui.no_section_info=Non se atoparon cabeceiras de contido.
 android.ui.open=Abrir
 android.ui.open_in_new_tab=Quere abrir a ligazón nunha nova lapela?
 android.ui.open_partial_zim=Pode que este ficheiro estea incompleto. Quere intentar abrilo?
+android.ui.other_languages=Outras linguas:
 android.ui.path_not_writable=Non se puido acceder ó directorio desexado; úsase o predeterminado. Para solucionar isto, volva a seleccionar o directorio desexado nas preferencias da aplicación.
 android.ui.pref_autonightmode=Modo nocturno automatizado
 android.ui.pref_autonightmode_summary=Cambiar automaticamente entre o modo diurno e o nocturno
 android.ui.pref_backtotop=Volver ao inicio
 android.ui.pref_backtotop_summary=Mostrar un botón ao final da páxina para volver ao inicio da mesma
+android.ui.pref_bottomtoolbar=Activar a barra de ferramentas inferior
+android.ui.pref_bottomtoolbar_summary=Mostra unha barra de ferramentas con as accións rápidas na parte inferior da pantalla
 android.ui.pref_clear_all_history_summary=Borrar as procuras recentes e o historial de lapelas
 android.ui.pref_clear_all_history_title=Limpar o historial
 android.ui.pref_credits=Colaboradores e licenzas
 android.ui.pref_credits_title=Créditos
 android.ui.pref_current_folder=Carpeta actual
 android.ui.pref_display_title=Visualización
+android.ui.pref_external_link_popup_summary=Mostra as previsualizacións de páxinas para avisar sobre os custos adicionais ou cando non funciona en ligazóns desconectadas.
+android.ui.pref_external_link_popup_title=Avisar cando introducir ligazóns externas
 android.ui.pref_extras=Extras
 android.ui.pref_full_text_search_summary=Permitir á aplicación procurar texto dentro dos artigos. Coidado: isto podería facer as procuras considerablemente máis lentas.
 android.ui.pref_full_text_search_title=Busca de texto completo
@@ -121,6 +130,8 @@ android.ui.pref_info_title=Información
 android.ui.pref_info_version=Versión
 android.ui.pref_language_chooser=Escolla unha lingua
 android.ui.pref_language_title=Lingua
+android.ui.pref_multi_search_summary=Permitir á aplicación procurar em ficheiros ZIM (Atención: aínda está en desenvolvemento).
+android.ui.pref_multi_search_title=Procurar en MultiZim
 android.ui.pref_newtab_background_summary=Ó abrir unha lapela nova abrirase en segundo plano
 android.ui.pref_newtab_background_title=Abrir unha lapela nova en segundo plano
 android.ui.pref_nightmode=Modo nocturno
@@ -172,12 +183,12 @@ android.ui.wait_for_load=Aínda está cargando o contido
 android.ui.wifi_only_msg=Se escolle "Si", non será advertido no futuro. Porén, sempre pode cambiar isto en Configuración
 android.ui.wifi_only_title=Permitir descargar contido mediante a rede móbil?
 android.ui.yes=Si
+android.ui.your_languages=Linguas escollidas:
 android.ui.zim_already_downloading=O zim xa está a descargarse
 android.ui.zim_downloads=Descargando
 android.ui.zim_file_downloaded=Descargado
 android.ui.zim_file_downloading=Descargando
-# Fuzzy
-android.ui.zim_manager=Administración de contido
+android.ui.zim_manager=Biblioteca
 android.ui.zim_nopic=Sen imaxes
 android.ui.zim_novid=Sen vídeos
 android.ui.zim_simple=Simple

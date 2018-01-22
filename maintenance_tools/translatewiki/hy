@@ -15,6 +15,7 @@ android.ui.choose_file=Ընտրեք ZIM ֆայլ (*.zim)
 android.ui.menu_read_aloud=Կարդալ բարձրաձայն
 android.ui.menu_read_aloud_stop=Դադարեցնել բարձրաձայն կարդալը
 android.ui.open_in_new_tab=Բացե՞լ հղումը նոր պատուհանում:
+android.ui.other_languages=Այլ լեզուներ.
 android.ui.pref_backtotop=Վերադառնալ վերև
 android.ui.pref_info_title=Տեղեկատվություն
 android.ui.pref_info_version=Տարբերակ

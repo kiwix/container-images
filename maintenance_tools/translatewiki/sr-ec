@@ -13,15 +13,13 @@ android.ui.articlesearch_hint=Напиши да пронађеш чланке
 android.ui.bookmark_added=Букмаркови додати
 android.ui.bookmarks_restored=Букмаркови обновљени
 android.ui.button_backtotop=Назад на врх
-# Fuzzy
-android.ui.choose_file=Изабери ZIM  садржајну датотеку (*.zim)
+android.ui.choose_file=Изабери садржајну датотеку (*.zim)
 android.ui.customapp_missing_content=Ваша апликација је оштећена.\nОво се може десити када уклоните датотеке на СД картици.\nТреба да деинсталирате а затим поново инсталирате апликацију из Гугл Плеј продавнице.
 android.ui.error_articlenotfound=Грешка: Није успело учитавање чланка \"%1$s\".
 android.ui.error_articleurlnotfound=Грешка: Није успело учитавање чланка (Url: %1$s).
 android.ui.error_fileinvalid=Грешка: Изабрана датотека није важећа ZIM датотека.
 android.ui.error_filenotfound=Грешка: Изабрана ZIM датотека се не може наћи.
-# Fuzzy
-android.ui.error_nozimfilesfound=Није пронађено ZIM датотека на вашем уређају.\nПрегледајте страницу за помоћ како бисте добили упутства о том како учитати садржај на Kiwix.\nАко јесте ставили ZIM на складиште вашег уређаја или вањско складиште, можете покушати за који минут или поново упалити своју уређај.
+android.ui.error_nozimfilesfound=Није пронађено садржаја на вашем уређају.\nПрегледајте страницу за помоћ како бисте добили упутства о том како учитати садржај на Kiwix.\nАко јесте ставили ZIM на складиште вашег уређаја или вањско складиште, можете покушати за који минут или поново упалити своју уређај.
 android.ui.go_to_play_store=Иди на Плеј Продавницу
 android.ui.language_count=(%1$d)
 android.ui.menu_read_aloud=Читај на глас
@@ -29,8 +27,7 @@ android.ui.menu_read_aloud_stop=Престани да читаш на глас
 android.ui.menu_rescan_fs=Поново скенирај SD картицу
 android.ui.no_bookmarks=Нема букмаркова
 android.ui.no_reader_application_installed=Није могуће наћи инсталирану апликацију за ову врсту датотеке
-# Fuzzy
-android.ui.no_section_info=Не могу да пронађем странице са садржајем.
+android.ui.no_section_info=не могу да пронађем странице са садржајем
 android.ui.open_in_new_tab=Отвори везу у новом језичку?
 android.ui.pref_backtotop=Назад на врх
 android.ui.pref_backtotop_summary=Прикажи дугме на крају странице како би се могли отићи на врх
@@ -53,14 +50,10 @@ android.ui.rate_dialog_negative=Не, хвала
 android.ui.rate_dialog_neutral=Касније
 android.ui.rate_dialog_positive=Оцени!
 android.ui.rate_dialog_title=Молимо Вас да нас оцените
-# Fuzzy
-android.ui.request_storage=Да приступите ZIM датотекама потребан је приступ твојој меморији
-# Fuzzy
-android.ui.rescan_fs_warning=Тражим ZIM датотеке, сачекај...
-# Fuzzy
+android.ui.request_storage=Да приступите офлајн садржају потребан је приступ твојој меморији
+android.ui.rescan_fs_warning=Тражим преузимљиве датотеке, сачекај...
 android.ui.save_media_error=Дошло је до грешке при чувању мултимедије!
-# Fuzzy
-android.ui.save_media_saved=Сачувана мултимедија као %1$s у вашој фасцикли Слике
+android.ui.save_media_saved=Сачувана мултимедија као %s у Android/media/org.kiwix.../
 android.ui.tts_lang_not_supported=Језик на овој страници није подржан, или одговарајући језички подаци нису инсталирани. Чланак не може бити исправно прочитан.
 ui.main.about=О &brand.brandShortName;
 ui.main.audible=Звучно
