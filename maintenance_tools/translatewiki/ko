@@ -131,6 +131,7 @@ android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
 android.ui.pref_language_chooser=언어 선택
 android.ui.pref_language_title=언어
+android.ui.pref_multi_search_summary=앱이 ZIM 파일을 검색할 수 있도록 허용합니다. (경고: 매우 실험적인 기능)
 android.ui.pref_multi_search_title=MultiZim 검색
 android.ui.pref_newtab_background_summary=새 탭을 열 때 백그라운드에서 열립니다
 android.ui.pref_newtab_background_title=새 탭을 백그라운드로 열기

@@ -144,6 +144,7 @@ android.ui.pref_info_version=Версия
 android.ui.pref_language_chooser=Выберите язык
 android.ui.pref_language_title=Язык
 android.ui.pref_multi_search_summary=Позволить приложению искать в файлах ZIM (Внимание: ранняя стадия разработки)
+android.ui.pref_multi_search_title=Поиск MultiZim
 android.ui.pref_newtab_background_summary=При открытии новая вкладка будет открываться в фоновом режиме
 android.ui.pref_newtab_background_title=Открывать новую вкладку в фоновом режиме
 android.ui.pref_nightmode=Ночной режим
