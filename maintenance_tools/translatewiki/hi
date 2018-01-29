@@ -3,11 +3,14 @@
 # Author: Alolitas
 # Author: Ansumang
 # Author: Bl707
+# Author: Innocentbunny
 # Author: Manu9324
 # Author: Nikhilsheth
+# Author: Nitin1485
 # Author: Sachinkatiyar
 # Author: Sfic
 # Author: Siddhartha Ghai
+# Author: Suyash.dwivedi
 # Author: Vdhatterwal
 # Author: संजीव कुमार
 
@@ -34,6 +37,7 @@ android.ui.delete_tab=टैब हटायें
 android.ui.delete_zim_failed=क्षमा करें, हम इस फ़ाइल को हटाने में असमर्थ थे। आपको इसके बजाय एक फ़ाइल प्रबंधक का उपयोग करने का प्रयास करना चाहिए।
 android.ui.deleted_message=हटाया गया
 android.ui.did_you_know=क्या आप जानते हैं?
+android.ui.do_not_ask_anymore=आगे और ना पूछें
 android.ui.download_change_storage=संग्रहण यंत्र चयनकर्ता
 android.ui.download_close=बंद करें
 android.ui.download_complete_snackbar=डाउनलोड पूर्ण
@@ -49,6 +53,8 @@ android.ui.error_articleurlnotfound=त्रुटि: आलेख (Url:  %1$s
 android.ui.error_fileinvalid=त्रुटि: चुनी गयी फ़ाइल एक वैध ZIM फ़ाइल नहीं है।
 android.ui.error_filenotfound=त्रुटि: चुनी गयी ZIM फ़ाइल नही मिल सकी।
 android.ui.error_nozimfilesfound=आपके डिवाइस पर कोई सामग्री नहीं मिली। किवीक्स में सामग्री कैसे लोड करें, पर निर्देश प्राप्त करने के लिए सहायता पृष्ठ पर एक नज़र डालें। अगर आपने अपने डिवाइस/बाह्य संग्रहण पर एक ZIM फाइल डाल दी है, तो आप एक मिनट में फिर से प्रयास कर सकते हैं या अपने डिवाइस को पुनरारंभ कर सकते हैं।
+android.ui.external_link_popup_dialog_message=आप बहरी कड़ी में प्रवेश कर रहे हैं। इसके कारण डेटा स्थानांतरण हेतु अतिरिक्त खर्च पड़ सकता है, अथवा ऑफलाइन होने पर यह काम ही नहीं करेगा। क्या आप अभी भी आगे बढ़ना चाहते हैं?
+android.ui.external_link_popup_dialog_title=बहरी कड़ी में प्रवेश किया जा रहा है
 android.ui.external_storage=बाहरी
 android.ui.get_library_over_network=सामग्री सूची डाउनलोड करने के लिए नेटवर्क का उपयोग करें। (लगभग 6 एमबी
 android.ui.go_to_play_store=प्ले स्टोर पर जाएं
@@ -108,17 +114,22 @@ android.ui.no_section_info=कोई सामग्री शीर्षले
 android.ui.open=खोलें
 android.ui.open_in_new_tab=नए टैब में लिंक खोलें?
 android.ui.open_partial_zim=यह फ़ाइल अधूरी हो सकती है क्या आप इसे खोलने का प्रयास करना चाहते हैं?
+android.ui.other_languages=अन्य भाषाएँ
 android.ui.path_not_writable=डिफ़ॉल्ट का उपयोग करते हुए, इच्छित निर्देशिका तक नहीं पहुंच सकते। इसे ठीक करने के लिए ऐप सेटिंग्स में वांछित निर्देशिका को फिर से खोजें।
 android.ui.pref_autonightmode=स्वचालित रात मोड
 android.ui.pref_autonightmode_summary=स्वचालित रूप से दिन और रात मोड के बीच स्विच करें।
 android.ui.pref_backtotop=वापस शीर्ष पे जाएँ
 android.ui.pref_backtotop_summary=उपर तक खिसकाने के लिए पृष्ठ के अंत में एक बटन दिखाएँ
+android.ui.pref_bottomtoolbar=तलस्त साधनपट्टी को सक्षम करें
+android.ui.pref_bottomtoolbar_summary=स्क्रीन के ताल में त्वरित-कार्य सुविधा युक्त साधनपट्टी को प्रदर्शित करें
 android.ui.pref_clear_all_history_summary=हाल की खोजों और टैब इतिहास को साफ़ करें
 android.ui.pref_clear_all_history_title=इतिहास साफ़ करें
 android.ui.pref_credits=योगदानकर्ता और लाइसेंस
 android.ui.pref_credits_title=श्रेय
 android.ui.pref_current_folder=वर्तमान फोल्डर
 android.ui.pref_display_title=प्रदर्शन
+android.ui.pref_external_link_popup_summary="अतिरिक्त खर्च एवं ऑफलाइन होने पर काम नहीं करने वाली कड़ी" से सावधान करने हेतु पॉपअप संदेश प्रदर्शित करें।
+android.ui.pref_external_link_popup_title=बाह्य कड़ियों में प्रवेश करने पर सावधान करें
 android.ui.pref_extras=अतिरिक्त
 android.ui.pref_full_text_search_summary=ऐप को लेखों के भीतर पाठ ढूंढने की अनुमति दें।  सावधान, यह खोज को काफी धीमा कर सकती है।
 android.ui.pref_full_text_search_title=पूरापाठ खोज
@@ -128,6 +139,8 @@ android.ui.pref_info_title=जानकारी
 android.ui.pref_info_version=संस्करण
 android.ui.pref_language_chooser=भाषा चुनें
 android.ui.pref_language_title=भाषा
+android.ui.pref_multi_search_summary=ऍप को अक्रॉस ज़िम(ZIM) फ़ाइलों में खोजने की अनुमति दें(चेतावनी: अति प्रयोगात्मक!)
+android.ui.pref_multi_search_title=मल्टीज़िम खोज
 android.ui.pref_newtab_background_summary=एक नया टैब खोलते समय यह पृष्ठभूमि में खुल जाएगा
 android.ui.pref_newtab_background_title=पृष्ठभूमि में नया टैब खोलें
 android.ui.pref_nightmode=रात्रि मोड
@@ -179,12 +192,12 @@ android.ui.wait_for_load=सामग्री अभी भी लोड हो
 android.ui.wifi_only_msg=यदि आप "हां" चुनते हैं, तो आपको भविष्य में चेतावनी नहीं दी जाएगी। हालांकि, आप इसे हमेशा सेटिंग्स में बदल सकते हैं
 android.ui.wifi_only_title=मोबाइल नेटवर्क के जरिए सामग्री डाउनलोड करने की अनुमति दें?
 android.ui.yes=हाँ
+android.ui.your_languages=चयनित भाषाएं
 android.ui.zim_already_downloading=Zim पहले से ही डाउनलोड हो रहा
 android.ui.zim_downloads=डाउनलोड हो रहा
 android.ui.zim_file_downloaded=डाउनलोड हो गया
 android.ui.zim_file_downloading=डाउनलोड हो रहा
-# Fuzzy
-android.ui.zim_manager=सामग्री प्रबंधन
+android.ui.zim_manager=पुस्तकालय
 android.ui.zim_nopic=चित्र नहीं
 android.ui.zim_novid=चलचित्र नहीं
 android.ui.zim_simple=साधारण

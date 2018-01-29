@@ -17,6 +17,7 @@ android.ui.articlesearch_hint=Escriviu per buscar articles
 android.ui.button_backtotop=Tornar a dalt
 # Fuzzy
 android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
+android.ui.do_not_ask_anymore=No m’ho preguntis més
 android.ui.error_articlenotfound=Error: no s'ha pogut carregar l'article \"%1$s\".
 android.ui.error_articleurlnotfound=Error: no s'ha pogut carregar l'article (Url: %1$s).
 android.ui.error_fileinvalid=Error: el fitxer seleccionat no és un fitxer ZIM vàlid.

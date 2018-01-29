@@ -53,6 +53,7 @@ android.ui.error_fileinvalid=Error: el archivo seleccionado no es un archivo ZIM
 android.ui.error_filenotfound=Error: no se encontró el archivo ZIM seleccionado.
 android.ui.error_nozimfilesfound=No se encontró ningún contenido en tu dispositivo.\nEcha un vistazo a la Página de Ayuda para obtener instrucciones acerca de cómo cargar contenido en Kiwix.\nSi pusiste un archivo ZIM en tu dispositivo de almacenamiento externo, puedes intentar en un minuto o reiniciar el dispositivo.
 android.ui.external_link_popup_dialog_message=Estás por seguir un enlace externo. Ello podría generar gastos por transferencia de datos o sencillamente no funcionará si no tienes conexión. ¿Quieres continuar?
+android.ui.external_link_popup_dialog_title=Acceso a enlace externo
 android.ui.external_storage=Externo
 android.ui.get_library_over_network=Usar la red para descargar la lista de contenido. (Aproximadamente 6MB)
 android.ui.go_to_play_store=Ir a la Play Store

@@ -16,6 +16,7 @@
 # Author: Kareyac
 # Author: Kelson
 # Author: Lvova
+# Author: Movses
 # Author: Okras
 # Author: Renessaince
 # Author: Александр Сигачёв
@@ -59,6 +60,7 @@ android.ui.error_articleurlnotfound=Ошибка: Загрузка статьи 
 android.ui.error_fileinvalid=Ошибка: Выбранный файл не является пригодным ZIM-файлом.
 android.ui.error_filenotfound=Ошибка: выбранный ZIM-файл не найден.
 android.ui.error_nozimfilesfound=Не удалось найти содержимое на вашем устройстве.\nВзгляните на страницу справки, чтобы получить указания о том, как загружать содержимое на Kiwix.\nЕсли вы расположили ZIM-файл на вашем устройстве или внешнем носителе, возможно, стоит повторить попытку через минуту-другую или перезагрузить устройство.
+android.ui.external_link_popup_dialog_message=Вы указали внешнюю ссылку. Её открытие может привести к снятию средств мобильным оператором или может не сработать, если вы оффлайн. Хотите продолжить?
 android.ui.external_link_popup_dialog_title=Ввод Внешней Ссылки
 android.ui.external_storage=Внешний
 android.ui.get_library_over_network=Используйте сеть, чтобы загрузить список контента. (Около 6MB)
@@ -133,6 +135,7 @@ android.ui.pref_credits=Пользователи и Лицензии
 android.ui.pref_credits_title=Создатели
 android.ui.pref_current_folder=Текущая Папка
 android.ui.pref_display_title=Экран
+android.ui.pref_external_link_popup_summary=Показать всплывающее сообщение про снятие дополнительных средств мобильным оператором или невозможности работы ссылок в оффлайне.
 android.ui.pref_external_link_popup_title=Предупреждать когда происходит ввод внешних ссылок
 android.ui.pref_extras=Дополнительно
 android.ui.pref_full_text_search_summary=Разрешить приложению искать текст в статьях. Осторожно, это может значительно замедлить поиск.
