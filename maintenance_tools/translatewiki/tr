@@ -126,6 +126,7 @@ android.ui.pref_autonightmode_summary=Gece ve gündüz modları arasında otomat
 android.ui.pref_backtotop=Başa dön
 android.ui.pref_backtotop_summary=Başa dönmek için sayfanın altında bir düğme görüntüler
 android.ui.pref_bottomtoolbar=Alt araç çubuğunu etkinleştir
+android.ui.pref_bottomtoolbar_summary=Ekranın altındaki hızlı hareketlerle bir araç çubuğu sergileyin
 android.ui.pref_clear_all_history_summary=Son aramalar ve sekmeler geçmişini temizle
 android.ui.pref_clear_all_history_title=Geçmişi temizle
 android.ui.pref_credits=Emeği Geçenler ve Lisanlar
