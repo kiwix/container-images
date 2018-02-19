@@ -18,6 +18,7 @@
 # Author: Lvova
 # Author: Movses
 # Author: Okras
+# Author: Putnik
 # Author: Renessaince
 # Author: Александр Сигачёв
 
@@ -176,8 +177,8 @@ android.ui.request_storage=Для доступа к офлайн контент�
 android.ui.request_storage_custom=Если вы видите предупреждение об оверлее экрана, просто перезапустите ваше устройство, чтобы исправить это.
 android.ui.rescan_fs_warning=Поиск загружаемого контента, пожалуйста, подождите…
 android.ui.save_media=Сохранить Медиа-файлы
-android.ui.save_media_error=Произошла ошибка при сохранении медиа-файла!
-android.ui.save_media_saved=Медиа-файл сохранён как %s в Android/media/org.kiwix.../
+android.ui.save_media_error=Произошла ошибка при сохранении медиафайла!
+android.ui.save_media_saved=Медиафайл сохранён как %s в Android/media/org.kiwix.../
 android.ui.search_label=Поиск
 android.ui.search_widget_text=Поиск Kiwix
 android.ui.space_available=Доступно Места:
