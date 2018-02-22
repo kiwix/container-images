@@ -24,6 +24,7 @@ android.ui.error_filenotfound=Virhe: valittua ZIM-tiedostoa ei löytynyt.
 # Fuzzy
 android.ui.error_nozimfilesfound=ZIM-tiedostoja ei löytynyt laitteestasi.\nKatso Ohje-sivua saadaksesi ohjeet siitä, miten ladata sisältöä Kiwixiin.\nJos et laita ZIM-tiedostoa laitteeseen/ulkoiseen tallennistilaan, saatat joutua yrittämään uudelleen hetken kuluttua tai käynnistämään laitteesi uudelleen.
 android.ui.go_to_play_store=Mene Play-kauppaan
+android.ui.help_9=\u2022 Muut sisällöt kuten Wikileaks tai Wikiaineisto ovat myös käytettävissä
 android.ui.menu_read_aloud=Lue ääneen
 android.ui.menu_read_aloud_stop=Lopeta ääneen lukeminen
 # Fuzzy
