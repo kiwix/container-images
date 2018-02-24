@@ -26,7 +26,7 @@ $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikiped
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_filter" &&
 grep -Fxv -f "$SCRIPT_DIR/maths_filter" "$SCRIPT_DIR/maths_unfiltered" | sort -u > "$SCRIPT_DIR/maths" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/7/79/Glass_tesseract_still.png" -O "$SCRIPT_DIR/maths.png" &&
-$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Maths" --customZimDescription="15.000 maths articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Mathematics/Offline" --customZimFavicon="$SCRIPT_DIR/maths.png" --articleList="$SCRIPT_DIR/maths" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Maths" --customZimDescription="15,000 maths articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Mathematics/Offline" --customZimFavicon="$SCRIPT_DIR/maths.png" --articleList="$SCRIPT_DIR/maths" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
