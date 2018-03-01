@@ -7,6 +7,7 @@
 # Author: M hamlet
 # Author: Vadgt
 # Author: Vahe Gharakhanyan
+# Author: Դավիթ Սարոյան
 
 # Fuzzy
 android.ui.button_backtotop=Վերադառնալ վերև
@@ -51,7 +52,7 @@ ui.main.forward=Առաջ
 ui.main.fullscreen=Ամբողջ էկրանով
 ui.main.help=Օգնություն
 ui.main.hideLibrary=Թաքցնել գրադարանը
-ui.main.home=Գլխավոր Էջ
+ui.main.home=Գլխավոր էջ
 ui.main.invertedColors=Շրջել գույները
 ui.main.language=Լեզու
 ui.main.lastOpen=Վերջերս բացվածներ․․․
