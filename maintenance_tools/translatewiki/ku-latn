@@ -4,8 +4,15 @@
 # Author: George Animal
 # Author: Hzr
 
-# Fuzzy
 android.ui.button_backtotop=Vegere jor
+android.ui.delete=Jê bibe
+android.ui.did_you_know=Gelo te zanibû?
+android.ui.do_not_ask_anymore=Zêdetir nepirse
+android.ui.download_close=Bigre
+android.ui.download_pause=Rawestîne
+android.ui.download_paused=rawestî
+android.ui.download_play=Bilêzîne
+android.ui.download_started_library=Daxistin destpêkir...
 android.ui.error_articlenotfound=Çewtîː Barkirina gotara \"%1$s\" têk çû.
 android.ui.error_articleurlnotfound=Çewtîː Barkirina gotara (Url: %1$s) têk çû.
 android.ui.error_fileinvalid=Çewtîː Peldankê bibijartî peldankek ZIM'ê yê derbasdar nîn e.
@@ -18,19 +25,37 @@ android.ui.pref_language_chooser=Zimanekî hilbijêre
 android.ui.pref_nightmode=Moda êvarê
 # Fuzzy
 android.ui.pref_nightmode_summary=Gotaran bi rengên vajîkirî nîşan bide
-# Fuzzy
 android.ui.pref_zoom_dialog=Asta zûmê
 android.ui.pref_zoom_enable=Kontrolên zûmê
 android.ui.pref_zoom_entry_automatic=Otomatîk
 android.ui.pref_zoom_entry_large=Mezin
 android.ui.pref_zoom_entry_medium=Medyûm
 android.ui.pref_zoom_entry_small=Biçûk
+android.ui.pref_zoom_sub_title=Nêzîk bike
+android.ui.previous=Yê berê
 android.ui.rate_dialog_negative=Na, spas
+android.ui.rate_dialog_neutral=Paşê
 # Fuzzy
 android.ui.save_media_error=Gava ku medya dihat tomarkirin çewtiyek derket holêǃ
 # Fuzzy
 android.ui.save_media_saved=Ji %1$'ê medyayê ji peldanka te ya Wêne'yan re hate tomarkirin
+android.ui.search_label=Lê bigere
+android.ui.search_widget_text=Li Kiwixê bigere
+android.ui.space_available=Cihê berdestː
+android.ui.time_day=roj
+android.ui.time_hour=s
+android.ui.time_left=çep
+android.ui.time_minute=dq
+android.ui.time_second=sn
+android.ui.tts_lang_not_supported=Zimanê vê rûpelê nayê piştgirîkirin, an jî daneya zimanê naehatiye sazkirin. Dibe ku ev gotar rast nê xwendin.
+android.ui.tts_pause=rawestîne
+android.ui.tts_resume=dewam bike
+android.ui.tts_stop=bisekinîne
+android.ui.undo=Betal bike
+android.ui.yes=Erê
+android.ui.your_languages=Zimanên bijartîː
 ui.main.audible=دەنگدار
+ui.main.back=Vegere
 ui.main.browseLibrary=گەڕان لە کتێبخانە
 ui.main.close=Bigre
 ui.main.copy=Kopî bike
