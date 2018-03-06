@@ -156,7 +156,7 @@ $MWOFFLINER_MOBILE --customZimTitle="Wikivoyage - Europe" --articleList=europe -
 $MWOFFLINER_MOBILE --mwUrl="https://de.wikivoyage.org/" --parsoidUrl="https://de.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Benutzer:Stephane_(Kiwix)/Hauptseite" --outputDirectory=$ZIM2INDEX/wikivoyage/ &&
 
 # Wiktionary
-$MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wiktionary/ &&
 
 # Wikinews
 $MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/ &&
