@@ -1,7 +1,25 @@
 # Messages for Limburgish (Limburgs)
 # Exported from translatewiki.net
+# Author: Ooswesthoesbes
 # Author: Pahles
 
+android.ui.add_bookmark=Veug blaadwiezer tou
+android.ui.all_history_cleared_toast=Ganse gesjiechte eweggehaold
+android.ui.articlesearch_hint=Veur teks in veur pagina's te zeuke
+android.ui.bookmark_added=Blaadwiezer tougeveug
+android.ui.bookmark_removed=Blaadwiezer eweggehaold
+android.ui.bookmarks_restored=Blaadwiezer herstèld
+android.ui.button_backtotop=Trök nao baove
+android.ui.choose_file=Sillekteer 'n Inhawdsbestandj (*.zim)
+android.ui.clear_all_history_dialog_title=Maak ganse gesjiechte laeg
+android.ui.delete=Sjaf eweg
+android.ui.did_you_know=Wèts se det?
+android.ui.do_not_ask_anymore=Vraog nimmieë
+android.ui.download_pause=Pauseer
+android.ui.download_paused=gepauseerd
+android.ui.download_play=Speel
+android.ui.download_started_library=Download begós...
+android.ui.download_stop=Oetgesjèd
 ui.main.about=Euver &brand.brandShortName;
 ui.main.back=Trök
 ui.main.bmkLabel=Blaadwiezers:
@@ -48,7 +66,6 @@ ui.main.noSearchBar=Om te zeuke höbs te 'n geïndexeerd ZIM-besjtand nudig
 ui.main.notesLabel=Blaadwiezeropmirkinge:
 ui.main.openFile=Besjtand äöpene...
 ui.main.openLinkInNewTab=Verwiezing äöpene in nuuj tabblaad
-# Fuzzy
 ui.main.preferences=Veurkäöre
 ui.main.print=Aafdrökke
 ui.main.printPdf=Aafdrökke es PDF
