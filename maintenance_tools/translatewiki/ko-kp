@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Deacon1289
 # Author: Delim
+# Author: Garam
 # Author: Priviet
 # Author: Ykhwong
 # Author: 아라
@@ -44,14 +45,14 @@ ui.main.help=도움말
 ui.main.hideLibrary=자료서고 숨기기
 ui.main.home=처음으로
 ui.main.invertedColors=색상 반전
-ui.main.language=말
+ui.main.language=언어
 ui.main.lastOpen=최근에 사용한 항목
 ui.main.launchIndexing=색인 만들기 실행
 ui.main.library.filterBy.author.all=모두
 ui.main.library.filterBy.author=저자
 ui.main.library.filterBy.fileSize=자료기록철 크기
 ui.main.library.filterBy.language.all=모두
-ui.main.library.filterBy.language=말
+ui.main.library.filterBy.language=언어
 ui.main.library.filterBy.lessThan=이내
 ui.main.library.filterBy.publisher.all=모두
 ui.main.library.filterBy.publisher=발표한 사람

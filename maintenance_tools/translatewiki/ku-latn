@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Bikarhêner
 # Author: George Animal
+# Author: Ghybu
 # Author: Hzr
 
 android.ui.button_backtotop=Vegere jor
@@ -13,17 +14,22 @@ android.ui.download_pause=Rawestîne
 android.ui.download_paused=rawestî
 android.ui.download_play=Bilêzîne
 android.ui.download_started_library=Daxistin destpêkir...
+android.ui.download_stop=Bisekinîne
 android.ui.error_articlenotfound=Çewtîː Barkirina gotara \"%1$s\" têk çû.
 android.ui.error_articleurlnotfound=Çewtîː Barkirina gotara (Url: %1$s) têk çû.
 android.ui.error_fileinvalid=Çewtîː Peldankê bibijartî peldankek ZIM'ê yê derbasdar nîn e.
 android.ui.error_filenotfound=Çewtîː Peldankê  ZIM'ê yê bibijartî nehate dîtin.
+android.ui.next=Pêşve
+android.ui.no=Na
+android.ui.open=Vebike
+android.ui.open_in_new_tab=Bila lînk di hilpekînek nû de were vekirin?
 android.ui.pref_backtotop=Vegere Jor
 android.ui.pref_backtotop_summary=Ji bo vegerî jor, li binê rûpelê wê bişkojek nîşan bide
+android.ui.pref_display_title=Nîşan bide
 android.ui.pref_info_title=Agahî
 android.ui.pref_info_version=Guherto
 android.ui.pref_language_chooser=Zimanekî hilbijêre
 android.ui.pref_nightmode=Moda êvarê
-# Fuzzy
 android.ui.pref_nightmode_summary=Gotaran bi rengên vajîkirî nîşan bide
 android.ui.pref_zoom_dialog=Asta zûmê
 android.ui.pref_zoom_enable=Kontrolên zûmê
@@ -35,10 +41,9 @@ android.ui.pref_zoom_sub_title=Nêzîk bike
 android.ui.previous=Yê berê
 android.ui.rate_dialog_negative=Na, spas
 android.ui.rate_dialog_neutral=Paşê
-# Fuzzy
+android.ui.remote_zims=Online
 android.ui.save_media_error=Gava ku medya dihat tomarkirin çewtiyek derket holêǃ
-# Fuzzy
-android.ui.save_media_saved=Ji %1$'ê medyayê ji peldanka te ya Wêne'yan re hate tomarkirin
+android.ui.save_media_saved=Medya wek %s ji Android/media/org.kiwix.../ re hate qeydkirin
 android.ui.search_label=Lê bigere
 android.ui.search_widget_text=Li Kiwixê bigere
 android.ui.space_available=Cihê berdestː
@@ -87,7 +92,7 @@ ui.main.mute=بێدەنگ کردن
 ui.main.openFile=Dosyeyê veke...
 ui.main.openLinkInNewTab=Lînekê di hilpêkînek nû de veke
 ui.main.osxhideothers=Yên din veşêre
-ui.main.osxservices=خزمەتگوزاریەکان
+ui.main.osxservices=Servîs
 ui.main.osxshowall=Hemûyan nîşan bide
 ui.main.preferences=هەڵبژاردەکان
 ui.main.print=Çap bike

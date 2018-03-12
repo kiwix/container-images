@@ -4,6 +4,7 @@
 # Author: Kelson
 # Author: Macofe
 # Author: Milicevic01
+# Author: Obsuser
 # Author: Rancher
 # Author: Srdjan m
 # Author: Zoranzoki21
@@ -25,7 +26,7 @@ android.ui.language_count=(%1$d)
 android.ui.menu_read_aloud=Читај на глас
 android.ui.menu_read_aloud_stop=Престани да читаш на глас
 android.ui.menu_rescan_fs=Поново скенирај SD картицу
-android.ui.no_bookmarks=Нема букмаркова
+android.ui.no_bookmarks=Нема букмарка
 android.ui.no_reader_application_installed=Није могуће наћи инсталирану апликацију за ову врсту датотеке
 android.ui.no_section_info=не могу да пронађем странице са садржајем
 android.ui.open_in_new_tab=Отвори везу у новом језичку?
