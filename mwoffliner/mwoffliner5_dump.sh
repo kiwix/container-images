@@ -28,6 +28,13 @@ grep -Fxv -f "$SCRIPT_DIR/maths_filter" "$SCRIPT_DIR/maths_unfiltered" | sort -u
 wget "https://upload.wikimedia.org/wikipedia/commons/7/79/Glass_tesseract_still.png" -O "$SCRIPT_DIR/maths.png" &&
 $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Maths" --customZimDescription="15,000 maths articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Mathematics/Offline" --customZimFavicon="$SCRIPT_DIR/maths.png" --articleList="$SCRIPT_DIR/maths" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
+# Chemistry
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Chemistry_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/chemistry_unfiltered" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/chemistry_filter" &&
+grep -Fxv -f "$SCRIPT_DIR/chemistry_filter" "$SCRIPT_DIR/chemistry_unfiltered" | sort -u > "$SCRIPT_DIR/chemistry" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nuvola_apps_edu_science.svg/128px-Nuvola_apps_edu_science.svg.png" -O "$SCRIPT_DIR/chemistry.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Chemistry" --customZimDescription="10,000 chemistry articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Chemistry/Offline" --customZimFavicon="$SCRIPT_DIR/chemistry.png" --articleList="$SCRIPT_DIR/chemistry" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/wikipedia_en_computer.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
