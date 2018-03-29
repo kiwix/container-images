@@ -51,8 +51,7 @@ android.ui.rate_dialog_title=Калі ласка, ацаніце нас
 android.ui.request_storage=Каб атрымаць доступ да зьместу оф-лайн, нам трэба мець доступ да вашага сховішча
 android.ui.rescan_fs_warning=Пошук зьместу для спампоўваньня, калі ласка, пачакайце…
 android.ui.save_media_error=Узьнікла памылка пры захаваньні мэдыяфайлу!
-# Fuzzy
-android.ui.save_media_saved=Мэдыя-файл захаваны як %1$s у тэчцы вашых выяваў
+android.ui.save_media_saved=Мэдыя-файл захаваны як %s у Android/media/org.kiwix.../
 android.ui.tts_lang_not_supported=Мова гэтай старонкі не падтрымліваецца або адпаведныя зьвесткі мовы не былі ўсталяваныя. Артыкул можа быць няправільна прачытаны.
 ui.main.about=Пра &brand.brandShortName;
 ui.main.audible=З гукам
