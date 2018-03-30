@@ -21,17 +21,30 @@ $MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WP1_0_Icon.svg/240px-WP1_0_Icon.svg.png" -O "$SCRIPT_DIR/wp1.png" &&
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia 0.8" --customZimDescription="Wikipedia 45.000 best articles" --customMainPage="Wikipedia:Version_0.8" --customZimFavicon="$SCRIPT_DIR/wp1.png" --articleList="$SCRIPT_DIR/selections/wp1-0.8.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
+# Download list of articles to excludes from selections
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/filter_out" &&
+
+# Physics
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Physics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/physics_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/physics_unfiltered" | sort -u > "$SCRIPT_DIR/physics" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Stylised_atom_with_three_Bohr_model_orbits_and_stylised_nucleus.svg/266px-Stylised_atom_with_three_Bohr_model_orbits_and_stylised_nucleus.svg.png" -O "$SCRIPT_DIR/physics.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Physics" --customZimDescription="20,000 Physics articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Physics/Offline" --customZimFavicon="$SCRIPT_DIR/physics.png" --articleList="$SCRIPT_DIR/physics" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Molecular & Cell Biology
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Molecular_and_Cellular_Biology_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/molcell_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/molcell_unfiltered" | sort -u > "$SCRIPT_DIR/molcell" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Animal_Cell_Unannotated.svg/1405px-Animal_Cell_Unannotated.svg.png" -O "$SCRIPT_DIR/molcell.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Molecular and Cell Biology" --customZimDescription="30,000 Molecular and Cell Biology articles from Wikipedia" --customMainPage="WikiProject_Molecular_and_Cell_Biology/Offline" --customZimFavicon="$SCRIPT_DIR/molcell.png" --articleList="$SCRIPT_DIR/molcell" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
 # Maths
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Mathematics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_unfiltered" &&
-/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_filter" &&
-grep -Fxv -f "$SCRIPT_DIR/maths_filter" "$SCRIPT_DIR/maths_unfiltered" | sort -u > "$SCRIPT_DIR/maths" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/maths_unfiltered" | sort -u > "$SCRIPT_DIR/maths" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/7/79/Glass_tesseract_still.png" -O "$SCRIPT_DIR/maths.png" &&
 $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Maths" --customZimDescription="15,000 maths articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Mathematics/Offline" --customZimFavicon="$SCRIPT_DIR/maths.png" --articleList="$SCRIPT_DIR/maths" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Chemistry
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Chemistry_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/chemistry_unfiltered" &&
-/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/chemistry_filter" &&
-grep -Fxv -f "$SCRIPT_DIR/chemistry_filter" "$SCRIPT_DIR/chemistry_unfiltered" | sort -u > "$SCRIPT_DIR/chemistry" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/chemistry_unfiltered" | sort -u > "$SCRIPT_DIR/chemistry" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nuvola_apps_edu_science.svg/128px-Nuvola_apps_edu_science.svg.png" -O "$SCRIPT_DIR/chemistry.png" &&
 $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Chemistry" --customZimDescription="10,000 chemistry articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Chemistry/Offline" --customZimFavicon="$SCRIPT_DIR/chemistry.png" --articleList="$SCRIPT_DIR/chemistry" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
