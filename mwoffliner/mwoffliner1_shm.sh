@@ -14,7 +14,7 @@ $MWOFFLINER --mwUrl="https://en.wikibooks.org/" $WIKIBOOKS_ARGS --addNamespaces=
 $MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM2INDEX/wikispecies/ &&
 
 # Wikisource
-$MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM2INDEX/wikisource/ --language="(en|fr)" --languageInverter &&
+$MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM2INDEX/wikisource/ --language="(en|de|fr)" --languageInverter &&
 
 # Wikivoyage
 $MWMATRIXOFFLINER --project=wikivoyage --outputDirectory=$ZIM2INDEX/wikivoyage/ --languageInverter --language="(en|de)" &&
