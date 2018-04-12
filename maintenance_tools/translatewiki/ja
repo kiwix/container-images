@@ -4,6 +4,7 @@
 # Author: Kelson
 # Author: Macofe
 # Author: Naohiro19
+# Author: S2KTS
 # Author: Schu
 # Author: Shirayuki
 # Author: SkyDaisy9
@@ -12,6 +13,7 @@
 android.ui.articlesearch_hint=記事の検索
 # Fuzzy
 android.ui.button_backtotop=トップに戻る
+android.ui.do_not_ask_anymore=これ以上聞かないでください
 android.ui.error_articlenotfound=エラー: 記事「%1$s」を読み込めませんでした。
 android.ui.error_articleurlnotfound=エラー: 記事 (URL: %1$s) を読み込めませんでした。
 android.ui.error_fileinvalid=エラー: 選択したファイルは有効な ZIM ファイルではありません。
@@ -19,6 +21,7 @@ android.ui.error_filenotfound=エラー: 選択した ZIM ファイルが見つ�
 # Fuzzy
 android.ui.menu_rescan_fs=SD カードを再スキャン
 android.ui.open_in_new_tab=リンクを新しいタブで開きますか?
+android.ui.other_languages=その他の言語:
 android.ui.pref_backtotop=トップに戻る
 android.ui.pref_info_title=情報
 android.ui.pref_info_version=バージョン
@@ -37,6 +40,7 @@ android.ui.pref_zoom_entry_small=小
 android.ui.rescan_fs_warning=ZIM ファイルをスキャンしています。お待ちください...
 # Fuzzy
 android.ui.save_media_error=メディアを保存しようとした際にエラーが発生しました!
+android.ui.zim_manager=ライブラリ
 ui.main.about=&brand.brandShortName;について
 ui.main.audible=可聴
 ui.main.back=戻る

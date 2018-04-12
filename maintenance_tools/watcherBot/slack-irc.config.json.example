@@ -1,0 +1,10 @@
+[
+{
+    "nickname": "slack-irc",
+    "server": "irc.freenode.net",
+    "token": "foobar"
+    "channelMapping": {
+	"#general": "#kiwix"
+    }
+}
+]

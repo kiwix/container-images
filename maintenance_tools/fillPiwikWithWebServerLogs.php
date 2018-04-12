@@ -140,7 +140,7 @@ function shouldBeStored($path, $filter, $filterOut) {
 
 /* Save in Piwik */
 function saveInPiwik($logHash) {
-  global $idSite, $webUrl, $piwikUrl, $tokenAuth;
+  global $idSite, $webUrl, $piwikUrl, $tokenAuth, $skipFailingRequests;
   $t = new PiwikTracker($idSite, $piwikUrl);
   $t->setUserAgent(substr($logHash["agent"], 0, 100));
   $t->setTokenAuth($tokenAuth);
@@ -153,15 +153,19 @@ function saveInPiwik($logHash) {
   do {
     echo $logHash["ip"]." ".$logHash["status"]." ".$logHash["utcdatetime"]." ".$logHash["path"]." (".$logHash["agent"].")... ";
     $HTTPResult = $t->doTrackPageView(basename($logHash["path"]));
+
     if (!$HTTPResult) {
       $HTTPFailCount++;
       echo "FAIL\n";
-      echo "Unable to save (via HTTP) last log entry for the $HTTPFailCount time, retrying in a few seconds...\n";
-      sleep($HTTPFailCount);
+      echo "Unable to save (via HTTP) last log entry for the $HTTPFailCount time.\n";
+      if (!$skipFailingRequests) {
+        echo "Retrying in a few seconds...\n";
+        sleep($HTTPFailCount);
+      }
     } else {
       echo "SUCCESS\n";
     }
-  } while (!$HTTPResult); 
+  } while (!$HTTPResult && !$skipFailingRequests); 
 }
 
 /* Get last log insertion in Piwik to avoid duplicates */
@@ -185,7 +189,7 @@ function usage() {
 }
 
 /* Get options */
-$options = getopt("", Array("idSite:", "webUrl:", "filter:", "filterOut:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests"));
+$options = getopt("", Array("idSite:", "webUrl:", "filter:", "filterOut:", "piwikUrl:", "tokenAuth:", "followLog", "countSimilarRequests", "skipFailingRequests"));
 
 /* Check options */
 $idSite = "";
@@ -196,10 +200,11 @@ $filter = "";
 $filterOut = "";
 $followLog = false;
 $countSimilarRequests = false;
+$skipFailingRequests = false;
 if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["piwikUrl"]) || empty($options["tokenAuth"])) {
   usage();
 } else {
-  global $idSite, $webUrl, $filter, $filterOut, $piwikUrl, $tokenAuth, $followLog, $countSimilarRequests;
+  global $idSite, $webUrl, $filter, $filterOut, $piwikUrl, $tokenAuth, $followLog, $countSimilarRequests, $skipFailingRequests;
   $idSite = $options["idSite"];
   $webUrl = $options["webUrl"];
   $piwikUrl = $options["piwikUrl"];
@@ -208,6 +213,7 @@ if (empty($options["idSite"]) || empty($options["webUrl"]) || empty($options["pi
   $filterOut = array_key_exists("filterOut", $options) ? $options["filterOut"] : '';
   $followLog = array_key_exists("followLog", $options);
   $countSimilarRequests = array_key_exists("countSimilarRequests", $options);
+  $skipFailingRequests = array_key_exists("skipFailingRequests", $options);
 }
 $duplicateHash = Array();
 $duplicateDelay = $countSimilarRequests ? 0 : 60 * 60 * 24 * 31;

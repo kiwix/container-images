@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ZIM2INDEX=/srv/upload/zim2index/
-ARGS="--adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
+ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
@@ -21,4 +21,4 @@ $MWOFFLINER --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.wikiped
 $MWOFFLINER --mwUrl="https://tr.wikipedia.org/" --parsoidUrl="https://tr.wikipedia.org/api/rest_v1/page/html/" --customMainPage="Kullanıcı:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia
-$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM2INDEX/wikipedia/ --language="(de|it)"
+$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM2INDEX/wikipedia/ --language="(de|fi|no|it)"

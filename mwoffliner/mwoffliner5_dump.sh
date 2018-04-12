@@ -1,8 +1,56 @@
 #!/bin/sh
 
+SCRIPT=`readlink -f $0/../`
+SCRIPT_DIR=`dirname "$SCRIPT"`
 ZIM2INDEX=/srv/upload/zim2index/
-ARGS="--adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
+ARGS="--withZimFullTextIndex --adminEmail=contact@kiwix.org --deflateTmpHtml --verbose --skipHtmlCache --skipCacheCleaning"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
+MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
+
+# Bulbagarden
+$MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --localParsoid --speed=0.1 --outputDirectory=$ZIM2INDEX/other/ &&
+
+# Bollywood
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Film_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/films" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_India_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/india" &&
+/srv/kiwix-tools/tools/scripts/compareLists.pl --file1=india --file2=films --mode=inter > bollywood &&
+wget "https://upload.wikimedia.org/wikipedia/commons/0/01/Bollywoodbarnstar.png" -O "$SCRIPT_DIR/bollywood.png" &&
+$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Bollywood" --customZimDescription="All Wikipedia articles about Indian cinema" --customMainPage="Wikipedia:WikiProject_Film/Offline_Bollywood" --customZimFavicon="$SCRIPT_DIR/bollywood.png" --articleList="$SCRIPT_DIR/bollywood" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Wikipedia EN WP1 0.8
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/WP1_0_Icon.svg/240px-WP1_0_Icon.svg.png" -O "$SCRIPT_DIR/wp1.png" &&
+$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia 0.8" --customZimDescription="Wikipedia 45.000 best articles" --customMainPage="Wikipedia:Version_0.8" --customZimFavicon="$SCRIPT_DIR/wp1.png" --articleList="$SCRIPT_DIR/selections/wp1-0.8.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Download list of articles to excludes from selections
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/filter_out" &&
+
+# Physics
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Physics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/physics_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/physics_unfiltered" | sort -u > "$SCRIPT_DIR/physics" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Stylised_atom_with_three_Bohr_model_orbits_and_stylised_nucleus.svg/266px-Stylised_atom_with_three_Bohr_model_orbits_and_stylised_nucleus.svg.png" -O "$SCRIPT_DIR/physics.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Physics" --customZimDescription="20,000 Physics articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Physics/Offline" --customZimFavicon="$SCRIPT_DIR/physics.png" --articleList="$SCRIPT_DIR/physics" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Molecular & Cell Biology
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Molecular_and_Cellular_Biology_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/molcell_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/molcell_unfiltered" | sort -u > "$SCRIPT_DIR/molcell" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Animal_Cell_Unannotated.svg/1405px-Animal_Cell_Unannotated.svg.png" -O "$SCRIPT_DIR/molcell.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Molecular and Cell Biology" --customZimDescription="30,000 Molecular and Cell Biology articles from Wikipedia" --customMainPage="WikiProject_Molecular_and_Cell_Biology/Offline" --customZimFavicon="$SCRIPT_DIR/molcell.png" --articleList="$SCRIPT_DIR/molcell" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Maths
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Mathematics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/maths_unfiltered" | sort -u > "$SCRIPT_DIR/maths" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/7/79/Glass_tesseract_still.png" -O "$SCRIPT_DIR/maths.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Maths" --customZimDescription="15,000 maths articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Mathematics/Offline" --customZimFavicon="$SCRIPT_DIR/maths.png" --articleList="$SCRIPT_DIR/maths" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Chemistry
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Chemistry_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/chemistry_unfiltered" &&
+grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/chemistry_unfiltered" | sort -u > "$SCRIPT_DIR/chemistry" &&
+wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nuvola_apps_edu_science.svg/128px-Nuvola_apps_edu_science.svg.png" -O "$SCRIPT_DIR/chemistry.png" &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Chemistry" --customZimDescription="10,000 chemistry articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Chemistry/Offline" --customZimFavicon="$SCRIPT_DIR/chemistry.png" --articleList="$SCRIPT_DIR/chemistry" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# Computer
+wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
+$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/wikipedia_en_computer.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia in English
-$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customMainPage="User:Popo_le_Chien/Kiwix" --outputDirectory=$ZIM2INDEX/wikipedia/
+$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customMainPage="User:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/

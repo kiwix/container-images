@@ -1,5 +1,6 @@
 # Messages for Basa Banyumasan (Basa Banyumasan)
 # Exported from translatewiki.net
+# Author: Empu
 # Author: Macofe
 # Author: StefanusRA
 
@@ -41,7 +42,7 @@ ui.main.library.filterBy.publisher.all=Kabeh
 ui.main.library.filterBy.publisher=Penerbite
 ui.main.library.filterBy=Disaring miturut
 ui.main.library.getNewFiles=Njikot berkas anyar
-ui.main.library.myLibrary=Perpustakaane inyong
+ui.main.library.myLibrary=Perpustakaané inyong
 ui.main.library.searchZimFiles=Goleti berkas ZIM
 ui.main.library.sortBy.author=Penulise
 ui.main.library.sortBy.date=Tanggal

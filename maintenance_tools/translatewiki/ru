@@ -8,12 +8,17 @@
 # Author: Eleferen
 # Author: Eugrus
 # Author: Facenapalm
+# Author: Gehhrr
+# Author: Helpau
 # Author: Ignatus
 # Author: Iluvatar
 # Author: Kaganer
+# Author: Kareyac
 # Author: Kelson
 # Author: Lvova
+# Author: Movses
 # Author: Okras
+# Author: Putnik
 # Author: Renessaince
 # Author: Александр Сигачёв
 
@@ -26,7 +31,7 @@ android.ui.bookmarks_restored=Закладки восстановлены
 android.ui.button_backtotop=Вернуться наверх
 android.ui.choose_file=Выберите файл содержимого (*.zim)
 android.ui.clear_all_history_dialog_title=Очистить всю историю
-android.ui.clear_recent_and_tabs_history_dialog=Вы уверены, что хотите удалить историю поиска и сбросить все активные вкладки?
+android.ui.clear_recent_and_tabs_history_dialog=Вы уверены, что хотите удалить историю поиска и закрыть все активные вкладки?
 android.ui.clear_recent_history_dialog=Вы уверены, что хотите удалить историю поиска?
 android.ui.confirm_stop_download_msg=Вы уверены, что хотите остановить эту загрузку?
 android.ui.confirm_stop_download_title=Остановить загрузку?
@@ -40,6 +45,7 @@ android.ui.delete_tab=Удалить вкладку
 android.ui.delete_zim_failed=Извините, мы не смогли удалить этот файл. Вместо этого вам стоит попробовать использовать файловый менеджер.
 android.ui.deleted_message=удалено
 android.ui.did_you_know=Вы знали?
+android.ui.do_not_ask_anymore=Больше не спрашивай
 android.ui.download_change_storage=Выбор носителя информации
 android.ui.download_close=Закрыть
 android.ui.download_complete_snackbar=Загрузка завершена
@@ -55,6 +61,8 @@ android.ui.error_articleurlnotfound=Ошибка: Загрузка статьи 
 android.ui.error_fileinvalid=Ошибка: Выбранный файл не является пригодным ZIM-файлом.
 android.ui.error_filenotfound=Ошибка: выбранный ZIM-файл не найден.
 android.ui.error_nozimfilesfound=Не удалось найти содержимое на вашем устройстве.\nВзгляните на страницу справки, чтобы получить указания о том, как загружать содержимое на Kiwix.\nЕсли вы расположили ZIM-файл на вашем устройстве или внешнем носителе, возможно, стоит повторить попытку через минуту-другую или перезагрузить устройство.
+android.ui.external_link_popup_dialog_message=Вы указали внешнюю ссылку. Её открытие может привести к снятию средств мобильным оператором или может не сработать, если вы офлайн. Хотите продолжить?
+android.ui.external_link_popup_dialog_title=Ввод внешней ссылки
 android.ui.external_storage=Внешний
 android.ui.get_library_over_network=Используйте сеть, чтобы загрузить список контента. (Около 6MB)
 android.ui.go_to_play_store=Перейти в Play Маркет
@@ -69,12 +77,12 @@ android.ui.help_16=• На Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 На Apple Mac OSX: Split and Concat
 android.ui.help_18=\u2022 На GNU/Linux и с консолью: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Примечание: ваши готовые файлы должны быть названы my_big_file.zimaa, my_big_file.zimab и т.д.
-android.ui.help_1=Kiwix даёт вам оффлайн доступ к таким сайтам, как Wikipedia, в сильно упрощённом виде.
+android.ui.help_1=Kiwix даёт вам офлайн доступ к таким сайтам, как Wikipedia, в сильно упрощённом виде.
 android.ui.help_20=Спасибо, что выбрали Kiwix!
 android.ui.help_21=Мы рады, что вы присоединились к нам и будем благодарны за любые отзывы или предложения на android@kiwix.org
 android.ui.help_2=Что делает Kiwix?
 android.ui.help_3=Kiwix - это автономный контент-ридер. Он действует схоже с браузером, но вместо обращения к онлайн страницам, он считывает содержимое из файла в формате ZIM.
-android.ui.help_4=Хотя Kiwix и был изначально разработан, чтобы просматривать Wikipedia оффлайн, он также пригоден и для другого содержимого.
+android.ui.help_4=Хотя Kiwix и был изначально разработан, чтобы просматривать Wikipedia офлайн, он также пригоден и для другого содержимого.
 android.ui.help_5=Где содержимое?
 android.ui.help_6=Наш контент размещён на сайте Kiwix.
 android.ui.help_7=Они доступны как ZIM файлы. Их существует много:
@@ -114,17 +122,22 @@ android.ui.no_section_info=Не Найдены Заголовки Содержи
 android.ui.open=Открыть
 android.ui.open_in_new_tab=Открыть ссылку в новой вкладке?
 android.ui.open_partial_zim=Этот файл может быть незавершённым. Вы хотите попробовать открыть его?
+android.ui.other_languages=Другие языки:
 android.ui.path_not_writable=Нет доступа к желаемой директории, используя значение по умолчанию. Чтобы исправить это, выберите желаемую директорию заново в настройках приложения.
 android.ui.pref_autonightmode=Автоматический ночной режим
 android.ui.pref_autonightmode_summary=Автоматически переключать между дневным и ночным режимами.
 android.ui.pref_backtotop=Вернуться наверх
 android.ui.pref_backtotop_summary=Отобразить кнопку в конце страницы для прокрутки вверх
+android.ui.pref_bottomtoolbar=Включить нижнюю панель управления
+android.ui.pref_bottomtoolbar_summary=Отобразить панель управления с быстрыми действиями внизу экрана
 android.ui.pref_clear_all_history_summary=Очистить недавние поисковые запросы и историю вкладок
 android.ui.pref_clear_all_history_title=Очистить историю
 android.ui.pref_credits=Пользователи и Лицензии
 android.ui.pref_credits_title=Создатели
 android.ui.pref_current_folder=Текущая Папка
 android.ui.pref_display_title=Экран
+android.ui.pref_external_link_popup_summary=Показать всплывающее сообщение про снятие дополнительных средств мобильным оператором или невозможности работы ссылок в офлайне.
+android.ui.pref_external_link_popup_title=Предупреждать когда происходит ввод внешних ссылок
 android.ui.pref_extras=Дополнительно
 android.ui.pref_full_text_search_summary=Разрешить приложению искать текст в статьях. Осторожно, это может значительно замедлить поиск.
 android.ui.pref_full_text_search_title=Полнотекстовый Поиск
@@ -134,6 +147,8 @@ android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_language_chooser=Выберите язык
 android.ui.pref_language_title=Язык
+android.ui.pref_multi_search_summary=Позволить приложению искать в файлах ZIM (Внимание: ранняя стадия разработки)
+android.ui.pref_multi_search_title=Поиск MultiZim
 android.ui.pref_newtab_background_summary=При открытии новая вкладка будет открываться в фоновом режиме
 android.ui.pref_newtab_background_title=Открывать новую вкладку в фоновом режиме
 android.ui.pref_nightmode=Ночной режим
@@ -158,12 +173,12 @@ android.ui.rate_dialog_title=Пожалуйста, оцените нас
 android.ui.reboot_message=Из-за ошибки в android 6.0, мы требуем вас перезагрузить ваше устройство, чтобы продолжить, не предоставляя нам разрешения на хранение. Мы сожалеем о неудобствах, которые могут возникнуть.
 android.ui.remote_zims=Онлайн
 android.ui.remove_bookmark=Удалить закладку
-android.ui.request_storage=Для доступа к оффлайн контенту нам нужен доступ к вашему файловому хранилищу
+android.ui.request_storage=Для доступа к офлайн контенту нам нужен доступ к вашему файловому хранилищу
 android.ui.request_storage_custom=Если вы видите предупреждение об оверлее экрана, просто перезапустите ваше устройство, чтобы исправить это.
 android.ui.rescan_fs_warning=Поиск загружаемого контента, пожалуйста, подождите…
 android.ui.save_media=Сохранить Медиа-файлы
-android.ui.save_media_error=Произошла ошибка при сохранении медиа-файла!
-android.ui.save_media_saved=Медиа-файл сохранён как %s в Android/media/org.kiwix.../
+android.ui.save_media_error=Произошла ошибка при сохранении медиафайла!
+android.ui.save_media_saved=Медиафайл сохранён как %s в Android/media/org.kiwix.../
 android.ui.search_label=Поиск
 android.ui.search_widget_text=Поиск Kiwix
 android.ui.space_available=Доступно Места:
@@ -185,11 +200,12 @@ android.ui.wait_for_load=Содержимое Ещё Загружается
 android.ui.wifi_only_msg=При выборе "Да", вы не будете предупреждаться в будущем. Однако, вы всегда можете поменять это в Настройках.
 android.ui.wifi_only_title=Разрешить загрузку контента через мобильную сеть?
 android.ui.yes=Да
+android.ui.your_languages=Выбранные языки:
 android.ui.zim_already_downloading=Zim уже загружается
 android.ui.zim_downloads=Загрузка
 android.ui.zim_file_downloaded=Загружено
 android.ui.zim_file_downloading=Загрузка
-android.ui.zim_manager=Управление содержимым
+android.ui.zim_manager=Библиотека
 android.ui.zim_nopic=Без картинок
 android.ui.zim_novid=Нет видео
 android.ui.zim_simple=Простой
@@ -313,7 +329,7 @@ ui.messages.abortIndexingConfirm=В настоящее время запущен
 ui.messages.alreadyIndexingError=Процесс индексирования уже запущен.
 ui.messages.bookmarkReferingOtherContent=Эта закладка ссылается на другое содержимое. Вы хотите загрузить его?
 ui.messages.cancel=Отмена
-ui.messages.changeSkinNeedRestart=Для изменения темы оформления приложение должно быть перезапущено. Перезапустить его сейчас?
+ui.messages.changeSkinNeedRestart=Для изменения темы оформления приложение должно быть перезапущено. Перезапустить?
 ui.messages.confirm=Подтвердить
 ui.messages.contentDownloadFinished=Загрузка завершена на '%1'.
 ui.messages.dontDeleteContentFiles=Не удалять ZIM-файлы.

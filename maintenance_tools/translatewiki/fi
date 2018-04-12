@@ -15,6 +15,7 @@ android.ui.bookmarks_restored=Kirjanmerkit palautettu
 android.ui.button_backtotop=Takaisin alkuun
 # Fuzzy
 android.ui.choose_file=Valitse ZIM-sisältötiedosto (*.zim)
+android.ui.confirm_stop_download_title=Pysäytä lataaminen?
 # Fuzzy
 android.ui.customapp_missing_content=Sovelluksesi on viottunut.\nTämä voi tapahtua kun poistat tiedostoja SD-kortilta.\nSinun pitää poistaa ja sitten uudelleenasentaa sovellus Play-kaupasta.
 android.ui.error_articlenotfound=Virhe: Artikkelin \"%1$s\" lataus epäonnistui.
@@ -24,10 +25,13 @@ android.ui.error_filenotfound=Virhe: valittua ZIM-tiedostoa ei löytynyt.
 # Fuzzy
 android.ui.error_nozimfilesfound=ZIM-tiedostoja ei löytynyt laitteestasi.\nKatso Ohje-sivua saadaksesi ohjeet siitä, miten ladata sisältöä Kiwixiin.\nJos et laita ZIM-tiedostoa laitteeseen/ulkoiseen tallennistilaan, saatat joutua yrittämään uudelleen hetken kuluttua tai käynnistämään laitteesi uudelleen.
 android.ui.go_to_play_store=Mene Play-kauppaan
+android.ui.help_9=\u2022 Muut sisällöt kuten Wikileaks tai Wikiaineisto ovat myös käytettävissä
 android.ui.menu_read_aloud=Lue ääneen
 android.ui.menu_read_aloud_stop=Lopeta ääneen lukeminen
 # Fuzzy
 android.ui.menu_rescan_fs=Skannaa SD-kortti uudelleen
+android.ui.next=Seuraava
+android.ui.no=Ei
 # Fuzzy
 android.ui.no_bookmarks=Ei kirjanmerkkejä!
 android.ui.no_reader_application_installed=Ei voitu löytää asennettua sovellusta tämän tyyppiselle tiedostolle
@@ -66,6 +70,7 @@ android.ui.save_media_error=Tapahtui virhe mediaa tallentaessa!
 # Fuzzy
 android.ui.save_media_saved=Tallennettu media %1$s kuvakansiossasi
 android.ui.tts_lang_not_supported=Tämän sivun kieltä ei tueta, tai kielellistä tietoa ei ole asennettu. Artikkelia ei voida lukea kunnolla.
+android.ui.yes=Kyllä
 ui.main.about.accesskey=o
 ui.main.about=Tietoja sovelluksesta &brand.brandShortName;
 ui.main.audible=Poista vaimennus

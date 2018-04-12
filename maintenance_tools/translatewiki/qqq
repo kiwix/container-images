@@ -12,6 +12,7 @@
 # Author: Siebrand
 # Author: SkyDaisy9
 # Author: The RedBurn
+# Author: Verdy p
 # Author: Yekrats
 
 android.ui.button_backtotop={{Identical|Back to top}}
@@ -47,10 +48,11 @@ android.ui.rate_dialog_negative={{Identical|No thanks}}
 android.ui.rate_dialog_neutral={{Identical|Later}}
 android.ui.rate_dialog_positive={{Identical|Rate}}
 android.ui.search_label={{Identical|Search}}
-android.ui.time_left={{Identical|Left}}
+android.ui.time_left=Note that this single word is misleading to several possible translations.\n\nFow now this has been translated by interpreting is as what is "remaining" (relative to the "time left before something happens"), but some languages may have interpreted it differently.\n\nPlease document what is intended in this single "left" term, adding a context of use:\n* is it a physical side name or adjective (opposed to the "right" side)\n* is it a physical direction name or adjective ("to the left" or "leftward", opposed to "to the right" or "rightward")\n* is it a political orientation (derived from the previous meaning by the side of seats in some elected assemblee)\n* is it the past participle of the verb "to leave" (meaning "quitted" or "exited")\n* is it "what is remaining" (after some action occured but not expecting any further evolution)\n* is it what will be "remaining" (waiting for something else to happen, it may continue to evolve, generally by a decreasing value)\n\n{{Identical|Left}}
 android.ui.tts_stop={{Identical|Stop}}
 android.ui.undo={{Identical|Undo}}
 android.ui.yes={{Identical|Yes}}
+android.ui.zim_manager={{Identical|Library}}
 ui.main.about=With the menu entry "About", the user opens a modal dialog box giving detailed information about the software and their developers.\n\n<gallery>\nFile:Kiwix-ui.main.about-0.png\nFile:Kiwix-ui.main.about-1.png\n</gallery>
 ui.main.audible=Contextual menu item for HTML5 videos
 ui.main.back={{Identical|Back}}
@@ -91,7 +93,7 @@ ui.main.library.sortBy.publisher=Preceded by {{msg-kiwix|ui.main.library.sortBy}
 ui.main.library.sortBy.size=Preceded by {{msg-kiwix|ui.main.library.sortBy}}\n{{Identical|Size}}
 ui.main.library.sortBy.title=Preceded by {{msg-kiwix|ui.main.library.sortBy}}\n{{Identical|Title}}
 ui.main.library.sortBy=Followed by a dropdown menu to sort the file list.\n{{Identical|Sort by}}
-ui.main.mute=Contextual menu item for HTML5 videos
+ui.main.mute=Contextual menu item for HTML5 videos\n{{Identical|Mute}}
 ui.main.openFile=This appears as the text for the menu option of [http://www.kiwix.org Kiwix].
 ui.main.openLinkInNewTab=This menu entry is available by right-click with the mouse on a local link. It allows to view the targeted article in a new tab.\n\n<gallery>\nFile:Kiwix-ui.main.openLinkInNewTab-0.png\nFile:Kiwix-ui.main.openLinkInNewTab-1.png\n</gallery>
 ui.main.osxservices={{Identical|Service}}

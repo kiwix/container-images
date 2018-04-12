@@ -8,46 +8,173 @@
 # Author: Kelson
 # Author: Kiolalis
 # Author: Macofe
+# Author: Nikosgranturismogt
 # Author: Omnipaedista
 # Author: ZaDiak
 
+android.ui.add_bookmark=Πρόσθεση σελιδοδείκτη
+android.ui.all_history_cleared_toast=Όλο το ιστορικό καθαρίστηκε
 android.ui.articlesearch_hint=Πληκτρολόγηση για αναζήτηση λημμάτων
-# Fuzzy
+android.ui.bookmark_added=Προστέθηκε σελιδοδείκτης
+android.ui.bookmark_removed=Αφαιρέθηκε σελιδοδείκτης
+android.ui.bookmarks_restored=Σελιδοδείκτες αποκαταστάθηκαν
 android.ui.button_backtotop=Επιστροφή στην κορυφή
-# Fuzzy
 android.ui.choose_file=Επιλογή ZIM Content File (*.zim)
+android.ui.clear_all_history_dialog_title=Εκκαθάριση όλου του ιστορικού
+android.ui.clear_recent_and_tabs_history_dialog=Είστε σίγουροι ότι θέλετε να διαγράψετε το ιστορικό αναζητήσεων σας και να επαναφέρετε όλες τις ενεργές καρτέλες;
+android.ui.clear_recent_history_dialog=Είστε σίγουρος ότι θέλετε να καθαρίσετε το ιστορικό αναζήτησης;
+android.ui.confirm_stop_download_msg=Είστε σίγουροι ότι θέλετε να σταματήσετε αυτή τη λήψη;
+android.ui.confirm_stop_download_title=Σταμάτημα λήψης;
+android.ui.delete=Διαγραφή
+android.ui.delete_recent_search_item=Διαγραφή αυτού του αντικειμένου;
+android.ui.delete_specific_search_toast=Η πρόσφατη αναζήτηση αφαιρέθηκε
+android.ui.delete_specific_zim=Διαγραφή αυτού του αρχείου;
+android.ui.delete_specific_zim_toast=Το αρχείο διαγράφηκε
+android.ui.delete_tab=Διαγραφή καρτέλας
+android.ui.delete_zim_failed=Λυπούμαστε, δεν μπορέσαμε να διαγράψουμε αυτό το αρχείο. Αντί γι'αυτού θα έπρεπε να χρησιμοποιήσετε ένα διαχειριστή αρχείων.
+android.ui.deleted_message=διαγράφηκε
+android.ui.did_you_know=Γνωρίζατε ότι;
+android.ui.do_not_ask_anymore=Μη με ρωτήσεις άλλο
+android.ui.download_change_storage=Επιλογέας συσκευής αποθηκευτικού χώρου
+android.ui.download_close=Κλείσιμο
+android.ui.download_complete_snackbar=Η εγκατάσταση ολοκληρώθηκε
+android.ui.download_no_space=Μη επαρκής αποθηκευτικός χώρος για την λήψη του αρχείου.
+android.ui.download_over_network=Είστε σίγουρος ότι θέλετε να ξεκινήσετε την εγκατάσταση της εφαρμογής χωρίς WiFi;
+android.ui.download_pause=Παύση
+android.ui.download_paused=σε παύση
+android.ui.download_play=Αναπαραγωγή
+android.ui.download_started_library=Η λήψη ξεκίνησε...
+android.ui.download_stop=Διακοπή
 android.ui.error_articlenotfound=Σφάλμα: το ανέβασμα λήμματος  \"%1$s\"  απέτυχε.
 android.ui.error_articleurlnotfound=Σφάλμα:το Ανέβασμα του λήμματος (Url: %1$s) απέτυχε.
 android.ui.error_fileinvalid=Σφάλμα: Το επιλεγμένο αρχείο δεν είναι έγκυρο αρχείο ZIM.
 android.ui.error_filenotfound=Σφάλμα: Το επιλεγμένο ZIM αρχείο δεν μπόρεσε να βρεθεί.
-# Fuzzy
 android.ui.error_nozimfilesfound=Δεν βρέθηκαν αρχεία ZIM στη συσκευή σας. Ρίξτε μια ματιά στη Σελίδα Βοήθειας για να λάβετε οδηγίες σχετικά με το πως να επιφορτώσετε περιεχόμενο στο Kiwix. \nΑν έβαλες ένα αρχείο ZIM στη συσκευή σου/μέσο εξωτερικής αποθήκευσης, μπορεί να ξαναδοκιμάσεις σε ένα λεπτό ή να επανεκκινήσεις τη συσκευή σου.
+android.ui.external_link_popup_dialog_message=Μπαίνετε σε ένα εξωτερικό σύνδεσμο. Αυτό μπορεί να οδηγήσει σε πρόσθετο κόστος για μεταφορά δεδομένων που δεν θα δουλεύει μόνο όταν θα είστε εκτός σύνδεσης. Θέλετε να συνεχίσετε;
+android.ui.external_link_popup_dialog_title=Είσοδος σε εξωτερικό σύνδεσμο
+android.ui.external_storage=Εξωτερική
+android.ui.get_library_over_network=Χρησιμοποιήστε δίκτυο για να κατεβάσετε την λίστα περιεχομένων. (Περίπου 6MB)
+android.ui.go_to_play_store=Μετάβαση στο Play Store
+android.ui.got_it=Κατάλαβα
+android.ui.help_12=Πώς να χρησιμοποιήσετε μεγάλα αρχεία ZIM;
+android.ui.help_16=\u2022 Στο Microsoft Windows: HJ-Split
+android.ui.help_17=\u2022 Στο Apple Mac OSX: Split και Concat
+android.ui.help_18=\u2022 Στο GNU/Linux και με την κονσόλα: split --bytes=4000M my_big_file.zim
+android.ui.help_20=Ευχαριστούμε που επιλέξατε το Kiwix!
+android.ui.help_2=Τι κάνει το Kiwix;
+android.ui.help_3=Το Kiwix είναι ένας αναγνώστης περιεχομένου εκτός σύνδεσης. Φέρεται πολύ σαν περιηγητής αλλά αντί να έχει πρόσβαση σε διαδικτυακές σελίδες, διαβάζει περιεχόμενο από ένα αρχείο σε μορφοποίηση ZIM.
+android.ui.help_5=Που είναι το περιεχόμενο;
+android.ui.help_6=Το περιεχόμενό μας φιλοξενείται στην ιστοσελίδα του Kiwix.
+android.ui.help_7=Είναι διαθέσιμα ως αρχεία ZIM. Υπάρχουν πολλά από αυτά:
+android.ui.help_8=\u2022 Η Βικιπαίδεια είναι διαθέσιμη ξεχωριστά για κάθε γλώσσα
+android.ui.help_9=\u2022 Άλλα περιεχόμενα όπως το Wikileaks ή η Βικιθήκη είναι επίσης διαθέσιμα
+android.ui.internal_storage=Εξωτερικό
+android.ui.language_count=(%1$d)
+android.ui.local_zims=Συσκευή
+android.ui.menu_back=Πίσω
+android.ui.menu_bookmarks=Σελιδοδείκτες
+android.ui.menu_bookmarks_list=Σελιδοδείκτες
+android.ui.menu_exitfullscreen=Έξοδος από πλήρη οθόνη
+android.ui.menu_forward=Προώθηση
+android.ui.menu_fullscreen=Πλήρης οθόνη
+android.ui.menu_help=Βοήθεια
+android.ui.menu_home=Αρχική
+android.ui.menu_library=Εγκατάσταση αρχείων περιεχομένου
+android.ui.menu_randomarticle=Τυχαίο άρθρο
 android.ui.menu_read_aloud=Διάβασε δυνατά
 android.ui.menu_read_aloud_stop=Σταμάτα να διαβάζεις δυνατά
-# Fuzzy
 android.ui.menu_rescan_fs=Εκ νέου σάρωση της κάρτας SD
+android.ui.menu_search=Αναζήτηση άρθρου
+android.ui.menu_searchintext=Βρείτε στην σελίδα
+android.ui.menu_settings=Ρυθμίσεις
+android.ui.menu_zim_manager=Λάβετε περιεχόμενο
+android.ui.new_tab_snackbar=Άρθρο άνοιξε σε νέα καρτέλα
+android.ui.next=Επόμενο
+android.ui.no=Όχι
+android.ui.no_bookmarks=Χωρίς σελιδοδείκτες
+android.ui.no_downloads_here=Δεν υπάρχουν λήψεις εδώ
+android.ui.no_files_here=Δεν υπάρχουν αρχεία εδώ
+android.ui.no_network_connection=Δεν υπάρχει σύνδεση στο δίκτυο
+android.ui.no_network_msg=Δεν υπάρχει σύνδεση στο δίκτυο
+android.ui.no_section_info=Δεν βρέθηκαν επικεφαλίδες περιεχομένου
+android.ui.open=Ανοιχτό
 android.ui.open_in_new_tab=Άνοιγμα συνδέσμου σε νέα καρτέλα;
+android.ui.open_partial_zim=Αυτό το αρχείο μπορεί να είναι ανολοκλήρωτο. Θα θέλατε να προσπαθήσετε να το ανοίξετε;
+android.ui.other_languages=Άλλες γλώσσες:
+android.ui.pref_autonightmode=Αυτοματοποιημένη λειτουργία νύχτας
+android.ui.pref_autonightmode_summary=Εναλλαγή ανάμεσα σε λειτουργία ημέρας και νύχτας αυτόματα.
 android.ui.pref_backtotop=Επιστροφή στην κορυφή
 android.ui.pref_backtotop_summary=Εμφάνιση κουμπιού στο τέλος της σελίδας για να μετακινηθείτε στην κορυφή
+android.ui.pref_clear_all_history_summary=Εκκαθάριση ιστορικού πρόσφατων αναζητήσεων και ετικετών
+android.ui.pref_clear_all_history_title=Εκκαθάριση ιστορικού
+android.ui.pref_credits=Συντάκτες και Άδειες
+android.ui.pref_credits_title=Συντελεστές
+android.ui.pref_current_folder=Τρέχων φάκελος
+android.ui.pref_display_title=Εμφάνιση
+android.ui.pref_external_link_popup_title=Προειδοποίησέ με όταν μπαίνω σε εξωτερικούς συνδέσμους
+android.ui.pref_extras=Πρόσθετα
+android.ui.pref_full_text_search_summary=Επιτρέψτε την εφαρμογή να αναζητάει το κείμενο εντός των άρθρων. Προειδοποίηση: αυτό μπορεί να επιβραδύνει την εφαρμογή σημαντικά.
+android.ui.pref_full_text_search_title=Αναζήτηση πλήρους κειμένου
 android.ui.pref_info_title=Πληροφορίες
 android.ui.pref_info_version=Έκδοση
 android.ui.pref_language_chooser=Επιλογή γλώσσας
+android.ui.pref_language_title=Γλώσσα
+android.ui.pref_multi_search_title=Αναζήτηση MultiZim
+android.ui.pref_newtab_background_title=Άνοιγμα νέας καρτέλας στο παρασκήνιο
 android.ui.pref_nightmode=Νυχτερινή λειτουργία
-# Fuzzy
-android.ui.pref_nightmode_summary=Προβολή λημμάτων και αντεστραμμένα χρώματα
-# Fuzzy
-android.ui.pref_zoom_dialog=Το επίπεδο ζουμ
+android.ui.pref_nightmode_summary=Προβολή λημμάτων με ανεστραμμένα χρώματα
+android.ui.pref_storage=Αποθηκευτικός χώρος
+android.ui.pref_wifi_only=Λήψη περιεχομένου μόνο μέσω WiFi
+android.ui.pref_zoom_dialog=Επίπεδο ζουμ
 android.ui.pref_zoom_enable=Στοιχεία ελέγχου ζουμ
 android.ui.pref_zoom_entry_automatic=Αυτόματη
 android.ui.pref_zoom_entry_large=Μεγάλο
 android.ui.pref_zoom_entry_medium=Μεσαίο
 android.ui.pref_zoom_entry_small=Μικρό
-# Fuzzy
-android.ui.rescan_fs_warning=Σάρωση για αρχεία ZIM, παρακαλώ περιμένετε...
-# Fuzzy
+android.ui.pref_zoom_sub_title=Εστίαση
+android.ui.previous=Προηγούμενο
+android.ui.proceed=Συνέχεια
+android.ui.rate_dialog_msg_1=Εάν απολαμβάνετε να το χρησιμοποιείτε,
+android.ui.rate_dialog_msg_2=, παρακαλούμε βαθμολογήστε το μια στιγμή. Ευχαριστούμε για την υποστήριξή σας!
+android.ui.rate_dialog_negative=Όχι, ευχαριστώ
+android.ui.rate_dialog_neutral=Αργότερα
+android.ui.rate_dialog_positive=Βαθμολόγηση!
+android.ui.rate_dialog_title=Παρακαλώ αξιολογήστε μας
+android.ui.remote_zims=Συνδεδεμένος
+android.ui.remove_bookmark=Αφαίρεση σελιδοδείκτη
+android.ui.rescan_fs_warning=Σάρωση για εγκαταστάσιμο περιεχόμενο, παρακαλώ περιμένετε...
+android.ui.save_media=Αποθήκευση μέσων
 android.ui.save_media_error=Προέκυψε σφάλμα κατά την προσπάθεια αποθήκευσης του αρχείου πολυμέσων!
-# Fuzzy
-android.ui.save_media_saved=Αποθήκευση αρχείων πολυμέσων ως το %1$s  στο φάκελο Εικόνες
+android.ui.save_media_saved=Αποθήκευση αρχείων πολυμέσων ως το %1$s  στο Android/media/org.kiwix.../
+android.ui.search_label=Αναζήτηση
+android.ui.search_widget_text=Αναζήτηση Kiwix
+android.ui.space_available=Διαθέσιμος αποθηκευτικός χώρος:
+android.ui.speech_prompt_text=Ομιλήστε για αναζήτηση %s
+android.ui.tab_closed=Η ετικέτα έκλεισε
+android.ui.time_day=ημέρα
+android.ui.time_hour=ω
+android.ui.time_left=έμεινε
+android.ui.time_minute=λεπτά
+android.ui.time_second=δ
+android.ui.tts_lang_not_supported=Η γλώσσα αυτής της σελίδας δεν υποστηρίζεται, ή κατάλληλα γλωσσικά δεδομένα δεν εγκαταστάθηκαν. Το άρθρο μπορεί να μην αναγνωστεί σωστά.
+android.ui.tts_not_enabled=Το κείμενο σε ομιλία δεν είναι ενεργοποιημένο για αυτό το αρχείο ZIM
+android.ui.tts_pause=παύση
+android.ui.tts_resume=συνέχεια
+android.ui.tts_stop=Διακοπή
+android.ui.undo=Αναίρεση
+android.ui.wait_for_load=Το περιεχόμενο φορτώνει ακόμα
+android.ui.wifi_only_msg=Εάν επιλέξετε "Ναι" δεν θα προειδοποιηθείτε στο μέλλον. Ωστόσο, μπορείτε πάντα να το αλλάξετε στις ρυθμίσεις.
+android.ui.wifi_only_title=Να επιτρέπεται η λήψη περιεχομένου μέσω δικτύου κινητής τηλεφωνίας;
+android.ui.yes=Ναι
+android.ui.your_languages=Επιλεγμένες γλώσσες:
+android.ui.zim_already_downloading=Το Zim εγκαθίσταται ήδη
+android.ui.zim_downloads=Λήψη...
+android.ui.zim_file_downloaded=Εγκατεστημένο
+android.ui.zim_file_downloading=Λήψη...
+android.ui.zim_manager=Βιβλιοθήκη
+android.ui.zim_nopic=Χωρίς εικόνες
+android.ui.zim_novid=Χωρίς βίντεο
+android.ui.zim_simple=Απλό
 ui.main.about.accesskey=A
 ui.main.about=Σχετικά με το &brand.brandShortName;
 ui.main.audible=Ηχητικό

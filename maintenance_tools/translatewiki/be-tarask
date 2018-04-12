@@ -7,29 +7,24 @@
 # Author: Wizardist
 # Author: Zedlik
 
+android.ui.add_bookmark=Дадаць закладку
 android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
 android.ui.bookmarks_restored=Закладкі адноўленыя
 android.ui.button_backtotop=Вярнуцца ўверх
-# Fuzzy
-android.ui.choose_file=Абярыце ZIM-файл (*.zim)
-# Fuzzy
-android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым ўсталяваць яе наноў з Play Store.
+android.ui.choose_file=Абярыце файл зьместу (*.zim)
+android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым усталяваць яе наноў з Play Store.
 android.ui.error_articlenotfound=Памылка: загрузка артыкула \«%1$s\» не атрымалася.
 android.ui.error_articleurlnotfound=Памылка: загрузка артыкула (Url: %1$s) не атрымалася.
 android.ui.error_fileinvalid=Памылка: абраны файл не зьяўляецца слушным ZIM-файлам.
 android.ui.error_filenotfound=Памылка: абраны ZIM-файл ня знойдзены.
-# Fuzzy
-android.ui.error_nozimfilesfound=ZIM-файлы ня знойдзеныя на вашай прыладзе.\nПаглядзіце на старонцы даведкі, як загружаць зьмест у Kiwix.\nКалі вы разьмясьцілі файл на вашай прыладзе або вонкавым сховішчы, магчыма, варта паспрабаваць яшчэ раз празь некалькі імгненьняў або перазагрузіць вашую прыладу.
+android.ui.error_nozimfilesfound=Зьмест ня знойдзены на вашай прыладзе.\nПаглядзіце на старонцы даведкі, як загружаць зьмест у Kiwix.\nКалі вы разьмясьцілі ZIM-файл на вашай прыладзе або вонкавым сховішчы, магчыма, варта паспрабаваць яшчэ раз празь некалькі імгненьняў або перазагрузіць вашую прыладу.
 android.ui.go_to_play_store=Перайсьці ў Play Store
 android.ui.menu_read_aloud=Чытаць уголас
 android.ui.menu_read_aloud_stop=Спыніць чытаньне ўголас
-# Fuzzy
 android.ui.menu_rescan_fs=Перасканаваць SD-картку
-# Fuzzy
-android.ui.no_bookmarks=Няма закладак!
+android.ui.no_bookmarks=Няма закладак
 android.ui.no_reader_application_installed=Ня знойдзеныя ўсталяваныя праграмы для гэтага тыпу файлу
-# Fuzzy
 android.ui.no_section_info=Ня знойдзеныя загалоўкі зьместу
 android.ui.open_in_new_tab=Адкрыць спасылку ў новай укладцы?
 android.ui.pref_backtotop=Вярнуцца ўгару
@@ -40,9 +35,7 @@ android.ui.pref_language_chooser=Абярыце мову
 android.ui.pref_newtab_background_summary=Пры адкрыцьці новай укладкі, яна будзе адкрытая на заднім пляне
 android.ui.pref_newtab_background_title=Адкрыць новую ўкладку на фоне
 android.ui.pref_nightmode=Начны рэжым
-# Fuzzy
-android.ui.pref_nightmode_summary=Паказваць артыкулы ў «начным рэжыме»
-# Fuzzy
+android.ui.pref_nightmode_summary=Паказваць артыкулы ў інвэртаваных колерах
 android.ui.pref_zoom_dialog=Узровень маштабаваньня
 android.ui.pref_zoom_enable=Кіраваньне маштабам
 android.ui.pref_zoom_entry_automatic=Аўтаматычна
@@ -55,14 +48,10 @@ android.ui.rate_dialog_negative=Не, дзякуй
 android.ui.rate_dialog_neutral=Пазьней
 android.ui.rate_dialog_positive=Ацаніць!
 android.ui.rate_dialog_title=Калі ласка, ацаніце нас
-# Fuzzy
-android.ui.request_storage=Каб атрымаць доступ да ZIM-файлаў, нам трэба мець доступ да вашага сховішча
-# Fuzzy
-android.ui.rescan_fs_warning=Пошук ZIM-файлаў, калі ласка, пачакайце…
-# Fuzzy
-android.ui.save_media_error=Узьнікла памылка пры захаваньні мэдыя-файла!
-# Fuzzy
-android.ui.save_media_saved=Мэдыя-файл захаваны як %1$s у тэчцы вашых выяваў
+android.ui.request_storage=Каб атрымаць доступ да зьместу оф-лайн, нам трэба мець доступ да вашага сховішча
+android.ui.rescan_fs_warning=Пошук зьместу для спампоўваньня, калі ласка, пачакайце…
+android.ui.save_media_error=Узьнікла памылка пры захаваньні мэдыяфайлу!
+android.ui.save_media_saved=Мэдыя-файл захаваны як %s у Android/media/org.kiwix.../
 android.ui.tts_lang_not_supported=Мова гэтай старонкі не падтрымліваецца або адпаведныя зьвесткі мовы не былі ўсталяваныя. Артыкул можа быць няправільна прачытаны.
 ui.main.about=Пра &brand.brandShortName;
 ui.main.audible=З гукам
