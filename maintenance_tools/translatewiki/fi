@@ -15,6 +15,7 @@ android.ui.bookmarks_restored=Kirjanmerkit palautettu
 android.ui.button_backtotop=Takaisin alkuun
 # Fuzzy
 android.ui.choose_file=Valitse ZIM-sisältötiedosto (*.zim)
+android.ui.confirm_stop_download_title=Pysäytä lataaminen?
 # Fuzzy
 android.ui.customapp_missing_content=Sovelluksesi on viottunut.\nTämä voi tapahtua kun poistat tiedostoja SD-kortilta.\nSinun pitää poistaa ja sitten uudelleenasentaa sovellus Play-kaupasta.
 android.ui.error_articlenotfound=Virhe: Artikkelin \"%1$s\" lataus epäonnistui.

@@ -1,5 +1,6 @@
 #!/bin/sh
 
+ZIM=/srv/upload/zim/
 ZIM2INDEX=/srv/upload/zim2index/
 SCRIPT=`readlink -f $0/../`
 SCRIPT_DIR=`dirname "$SCRIPT"`
@@ -39,7 +40,7 @@ $MWOFFLINER_MOBILE --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.
 $MWOFFLINER --mwUrl=https://wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ --speed=0.1
 
 # Psiram
-for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG --mwWikiPath=index.php --mwApiPath=api.php --localParsoid --speed=0.5 ; done
+for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG --mwWikiPath=index.php --mwApiPath=api.php --localParsoid --speed=0.5 --outputDirectory=$ZIM/psiram/ ; done
 
 # WikiMed
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_unfiltered" &&
@@ -63,7 +64,10 @@ echo "Book:Psychiatry" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Rheumatology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Women's_health" >> "$SCRIPT_DIR/medicine" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wiki_Project_Med_Foundation_logo.svg/335px-Wiki_Project_Med_Foundation_logo.svg.png" -O "$SCRIPT_DIR/medicine.png" &&
-$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --format="nopic,nodet" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+
+# novid should not be refreshed
+# $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --format="nopic,nodet" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+mwoffliner --format=novid --format=nopic --mobileLayout $ARGS --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --format="nopic,nodet" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia EN medicine langlinks
 cat "$SCRIPT_DIR/medicine" | /srv/kiwix-tools/tools/scripts/listLangLinks.pl --host=en.wikipedia.org --path=w --readFromStdin --language=ja --language=as --language=bn --language=gu --language=hi --language=kn --language=ml --language=de --language=bpy --language=mr --language=lo --language=or --language=pa --language=ta --language=te --language=ur --language=fa --language=fr --language=zh --language=pt --language=ar --language=es --language=it > "$SCRIPT_DIR/medicine.langlinks"
