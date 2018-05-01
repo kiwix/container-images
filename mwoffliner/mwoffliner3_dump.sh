@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Allows to write core file
+ulimit -c unlimited
+
 ZIM=/srv/upload/zim/
 ZIM2INDEX=/srv/upload/zim2index/
 SCRIPT=`readlink -f $0/../`

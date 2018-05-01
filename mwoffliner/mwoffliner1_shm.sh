@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Allows to write core file
+ulimit -c unlimited
+
 ZIM2INDEX=/srv/upload/zim2index/
 ARGS="--withZimFullTextIndex --deflateTmpHtml --verbose --adminEmail=contact@kiwix.org --skipCacheCleaning --skipHtmlCache --tmpDirectory=/dev/shm/"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"

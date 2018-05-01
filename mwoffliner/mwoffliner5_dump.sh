@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Allows to write core file
+ulimit -c unlimited
+
 SCRIPT=`readlink -f $0/../`
 SCRIPT_DIR=`dirname "$SCRIPT"`
 ZIM2INDEX=/srv/upload/zim2index/

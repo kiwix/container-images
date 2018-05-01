@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Allows to write core file
+ulimit -c unlimited
+
 ZIM2INDEX=/srv/upload/zim2index/
 MWMATRIXOFFLINER="mwmatrixoffliner --withZimFullTextIndex --verbose --deflateTmpHtml --adminEmail=contact@kiwix.org --mwUrl=https://meta.wikimedia.org/ --tmpDirectory=/dev/shm/ --skipCacheCleaning --skipHtmlCache"
 
