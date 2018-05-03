@@ -11,30 +11,54 @@
 # Author: Py64
 # Author: Rzuwig
 # Author: Sp5uhe
+# Author: Stojex
 # Author: Ty221
 # Author: Woytecr
 
+android.ui.add_bookmark=Dodaj zakładkę
+android.ui.all_history_cleared_toast=Usunięto całą historię
 android.ui.articlesearch_hint=Wpisz do wyszukiwania artykułów
 android.ui.bookmark_added=Dodano zakładkę
+android.ui.bookmark_removed=Usunięto zakładkę
 android.ui.bookmarks_restored=Zakładki przywrócone
-# Fuzzy
 android.ui.button_backtotop=Powrót do góry
-# Fuzzy
 android.ui.choose_file=Wybierz plik zawartości ZIM (*.zim)
-# Fuzzy
+android.ui.clear_all_history_dialog_title=Wyczyść całą historię
+android.ui.clear_recent_and_tabs_history_dialog=Czy na pewno chcesz usunąć historię wyszukiwania i zresetować wszystkie aktywne karty?
+android.ui.clear_recent_history_dialog=Czy na pewno chcesz usunąć swoją historię wyszukiwania?
+android.ui.confirm_stop_download_msg=Czy na pewno chcesz zatrzymać pobieranie?
+android.ui.confirm_stop_download_title=Zatrzymać pobieranie?
 android.ui.customapp_missing_content=Twoja aplikacja jest uszkodzona.\nMoże to być spowodowane usuwaniem plików z karty SD.\nNależy odinstalować i zainstalować ponownie tę aplikacje ze Sklepu Play.
+android.ui.delete=Usuń
 android.ui.delete_recent_search_item=Usunąć ten obiekt?
+android.ui.delete_specific_search_toast=Ostatnie wyszukiwanie zostało usunięte
 android.ui.delete_specific_zim=Usunąć ten plik?
+android.ui.delete_specific_zim_toast=Plik został usunięty
+android.ui.delete_tab=Usuń kartę
+android.ui.delete_zim_failed=Niestety nie udało się usunąć tego pliku. Zamiast tego powinieneś spróbować użyć menedżera plików.
+android.ui.deleted_message=usunięty
 android.ui.did_you_know=Czy wiesz, że?
+android.ui.do_not_ask_anymore=Nie pytaj więcej
+android.ui.download_close=Zamknij
+android.ui.download_complete_snackbar=Pobieranie zakończone
+android.ui.download_no_space=Za mało miejsca, aby pobrać ten plik.
+android.ui.download_over_network=Czy na pewno chcesz rozpocząć pobieranie bez WiFi?
+android.ui.download_pause=Pauza
+android.ui.download_paused=wstrzymane
+android.ui.download_play=Odtwórz
+android.ui.download_started_library=Pobieranie rozpoczęte...
+android.ui.download_stop=Stop
 android.ui.error_articlenotfound=Błąd: Ładowanie artykułu \ " %1$s \" się nie powiodło.
 android.ui.error_articleurlnotfound=Błąd: Ładowanie artykułu (Url:  %1$s ) się nie powiodło.
 android.ui.error_fileinvalid=Błąd: Wybrany plik nie jest prawidłowym plikiem ZIM.
 android.ui.error_filenotfound=Błąd: Wybrany plik ZIM nie został znaleziony.
 android.ui.error_nozimfilesfound=Nie znaleziono żadnej zawartości na twoim urządzeniu. Zobacz stronę pomocy, aby uzyskać wskazówki jak pobierać zawartość na Kiwix. Jeśli plik ZIM jest umieszczony na urządzeniu/zewnętrznej pamięci masowej, spróbuj za chwilę lub uruchom ponownie urządzenie.
 android.ui.external_storage=Zewnętrzne
+android.ui.get_library_over_network=Użyj sieci, aby pobrać listę zawartości. (Około 6 MB)
 android.ui.go_to_play_store=Przejdź do Sklepu Play
 android.ui.got_it=Wszystko jasne
 android.ui.help_11=Pliki ZIM pobrane rzez aplikacje znajdują się w zewnętrznym katalogu dysku w folderze o nazwie Kiwix.
+android.ui.help_12=Jak korzystać z dużych plików ZIM?
 android.ui.help_13=Jeśli twój plik ZIM ma rozmiar przekraczający 4GB, możliwe, że nie będziesz miał możliwości przechowywania go na twojej karcie SD z uwagi na limity pliku systemowego.
 android.ui.help_20=Dziękujemy za wybranie Kiwix!
 android.ui.help_3=Kiwix to czytnik zawartości offline. Zachowuje się jak przeglądarka, jednak zamiast stron internetowych, czyta zawartość z pliku w formacie ZIM.
@@ -42,33 +66,47 @@ android.ui.help_5=Gdzie jest zawartość?
 android.ui.language_count=(%1$d)
 android.ui.local_zims=Urządzenie
 android.ui.menu_back=Wstecz
+android.ui.menu_bookmarks=Zakładki
 android.ui.menu_bookmarks_list=Zakładki
+android.ui.menu_exitfullscreen=Wyjdź z trybu pełnoekranowego
+android.ui.menu_forward=Prześlij dalej
 android.ui.menu_fullscreen=Pełny ekran
 android.ui.menu_help=Pomoc
+android.ui.menu_home=Start
 android.ui.menu_randomarticle=Losowy artykuł
 android.ui.menu_read_aloud=Czytaj na głos
 android.ui.menu_read_aloud_stop=Zatrzymaj czytanie na głos
-# Fuzzy
 android.ui.menu_rescan_fs=Powtórz wyszukiwanie na karcie SD
 android.ui.menu_search=Wyszukaj artykuł
+android.ui.menu_searchintext=Znajdź na stronie
 android.ui.menu_settings=Ustawienia
 android.ui.new_tab_snackbar=Artykuł otworzony w nowej karcie
+android.ui.next=Następny
 android.ui.no=Nie
-# Fuzzy
-android.ui.no_bookmarks=Brak zakładek!
+android.ui.no_bookmarks=Brak zakładek
 android.ui.no_files_here=Tu nie ma plików
+android.ui.no_network_connection=Brak połączenia z siecią
+android.ui.no_network_msg=Brak połączenia z siecią
 android.ui.no_reader_application_installed=Nie udało się znaleźć zainstalowanego programu dla tego typu plików
 # Fuzzy
 android.ui.no_section_info=Nie znaleziono nagłówków treści
+android.ui.open=Otwórz
 android.ui.open_in_new_tab=Otwórz odnośnik na nowej karcie
+android.ui.other_languages=Inne języki:
 android.ui.pref_autonightmode=Zautomatyzowany tryb nocny.
 android.ui.pref_autonightmode_summary=Przełączaj automatycznie między trybami dnia i nocy.
 android.ui.pref_backtotop=Powrót do góry
 android.ui.pref_backtotop_summary=Wyświetl przycisk na końcu strony, aby przewinąć do góry
+android.ui.pref_bottomtoolbar=Włącz dolny pasek narzędzi
+android.ui.pref_bottomtoolbar_summary=Wyświetl pasek narzędzi z szybkimi akcjami u dołu ekranu
 android.ui.pref_clear_all_history_summary=Wyczyść historię ostatnich wyszukiwań i kart
+android.ui.pref_clear_all_history_title=Wyczyść historię
+android.ui.pref_credits=Współtwórcy i licencje
 android.ui.pref_credits_title=Twórcy
 android.ui.pref_current_folder=Bieżący folder
+android.ui.pref_display_title=Wyświetl
 android.ui.pref_extras=Dodatki
+android.ui.pref_full_text_search_title=Wyszukiwanie pełnotekstowe
 android.ui.pref_hidetoolbar=Ukryj pasek narzędzi gdy przesuwasz stronę
 android.ui.pref_info_title=Informacje
 android.ui.pref_info_version=Wersja
@@ -81,7 +119,6 @@ android.ui.pref_nightmode=Tryb nocny
 android.ui.pref_nightmode_summary=Pokaż artykuły w trybie nocnym
 android.ui.pref_storage=Magazyn
 android.ui.pref_wifi_only=Pobierz zawartość tylko poprzez WiFi
-# Fuzzy
 android.ui.pref_zoom_dialog=Poziom powiększenia
 android.ui.pref_zoom_enable=Zarządzanie skali
 android.ui.pref_zoom_entry_automatic=Automatycznie
@@ -89,27 +126,44 @@ android.ui.pref_zoom_entry_large=Duży
 android.ui.pref_zoom_entry_medium=Średni
 android.ui.pref_zoom_entry_small=Mały
 android.ui.pref_zoom_sub_title=Powiększenie
+android.ui.previous=Poprzednia
+android.ui.proceed=Dalej
 android.ui.rate_dialog_msg_1=Jeśli podoba ci się korzystanie z
 android.ui.rate_dialog_msg_2=, znajdź chwilę na jego ocenienie. Dziękujemy za Twoje wsparcie!
 android.ui.rate_dialog_negative=Nie, dziękuję
 android.ui.rate_dialog_neutral=Później
 android.ui.rate_dialog_positive=Oceń!
 android.ui.rate_dialog_title=Prosimy nas ocenić
-# Fuzzy
+android.ui.remove_bookmark=Usuń zakładkę
 android.ui.request_storage=Aby uzyskać dostęp do plików ZIM, musimy mieć dostęp do twojego nośnika
-# Fuzzy
 android.ui.rescan_fs_warning=Skanowanie plików ZIM, proszę czekać...
-# Fuzzy
-android.ui.save_media_error=Wystąpił błąd przy zapisywanie plików multimedialnych!
-# Fuzzy
-android.ui.save_media_saved=Zapisano plik multimedialny jako %1$s w folderze Zdjęcia.
+android.ui.save_media_error=Wystąpił błąd podczas próby zapisania multimediów!
+android.ui.save_media_saved=Zapisano plik multimedialny jako %s w folderze Android/media/org.kiwix.../
+android.ui.search_label=Szukaj
 android.ui.search_widget_text=Szukaj w Kiwix
 android.ui.space_available=Dostępne miejsce:
+android.ui.speech_not_supported=Przepraszamy! Twoje urządzenie nie obsługuje wprowadzania głosowego
 android.ui.speech_prompt_text=Mów by wyszukać %s
+android.ui.tab_closed=Karta zamknięta
+android.ui.time_day=dzień
+android.ui.time_hour=h
+android.ui.time_left=do lewej
+android.ui.time_minute=min
+android.ui.time_second=s
 android.ui.tts_lang_not_supported=Język tej strony nie jest obsługiwany lub nie zostały zainstalowane odpowiednie dane języka. Ten artykuł może nie być poprawnie odczytywany.
+android.ui.tts_not_enabled=Tekst na mowę nie jest włączony dla tego pliku ZIM
+android.ui.tts_pause=pauza
 android.ui.tts_resume=Podsumuj
+android.ui.tts_stop=stop
+android.ui.undo=Cofnij
 android.ui.zim_already_downloading=Zim już rozpoczął pobieranie
+android.ui.zim_downloads=Pobieranie
+android.ui.zim_file_downloaded=Pobrano
 android.ui.zim_file_downloading=Pobieranie
+android.ui.zim_manager=Biblioteka
+android.ui.zim_nopic=Brak obrazka
+android.ui.zim_novid=Brak wideo
+android.ui.zim_simple=Prosty
 ui.main.about.accesskey=O
 ui.main.about=O &brand.brandShortName;
 ui.main.audible=Dźwiękowy
