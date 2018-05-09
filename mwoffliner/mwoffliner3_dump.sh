@@ -174,10 +174,10 @@ $MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM2INDEX/wikinews/ &&
 $MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Kochwiki
-$MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid &&
+$MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
-# Archlinuc wiki
-$MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" &&
+# Archlinux wiki
+$MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
