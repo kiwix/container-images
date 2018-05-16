@@ -121,7 +121,8 @@ def get_kind(book):
         derivate from fname '''
 
     fname = os.path.basename(get_attr(book, 'url'))
-    return re.sub(r'_20[0-9]{2}\-[0-1][0-9]\.zim\.meta4$', '', fname)
+    return re.sub(r'\.zim\.meta4$', '',
+                  re.sub(r'_20[0-9]{2}\-[0-1][0-9]', '', fname))
 
 
 def read_tags(book):
