@@ -37,7 +37,7 @@ $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidU
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Molecular_and_Cellular_Biology_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/molcell_unfiltered" &&
 grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/molcell_unfiltered" | sort -u > "$SCRIPT_DIR/molcell" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Animal_Cell_Unannotated.svg/1405px-Animal_Cell_Unannotated.svg.png" -O "$SCRIPT_DIR/molcell.png" &&
-$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Molecular and Cell Biology" --customZimDescription="30,000 Molecular and Cell Biology articles from Wikipedia" --customMainPage="WikiProject_Molecular_and_Cell_Biology/Offline" --customZimFavicon="$SCRIPT_DIR/molcell.png" --articleList="$SCRIPT_DIR/molcell" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Molecular and Cell Biology" --customZimDescription="30,000 Molecular and Cell Biology articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Molecular_and_Cell_Biology/Offline" --customZimFavicon="$SCRIPT_DIR/molcell.png" --articleList="$SCRIPT_DIR/molcell" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Maths
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Mathematics_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/maths_unfiltered" &&
