@@ -53,7 +53,7 @@ $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidU
 
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
-$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/wikipedia_en_computer.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/computer.lst" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 # Wikipedia in English
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customMainPage="User:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM2INDEX/wikipedia/
