@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Alirezaaa
 # Author: Ebraminio
+# Author: Fatemi127
 # Author: Leyth
 # Author: Mehran
 # Author: Mhsgame
@@ -12,11 +13,27 @@
 # Author: ZxxZxxZ
 # Author: جواد
 
+android.ui.add_bookmark=افزودن نشانک
+android.ui.all_history_cleared_toast=تمامی تاریخچه پاک شد
 android.ui.articlesearch_hint=برای یافتن مقاله‌ها تایپ کنید
-# Fuzzy
-android.ui.button_backtotop=بازگشت به بالای صفحه
-# Fuzzy
-android.ui.choose_file=یک پروندهٔ محتوایی ZIM را انتخاب کنید (*.zim)
+android.ui.bookmark_added=نشانک افزوده شد
+android.ui.bookmark_removed=نشانک حذف شد
+android.ui.bookmarks_restored=نشانک بازیابی شد
+android.ui.button_backtotop=بازگشت به بالا
+android.ui.choose_file=یک پروندهٔ محتوایی را انتخاب کنید (*.zim)
+android.ui.clear_all_history_dialog_title=پاک کردن تمامی تاریخچه
+android.ui.clear_recent_and_tabs_history_dialog=آیا مطمئن هستید که می‌خواهید تمامی تاریخچه جستجو را پاک کنید و تمام زبانه‌های فعال را ریست کنید؟
+android.ui.clear_recent_history_dialog=آیا مطمئن هستید که می‌خواهید تاریخچه جستجو را حذف کنید؟
+android.ui.confirm_stop_download_msg=آیا مطمئن هستید که می‌خواهید این دانلود متوقف شود؟
+android.ui.confirm_stop_download_title=دانلود متوقف شود؟
+android.ui.delete=حذف
+android.ui.delete_recent_search_item=این مورد حذف شود؟
+android.ui.delete_specific_search_toast=جستجوی اخیر حذف شد
+android.ui.delete_specific_zim=این پرونده حذف شود؟
+android.ui.delete_specific_zim_toast=پرونده حذف شد
+android.ui.delete_tab=حذف زبانه
+android.ui.deleted_message=حذف شد
+android.ui.did_you_know=آیا می‌دانستید که؟
 android.ui.error_articlenotfound=حطا: بارگیری مقالهٔ «%1$s» شکست خورد.
 android.ui.error_articleurlnotfound=حطا: بارگیری مقالهٔ (نشانی: %1$s) شکست خورد.
 android.ui.error_fileinvalid=خطا: پروندهٔ انتخاب‌شده یک پروندهٔ ZIM معتبر نیست.
