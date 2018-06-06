@@ -3,7 +3,6 @@
 # Allows to write core file
 ulimit -c unlimited
 
-ZIM=/srv/upload/zim/
 ZIM2INDEX=/srv/upload/zim2index/
 SCRIPT=`readlink -f $0/../`
 SCRIPT_DIR=`dirname "$SCRIPT"`
@@ -43,7 +42,7 @@ $MWOFFLINER_MOBILE --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.
 $MWOFFLINER --mwUrl=https://wikem.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ --speed=0.1
 
 # Psiram
-for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG --mwWikiPath=index.php --mwApiPath=api.php --localParsoid --speed=0.5 --outputDirectory=$ZIM/psiram/ ; done
+for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG --mwWikiPath=index.php --mwApiPath=api.php --localParsoid --speed=0.5 --outputDirectory=$ZIM2INDEX/psiram/ ; done
 
 # WikiMed
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_unfiltered" &&
@@ -184,4 +183,4 @@ echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
 echo "Warrington" >> test.articles &&
 wget https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Test_art.png/320px-Test_art.png &&
-mwoffliner --withZimFullTextIndex --adminEmail=kelson@kiwix.org --mwUrl=https://fr.wikipedia.org/ --mobileLayout --format= --articleList=test.articles --verbose --customZimTitle=Test --customZimDescription="ZIM file for testing purpose" --customZimFavicon=320px-Test_art.png --outputDirectory=$ZIM2INDEX/../zim/wikipedia/
+mwoffliner --withZimFullTextIndex --adminEmail=kelson@kiwix.org --mwUrl=https://fr.wikipedia.org/ --mobileLayout --format= --articleList=test.articles --verbose --customZimTitle=Test --customZimDescription="ZIM file for testing purpose" --customZimFavicon=320px-Test_art.png --outputDirectory=$ZIM2INDEX//wikipedia/
