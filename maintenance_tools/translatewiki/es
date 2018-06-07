@@ -127,6 +127,7 @@ android.ui.pref_credits=Colaboradores y licencias
 android.ui.pref_credits_title=Créditos
 android.ui.pref_current_folder=Carpeta actual
 android.ui.pref_display_title=Mostrar
+android.ui.pref_external_link_popup_summary=Mostrar advertencia sobre costos adicionales o no funcionamiento en enlaces sin conexión.
 android.ui.pref_external_link_popup_title=Advertir al seguir enlaces externos
 android.ui.pref_extras=Extras
 android.ui.pref_full_text_search_summary=Permitir a la aplicación buscar texto dentro de los artículos. Cuidado: esto podría hacer las búsquedas considerablemente más lentas.
