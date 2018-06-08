@@ -10,7 +10,7 @@ MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # Wikibooks
 WIKIBOOKS_ARGS="--outputDirectory=$ZIM2INDEX/wikibooks/"
-$MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --languageInverter --language="(en)" --languageTrigger="ba" &&
+$MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --languageInverter --language="(en)" &&
 $MWOFFLINER --mwUrl="https://en.wikibooks.org/" $WIKIBOOKS_ARGS --addNamespaces="112" &&
 
 # Wikispecies
