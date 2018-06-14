@@ -9,22 +9,32 @@
 android.ui.articlesearch_hint=ဆောင်းပါးများ ရှာဖွေကြည့်ရှုရန် စာရိုက်ထည့်ပါ
 android.ui.bookmark_added=စာညှပ်မှတ် ထည့်ပေါင်းပြီး
 android.ui.bookmarks_restored=စာညှပ်မှတ်များ ပြန်သိုလှောင်ပြီး
-# Fuzzy
 android.ui.button_backtotop=ထိပ်ဆုံးသို့ ပြန်သွားရန်
-# Fuzzy
-android.ui.choose_file=ZIM အချက်အလက်ဖိုင်တစ်ခုကို ရွေးချယ်ပါ (*.zim)
+android.ui.choose_file=အကြောင်းအရာဖိုင်တစ်ခုကို ရွေးချယ်ပါ (*.zim)
+android.ui.clear_all_history_dialog_title=မှတ်တမ်းများအားလုံး ရှင်းလင်းရန်
+android.ui.delete=ဖျက်
+android.ui.delete_recent_search_item=ဤဟာကို ဖျက်မည်လား
+android.ui.delete_specific_search_toast=မကြာမီက ရှာဖွေမှုကို ဖယ်ရှားပြီးပြီ
+android.ui.delete_specific_zim=ဤဖိုင်ကို ဖျက်မည်လား
+android.ui.delete_specific_zim_toast=ဖိုင် ဖျက်ပြီးပြီ
+android.ui.deleted_message=ဖျက်ပြီးပြီ
+android.ui.did_you_know=သင်သိပါသလား
+android.ui.do_not_ask_anymore=နောက်ထပ် မမေးတော့
+android.ui.download_close=ပိတ်ရန်
+android.ui.download_complete_snackbar=ဒေါင်းလုပ် ပြီးစီးပါပြီ
+android.ui.download_no_space=ဤဖိုင်ကို ဒေါင်းလုပ်ရယူရန် နေရာလွတ် မလုံလောက်ပါ။
+android.ui.download_pause=ခေတ္တရပ်
+android.ui.download_paused=ခေတ္တရပ်ပြီး
+android.ui.download_stop=ရပ်
 android.ui.error_articlenotfound=အမှားသတိပေးချက် − \"%1$s\" ဆောင်းပါးထည့်သွင်းခြင်း မအောင်မြင်ပါ။
 android.ui.error_articleurlnotfound=အမှားသတိပေးချက် − (Url: %1$s) ဆောင်းပါးထည့်သွင်းခြင်း မအောင်မြင်ပါ။
 android.ui.error_fileinvalid=အမှားသတိပေးချက် − ရွေးချယ်ထားသောဖိုင်သည် တရားဝင် ZIM ဖိုင် မဟုတ်ပါ။
 android.ui.error_filenotfound=အမှားသတိပေးချက် − ရွေးချယ်ထားသော ZIM ဖိုင်ကို ရှာမတွေ့ပါ။
-# Fuzzy
-android.ui.error_nozimfilesfound=သင့်စက်ပေါ်တွင် ZIM ဖိုင် တစ်ခုမှ ရှာမတွေ့ပါ။\nအကူအညီစာမျက်နှာကိုကြည့်၍ ကီဝစ်ထဲသို့ အချက်အလက်များ မည်သို့ထည့်ရမည်ကို လမ်းညွှန်မှု ရယူပါ။\nအကယ်၍ ZIM ဖိုင်ကို သင့်စက်ထဲ/သိုလှောင်သိမ်းဆည်းရာ နေရာထဲ ထည့်ပြီးသည်မှာ သေချာလျှင် တစ်မိနစ်ခန့် အကြာတွက် ပြန်ကြိုးစားကြည့်ပါ၊ သို့မဟုတ် စက်ကို ရီစတတ်ချကြည့်ပါ။
+android.ui.error_nozimfilesfound=သင့်စက်ပေါ်တွင် အကြောင်းအရာဖိုင် တစ်ခုမှ ရှာမတွေ့ပါ။\nအကူအညီစာမျက်နှာကိုကြည့်၍ ကီဝစ်ထဲသို့ အချက်အလက်များ မည်သို့ထည့်ရမည်ကို လမ်းညွှန်မှု ရယူပါ။\nအကယ်၍ ZIM ဖိုင်ကို သင့်စက်ထဲ/သိုလှောင်သိမ်းဆည်းရာ နေရာထဲ ထည့်ပြီးသည်မှာ သေချာလျှင် တစ်မိနစ်ခန့် အကြာတွက် ပြန်ကြိုးစားကြည့်ပါ၊ သို့မဟုတ် စက်ကို ရီစတတ်ချကြည့်ပါ။
 android.ui.go_to_play_store=Play စတိုးသို့ သွားရန်
 android.ui.menu_read_aloud=ကျယ်ကျယ်ဖတ်ပါ
 android.ui.menu_read_aloud_stop=ကျယ်ကျယ်ဖတ်နေခြင်းကို ရပ်တန့်ပါ
-# Fuzzy
 android.ui.menu_rescan_fs=SD ကဒ်ကို ပြန်ရှာဖတ်ပါ
-# Fuzzy
 android.ui.no_bookmarks=စာညှပ်မှတ်ထားခြင်း မရှိ!
 android.ui.open_in_new_tab=တဘ်အသစ်မှာ လင့်ကိုဖွင့်မလား။
 android.ui.pref_backtotop=ထိပ်ဆုံးသို့ ပြန်သွားရန်
@@ -33,9 +43,7 @@ android.ui.pref_info_title=သတင်းအချက်အလက်
 android.ui.pref_info_version=မူ
 android.ui.pref_language_chooser=ဘာသာစကားရွေးချယ်ရန်
 android.ui.pref_nightmode=ညကြည့်ပုံစံ
-# Fuzzy
 android.ui.pref_nightmode_summary=ဆောင်းပါးများကို အရောင်ပြောင်းပြန်သုံး၍ ပြရန်
-# Fuzzy
 android.ui.pref_zoom_dialog=ချဲ့ကြည့်သည့်အဆင့်
 android.ui.pref_zoom_enable=ချဲ့ကြည့်ရာတွင် ထိန်းချုပ်မှုများ
 android.ui.pref_zoom_entry_automatic=အလိုအလျောက်
@@ -43,12 +51,9 @@ android.ui.pref_zoom_entry_large=ကြီးကြီး
 android.ui.pref_zoom_entry_medium=အလယ်အလတ်
 android.ui.pref_zoom_entry_small=သေးသေး
 android.ui.rate_dialog_title=ကျေးဇူးပြု၍ ကျွန်ုပ်တို့အား အဆင့်သတ်မှတ်ပေးပါ
-# Fuzzy
-android.ui.rescan_fs_warning=ZIM ဖိုင်များကို ရှာဖတ်နေသည်။ တစ်ဆိတ်လောက် စောင့်ပါ...
-# Fuzzy
+android.ui.rescan_fs_warning=ဒေါင်းလုပ်ရယူနိုင်သော အကြောင်းအရာဖိုင်များကို ရှာဖတ်နေသည်။ ခေတ္တစောင့်ဆိုင်းပါ ...
 android.ui.save_media_error=မီဒီယာဖိုင်ကို သိမ်းရန်ကြိုးစားနေစဉ် အမှားတစ်ခု ဖြစ်ပေါ်သွားသည်။
-# Fuzzy
-android.ui.save_media_saved=သင့် Pictures ဖိုင်တွဲထဲတွင် မီဒီယာဖိုင်ကို %1$s အဖြစ် သိမ်းပြီးဖြစ်သည်။
+android.ui.save_media_saved=မီဒီယာဖိုင်ကို %s အဖြစ် Android/media/org.kiwix.../ တွင် သိမ်းပြီးဖြစ်သည်။
 ui.main.about=&brand.brandShortName; အကြောင်း
 ui.main.audible=အသံပါ
 ui.main.back=နောက်ပြန်
