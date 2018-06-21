@@ -176,7 +176,8 @@ $MWOFFLINER --mwUrl=https://www.ekopedia.fr/ --mwApiPath=api.php --localParsoid 
 $MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Archlinux wiki
-$MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" --outputDirectory=$ZIM2INDEX/other/ &&
+wget https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Archlinux-icon-crystal-64.svg/65px-Archlinux-icon-crystal-64.svg.png &&
+$MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" --customZimFavicon=65px-Archlinux-icon-crystal-64.svg.png --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
