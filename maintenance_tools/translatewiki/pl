@@ -3,6 +3,7 @@
 # Author: Alan ffm
 # Author: BeginaFelicysym
 # Author: Chrumps
+# Author: DeRudySoulStorm
 # Author: InternerowyGołąb
 # Author: Kelson
 # Author: Macofe
@@ -134,6 +135,7 @@ android.ui.rate_dialog_negative=Nie, dziękuję
 android.ui.rate_dialog_neutral=Później
 android.ui.rate_dialog_positive=Oceń!
 android.ui.rate_dialog_title=Prosimy nas ocenić
+android.ui.remote_zims=Dostępny
 android.ui.remove_bookmark=Usuń zakładkę
 android.ui.request_storage=Aby uzyskać dostęp do plików ZIM, musimy mieć dostęp do twojego nośnika
 android.ui.rescan_fs_warning=Skanowanie plików ZIM, proszę czekać...
@@ -156,6 +158,8 @@ android.ui.tts_pause=pauza
 android.ui.tts_resume=Podsumuj
 android.ui.tts_stop=stop
 android.ui.undo=Cofnij
+android.ui.yes=Tak
+android.ui.your_languages=Wybierz język
 android.ui.zim_already_downloading=Zim już rozpoczął pobieranie
 android.ui.zim_downloads=Pobieranie
 android.ui.zim_file_downloaded=Pobrano
