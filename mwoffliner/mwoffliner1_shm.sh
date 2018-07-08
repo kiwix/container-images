@@ -6,7 +6,9 @@ ulimit -c unlimited
 ZIM2INDEX=/srv/upload/zim2index/
 ARGS="--withZimFullTextIndex --deflateTmpHtml --verbose --adminEmail=contact@kiwix.org --skipCacheCleaning --skipHtmlCache --tmpDirectory=/dev/shm/"
 MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
+MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
+MWMATRIXOFFLINER=_MOBILE="$MWMATRIXOFFLINER --mobileLayout"
 
 # Wikibooks
 WIKIBOOKS_ARGS="--outputDirectory=$ZIM2INDEX/wikibooks/"
@@ -20,7 +22,7 @@ $MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM2INDEX/wikispecies/ &&
 $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM2INDEX/wikisource/ --language="(en|de|fr|zh)" --languageInverter &&
 
 # Wikivoyage
-$MWMATRIXOFFLINER --project=wikivoyage --outputDirectory=$ZIM2INDEX/wikivoyage/ --languageInverter --language="(en|de)" &&
+$MWMATRIXOFFLINER_MOBILE --project=wikivoyage --outputDirectory=$ZIM2INDEX/wikivoyage/ --languageInverter --language="(en|de)" &&
 
 # Wikiquote
 $MWMATRIXOFFLINER --project=wikiquote --outputDirectory=$ZIM2INDEX/wikiquote/ &&
