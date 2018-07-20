@@ -3,6 +3,7 @@
 # Author: Dbc334
 # Author: Eleassar
 # Author: HairyFotr
+# Author: Janezdrilc
 # Author: Kelson
 # Author: Macofe
 # Author: Yerpo
@@ -59,7 +60,7 @@ ui.main.copyLinkAddress=Kopiraj naslov povezave
 ui.main.defaultset=Privzeta množica
 ui.main.display=Prikaz
 ui.main.edit=Uredi
-ui.main.feedback=Povratna informacija
+ui.main.feedback=Povratne informacije
 ui.main.file=Datoteka
 ui.main.find=Išči na strani ...
 ui.main.findInText=Najdi v besedilu
@@ -141,7 +142,7 @@ ui.messages.dontDeleteContentFiles=Ne izbriši datoteke vsebine (ZIM).
 ui.messages.dontDisplayAnymore=Tega pogovornega okna ne prikaži več.
 ui.messages.endOfIndexing=Postopek indeksiranja je zaključen.
 ui.messages.error=Napaka
-ui.messages.feedback=Povratna informacija
+ui.messages.feedback=Povratne informacije
 ui.messages.fullscreen=Celozaslonski način
 ui.messages.indexZimFileConfirm=Datoteka ne vključuje iskalnega kazala. Njegovo ustvarjanje lahko traja več minut. Želite ZIM-datoteko indeksirati zdaj?
 ui.messages.indexing=Indeksiranje
