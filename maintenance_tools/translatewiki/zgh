@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Amara-Amaziɣ
 # Author: Brahim-essaidi
+# Author: YesIn
 # Author: ⵕⴰⵊⵉ
 
 android.ui.button_backtotop=ⴰⵖⵓⵍ ⵙ ⴰⴼⵍⵍⴰ
@@ -53,7 +54,11 @@ android.ui.save_media=ⵃⴹⵓ ⵎⵉⴷⵢⴰ
 android.ui.search_label=ⵔⵣⵓ
 android.ui.search_widget_text=ⵔⵣⵓ Kiwix
 android.ui.space_available=ⴰⵏⵙⴰ ⵉⵍⵍⴰ:
+android.ui.time_day=ⴰⵙⵙ
+android.ui.time_hour=ⵙⵔⴳ
 android.ui.time_left=ⴰⵥⵍⵎⴰⴹ
+android.ui.time_minute=ⵙⴷ
+android.ui.time_second=ⵙⵏ
 android.ui.tts_stop=ⴱⴱⴷ
 android.ui.undo=ⵙⵔ
 android.ui.yes=ⵢⴰⵀ
