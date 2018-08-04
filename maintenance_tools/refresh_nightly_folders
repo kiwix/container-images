@@ -7,4 +7,4 @@ today=`date +%F`
 find ${baseroot}/ -mindepth 1 -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \;
 
 # create today's date folder if not exist
-mkdir -p ${baseroot}/${today}
+#mkdir -p ${baseroot}/${today}
