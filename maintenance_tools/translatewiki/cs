@@ -43,7 +43,6 @@ android.ui.menu_fullscreen=Celá obrazovka
 android.ui.menu_help=Nápověda
 android.ui.menu_read_aloud=Číst nahlas
 android.ui.menu_read_aloud_stop=Zastavit čtení nahlas
-# Fuzzy
 android.ui.menu_rescan_fs=Znovu načíst SD kartu
 android.ui.menu_zim_manager=Získat obsah
 android.ui.no_bookmarks=Žádné záložky
@@ -65,7 +64,6 @@ android.ui.pref_newtab_background_title=Otevřít novou kartu na pozadí
 android.ui.pref_nightmode=Noční režim
 android.ui.pref_nightmode_summary=Zobrazuje stránky v obrácených barvách.
 android.ui.pref_wifi_only=Stahovat obsah pouze přes WiFi
-# Fuzzy
 android.ui.pref_zoom_dialog=Úroveň zvětšení
 android.ui.pref_zoom_enable=Ovládání přiblížení
 android.ui.pref_zoom_entry_automatic=Automatický
