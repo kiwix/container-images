@@ -147,7 +147,7 @@ $MWOFFLINER_MOBILE --mwUrl="https://zh.wikipedia.org/" --parsoidUrl="https://zh.
 
 cat "$SCRIPT_DIR/medicine.langlinks" | grep -P '\tar\t' | cut -f3 | grep -v -P '^$' > "$SCRIPT_DIR/medicine"
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Wikimed_Arabic_Logo.svg/876px-Wikimed_Arabic_Logo.svg.png" -O "$SCRIPT_DIR/medicinear.png" &&
-$MWOFFLINER_MOBILE --mwUrl="https://ar.wikipedia.org/" --parsoidUrl="https://ar.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="وِيكيبيديا الطبية" --customMainpage="ويكيبيديا:مشروع_ويكي_طب/مرجع_بداية_التطبيق_الطبي2" --customZimDescription="مَقالات عن الرعاية الصحية متوافرة بدون اتصال بالإنترنت في كل مكان وبشكل مجاني!" --customZimFavicon="$SCRIPT_DIR/medicinear.png" --articleList="$SCRIPT_DIR/medicine" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
+$MWOFFLINER_MOBILE --mwUrl="https://ar.wikipedia.org/" --parsoidUrl="https://ar.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="وِيكيبيديا الطبية" --customMainPage="ويكيبيديا:مشروع_ويكي_طب/مرجع_بداية_التطبيق_الطبي2" --customZimDescription="مَقالات عن الرعاية الصحية متوافرة بدون اتصال بالإنترنت في كل مكان وبشكل مجاني!" --customZimFavicon="$SCRIPT_DIR/medicinear.png" --articleList="$SCRIPT_DIR/medicine" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
 cat "$SCRIPT_DIR/medicine.langlinks" | grep -P '\tes\t' | cut -f3 | grep -v -P '^$' > "$SCRIPT_DIR/medicine"
 wget "https://upload.wikimedia.org/wikipedia/commons/2/25/Wiki_Offline_Spanish_logo_colored_final.png" -O "$SCRIPT_DIR/medicinees.png" &&
