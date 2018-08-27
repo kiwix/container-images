@@ -50,13 +50,16 @@ for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG
 grep -Fxv -f "$SCRIPT_DIR/medicine_filter" "$SCRIPT_DIR/medicine_unfiltered" | sort -u > "$SCRIPT_DIR/medicine" &&
 echo "Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Cardiology" >> "$SCRIPT_DIR/medicine" &&
+echo "Book:Children's health" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Dermatology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Ears_nose_throat" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Endocrinology" >> "$SCRIPT_DIR/medicine" &&
+echo "Book:Eye_diseases" >>  "$SCRIPT_DIR/medicine" &&
 echo "Book:Gastroenterology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:General_surgery" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Infectious_disease" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Medications" >> "$SCRIPT_DIR/medicine" &&
+echo "Book:Mental health" >>  "$SCRIPT_DIR/medicine" &&
 echo "Book:Neurology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Ortho" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Cancer" >> "$SCRIPT_DIR/medicine" &&
@@ -64,6 +67,7 @@ echo "Book:Ophthalmology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Pediatrics" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Psychiatry" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Rheumatology" >> "$SCRIPT_DIR/medicine" &&
+echo "Book:Skin diseases" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Women's_health" >> "$SCRIPT_DIR/medicine" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wiki_Project_Med_Foundation_logo.svg/335px-Wiki_Project_Med_Foundation_logo.svg.png" -O "$SCRIPT_DIR/medicine.png" &&
 
