@@ -8,6 +8,7 @@
 # Author: Zedlik
 
 android.ui.add_bookmark=Дадаць закладку
+android.ui.all_history_cleared_toast=Уся гісторыя ачышчаная
 android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
 android.ui.bookmark_removed=Закладка выдаленая
@@ -17,6 +18,7 @@ android.ui.choose_file=Абярыце файл зьместу (*.zim)
 android.ui.clear_all_history_dialog_title=Ачысьціць усю гісторыю
 android.ui.clear_recent_and_tabs_history_dialog=Вы сапраўды хочаце выдаліць гісторыю пошуку і скінуць усе актыўныя закладкі?
 android.ui.clear_recent_history_dialog=Вы ўпэўненыя, што жадаеце выдаліць Вашую гісторыю пошуку?
+android.ui.confirm_stop_download_msg=Вы ўпэўненыя, што хочаце спыніць гэтую загрузку?
 android.ui.confirm_stop_download_title=Спыніць загрузку?
 android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым усталяваць яе наноў з Play Store.
 android.ui.delete=Выдаліць

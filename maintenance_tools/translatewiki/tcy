@@ -1,9 +1,11 @@
 # Messages for Tulu (ತುಳು)
 # Exported from translatewiki.net
 # Author: BHARATHESHA ALASANDEMAJALU
+# Author: Lokesha kunchadka
 # Author: VASANTH S.N.
 # Author: Vishwanatha Badikana
 
+android.ui.add_bookmark=ಬುಕ್ ಮಾರ್ಕ್ ಸೇರಾಲೆ.
 android.ui.articlesearch_hint=ತೂಪಿನ ಲೇಕನೊಲೆನ್ ಟೈಪ್ ಮಲ್ಪಿ
 android.ui.button_backtotop=ಪಿರ ಮಿತ್ತ್ ತೂಲೆ
 android.ui.clear_all_history_dialog_title=ಇತಿಹಾಸೊನ್ ಮಾಜಾಲೆ
@@ -26,15 +28,16 @@ android.ui.menu_help=ಸಕಾಯ
 android.ui.menu_home=ಮುಖ್ಯಪುಟ
 android.ui.menu_read_aloud=ಗಟ್ಟಿಯಾದ್ ಓದ್
 android.ui.menu_read_aloud_stop=ಗಟ್ಟಿಯಾದ್ ಓದುನೆನ್ ಉಂತಾಲ
-# Fuzzy
-android.ui.menu_rescan_fs=ಎಸ್‍ಡಿ ಕಾರ್ಡ್‌ನ್ ಪಿರ ಸ್ಕ್ಯಾನ್ ಮಲ್ಪುಲೆ
+android.ui.menu_rescan_fs=ಎಸ್‍ಡಿ ಕಾರ್ಡ್‌ನ್ ಪಿರ ಸ್ಕ್ಯಾನ್ ಮಾಲ್ಪುಲೆ.
 android.ui.menu_search=ಲೇಕನೊ ನಾಡ್ಲೆ
+android.ui.menu_searchintext=ಪುಟೊಟು ನಾಡ್ಲೆ.
 android.ui.menu_settings=ಸಂಯೋಜನೆಲು
 android.ui.next=ನನತಾ
 android.ui.no=ಇಜ್ಜಿ
 android.ui.no_bookmarks=ಗುರ್ತು ಪಾಡಿನ ಪುಟಕುಲು ಇಜ್ಜಿ
 android.ui.open=ತೋಜಾಲೇ
 android.ui.open_in_new_tab=ಪೊಸ ಪಟ್ಟಿಡ್ ಕೊಂಡಿ ಬಿಚ್ಚಾಲೆ
+android.ui.other_languages=ಬೇತೆ ಬಾಸೆಲೆಡ್:
 android.ui.pref_backtotop=ಪಿರವುಡ್ದು ಕೊಡಿ ಮುಟ್ಟ
 android.ui.pref_clear_all_history_title=ಇತಿಹಾಸನೂ ಮಾಜಾಲೇ
 android.ui.pref_credits_title=ಮನ್ನನೆ
@@ -44,8 +47,7 @@ android.ui.pref_info_version=ಆವೃತ್ತಿ
 android.ui.pref_language_chooser=ಬಾಸೆನ್ ಆಯ್ಕೆ ಮಲ್ತೊನ್ಲೆ
 android.ui.pref_language_title=ಬಾಸೆ
 android.ui.pref_nightmode=ಕತ್ತಲೆದ ಕ್ರಮೊ
-# Fuzzy
-android.ui.pref_zoom_dialog=ದೂರೊ ಕೈತಲ್ದ ಅಂತರೊ
+android.ui.pref_zoom_dialog=ದೂರೊ ಕೈತಲ್ದ ಅಂತರೊ.
 android.ui.pref_zoom_enable=ದೂರೊ ಕೈತಲ್ದ ಸಮೀಕರನೊ
 android.ui.pref_zoom_entry_automatic=ತನ್ನಿಚ್ಚೆಗೆ
 android.ui.pref_zoom_entry_large=ಮಲ್ಲ
