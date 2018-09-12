@@ -62,6 +62,7 @@ echo "Book:Medications" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Mental health" >>  "$SCRIPT_DIR/medicine" &&
 echo "Book:Neurology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Ortho" >> "$SCRIPT_DIR/medicine" &&
+echo "Book:Orthopedics" >> >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Cancer" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Ophthalmology" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Pediatrics" >> "$SCRIPT_DIR/medicine" &&
