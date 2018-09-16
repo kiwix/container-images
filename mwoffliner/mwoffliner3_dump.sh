@@ -46,7 +46,7 @@ for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG
 
 # WikiMed
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Women's_health_articles" --category="WikiProject_Microbiology_articles" --category="WikiProject_Physiology_articles" --category="WikiProject_Medicine_articles" --category="WikiProject_Dentistry_articles" --category="WikiProject_Anatomy_articles" --category="WikiProject_Pharmacology_articles" --category="WikiProject_Sanitation_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_unfiltered" &&
-/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Visual_arts_articles" --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_filter" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Hospitals_articles" --category="WikiProject_History_of_Science_articles" --category="WikiProject_Academic_Journal_articles" --category="WikiProject_Visual_arts_articles" --category="WikiProject_Biography_articles" --category="WikiProject_Companies_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/medicine_filter" &&
 grep -Fxv -f "$SCRIPT_DIR/medicine_filter" "$SCRIPT_DIR/medicine_unfiltered" | sort -u > "$SCRIPT_DIR/medicine" &&
 echo "Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Cardiology" >> "$SCRIPT_DIR/medicine" &&
@@ -72,7 +72,7 @@ echo "Book:Skin diseases" >> "$SCRIPT_DIR/medicine" &&
 echo "Book:Women's_health" >> "$SCRIPT_DIR/medicine" &&
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Wiki_Project_Med_Foundation_logo.svg/335px-Wiki_Project_Med_Foundation_logo.svg.png" -O "$SCRIPT_DIR/medicine.png" &&
 
-# novid should not be refreshed
+# nodet should not be refreshed
 # $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --format="nopic,nodet" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 mwoffliner --format=novid --format=nopic --mobileLayout $ARGS --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="WikiMed Medical Encyclopedia" --customZimDescription="50.000 healthcare articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Medicine/Open_Textbook_of_Medicine2" --customZimFavicon="$SCRIPT_DIR/medicine.png" --articleList="$SCRIPT_DIR/medicine" --format="nopic,nodet" --outputDirectory=$ZIM2INDEX/wikipedia/ &&
 
