@@ -14,7 +14,7 @@ MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 $MWOFFLINER --mwUrl=https://bulbapedia.bulbagarden.net/ --localParsoid --speed=0.1 --outputDirectory=$ZIM2INDEX/other/ &&
 
 # Bollywood
-/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_Film_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/films" &&
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="Actors_and_filmmakers_work_group_articles" --category="WikiProject_Film_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/films" &&
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikipedia.org --path=w --exploration=5 --namespace=1 --category="WikiProject_India_articles" | sed 's/Talk://' | sort -u > "$SCRIPT_DIR/india" &&
 /srv/kiwix-tools/tools/scripts/compareLists.pl --file1=india --file2=films --mode=inter > bollywood &&
 wget "https://upload.wikimedia.org/wikipedia/commons/0/01/Bollywoodbarnstar.png" -O "$SCRIPT_DIR/bollywood.png" &&
