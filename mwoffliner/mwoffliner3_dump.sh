@@ -181,6 +181,9 @@ $MWOFFLINER --mwUrl=http://www.kochwiki.org/ --localParsoid --outputDirectory=$Z
 wget https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Archlinux-icon-crystal-64.svg/65px-Archlinux-icon-crystal-64.svg.png &&
 $MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" --customZimFavicon=65px-Archlinux-icon-crystal-64.svg.png --outputDirectory=$ZIM/other/ &&
 
+# Wikiwel.org
+$MWOFFLINER --mwUrl="https://wikiwel.com" --mwApiPath="/wikihealing/api.php" --mwWikiPath="/wikihealing/" --localParsoid --speed=0.1
+
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
