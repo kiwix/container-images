@@ -184,6 +184,10 @@ $MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApi
 # Wikiwel.org
 $MWOFFLINER --mwUrl="https://wikiwel.com" --mwApiPath="/wikihealing/api.php" --mwWikiPath="/wikihealing/" --localParsoid --speed=0.1
 
+# Ray Charles
+/srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --path=w --host=en.wikipedia.org --category="Ray_Charles" --namespace=0 --explorationDepth=3 > ray_charles &&
+$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --articleList="ray_charles" --customZimTitle="Ray Charles" --customZimDescription="Wikipedia articles about Ray Charles" --customZimFavicon="ray_charles.png" --format= --format=novid --format=nopic --format=nodet --outputDirectory=$ZIM/other/ &&
+
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
