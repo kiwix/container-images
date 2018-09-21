@@ -191,6 +191,9 @@ $MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --articleList="ray_charle
 # Art of problem solving
 $MWOFFLINER --mwUrl="https://artofproblemsolving.com/" --mwApiPath="/wiki/api.php" --localParsoid --customZimFavicon=artofproblemsolving.png &&
 
+#Grandbluefantasy
+$MWOFFLINER --mwUrl="https://gbf.wiki/" --mwApiPath="/api.php" --localParsoid --speed=0.1 --filenamePrefix="granbluefantasy_en_all" &&
+
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
