@@ -1,7 +1,8 @@
 #!/bin/bash
 
-TEMPLATE="[{\"nickname\":\"slack\",\"server\":\"irc.freenode.org\",\"token\":\"${SLACK_TOKEN}\",\"channelMapping\":{\"#general\":\"#kiwix\"}}]"
-echo $TEMPLATE > slack-irc.config.json
+echo "[{\"nickname\":\"slack\",\"server\":\"irc.freenode.org\",\"token\":\"${SLACK_TOKEN}\",\"channelMapping\":{\"#general\":\"#kiwix\"}}]" > slack-irc.config.json
+cat slack-irc.config.json
+
 slack-irc                                                                  \
     --config="slack-irc.config.json"                                       &
 
