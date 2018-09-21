@@ -12,17 +12,17 @@ var yargs = require( 'yargs' );
 
 /* Arguments */
 var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sourceforge, twitter, wikis activities: $0' )
-    .require( ['consumerKey', 'consumerSecret', 'accessTokenKey', 'accessTokenSecret', 'kiwixGithubToken', 'openzimGithubToken' ] )
+    .require( ['twitterKey', 'twitterSecret', 'twitterTokenKey', 'twitterTokenSecret', 'kiwixGithubToken', 'openzimGithubToken' ] )
     .argv;
 
 /* VARIABLES */
 var lastTwitterId;
 var ircClient
 var client = new twitter({
-    consumer_key: argv.consumerKey,
-    consumer_secret: argv.consumerSecret,
-    access_token_key: argv.accessTokenKey,
-    access_token_secret: argv.accessTokenSecret
+    twitter_key: argv.twitterKey,
+    twitter_secret: argv.twitterSecret,
+    twitter_token_key: argv.twitterTokenKey,
+    twitter_token_secret: argv.twitterTokenSecret
 });
 
 var kiwixGithubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.kiwixGithubToken;
