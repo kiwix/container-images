@@ -191,8 +191,11 @@ $MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --articleList="ray_charle
 # Art of problem solving
 $MWOFFLINER --mwUrl="https://artofproblemsolving.com/" --mwApiPath="/wiki/api.php" --localParsoid --customZimFavicon=artofproblemsolving.png &&
 
-#Grandbluefantasy
+# Granbluefantasy
 $MWOFFLINER --mwUrl="https://gbf.wiki/" --mwApiPath="/api.php" --localParsoid --speed=0.1 --filenamePrefix="granbluefantasy_en_all" &&
+
+# Klexikon
+$MWOFFLINER --mwApiPath="api.php" --mwUrl="https://klexikon.zum.de/" --localParsoid --customZimFavicon="klexikon.png" &&
 
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
