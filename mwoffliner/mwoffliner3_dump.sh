@@ -182,20 +182,23 @@ wget https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Archlinux-icon-cr
 $MWOFFLINER --mwUrl=https://wiki.archlinux.org/ --mwWikiPath="index.php" --mwApiPath="api.php" --localParsoid --addNamespaces="4,12" --customZimFavicon=65px-Archlinux-icon-crystal-64.svg.png --outputDirectory=$ZIM/other/ &&
 
 # Wikiwel.org
-$MWOFFLINER --mwUrl="https://wikiwel.com" --mwApiPath="/wikihealing/api.php" --mwWikiPath="/wikihealing/" --localParsoid --speed=0.1
+$MWOFFLINER --mwUrl="https://wikiwel.com" --mwApiPath="/wikihealing/api.php" --mwWikiPath="/wikihealing/" --localParsoid --speed=0.1 --outputDirectory=$ZIM/other/ &&
 
 # Ray Charles
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --path=w --host=en.wikipedia.org --category="Ray_Charles" --namespace=0 --explorationDepth=3 > ray_charles &&
-$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --articleList="ray_charles" --customZimTitle="Ray Charles" --customZimDescription="Wikipedia articles about Ray Charles" --customZimFavicon="ray_charles.png" --format= --format=novid --format=nopic --format=nodet --outputDirectory=$ZIM/other/ &&
+$MWOFFLINER_MOBILE --mwUrl="https://en.wikipedia.org/" --articleList="ray_charles" --customZimTitle="Ray Charles" --customZimDescription="Wikipedia articles about Ray Charles" --customZimFavicon="ray_charles.png" --format= --format=novid --format=nopic --format=nodet --outputDirectory=$ZIM/wikipedia/ &&
 
 # Art of problem solving
-$MWOFFLINER --mwUrl="https://artofproblemsolving.com/" --mwApiPath="/wiki/api.php" --localParsoid --customZimFavicon=artofproblemsolving.png &&
+$MWOFFLINER --mwUrl="https://artofproblemsolving.com/" --mwApiPath="/wiki/api.php" --localParsoid --customZimFavicon=artofproblemsolving.png --outputDirectory=$ZIM/other/ &&
 
 # Granbluefantasy
-$MWOFFLINER --mwUrl="https://gbf.wiki/" --mwApiPath="/api.php" --localParsoid --speed=0.1 --filenamePrefix="granbluefantasy_en_all" &&
+$MWOFFLINER --mwUrl="https://gbf.wiki/" --mwApiPath="/api.php" --localParsoid --speed=0.1 --filenamePrefix="granbluefantasy_en_all" --outputDirectory=$ZIM/other/ &&
 
 # Klexikon
-$MWOFFLINER --mwApiPath="api.php" --mwUrl="https://klexikon.zum.de/" --localParsoid --customZimFavicon="klexikon.png" &&
+$MWOFFLINER --mwApiPath="api.php" --mwUrl="https://klexikon.zum.de/" --localParsoid --customZimFavicon="klexikon.png" --outputDirectory=$ZIM/other/ &&
+
+# Westeros
+$MWOFFLINER --mwUrl="https://awoiaf.westeros.org/" --localParsoid --mwApiPath="api.php" --mwWikiPath="index.php" --outputDirectory=$ZIM/other/ &&
 
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
