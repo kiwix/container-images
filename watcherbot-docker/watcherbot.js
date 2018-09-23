@@ -18,7 +18,7 @@ var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sou
 /* VARIABLES */
 var lastTwitterId;
 var ircClient
-var client = new twitter({
+var twitterClient = new twitter({
     twitter_key: argv.twitterKey,
     twitter_secret: argv.twitterSecret,
     twitter_token_key: argv.twitterTokenKey,
@@ -51,10 +51,10 @@ connectIrc();
 
 /* TWITTER */
 setInterval ( function() {
-    client.get('statuses/user_timeline', {screen_name: 'KiwixOffline', count: 1}, function( error, tweets, response ) {
+    twitterClient.get('statuses/user_timeline', { screen_name: 'KiwixOffline' }, function( error, tweets, response ) {
 	if ( error ) {
-            console.error( '[ERROR KIWIX MICROBLOG] ' + error.message );
-	} else if ( !error && tweets[0] && lastTwitterId != tweets[0].id_str ) {
+            console.error( '[ERROR KIWIX MICROBLOG] ' + error );
+        } else if ( tweets[0] && lastTwitterId != tweets[0].id_str ) {
 	    lastTwitterId = tweets[0].id_str;
 	    var message = '[KIWIX MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
 	    console.log( '[KIWIX MICROBLOG]' + message );
