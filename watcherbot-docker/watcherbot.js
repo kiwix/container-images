@@ -53,6 +53,7 @@ connectIrc();
 setInterval ( function() {
     twitterClient.get('statuses/user_timeline', { screen_name: 'KiwixOffline' }, function( error, tweets, response ) {
 	if ( error ) {
+	    throw error;
             console.error( '[ERROR KIWIX MICROBLOG] ' + error );
         } else if ( tweets[0] && lastTwitterId != tweets[0].id_str ) {
 	    lastTwitterId = tweets[0].id_str;
