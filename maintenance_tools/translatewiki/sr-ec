@@ -1,6 +1,7 @@
 # Messages for Serbian (Cyrillic script) (српски (ћирилица)‎)
 # Exported from translatewiki.net
 # Author: Acamicamacaraca
+# Author: BadDog
 # Author: Kelson
 # Author: Macofe
 # Author: Milicevic01
@@ -10,16 +11,40 @@
 # Author: Zoranzoki21
 # Author: Милан Јелисавчић
 
-android.ui.articlesearch_hint=Напиши да пронађеш чланке
-android.ui.bookmark_added=Букмаркови додати
-android.ui.bookmarks_restored=Букмаркови обновљени
+android.ui.add_bookmark=Додај обележивач
+android.ui.all_history_cleared_toast=Цела историја је обрисана
+android.ui.articlesearch_hint=Откуцајте да бисте пронашли чланке
+android.ui.bookmark_added=Обележивачи су додати
+android.ui.bookmark_removed=Обележивачи су уклоњени
+android.ui.bookmarks_restored=Обележивачи су враћени
 android.ui.button_backtotop=Назад на врх
-android.ui.choose_file=Изабери садржајну датотеку (*.zim)
-android.ui.customapp_missing_content=Ваша апликација је оштећена.\nОво се може десити када уклоните датотеке на СД картици.\nТреба да деинсталирате а затим поново инсталирате апликацију из Гугл Плеј продавнице.
-android.ui.error_articlenotfound=Грешка: Није успело учитавање чланка \"%1$s\".
-android.ui.error_articleurlnotfound=Грешка: Није успело учитавање чланка (Url: %1$s).
-android.ui.error_fileinvalid=Грешка: Изабрана датотека није важећа ZIM датотека.
-android.ui.error_filenotfound=Грешка: Изабрана ZIM датотека се не може наћи.
+android.ui.choose_file=Изаберите датотеку са садржајем (*.zim)
+android.ui.clear_all_history_dialog_title=Брисање целе историје
+android.ui.clear_recent_and_tabs_history_dialog=Желите ли заиста да избришете своју историју претраге и ресетујете све активне картице?
+android.ui.clear_recent_history_dialog=Желите ли заиста да избришете своју историју претраге?
+android.ui.confirm_stop_download_msg=Желите ли заиста да зауставите ово преузимање?
+android.ui.confirm_stop_download_title=Зауставити преузимање?
+android.ui.customapp_missing_content=Ваша апликација је оштећена.\nОво се може десити када уклоните датотеке на SD картици.\nТреба да деинсталирате, а затим поново инсталирате апликацију из Play Store-а.
+android.ui.delete=Избриши
+android.ui.delete_recent_search_item=Избрисати ову ставку?
+android.ui.delete_specific_search_toast=Недавне претраге су уклоњене
+android.ui.delete_specific_zim=Избрисати ову датотеку?
+android.ui.delete_specific_zim_toast=Датотека је избрисана
+android.ui.delete_tab=Избриши картицу
+android.ui.delete_zim_failed=Није могуће избрисати ову датотеку. Требали бисте покушати да користите управљач датотека.
+android.ui.deleted_message=избрисано
+android.ui.did_you_know=Јесте ли знали?
+android.ui.do_not_ask_anymore=Не питај више
+android.ui.download_close=Затвори
+android.ui.download_complete_snackbar=Преузимање је завршено
+android.ui.download_pause=Паузирај
+android.ui.download_paused=паузирано
+android.ui.download_started_library=Преузимање је почело…
+android.ui.download_stop=Заустави
+android.ui.error_articlenotfound=Грешка: учитавање чланка \"%1$s\" није успело.
+android.ui.error_articleurlnotfound=Грешка: учитавање чланка (Url: %1$s) није успело.
+android.ui.error_fileinvalid=Грешка: изабрана датотека није важећа ZIM датотека.
+android.ui.error_filenotfound=Грешка: изабрана ZIM датотека се не може наћи.
 android.ui.error_nozimfilesfound=Није пронађено садржаја на вашем уређају.\nПрегледајте страницу за помоћ како бисте добили упутства о том како учитати садржај на Kiwix.\nАко јесте ставили ZIM на складиште вашег уређаја или вањско складиште, можете покушати за који минут или поново упалити своју уређај.
 android.ui.go_to_play_store=Иди на Плеј Продавницу
 android.ui.language_count=(%1$d)
@@ -154,7 +179,7 @@ ui.messages.endOfIndexing=Пописивање је завршено.
 ui.messages.error=Грешка
 ui.messages.feedback=Повратна информација
 ui.messages.fullscreen=Цео екран
-ui.messages.indexZimFileConfirm=Ова датотека не садржи попис претраге. Стварање пописа може потрајати неколико минута. Желите ли да попишете ZIM датотеку сада?
+ui.messages.indexZimFileConfirm=Ова датотека не садржи индекс претраге. Прављење истог може потрајати неколико минута. Желите ли да одмах индексирате ZIM датотеку?
 ui.messages.indexing=Пописивање
 ui.messages.information=Подаци
 ui.messages.integrityCheckFailed=Датотека није целовита. Оштећена је.
