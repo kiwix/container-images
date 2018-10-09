@@ -1,6 +1,7 @@
 # Messages for Chinese (Hong Kong) (中文（香港）‎)
 # Exported from translatewiki.net
 # Author: Anakmalaysia
+# Author: LNDDYL
 
 ui.main.about=關於&brand.brandShortName;
 ui.main.back=返回
@@ -81,7 +82,7 @@ ui.messages.cancel=取消
 ui.messages.changeSkinNeedRestart=要改變皮膚，應用程序必須重新啟動。重新啟動應用程序嗎？
 ui.messages.confirm=確認
 ui.messages.contentDownloadFinished=「1％」已完成下載。
-ui.messages.dontDisplayAnymore=請勿再顯示該對話框。
+ui.messages.dontDisplayAnymore=請勿再顯示此對話方塊。
 ui.messages.endOfIndexing=索引完成。
 ui.messages.error=錯誤
 ui.messages.feedback=回饋
