@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - "data:/srv"
+    links:
+      - db
+volumes:
+    db-data: 
+    data:
