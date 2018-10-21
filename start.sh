@@ -11,8 +11,8 @@ if ! psql -lqt $PSQL_ARGS | cut -d \| -f 1 | grep -qw $DBNAME; then
   createuser $PSQL_ARGS -s $DBUSER 
   createdb  $PSQL_ARGS -O $DBUSER $DBNAME 
   createlang  $PSQL_ARGS plpgsql $DBNAME
-  gunzip -c $MBSQL_DIR/schema-postgresql.sql.gz | psql $PSQL_MB_ARGS
-  gunzip -c $MBSQL_DIR/initialdata-postgresql.sql.gz | psql $PSQL_MB_ARGS
+  cat $MBSQL_DIR/schema-postgresql.sql | psql $PSQL_MB_ARGS
+  cat $MBSQL_DIR/initialdata-postgresql.sql | psql $PSQL_MB_ARGS
 fi
 
 httpd-foreground
