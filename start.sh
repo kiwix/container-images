@@ -13,6 +13,7 @@ if ! psql -lqt $PSQL_ARGS | cut -d \| -f 1 | grep -qw $DBNAME; then
   createlang  $PSQL_ARGS plpgsql $DBNAME
   cat $MBSQL_DIR/schema-postgresql.sql | psql $PSQL_MB_ARGS
   cat $MBSQL_DIR/initialdata-postgresql.sql | psql $PSQL_MB_ARGS
+  cat $MBSQL_DIR/mirrors-postgresql.sql | psql $PSQL_MB_ARGS
 fi
 
 httpd-foreground
