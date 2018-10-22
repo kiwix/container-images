@@ -3,9 +3,9 @@ DBUSER=mirrorbrain
 DBHOST=db
 PSQL_ARGS="-h $DBHOST -U postgres"
 PSQL_MB_ARGS="-h $DBHOST  -U $DBUSER $DBNAME"
-MBSQL_DIR=/usr/share/doc/mirrorbrain/sql
+MBSQL_DIR=mirrorbrain-$MB_VERSION/sql
 
-sleep 1
+sleep 2
 
 if ! psql -lqt $PSQL_ARGS | cut -d \| -f 1 | grep -qw $DBNAME; then
   createuser $PSQL_ARGS -s $DBUSER 

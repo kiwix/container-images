@@ -5,7 +5,8 @@ ENV GEOIP_VERSION 1.4.5
 ENV MOD_GEOPIP_VERSION 1.2.5
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget postgresql-client rsync build-essential libz-dev
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget postgresql-client rsync build-essential libz-dev python python-dev python-pip python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl
+
 
 #Install Geolocalisation
 RUN { \
@@ -47,12 +48,14 @@ RUN { \
   cd ../tools ; \
   gcc -Wall -o geoiplookup_continent geoiplookup_continent.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
   gcc -Wall -o geoiplookup_city geoiplookup_city.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
+  pip install cmdln ; \
   install -m 755 geoiplookup_continent /usr/bin/geoiplookup_continent ; \
   install -m 755 geoiplookup_city      /usr/bin/geoiplookup_city ; \
   install -m 755 geoip-lite-update     /usr/bin/geoip-lite-update ; \
   install -m 755 tnull-rsync            /usr/bin/null-rsync ; \
   install -m 755 scanner.pl            /usr/bin/scanner ; \
   cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe ; \
+  cd ../mb && python setup.py install
 }
 
 #Copy files configuration
@@ -60,7 +63,7 @@ RUN groupadd -r mirrorbrain && useradd -r -g mirrorbrain -s /bin/bash -c "Mirror
 COPY config/mirrorbrain/mirrorbrain.conf /etc/
 RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain.conf
 #COPY ./public-html/ /usr/local/apache2/htdocs/
-COPY ./sql/* /usr/share/doc/mirrorbrain/sql/
+COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 COPY config/apache/download.kiwix.org /etc/apache2/sites-available/
 
 COPY start.sh /usr/local/bin 
