@@ -9,9 +9,8 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - "data:/srv"
+      - "/data/download:/var/www/download.kiwix.org"
     links:
       - db
 volumes:
     db-data: 
-    data:
