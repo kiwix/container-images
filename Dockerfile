@@ -15,6 +15,9 @@ ENV MOD_GEOPIP_VERSION 1.2.5
 RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget postgresql-client rsync build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl 
 RUN pip install cmdln
 
+#Copy owned base config file for apache
+COPY config/apache/httpd.conf conf/httpd.conf
+
 #Install Geolocalisation
 RUN { \
   cd /tmp ; \
@@ -70,11 +73,7 @@ RUN groupadd -r mirrorbrain && useradd -r -g mirrorbrain -s /bin/bash -c "Mirror
 COPY config/mirrorbrain/mirrorbrain.conf /etc/
 RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain.conf
 #COPY ./public-html/ /usr/local/apache2/htdocs/
-COPY config/apache/download.kiwix.org conf/extra/download.kiwix.org.conf
-RUN { \
-  echo "#Virtual host for download.kiwix.org" ; \
-  echo "Include conf/extra/download.kiwix.org.conf" ; \
-} >> conf/httpd.conf
+COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
 #Copy SQL dumps
 COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
