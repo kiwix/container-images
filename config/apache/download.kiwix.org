@@ -55,11 +55,11 @@
         Allow from all
     </Directory>
 
-   <Directory /var/www/download.kiwix.org/nightly>
-        AllowOverride none
-        Options +Indexes 
-        IndexOptions FancyIndexing
-        IndexOrderDefault Descending Date
-   </Directory>
+#   <Directory /var/www/download.kiwix.org/nightly>
+#        AllowOverride none
+#        Options +Indexes 
+#        IndexOptions FancyIndexing
+#        IndexOrderDefault Descending Date
+#   </Directory>
 
 </VirtualHost>
