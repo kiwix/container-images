@@ -12,7 +12,8 @@ ENV GEOIP_VERSION 1.4.5
 ENV MOD_GEOPIP_VERSION 1.2.5
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget postgresql-client rsync build-essential libz-dev python python-dev python-pip python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget postgresql-client rsync build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl 
+RUN pip install cmdln
 
 #Install Geolocalisation
 RUN { \
@@ -55,7 +56,6 @@ RUN { \
   cd ../tools ; \
   gcc -Wall -o geoiplookup_continent geoiplookup_continent.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
   gcc -Wall -o geoiplookup_city geoiplookup_city.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
-  pip install cmdln ; \
   install -m 755 geoiplookup_continent /usr/bin/geoiplookup_continent ; \
   install -m 755 geoiplookup_city      /usr/bin/geoiplookup_city ; \
   install -m 755 geoip-lite-update     /usr/bin/geoip-lite-update ; \
