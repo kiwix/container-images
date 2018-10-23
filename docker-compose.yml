@@ -6,8 +6,6 @@ services:
       - "db-data:/var/lib/postgresql/data"
   web:
     build: .
-    ports:
-      - "80:82"
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
     links:
