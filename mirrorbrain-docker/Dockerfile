@@ -71,7 +71,7 @@ RUN { \
 #Copy files configuration
 RUN groupadd -r mirrorbrain && useradd -r -g mirrorbrain -s /bin/bash -c "MirrorBrain user" -d /home/mirrorbrain mirrorbrain
 COPY config/mirrorbrain/mirrorbrain.conf /etc/
-RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain.conf
+RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain.conf && mkdir /var/log/mirrorbrain/
 COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
 #Copy SQL dumps
