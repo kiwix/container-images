@@ -1,3 +1,4 @@
+#!/bin/sh
 DBNAME=mirrorbrain
 DBUSER=mirrorbrain
 DBHOST=db
@@ -19,5 +20,3 @@ fi
 chown -R  www-data:www-data /var/www/download.kiwix.org
 
 bash update_mirrorbrain_db.sh
-
-httpd-foreground

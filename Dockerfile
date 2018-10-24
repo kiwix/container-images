@@ -72,7 +72,6 @@ RUN { \
 RUN groupadd -r mirrorbrain && useradd -r -g mirrorbrain -s /bin/bash -c "MirrorBrain user" -d /home/mirrorbrain mirrorbrain
 COPY config/mirrorbrain/mirrorbrain.conf /etc/
 RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain.conf
-#COPY ./public-html/ /usr/local/apache2/htdocs/
 COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
 #Copy SQL dumps
@@ -80,6 +79,5 @@ COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
 #Lauch start script
 COPY update_mirrorbrain_db.sh /usr/local/bin
-COPY start.sh /usr/local/bin 
-RUN chmod 0500 /usr/local/bin/start.sh
-CMD start.sh
+COPY init.sh /usr/local/bin 
+RUN chmod 0500 /usr/local/bin/init.sh

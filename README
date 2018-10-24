@@ -1,0 +1,5 @@
+
+Build : docker-compose build web
+To init database : docker-compose run web init.sh
+Run Mirrorbrain with Apache HTTPD : docker-compose run -p 80:82 web 
+Go to http://localhost/
