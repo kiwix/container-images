@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+  web:
+    build: .
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+    links:
+      - db
+volumes:
+    db-data: 
