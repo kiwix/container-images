@@ -12,7 +12,7 @@ ENV GEOIP_VERSION 1.4.5
 ENV MOD_GEOPIP_VERSION 1.2.5
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget vim net-tools libaprutil1-dbd-pgsql postgresql-client rsync build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl 
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget vim cron net-tools libaprutil1-dbd-pgsql postgresql-client rsync build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl 
 RUN pip install cmdln
 
 #Copy owned base config file for apache
@@ -77,7 +77,12 @@ COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 #Copy SQL dumps
 COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
-#Lauch start script
-COPY update_mirrorbrain_db.sh /usr/local/bin
-COPY init.sh /usr/local/bin 
-RUN chmod 0500 /usr/local/bin/init.sh
+#Install start script
+COPY *.sh /usr/local/bin/
+RUN chmod 0500 /usr/local/bin/*.sh 
+
+#Install update db cron
+RUN ln -s /usr/local/bin/update_mirrorbrain_db.sh /etc/cron.hourly/update_mirrorbrain_db.sh
+
+#Start !
+CMD start.sh
