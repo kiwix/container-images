@@ -78,7 +78,7 @@ COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
 #Install start script
-COPY *.sh /usr/local/bin/
+COPY bin/*.sh /usr/local/bin/
 RUN chmod 0500 /usr/local/bin/*.sh 
 
 #Install update db cron
