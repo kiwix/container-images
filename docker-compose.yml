@@ -10,5 +10,7 @@ services:
     container_name: mirrorbrain-web
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
+    ports:
+      - 82:82
     links:
       - db
