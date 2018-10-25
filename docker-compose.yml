@@ -2,13 +2,13 @@ version: '3'
 services:
   db:
     image: postgres
+    container_name: mirrorbrain-db
     volumes:
-      - "db-data:/var/lib/postgresql/data"
+      - "/data/db:/var/lib/postgresql/data"
   web:
     image: kiwix/mirrorbrain
+    container_name: mirrorbrain-web
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
     links:
       - db
-volumes:
-    db-data: 
