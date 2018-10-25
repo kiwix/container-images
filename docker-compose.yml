@@ -1,16 +1,40 @@
 version: '3'
 services:
+
   db:
     image: postgres
     container_name: mirrorbrain-db
     volumes:
       - "/data/db:/var/lib/postgresql/data"
+
   web:
     image: kiwix/mirrorbrain
     container_name: mirrorbrain-web
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
-    ports:
-      - 82:82
+    environment:
+      - VIRTUAL_HOST=download.kiwix.org
     links:
       - db
+
+  library:
+    image: kiwix/library
+    container_name: library
+    environment:
+      - VIRTUAL_HOST=library.kiwix.org
+    volumes:
+      - "/data:/data"
+
+  reverse-proxy:
+    image: kiwix/reverse-proxy
+    container_name: reverse-proxy
+    volumes:
+      - "/data/download.openzim.org:/var/www/download.openzim.org"
+      - "/data/download.kiwix.org:/var/www/download.kiwix.org"
+      - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+#    environment:
+#      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,mirror3.kiwix.org,tmp.kiwix.org
+    ports:
+      - 80:80
+      - 443:443
