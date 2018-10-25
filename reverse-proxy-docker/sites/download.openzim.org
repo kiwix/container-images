@@ -1,0 +1,10 @@
+server {
+  listen *:80;
+  server_name download.openzim.org;
+
+  location / {
+    alias /var/www/download.openzim.org/;
+    default_type application/octet-stream;
+    autoindex on;
+  }
+}

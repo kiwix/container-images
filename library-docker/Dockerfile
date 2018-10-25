@@ -14,6 +14,4 @@ RUN rm -f kiwix-tools.tar.gz
   
 WORKDIR /data/library
 
-EXPOSE 4242
-
-CMD ["kiwix-serve","--port=4242", "--library", "--interface=lo", "--threads=16", "--verbose", "library.kiwix.org.xml"]
+CMD ["kiwix-serve","--port=80", "--library", "--interface=lo", "--threads=16", "--verbose", "library.kiwix.org.xml"]

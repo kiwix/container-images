@@ -1,0 +1,23 @@
+server {
+  listen *:80;
+  server_name mirror.download.kiwix.org mirror3.kiwix.org
+
+  keepalive_timeout 5;
+
+  sendfile on;
+  tcp_nopush on;
+  tcp_nodelay off;
+
+  access_log off;
+  error_log /var/log/nginx/mirror3.kiwix.org.error.log;
+
+  proxy_buffering off;
+  proxy_max_temp_file_size 0;
+
+  open_file_cache off;
+
+  location / {
+    alias /var/www/download.kiwix.org/;
+    autoindex on;
+  }
+}
