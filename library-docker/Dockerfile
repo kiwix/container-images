@@ -12,6 +12,8 @@ RUN wget --no-check-certificate -O kiwix-tools.tar.gz http://download.kiwix.org/
 RUN tar --strip=1 -xvzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-serve
 RUN rm -f kiwix-tools.tar.gz
   
+EXPOSE 80
+
 WORKDIR /data/library
 
-CMD ["kiwix-serve","--port=80", "--library", "--interface=lo", "--threads=16", "--verbose", "library.kiwix.org.xml"]
+CMD ["kiwix-serve","--port=80", "--library", "--threads=16", "--verbose", "library.kiwix.org.xml"]
