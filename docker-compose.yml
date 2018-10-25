@@ -30,7 +30,7 @@ services:
     container_name: reverse-proxy
     volumes:
       - "/data/download.openzim.org:/var/www/download.openzim.org"
-      - "/data/download.kiwix.org:/var/www/download.kiwix.org"
+      - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
 #    environment:
@@ -38,3 +38,12 @@ services:
     ports:
       - 80:80
       - 443:443
+
+  ftpd:
+    image: gimoh/pureftpd
+    container_name: ftpd
+    ports:
+      - "21:21"
+    volumes:
+      - "/data/download:/var/lib/ftp"
+
