@@ -46,4 +46,11 @@ services:
       - "21:21"
     volumes:
       - "/data/download:/var/lib/ftp"
-
+  rsyncd:
+    image: kiwix/rsyncd
+    container_name: rsyncd
+    ports:
+      - 873:873
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+      - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
