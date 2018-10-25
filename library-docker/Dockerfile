@@ -8,9 +8,9 @@ ENV VERSION_KIWIX_TOOLS 0.6.1-1
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget
 
-RUN wget --no-check-certificate -O kiwix-tools.tar.gz http://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS.tar.gz
-RUN tar --strip=1 -xvzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-serve
-RUN rm -f kiwix-tools.tar.gz
+RUN wget --no-check-certificate -q -O kiwix-tools.tar.gz http://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS.tar.gz \
+  && tar --strip=1 -xzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-serve \
+  && rm -f kiwix-tools.tar.gz
   
 EXPOSE 80
 
