@@ -14,31 +14,47 @@ services:
       - "/data/download:/var/www/download.kiwix.org"
     environment:
       - VIRTUAL_HOST=download.kiwix.org
+      - LETSENCRYPT_HOST=download.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
     links:
       - db
 
   library:
     image: kiwix/library
     container_name: library
-    environment:
-      - VIRTUAL_HOST=library.kiwix.org
     volumes:
       - "/data:/data"
+    environment:
+      - VIRTUAL_HOST=library.kiwix.org
+      - LETSENCRYPT_HOST=library.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
 
   reverse-proxy:
     image: kiwix/reverse-proxy
     container_name: reverse-proxy
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
       - "/data/openzim:/var/www/download.openzim.org"
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
-      - "/data/certs:/etc/nginx/certs"
+      - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     ports:
       - 80:80
       - 443:443
 
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/data/certs:/etc/nginx/certs:rw"
   ftpd:
     image: gimoh/pureftpd
     container_name: ftpd
