@@ -30,14 +30,11 @@ services:
     container_name: reverse-proxy
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
-      - "/data/download.openzim.org:/var/www/download.openzim.org"
+      - "/data/openzim:/var/www/download.openzim.org"
       - "/data/download:/var/www/download.kiwix.org"
-      - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
+      - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs"
       - "/data/log/nginx:/var/log/nginx"
-        #
-#    environment:
-#      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,mirror3.kiwix.org,tmp.kiwix.org
     ports:
       - 80:80
       - 443:443
@@ -56,10 +53,15 @@ services:
       - 873:873
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
-      - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
+      - "/data/tmp:/var/www/tmp.kiwix.org"
 
   matomo-tracker:
-    image: kiwik/matomo-tracker
-    container_name: matomo-tracker
+    image: kiwik/matomo-log-analytics
+    container_name: matomo-log-analytics
     volumes:
       - "/data/log/nginx:/var/log/nginx"
+    environment:
+      - ID_SITE=2
+      - URL=https://stats.kiwix.org
+      - TOKEN=secret
+      - LOG=/var/log/nginx/download.kiwix.org.access.log* 
