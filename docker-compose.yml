@@ -33,6 +33,8 @@ services:
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/data/certs:/etc/nginx/certs"
+        #
 #    environment:
 #      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,mirror3.kiwix.org,tmp.kiwix.org
     ports:
@@ -54,3 +56,9 @@ services:
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp.kiwix.org:/var/www/tmp.kiwix.org"
+
+  matomo-tracker:
+    image: kiwik/matomo-tracker
+    container_name: matomo-tracker
+    volumes:
+      - "/data/log/nginx:/var/log/nginx"
