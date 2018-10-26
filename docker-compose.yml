@@ -56,7 +56,7 @@ services:
       - "/data/tmp:/var/www/tmp.kiwix.org"
 
   matomo-tracker:
-    image: kiwik/matomo-log-analytics
+    image: kiwix/matomo-log-analytics
     container_name: matomo-log-analytics
     volumes:
       - "/data/log/nginx:/var/log/nginx"
