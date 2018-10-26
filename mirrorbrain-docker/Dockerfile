@@ -81,8 +81,5 @@ COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 COPY bin/*.sh /usr/local/bin/
 RUN chmod 0500 /usr/local/bin/*.sh 
 
-#Install update db cron
-RUN ln -s /usr/local/bin/update_mirrorbrain_db.sh /etc/cron.hourly/update_mirrorbrain_db.sh
-
 #Start !
 CMD start.sh

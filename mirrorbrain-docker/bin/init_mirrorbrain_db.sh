@@ -18,5 +18,3 @@ if ! psql -lqt $PSQL_ARGS | cut -d \| -f 1 | grep -qw $DBNAME; then
 fi
 
 chown -R  www-data:www-data /var/www/download.kiwix.org
-
-bash update_mirrorbrain_db.sh

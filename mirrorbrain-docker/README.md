@@ -8,19 +8,25 @@ Mirrorbrain work with postgresql, thus we must have a reachable postgresql
 server from mirrorbrain container. We can use the official postgresql docker 
 image. The service we must named "db" (matching with host name).
 
-To init postgresql database we can run `init.sh` With docker compose :
+To init postgresql database :
 
-` docker-compose run web init.sh`
+` docker run -e INIT=1 -v /data/:/var/www  kiwix/mirrorbrain 
 
-## Run httpd server with Mirrorbrain
+## Run with http server
 
-By default, httpd server listen on 82 port. To run the server on 80 port :
+To run the server on 80 port :
 
-`docker-compose run -p 80:82 web `
+ `docker-compose run -e HTTPD=1 -v /data/:/var/www  kiwix/mirrorbrain 
 
-## Create your image
 
-We can personalize this image. For this, edit c./sql/mirrors-postgresql.sqlonfig files :
+## Run with cron
+ex :
+ `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain 
+
+ `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain 
+
+
+## Config files
 
 - config/mirrorbrain/mirrorbrain.conf : config file of mirrorbrain
 - config/apache/httpd.conf : config file of Apache httpd
