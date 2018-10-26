@@ -57,11 +57,11 @@ services:
 
   matomo-tracker:
     image: kiwix/matomo-log-analytics
-    container_name: matomo-log-analytics
+    container_name: matomo-log-analytics_download
     volumes:
       - "/data/log/nginx:/var/log/nginx"
     environment:
       - ID_SITE=2
       - URL=https://stats.kiwix.org
       - TOKEN=secret
-      - LOG=/var/log/nginx/download.kiwix.org.access.log* 
+      - LOG=/var/log/nginx/access.log
