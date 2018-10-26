@@ -13,9 +13,21 @@ services:
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
     environment:
+      - UPDATE_HASH=1
+      - HTTPD=1
       - VIRTUAL_HOST=download.kiwix.org
       - LETSENCRYPT_HOST=download.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
+    links:
+      - db
+
+  update-db:
+    image: kiwix/mirrorbrain
+    container_name: mirrorbrain-update
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+    environment:
+      - UPDATE_DB=1
     links:
       - db
 
