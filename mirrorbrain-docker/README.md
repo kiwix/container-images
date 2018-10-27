@@ -14,24 +14,26 @@ To init postgresql database :
 
 ## Run with http server
 
-To run the server on 80 port :
+To run the server on 80 port set HTTPD at 1 :
 
- `docker-compose run -e HTTPD=1 -v /data/:/var/www  kiwix/mirrorbrain 
-
+ `docker-compose run -e HTTPD=1 -v /data/:/var/www  kiwix/mirrorbrain`
 
 ## Run with cron
-ex :
- `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain 
 
- `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain 
+To run with cron to update hourly database or hash files, set UPDATE_DB or UPDATE_HASH at 1. Both is allowed.
+
+ex :
+
+ `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain`
+ `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain`
 
 
 ## Config files
 
-- config/mirrorbrain/mirrorbrain.conf : config file of mirrorbrain
-- config/apache/httpd.conf : config file of Apache httpd
-- config/apache/httpd-vhosts.conf : config your virtual host
-- sql/mirrors-postgresql.sql : SQL instructions to init mirror list
+- `config/mirrorbrain/mirrorbrain.conf` : config file of mirrorbrain
+- `config/apache/httpd.conf` : config file of Apache httpd
+- `config/apache/httpd-vhosts.conf` : config your virtual host
+- `sql/mirrors-postgresql.sql` : SQL instructions to init mirror list
 
 ## See also
 
