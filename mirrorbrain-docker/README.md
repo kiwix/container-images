@@ -24,8 +24,8 @@ To run with cron to update hourly database or hash files, set UPDATE_DB or UPDAT
 
 ex :
 
- `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain`
- `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain`
+ - `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain`
+ - `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain`
 
 
 ## Config files
