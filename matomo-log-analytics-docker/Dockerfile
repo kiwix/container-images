@@ -14,5 +14,5 @@ RUN git clone --quiet --depth=1 https://github.com/matomo-org/matomo-log-analyti
     
 CMD { \
   echo "#!/bin/sh" ; \
-  echo "import_logs.py --idsite=$ID_SITE --url=$URL --token-auth=$TOKEN $LOG " ; \
+  echo "import_logs.py --include-host=$HOST --idsite=$ID_SITE --url=$URL --token-auth=$TOKEN $LOG " ; \
 } > /etc/cron.hourly/matomo && chmod a+x /etc/cron.hourly/matomo && cron -f
