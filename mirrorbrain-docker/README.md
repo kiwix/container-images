@@ -8,9 +8,9 @@ Mirrorbrain work with postgresql, thus we must have a reachable postgresql
 server from mirrorbrain container. We can use the official postgresql docker 
 image. The service we must named "db" (matching with host name).
 
-To init postgresql database :
+To initialize postgresql database and exit:
 
-` docker run -e INIT=1 -v /data/:/var/www  kiwix/mirrorbrain 
+`docker run -e INIT=1 -v /data/:/var/www  kiwix/mirrorbrain`
 
 ## Run with http server
 
