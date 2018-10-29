@@ -116,7 +116,6 @@ ui.messages.noActiveZimFile=Nema aktivne ZIM datoteke. Učitajte je.
 ui.messages.noResultsError=Nema rezultata za ovaj upit.
 ui.messages.ok=U redu
 ui.messages.preparingContentDownload=Pripremam preuzimanje…
-# Fuzzy
 ui.messages.quitFullscreen=Izađi iz celog ekrana
 ui.messages.removeProfileConfirm=Želite li da uklonite svoj profil?
 ui.messages.restartConfirm=%1 treba ponovno pokretanje. Želite li da nastavite?
