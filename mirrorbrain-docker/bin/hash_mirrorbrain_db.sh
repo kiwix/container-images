@@ -1,5 +1,5 @@
 #!/bin/bash
-
+MB=/usr/local/bin/mb
 REPO="/var/www/download.kiwix.org/"
 
 # Build hash for new files in the master directory
