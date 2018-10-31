@@ -6,6 +6,7 @@ services:
     container_name: mirrorbrain-db
     volumes:
       - "/data/db:/var/lib/postgresql/data"
+    restart: always
 
   web:
     image: kiwix/mirrorbrain
@@ -20,6 +21,7 @@ services:
       - LETSENCRYPT_EMAIL=contact@kiwix.org
     links:
       - db
+    restart: always
 
   update-db:
     image: kiwix/mirrorbrain
@@ -30,6 +32,7 @@ services:
       - UPDATE_DB=1
     links:
       - db
+    restart: always
 
   library:
     image: kiwix/library
@@ -40,6 +43,7 @@ services:
       - VIRTUAL_HOST=library.kiwix.org
       - LETSENCRYPT_HOST=library.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
+    restart: always
 
   reverse-proxy:
     image: kiwix/reverse-proxy
@@ -58,6 +62,7 @@ services:
     ports:
       - 80:80
       - 443:443
+    restart: always
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -69,13 +74,22 @@ services:
       - "/etc/nginx/vhost.d"
       - "/usr/share/nginx/html"
       - "/data/certs:/etc/nginx/certs:rw"
+    restart: always
+
   ftpd:
-    image: gimoh/pureftpd
+    image: gimoh/pureftpd 
     container_name: ftpd
     ports:
       - "21:21"
+      - "30000-30050:30000-30050"
     volumes:
       - "/data/download:/var/lib/ftp"
+    entrypoint : 
+      - /usr/local/sbin/dkr-init 
+      - -p 
+      - "30000:30050"
+    restart: always
+
   rsyncd:
     image: kiwix/rsyncd
     container_name: rsyncd
@@ -84,6 +98,7 @@ services:
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
+    restart: always
 
   matomo-download:
     image: kiwix/matomo-log-analytics
@@ -96,3 +111,4 @@ services:
       - TOKEN=secret
       - LOG=/var/log/nginx/access.log
       - HOST=download.kiwix.org
+    restart: always
