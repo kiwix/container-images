@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 0.6.1-1
+ENV VERSION_KIWIX_TOOLS 0.7.0
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget
 
