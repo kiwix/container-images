@@ -19,6 +19,7 @@ services:
       - VIRTUAL_HOST=download.kiwix.org
       - LETSENCRYPT_HOST=download.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
     links:
       - db
     restart: always
@@ -43,6 +44,7 @@ services:
       - VIRTUAL_HOST=library.kiwix.org
       - LETSENCRYPT_HOST=library.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
     restart: always
 
   reverse-proxy:
@@ -57,6 +59,11 @@ services:
       - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
+    environment:
+      - VIRTUAL_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - LETSENCRYPT_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     ports:
