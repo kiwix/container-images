@@ -1,43 +1,46 @@
 # mirrorbrain-docker
 
-This docker image allow to run the Mirrorbrain extension of Apache httpd.
+This docker image allows to run the Apache HTTP daemon with the
+Mirrorbrain module.
 
-## Init database
+## Setup PostgreSQL database
 
-Mirrorbrain work with postgresql, thus we must have a reachable postgresql 
-server from mirrorbrain container. We can use the official postgresql docker 
-image. The service we must named "db" (matching with host name).
+Mirrorbrain works with PostgreSQL database engine, thus we must have a
+reachable PostgreSQL daemon from mirrorbrain container. You can use
+the official PostgreSQL docker image called `postgres`. The service we
+must named "db" (matching with host name).
 
-To initialize postgresql database and exit:
-
+To initialize PostgreSQL database and exit:
 `docker run -e INIT=1 -v /data/:/var/www  kiwix/mirrorbrain`
 
-## Run with http server
+## Run Apache+Mirrorbrain HTTP service
 
-To run the server on 80 port set HTTPD at 1 :
+To run the HTTP daemon on port 80 set environment variable `HTTPD` to
+`1`:
+`docker-compose run -e HTTPD=1 -v /data/:/var/www  kiwix/mirrorbrain`
 
- `docker-compose run -e HTTPD=1 -v /data/:/var/www  kiwix/mirrorbrain`
+## Run Mirrorbrain updates
 
-## Run with cron
+Mirrorbrain database need to be kept updated periodicaly. To do each
+hour, set environment variable `UPDATE_DB` (or `UPDATE_HASH`) to
+`1`. Both are allowed.
 
-To run with cron to update hourly database or hash files, set UPDATE_DB or UPDATE_HASH at 1. Both is allowed.
+To get a dedicated container, run that:
+`docker-compose run -e UPDATE_DB=1 -v /data/:/var/www  kiwix/mirrorbrain`
 
-ex :
-
- - `docker-compose run -e UPDATE_DB=1  -v /data/:/var/www  kiwix/mirrorbrain`
- - `docker-compose run -e HTTPD=1 -e UPDATE_HASH=1  -p 80:80 -v /data/:/var/www  kiwix/mirrorbrain`
-
+To run a container which do everything (HTTP server + updates):
+`docker-compose run -e HTTPD=1 -e UPDATE_HASH=1 -p 80:80 -v /data/:/var/www kiwix/mirrorbrain`
 
 ## Config files
 
-- `config/mirrorbrain/mirrorbrain.conf` : config file of mirrorbrain
-- `config/apache/httpd.conf` : config file of Apache httpd
-- `config/apache/httpd-vhosts.conf` : config your virtual host
-- `sql/mirrors-postgresql.sql` : SQL instructions to init mirror list
+- `config/mirrorbrain/mirrorbrain.conf` : config of Mirrorbrain
+- `config/apache/httpd.conf`            : config of Apache httpd
+- `config/apache/httpd-vhosts.conf`     : config of (your) Apache virtual host
+- `sql/mirrors-postgresql.sql`          : SQL instructions to init mirror list
 
 ## See also
 
-Mirrorbrain official site : http://mirrorbrain.org
+Mirrorbrain official site: http://mirrorbrain.org
 
 ## Author
 
