@@ -2,9 +2,16 @@ server {
   listen *:80;
   server_name download.openzim.org;
 
-  location / {
-    alias /var/www/download.openzim.org/;
-    default_type application/octet-stream;
-    autoindex on;
+  root /var/www/download.openzim.org/;
+  default_type application/octet-stream;
+  autoindex on;
+
+  location ^~ /.well-known/acme-challenge/ {
+    auth_basic off;
+    allow all;
+    alias /usr/share/nginx/html;
+    try_files $uri =404;
+    break;
   }
+
 }
