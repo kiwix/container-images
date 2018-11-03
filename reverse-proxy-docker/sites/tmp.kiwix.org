@@ -6,12 +6,6 @@ server {
   autoindex on;
   rewrite ^/zim/(.*)$ http://download.kiwix.org/zim/$1 permanent;
 
-  location ^~ /.well-known/acme-challenge/ {
-    auth_basic off;
-    allow all;
-    alias /usr/share/nginx/html;
-    try_files $uri =404;
-    break;
-  }
-
+  include /etc/nginx/vhost.d/default;
+  
 }

@@ -5,14 +5,7 @@ server {
   root /var/www/download.kiwix.org/;
   default_type application/octet-stream;
   autoindex on;
-  
 
-  location ^~ /.well-known/acme-challenge/ {
-    auth_basic off;
-    allow all;
-    alias /usr/share/nginx/html;
-    try_files $uri =404;
-    break;
-  }
+  include /etc/nginx/vhost.d/default;  
 
 }
