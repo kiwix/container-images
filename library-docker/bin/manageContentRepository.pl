@@ -419,8 +419,8 @@ sub sortKeysMethod {
 	"ted" => 2,
         "phet" => 1
     );
-    my $ac = $coefs{shift([split("_", $a)])} || 0;
-    my $bc = $coefs{shift([split("_", $b)])} || 0;
+    my $ac = $coefs{shift(split "_", $a)} || 0;
+    my $bc = $coefs{shift(split "_", $b)} || 0;
 
     if ($ac < $bc) {
 	return 1;
