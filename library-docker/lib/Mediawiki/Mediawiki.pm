@@ -1198,7 +1198,7 @@ sub allUsers {
 	$xml = $self->makeApiRequestAndParseResponse(values=>$httpPostRequestParams);
 
 	if (exists($xml->{query}->{allusers})) {
-	    foreach my $name (keys($xml->{query}->{allusers}->{u})) {
+            foreach my $name (keys($xml->{query}->{allusers}->{u}->%*)) {
 		my %user;
 		$user{'id'} = $xml->{query}->{allusers}->{u}->{$name}->{'userid'};
 		$name =~ tr/ /_/;
