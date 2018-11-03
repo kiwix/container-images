@@ -1,6 +1,7 @@
 # Messages for Hakka Chinese (客家語/Hak-kâ-ngî)
 # Exported from translatewiki.net
 # Author: Jetlag
+# Author: LNDDYL
 # Author: Macofe
 
 android.ui.pref_info_title=信息
@@ -116,8 +117,7 @@ ui.messages.noActiveZimFile=無打開个ZIM檔案，請先加載一件ZIM檔案�
 ui.messages.noResultsError=查毋到結果。
 ui.messages.ok=確定
 ui.messages.preparingContentDownload=準備下載…
-# Fuzzy
-ui.messages.quitFullscreen=退出全螢幕模式
+ui.messages.quitFullscreen=結束全螢幕
 ui.messages.removeContentConfirm=汝係毋係確實想從列表中刪除邇條記錄與相關文件？
 ui.messages.removeProfileConfirm=您係毋係想移除汝个資料？
 ui.messages.restartConfirm=%1愛重新啟動。您想今下就遐樣做？

@@ -1,0 +1,121 @@
+version: '3'
+services:
+
+  db:
+    image: postgres
+    container_name: mirrorbrain-db
+    volumes:
+      - "/data/db:/var/lib/postgresql/data"
+    restart: always
+
+  web:
+    image: kiwix/mirrorbrain
+    container_name: mirrorbrain-web
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+    environment:
+      - UPDATE_HASH=1
+      - HTTPD=1
+      - VIRTUAL_HOST=download.kiwix.org
+      - LETSENCRYPT_HOST=download.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
+    links:
+      - db
+    restart: always
+
+  update-db:
+    image: kiwix/mirrorbrain
+    container_name: mirrorbrain-update
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+    environment:
+      - UPDATE_DB=1
+    links:
+      - db
+    restart: always
+
+  library:
+    image: kiwix/library
+    container_name: library
+    volumes:
+      - "/data:/data"
+    environment:
+      - VIRTUAL_HOST=library.kiwix.org
+      - LETSENCRYPT_HOST=library.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
+    restart: always
+
+  reverse-proxy:
+    image: kiwix/reverse-proxy
+    container_name: reverse-proxy
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/data/openzim:/var/www/download.openzim.org"
+      - "/data/download:/var/www/download.kiwix.org"
+      - "/data/tmp:/var/www/tmp.kiwix.org"
+      - "/data/certs:/etc/nginx/certs:ro"
+      - "/data/log/nginx:/var/log/nginx"
+    environment:
+      - VIRTUAL_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - LETSENCRYPT_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    depends_on:
+      - reverse-proxy
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+      - "/data/certs:/etc/nginx/certs:rw"
+    restart: always
+
+  ftpd:
+    image: gimoh/pureftpd 
+    container_name: ftpd
+    ports:
+      - "21:21"
+      - "30000-30050:30000-30050"
+    volumes:
+      - "/data/download:/var/lib/ftp"
+    entrypoint : 
+      - /usr/local/sbin/dkr-init 
+      - -p 
+      - "30000:30050"
+    restart: always
+
+  rsyncd:
+    image: kiwix/rsyncd
+    container_name: rsyncd
+    ports:
+      - 873:873
+    volumes:
+      - "/data/download:/var/www/download.kiwix.org"
+      - "/data/tmp:/var/www/tmp.kiwix.org"
+    restart: always
+
+  matomo-download:
+    image: kiwix/matomo-log-analytics
+    container_name: matomo-log-analytics_download
+    volumes:
+      - "/data/log/nginx:/var/log/nginx"
+    environment:
+      - ID_SITE=2
+      - URL=https://stats.kiwix.org
+      - TOKEN=secret
+      - LOG=/var/log/nginx/access.log
+      - HOST=download.kiwix.org
+    restart: always

@@ -1,0 +1,18 @@
+server {
+  listen *:80;
+  server_name mirror.download.kiwix.org;
+
+  root /var/www/download.kiwix.org/;
+  default_type application/octet-stream;
+  autoindex on;
+  
+
+  location ^~ /.well-known/acme-challenge/ {
+    auth_basic off;
+    allow all;
+    alias /usr/share/nginx/html;
+    try_files $uri =404;
+    break;
+  }
+
+}

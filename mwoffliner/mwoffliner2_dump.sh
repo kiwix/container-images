@@ -3,8 +3,8 @@
 # Allows to write core file
 ulimit -c unlimited
 
-ZIM2INDEX=/srv/upload/zim2index/
+ZIM=/srv/upload/zim/
 MWMATRIXOFFLINER="mwmatrixoffliner --withZimFullTextIndex --verbose --adminEmail=contact@kiwix.org --mwUrl=https://meta.wikimedia.org/ --deflateTmpHtml --skipCacheCleaning --skipHtmlCache"
 
 # Wikipedia
-$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM2INDEX/wikipedia/ --language="(ja|nl|pl|pt|ru)"
+$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(ja|nl|pl|pt|ru)"

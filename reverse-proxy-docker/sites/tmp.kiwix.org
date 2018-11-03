@@ -1,0 +1,17 @@
+server {
+  listen *:80;
+  server_name tmp.kiwix.org;
+
+  root /var/www/tmp.kiwix.org/;
+  autoindex on;
+  rewrite ^/zim/(.*)$ http://download.kiwix.org/zim/$1 permanent;
+
+  location ^~ /.well-known/acme-challenge/ {
+    auth_basic off;
+    allow all;
+    alias /usr/share/nginx/html;
+    try_files $uri =404;
+    break;
+  }
+
+}

@@ -4,6 +4,7 @@
 # Author: CYAN
 # Author: Deacon1289
 # Author: Hym411
+# Author: Jerrykim306
 # Author: Macofe
 # Author: Priviet
 # Author: Revi
@@ -161,9 +162,9 @@ android.ui.rate_dialog_title=평가해 주세요
 android.ui.reboot_message=기억 장치의 권한 없이 계속하려면 안드로이드 6.0의 버그로 인해 장치를 다시 시작해야 합니다. 불편을 드려 죄송합니다.
 android.ui.remote_zims=온라인
 android.ui.remove_bookmark=북마크 제거
-android.ui.request_storage=ZIM 파일에 접근하려면 저장소에 대한 접근 권한이 필요합니다
+android.ui.request_storage=오프라인 콘텐츠에 접근하려면 저장소에 대한 접근 권한이 필요합니다
 android.ui.request_storage_custom=화면 오버레이 경고가 보이면 해결을 위해 장치를 다시 시작하십시오.
-android.ui.rescan_fs_warning=ZIM 파일을 검색 중입니다. 기다려 주십시오...
+android.ui.rescan_fs_warning=다운로드 가능한 파일을 검색 중입니다. 기다려 주십시오...
 android.ui.save_media=미디어 저장
 android.ui.save_media_error=미디어 저장을 시도할 때 오류가 발생하였습니다!
 android.ui.save_media_saved=내 사진 폴더에 %1$s 미디어가 저장되었습니다
