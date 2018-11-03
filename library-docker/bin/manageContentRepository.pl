@@ -406,20 +406,20 @@ sub writeHtaccess {
 # Sort the key in user friendly way
 sub sortKeysMethod {
     my %coefs = (
-	"wikipedia"  => 11,
-	"wiktionary" => 10,
-	"wikivoyage" => 9,
+	"wikipedia"   => 11,
+	"wiktionary"  => 10,
+	"wikivoyage"  => 9,
 	"wikiversity" => 8,
-	"wikibooks" => 7,
-	"wikisource" => 6,
-	"wikiquote" => 5,
-	"wikinews" => 4,
+	"wikibooks"   => 7,
+	"wikisource"  => 6,
+	"wikiquote"   => 5,
+	"wikinews"    => 4,
 	"wikispecies" => 3,
-	"ted" => 2,
-        "phet" => 1
+	"ted"         => 2,
+        "phet"        => 1
     );
-    my $ac = $coefs{shift(@{split("_", $a)})} || 0;
-    my $bc = $coefs{shift(@{split("_", $b)})} || 0;
+    my $ac = $coefs{(split("_", $a))[0]} || 0;
+    my $bc = $coefs{(split("_", $b))[0]} || 0;
 
     if ($ac < $bc) {
 	return 1;
