@@ -1,12 +1,9 @@
 #!/usr/bin/perl
-use FindBin;
-use lib "$FindBin::Bin/../classes/";
-use lib "$FindBin::Bin/../../dumping_tools/classes/";
-
 use utf8;
 use strict;
 use warnings;
-use Kiwix::PathExplorer;
+
+use FindBin;
 use Getopt::Long;
 use Locale::Language;
 use Data::Dumper;
@@ -16,7 +13,9 @@ use Time::localtime;
 use DateTime;
 use Locales;
 use Number::Bytes::Human qw(format_bytes);
+
 use Mediawiki::Mediawiki;
+use Kiwix::PathExplorer;
 
 my %content;
 
@@ -419,8 +418,8 @@ sub sortKeysMethod {
 	"ted" => 2,
         "phet" => 1
     );
-    my $ac = $coefs{shift(split "_", $a)} || 0;
-    my $bc = $coefs{shift(split "_", $b)} || 0;
+    my $ac = $coefs{shift(@{split("_", $a)})} || 0;
+    my $bc = $coefs{shift(@{split("_", $b)})} || 0;
 
     if ($ac < $bc) {
 	return 1;
