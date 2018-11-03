@@ -1,7 +1,8 @@
 {
   "dependencies": {
-    "twitter": "",
+    "twitter-rss-noauth": "",
     "irc": "",
+    "rss-parser": "",
     "rss-watcher": "",
     "html-to-text": "",
     "yargs": ""
