@@ -12,7 +12,7 @@ MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 $MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(sr)" &&
 
 # Wiktionary
-$MWMATRIXOFFLINER --project=wiktionary --outputDirectory=$ZIM/wiktionary/--language="(en|mg)" &&
+$MWMATRIXOFFLINER --project=wiktionary --outputDirectory=$ZIM/wiktionary/ --language="(en|mg)" &&
 
 # Wiktionary FR
 $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM/wiktionary/
