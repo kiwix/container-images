@@ -1,7 +1,7 @@
 Create or update the containers
 ===============================
 
-`docker-compose -p kiwix up`-d
+`docker-compose -p kiwix up -d`
 
 Restart service
 ===============
