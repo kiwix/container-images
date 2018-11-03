@@ -5,7 +5,7 @@ FROM debian:stretch-slim
 LABEL maintainer="kiwix"
 
 ENV VERSION_KIWIX_TOOLS 0.7.0
-ENV LIBRARY_DIR /data/library
+ENV LIBRARY_DIR /var/www/library.kiwix.org
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget cron libfindbin-libs-perl libxml-dom-xpath-perl libdatetime-perl liblocales-perl libnumber-bytes-human-perl libxml-simple-perl libgetargs-long-perl
 
@@ -27,12 +27,12 @@ COPY lib/Kiwix/PathExplorer.pm /usr/share/perl5/Kiwix/PathExplorer.pm
 
 RUN { \
   echo "cd $LIBRARY_DIR" ; \
-  echo "manageLibraryKiwixOrg.pl --source=/data/download/library/library_zim.xml > library.kiwix.org.xml" ; \
-} > /etc/cron.daily/generateLibraryKiwixOrg && chmod 0500 /etc/cron.daily/generateLibraryKiwixOrg
+  echo "manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml > library.kiwix.org.xml" ; \
+} > /etc/cron.daily/80generateLibraryKiwixOrg && chmod 0500 /etc/cron.daily/80generateLibraryKiwixOrg
 
 RUN { \
   echo "cd $LIBRARY_DIR" ; \
   echo "manageContentRepository.pl --wikiPassword=42 --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles" ; \
-} > /etc/cron.daily/updateContentRepository && chmod 0500 /etc/cron.daily/updateContentRepository
+} > /etc/cron.daily/10updateContentRepository && chmod 0500 /etc/cron.daily/10updateContentRepository
 
 CMD start.sh

@@ -39,7 +39,9 @@ services:
     image: kiwix/library
     container_name: library
     volumes:
-      - "/data:/data"
+      - "/data/openzim:/var/www/download.openzim.org"
+      - "/data/library:/var/www/library.kiwix.org"
+      - "/data/download:/var/www/download.kiwix.org"
     environment:
       - VIRTUAL_HOST=library.kiwix.org
       - LETSENCRYPT_HOST=library.kiwix.org
@@ -52,16 +54,19 @@ services:
     container_name: reverse-proxy
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
-      - "/etc/nginx/vhost.d"
-      - "/usr/share/nginx/html"
+      - "/data/vhost.d:/etc/nginx/vhost.d"
+      - "/data/html:/usr/share/nginx/html"
       - "/data/openzim:/var/www/download.openzim.org"
       - "/data/download:/var/www/download.kiwix.org"
+      - "/data/library:/var/www/library.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
     environment:
-      - VIRTUAL_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
-      - LETSENCRYPT_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      # - VIRTUAL_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org
+      # - LETSENCRYPT_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
@@ -78,8 +83,8 @@ services:
       - reverse-proxy
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "/etc/nginx/vhost.d"
-      - "/usr/share/nginx/html"
+      - "/data/vhost.d:/etc/nginx/vhost.d"
+      - "/data/html:/usr/share/nginx/html"
       - "/data/certs:/etc/nginx/certs:rw"
     restart: always
 
