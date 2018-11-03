@@ -4,27 +4,19 @@
 "use strict";
 
 /* INCLUDES */
-var twitter = require( 'twitter' );
 var irc = require( 'irc' );
+var twitterRss = require('twitter-rss-noauth')
+var rssParser = new(require('rss-parser'));
 var rssWatcher = require( 'rss-watcher' );
 var htmlToText = require( 'html-to-text' );
 var yargs = require( 'yargs' );
 
-/* Arguments */
+/* ARGUMENTS */
 var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sourceforge, twitter, wikis activities: $0' )
-    .require( ['twitterKey', 'twitterSecret', 'twitterTokenKey', 'twitterTokenSecret', 'kiwixGithubToken', 'openzimGithubToken' ] )
+    .require( [ 'kiwixGithubToken', 'openzimGithubToken' ] )
     .argv;
 
-/* VARIABLES */
-var lastTwitterId;
-var ircClient
-var twitterClient = new twitter({
-    twitter_key: argv.twitterKey,
-    twitter_secret: argv.twitterSecret,
-    twitter_token_key: argv.twitterTokenKey,
-    twitter_token_secret: argv.twitterTokenSecret
-});
-
+/* CONSTANTS */
 var kiwixGithubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.kiwixGithubToken;
 var kiwixWikiFeed = 'http://wiki.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
@@ -37,29 +29,37 @@ var ideascubeFramagitFeed = 'https://framagit.org/ideascube.atom';
 
 /* FUNCTIONS */
 function connectIrc() {
-    ircClient= new irc.Client( 'irc.freenode.net', 'WatcherBot', {
+    var ircClient = new irc.Client( 'irc.freenode.net', 'WatcherBot', {
 	channels: [ '#kiwix' ],
     });
+    return ircClient;
 }
 
 function html2txt( html ) {
     return htmlToText.fromString( html ).replace( new RegExp( /\[[^\[]*\]/ ), '' ).replace( new RegExp( /[ ]+/ ), ' ' );
 }
 
-/* INIT */
-connectIrc();
+/* IRC */
+var ircClient = connectIrc();
 
 /* TWITTER */
+var lastTwitterId = "";
 setInterval ( function() {
-    twitterClient.get('statuses/user_timeline', { screen_name: 'KiwixOffline' }, function( error, tweets, response ) {
-	if ( error ) {
-	    throw error;
-            console.error( '[ERROR KIWIX MICROBLOG] ' + error );
-        } else if ( tweets[0] && lastTwitterId != tweets[0].id_str ) {
-	    lastTwitterId = tweets[0].id_str;
-	    var message = '[KIWIX MICROBLOG] ' + tweets[0].text + ' -- https://twitter.com/KiwixOffline/status/' + tweets[0].id_str + ' --';
-	    console.log( '[KIWIX MICROBLOG]' + message );
-	    ircClient.say( '#kiwix', message );
+    twitterRss('kiwixoffline', function (err, feed) {
+	if ( err ) {
+            console.error( '[ERROR KIWIX MICROBLOG] ' + err);
+	} else {
+	    (async () => {
+		let parsedFeed = await rssParser.parseString(feed);
+		parsedFeed.items.forEach(item => {
+		    if ( lastTwitterId.localeCompare(item.isoDate) < 0 ) {
+			lastTwitterId = item.isoDate;
+			var message = '[KIWIX MICROBLOG] ' + item.title + ' -- ' + item.link + ' --';
+			console.log( '[KIWIX MICROBLOG]' + message );
+			ircClient.say( '#kiwix', message );
+		    }
+		});
+	    })();
 	}
     })
 }, 60000 );
