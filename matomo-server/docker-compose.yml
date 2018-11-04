@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  db:
+    image: mysql:5
+    container_name: matomo_mysql
+    volumes:
+      - "/data/matomo/mysql/conf:/etc/mysql/conf.d"
+      - "/data/matomo/mysql/files:/var/lib/mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root      
+    restart: always
+
+  web:
+    image: matomo
+    container_name: matomo_web
+    links:
+      - db
+    environment:
+      - VIRTUAL_HOST=stats.kiwix.org
+      - LETSENCRYPT_HOST=stats.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=redirect
+    ports:
+      - 80:80
+    restart: always
