@@ -47,6 +47,7 @@ services:
       - LETSENCRYPT_HOST=library.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
+      - WIKIPASSWORD=42
     restart: always
 
   reverse-proxy:
