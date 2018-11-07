@@ -39,7 +39,6 @@ services:
     image: kiwix/library
     container_name: library
     volumes:
-      - "/data/openzim:/var/www/download.openzim.org"
       - "/data/library:/var/www/library.kiwix.org"
       - "/data/download:/var/www/download.kiwix.org"
     environment:
