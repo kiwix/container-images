@@ -20,7 +20,10 @@ services:
       - VIRTUAL_HOST=stats.kiwix.org
       - LETSENCRYPT_HOST=stats.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
-      - HTTPS_METHOD=redirect
-    ports:
-      - 80:80
+      - HTTPS_METHOD=no-redirect
     restart: always
+
+networks:
+  default:
+    external:
+      name: kiwix_default
