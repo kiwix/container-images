@@ -63,10 +63,8 @@ services:
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
     environment:
-      # - VIRTUAL_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org
-      # - LETSENCRYPT_HOST=mirror.download.kiwix.org,download.openzim.org,tmp.kiwix.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
