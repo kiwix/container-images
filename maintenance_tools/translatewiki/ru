@@ -15,6 +15,7 @@
 # Author: Kaganer
 # Author: Kareyac
 # Author: Kelson
+# Author: Link2xt
 # Author: Lvova
 # Author: Movses
 # Author: Okras
@@ -187,7 +188,7 @@ android.ui.speech_prompt_text=Говорите, чтобы искать %s
 android.ui.tab_closed=Вкладка закрыта
 android.ui.time_day=день
 android.ui.time_hour=ч
-android.ui.time_left=лево
+android.ui.time_left=осталось
 android.ui.time_minute=м
 android.ui.time_second=с
 android.ui.tts_lang_not_supported=Язык этой страницы не поддерживается или соответствующие языковые данные не были установлены. Эта статья не может быть правильно прочитана.
