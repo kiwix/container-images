@@ -1,0 +1,10 @@
+server {
+  listen *:80;
+  server_name warehouse.cardshop.hotspot.kiwix.org;
+
+  root /var/www/warehouse.cardshop.hotspot.kiwix.org/;
+  default_type application/octet-stream;
+  autoindex on;
+  
+  include /etc/nginx/vhost.d/default;
+}
