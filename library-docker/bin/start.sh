@@ -15,7 +15,6 @@ ln -fs /var/www/download.kiwix.org/zim/ /var/www/library.kiwix.org/zim
   echo "manageContentRepository.pl --wikiPassword=$WIKIPASSWORD --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles" ; \
 } > /etc/cron.daily/10updateContentRepository && chmod 0500 /etc/cron.daily/10updateContentRepository
 
-
 echo "Generate library.kiwix.org.xml file"
 manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml > library.kiwix.org.xml
 

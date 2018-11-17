@@ -15,16 +15,14 @@ use Locales;
 use Number::Bytes::Human qw(format_bytes);
 
 use Mediawiki::Mediawiki;
-use Kiwix::PathExplorer;
 
 my %content;
 
 # Configuration variables
 my $contentDirectory = "/var/www/download.kiwix.org";
+
 my $zimDirectoryName = "zim";
 my $zimDirectory = $contentDirectory."/".$zimDirectoryName;
-my $portableDirectoryName = "portable";
-my $portableDirectory = $contentDirectory."/".$portableDirectoryName;
 my $binDirectoryName = "bin";
 my $srcDirectoryName = "src";
 my $devDirectoryName = "dev";
@@ -42,7 +40,6 @@ my $writeLibrary = 0;
 my $showHelp = 0;
 my $wikiPassword = "";
 my $deleteOutdatedFiles = 0;
-my $checkPortableFiles = 0;
 my $onlyCheck = 0;
 
 # Language lookup
@@ -62,7 +59,6 @@ sub usage() {
     print "\t--htaccessPath=/var/www/download.kiwix.org/.htaccess\n";
     print "\t--writeWiki\n";
     print "\t--wikiPassword=foobar\n";
-    print "\t--checkPortableFiles\n";
 }
 
 # Parse command line
@@ -79,7 +75,6 @@ GetOptions(
     'deleteOutdatedFiles' => \$deleteOutdatedFiles,
     'help' => \$showHelp,
     'onlyCheck' => \$onlyCheck,
-    'checkPortableFiles' => \$checkPortableFiles,
     'wikiPassword=s' => \$wikiPassword,
     'htaccessPath=s' => \$htaccessPath,
 );
@@ -90,9 +85,9 @@ if ($showHelp) {
 }
 
 # Parse the "zim" directories
-my $explorer = new Kiwix::PathExplorer();
-$explorer->path($zimDirectory);
-while (my $file = $explorer->getNext()) {
+my @files = split /\n/, `find "$zimDirectory" -name "*.zim"`;
+for my $file (@files) {
+    print "$file\n";
     if ($file =~ /^.*\/([^\/]+)\.zim$/i) {
 	my $basename = $1;
 	my $core = $basename;
@@ -135,31 +130,6 @@ while (my $file = $explorer->getNext()) {
     }
 }
 
-# Parse the "portable" directories
-$explorer->reset();
-$explorer->path($portableDirectory);
-while (my $file = $explorer->getNext()) {
-    if ($file =~ /^.*?\+([^\/]+)\.zip$/i) {
-	my $basename = $1;
-	if (exists($content{$basename})) {
-	    if ((exists($content{$basename}->{portable}) && 
-		 getFileCreationDate($file) > getFileCreationDate($content{$basename}->{portable})) ||
-		!exists($content{$basename}->{portable})
-		) {
-
-		my $file_size = -s "$file";
-		if ($content{$basename}->{size} > $file_size * (1.1 + $content{$basename}->{size} / (1024 * 1024 * 1024 * 10))) {
-		    print STDERR "Portable file $file (".format_bytes($file_size).") is smaller than ZIM (".format_bytes($content{$basename}->{size}).")\n";
-		} else {
-		    $content{$basename}->{portable} = $file;
-		} 
-	    }
-	} else {
-	    print STDERR "Unable to find corresponding ZIM file to $file\n";
-	}
-    }
-}
-
 # Sort content
 my %sortedContent;
 for (keys(%content)) {
@@ -184,31 +154,8 @@ for (keys(%content)) {
     }
 }
 
-# Check if portable files have ZIM files
-if ($checkPortableFiles || $onlyCheck) {
-    for (keys(%sortedContent)) {
-	my $entry = $sortedContent{$_}->[0];
-	if ($entry->{portable}) {
-	    my $cmd = "unzip -l '".$entry->{portable}."' | egrep '*.zim(aa|)\$'"; `$cmd`;
-	    if ($?) {
-		print STDERR $entry->{portable}." has no ZIM file in it.\n";
-		$entry->{portable_without_zim} = 1;
-	    }
-	}
-    }
-}
-
 # Stop here if we only want to make a check
 exit if ($onlyCheck);
-
-# Delete empty portable files (without ZIM files)
-for (keys(%sortedContent)) {
-    my $entry = $sortedContent{$_}->[0];
-    if ($entry->{portable_without_zim}) {
-	my $cmd = "rm '".$entry->{portable}."'"; `$cmd`;
-	delete($entry->{portable});
-    }
-}
 
 # Apply to the multiple outputs
 if ($deleteOutdatedFiles) {
@@ -239,9 +186,6 @@ sub deleteOutdatedFiles {
 	    my $entry = $contents->[$i];
 	    print "Deleting ".$entry->{zim}."...\n";
 	    my $cmd = "rm '".$entry->{zim}."'"; `$cmd`;
-	    if ($entry->{portable}) {
-		my $cmd = "rm '".$entry->{portable}."'"; `$cmd`;
-	    }
 	} 
     }
 }
@@ -329,8 +273,6 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /zim/wikipedia/wikipedia_fa_all_nopic_2015-01.zim /zim/wikipedia_fa_all_nopic.zim \n";
     $content .= "RedirectPermanent /zim/wikipedia/wikipedia_fa_all_05_2014.zim /zim/wikipedia_fa_all.zim\n";
     $content .= "RedirectPermanent /zim/wikipedia/wikipedia_en_for_schools_2013.zim /zim/wikipedia_en_for-schools.zim\n";
-    $content .= "RedirectPermanent /kiwix/kiwix-0.5.iso /portable/wikipedia_en_wp1-0.5.zip\n";
-    $content .= "RedirectPermanent /portable/wikipedia/kiwix-0.9+wikipedia_en_all_07_2014.zip /portable/wikipedia_en_all.zip\n";
     $content .= "RedirectPermanent /zim/wikipedia/wikipedia_es_all_03_2012.zim /zim/wikipedia_es_all.zim\n";
     $content .= "\n\n";
 
@@ -341,7 +283,6 @@ sub writeHtaccess {
     $content .= "AddDescription \"Binaries and source code tarballs compiled auto. one time a day, for developers\" nightly\n";
     $content .= "AddDescription \"Random stuff, mostly mirrored for third party projects\" other\n";
     $content .= "AddDescription \"Kiwix-Plug Raspberry Pi images\" plug\n";
-    $content .= "AddDescription \"Portable packages (Kiwix+content), mostly for end-users\" portable\n";
     $content .= "AddDescription \"XML files describing all the content available, for developers\" library\n";
     $content .= "AddDescription \"Kiwix source code tarballs, for developers only\" src\n";
     $content .= "AddDescription \"Wikipedia articles key indicators for the WP.10 project\" wp1\n";
@@ -355,21 +296,6 @@ sub writeHtaccess {
 	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
 	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
 	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
-
-	for (@$entries) {
-	    if ($_->{portable}) {
-		$entry = $_;
-		last;
-	    }
-	}
-
-	if ($entry->{portable}) {
-	    $content .= "RedirectPermanent /".$portableDirectoryName."/".$core.".zip ".substr($entry->{portable}, length($contentDirectory))."\n";
-	    $content .= "RedirectPermanent /".$portableDirectoryName."/".$core.".zip.torrent ".substr($entry->{portable}, length($contentDirectory)).".torrent\n";
-	    $content .= "RedirectPermanent /".$portableDirectoryName."/".$core.".zip.magnet ".substr($entry->{portable}, length($contentDirectory)).".magnet\n";
-	    $content .= "RedirectPermanent /".$portableDirectoryName."/".$core.".zip.md5 ".substr($entry->{portable}, length($contentDirectory)).".md5\n";
-	}
-
 	$content .= "\n";
     }
 
@@ -397,7 +323,7 @@ sub writeHtaccess {
 
     # Write a few .htaccess files in sub-directories
     $content = "AddDescription \" \" *\n";
-    foreach my $subDirectory ("archive", "bin", "dev", "nightly", "other", "portable", "src", "zim", "library") {
+    foreach my $subDirectory ("archive", "bin", "dev", "nightly", "other", "src", "zim", "library") {
 	my $htaccessPath = $contentDirectory."/".$subDirectory."/.htaccess";
 	writeFile($htaccessPath, $content);
     }
@@ -454,7 +380,6 @@ sub writeLibrary {
     my @chars = ("A".."Z", "a".."z");
     my $randomString;
     $randomString .= $chars[rand @chars] for 1..8;
-    my $tmpLibraryPath = $tmpDirectory."/".$libraryName.".".$randomString.".xml";
     my $tmpZimLibraryPath = $tmpDirectory."/".$libraryName."_zim.".$randomString.".xml";
 
     # Create the library.xml file for the most recent files
@@ -467,25 +392,11 @@ sub writeLibrary {
 	my $cmd = "$kiwixManagePath $tmpZimLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
 	system($cmd) == 0
 	    or print STDERR "Unable to put $zimPath to XML library";
-
-        # Searching for a recent content with portable version
-        do {
-	    $entry = $sortedContent{$core}->[$i];
-	    if ($entry->{portable}) {
-		$zimPath = $entry->{zim};
-		$permalink = "http://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
-		$cmd = "$kiwixManagePath $tmpLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
-		system($cmd) == 0
-		    or print STDERR "Unable to put $zimPath to XML library";
-	    }
-	    $i++;
-	} while ($i<scalar(@{$sortedContent{$core}}) && !($entry->{portable}));
     }
 
     # Move the XML files to its final destination
-    if (checkXmlIntegrity($tmpLibraryPath) && checkXmlIntegrity($tmpZimLibraryPath)) {
-	my $cmd = "mv $tmpLibraryPath $libraryDirectory/$libraryName.xml"; `$cmd`;
-	$cmd = "mv $tmpZimLibraryPath $libraryDirectory/${libraryName}_zim.xml"; `$cmd`;
+    if (checkXmlIntegrity($tmpZimLibraryPath)) {
+        my $cmd = "mv $tmpZimLibraryPath $libraryDirectory/${libraryName}_zim.xml"; `$cmd`;
     }
 
     # Generate the Ideascube library
