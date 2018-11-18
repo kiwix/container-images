@@ -23,5 +23,8 @@ $MWOFFLINER --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.wikiped
 # Wikipedia TR
 $MWOFFLINER --mwUrl="https://tr.wikipedia.org/" --parsoidUrl="https://tr.wikipedia.org/api/rest_v1/page/html/" --customMainPage="Kullanıcı:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM/wikipedia/ &&
 
+# Wikipedia DE
+$MWOFFLINER --mwUrl="https://de.wikipedia.org/" --parsoidUrl="https://de.wikipedia.org/api/rest_v1/page/html/" --customMainPage="Benutzer:The_other_Kiwix_guy/Landing" --outputDirectory=$ZIM/wikipedia/ &&
+
 # Wikipedia
-$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(de|fi|no|it)"
+$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(fi|no|it)"
