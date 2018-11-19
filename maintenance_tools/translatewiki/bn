@@ -5,6 +5,7 @@
 # Author: Bellayet
 # Author: Bodhisattwa
 # Author: Devayon
+# Author: Gronthokeet
 # Author: Jayantanth
 # Author: Kelson
 # Author: Nasir8891
@@ -42,7 +43,7 @@ android.ui.download_change_storage=ডিভাইসের সংগ্রহ�
 android.ui.download_close=বন্ধ করুন
 android.ui.download_complete_snackbar=সম্পূর্ণ ডাউনলোড করুন
 android.ui.download_no_space=এই ফাইল ডাউনলোড করার মত যথেষ্ট স্থান নেই
-android.ui.download_over_network=আপনি কি নিশ্চিত যে ওয়াইফাই ছাড়া আপনি এই ডাউনলড শুরু করতে চান?
+android.ui.download_over_network=আপনি কি নিশ্চিত যে ওয়াইফাই ছাড়া আপনি এই ডাউনলোড শুরু করতে চান?
 android.ui.download_pause=বিরতি
 android.ui.download_paused=থামানো হয়েছে
 android.ui.download_play=চালান
