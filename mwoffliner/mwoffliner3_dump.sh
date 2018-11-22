@@ -200,6 +200,10 @@ $MWOFFLINER --mwApiPath="api.php" --mwUrl="https://klexikon.zum.de/" --localPars
 # Westeros
 $MWOFFLINER --mwUrl="https://awoiaf.westeros.org/" --localParsoid --mwApiPath="api.php" --mwWikiPath="index.php" --outputDirectory=$ZIM/other/ &&
 
+# Cyclowiki
+wget https://upload.wikimedia.org/wikipedia/commons/d/d2/Cyclowiki.png &&
+$MWOFFLINER --mwUrl="http://cyclowiki.org" --localParsoid --customZimFavicon=Cyclowiki.png &&
+
 # Test ZIM file
 echo "Sven-Åke_Johansson" > test.articles &&
 echo "Orbite_héliosynchrone" >> test.articles &&
