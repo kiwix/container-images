@@ -6,13 +6,15 @@ ln -fs /var/www/download.kiwix.org/zim/ /var/www/library.kiwix.org/zim
 } > /var/www/library.kiwix.org/robots.txt
 
 { \
+  echo "#!/bin/sh" ; \
   echo "cd $LIBRARY_DIR" ; \
-  echo "manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml > library.kiwix.org.xml" ; \
+  echo "manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml >library.kiwix.org.xml 2>>/var/log/libgen" ; \
 } > /etc/cron.daily/80generateLibraryKiwixOrg && chmod 0500 /etc/cron.daily/80generateLibraryKiwixOrg
 
 { \
+  echo "#!/bin/sh" ; \
   echo "cd $LIBRARY_DIR" ; \
-  echo "manageContentRepository.pl --wikiPassword=$WIKIPASSWORD --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles" ; \
+  echo "manageContentRepository.pl --wikiPassword=$WIKIPASSWORD --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles >>/var/log/libgen 2>&1" ; \
 } > /etc/cron.daily/10updateContentRepository && chmod 0500 /etc/cron.daily/10updateContentRepository
 
 echo "Generate library.kiwix.org.xml file"
