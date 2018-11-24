@@ -78,8 +78,8 @@ COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
 #Install start script
-COPY bin/*.sh /usr/local/bin/
-RUN chmod 0500 /usr/local/bin/*.sh 
+COPY bin/* /usr/local/bin/
+RUN chmod 0500 /usr/local/bin/* 
 
 #Start !
 CMD start.sh
