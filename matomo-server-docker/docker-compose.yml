@@ -20,7 +20,7 @@ services:
       - VIRTUAL_HOST=stats.kiwix.org
       - LETSENCRYPT_HOST=stats.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
-      - HTTPS_METHOD=no-redirect
+      - HTTPS_METHOD=redirect
     restart: always
 
 networks:
