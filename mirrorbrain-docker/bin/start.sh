@@ -9,7 +9,7 @@ then
   echo "Install Cron to update DB"
   { \
     echo "#!/bin/sh" ; \
-    echo "/usr/local/bin/update_mirrorbrain_db.sh >>/var/log/update_mb.log 2>&1" ; \
+    echo "/usr/bin/flock -w 0 /dev/shm/cron.lock /usr/local/bin/update_mirrorbrain_db.sh >>/dev/shm/update_mb.log 2>&1" ; \
   } > /etc/cron.hourly/update_mirrorbrain_db && chmod 0500 /etc/cron.hourly/update_mirrorbrain_db
 fi
 
@@ -18,7 +18,7 @@ then
   echo "Install Cron to update hash"
   { \
     echo "#!/bin/sh" ; \
-    echo "/usr/local/bin/hash_mirrorbrain_db.sh >>/var/log/hash_mb.log 2>&1" ; \
+    echo "/usr/bin/flock -w 0 /dev/shm/cron.lock /usr/local/bin/hash_mirrorbrain_db.sh >>/dev/shm/hash_mb.log 2>&1" ; \
   } > /etc/cron.hourly/hash_mirrorbrain_db && chmod 0500 /etc/cron.hourly/hash_mirrorbrain_db
 fi
 
