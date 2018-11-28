@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 services:
 
   db:
@@ -20,6 +20,11 @@ services:
       - LETSENCRYPT_HOST=download.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
+    networks:
+      kiwix:
+        aliases:
+          - download
+      default:
     links:
       - db
     restart: always
@@ -47,6 +52,11 @@ services:
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
       - WIKIPASSWORD=42
+    networks:
+      kiwix:
+        aliases:
+          - library
+      default:
     restart: always
 
   reverse-proxy:
@@ -72,6 +82,12 @@ services:
     ports:
       - 80:80
       - 443:443
+    networks:
+      kiwix:
+        aliases:
+          - mirror.download
+          - tmp
+      default:
     restart: always
 
   letsencrypt:
@@ -122,3 +138,8 @@ services:
       - LOG=/var/log/nginx/access.log
       - HOST=download.kiwix.org
     restart: always
+networks:
+  kiwix:
+    name: kiwix.org
+  default:
+
