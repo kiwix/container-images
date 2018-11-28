@@ -11,6 +11,10 @@ then
     echo "#!/bin/sh" ; \
     echo "/usr/bin/flock -w 0 /dev/shm/cron.lock /usr/local/bin/update_mirrorbrain_db.sh >>/dev/shm/update_mb.log 2>&1" ; \
   } > /etc/cron.hourly/update_mirrorbrain_db && chmod 0500 /etc/cron.hourly/update_mirrorbrain_db
+  { \
+    echo "#!/bin/sh" ; \
+    echo "mb mirrorlist -f xhtml | grep -v "href=\"\"" > /var/www/download.kiwix.org/mirrors.html" ; \
+  } > /etc/cron.daily/update_mirrorlist && chmod 0500 /etc/cron.daily/update_mirrorlist
 fi
 
 if [ ! -z $UPDATE_HASH ]
