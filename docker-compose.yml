@@ -33,6 +33,7 @@ services:
     container_name: mirrorbrain-update
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
+      - "/data/openzim:/var/www/download.openzim.org"
     environment:
       - UPDATE_DB=1
     links:
