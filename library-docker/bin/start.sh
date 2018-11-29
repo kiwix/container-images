@@ -9,6 +9,7 @@ ln -fs /var/www/download.kiwix.org/zim/ /var/www/library.kiwix.org/zim
   echo "#!/bin/sh" ; \
   echo "cd $LIBRARY_DIR" ; \
   echo "manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml >library.kiwix.org.xml 2>>/dev/shm/libgen" ; \
+  echo "kill \`pidof kiwix-serve\`" ; \
 } > /etc/cron.daily/80generateLibraryKiwixOrg && chmod 0500 /etc/cron.daily/80generateLibraryKiwixOrg
 
 { \
