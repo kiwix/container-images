@@ -21,10 +21,9 @@ services:
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     networks:
-      kiwix:
+      default:
         aliases:
           - download
-      default:
     links:
       - db
     restart: always
@@ -52,11 +51,6 @@ services:
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
       - WIKIPASSWORD=42
-    networks:
-      kiwix:
-        aliases:
-          - library
-      default:
     restart: always
 
   reverse-proxy:
@@ -83,11 +77,10 @@ services:
       - 80:80
       - 443:443
     networks:
-      kiwix:
+      default:
         aliases:
           - mirror.download
           - tmp
-      default:
     restart: always
 
   letsencrypt:
@@ -139,7 +132,5 @@ services:
       - HOST=download.kiwix.org
     restart: always
 networks:
-  kiwix:
-    name: kiwix.org
   default:
-
+    name: kiwix.org

@@ -26,4 +26,4 @@ services:
 networks:
   default:
     external:
-      name: kiwix_default
+      name: kiwix.org
