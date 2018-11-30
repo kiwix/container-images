@@ -13,6 +13,7 @@ services:
     container_name: mirrorbrain-web
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
+      - "/data/hash:/usr/share/mirrorbrain"
     environment:
       - UPDATE_HASH=1
       - HTTPD=1
