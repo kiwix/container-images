@@ -235,8 +235,8 @@ def convert(library_fpath, catalog_fpath,
             langid = kind
 
         catalog[langid] = {
-            'name': name.encode('utf-8'),
-            'description': description.encode('utf-8'),
+            'name': name,
+            'description': description,
             'version': version,
             'language': lang_3,
             'id': bid,
@@ -252,9 +252,7 @@ def convert(library_fpath, catalog_fpath,
     logger.info("dumping yaml content to file `{}`".format(catalog_fpath))
     with open(catalog_fpath, 'w') as fd:
         yaml.safe_dump({'all': catalog}, fd,
-                       default_flow_style=False,
-                       allow_unicode=True,
-                       encoding="utf-8")
+                       default_flow_style=False)
 
     logger.info("done converting library to catalog.")
 
