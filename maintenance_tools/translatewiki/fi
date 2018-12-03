@@ -9,27 +9,46 @@
 # Author: Pyscowicz
 # Author: Silvonen
 
+android.ui.add_bookmark=Lisää kirjanmerkki
+android.ui.all_history_cleared_toast=Kaikki historia tyhjennetty
 android.ui.bookmark_added=Kirjanmerkki lisätty
+android.ui.bookmark_removed=Kirjanmerkki poistettu
 android.ui.bookmarks_restored=Kirjanmerkit palautettu
-# Fuzzy
 android.ui.button_backtotop=Takaisin alkuun
-# Fuzzy
-android.ui.choose_file=Valitse ZIM-sisältötiedosto (*.zim)
+android.ui.choose_file=Valitse sisältötiedosto (*.zim)
+android.ui.clear_all_history_dialog_title=Tyhjennä kaikki historia
 android.ui.confirm_stop_download_title=Pysäytä lataaminen?
 # Fuzzy
 android.ui.customapp_missing_content=Sovelluksesi on viottunut.\nTämä voi tapahtua kun poistat tiedostoja SD-kortilta.\nSinun pitää poistaa ja sitten uudelleenasentaa sovellus Play-kaupasta.
+android.ui.delete=Poista
+android.ui.delete_specific_zim=Poista tämä tiedosto?
+android.ui.delete_specific_zim_toast=Tiedosto poistettu
+android.ui.deleted_message=poistettu
+android.ui.did_you_know=Tiesitkö?
+android.ui.do_not_ask_anymore=Älä kysy enää
+android.ui.download_close=Sulje
 android.ui.error_articlenotfound=Virhe: Artikkelin \"%1$s\" lataus epäonnistui.
 android.ui.error_articleurlnotfound=Virhe: Artikkelin (Url: %1$s) lataus epäonnistui.
 android.ui.error_fileinvalid=Virhe: valittu tiedosto ei ole kelvollinen ZIM-tiedosto.
 android.ui.error_filenotfound=Virhe: valittua ZIM-tiedostoa ei löytynyt.
-# Fuzzy
-android.ui.error_nozimfilesfound=ZIM-tiedostoja ei löytynyt laitteestasi.\nKatso Ohje-sivua saadaksesi ohjeet siitä, miten ladata sisältöä Kiwixiin.\nJos et laita ZIM-tiedostoa laitteeseen/ulkoiseen tallennistilaan, saatat joutua yrittämään uudelleen hetken kuluttua tai käynnistämään laitteesi uudelleen.
+android.ui.error_nozimfilesfound=Sisältöä ei löytynyt laitteestasi.\nKatso Ohje-sivua saadaksesi ohjeet siitä, miten ladata sisältöä Kiwixiin.\nJos et laita ZIM-tiedostoa laitteeseen/ulkoiseen tallennustilaan, saatat joutua yrittämään uudelleen hetken kuluttua tai käynnistämään laitteesi uudelleen.
+android.ui.external_storage=Ulkoinen
 android.ui.go_to_play_store=Mene Play-kauppaan
 android.ui.help_9=\u2022 Muut sisällöt kuten Wikileaks tai Wikiaineisto ovat myös käytettävissä
+android.ui.local_zims=Laite
+android.ui.menu_back=Takaisin
+android.ui.menu_bookmarks=Kirjanmerkit
+android.ui.menu_bookmarks_list=Kirjanmerkit
+android.ui.menu_exitfullscreen=Poistu kokoruututilasta
+android.ui.menu_forward=Eteenpäin
+android.ui.menu_fullscreen=Koko näyttö
+android.ui.menu_help=Ohje
+android.ui.menu_home=Koti
 android.ui.menu_read_aloud=Lue ääneen
 android.ui.menu_read_aloud_stop=Lopeta ääneen lukeminen
 # Fuzzy
 android.ui.menu_rescan_fs=Skannaa SD-kortti uudelleen
+android.ui.menu_settings=Asetukset
 android.ui.next=Seuraava
 android.ui.no=Ei
 # Fuzzy
