@@ -128,7 +128,7 @@ services:
       - "/data/log/nginx:/var/log/nginx"
     environment:
       - ID_SITE=2
-      - URL=https://stats.kiwix.org
+      - URL=http://stats.kiwix.org
       - TOKEN=secret
       - LOG=/var/log/nginx/access.log
       - HOST=download.kiwix.org

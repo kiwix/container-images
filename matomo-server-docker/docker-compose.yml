@@ -16,6 +16,10 @@ services:
     container_name: matomo_web
     links:
       - db
+    networks:
+      default:
+        aliases:
+          - stats
     environment:
       - VIRTUAL_HOST=stats.kiwix.org
       - LETSENCRYPT_HOST=stats.kiwix.org
