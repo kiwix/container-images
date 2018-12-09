@@ -41,6 +41,8 @@ fi
   echo "}" ; \
 } > /etc/nginx/vhost.d/library.kiwix.org
 
+#CRON is needed to start logrotate on nginx log files
+service cron start
 
 exec "$@"
 
