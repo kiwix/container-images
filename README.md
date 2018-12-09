@@ -27,3 +27,8 @@ List of avaible container
 - ftpd
 - letsencrypt
 - matomo-log-analytics_download
+
+Secret
+======
+
+To start `matomo-log-analytics_download container`, we need to create `matomo-token.txt`  file with the token allow to send stats to matomo server

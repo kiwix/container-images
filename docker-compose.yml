@@ -129,10 +129,14 @@ services:
     environment:
       - ID_SITE=2
       - URL=http://stats.kiwix.org
-      - TOKEN=secret
       - LOG=/var/log/nginx/access.log
       - HOST=download.kiwix.org
+    secrets:
+      - matomo-token
     restart: always
+secrets:
+  matomo-token:
+    file: ./matomo-token.txt
 networks:
   default:
     name: kiwix.org
