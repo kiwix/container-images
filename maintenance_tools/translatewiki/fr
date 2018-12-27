@@ -10,6 +10,7 @@
 # Author: Metroitendo
 # Author: Od1n
 # Author: The RedBurn
+# Author: Tomri5
 # Author: Trial
 # Author: Urhixidur
 # Author: Verdy p
@@ -320,7 +321,7 @@ ui.main.zoomorig.accesskey=N
 ui.main.zoomorig=Réinitialiser le zoom
 ui.main.zoomout.accesskey=R
 ui.main.zoomout=Réduire
-ui.messages.abortIndexingConfirm=Un processus d'indexation est en cours et fermer Kiwix l'interrompra. Êtes-vous certain(e) de vouloir continuer ?
+ui.messages.abortIndexingConfirm=Un processus d'indexation est en cours. Êtes-vous certain de vouloir l'interrompre et quitter maintenant ?
 ui.messages.alreadyIndexingError=Un processus d'indexation est déjà en cours.
 ui.messages.bookmarkReferingOtherContent=Ce marque-page fait référence à un autre contenu. Voulez-vous le charger ?
 ui.messages.cancel=Annuler
@@ -341,7 +342,7 @@ ui.messages.integrityCheckSuccessful=L'intégrité du fichier a été vérifiée
 ui.messages.library=Bibliothèque
 ui.messages.loadArticleError=Impossible d'afficher cet article.
 ui.messages.loadZimFileError=Impossible de charger le fichier ZIM '%1'. Peut-être ce fichier est-il invalide ?
-ui.messages.nameBookmarkSet=Entrez le nom de fichier du jeu de marque-pages
+ui.messages.nameBookmarkSet=Entrez le nom de fichier du jeu des marque-pages
 ui.messages.newContentAvailable=Il y a de nouveaux contenus disponibles au téléchargement.
 ui.messages.newContentAvailableInvitation=Il y a de nouveaux contenus disponibles au téléchargement. Voulez-vous les voir ?
 ui.messages.no=non
@@ -353,7 +354,7 @@ ui.messages.quitFullscreen=Quitter le plein écran
 ui.messages.removeContentConfirm=Êtes-vous sûr de vouloir supprimer cette entrée de la liste ainsi que tous les fichiers associés ?
 ui.messages.removeProfileConfirm=Voulez-vous supprimer votre profil ?
 ui.messages.restartConfirm=%1 doit être redémarré. Voulez-vous le faire maintenant ?
-ui.messages.selectBookmarkSet=Sélectionnez le jeu de marque-pages
+ui.messages.selectBookmarkSet=Sélectionner le fichier contenant l'ensemble des signets
 ui.messages.yes=oui
 ui.preferences.browse=Parcourir
 ui.preferences.cancel=Annuler
