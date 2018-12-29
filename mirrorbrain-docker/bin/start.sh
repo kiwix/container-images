@@ -19,6 +19,7 @@ then
     echo "#!/bin/sh" ; \
     echo "find /var/www/download.kiwix.org/nightly/ -mindepth 1 -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \;" ; \
     echo "find /var/www/download.openzim.org/nightly/ -mindepth 1 -maxdepth 1 -type d -mtime +30 -exec rm -rf {} \;" ; \
+    echo "find /var/www/download.openzim.org/wp1/ -mindepth 1 -maxdepth 1 -type d -mtime +730 -exec rm -rf {} \;" ; \
   } > /etc/cron.daily/remove_nightlies && chmod 0500 /etc/cron.daily/remove_nightlies
 fi
 
