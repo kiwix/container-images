@@ -1,6 +1,6 @@
 FROM jwilder/nginx-proxy
 
-RUN apt-get update && apt-get install -y --no-install-recommends cron 
+RUN apt-get update && apt-get install -y --no-install-recommends cron logrotate
 
 RUN { \
     echo "include /etc/nginx/sites-enabled/*;" ; \
