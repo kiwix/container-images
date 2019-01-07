@@ -10,6 +10,7 @@
 # Author: Kelson
 # Author: Macofe
 # Author: Tacsipacsi
+# Author: Urbalazs
 
 android.ui.add_bookmark=Könyvjelző hozzáadása
 android.ui.all_history_cleared_toast=Az összes előzmény törölve
@@ -20,9 +21,9 @@ android.ui.bookmarks_restored=Könyvjelzők visszaállítva
 android.ui.button_backtotop=Vissza a lap tetejére
 android.ui.choose_file=Tartalomfájl kiválasztása (*.zim)
 android.ui.clear_all_history_dialog_title=Az összes előzmény törlése
-android.ui.clear_recent_and_tabs_history_dialog=Biztos vagy benne, hogy törölni szeretnéd a keresési előzményeidet és újraindítani az összes aktív lapot?
+android.ui.clear_recent_and_tabs_history_dialog=Biztosan törölni szeretnéd a keresési előzményeidet és visszaállítani az összes aktív lapot?
 android.ui.clear_recent_history_dialog=Biztosan törölni szeretnéd a keresési előzményeidet?
-android.ui.confirm_stop_download_msg=Biztos megszakítja ezt a letöltést?
+android.ui.confirm_stop_download_msg=Biztosan le szeretnéd állítani ezt a letöltést?
 android.ui.confirm_stop_download_title=Letöltés megállítása?
 android.ui.customapp_missing_content=Az alkalmazás sérült.\nEz megtörténhet olyankor, ha eltávolítsz fájlokat az SD-kártyán.\nEl kell távolítanod, majd újra kell telepítened az alkalmazást a Play Áruházból.
 android.ui.delete=Törlés
@@ -36,7 +37,7 @@ android.ui.deleted_message=törölve
 android.ui.did_you_know=Tudtad?
 android.ui.do_not_ask_anymore=Ne kérdezz többször
 android.ui.download_change_storage=Tároló eszköz kiválasztó
-android.ui.download_close=Kilépés
+android.ui.download_close=Bezárás
 android.ui.download_complete_snackbar=Letöltés kész
 android.ui.download_no_space=Elégtelen mennyiségü tárhely a fájl letöltéséhez.
 android.ui.download_over_network=Biztosan meg szeretnéd kezdeni a letöltést WiFi nélkül?
