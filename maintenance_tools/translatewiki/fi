@@ -60,6 +60,7 @@ android.ui.help_5=Missä sisältö on?
 android.ui.help_6=Sisältöämme ylläpidetään Kiwixin verkkosivulla.
 android.ui.help_8=\u2022 Wikipedia on saatavilla erikseen kullekin kielelle
 android.ui.help_9=\u2022 Muut sisällöt kuten Wikileaks tai Wikiaineisto ovat myös käytettävissä
+android.ui.hint_contents_drawer_message=Voit tarkastella tämän artikkelin sisältöä pyyhkäisemällä vasemmalle
 android.ui.internal_storage=Sisäinen
 android.ui.language_count=(%1$d)
 android.ui.local_zims=Laite
@@ -108,8 +109,7 @@ android.ui.pref_language_title=Kieli
 android.ui.pref_newtab_background_summary=Kun avaat uuden välilehden, se aukeaa taustalla
 android.ui.pref_newtab_background_title=Avaa uusi välilehti taustalla
 android.ui.pref_nightmode=Yötila
-# Fuzzy
-android.ui.pref_nightmode_summary=Näytä artikkelit palautetuilla väreillä
+android.ui.pref_nightmode_summary=Näytä artikkelit käänteisillä väreillä
 # Fuzzy
 android.ui.pref_zoom_dialog=Zoomaustaso
 android.ui.pref_zoom_enable=Zoomaussäätimet
@@ -137,6 +137,7 @@ android.ui.search_widget_text=Hae Kiwixistä
 android.ui.space_available=Tilaa käytettävissä:
 android.ui.speech_not_supported=Sori! Laitteesi ei tue puheensyöttöä
 android.ui.tab_closed=Välilehti suljettu
+android.ui.time_left=jäljellä
 android.ui.tts_lang_not_supported=Tämän sivun kieltä ei tueta, tai kielellistä tietoa ei ole asennettu. Artikkelia ei voida lukea kunnolla.
 android.ui.tts_not_enabled=Teksti puheeksi ei ole käytössä tässä ZIM-tiedostossa
 android.ui.tts_pause=keskeytä
