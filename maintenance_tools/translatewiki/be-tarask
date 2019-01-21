@@ -25,6 +25,7 @@ android.ui.delete=Выдаліць
 android.ui.delete_recent_search_item=Выдаліць гэты элемэнт?
 android.ui.delete_specific_zim=Выдаліць гэты файл?
 android.ui.delete_tab=Выдаліць закладку
+android.ui.deleted_message=выдалена
 android.ui.did_you_know=Ці ведалі вы?
 android.ui.do_not_ask_anymore=Болей не пытаць
 android.ui.download_close=Закрыць
