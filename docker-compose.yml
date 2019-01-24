@@ -65,12 +65,13 @@ services:
       - "/data/openzim:/var/www/download.openzim.org"
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/library:/var/www/library.kiwix.org"
+      - "/data/cardshop-download:/var/www/download.cardshop.hotspot.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
     environment:
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,download.cardshop.hotspot.kiwix.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,download.cardshop.hotspot.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
