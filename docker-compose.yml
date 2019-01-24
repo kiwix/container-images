@@ -84,6 +84,7 @@ services:
         aliases:
           - mirror.download
           - tmp
+          - download.cardshop.hotspot
     restart: always
 
   letsencrypt:
