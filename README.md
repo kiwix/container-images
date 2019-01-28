@@ -32,3 +32,4 @@ Secret
 ======
 
 To start `matomo-log-analytics_download container`, we need to create `matomo-token.txt`  file with the token allow to send stats to matomo server
+To start `library container`, we need to create `password-wiki.txt`  file with the password to access the wiki
