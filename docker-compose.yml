@@ -52,7 +52,8 @@ services:
       - LETSENCRYPT_HOST=library.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
-      - WIKIPASSWORD=42
+    secrets:
+      - wiki-password
     restart: always
 
   reverse-proxy:
@@ -139,6 +140,8 @@ services:
 secrets:
   matomo-token:
     file: ./matomo-token.txt
+  wiki-password:
+    file: ./wiki-password.txt
 networks:
   default:
     name: kiwix.org

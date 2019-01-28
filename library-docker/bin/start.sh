@@ -1,4 +1,3 @@
-ln -fs /var/www/download.kiwix.org/zim/ /var/www/library.kiwix.org/zim 
 
 { \
   echo "User-agent: *" ; \
@@ -15,7 +14,7 @@ ln -fs /var/www/download.kiwix.org/zim/ /var/www/library.kiwix.org/zim
 { \
   echo "#!/bin/sh" ; \
   echo "cd $LIBRARY_DIR" ; \
-  echo "manageContentRepository.pl --wikiPassword=$WIKIPASSWORD --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles >>/dev/shm/libgen 2>&1" ; \
+  echo "manageContentRepository.pl --wikiPassword=`cat /run/secrets/wiki-password` --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles >>/dev/shm/libgen 2>&1" ; \
 } > /etc/cron.daily/10updateContentRepository && chmod 0500 /etc/cron.daily/10updateContentRepository
 
 echo "Generate library.kiwix.org.xml file"
