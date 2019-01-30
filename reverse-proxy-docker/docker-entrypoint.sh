@@ -33,13 +33,21 @@ fi
 { \
    echo "limit_req zone=limit burst=100;" ; \
    #echo "" ; \
-} > /etc/nginx/vhost.d/library.kiwix.org_location
+} > /etc/nginx/vhost.d/library.kiwix.org
 
 { \
   echo "location /robots.txt {" ; \
   echo "  alias /var/www/library.kiwix.org/robots.txt;" ; \
   echo "}" ; \
-} > /etc/nginx/vhost.d/library.kiwix.org
+
+  echo "location ^~ /.well-known/acme-challenge/ {" ; \
+  echo " auth_basic off;" ; \
+  echo " allow all;" ; \
+  echo " root /usr/share/nginx/html;" ; \
+  echo " try_files \$uri =404;" ; \
+  echo " break;" ; \
+  echo "}" ; \
+} > /etc/nginx/vhost.d/library.kiwix.org_location
 
 #CRON is needed to start logrotate on nginx log files
 service cron start
