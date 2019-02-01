@@ -10,4 +10,4 @@ MWMATRIXOFFLINER="mwmatrixoffliner --withZimFullTextIndex --verbose --adminEmail
 $MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(ko|hu)" &&
 
 # Wiktionary
-$MWMATRIXOFFLINER --project=wiktionary --outputDirectory=$ZIM/wiktionary/ --languageInverter --language="(en|fr|mg)"
+$MWMATRIXOFFLINER --project=wiktionary --outputDirectory=$ZIM/wiktionary/ --languageInverter --language="(de|en|fr|mg)"

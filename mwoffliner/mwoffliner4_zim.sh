@@ -16,3 +16,6 @@ $MWMATRIXOFFLINER --project=wiktionary --outputDirectory=$ZIM/wiktionary/ --lang
 
 # Wiktionary FR
 $MWOFFLINER --mwUrl="https://fr.wiktionary.org/" --parsoidUrl="https://fr.wiktionary.org/api/rest_v1/page/html/" --customMainPage="Utilisateur:Stephane_(Kiwix)/Landing" --outputDirectory=$ZIM/wiktionary/
+
+# Wiktionary DE
+$MWOFFLINER --mwUrl="https://de.wiktionary.org/" --parsoidUrl="https://de.wiktionary.org/api/rest_v1/page/html/" --namespace=108 --outputDirectory=$ZIM/wiktionary/
