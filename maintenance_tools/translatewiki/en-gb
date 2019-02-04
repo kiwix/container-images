@@ -55,8 +55,7 @@ android.ui.rate_dialog_title=Please Rate Us
 android.ui.request_storage=To access ZIM files we need access to your storage
 # Fuzzy
 android.ui.rescan_fs_warning=Scanning for ZIM files, please wait...
-# Fuzzy
-android.ui.save_media_error=An error occured when trying to save the media!
+android.ui.save_media_error=An error occurred when trying to save the media!
 # Fuzzy
 android.ui.save_media_saved=Saved media as %1$s in your Pictures folder
 android.ui.tts_lang_not_supported=The language of this page is not supported, or appropriate language data was not installed. The article may not be properly read.
