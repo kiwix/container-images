@@ -25,10 +25,10 @@ $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --lang
 $MWMATRIXOFFLINER_MOBILE --project=wikivoyage --outputDirectory=$ZIM/wikivoyage/ --languageInverter --language="(en|de)" &&
 
 # Wikiquote
-$MWMATRIXOFFLINER --project=wikiquote --outputDirectory=$ZIM/wikiquote/ &&
+# MIGRATED $MWMATRIXOFFLINER --project=wikiquote --outputDirectory=$ZIM/wikiquote/ &&
 
 # Wikiversity
-$MWMATRIXOFFLINER --project=wikiversity --outputDirectory=$ZIM/wikiversity/ &&
+# MIGRATED $MWMATRIXOFFLINER --project=wikiversity --outputDirectory=$ZIM/wikiversity/ &&
 
 # Wikipedia
 # MIGRATED $MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --languageInverter --language="(ar|bg|ceb|cs|da|de|el|en|eo|eu|et|es|fi|fr|gl|hu|hy|hi|hr|it|ja|kk|ms|min|nl|nn|no|ro|simple|sk|sl|sr|sh|tr|pl|pt|ru|sv|vi|war|fa|ca|ko|id|he|la|lt|uk|uz|zh)"
