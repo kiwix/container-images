@@ -9,7 +9,7 @@ MWOFFLINER="mwoffliner --format=novid --format=nopic $ARGS"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # Wikisource
-$MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(de|en|fr|zh)" &&
+# MIGRATED $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(de|en|fr|zh)" &&
 
 # Wikipedia
 $MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(sv|vi)"
