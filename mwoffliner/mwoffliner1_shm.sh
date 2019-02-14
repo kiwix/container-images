@@ -19,10 +19,10 @@ $MWOFFLINER --mwUrl="https://en.wikibooks.org/" $WIKIBOOKS_ARGS --addNamespaces=
 $MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM/wikispecies/ &&
 
 # Wikisource
-$MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(en|de|fr|zh)" --languageInverter &&
+# MIGRATED $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(en|de|fr|zh)" --languageInverter &&
 
 # Wikivoyage
-$MWMATRIXOFFLINER_MOBILE --project=wikivoyage --outputDirectory=$ZIM/wikivoyage/ --languageInverter --language="(en|de)" &&
+# MIGRATED $MWMATRIXOFFLINER_MOBILE --project=wikivoyage --outputDirectory=$ZIM/wikivoyage/ --languageInverter --language="(en|de)" &&
 
 # Wikiquote
 # MIGRATED $MWMATRIXOFFLINER --project=wikiquote --outputDirectory=$ZIM/wikiquote/ &&
