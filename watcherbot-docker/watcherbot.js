@@ -18,12 +18,12 @@ var argv = yargs.usage( 'Feed #kiwix Freenode IRC channels in real-time with Sou
 
 /* CONSTANTS */
 var kiwixGithubFeed = 'https://github.com/organizations/kiwix/kelson42.private.atom?token=' + argv.kiwixGithubToken;
-var kiwixWikiFeed = 'http://wiki.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
+var kiwixWikiFeed = 'https://wiki.kiwix.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 var kiwixItunesFeed = 'https://itunes.apple.com/us/rss/customerreviews/id=997079563/sortBy=mostRecent/xml';
 var kiwixSourceforgeFeed = 'https://sourceforge.net/p/kiwix/activity/feed.rss';
 
 var openzimGithubFeed = 'https://github.com/organizations/openzim/kelson42.private.atom?token=' + argv.openzimGithubToken;
-var openzimWikiFeed = 'http://www.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
+var openzimWikiFeed = 'https://wiki.openzim.org/w/api.php?hidebots=1&days=7&limit=50&translations=filter&action=feedrecentchanges&feedformat=rss';
 
 var ideascubeFramagitFeed = 'https://framagit.org/ideascube.atom';
 

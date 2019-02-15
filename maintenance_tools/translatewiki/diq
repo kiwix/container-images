@@ -38,7 +38,7 @@ android.ui.no_reader_application_installed=Seba ena dosya barbiyayi applikasyon 
 # Fuzzy
 android.ui.no_section_info=Dengê zerreki nêvêniya
 android.ui.open=Ake
-android.ui.open_in_new_tab=Gre tab'da newi de abiyo?
+android.ui.open_in_new_tab=Gıre xıldayışo newe de abo?
 android.ui.pref_backtotop=Şo Serni
 android.ui.pref_backtotop_summary=Seba ameyışê seri peyniya pele de yew gocege mocneno
 android.ui.pref_info_title=Melumat
@@ -114,7 +114,7 @@ ui.main.library.getNewFiles=Şo dosyayan de newan
 ui.main.library.myLibrary=Kıtıbxaneyê mı
 ui.main.library.searchZimFiles=ZIM dosyaya cı geyrê
 ui.main.library.sortBy.author=Nuskar
-ui.main.library.sortBy.date=Dem
+ui.main.library.sortBy.date=Tarix
 ui.main.library.sortBy.publisher=Hesrekar
 ui.main.library.sortBy.size=Gırdiye
 ui.main.library.sortBy.title=Sername
