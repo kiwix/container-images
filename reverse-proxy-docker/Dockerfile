@@ -7,7 +7,7 @@ RUN { \
 } > /etc/nginx/conf.d/10sites_alias.conf
 
 RUN { \
-    echo "limit_req_zone \$binary_remote_addr zone=limit:10m rate=3r/s;" ; \
+    echo "limit_req_zone \$binary_remote_addr zone=limit:10m rate=50r/s;" ; \
 } > /etc/nginx/conf.d/00limit.conf
 
 COPY sites/* /etc/nginx/sites-enabled/
