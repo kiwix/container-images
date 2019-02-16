@@ -12,4 +12,4 @@ MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 # MIGRATED $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(de|en|fr|zh)" &&
 
 # Wikipedia
-$MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(sv|vi)"
+# MIGRATED $MWMATRIXOFFLINER --project=wiki --outputDirectory=$ZIM/wikipedia/ --language="(sv|vi)"
