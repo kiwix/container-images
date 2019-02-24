@@ -12,11 +12,11 @@ MWMATRIXOFFLINER_MOBILE="$MWMATRIXOFFLINER --mobileLayout"
 
 # Wikibooks
 WIKIBOOKS_ARGS="--outputDirectory=$ZIM/wikibooks/"
-$MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --languageInverter --language="(en)" &&
-$MWOFFLINER --mwUrl="https://en.wikibooks.org/" $WIKIBOOKS_ARGS --addNamespaces="112" &&
+# MIGRATED $MWMATRIXOFFLINER --project=wikibooks $WIKIBOOKS_ARGS --languageInverter --language="(en)" &&
+# MIGRATED $MWOFFLINER --mwUrl="https://en.wikibooks.org/" $WIKIBOOKS_ARGS --addNamespaces="112" &&
 
 # Wikispecies
-$MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM/wikispecies/ &&
+# MIGRATED $MWMATRIXOFFLINER --project=species --outputDirectory=$ZIM/wikispecies/ &&
 
 # Wikisource
 # MIGRATED $MWMATRIXOFFLINER --project=wikisource --outputDirectory=$ZIM/wikisource/ --language="(en|de|fr|zh)" --languageInverter &&
