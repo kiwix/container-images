@@ -10,6 +10,7 @@
 # Author: Macofe
 # Author: Marmase
 # Author: Mirzali
+# Author: Orbot707
 
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.bookmark_added=Cay debiyay
@@ -19,24 +20,62 @@ android.ui.choose_file=Yew dosyay zerreki weçine (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Aplikasyona şıma verêna,. \nEna belki zi şıma çı wext ke dosyay berê SDKart miyan ravêrena.  Şıma rê Play Store  ra aplikasyona xo rocane  kerdış yana fına barkerdış icab keno
 android.ui.delete=Bestere
+android.ui.deleted_message=esteriya
+android.ui.did_you_know=Şıma zanenê?
+android.ui.do_not_ask_anymore=Endi meperse
+android.ui.download_change_storage=Weçinoğê cihazê depokerdışi
+android.ui.download_close=Kip ke
+android.ui.download_complete_snackbar=Barkerdış qediya
+android.ui.download_no_space=Seba barkerdışê na dosya rê ca bes niyo.
+android.ui.download_over_network=Şıma qayılê ke barkedışi bê WiFi dest pêkerê?
+android.ui.download_pause=Bıvındarne
+android.ui.download_paused=vındarna
+android.ui.download_play=Bıcıne
+android.ui.download_started_library=Barkerdışi dest pêkerd...
+android.ui.download_stop=Bıvındarne
 android.ui.error_articlenotfound=Xeta: Barkerdışê meqaleyê \"%1$s\" nêbi.
 android.ui.error_articleurlnotfound=Xeta: Barkerdışê meqaleyê (Url: %1$s) nêbi.
 android.ui.error_fileinvalid=Xeta: Dosyaya weçinıtiye yew dosyaya ZIMia vêrdiye niya.
 android.ui.error_filenotfound=Xeta: Dosyaya ZIMia weçinıtiye nêvêniye.
 # Fuzzy
 android.ui.error_nozimfilesfound=Zihzda şıma de ZIM dosya çıniya.\nKiwix're zerrek bar kerdışi re Talimata berkerdışi  bıvine.\nNara ke cihazda şıma de /ğerici çımey depoy estose Uca de Bı geyre ZIm dosya da ğo, çen deqa miyande fına bıcerbne yana cihaze ğo fına akeri.
+android.ui.external_link_popup_dialog_title=Şono gıreyê beberi
+android.ui.external_storage=Teber
+android.ui.get_library_over_network=Lista zerreki barkerdışi rê torre bıgurene. (Nêzdiyê 6MB)
 android.ui.go_to_play_store=Şo be Play Store
+android.ui.got_it=Mı fehm kerd
+android.ui.help_5=Zerrek koti dero?
+android.ui.help_6=Zerrekê ma pela websita Kiwixi dero.
+android.ui.internal_storage=Daxili
+android.ui.language_count=(%1$d)
+android.ui.local_zims=Cihaz
+android.ui.menu_back=Peyser
+android.ui.menu_bookmarks=Nişani
+android.ui.menu_bookmarks_list=Nişani
+android.ui.menu_exitfullscreen=Ekranê tami ra veciye
+android.ui.menu_forward=Raveri
+android.ui.menu_fullscreen=Ekrano tam
+android.ui.menu_help=Peşti
 android.ui.menu_home=Keye
+android.ui.menu_library=Dosyeyanê zerreki bar ke
+android.ui.menu_randomarticle=Nuşteyo raştame
 android.ui.menu_read_aloud=Be veng ra bıwane
 android.ui.menu_read_aloud_stop=Bevengrawendış caverde
-# Fuzzy
-android.ui.menu_rescan_fs=Bıgeyr SD kert
+android.ui.menu_rescan_fs=Karta SDyi anciya rovice
+android.ui.menu_search=Meqale cı geyre
+android.ui.menu_searchintext=Pele de bıvêne
+android.ui.menu_settings=Eyari
+android.ui.menu_zim_manager=Zerreki bıgê
+android.ui.new_tab_snackbar=Meqale tabê neweyi de bi a
+android.ui.next=Bahdoyên
 android.ui.no=Nê
-# Fuzzy
-android.ui.no_bookmarks=Weçinıteyi çıniyê!
+android.ui.no_bookmarks=Nişani çıniyê
+android.ui.no_downloads_here=Tiya barkerdışi çıniyê
+android.ui.no_files_here=Tiya dosyeyi çıniyê
+android.ui.no_network_connection=Gıreyê torre çıniyo
+android.ui.no_network_msg=Gıreyê torre çıniyo
 android.ui.no_reader_application_installed=Seba ena dosya barbiyayi applikasyon nêvineyê
-# Fuzzy
-android.ui.no_section_info=Dengê zerreki nêvêniya
+android.ui.no_section_info=Sernameyê zerreki nêvêniya
 android.ui.open=Ake
 android.ui.open_in_new_tab=Gıre xıldayışo newe de abo?
 android.ui.pref_backtotop=Şo Serni
@@ -72,17 +111,19 @@ android.ui.rescan_fs_warning=Geyrêno ZİM dosyaya. tenekê bıpawê...
 android.ui.save_media_error=Sıreyê qeydkerdışê medya de yew xeta ameyê meydan!
 # Fuzzy
 android.ui.save_media_saved=%1$ê medya dosya resımanê şıma de qeyd biye.
+android.ui.search_label=Cı geyre
 android.ui.time_day=roce
 android.ui.tts_lang_not_supported=Ena pela de zıwan desteg nêvineno,  yana qebul biyayê datay zıwani bar nêbiya. Tercihê wesiqi wanayê niyo qay.
+android.ui.tts_stop=bıvındarne
 android.ui.yes=Eya
 ui.main.about=Heq dê &brand.brandShortName;
 ui.main.audible=Aşnawêneyêno
 ui.main.back=Peyser
-ui.main.bmkLabel=Nışani:
-ui.main.bookmarks=Nışan
+ui.main.bmkLabel=Nişani:
+ui.main.bookmarks=Nişani
 ui.main.browseLibrary=Kıtıbxaney bıvêne
 ui.main.checkIntegrity=Cerbiya pêroneyin
-ui.main.close=Racnê
+ui.main.close=Kip ke
 ui.main.copy=Kopya ke
 ui.main.copyLinkAddress=Adresa gri kopya ke
 ui.main.defaultset=Hesıbyayê saz
@@ -108,14 +149,14 @@ ui.main.library.filterBy.language.all=Pêro
 ui.main.library.filterBy.language=Zıwan
 ui.main.library.filterBy.lessThan=Qıckeko
 ui.main.library.filterBy.publisher.all=Pêro
-ui.main.library.filterBy.publisher=Hesrekar
+ui.main.library.filterBy.publisher=Weşanayoğ
 ui.main.library.filterBy=Filtrey cı
 ui.main.library.getNewFiles=Şo dosyayan de newan
 ui.main.library.myLibrary=Kıtıbxaneyê mı
 ui.main.library.searchZimFiles=ZIM dosyaya cı geyrê
 ui.main.library.sortBy.author=Nuskar
 ui.main.library.sortBy.date=Tarix
-ui.main.library.sortBy.publisher=Hesrekar
+ui.main.library.sortBy.publisher=Weşanayoğ
 ui.main.library.sortBy.size=Gırdiye
 ui.main.library.sortBy.title=Sername
 ui.main.library.sortBy=Raten
@@ -203,7 +244,7 @@ ui.preferences.preferences=Tercihi
 ui.preferences.profileDirectory=Peşiya Profili
 ui.preferences.save=Qeyd ke
 ui.preferences.tabs=na tab xo vira mekeri
-ui.server.close=Racnê
+ui.server.close=Kip ke
 ui.server.load=Bar ke
 ui.server.start=Sergend
-ui.server.stop=Vınd
+ui.server.stop=Bıvındarne
