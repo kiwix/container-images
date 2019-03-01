@@ -51,6 +51,9 @@ grep -Fxv -f "$SCRIPT_DIR/filter_out" "$SCRIPT_DIR/chemistry_unfiltered" | sort 
 wget "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nuvola_apps_edu_science.svg/128px-Nuvola_apps_edu_science.svg.png" -O "$SCRIPT_DIR/chemistry.png" &&
 $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidUrl="https://en.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Wikipedia Chemistry" --customZimDescription="10,000 chemistry articles from Wikipedia" --customMainPage="Wikipedia:WikiProject_Chemistry/Offline" --customZimFavicon="$SCRIPT_DIR/chemistry.png" --articleList="$SCRIPT_DIR/chemistry" --outputDirectory=$ZIM/wikipedia/ &&
 
+# Football
+mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Soccer_ball.svg/900px-Soccer_ball.svg.png" --customZimTitle="Football by Wikipedia" --customZimDescription="Wikipedia articles dedicated to Football" --articleList=https://download.kiwix.org/wp1/enwiki/projects/Football --withZimFullTextIndex  --format=novid --format=nopic
+
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/computer.lst" --outputDirectory=$ZIM/wikipedia/ &&
