@@ -54,6 +54,12 @@ $MWOFFLINER_MOBILE --format=nodet --mwUrl="https://en.wikipedia.org/" --parsoidU
 # Football
 mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Soccer_ball.svg/900px-Soccer_ball.svg.png" --customZimTitle="Football by Wikipedia" --customZimDescription="Wikipedia articles dedicated to Football" --articleList=https://download.kiwix.org/wp1/enwiki/projects/Football --withZimFullTextIndex  --format=novid --format=nopic
 
+# Basketball
+mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Basketball.svg/180px-Basketball.svg.png" --customZimTitle="Basketball by Wikipedia" --customZimDescription="Wikipedia articles dedicated to Basketball" --articleList=https://download.kiwix.org/wp1/enwiki/projects/Basketball --withZimFullTextIndex --format=novid --format=nopic
+
+# History
+mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/commons/a/af/P_history.png" --customZimTitle="History by Wikipedia" --customZimDescription="Wikipedia articles dedicated to History" --articleList=https://download.kiwix.org/wp1/enwiki/projects/History --withZimFullTextIndex --format=nopic --format=novid
+
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/computer.lst" --outputDirectory=$ZIM/wikipedia/ &&
