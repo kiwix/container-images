@@ -19,14 +19,14 @@ $MWOFFLINER --mwUrl=https://rationalwiki.org/ --localParsoid --outputDirectory=$
 
 # Vikidia
 VIKIDIA_ARGS="--outputDirectory=$ZIM/vikidia/ --addNamespaces=102"
-$MWOFFLINER --mwUrl=https://fr.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://es.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://eu.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://it.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://en.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://ca.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://ru.vikidia.org/ $VIKIDIA_ARGS &&
-$MWOFFLINER --mwUrl=https://scn.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://fr.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://es.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://eu.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://it.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://en.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://ca.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://ru.vikidia.org/ $VIKIDIA_ARGS &&
+# MIGRATED $MWOFFLINER --mwUrl=https://scn.vikidia.org/ $VIKIDIA_ARGS &&
 
 # Wikipedia FR Tunisie
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=fr.wikipedia.org --path=w --exploration=5 --namespace=1 --category="Évaluation_des_articles_sur_la_Tunisie" | sed 's/Discussion://' | sort -u > "$SCRIPT_DIR/tunisie" &&
