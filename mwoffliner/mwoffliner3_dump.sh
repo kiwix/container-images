@@ -159,14 +159,14 @@ wget "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Wiki_Project_Med
 $MWOFFLINER_MOBILE --mwUrl="https://pt.wikipedia.org/" --parsoidUrl="https://pt.wikipedia.org/api/rest_v1/page/html/" --customMainPage="Wikipédia:WikiProject_Medicine/Open_Textbook_of_Medicine" --customZimTitle="Medical Wikipedia" --customZimDescription="Artigos de assistência médica, em todo lugar, de graça!" --customZimFavicon="$SCRIPT_DIR/medicinept.png" --articleList="$SCRIPT_DIR/medicine" --outputDirectory=$ZIM/wikipedia/ &&
 
 # Wikivoyage EN
-$MWOFFLINER_MOBILE --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Wikivoyage:Offline_reader_Expedition/Home_page" --outputDirectory=$ZIM/wikivoyage/ &&
+# MIGRATED $MWOFFLINER_MOBILE --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Wikivoyage:Offline_reader_Expedition/Home_page" --outputDirectory=$ZIM/wikivoyage/ &&
 
 # Wikivoyage EN Europe
 /srv/kiwix-tools/tools/scripts/listCategoryEntries.pl --host=en.wikivoyage.org --path=w --exploration=8 --namespace=0 --category="Europe" | sort -u > europe &&
 $MWOFFLINER_MOBILE --customZimTitle="Wikivoyage - Europe" --articleList=europe --mwUrl="https://en.wikivoyage.org/" --parsoidUrl="https://en.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Wikivoyage:Offline_reader_Expedition/Europe_Home_page" --outputDirectory=$ZIM/wikivoyage/ &&
 
 # Wikivoyage DE
-$MWOFFLINER_MOBILE --mwUrl="https://de.wikivoyage.org/" --parsoidUrl="https://de.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Benutzer:Stephane_(Kiwix)/Hauptseite" --outputDirectory=$ZIM/wikivoyage/ &&
+# MIGRATED $MWOFFLINER_MOBILE --mwUrl="https://de.wikivoyage.org/" --parsoidUrl="https://de.wikivoyage.org/api/rest_v1/page/html/" --customMainPage="Benutzer:Stephane_(Kiwix)/Hauptseite" --outputDirectory=$ZIM/wikivoyage/ &&
 
 # Wikinews
 $MWMATRIXOFFLINER --project=wikinews --outputDirectory=$ZIM/wikinews/ &&
