@@ -12,10 +12,10 @@ MWOFFLINER_MOBILE="$MWOFFLINER --mobileLayout"
 MWMATRIXOFFLINER="mwmatrixoffliner --mwUrl=https://meta.wikimedia.org/ $ARGS"
 
 # Gentoo
-$MWOFFLINER --mwUrl=https://wiki.installgentoo.com --localParsoid --mwApiPath=api.php --mwWikiPath=index.php --outputDirectory=$ZIM/other/ &&
+# MIGRATED $MWOFFLINER --mwUrl=https://wiki.installgentoo.com --localParsoid --mwApiPath=api.php --mwWikiPath=index.php --outputDirectory=$ZIM/other/ &&
 
 # RationalWiki
-$MWOFFLINER --mwUrl=https://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM/other/ --speed=0.5 &&
+# MIGRATED $MWOFFLINER --mwUrl=https://rationalwiki.org/ --localParsoid --outputDirectory=$ZIM/other/ --speed=0.5 &&
 
 # Vikidia
 VIKIDIA_ARGS="--outputDirectory=$ZIM/vikidia/ --addNamespaces=102"
@@ -39,7 +39,7 @@ wget "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Flag_of_Venezuel
 $MWOFFLINER_MOBILE --mwUrl="https://es.wikipedia.org/" --parsoidUrl="https://es.wikipedia.org/api/rest_v1/page/html/" --customZimTitle="Enciclopedia de Venezuela" --customZimDescription="Selección de artículos de Wikipedia para Venezuela" --customMainPage="Wikipedia:Wikipedia_en_CD/Selección_de_artículos_para_Venezuela/Main" --customZimFavicon="$SCRIPT_DIR/venezuela.png" --articleList="$SCRIPT_DIR/selections/venezuela.lst" --outputDirectory=$ZIM/wikipedia/ &&
 
 # Wikem
-$MWOFFLINER --mwUrl=https://wikem.org/ --localParsoid --outputDirectory=$ZIM/other/ --speed=0.1
+# MIGRATED $MWOFFLINER --mwUrl=https://wikem.org/ --localParsoid --outputDirectory=$ZIM/other/ --speed=0.1
 
 # Psiram
 for LANG in de fr en it ru ; do $MWOFFLINER --mwUrl=https://www.psiram.com/$LANG --mwWikiPath=index.php --mwApiPath=api.php --localParsoid --speed=0.5 --outputDirectory=$ZIM/psiram/ ; done
