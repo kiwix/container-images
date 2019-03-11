@@ -5,64 +5,165 @@
 # Author: Inkbug
 # Author: YaronSh
 
+android.ui.add_bookmark=הוספת סימנייה
+android.ui.all_history_cleared_toast=כל ההיסטוריה נמחקה
 android.ui.articlesearch_hint=להקליד כאן לחיפוש ערכים
 android.ui.bookmark_added=הסימנייה נוספה
+android.ui.bookmark_removed=הסימנייה הוסרה
 android.ui.bookmarks_restored=הסימניות שוחזרו
-# Fuzzy
 android.ui.button_backtotop=חזרה למעלה
-# Fuzzy
-android.ui.choose_file=בחירת קובץ ZIM עם תוכן (*.zim)
+android.ui.choose_file=בחירת קובץ תוכן (‎*.zim)
+android.ui.clear_all_history_dialog_title=מחיקת כל ההיסטוריה
+android.ui.clear_recent_and_tabs_history_dialog=למחוק את היסטוריית החיפוש ולאפס את כל הלשוניות הפעילות?
+android.ui.clear_recent_history_dialog=למחוק את היסטוריית החיפוש שלך?
+android.ui.confirm_stop_download_msg=לעצור את ההורדה הזאת?
+android.ui.confirm_stop_download_title=לעצור הורדה?
 # Fuzzy
 android.ui.customapp_missing_content=האפליקציה שלך פגומה.\nייתכן שהוסרו קבצים מכרטיס ה־SD.\nיש להסיר ולהתקין מחדש את האפליקציה מחנות Play.
+android.ui.delete=מחיקה
+android.ui.delete_recent_search_item=למחוק את הפריט הזה?
+android.ui.delete_specific_search_toast=חיפוש עבר הוסר
+android.ui.delete_specific_zim=למחוק את הקובץ הזה?
+android.ui.delete_specific_zim_toast=הקובץ נמחק
+android.ui.delete_tab=מחיקת לשונית
+android.ui.delete_zim_failed=לא הצלחנו למחוק את הקובץ הזה. עליך לנסות להשתמש במנהל קבצים במקום זאת, עמך הסליחה.
+android.ui.deleted_message=נמחק
+android.ui.did_you_know=הידעת?
+android.ui.do_not_ask_anymore=לא לשאול שוב
+android.ui.download_change_storage=בורר התקני אחסון
+android.ui.download_close=סגירה
+android.ui.download_complete_snackbar=ההורדה הושלמה
+android.ui.download_no_space=אין מספיק מקום כדי להוריד את הקובץ הזה.
+android.ui.download_over_network=להתחיל את ההורדה ללא רשת אלחוטית?
+android.ui.download_pause=השהיה
+android.ui.download_paused=מושהה
+android.ui.download_play=נגינה
+android.ui.download_started_library=ההורדה החלה…
+android.ui.download_stop=עצירה
 android.ui.error_articlenotfound=שגיאה: טעינת הערך \"%1$s\" נכשלה.
 android.ui.error_articleurlnotfound=שגיאה: טעינת הערך נכשלה (כתובת: %1$s).
 android.ui.error_fileinvalid=שגיאה: הקובץ שנבחר אינו קובץ ZIM תקין.
 android.ui.error_filenotfound=שגיאה: קובץ ה־ZIM שנבחר לא נמצא.
-# Fuzzy
-android.ui.error_nozimfilesfound=לא נמצאו קובצי ZIM במכשיר שלך.\nר' את דף העזרה להכוונה על טעינת תוכן לקיוויקס.\nאם שמת קובץ ZIM במכשיר שלך או באחסון חיצוני, אולי כדאי לך לנסות שוב בעוד דקה או לאתחל את המכשיר.
+android.ui.error_nozimfilesfound=לא נמצא תוכן במכשיר שלך.\nנא לעיין בעמוד העזרה כדי לקבל הנחיות בנוגע לטעינת תוכן לתוך לקיוויקס.\nאם שמת קובץ ZIM במכשיר שלך או באחסון חיצוני, אולי כדאי לך לנסות שוב בעוד דקה או לאתחל את המכשיר.
+android.ui.external_link_popup_dialog_message=פעולה זו מובילה לקישור חיצוני. כתוצאה מכך עשויות לחול עליך עלויות בגין העברת נתונים או שהקישור לא יעבוד עקב העדר חיבור. להמשיך?
+android.ui.external_link_popup_dialog_title=העברה לקישור חיצוני
+android.ui.external_storage=חיצוני
+android.ui.get_library_over_network=שימוש ברשת כדי להוריד רשימת תוכן. (6 מ״ב לערך)
 android.ui.go_to_play_store=כניסה לחנות Play
+android.ui.got_it=הבנתי
+android.ui.help_12=איך להשתמש בקובצי ZIM גדולים?
+android.ui.help_13=אם קובץ ה־ZIM שלך גדול מ־4 ג״ב, יכול להיות שלא תהיה לך אפשרות לאחסן אותו בכרטיס ה־SD שלך עקב מגבלות מערכת קבצים.
+android.ui.help_16=\u2022 ב־Windows מבית Microsoft:‏ HJ-Split
+android.ui.help_17=\u2022 ב־Mac OS X מבית Apple:‏ Split and Concat
+android.ui.help_18=\u2022 בגנו/לינוקס עם המסוף: split --bytes=4000M my_big_file.zim
+android.ui.help_20=תודה לך על בחירתך בקיוויקס!
+android.ui.help_5=איפה התוכן?
+android.ui.help_6=התוכן שלנו מתארח באתר של קיוויקס.
+android.ui.help_8=\u2022 ויקיפדיה זמינה באופן נפרד לכל שפה
+android.ui.help_9=\u2022 ישנם מקורות נוספים זמינים כגון ויקיליקס או ויקיטקסט.
+android.ui.hint_contents_drawer_message=ניתן לגרור שמאל כדי לצפות בתוכן הערך הזה
+android.ui.internal_storage=פנימי
+android.ui.language_count=(%1$d)
+android.ui.local_zims=מכשיר
+android.ui.menu_back=חזרה
+android.ui.menu_bookmarks=סימניות
+android.ui.menu_bookmarks_list=סימניות
+android.ui.menu_exitfullscreen=יציאה ממסך מלא
+android.ui.menu_forward=קדימה
+android.ui.menu_fullscreen=מסך מלא
+android.ui.menu_help=עזרה
+android.ui.menu_home=בית
+android.ui.menu_library=הורדת קובצי תוכן
+android.ui.menu_randomarticle=ערך אקראי
 android.ui.menu_read_aloud=להקריא בקול
 android.ui.menu_read_aloud_stop=להפסיק להקריא בקול
-# Fuzzy
-android.ui.menu_rescan_fs=סריקה מחדש על כרטיס SD
-# Fuzzy
-android.ui.no_bookmarks=אין סימניות!
+android.ui.menu_rescan_fs=סריקת כרטיס ה־SD מחדש
+android.ui.menu_search=חיפוש ערך
+android.ui.menu_searchintext=איתור בדף
+android.ui.menu_settings=הגדרות
+android.ui.menu_zim_manager=קבלת תוכן
+android.ui.new_tab_snackbar=הערך נפתח בלשונית חדשה
+android.ui.next=הבא
+android.ui.no=לא
+android.ui.no_bookmarks=אין סימניות
+android.ui.no_downloads_here=אין כאן הורדות
+android.ui.no_files_here=אין כאן קבצים
+android.ui.no_network_connection=אין חיבור לרשת
+android.ui.no_network_msg=אין חיבור לרשת
 android.ui.no_reader_application_installed=לא נמצאה אפליקציה מותקנת עבור סוג הקובץ הזה
-# Fuzzy
 android.ui.no_section_info=לא נמצאו כותרות תוכן
+android.ui.open=פתיחה
 android.ui.open_in_new_tab=לפתוח קישור בלשונית חדשה?
+android.ui.open_partial_zim=יכול להיות שקובץ זה חלקי. לנסות לפתוח אותו?
+android.ui.other_languages=שפות אחרות:
+android.ui.pref_autonightmode=מצב לילה אוטומטי
+android.ui.pref_autonightmode_summary=לעבור אוטומטית בין מצב יום ללילה.
 android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
+android.ui.pref_bottomtoolbar=הפעלת סרגל כלים תחתון
+android.ui.pref_credits_title=תודות
+android.ui.pref_current_folder=תיקייה נוכחית
+android.ui.pref_display_title=תצוגה
 android.ui.pref_info_title=מידע
 android.ui.pref_info_version=גרסה
 android.ui.pref_language_chooser=בחירת שפה
+android.ui.pref_language_title=שפה
+android.ui.pref_multi_search_summary=לאפשר ליישומון לחפש בין קובצי ZIM שונים (אזהרה: בשלבי ניסוי ראשוניים).
 android.ui.pref_newtab_background_summary=עם פתיחת לשונית חדשה, היא תיפתח ברקע
 android.ui.pref_newtab_background_title=פתיחת כרטיסייה חדשה ברקע
 android.ui.pref_nightmode=מצב לילה
-# Fuzzy
 android.ui.pref_nightmode_summary=הצגת ערכים עם צבעים הפוכים
-# Fuzzy
-android.ui.pref_zoom_dialog=רמת התקריב
+android.ui.pref_storage=אחסון
+android.ui.pref_wifi_only=הורדת תוכן דרך רשת אלחוטית בלבד
+android.ui.pref_zoom_dialog=רמת תקריב
 android.ui.pref_zoom_enable=בקרת תקריב
 android.ui.pref_zoom_entry_automatic=אוטומטי
 android.ui.pref_zoom_entry_large=גדול
 android.ui.pref_zoom_entry_medium=בינוני
 android.ui.pref_zoom_entry_small=קטן
+android.ui.pref_zoom_sub_title=תקריב
+android.ui.previous=הקודם
+android.ui.proceed=להמשיך
 android.ui.rate_dialog_msg_1=אם אתם נהנים להשתמש
 android.ui.rate_dialog_msg_2=, אנא הקדישו רגע ודרגו את התכונה הזאת. תודה על התמיכה!
 android.ui.rate_dialog_negative=לא, תודה
 android.ui.rate_dialog_neutral=פעם אחרת
 android.ui.rate_dialog_positive=דירוג!
 android.ui.rate_dialog_title=אנא דרגו אותנו
+android.ui.remote_zims=מקוון
+android.ui.remove_bookmark=הסרת סימנייה
 # Fuzzy
 android.ui.request_storage=כדי לגשת לקובצי ZIM אנחנו צריכים גישה לאחסון שלך
 # Fuzzy
 android.ui.rescan_fs_warning=סריקה למציאת קובצי ZIM, נא להמתין...
-# Fuzzy
+android.ui.save_media=שמירת מדיה
 android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
-# Fuzzy
-android.ui.save_media_saved=נמדיה נשמרה בתור %1$s בתיקיית התמונות שלך
+android.ui.save_media_saved=המדיה נשמרה בתור %s אל Android/media/org.kiwix.../‎
+android.ui.search_label=חיפוש
+android.ui.search_widget_text=חיפוש בקיוויקס
+android.ui.space_available=נפח זמין:
+android.ui.speech_not_supported=המכשיר שלך אינו תומך בקלט דיבור, עמך הסליחה
+android.ui.speech_prompt_text=יש לדבר כדי לחפש %s
+android.ui.tab_closed=לשונית נסגרה
+android.ui.time_day=יום
+android.ui.time_hour=שע׳
+android.ui.time_left=נותרו
+android.ui.time_minute=דק׳
+android.ui.time_second=שנ׳
 android.ui.tts_lang_not_supported=השפה של הדף הזה אינה נתמכת, או שלא הותקנו נתוני שפה מתאימים. ייתכן שהערך לא יהיה קריא.
+android.ui.tts_not_enabled=טקסט לדיבור אינו זמין עבור קובץ ZIM זה
+android.ui.tts_pause=השהיה
+android.ui.tts_resume=המשך
+android.ui.tts_stop=עצירה
+android.ui.undo=ביטול
+android.ui.wait_for_load=התוכן עדיין נטען
+android.ui.wifi_only_title=לאפשר הורדת תוכן דרך רשת סלולרית?
+android.ui.yes=כן
+android.ui.your_languages=שפות נבחרות:
+android.ui.zim_manager=ספרייה
+android.ui.zim_nopic=אין תמונות
+android.ui.zim_novid=אין סרטונים
+android.ui.zim_simple=פשוט
 ui.main.about.accesskey=A
 ui.main.about=אודות
 ui.main.audible=נשמע
