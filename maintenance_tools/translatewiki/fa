@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Alirezaaa
 # Author: Ebraminio
+# Author: FarsiNevis
 # Author: Fatemi127
 # Author: Leyth
 # Author: Mehran
@@ -34,22 +35,59 @@ android.ui.delete_specific_zim_toast=پرونده حذف شد
 android.ui.delete_tab=حذف زبانه
 android.ui.deleted_message=حذف شد
 android.ui.did_you_know=آیا می‌دانستید که؟
+android.ui.download_close=بستن
+android.ui.download_complete_snackbar=بارگذاری کامل شد.
+android.ui.download_no_space=فضای ناکافی برای ذخیرهٔ فایل
+android.ui.download_pause=مکث
+android.ui.download_paused=در حالت مکث
+android.ui.download_play=پخش
+android.ui.download_stop=توقف
 android.ui.error_articlenotfound=حطا: بارگیری مقالهٔ «%1$s» شکست خورد.
 android.ui.error_articleurlnotfound=حطا: بارگیری مقالهٔ (نشانی: %1$s) شکست خورد.
 android.ui.error_fileinvalid=خطا: پروندهٔ انتخاب‌شده یک پروندهٔ ZIM معتبر نیست.
 android.ui.error_filenotfound=خطا: پروندهٔ ZIM انتخاب شده پیدا نشد.
 # Fuzzy
 android.ui.error_nozimfilesfound=هیچ پروندهٔ ZIM در دستگاه شما یافت نشد.\nنگاهی به صفحهٔ کمک برای گرفتن جهت‌هایی به بارگذاری محتویات به Kiwix نگاهی بیندازید.\nاگر شما پروندهٔ ZIM در دستگاه/حافظهٔ خارجی خود قرار دهید، شما چند دقیقه دیگر مجدداً سعی کنید یا دستگاه خود را ری‌استارت کنید.
+android.ui.external_storage=خارجی
+android.ui.got_it=فهمیدم
+android.ui.help_20=سپاس برای اانتخاب Kiwix
+android.ui.help_2=Kiwix چه‌کار می‌کند؟
+android.ui.help_5=محتوا کجاست؟
+android.ui.help_6=محتوای ما در وبگاه Kiwix میزبانی می‌شود.
+android.ui.hint_contents_drawer_message=برای مشاهدهٔ مقاله، انگشت خود را روی صفحهٔ نمایش به سمت چپ بکشید.
+android.ui.internal_storage=داخلی
+android.ui.language_count=(%1$d)
+android.ui.local_zims=دستگاه
+android.ui.menu_back=بازگشت
+android.ui.menu_bookmarks=نشانک‌ها
+android.ui.menu_bookmarks_list=نشانک‌ها
+android.ui.menu_exitfullscreen=خروج از تمام‌صفحه
+android.ui.menu_fullscreen=تمام‌صفحه
+android.ui.menu_help=راهنما
+android.ui.menu_home=آغازه
+android.ui.menu_randomarticle=مقالهٔ تصادفی
 android.ui.menu_read_aloud=خواندن با صدای بلند
 android.ui.menu_read_aloud_stop=توقف خواندن با صدای بلند
 # Fuzzy
 android.ui.menu_rescan_fs=جستجوی مجدد کارت SD
+android.ui.menu_search=جستجوی مقاله
+android.ui.menu_searchintext=جستجو در صفحه
+android.ui.menu_settings=تنظیمات
+android.ui.next=بعدی
+android.ui.no=نه!
+android.ui.no_files_here=هیچ فایلی در این‌جا نیست.
+android.ui.no_network_connection=شبکه وصل نیست.
+android.ui.no_network_msg=شبکه وصل نیست.
 android.ui.open_in_new_tab=بازکردن پیوند در زبانهٔ جدید؟
+android.ui.other_languages=زبان‌های دیگر:
 android.ui.pref_backtotop=بازگشت به بالای صفحه
 android.ui.pref_backtotop_summary=نمایش دکمه در پایان صفحه برای انتقال به بالا
+android.ui.pref_clear_all_history_title=پاک کردن تاریخچه
+android.ui.pref_display_title=نمایش
 android.ui.pref_info_title=اطلاعات
 android.ui.pref_info_version=نسخه
 android.ui.pref_language_chooser=انتخاب زبان
+android.ui.pref_language_title=زبان
 android.ui.pref_nightmode=حالت شبانه
 # Fuzzy
 android.ui.pref_nightmode_summary=نمایش مقاله‌ها با رنگ‌های معکوس‌شده
@@ -60,12 +98,27 @@ android.ui.pref_zoom_entry_automatic=خودکار
 android.ui.pref_zoom_entry_large=بزرگ
 android.ui.pref_zoom_entry_medium=متوسط
 android.ui.pref_zoom_entry_small=کوچک
+android.ui.rate_dialog_negative=نه، سپاس
+android.ui.rate_dialog_positive=امتیاز دهید!
+android.ui.remote_zims=برخط
 # Fuzzy
 android.ui.rescan_fs_warning=چستچو برای پرونده‌های ZIM، لطفاً صبر کنید...
 # Fuzzy
 android.ui.save_media_error=در زمان ذخیره رسانه خطایی به وجود آمد!
 # Fuzzy
 android.ui.save_media_saved=ذخیره کردن رسانه  با عنوان %1$s در پوشه تصویر شما
+android.ui.search_label=جستجو
+android.ui.time_day=روز
+android.ui.time_left=سمت چپ
+android.ui.tts_pause=مکث
+android.ui.tts_resume=ادامه
+android.ui.tts_stop=توقف
+android.ui.yes=آری
+android.ui.your_languages=زبان‌های انتخاب‌شده:
+android.ui.zim_manager=کتابخانه
+android.ui.zim_nopic=هیچ تصویری نیست.
+android.ui.zim_novid=هیچ ویدئویی نیست.
+android.ui.zim_simple=ساده
 ui.main.about.accesskey=A
 ui.main.about=دربارهٔ &brand.brandShortName;
 ui.main.audible=قابل شنیدن
