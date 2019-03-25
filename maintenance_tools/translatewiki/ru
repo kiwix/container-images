@@ -5,6 +5,7 @@
 # Author: Dağlı95
 # Author: DevilishSkull
 # Author: Dim Grits
+# Author: Diralik
 # Author: Eleferen
 # Author: Eugrus
 # Author: Facenapalm
@@ -345,8 +346,8 @@ ui.messages.information=Информация
 ui.messages.integrityCheckFailed=Сбой проверки целостности. Ваш файл повреждён.
 ui.messages.integrityCheckSuccessful=Целостность файла был успешна проверена.
 ui.messages.library=Библиотека
-ui.messages.loadArticleError=Не удается загрузить эту статью.
-ui.messages.loadZimFileError=Не удается загрузить «%1», вы уверены что это файл ZIM?
+ui.messages.loadArticleError=Не удаётся загрузить эту статью.
+ui.messages.loadZimFileError=Не удаётся загрузить «%1», вы уверены что это файл ZIM?
 ui.messages.nameBookmarkSet=Введите имя файла закладок
 ui.messages.newContentAvailable=Новый контент доступен для загрузки.
 ui.messages.newContentAvailableInvitation=Новый контент доступен для скачивания. Вы хотите его увидеть?
