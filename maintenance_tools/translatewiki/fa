@@ -106,7 +106,9 @@ android.ui.pref_zoom_entry_automatic=خودکار
 android.ui.pref_zoom_entry_large=بزرگ
 android.ui.pref_zoom_entry_medium=متوسط
 android.ui.pref_zoom_entry_small=کوچک
+android.ui.pref_zoom_sub_title=بزرگ‌نمایی
 android.ui.previous=قبلی
+android.ui.proceed=ادامه
 android.ui.rate_dialog_negative=نه، سپاس
 android.ui.rate_dialog_neutral=بعداً
 android.ui.rate_dialog_positive=امتیاز دهید!
@@ -114,11 +116,13 @@ android.ui.remote_zims=برخط
 android.ui.remove_bookmark=حذف نشانک
 # Fuzzy
 android.ui.rescan_fs_warning=چستچو برای پرونده‌های ZIM، لطفاً صبر کنید...
-# Fuzzy
-android.ui.save_media_error=در زمان ذخیره رسانه خطایی به وجود آمد!
+android.ui.save_media=ذخیرهٔ رسانه
+android.ui.save_media_error=خطایی در حین ذخیره‌سازی این رسانه رخ داد!
 # Fuzzy
 android.ui.save_media_saved=ذخیره کردن رسانه  با عنوان %1$s در پوشه تصویر شما
 android.ui.search_label=جستجو
+android.ui.space_available=فضای موجود:
+android.ui.tab_closed=زبانه بسته شد
 android.ui.time_day=روز
 android.ui.time_hour=ساعت
 android.ui.time_left=سمت چپ
@@ -127,6 +131,7 @@ android.ui.time_second=ثانیه
 android.ui.tts_pause=مکث
 android.ui.tts_resume=ادامه
 android.ui.tts_stop=توقف
+android.ui.undo=خنثی‌سازی
 android.ui.yes=آری
 android.ui.your_languages=زبان‌های انتخاب‌شده:
 android.ui.zim_already_downloading=Zim از قبل در حال بارگیری است
