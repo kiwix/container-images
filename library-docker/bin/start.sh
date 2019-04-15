@@ -25,6 +25,6 @@ service cron start
 while [ 42 ] 
 do 
   echo "Start kiwix-serve ..."
-  kiwix-serve --port=80 --library --threads=16 --verbose library.kiwix.org.xml ; 
-  sleep 1 ; 
+  kiwix-serve --port=80 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
+  sleep 1
 done
