@@ -12,6 +12,7 @@
 # Author: Mirzali
 # Author: Orbot707
 
+android.ui.all_history_cleared_toast=Tarix pêro biyo pak
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.bookmark_added=Cay debiyay
 android.ui.bookmarks_restored=Cayan timar ke
@@ -20,6 +21,9 @@ android.ui.choose_file=Yew dosyay zerreki weçine (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Aplikasyona şıma verêna,. \nEna belki zi şıma çı wext ke dosyay berê SDKart miyan ravêrena.  Şıma rê Play Store  ra aplikasyona xo rocane  kerdış yana fına barkerdış icab keno
 android.ui.delete=Bestere
+android.ui.delete_specific_zim=Na dosya wa besteriyo?
+android.ui.delete_specific_zim_toast=Dosya esteriye
+android.ui.delete_tab=Veciyayışi bestere
 android.ui.deleted_message=esteriya
 android.ui.did_you_know=Şıma zanenê?
 android.ui.do_not_ask_anymore=Endi meperse
@@ -112,10 +116,26 @@ android.ui.save_media_error=Sıreyê qeydkerdışê medya de yew xeta ameyê mey
 # Fuzzy
 android.ui.save_media_saved=%1$ê medya dosya resımanê şıma de qeyd biye.
 android.ui.search_label=Cı geyre
+android.ui.tab_closed=Tab qefılneyê
 android.ui.time_day=roce
+android.ui.time_hour=sa
+android.ui.time_left=çep
+android.ui.time_minute=deq
+android.ui.time_second=sn
 android.ui.tts_lang_not_supported=Ena pela de zıwan desteg nêvineno,  yana qebul biyayê datay zıwani bar nêbiya. Tercihê wesiqi wanayê niyo qay.
+android.ui.tts_pause=bıvındarne
+android.ui.tts_resume=devam kerê
 android.ui.tts_stop=bıvındarne
+android.ui.undo=Peyser biya
+android.ui.wait_for_load=Zerrek hewna beno bar
 android.ui.yes=Eya
+android.ui.zim_downloads=Niyeno ro
+android.ui.zim_file_downloaded=Niya ro
+android.ui.zim_file_downloading=Niyeno ro
+android.ui.zim_manager=Kıtıbxane
+android.ui.zim_nopic=Resımi çıniyê
+android.ui.zim_novid=Videoyi çıniyê
+android.ui.zim_simple=Besit
 ui.main.about=Heq dê &brand.brandShortName;
 ui.main.audible=Aşnawêneyêno
 ui.main.back=Peyser
