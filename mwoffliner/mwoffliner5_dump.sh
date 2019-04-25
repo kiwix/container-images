@@ -66,6 +66,9 @@ mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiw
 # Comics
 mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Speech_balloon.svg/788px-Speech_balloon.svg.png" --customZimTitle="Comics by Wikipedia" --customZimDescription="Wikipedia articles dedicated to Comics" --articleList=https://download.kiwix.org/wp1/enwiki/projects/Comics --format=novid --format=nopic
 
+# Cricket
+mwoffliner --verbose --mwUrl="https://en.wikipedia.org/" --adminEmail=kelson@kiwix.org --customZimFavicon="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Cricketball.svg/488px-Cricketball.svg.png" --customZimTitle="Cricket by Wikipedia" --customZimDescription="Wikipedia articles dedicated to Cricket" --articleList=https://download.kiwix.org/wp1/enwiki/projects/Cricket --format=novid --format=nopic
+
 # Computer
 wget "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gnome-system.png" -O "$SCRIPT_DIR/computer.png" &&
 $MWOFFLINER --mwUrl="https://en.wikipedia.org/" --customZimTitle="code7370" --customZimDescription="A broad but computing-focused subset of Wikipedia" --customMainPage="Computer_science" --customZimFavicon="$SCRIPT_DIR/computer.png" --articleList="$SCRIPT_DIR/selections/computer.lst" --outputDirectory=$ZIM/wikipedia/ &&
