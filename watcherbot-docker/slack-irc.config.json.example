@@ -4,7 +4,7 @@
     "server": "irc.freenode.net",
     "token": "foobar"
     "channelMapping": {
-	"#general": "#kiwix"
+	"#irc": "#kiwix"
     }
 }
 ]
