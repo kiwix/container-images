@@ -91,44 +91,44 @@ my @files = split /\n/, `find "$zimDirectory" -name "*.zim"`;
 for my $file (@files) {
     print "$file\n";
     if ($file =~ /^.*\/([^\/]+)\.zim$/i) {
-	my $basename = $1;
-	my $core = $basename;
-	my $month;
-	my $year;
-	my $lang;
-	my $project;
-	my $option;
+        my $basename = $1;
+        my $core = $basename;
+        my $month;
+        my $year;
+        my $lang;
+        my $project;
+        my $option;
 
-	# Old/new date format
-	if ($basename =~ /^(.+?_)([a-z\-]{2,10}?_|)(.+_|)([\d]{2}|)_([\d]{4})$/i) {
-	    $project = substr($1, 0, length($1)-1);
-	    $option = $3 ? substr($3, 0, length($3)-1) : "";
-	    $core = substr($1.$2.$3, 0, length($1.$2.$3)-1);
-	    $lang = $2 ? substr($2, 0, length($2)-1) : "en";
-	    $month = $4;
-	    $year = $5;
-	} elsif ($basename =~ /^(.+?_)([a-z\-]{2,10}?_|)(.+_|)([\d]{4}|)\-([\d]{2})$/i) {
-	    $project = substr($1, 0, length($1)-1);
-	    $option = $3 ? substr($3, 0, length($3)-1) : "";
-	    $core = substr($1.$2.$3, 0, length($1.$2.$3)-1);
-	    $lang = $2 ? substr($2, 0, length($2)-1) : "en";
-	    $year = $4;
-	    $month = $5;
-	} else {
-	    print STDERR "This ZIM file name is not standard: $file\n";
-	}
+        # Old/new date format
+        if ($basename =~ /^(.+?_)([a-z\-]{2,10}?_|)(.+_|)([\d]{2}|)_([\d]{4})$/i) {
+            $project = substr($1, 0, length($1)-1);
+            $option = $3 ? substr($3, 0, length($3)-1) : "";
+            $core = substr($1.$2.$3, 0, length($1.$2.$3)-1);
+            $lang = $2 ? substr($2, 0, length($2)-1) : "en";
+            $month = $4;
+            $year = $5;
+        } elsif ($basename =~ /^(.+?_)([a-z\-]{2,10}?_|)(.+_|)([\d]{4}|)\-([\d]{2})$/i) {
+            $project = substr($1, 0, length($1)-1);
+            $option = $3 ? substr($3, 0, length($3)-1) : "";
+            $core = substr($1.$2.$3, 0, length($1.$2.$3)-1);
+            $lang = $2 ? substr($2, 0, length($2)-1) : "en";
+            $year = $4;
+            $month = $5;
+        } else {
+            print STDERR "This ZIM file name is not standard: $file\n";
+        }
 
-	$content{$basename} = {
-	    size => -s "$file",
-	    lang => $lang,
-	    option => $option,
-	    project => $project,
-	    zim => $file,
-	    basename => $basename,
-	    core => $core,
-	    month => $month,
-	    year => $year,
-	};
+        $content{$basename} = {
+            size => -s "$file",
+            lang => $lang,
+            option => $option,
+            project => $project,
+            zim => $file,
+            basename => $basename,
+            core => $core,
+            month => $month,
+            year => $year,
+        };
     }
 }
 
@@ -139,20 +139,20 @@ for (keys(%content)) {
     my $core = $entry->{core};
 
     if ($entry->{year} && $entry->{month}) {
-	if (exists($sortedContent{$core})) {
-	    my $entryDate = DateTime->new(year => $entry->{year}, month => $entry->{month});
-	    my $i;
-	    for ($i = 0; $i < scalar(@{$sortedContent{$core}}); $i++) {
-		my $otherEntry = $sortedContent{$core}->[$i];
-		my $otherEntryDate = DateTime->new(year => $otherEntry->{year}, month => $otherEntry->{month});
-		last if (DateTime->compare($entryDate, $otherEntryDate) > 0);
-	    }
-	    splice(@{$sortedContent{$core}}, $i, 0, $entry);
-	} else {
-	    $sortedContent{$core} = [$entry];
-	}
+        if (exists($sortedContent{$core})) {
+            my $entryDate = DateTime->new(year => $entry->{year}, month => $entry->{month});
+            my $i;
+            for ($i = 0; $i < scalar(@{$sortedContent{$core}}); $i++) {
+                my $otherEntry = $sortedContent{$core}->[$i];
+                my $otherEntryDate = DateTime->new(year => $otherEntry->{year}, month => $otherEntry->{month});
+                last if (DateTime->compare($entryDate, $otherEntryDate) > 0);
+            }
+            splice(@{$sortedContent{$core}}, $i, 0, $entry);
+        } else {
+            $sortedContent{$core} = [$entry];
+        }
     } else {
-	print STDERR "Unable to find publication date for ZIM ".$entry->{zim}."\n";
+        print STDERR "Unable to find publication date for ZIM ".$entry->{zim}."\n";
     }
 }
 
@@ -170,8 +170,8 @@ if ($writeHtaccess) {
 
 if ($writeWiki) {
     if (!$wikiPassword) {
-	print STDERR "If you want to update the library on wiki.kiwix.org, you need to put a wiki password.\n";
-	exit 1;
+        print STDERR "If you want to update the library on wiki.kiwix.org, you need to put a wiki password.\n";
+        exit 1;
     }
     writeWiki();
 }
@@ -183,12 +183,12 @@ if ($writeLibrary) {
 # Remove old files
 sub deleteOutdatedFiles {
     for (keys(%sortedContent)) {
-	my $contents = $sortedContent{$_};
-	for (my $i = $maxOutdatedVersions+1; $i < scalar(@$contents); $i++) {
-	    my $entry = $contents->[$i];
-	    print "Deleting ".$entry->{zim}."...\n";
-	    my $cmd = "rm '".$entry->{zim}."'"; `$cmd`;
-	} 
+        my $contents = $sortedContent{$_};
+        for (my $i = $maxOutdatedVersions+1; $i < scalar(@$contents); $i++) {
+            my $entry = $contents->[$i];
+            print "Deleting ".$entry->{zim}."...\n";
+            my $cmd = "rm '".$entry->{zim}."'"; `$cmd`;
+        }
     }
 }
 
@@ -198,8 +198,8 @@ sub beautifyZimOptions {
     my @options = split("_", shift || "");
     my $optionsLength = scalar(@options);
     for (my$i=0; $i<$optionsLength; $i++) {
-	my $option = $options[$i];
-	$result .= $option.($i+1<$optionsLength ? " " : "");
+        my $option = $options[$i];
+        $result .= $option.($i+1<$optionsLength ? " " : "");
     }
     return $result;
 }
@@ -207,22 +207,22 @@ sub beautifyZimOptions {
 sub writeWiki {
     my @lines;
     for (sortKeys(keys(%sortedContent))) {
-	my $entries = $sortedContent{$_};
-	my $entry = $entries->[0];
+        my $entries = $sortedContent{$_};
+        my $entry = $entries->[0];
 
-	my $lang_name = $locale_lookup{$entry->{lang}} || $entry->{lang};
-	utf8::decode($lang_name);
-	my $line = "{{ZIMdumps/row|{{{2|}}}|{{{3|}}}|".
-	    $entry->{project}." (".$lang_name.") |".
-	    $entry->{lang}."|".format_bytes($entry->{size})."|".
-	    $entry->{year}."-".$entry->{month}."|".(beautifyZimOptions($entry->{option} || "all"))."|8={{DownloadLink|".
-	    $entry->{core}."|{{{1}}}|".$zimDirectoryName."/}} }}\n";
-	push(@lines, $line);
+        my $lang_name = $locale_lookup{$entry->{lang}} || $entry->{lang};
+        utf8::decode($lang_name);
+        my $line = "{{ZIMdumps/row|{{{2|}}}|{{{3|}}}|".
+            $entry->{project}." (".$lang_name.") |".
+            $entry->{lang}."|".format_bytes($entry->{size})."|".
+            $entry->{year}."-".$entry->{month}."|".(beautifyZimOptions($entry->{option} || "all"))."|8={{DownloadLink|".
+            $entry->{core}."|{{{1}}}|".$zimDirectoryName."/}} }}\n";
+        push(@lines, $line);
     }
 
     my $content = "<!-- THIS PAGE IS AUTOMATICALLY, PLEASE DON'T MODIFY IT MANUALLY -->";
     for (@lines) {
-	$content .= $_;
+        $content .= $_;
     }
 
     # Get the connection to kiwix.org
@@ -244,7 +244,7 @@ sub writeHtaccess {
     $content .= "# Please do not edit this file manually\n";
     $content .= "#\n\n";
     $content .= "RewriteEngine On\n\n";
-    
+
     # Bin redirects
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.apk /".$binDirectoryName."/android/kiwix-2.2.apk\n";
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-installer.exe /".$binDirectoryName."/0.9/kiwix-0.9-installer.exe\n";
@@ -294,78 +294,77 @@ sub writeHtaccess {
     my @wp1s = split /\n/, `find $wp1Directory -maxdepth 1 -type d | sort -r`;
     my %wp1_done;
     for my $wp1 (@wp1s) {
-	if ($wp1 =~ /^.*\/([^\/]+)(_\d{4}-\d{2})$/) {
-	    my $core = $1;
-	    my $dir = $1.$2;
-	    next if $wp1_done{$core};
-	    $wp1_done{$core} = $dir;
-	    $content .= "RedirectPermanent /".$wp1DirectoryName."/".$core." /".$wp1DirectoryName."/".$dir."\n";
-	}
+        if ($wp1 =~ /^.*\/([^\/]+)(_\d{4}-\d{2})$/) {
+            my $core = $1;
+            my $dir = $1.$2;
+            next if $wp1_done{$core};
+            $wp1_done{$core} = $dir;
+            $content .= "RedirectPermanent /".$wp1DirectoryName."/".$core." /".$wp1DirectoryName."/".$dir."\n";
+        }
     }
-    
+
     sub writeEntryHtaccess {
-	my ($entry, $entries) = @_;
-	my $core = $entry->{core};
-	
-	my $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim ".substr($entry->{zim}, length($contentDirectory))."\n";
-	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
-	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
-	$content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
-	$content .= "\n";
+        my ($entry, $entries) = @_;
+        my $core = $entry->{core};
+
+        my $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim ".substr($entry->{zim}, length($contentDirectory))."\n";
+        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
+        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
+        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
+        $content .= "\n";
     }
 
     # Content redirects
     for (keys(%sortedContent)) {
-	my $key = $_;
-	my $entries = $sortedContent{$key};
-	my $entry = $entries->[0];
+        my $key = $_;
+        my $entries = $sortedContent{$key};
+        my $entry = $entries->[0];
 
-	# Write normal entry
-	$content .= writeEntryHtaccess($entry, $entries);
+        # Write normal entry
+        $content .= writeEntryHtaccess($entry, $entries);
 
-	# Redirect _all to _all_novid if _all does not exist
-	if ($key =~ /_novid/) {
-	    my $all_key = $key =~ s/_novid//gr;
-	    unless (exists($sortedContent{$all_key})) {
-		my $all_entry = dclone($entry);
-		$all_entry->{core} =~ s/_novid//g;
-		$content .= writeEntryHtaccess($all_entry, $entries);
-	    }
-	}
-
+        # Redirect _all to _all_novid if _all does not exist
+        if ($key =~ /_novid/) {
+            my $all_key = $key =~ s/_novid//gr;
+            unless (exists($sortedContent{$all_key})) {
+                my $all_entry = dclone($entry);
+                $all_entry->{core} =~ s/_novid//g;
+                $content .= writeEntryHtaccess($all_entry, $entries);
+            }
+        }
     }
     writeFile($htaccessPath, $content);
 
     # Write a few .htaccess files in sub-directories
     $content = "AddDescription \" \" *\n";
     foreach my $subDirectory ("archive", "bin", "dev", "nightly", "other", "src", "zim", "library") {
-	my $htaccessPath = $contentDirectory."/".$subDirectory."/.htaccess";
-	writeFile($htaccessPath, $content);
+        my $htaccessPath = $contentDirectory."/".$subDirectory."/.htaccess";
+        writeFile($htaccessPath, $content);
     }
 }
 
 # Sort the key in user friendly way
 sub sortKeysMethod {
     my %coefs = (
-	"wikipedia"   => 11,
-	"wiktionary"  => 10,
-	"wikivoyage"  => 9,
-	"wikiversity" => 8,
-	"wikibooks"   => 7,
-	"wikisource"  => 6,
-	"wikiquote"   => 5,
-	"wikinews"    => 4,
-	"wikispecies" => 3,
-	"ted"         => 2,
+        "wikipedia"   => 11,
+        "wiktionary"  => 10,
+        "wikivoyage"  => 9,
+        "wikiversity" => 8,
+        "wikibooks"   => 7,
+        "wikisource"  => 6,
+        "wikiquote"   => 5,
+        "wikinews"    => 4,
+        "wikispecies" => 3,
+        "ted"         => 2,
         "phet"        => 1
     );
     my $ac = $coefs{(split("_", $a))[0]} || 0;
     my $bc = $coefs{(split("_", $b))[0]} || 0;
 
     if ($ac < $bc) {
-	return 1;
+        return 1;
     } elsif ($ac > $bc) {
-	return -1;
+        return -1;
     }
 
     # else
@@ -383,12 +382,12 @@ sub writeLibrary {
 
     # Get kiwix-manage full path
     if ($writeLibrary) {
-	$kiwixManagePath = `which kiwix-manage`;
-	$kiwixManagePath =~ s/\n//g;
-	if ($? != 0 || !$kiwixManagePath) {
-	    print STDERR "Unable to find kiwix-manage. You need it to write the library.\n";
-	    exit 1;
-	}
+        $kiwixManagePath = `which kiwix-manage`;
+        $kiwixManagePath =~ s/\n//g;
+        if ($? != 0 || !$kiwixManagePath) {
+            print STDERR "Unable to find kiwix-manage. You need it to write the library.\n";
+            exit 1;
+        }
     }
 
     # Generate random tmp library name
@@ -399,14 +398,14 @@ sub writeLibrary {
 
     # Create the library.xml file for the most recent files
     for (sortKeys(keys(%sortedContent))) {
-	my $i = 0;
-	my $core = $_;
-	my $entry = $sortedContent{$core}->[$i];
-	my $zimPath = $entry->{zim};
-	my $permalink = "http://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
-	my $cmd = "$kiwixManagePath $tmpZimLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
-	system($cmd) == 0
-	    or print STDERR "Unable to put $zimPath to XML library";
+        my $i = 0;
+        my $core = $_;
+        my $entry = $sortedContent{$core}->[$i];
+        my $zimPath = $entry->{zim};
+        my $permalink = "http://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
+        my $cmd = "$kiwixManagePath $tmpZimLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
+        system($cmd) == 0
+            or print STDERR "Unable to put $zimPath to XML library";
     }
 
     # Move the XML files to its final destination
@@ -419,9 +418,9 @@ sub writeLibrary {
     my $ideascube_source    = "$libraryDirectory/${libraryName}_zim.xml";
     my $ideascube_target    = "/var/www/download.kiwix.org/library/ideascube.yml";
     if (-e $ideascube_converter) {
-	my $cmd = "$ideascube_converter '$ideascube_source' '$ideascube_target'"; `$cmd`;
+        my $cmd = "$ideascube_converter '$ideascube_source' '$ideascube_target'"; `$cmd`;
     } else {
-	print STDERR "Unable to find $ideascube_converter";
+        print STDERR "Unable to find $ideascube_converter";
     }
 }
 
@@ -439,8 +438,8 @@ sub findBinary {
     my $path = `which $binary`;
     $path =~ s/\n//g;
     if ($? != 0 || !$path) {
-	print STDERR "Unable to find $binary.\n";
-	exit 1;
+        print STDERR "Unable to find $binary.\n";
+        exit 1;
     }
     $path
 }
@@ -462,8 +461,8 @@ sub readFile {
     open FILE, $file or die $!;
     binmode FILE;
     my ($buf, $data, $n);
-    while (($n = read FILE, $data, 4) != 0) { 
-	$buf .= $data;
+    while (($n = read FILE, $data, 4) != 0) {
+        $buf .= $data;
     }
     close(FILE);
     utf8::decode($data);
