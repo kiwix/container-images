@@ -5,31 +5,77 @@
 # Author: Blahma
 # Author: KuboF
 # Author: Metraduk
+# Author: Mirin
 # Author: Objectivesea
 # Author: Robin van der Vliet
 # Author: Yekrats
 
+android.ui.add_bookmark=Aldoni legosignon
 android.ui.articlesearch_hint=Trovu artikolon tajpante
-# Fuzzy
-android.ui.button_backtotop=Reiri al Supro
+android.ui.bookmark_added=Aldonis legosignon
+android.ui.bookmark_removed=Forigis legosignon
+android.ui.bookmarks_restored=Restarigis legosignojn
+android.ui.button_backtotop=Reiri Supren
 # Fuzzy
 android.ui.choose_file=Elektu enhavan dosieron ZIM (*.zim)
+android.ui.clear_all_history_dialog_title=Forviŝi Ĉiun da Historio
+android.ui.confirm_stop_download_title=Haltigi elŝuton?
+android.ui.delete=Forigi
+android.ui.delete_recent_search_item=Forigi ĉi tiu eron?
+android.ui.delete_specific_zim=Ĉu forigi tiu dosieron?
+android.ui.delete_specific_zim_toast=Forigis dosieron
+android.ui.delete_tab=Forigi Langeton
+android.ui.deleted_message=forigita
+android.ui.download_close=Fermi
+android.ui.download_pause=Paŭzigi
+android.ui.download_paused=paŭzinta
+android.ui.download_play=Ludi
+android.ui.download_stop=Halti
 android.ui.error_articlenotfound=Eraro: Ŝargado de la artikolo \"%1$s\" fiaskis.
 android.ui.error_articleurlnotfound=Eraro: Ŝargado de la artikolo (Url: %1$s) fiaskis.
 android.ui.error_fileinvalid=Eraro: La elektita dosiero ne estas valida ZIM-dosiero.
 android.ui.error_filenotfound=Eraro: Ne eblis trovi la elektitan ZIM-dosieron.
 # Fuzzy
 android.ui.error_nozimfilesfound=Neniu ZIM-dosiero estas trovita en la memorilo.\nKonzultu la paĝon Helpo por trovi instrukciojn pri ŝargado de enhavo en Kiwix.\nSe vi enmetis ZIM-dosieron en la memorilon, vi povas reprovi post momento aŭ restartigi la memorilon.
+android.ui.external_storage=Ekstera
+android.ui.go_to_play_store=Iri al Play Store
+android.ui.got_it=Komprenite
+android.ui.help_12=Kiel uzi grandan ZIM-dosieron?
+android.ui.help_20=Dankon pro via elekto de Kiwix!
+android.ui.help_2=Kion faras Kiwix?
+android.ui.help_5=Kie estas la enhavo?
+android.ui.internal_storage=Interna
+android.ui.language_count=(%1$d)
+android.ui.local_zims=Aparato
+android.ui.menu_back=Reen
+android.ui.menu_bookmarks=Legosignoj
+android.ui.menu_bookmarks_list=Legosignoj
+android.ui.menu_exitfullscreen=Eliri plenekranan reĝimon
+android.ui.menu_forward=Antaŭen
+android.ui.menu_fullscreen=Plenekrane
+android.ui.menu_help=Helpo
+android.ui.menu_home=Hejmo
+android.ui.menu_randomarticle=Hazarda artikolo
 android.ui.menu_read_aloud=Laŭtlegi
 android.ui.menu_read_aloud_stop=Ĉesi laŭtlegadon
 # Fuzzy
 android.ui.menu_rescan_fs=Relegi SD-karton
+android.ui.menu_search=Serĉi artikolon
+android.ui.menu_searchintext=Trovi en paĝo
+android.ui.menu_settings=Agordoj
+android.ui.next=Sekven
+android.ui.no=Ne
+android.ui.open=Malfermi
 android.ui.open_in_new_tab=Ĉu malfermi ligilon en nova langeto?
+android.ui.other_languages=Aliaj Lingvoj:
 android.ui.pref_backtotop=Reiri al Supro
 android.ui.pref_backtotop_summary=Montri suprenan rulumilon paĝofine
+android.ui.pref_clear_all_history_title=Viŝi hisorion
+android.ui.pref_display_title=Montrado
 android.ui.pref_info_title=Informo
 android.ui.pref_info_version=Versio
 android.ui.pref_language_chooser=Elektu lingvon
+android.ui.pref_language_title=Lingvo
 android.ui.pref_nightmode=Nokta reĝimo
 # Fuzzy
 android.ui.pref_nightmode_summary=Montri artikolojn inverskolore
@@ -40,14 +86,34 @@ android.ui.pref_zoom_entry_automatic=Aŭtomate
 android.ui.pref_zoom_entry_large=Granda
 android.ui.pref_zoom_entry_medium=Mezgranda
 android.ui.pref_zoom_entry_small=Malgranda
+android.ui.pref_zoom_sub_title=Zomi
+android.ui.previous=Antaŭen
 android.ui.rate_dialog_negative=Ne, dankon
 android.ui.rate_dialog_neutral=Poste
+android.ui.rate_dialog_positive=Taksi!
+android.ui.rate_dialog_title=Bonvolu Taksi Nin
 # Fuzzy
 android.ui.rescan_fs_warning=Daŭras serĉado de ZIM-dosieroj, bonvolu atendi...
 # Fuzzy
 android.ui.save_media_error=Eraro okazis dum provo konservi la plurmediaĵon!
 # Fuzzy
 android.ui.save_media_saved=Plumediaĵoj konservitaj kiel %1$s en via dosierujo Bildoj
+android.ui.search_label=Serĉi
+android.ui.search_widget_text=Serĉi Kiwix
+android.ui.space_available=Havebla Spaco:
+android.ui.time_day=tago
+android.ui.time_hour=h
+android.ui.time_left=restas
+android.ui.time_minute=min
+android.ui.time_second=s
+android.ui.undo=Malfari
+android.ui.yes=Jes
+android.ui.your_languages=Elektitaj lingvoj:
+android.ui.zim_file_downloading=Elŝutante
+android.ui.zim_manager=Biblioteko
+android.ui.zim_nopic=Neniu Bildo
+android.ui.zim_novid=Neniu Videaĵo
+android.ui.zim_simple=Simpla
 ui.main.about=Pri &brand.brandShortName;
 ui.main.audible=Aŭdebligi
 ui.main.back=Reen
