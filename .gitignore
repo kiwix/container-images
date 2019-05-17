@@ -1,3 +1,4 @@
 .DS_Store
 *.pyc
 matomo-token.txt
+wiki-password.txt
