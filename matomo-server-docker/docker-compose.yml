@@ -15,7 +15,7 @@ services:
     image: matomo:fpm
     container_name: matomo_app
     volumes:
-      /var/www/html
+      - "appdir:/var/www/html"
     links:
       - db
     restart: always
@@ -24,8 +24,8 @@ services:
     image: nginx:latest
     container_name: matomo_web
     volumes:
-      /var/www/html
-      /data/matomo/web/conf:/etc/nginx/conf.d
+      - "appdir:/var/www/html"
+      - "/data/matomo/web/conf:/etc/nginx/conf.d"
     links:
       - app
     environment:
@@ -40,7 +40,7 @@ services:
     restart: always
     
 volumes:
-  /var/www/html:
+  appdir:
 
 networks:
   default:
