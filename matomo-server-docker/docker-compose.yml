@@ -12,12 +12,14 @@ services:
     restart: always
 
   app:
-    image: matomo:fpm
+    image: kiwix/matomo-app
     container_name: matomo_app
     volumes:
       - "appdir:/var/www/html"
     links:
       - db
+    environment:
+      - MATOMO_URL=http://stats
     restart: always
     
   web:
