@@ -12,7 +12,7 @@ services:
     restart: always
 
   app:
-    image: kiwix/matomo-app
+    image: kiwix/matomo
     container_name: matomo_app
     volumes:
       - "appdir:/var/www/html"
