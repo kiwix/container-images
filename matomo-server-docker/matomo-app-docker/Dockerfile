@@ -1,6 +1,6 @@
 FROM matomo:fpm
 
-ENV MATOMO_URL=http://web
+ENV MATOMO_URL=http://stats.kiwix.org
 
 RUN apt-get update && apt-get install -y --no-install-recommends cron && rm -r /var/lib/apt/lists/*
 
