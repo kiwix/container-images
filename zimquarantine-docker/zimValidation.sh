@@ -5,6 +5,7 @@
 # Usage : zimValidation <zimFilePath> <zimSrcDir> <zimDstDir> <zimQuarantineDir> <logDir> <zimCheckOptions> [NO_QUARANTINE|NO_CHECK]
 #
 
+ZIMCHECK=/usr/local/bin/zimcheck
 ZIMFILE=$1
 ZIMSRCDIR=$2
 
@@ -34,7 +35,7 @@ then
   moveZim $DESTDIR $DESTFILE
 else
   mkdir -p $LOGDIR
-  zimcheck -A $ZIMFILE | tee /tmp/zimcheckoutput > $LOGFILE
+  $ZIMCHECK $ZIMCHECK_OPTION $ZIMFILE | tee /tmp/zimcheckoutput > $LOGFILE
 
   if [ "$OPTION" = "NO_QUARANTINE" ] || grep -q 'Status: Pass' /tmp/zimcheckoutput
   then
