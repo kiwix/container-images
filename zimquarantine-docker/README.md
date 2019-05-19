@@ -12,7 +12,7 @@ If a zim is invalid, it moved to a quarantine directory. Yon can read the output
 of `zimcheck` in log writed in log directory.
 
 Volumes
-=======
+-------
 
 You should define several volumes when you run the container :
 
@@ -22,6 +22,6 @@ You should define several volumes when you run the container :
 - The log dir : `-v <YOUR_LOG_DIRECTORY>:/zim_log`
 
 Author
-======
+------
 
 Florent Kaisser <florent.pro@kaisser.name>
