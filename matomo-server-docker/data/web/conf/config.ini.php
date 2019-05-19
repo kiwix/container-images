@@ -9,7 +9,7 @@ tables_prefix = "piwik_"
 proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"
 trusted_hosts[] = "stats.kiwix.org"
 salt = "6ec18ede240f7ff11fbfe7824eba62e3"
-force_ssl = 1
+assume_secure_protocol=1
 
 [PluginsInstalled]
 PluginsInstalled[] = "Diagnostics"
