@@ -1,17 +1,49 @@
-ZIMPATH=`echo $1 | sed "s:$2::"`
+#/bin/bash
+#
+# Author : Florent Kaisser
+#
+# Usage : zimValidation <zimFilePath> <zimSrcDir> <zimDstDir> <zimQuarantineDir> <logDir> <zimCheckOptions> [NO_QUARANTINE|NO_CHECK]
+#
+
 ZIMFILE=$1
+ZIMSRCDIR=$2
+
+ZIMPATH=`echo $ZIMFILE | sed "s:$ZIMSRCDIR::"`
+
 DESTFILE=$3$ZIMPATH
 DESTDIR=`dirname $DESTFILE`
 
-echo "=================================="
+QUARFILE=$4$ZIMPATH
+QUARDIR=`dirname $QUARFILE`
 
-zimcheck -A $ZIMFILE | tee /tmp/zimcheckoutput
+LOGFILE=$5$ZIMPATH
+LOGDIR=`dirname $LOGFILE`
 
-if grep -q 'Status: Pass' /tmp/zimcheckoutput
+ZIMCHECK_OPTION=$6
+OPTION=$7
+
+
+function moveZim () {
+   mkdir -p $1
+   mv $ZIMFILE $2
+}
+
+if [ "$OPTION" = "NO_CHECK" ]
 then
- echo "OK !!!"
+  echo "move $ZIMFILE to $DESTFILE"
+  moveZim $DESTDIR $DESTFILE
 else
- echo "NOT OK !!"
+  mkdir -p $LOGDIR
+  zimcheck -A $ZIMFILE | tee /tmp/zimcheckoutput > $LOGFILE
+
+  if [ "$OPTION" = "NO_QUARANTINE" ] || grep -q 'Status: Pass' /tmp/zimcheckoutput
+  then
+   echo "$ZIMFILE is valid, move to $DESTFILE"
+   moveZim $DESTDIR $DESTFILE
+  else
+   echo "$ZIMFILE is not valid, quarantine to $QUARFILE"
+   moveZim $QUARDIR $QUARFILE
+  fi
 fi
 
-#rm -f /tmp/zimcheckoutput
+rm -f /tmp/zimcheckoutput
