@@ -24,5 +24,4 @@ RUN chmod 0500 /usr/local/bin/zimValidation.sh
 #run validation every minute
 RUN echo "* *  * * *  root  /usr/bin/flock -w 0 /dev/shm/cron.lock find $ZIM_SRC_DIR -iname \"*.zim\" -exec bash zimValidation.sh  \"{}\" \$ZIM_SRC_DIR \$ZIM_DST_DIR \$ZIM_QUAR_DIR \$VALIDATION_LOG_DIR \$ZIMCHECK_OPTION \"\$VALIDATION_OPTION\" ';' >> /dev/shm/zimvalidation.log 2>&1" >> /etc/cron.d/zimvalidation  
 
-#CMD cron -f
-CMD bash
+CMD cron -f
