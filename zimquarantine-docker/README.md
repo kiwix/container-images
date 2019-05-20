@@ -23,6 +23,10 @@ You should define several volumes when you run the container :
 
 Options
 -------
+You can set the variable `VALIDATION_OPTION` to change the behaviour :
+
+- NO_CHECK = just move to the directory of valid zim
+- NO_QUARANTINE = make the check (log) and move to the directory of valid zim  even if errors
 
 You can pass options to `zimcheck` by define `ZIMCHECK_OPTION` env var : `-e ZIMCHECK_OPTION=-A` The options are the same as `zimcheck` :
 
@@ -37,7 +41,6 @@ You can pass options to `zimcheck` by define `ZIMCHECK_OPTION` env var : `-e ZIM
 -X , --url_external    URL check - Internal URLs
 -E , --mime            MIME checks
 -D , --details         Details of error
--B , --progress        Print progress report
 ```
 
 
