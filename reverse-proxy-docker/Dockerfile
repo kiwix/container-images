@@ -10,6 +10,12 @@ RUN { \
     echo "limit_req_zone \$binary_remote_addr zone=limit:10m rate=50r/s;" ; \
 } > /etc/nginx/conf.d/00limit.conf
 
+RUN { \
+    echo "gzip on;" ; \
+    echo "gzip_proxied any;" ; \
+    echo "gzip_types \"*\";" ; \
+} > /etc/nginx/conf.d/05gzip.conf
+
 COPY sites/* /etc/nginx/sites-enabled/
 
 COPY docker-entrypoint.sh /app/ 
