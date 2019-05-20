@@ -24,7 +24,7 @@ You should define several volumes when you run the container :
 Options
 -------
 
-You can pass options to `zimcheck` by define `VALIDATION_OPTION` env var : `-e VALIDATION_OPTION=-A` The options are the same as `zimcheck` :
+You can pass options to `zimcheck` by define `ZIMCHECK_OPTION` env var : `-e ZIMCHECK_OPTION=-A` The options are the same as `zimcheck` :
 
 ```
 -A , --all             run all tests. Default if no flags are given.
@@ -39,6 +39,7 @@ You can pass options to `zimcheck` by define `VALIDATION_OPTION` env var : `-e V
 -D , --details         Details of error
 -B , --progress        Print progress report
 ```
+
 
 Author
 ------
