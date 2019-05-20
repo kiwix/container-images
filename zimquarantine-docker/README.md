@@ -16,8 +16,8 @@ Volumes
 
 You should define several volumes when you run the container :
 
-- The zim dir to check : `-v <YOUR_ZIM_DIRECTORY_TO_CHECK>:/zim_to_check`
-- The validate zim dir : `-v <YOUR_ZIM_DIRECTORY>:/zim`
+- The ZIMs dir to check : `-v <YOUR_ZIM_DIRECTORY_TO_CHECK>:/zim_to_check`
+- The valids ZIMs dir : `-v <YOUR_ZIM_DIRECTORY>:/zim`
 - The quarantine dir : `-v <YOUR_ZIM_QUARANTINE_DIRECTORY>:/zim_quarantine`
 - The log dir : `-v <YOUR_LOG_DIRECTORY>:/zim_log`
 
