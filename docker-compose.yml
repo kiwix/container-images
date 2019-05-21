@@ -124,6 +124,18 @@ services:
       - "/data/tmp:/var/www/tmp.kiwix.org"
     restart: always
 
+  zimquarantine:
+    image: kiwix/zimquarantine
+    container_name: zimquarantine
+    volumes:
+      - "/data/zimfarm-warehouse/zim:/zim_to_check"
+      - "/data/download/zim:/zim"
+      - "/data/quarantine/zim:/zim_quarantine"
+      - "/data/log/zimquarantine:/zim_log"
+    environment:
+      - VALIDATION_OPTION=NO_CHECK
+    restart: always
+
   matomo-download:
     image: kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download
@@ -137,6 +149,7 @@ services:
     secrets:
       - matomo-token
     restart: always
+
 secrets:
   matomo-token:
     file: ./matomo-token.txt
