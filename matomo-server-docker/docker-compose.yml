@@ -27,6 +27,7 @@ services:
     container_name: matomo_web
     volumes:
       - "appdir:/var/www/html"
+      - "/data/matomo/data:/var/www/html/misc/user"
       - "/data/matomo/web/conf:/etc/nginx/conf.d"
     links:
       - app
