@@ -13,10 +13,10 @@ RUN { \
 RUN { \
     echo "gzip on;" ; \
     echo "gzip_proxied any;" ; \
-    echo "gzip_types \"*\";" ; \
+    echo "gzip_types \"text/plain text/css application/json application/x-javascript application/javascript text/xml application/xml application/rss+xml text/javascript image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype\";" ; \
 } > /etc/nginx/conf.d/05gzip.conf
 
 COPY sites/* /etc/nginx/sites-enabled/
 
-COPY docker-entrypoint.sh /app/ 
+COPY docker-entrypoint.sh /app/
 RUN chmod a+x docker-entrypoint.sh
