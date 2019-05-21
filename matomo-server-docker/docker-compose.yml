@@ -16,6 +16,7 @@ services:
     container_name: matomo_app
     volumes:
       - "appdir:/var/www/html"
+      - "/data/matomo/data:/var/www/html/misc/user"
     links:
       - db
     environment:
