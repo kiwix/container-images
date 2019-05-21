@@ -26,7 +26,7 @@ OPTION=$7
 
 function moveZim () {
    mkdir -p $1
-   mv $ZIMFILE $2
+   mv -f $ZIMFILE $2
 }
 
 if [ "$OPTION" = "NO_CHECK" ]
