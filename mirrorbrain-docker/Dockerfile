@@ -27,10 +27,10 @@ RUN { \
   aclocal && autoconf && automake --add-missing && ./configure --prefix=/usr/local/geoip && make && make install ; \
   cd /tmp ; \
   mkdir -p /usr/local/geoip/share/GeoIP/ ; \
-  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-City-CSV.zip && \
-  unzip GeoLite2-City-CSV.zip  && cp GeoLite2-City-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-City-* ; \
-  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip && \
-  unzip GeoLite2-Country-CSV.zip && cp GeoLite2-Country-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-Country-* ; \
+#  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-City-CSV.zip && \
+#  unzip GeoLite2-City-CSV.zip  && cp GeoLite2-City-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-City-* ; \
+#  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip && \
+#  unzip GeoLite2-Country-CSV.zip && cp GeoLite2-Country-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-Country-* ; \
 }
 
 #Install Geolocalisation for Apache

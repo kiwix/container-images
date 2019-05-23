@@ -14,6 +14,7 @@ services:
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/hash:/usr/share/mirrorbrain"
+      - "/data/geoip:/usr/local/geoip/share/GeoIP"
     environment:
       - UPDATE_HASH=1
       - HTTPD=1
