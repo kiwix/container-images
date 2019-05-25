@@ -24,10 +24,6 @@ function scanMirror() {
 echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum  
 
-# Build hash for new files in the master directory
-#echo "Building hash for new files..."
-#$MB makehashes $REPO -t /usr/share/mirrorbrain 
-
 # Check if mirrors are online
 echo "Checking if mirrors are online..."
 mirrorprobe  
