@@ -3,6 +3,7 @@
 # Author: Amire80
 # Author: Guycn2
 # Author: Inkbug
+# Author: Steeve815
 # Author: YaronSh
 
 android.ui.add_bookmark=הוספת סימנייה
@@ -18,7 +19,6 @@ android.ui.clear_recent_and_tabs_history_dialog=למחוק את היסטוריי
 android.ui.clear_recent_history_dialog=למחוק את היסטוריית החיפוש שלך?
 android.ui.confirm_stop_download_msg=לעצור את ההורדה הזאת?
 android.ui.confirm_stop_download_title=לעצור הורדה?
-# Fuzzy
 android.ui.customapp_missing_content=האפליקציה שלך פגומה.\nייתכן שהוסרו קבצים מכרטיס ה־SD.\nיש להסיר ולהתקין מחדש את האפליקציה מחנות Play.
 android.ui.delete=מחיקה
 android.ui.delete_recent_search_item=למחוק את הפריט הזה?
@@ -51,14 +51,25 @@ android.ui.external_storage=חיצוני
 android.ui.get_library_over_network=שימוש ברשת כדי להוריד רשימת תוכן. (6 מ״ב לערך)
 android.ui.go_to_play_store=כניסה לחנות Play
 android.ui.got_it=הבנתי
+android.ui.help_10=באפשרותך להוריד את קבצי ה-ZIM שנבחרו מתוך האפליקציה או לחלופין לבחור בקובץ אחד או מספר קבצים אותם אתה רוצה ולהוריד אותם ממחשב שולחני לפני העברת קבצי ה-ZIM לכרטיס ה-SD שלך.
+android.ui.help_11=קבצי ה-ZIM המורדים דרך האפליקציה נמצאים בספריית האחסון החיצוני בתוך תיקייה בשם Kiwix.
 android.ui.help_12=איך להשתמש בקובצי ZIM גדולים?
 android.ui.help_13=אם קובץ ה־ZIM שלך גדול מ־4 ג״ב, יכול להיות שלא תהיה לך אפשרות לאחסן אותו בכרטיס ה־SD שלך עקב מגבלות מערכת קבצים.
+android.ui.help_14=במהלך הורדת תכנים היישר מתוך האפליקציה מתבצע טיפול אוטומטי בקבצים כבדים. לשם כך אנו מפצלים אותם עבורך.
+android.ui.help_15=אם ההורדה של הקובץ נעשית במכשיר אחר, ייתכן שיהיה צורך בפיצול קובץ ה-ZIM תוך שימוש בתוכנה הבאה:
 android.ui.help_16=\u2022 ב־Windows מבית Microsoft:‏ HJ-Split
 android.ui.help_17=\u2022 ב־Mac OS X מבית Apple:‏ Split and Concat
 android.ui.help_18=\u2022 בגנו/לינוקס עם המסוף: split --bytes=4000M my_big_file.zim
+android.ui.help_19=הערה: חובה על הקבצים שנוצרו להיקרא בשמות my_big_file.zimaa, my_big_file.zimab וכו'.
+android.ui.help_1=קיוויקס מאפשרת לך לגשת באופן לא-מקוון לאתרי אינטרנט כדוגמת ויקיפדיה בצורה הדחוסה ביותר.
 android.ui.help_20=תודה לך על בחירתך בקיוויקס!
+android.ui.help_21=אנו שמחים שבאת, נשמח לקבל כל תגובה או הצעה דרך android@kiwiz.org.
+android.ui.help_2=מה קיוויקס עושה?
+android.ui.help_3=קיוויקס היא תוכנה להצגת תוכן באופן לא-מקוון. היא פועלת כמעט כמו דפדפן אינטרנט, אך במקום גישה לדפי אינטרנט מקווונים, היא מאפשרת קריאת תוכן מקבצים בפורמט ZIM.
+android.ui.help_4=בעוד שקיוויקס נועדה במקור לספק את תכני האתר ויקיפדיה באופן לא-מקוון, היא מאפשרת קריאת תכנים נוספים.
 android.ui.help_5=איפה התוכן?
 android.ui.help_6=התוכן שלנו מתארח באתר של קיוויקס.
+android.ui.help_7=הם זמינים כקבצי ZIM. ישנם קבצים רבים כאלו:
 android.ui.help_8=\u2022 ויקיפדיה זמינה באופן נפרד לכל שפה
 android.ui.help_9=\u2022 ישנם מקורות נוספים זמינים כגון ויקיליקס או ויקיטקסט.
 android.ui.hint_contents_drawer_message=ניתן לגרור שמאל כדי לצפות בתוכן הערך הזה
@@ -96,19 +107,32 @@ android.ui.open=פתיחה
 android.ui.open_in_new_tab=לפתוח קישור בלשונית חדשה?
 android.ui.open_partial_zim=יכול להיות שקובץ זה חלקי. לנסות לפתוח אותו?
 android.ui.other_languages=שפות אחרות:
+android.ui.path_not_writable=אין באפשרותך לגשת לספרייה זו כהגדרת ברירת מחדל. על מנת לתקן זאת יש לבחור מחדש את הספרייה הרצויה דרך הגדרות האפליקציה.
 android.ui.pref_autonightmode=מצב לילה אוטומטי
 android.ui.pref_autonightmode_summary=לעבור אוטומטית בין מצב יום ללילה.
 android.ui.pref_backtotop=חזרה למעלה
 android.ui.pref_backtotop_summary=הצגת כפתור בסוף העמוד לגלילה למעלה
 android.ui.pref_bottomtoolbar=הפעלת סרגל כלים תחתון
+android.ui.pref_bottomtoolbar_summary=הצגת סרגל כלים עם פעולות מהירות בתחתית המסך
+android.ui.pref_clear_all_history_summary=ניקוי מילות חיפוש קודמות והיסטוריית כרטיסיות
+android.ui.pref_clear_all_history_title=ניקוי ההיסטוריה
+android.ui.pref_credits=תורמים ורשיונות
 android.ui.pref_credits_title=תודות
 android.ui.pref_current_folder=תיקייה נוכחית
 android.ui.pref_display_title=תצוגה
+android.ui.pref_external_link_popup_summary=הצגת בועת אזהרה על תשלומים נוספים או כאשר אין אפשרות עבודה עם קישורים לא-מקוונים.
+android.ui.pref_external_link_popup_title=תן אזהרה בעת כניסה לקישורים חיצוניים
+android.ui.pref_extras=תוספות
+android.ui.pref_full_text_search_summary=לאפשר לאפליקציה לחפש מלל בתוך הערכים. אזהרה: אפשרות זו עלולה להוריד משמעותית את ביצועי החיפוש.
+android.ui.pref_full_text_search_title=חיפוש בכל הטקסט
+android.ui.pref_hidetoolbar=הסתרת סרגל הכלים בעת גלילה
+android.ui.pref_hidetoolbar_summary=הסתר את סרגל הכלים בעת גלילה לתחתית הדף
 android.ui.pref_info_title=מידע
 android.ui.pref_info_version=גרסה
 android.ui.pref_language_chooser=בחירת שפה
 android.ui.pref_language_title=שפה
 android.ui.pref_multi_search_summary=לאפשר ליישומון לחפש בין קובצי ZIM שונים (אזהרה: בשלבי ניסוי ראשוניים).
+android.ui.pref_multi_search_title=חיפוש מספר קבצי Zim
 android.ui.pref_newtab_background_summary=עם פתיחת לשונית חדשה, היא תיפתח ברקע
 android.ui.pref_newtab_background_title=פתיחת כרטיסייה חדשה ברקע
 android.ui.pref_nightmode=מצב לילה
@@ -130,12 +154,12 @@ android.ui.rate_dialog_negative=לא, תודה
 android.ui.rate_dialog_neutral=פעם אחרת
 android.ui.rate_dialog_positive=דירוג!
 android.ui.rate_dialog_title=אנא דרגו אותנו
+android.ui.reboot_message=עקב באג באנדרואיד 6.0 יש צורך בהפעלת המכשיר שלך מחדש על מנת להמשיך מבלי לתת לנו את הרשאת האחסון. אנו מתנצלים על אי הנוחות שנגרמת לך.
 android.ui.remote_zims=מקוון
 android.ui.remove_bookmark=הסרת סימנייה
-# Fuzzy
-android.ui.request_storage=כדי לגשת לקובצי ZIM אנחנו צריכים גישה לאחסון שלך
-# Fuzzy
-android.ui.rescan_fs_warning=סריקה למציאת קובצי ZIM, נא להמתין...
+android.ui.request_storage=על מנת לגשת לתכנים לא-מקוונים אנחנו צריכים לגשת לאחסון שלך
+android.ui.request_storage_custom=אם אתה רואה אזהרה על גבי המסך, פשוט הפעל מחדש את המכשיר לתיקון הבעיה.
+android.ui.rescan_fs_warning=מתבצעת סריקה לאיתור תכנים הניתנים להורדה, נא להמתין...
 android.ui.save_media=שמירת מדיה
 android.ui.save_media_error=אירעה שגיאה בעת ניסיון לשמור את המדיה!
 android.ui.save_media_saved=המדיה נשמרה בתור %s אל Android/media/org.kiwix.../‎
@@ -157,9 +181,14 @@ android.ui.tts_resume=המשך
 android.ui.tts_stop=עצירה
 android.ui.undo=ביטול
 android.ui.wait_for_load=התוכן עדיין נטען
+android.ui.wifi_only_msg=אם תבחר באפשרות "כן" לא תקבל אזהרה בעתיד, אולם תוכל תמיד לשנות זאת בהגדרות.
 android.ui.wifi_only_title=לאפשר הורדת תוכן דרך רשת סלולרית?
 android.ui.yes=כן
 android.ui.your_languages=שפות נבחרות:
+android.ui.zim_already_downloading=קובץ ה-Zim כבר בתהליך הורדה
+android.ui.zim_downloads=מוריד
+android.ui.zim_file_downloaded=הורד
+android.ui.zim_file_downloading=מוריד
 android.ui.zim_manager=ספרייה
 android.ui.zim_nopic=אין תמונות
 android.ui.zim_novid=אין סרטונים
