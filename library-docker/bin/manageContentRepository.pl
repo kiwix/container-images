@@ -14,8 +14,6 @@ use DateTime;
 use Locales;
 use Number::Bytes::Human qw(format_bytes);
 
-use Mediawiki::Mediawiki;
-
 my %content;
 
 # Configuration variables
@@ -225,15 +223,7 @@ sub writeWiki {
         $content .= $_;
     }
 
-    # Get the connection to kiwix.org
-    my $site = Mediawiki::Mediawiki->new();
-    $site->hostname("wiki.kiwix.org");
-    $site->path("w");
-    $site->user("LibraryBot");
-    $site->password($wikiPassword);
-    $site->setup();
-    $site->uploadPage("Template:ZIMdumps/content", $content, "Automatic update of the ZIM library");
-    $site->logout();
+    writeFile($zimDirectory."/.contentPage.wiki", $content);
 }
 
 # Write http://dwonload.kiwix.org .htaccess for better html page
