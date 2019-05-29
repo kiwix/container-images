@@ -6,6 +6,11 @@ services:
         context: .
         dockerfile: Dockerfile
     container_name: tracker
+    environment:
+      - VIRTUAL_HOST=tracker.openzim.org
+      - LETSENCRYPT_HOST=tracker.openzim.org
+      - LETSENCRYPT_EMAIL=contact@openzim.org
+      - HTTPS_METHOD=noredirect
     restart: always
 
   reverse-proxy:
@@ -18,20 +23,18 @@ services:
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
       - "/data/certs:/etc/nginx/certs:ro"
-    environment:
-      - VIRTUAL_HOST=tracker.openzim.org
-      - LETSENCRYPT_HOST=tracker.openzim.org
-      - LETSENCRYPT_EMAIL=contact@openzim.org
-      - HTTPS_METHOD=noredirect
+      - "/var/local/vhost.d:/etc/nginx/vhost.d"
+      - "/data/html:/usr/share/nginx/html"
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     ports:
       - 80:80
       - 443:443
-    restart: always
     logging:
+      driver: "none"
       options:
         max-size: 10k
+    restart: always
 
   letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -41,5 +44,10 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "/data/certs:/etc/nginx/certs:rw"
+      - "/var/local/vhost.d:/etc/nginx/vhost.d"
+      - "/data/html:/usr/share/nginx/html"
     restart: always
 
+networks:
+  default:
+    name: openzim.org
