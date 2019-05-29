@@ -25,43 +25,33 @@ echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum  
 
 # Scan the ftp.acc.umu.se mirror
-mirrorprobe ftp.acc.umu.se
 scanMirror ftp.acc.umu.se ZIMDIRS
 
 # Scan the dotsrc.org mirror
-mirrorprobe dotsrc.org
 scanMirror dotsrc.org ALLDIRS
 
 # scan the Kiwix mirrors
-mirrorprobe mirror
 scanMirror mirror ALLDIRS
 
 # Scan Tunisian mirror
-# mirrorprobe mirror.tn
 scanMirror mirror.tn ZIMDIRS
 
 # Scan the Wikimedia mirror
-mirrorprobe wikimedia
 scanMirror wikimedia WMDIRS
 
 # Scan the ISOC Israel mirror
-mirrorprobe isoc.il
 scanMirror isoc.il WMDIRS
 
 # Scan the Your.org mirror
-mirrorprobe your.org
 scanMirror your.org WMDIRS
 
 # Scan the nluug.nl mirror
-mirrorprobe nluug.ml
 scanMirror nluug.nl ALLDIRS
 
 # Scan the Mirrorservice.org mirror
-mirrorprobe mirrorservice.org
 scanMirror mirrorservice.org WMDIRS
 
 # Scan the fau.de mirror
-mirrorprobe fau.de
 scanMirror fau.de ALLDIRS
 
 # Generate HTML mirrors list
