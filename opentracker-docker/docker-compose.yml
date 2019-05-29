@@ -1,0 +1,45 @@
+version: '3.5'
+services:
+
+  tracker:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: tracker
+    restart: always
+
+  reverse-proxy:
+    build:
+        context: reverse-proxy
+        dockerfile: Dockerfile
+    container_name: reverse-proxy
+    depends_on:
+      - tracker
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+      - "/data/certs:/etc/nginx/certs:ro"
+    environment:
+      - VIRTUAL_HOST=tracker.openzim.org
+      - LETSENCRYPT_HOST=tracker.openzim.org
+      - LETSENCRYPT_EMAIL=contact@openzim.org
+      - HTTPS_METHOD=noredirect
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    logging:
+      options:
+        max-size: 10k
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    depends_on:
+      - reverse-proxy
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/data/certs:/etc/nginx/certs:rw"
+    restart: always
+
