@@ -404,7 +404,7 @@ sub writeLibrary {
     }
 
     # Generate the Ideascube library
-    my $ideascube_converter = "/usr/local/bin/library-to-catalog.py";
+    my $ideascube_converter = "/usr/local/bin/library-to-catalog/library-to-catalog.py";
     my $ideascube_source    = "$libraryDirectory/${libraryName}_zim.xml";
     my $ideascube_target    = "/var/www/download.kiwix.org/library/ideascube.yml";
     if (-e $ideascube_converter) {
