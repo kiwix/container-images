@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget cron libfi
 
 RUN pip3 install -U pip setuptools
 RUN pip3 install pycountry==18.2.23 PyYAML==3.12 requests==2.18.4
+RUN pip3 install mwclient
 
 RUN wget --no-check-certificate -q -O kiwix-tools.tar.gz http://download.kiwix.org/release/kiwix-tools/kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS.tar.gz \
   && tar --strip=1 -xzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-serve \
