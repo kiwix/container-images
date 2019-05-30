@@ -35,9 +35,7 @@ then
   moveZim $DESTDIR $DESTFILE
 else
   mkdir -p $LOGDIR
-  $ZIMCHECK $ZIMCHECK_OPTION $ZIMFILE | tee /tmp/zimcheckoutput > $LOGFILE
-
-  if [ "$OPTION" = "NO_QUARANTINE" ] || grep -q 'Status: Pass' /tmp/zimcheckoutput
+  if [ "$OPTION" = "NO_QUARANTINE" ] || $ZIMCHECK $ZIMCHECK_OPTION $ZIMFILE > $LOGFILE
   then
    echo "$ZIMFILE is valid, move to $DESTFILE"
    moveZim $DESTDIR $DESTFILE

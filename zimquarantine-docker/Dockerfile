@@ -1,7 +1,7 @@
 FROM debian:stretch-slim  
 MAINTAINER kiwix
 
-ENV ZIM_TOOLS_URL http://download.openzim.org/nightly/2019-05-13/zim-tools_linux-x86_64-2019-05-13.tar.gz
+ENV ZIM_TOOLS_URL http://download.openzim.org/release/zim-tools/zim-tools_linux-x86_64-1.0.2.tar.gz 
 ENV ZIM_SRC_DIR /zim_to_check
 ENV ZIM_DST_DIR /zim
 ENV ZIM_QUAR_DIR /zim_quarantine
