@@ -14,7 +14,8 @@
 { \
   echo "#!/bin/sh" ; \
   echo "cd $LIBRARY_DIR" ; \
-  echo "manageContentRepository.pl --wikiPassword=`cat /run/secrets/wiki-password` --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles >>/dev/shm/libgen 2>&1" ; \
+  echo "manageContentRepository.pl --writeWiki --writeHtaccess --writeLibrary --deleteOutdatedFiles >>/dev/shm/libgen 2>&1" ; \
+  echo "updateWikiPage.py wiki.kiwix.org LibraryBot `cat /run/secrets/wiki-password` 'Template:ZIMdumps/content' '/var/www/download.kiwix.org/zim/.contentPage.wiki' 'Automatic update of the ZIM library'" ; \
 } > /etc/cron.daily/10updateContentRepository && chmod 0500 /etc/cron.daily/10updateContentRepository
 
 echo "Generate library.kiwix.org.xml file"
@@ -28,3 +29,5 @@ do
   kiwix-serve --port=80 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
   sleep 1
 done
+
+
