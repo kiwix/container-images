@@ -38,7 +38,6 @@ my $writeHtaccess = 0;
 my $writeWiki = 0;
 my $writeLibrary = 0;
 my $showHelp = 0;
-my $wikiPassword = "";
 my $deleteOutdatedFiles = 0;
 my $onlyCheck = 0;
 
@@ -58,7 +57,6 @@ sub usage() {
     print "\t--deleteOutdatedFiles\n";
     print "\t--htaccessPath=/var/www/download.kiwix.org/.htaccess\n";
     print "\t--writeWiki\n";
-    print "\t--wikiPassword=foobar\n";
 }
 
 # Parse command line
@@ -75,7 +73,6 @@ GetOptions(
     'deleteOutdatedFiles' => \$deleteOutdatedFiles,
     'help' => \$showHelp,
     'onlyCheck' => \$onlyCheck,
-    'wikiPassword=s' => \$wikiPassword,
     'htaccessPath=s' => \$htaccessPath,
 );
 
@@ -167,10 +164,6 @@ if ($writeHtaccess) {
 }
 
 if ($writeWiki) {
-    if (!$wikiPassword) {
-        print STDERR "If you want to update the library on wiki.kiwix.org, you need to put a wiki password.\n";
-        exit 1;
-    }
     writeWiki();
 }
 
