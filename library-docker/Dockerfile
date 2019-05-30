@@ -23,7 +23,7 @@ WORKDIR $LIBRARY_DIR
 
 #Install start script
 COPY bin/* /usr/local/bin/
-RUN chmod 0500 /usr/local/bin/*
+RUN chmod -R 0500 /usr/local/bin/*
 
 #Copy Perl modules
 COPY lib/Mediawiki/Mediawiki.pm /usr/share/perl5/Mediawiki/Mediawiki.pm
