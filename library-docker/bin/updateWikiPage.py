@@ -25,9 +25,8 @@ else:
   site.login(user,password)
   page = site.pages[pageName]
   
-  with open(wikiFile) as f:
-    page.text = f.read()
-    page.save(modifComment)
+  with open(wikiFile,encoding="utf-8") as f:
+    page.save(f.read(),summary=modifComment)
     print("%s is updated !" % (pageName))
   f.closed
 
