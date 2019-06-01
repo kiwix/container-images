@@ -150,6 +150,19 @@ services:
     secrets:
       - matomo-token
     restart: always
+  matomo-download_openzim:
+    image: kiwix/matomo-log-analytics
+    container_name: matomo-log-analytics_download_openzim
+    volumes:
+      - "/data/log/nginx:/var/log/nginx"
+    environment:
+      - ID_SITE=6
+      - URL=http://stats.kiwix.org
+      - LOG=/var/log/nginx/access.log
+      - HOST=download.openzim.org
+    secrets:
+      - matomo-token
+    restart: always
 volumes:
   vhost:
 secrets:
