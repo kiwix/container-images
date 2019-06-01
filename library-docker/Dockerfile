@@ -17,13 +17,13 @@ RUN wget --no-check-certificate -q -O kiwix-tools.tar.gz http://download.kiwix.o
   && tar --strip=1 -xzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-serve \
   && tar --strip=1 -xzf kiwix-tools.tar.gz -C /usr/local/bin/ kiwix-tools_linux-x86_64-$VERSION_KIWIX_TOOLS/kiwix-manage \
   && rm -f kiwix-tools.tar.gz
-  
+
 EXPOSE 80
 
 WORKDIR $LIBRARY_DIR
 
 #Install start script
-COPY bin/* /usr/local/bin/
+COPY bin/ /usr/local/bin/
 RUN chmod -R 0500 /usr/local/bin/*
 
 #Copy Perl modules
