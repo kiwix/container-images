@@ -23,7 +23,6 @@ my $wp1DirectoryName = "wp1";
 my $wp1Directory = $contentDirectory."/".$wp1DirectoryName;
 my $zimDirectoryName = "zim";
 my $zimDirectory = $contentDirectory."/".$zimDirectoryName;
-my $binDirectoryName = "bin";
 my $releaseDirectoryName = "release";
 my $releaseDirectory = $contentDirectory."/".$releaseDirectoryName;
 my $srcDirectoryName = "src";
@@ -243,7 +242,6 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
@@ -251,7 +249,6 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
     # Dev redirects
     $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova /".$devDirectoryName."/ZIMmakerVMv6.ova\n";
@@ -277,7 +274,7 @@ sub writeHtaccess {
 
     # Folder description
     $content .= "AddDescription \"Deprectated stuff kept only for historical purpose\" archive\n";
-    $content .= "AddDescription \"All versions of Kiwix, the software (no content is in there)\" bin\n";
+    $content .= "AddDescription \"All versions of Kiwix, the software (no content is in there)\" release\n";
     $content .= "AddDescription \"Development stuff (tools & dependencies), for developers\" dev\n";
     $content .= "AddDescription \"Binaries and source code tarballs compiled auto. one time a day, for developers\" nightly\n";
     $content .= "AddDescription \"Random stuff, mostly mirrored for third party projects\" other\n";
