@@ -24,6 +24,8 @@ my $wp1Directory = $contentDirectory."/".$wp1DirectoryName;
 my $zimDirectoryName = "zim";
 my $zimDirectory = $contentDirectory."/".$zimDirectoryName;
 my $binDirectoryName = "bin";
+my $releaseDirectoryName = "release";
+my $releaseDirectory = $contentDirectory."/".$releaseDirectoryName;
 my $srcDirectoryName = "src";
 my $devDirectoryName = "dev";
 my $htaccessPath = $contentDirectory."/.htaccess";
@@ -239,6 +241,25 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-server-arm.tar.bz2 /".$binDirectoryName."/0.9/kiwix-server-0.9-linux-armv5tejl.tar.bz2\n";
     $content .= "RedirectPermanent /".$srcDirectoryName."/kiwix-src.tar.xz /".$srcDirectoryName."/kiwix-0.9-src.tar.xz\n";
 
+    # Release redirects
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools.tar.xz ".getLastRelease($releaseDirectory, "kiwix-tools-*.tar.xz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-armhf.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-armhf-*.tar.gz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-i586.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-i586-*.tar.gz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-x86_64.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-x86_64-*.tar.gz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_win-i686.zip ".getLastRelease($releaseDirectory, "kiwix-tools_win-i686-*.zip")."\n";
+
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop.tar.gz ".getLastRelease($releaseDirectory, "kiwix-desktop-*.tar.gz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_windows_x64.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/kiwix-desktop_x86_64.appimage ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
+
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
+
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "*/kiwix-hotspot-linux.tar.gz")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "*/kiwix-hotspot-macos.dmg")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "*/kiwix-hotspot-win32.exe")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "*/kiwix-hotspot-win64.exe")."\n";
+
     # Dev redirects
     $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova /".$devDirectoryName."/ZIMmakerVMv6.ova\n";
     $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova.torrent /".$devDirectoryName."/ZIMmakerVMv5.ova.torrent\n";
@@ -425,6 +446,13 @@ sub findBinary {
         exit 1;
     }
     $path
+}
+
+sub getLastRelease {
+    my ($directory, $regex) = @_;
+    my @files = split /\n/, `find "$directory" -name "$regex"`;
+    my $file = (sort @files)[-1];
+    substr($file, length($contentDirectory))
 }
 
 # fs functions
