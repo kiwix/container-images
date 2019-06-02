@@ -230,14 +230,6 @@ sub writeHtaccess {
     $content .= "#\n\n";
     $content .= "RewriteEngine On\n\n";
 
-    # Bin (deprecated) redirects
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-linux-x86_64.tar.bz2 ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-win.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.xo /".$binDirectoryName."/0.9/kiwix-0.9.xo\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-server-arm.tar.bz2 ".getLastRelease($releaseDirectory, "kiwix-tools_linux-armhf-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$srcDirectoryName."/kiwix-src.tar.xz ".getLastRelease($releaseDirectory, "kiwix-desktop-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
-
     # Release redirects
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools.tar.xz ".getLastRelease($releaseDirectory, "kiwix-tools-*.tar.xz")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-armhf.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-armhf-*.tar.gz")."\n";
@@ -251,6 +243,7 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
+    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
