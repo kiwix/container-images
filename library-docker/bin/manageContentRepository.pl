@@ -250,28 +250,6 @@ sub writeHtaccess {
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
-    # Dev redirects
-    $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova /".$devDirectoryName."/ZIMmakerVMv6.ova\n";
-    $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova.torrent /".$devDirectoryName."/ZIMmakerVMv5.ova.torrent\n";
-    $content .= "RedirectPermanent /".$devDirectoryName."/KiwixDev.ova /".$devDirectoryName."/KiwixDevVMv4.ova\n";
-    $content .= "RedirectPermanent /".$devDirectoryName."/KiwixDev.ova.torrent /".$devDirectoryName."/KiwixDevVMv4.ova.torrent\n";
-
-    # Wikifundi
-    $content .= "RedirectPermanent /other/wikifundi http://download.openzim.org/wikifundi\n";
-
-    # Backward compatibility redirects
-    # To get the list of failing requests: cat /var/log/nginx/download.kiwix.org.access.log | grep " 404 " | cut -d ' ' -f 7 | grep -v nightly | grep -v favicon | grep -v robots | sort | uniq -c | sort -b -n -r
-    $content .= "RedirectPermanent /zim/0.9/ /zim/wikipedia/\n";
-    $content .= "RedirectPermanent /install/ /bin/\n";
-    $content .= "RedirectPermanent /zim/0.9/wikipedia_en_ray_charles_03_2013.zim /zim/wikipedia/wikipedia_en_ray_charles_2015-06.zim\n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_en_ray_charles_03_2013.zim /zim/wikipedia/wikipedia_en_ray_charles_2015-06.zim\n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_en_all_nopic_01_2012.zim.torrent /zim/wikipedia_en_all_nopic.zim.torrent\n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_fa_all_nopic_2015-01.zim /zim/wikipedia_fa_all_nopic.zim \n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_fa_all_05_2014.zim /zim/wikipedia_fa_all.zim\n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_en_for_schools_2013.zim /zim/wikipedia_en_for-schools.zim\n";
-    $content .= "RedirectPermanent /zim/wikipedia/wikipedia_es_all_03_2012.zim /zim/wikipedia_es_all.zim\n";
-    $content .= "\n\n";
-
     # Folder description
     $content .= "AddDescription \"Deprectated stuff kept only for historical purpose\" archive\n";
     $content .= "AddDescription \"All versions of Kiwix, the software (no content is in there)\" release\n";
