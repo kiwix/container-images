@@ -331,7 +331,7 @@ sub writeHtaccess {
 
     # Write a few .htaccess files in sub-directories
     $content = "AddDescription \" \" *\n";
-    foreach my $subDirectory ("archive", "bin", "dev", "nightly", "other", "src", "zim", "library") {
+    foreach my $subDirectory ("archive", "release", "dev", "nightly", "other", "src", "zim", "library") {
         my $htaccessPath = $contentDirectory."/".$subDirectory."/.htaccess";
         writeFile($htaccessPath, $content);
     }
