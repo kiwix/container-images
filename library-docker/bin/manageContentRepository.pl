@@ -231,7 +231,6 @@ sub writeHtaccess {
     $content .= "RewriteEngine On\n\n";
 
     # Bin (deprecated) redirects
-    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.apk /".$binDirectoryName."/android/kiwix-2.4.apk\n";
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-linux-x86_64.tar.bz2 ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix-win.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
     $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.xo /".$binDirectoryName."/0.9/kiwix-0.9.xo\n";
@@ -257,6 +256,9 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
+
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
+    $content .= "RedirectPermanent /".$binDirectoryName."/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
     # Dev redirects
     $content .= "RedirectPermanent /".$devDirectoryName."/ZIMmaker.ova /".$devDirectoryName."/ZIMmakerVMv6.ova\n";
