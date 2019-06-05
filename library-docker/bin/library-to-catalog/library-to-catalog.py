@@ -35,8 +35,6 @@ logger.setLevel(logging.DEBUG)
 
 with_checksum = True  # debug only
 with_size = True  # debug only
-use_zip = False
-
 
 def get_remote_checksum(url):
     ''' retrieve SHA-256 checksum of download using special mirrorbrain url '''
@@ -72,21 +70,6 @@ def get_remote_size(url):
 def get_local_size(fpath):
     ''' size in bytes of a local file '''
     return os.path.getsize(fpath)
-
-
-def get_zip_url(url):
-    ''' convert .zim.meta4 url to .zip one '''
-    purl = urlparse(url)
-    path = purl.path
-    fname = os.path.basename(url)
-    dirent = path[:len(path) - len(fname)]
-
-    new_fname = "kiwix-0.9+{fname}".format(
-        fname=re.sub(r'\.zim\.meta4$', '.zip', fname))
-    new_dirent = dirent.replace("/zim/", "/portable/")
-    new_path = "{dirent}{fname}".format(dirent=new_dirent, fname=new_fname)
-    return urljoin(url, new_path)
-
 
 def get_zim_url(url):
     ''' convert .zim.meta4 url to .zim one '''
@@ -141,8 +124,7 @@ def get_tags_label(tags):
     return ", ".join(labels)
 
 
-def convert(library_fpath, catalog_fpath,
-            format='zim', local_repository=False):
+def convert(library_fpath, catalog_fpath, local_repository=False):
 
     logger.info("starting convertion of `{}` to `{}`"
                 .format(library_fpath, catalog_fpath))
@@ -191,7 +173,7 @@ def convert(library_fpath, catalog_fpath,
             lang_1 = lang_3
 
         # url to final content file
-        url = get_zip_url(meta_url) if use_zip else get_zim_url(meta_url)
+        url = get_zim_url(meta_url)
 
         # size and checksums are either captured over network or using
         # a local copy of all the files.
@@ -224,9 +206,6 @@ def convert(library_fpath, catalog_fpath,
                 logger.debug("fetching checkum for {}".format(url))
                 sha256sum = get_remote_checksum(url)
 
-        # catalog expects either zipped-zim or zim
-        btype = "zipped-zim" if use_zip else "zim"
-
         # identifiers
         kind = get_kind(book)
         if lang_1 is not None:
@@ -243,7 +222,7 @@ def convert(library_fpath, catalog_fpath,
             'url': url,
             'size': size,
             'sha256sum': sha256sum,
-            'type': btype,
+            'type': "zim",
             'langid': langid,
         }
 
@@ -259,7 +238,7 @@ def convert(library_fpath, catalog_fpath,
 
 if __name__ == '__main__':
     if not len(sys.argv[1:]) == 2:
-        logger.error("Usage: {} library.xml catalog.yml [zim|zip]"
+        logger.error("Usage: {} library.xml catalog.yml"
                      .format(sys.argv[0]))
         sys.exit(1)
 
