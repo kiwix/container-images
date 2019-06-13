@@ -12,15 +12,23 @@
 # Author: Mirzali
 # Author: Orbot707
 
+android.ui.add_bookmark=Cayek dekerê
 android.ui.all_history_cleared_toast=Tarix pêro biyo pak
 android.ui.articlesearch_hint=Çekuya ke qesiqande cı geyre yo
 android.ui.bookmark_added=Cay debiyay
+android.ui.bookmark_removed=Cayek wedariya
 android.ui.bookmarks_restored=Cayan timar ke
 android.ui.button_backtotop=Şo serêniye
 android.ui.choose_file=Yew dosyay zerreki weçine (*.zim)
-# Fuzzy
-android.ui.customapp_missing_content=Aplikasyona şıma verêna,. \nEna belki zi şıma çı wext ke dosyay berê SDKart miyan ravêrena.  Şıma rê Play Store  ra aplikasyona xo rocane  kerdış yana fına barkerdış icab keno
+android.ui.clear_all_history_dialog_title=Verori pêro pak kerê
+android.ui.clear_recent_and_tabs_history_dialog=Şıma qayılê tabanê aktivan reset kerê u cıgeyrayışê xo yê verêni pak kerê?
+android.ui.clear_recent_history_dialog=Şıma qayılê cıgeyrayışê xo yê verêni pak kerê?
+android.ui.confirm_stop_download_msg=Şıma qayılê nê ronayışi vındarne?
+android.ui.confirm_stop_download_title=Wa ronayış vındero?
+android.ui.customapp_missing_content=Aplikasyona şıma xerpiyayiya. No hal belki zi kerta SD miyan ra dosyay wedarna yê, cı ki ra biyo. Aplikasyon wedarne u Play Store ra fına ronayış ganiyo.
 android.ui.delete=Bestere
+android.ui.delete_recent_search_item=No item wa esterıyo?
+android.ui.delete_specific_search_toast=Cıgeyrayışo peyên wedariya
 android.ui.delete_specific_zim=Na dosya wa besteriyo?
 android.ui.delete_specific_zim_toast=Dosya esteriye
 android.ui.delete_tab=Veciyayışi bestere
@@ -48,6 +56,9 @@ android.ui.external_storage=Teber
 android.ui.get_library_over_network=Lista zerreki barkerdışi rê torre bıgurene. (Nêzdiyê 6MB)
 android.ui.go_to_play_store=Şo be Play Store
 android.ui.got_it=Mı fehm kerd
+android.ui.help_12=Dosyay ZIM'e gırdi seni kar neyênê?
+android.ui.help_20=Seba tercih kerdışê Kiwixi rê teşekur kem!
+android.ui.help_2=Kiwix se keno ?
 android.ui.help_5=Zerrek koti dero?
 android.ui.help_6=Zerrekê ma pela websita Kiwixi dero.
 android.ui.internal_storage=Daxili
