@@ -238,10 +238,10 @@ sub writeHtaccess {
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop.tar.gz ".getLastRelease($releaseDirectory, "kiwix-desktop-*.tar.gz")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_windows_x64.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/kiwix-desktop_x86_64.appimage ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_x86_64.appimage ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
 
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-dekstop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
+    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
