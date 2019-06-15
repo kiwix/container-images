@@ -224,7 +224,14 @@ sub writeWiki {
         $content .= $_;
     }
 
-    writeFile($zimDirectory."/.contentPage.wiki", $content);
+    # Write wiki directory to a temporary file
+    my $tmpWikiCode = $tmpDirectory."/.contentPage.wiki";
+    writeFile($tmpWikiCode, $content);
+
+    # Upload wiki code (and delete temporary file)
+    my $cmd = qq(updateWikiPage.py 'wiki.kiwix.org' 'LibraryBot' '$wikiPassword' 'Template:ZIMdumps/content' '$tmpWikiCode' 'Automatic update of the ZIM library');
+    `$cmd`
+    unlink($tmpWikiCode);
 }
 
 # Write http://dwonload.kiwix.org .htaccess for better html page
