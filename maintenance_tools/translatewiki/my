@@ -93,6 +93,7 @@ android.ui.rescan_fs_warning=ဒေါင်းလုပ်ရယူနိုင
 android.ui.save_media_error=မီဒီယာဖိုင်ကို သိမ်းရန်ကြိုးစားနေစဉ် အမှားတစ်ခု ဖြစ်ပေါ်သွားသည်။
 android.ui.save_media_saved=မီဒီယာဖိုင်ကို %s အဖြစ် Android/media/org.kiwix.../ တွင် သိမ်းပြီးဖြစ်သည်။
 android.ui.search_label=ရှာဖွေရန်
+android.ui.space_available=နေရာလွတ် ရရှိနိုင်မှု-
 android.ui.time_day=ရက်
 android.ui.time_hour=နာရီ
 android.ui.time_left=ကျန်ရှိ

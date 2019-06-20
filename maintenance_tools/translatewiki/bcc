@@ -1,6 +1,7 @@
 # Messages for Southern Balochi (جهلسری بلوچی)
 # Exported from translatewiki.net
 # Author: Baloch Afghanistan
+# Author: Sultanselim baloch
 
 android.ui.articlesearch_hint=برای یافتن مقاله‌ها تایپ کنید
 # Fuzzy
@@ -88,7 +89,7 @@ ui.main.osxhideapp=چیهر داتین &brand.brandShortName;
 ui.main.osxhideothers=دیگرانی چیهر داتین
 ui.main.osxservices=خدمات
 ui.main.osxshowall=نمایش همه
-ui.main.preferences=ترجیحات
+ui.main.preferences=واھشتاں
 ui.main.print=پرینٹ
 ui.main.printPdf=چاپ در قالب پی‌دی‌اف
 ui.main.purgeHistory=پاکسازی تاریخچه
@@ -156,7 +157,7 @@ ui.preferences.browse=مرور
 ui.preferences.cancel=لغو
 ui.preferences.downloadCatalogs=دانلود کالانما(ها) از راه دور
 ui.preferences.neverAskToIndex=هرگز از شاخه نپرسید
-ui.preferences.preferences=ترجیحات
+ui.preferences.preferences=واھشتاں
 ui.preferences.profileDirectory=شاخهٔ نمایه
 ui.preferences.save=ذخیره
 ui.preferences.tabs=به‌خاطرسپردن زبانه‌ها
