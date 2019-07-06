@@ -104,16 +104,16 @@ services:
     restart: always
 
   ftpd:
-    image: gimoh/pureftpd 
+    image: gimoh/pureftpd
     container_name: ftpd
     ports:
       - "21:21"
       - "30000-30050:30000-30050"
     volumes:
       - "/data/download:/var/lib/ftp"
-    entrypoint : 
-      - /usr/local/sbin/dkr-init 
-      - -p 
+    entrypoint:
+      - /usr/local/sbin/dkr-init
+      - -p
       - "30000:30050"
     restart: always
 
@@ -136,7 +136,7 @@ services:
       - "/data/quarantine/zim:/zim_quarantine"
       - "/data/log/zimquarantine:/zim_log"
     environment:
-      - VALIDATION_OPTION=NO_CHECK
+      - VALIDATION_OPTION=NO_QUARANTINE
     restart: always
 
   matomo-download:
