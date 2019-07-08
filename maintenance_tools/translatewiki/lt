@@ -8,14 +8,11 @@
 # Author: Mantak111
 # Author: Zygimantus
 
-android.ui.articlesearch_hint=Klasifikuoti kaip informacijos paieškos straipsnius
 android.ui.bookmark_added=Pridėtos žymos
-android.ui.bookmarks_restored=Atkurtos žymos
 # Fuzzy
 android.ui.button_backtotop=Atgal į viršų
 # Fuzzy
 android.ui.choose_file=Pasirinkite ZIM Turinio Failą (*.zim)
-android.ui.error_articlenotfound=Klaida: nepavyko įkelti straipsnio \"%1$s\" .
 android.ui.error_articleurlnotfound=Klaida: nepavyko įkelti straipsnio (Url: %1$s).
 android.ui.error_fileinvalid=Klaida: pasirinktas failas nėra galiojantis ZIM failas.
 android.ui.error_filenotfound=Klaida: pasirinktas ZIM failas nerastas.
@@ -24,8 +21,6 @@ android.ui.error_nozimfilesfound=Jūsų prietaise ZIM failų nerasta.\nPažvelki
 android.ui.go_to_play_store=Eiti į „Play Store“
 android.ui.menu_read_aloud=Skaityk garsiai
 android.ui.menu_read_aloud_stop=Nustok garsiai skaityti
-# Fuzzy
-android.ui.menu_rescan_fs=Nuskaityti iš naujo SD kortelę
 # Fuzzy
 android.ui.no_bookmarks=Jokių žymių!
 # Fuzzy
@@ -43,10 +38,6 @@ android.ui.pref_nightmode_summary=Rodyti straipsnius su ankstesnėmis spalvomis
 # Fuzzy
 android.ui.pref_zoom_dialog=Mastelio keitimo lygis
 android.ui.pref_zoom_enable=Mastelio keitimo kontrolė
-android.ui.pref_zoom_entry_automatic=Automatinis
-android.ui.pref_zoom_entry_large=Didelis
-android.ui.pref_zoom_entry_medium=Vidutinis
-android.ui.pref_zoom_entry_small=Mažas
 android.ui.rate_dialog_msg_1=Jei jums patinka
 android.ui.rate_dialog_negative=Ne, ačiū
 android.ui.rate_dialog_neutral=Vėliau

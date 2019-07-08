@@ -4,19 +4,15 @@
 # Author: Macofe
 # Author: Michawiki
 
-android.ui.articlesearch_hint=Zapiš, aby nastawki pytał
 # Fuzzy
 android.ui.button_backtotop=Slědk górjej
 # Fuzzy
 android.ui.choose_file=Wopśimjeśowu dataju ZIM (*,zim) wubraś
-android.ui.error_articlenotfound=Zmólka: Nastawk \"%1$s\" njedajo se zacytaś.
 android.ui.error_articleurlnotfound=Zmólka: Nastawk (Url: %1$s) njedajo se zacytaś.
 android.ui.error_fileinvalid=Zmólka: Wubrana dataja njejo płaśiwa ZIM-dataja.
 android.ui.error_filenotfound=Zmólka: Wubrana ZIM-dataja njedajo se namakaś.
 # Fuzzy
 android.ui.error_nozimfilesfound=ZIM-dataje njejsu se na twójom rěźe namakali.\nPśepytaj bok pomocy,  aby rozwězanja dostał, kak wopśimjeśe dajo se do Kiwix zacytaś.\nJolic ZIM-dataje jo na twójom rěźe/eksternem składowaku, wopytaj za jadnu minutku hyšći raz abo startuj swój rěd znowego.
-# Fuzzy
-android.ui.menu_rescan_fs=SD-kórtu znowego zaskanowaś
 android.ui.open_in_new_tab=Wótkaz w nowem rejtarku wócyniś?
 android.ui.pref_backtotop=Slědk górjej
 android.ui.pref_backtotop_summary=Tłóčašk na kóńcu boka pokazaś, aby k zachopjeńkoju šeł
@@ -29,10 +25,6 @@ android.ui.pref_nightmode_summary=Nastawki z nawopacnymi barwami pokazaś
 # Fuzzy
 android.ui.pref_zoom_dialog=Skalěrowański schójźeńk
 android.ui.pref_zoom_enable=Skalowěrańske elementy
-android.ui.pref_zoom_entry_automatic=Awtomatiski
-android.ui.pref_zoom_entry_large=Wjeliki
-android.ui.pref_zoom_entry_medium=Srědna
-android.ui.pref_zoom_entry_small=Mały
 # Fuzzy
 android.ui.rescan_fs_warning=Skanujo se za ZIM-datajami, pšosym cakaj...
 ui.main.about=Wó &brand.brandShortName;

@@ -9,16 +9,13 @@
 # Author: Teslaton
 # Author: Wizzard
 
-android.ui.articlesearch_hint=Napíšte čo chcete vyhľadať
 android.ui.bookmark_added=Záložka bola pridaná
-android.ui.bookmarks_restored=Záložky boli obnovené
 # Fuzzy
 android.ui.button_backtotop=Späť na začiatok
 # Fuzzy
 android.ui.choose_file=Vyberte súbor so ZIM obsahom (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Vaša aplikácia je poškodená.\nToto sa stáva, keď vymažete súbory na SD Karte.\nMusíte odinštalovať a potom znovu nainštalovať aplikáciu z Obchodu Play.
-android.ui.error_articlenotfound=Chyba: Načítavanie článku \"%1$s\" sa nepodarilo.
 android.ui.error_articleurlnotfound=Chyba: Načítavanie článku (Url: %1$s) sa nepodarilo.
 android.ui.error_fileinvalid=Chyba: Vybraný súbor nie je platný ZIM súbor.
 android.ui.error_filenotfound=Chyba: Vybraný súbor ZIM sa nenašiel.
@@ -27,8 +24,6 @@ android.ui.error_nozimfilesfound=Na vašom zariadení sa nenašli žiadne ZIM s�
 android.ui.go_to_play_store=Prejsť do Obchodu Play
 android.ui.menu_read_aloud=Čítať nahlas
 android.ui.menu_read_aloud_stop=Zastaviť čítanie nahlas
-# Fuzzy
-android.ui.menu_rescan_fs=Prehľadať SD kartu
 # Fuzzy
 android.ui.no_bookmarks=Žiadne záložky!
 android.ui.no_reader_application_installed=Nebola nájdená nainštalovaná aplikácia pre tento typ súboru
@@ -48,10 +43,6 @@ android.ui.pref_nightmode_summary=Zobraziť články s otočenými farbami
 # Fuzzy
 android.ui.pref_zoom_dialog=Úroveň lupy
 android.ui.pref_zoom_enable=Ovládanie prvky lupy
-android.ui.pref_zoom_entry_automatic=Automaticky
-android.ui.pref_zoom_entry_large=Veľké
-android.ui.pref_zoom_entry_medium=Stredné
-android.ui.pref_zoom_entry_small=Malé
 android.ui.rate_dialog_msg_1=Ak sa vám náš produkt páči
 android.ui.rate_dialog_msg_2=, prosím, obetujte chvíľu vášho času a ohodnoťte ho. Vďaka za vašu podporu!
 android.ui.rate_dialog_negative=Nie, vďaka

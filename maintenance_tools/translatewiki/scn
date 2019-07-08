@@ -4,12 +4,10 @@
 # Author: Sarvaturi
 # Author: Wikice
 
-android.ui.articlesearch_hint=Scrivi p'arricircari li vuci
 # Fuzzy
 android.ui.button_backtotop=Torna a l'accuminzagghia
 # Fuzzy
 android.ui.choose_file=Silizziona nu file di cuntinutu ZIM (*.zim)
-android.ui.error_articlenotfound=Erruri: carricamentu dâ vuci \"%1$s\" nun arrinisciutu.
 android.ui.error_articleurlnotfound=Erruri: carricamentu dâ vuci (url: %1$s) nun arrinisciutu.
 android.ui.error_fileinvalid=Erruri: lu file silizziunatu nun è nu file ZIM vàlidu.
 android.ui.error_filenotfound=Erruri: lu file ZIM silizziunatu nun fu attruvatu.
@@ -17,8 +15,6 @@ android.ui.error_filenotfound=Erruri: lu file ZIM silizziunatu nun fu attruvatu.
 android.ui.error_nozimfilesfound=Nuddu file ZIM attruvatu ntô tò dispusitivu.\nLeggi la pàggina d'aiutu p'ottèniri nnicazzioni supra comu carricari lu cuntinutu n Kiwix.\nSi nzirìu nu file ZIM supra lu tò dispusitivu, putissi tintari arrè tra un minutu o riavviari lu dispusitivu.
 android.ui.menu_read_aloud=Leggi a vuci àuta
 android.ui.menu_read_aloud_stop=Ntirrumpi littura a vuci àuta
-# Fuzzy
-android.ui.menu_rescan_fs=Arripeti scanzioni scheda SD
 android.ui.open_in_new_tab=Grapi lu liami nta na scheda nova
 android.ui.pref_backtotop=Torna a l'accuminzagghia
 android.ui.pref_backtotop_summary=Ammustra nu pulsanti â fini dâ pàggina pi scùrriri finu a l'accuminzagghia
@@ -31,10 +27,6 @@ android.ui.pref_nightmode_summary=Talìa li vuci cu culura mmirtuti
 # Fuzzy
 android.ui.pref_zoom_dialog=Liveddu di ngrannimentu
 android.ui.pref_zoom_enable=Cuntrolli ngrannimentu
-android.ui.pref_zoom_entry_automatic=Autumàticu
-android.ui.pref_zoom_entry_large=Granni
-android.ui.pref_zoom_entry_medium=Mediu
-android.ui.pref_zoom_entry_small=Nicu
 # Fuzzy
 android.ui.rescan_fs_warning=Scanzioni pi file ZIM, aspetta...
 # Fuzzy

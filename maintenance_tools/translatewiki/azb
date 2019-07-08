@@ -10,13 +10,10 @@
 # Author: Mousa
 # Author: Sadiqr
 
-android.ui.articlesearch_hint=مقاله‌لری تاپماق اۆچون تایپ ائدین
 android.ui.bookmark_added=بوکمارک آرتیریلدی
-android.ui.bookmarks_restored=بوکمارکلار ذخیره اولوندو.
 android.ui.button_backtotop=اوسته قاییت
 android.ui.choose_file=بیر  محتوایی فایلینی سئچین (*.zim)
 android.ui.customapp_missing_content=برنامه نیز ایشکاللیدیر.\nبو، خاریجی حافظه دن فایللاری سیلنده اوز وئره بیلر.\nبرنامه نی سیلیب، پلی استوردان یئنیدن نصب ائدین.
-android.ui.error_articlenotfound=خطا：«%1$s» مقاله سی یوکلنمه دی.
 android.ui.error_articleurlnotfound=خطا：(Url: %1$s) مقاله سی یوکلنمه دی.
 android.ui.error_fileinvalid=خطا：سئچیلمیش فایل بیر گئچرلی ZIM فایلی دئییل.
 android.ui.error_filenotfound=خطا： سئچیلمیش ZIM فایلی تاپیلمادی.
@@ -24,7 +21,6 @@ android.ui.error_nozimfilesfound=دستگاهینیزدا هئچ بیر موحت
 android.ui.go_to_play_store=پلی استورا گئت
 android.ui.menu_read_aloud=اوجادان اوخو
 android.ui.menu_read_aloud_stop=اوجادان اوخودماغی دوردور
-android.ui.menu_rescan_fs=SD کارتی یئنی‌دن آختار
 android.ui.no_bookmarks=هئچ بیر بوکمارک یوخدور
 android.ui.no_reader_application_installed=بو نوع فایل اوچون بیر نصب اولونموش برنامه تاپیلمادی
 android.ui.no_section_info=هئچ بیر مؤحتوا باشلیغی تاپیلمادی
@@ -40,10 +36,6 @@ android.ui.pref_nightmode=گئجه مودو
 android.ui.pref_nightmode_summary=ترس ائدیلمیش بوْیالارلا مقاله‌لری گؤستر
 android.ui.pref_zoom_dialog=بؤیوتمه لولی
 android.ui.pref_zoom_enable=بؤیوتمه کونتروللاری
-android.ui.pref_zoom_entry_automatic=اوتوماتیک
-android.ui.pref_zoom_entry_large=بؤیوک
-android.ui.pref_zoom_entry_medium=اورتا
-android.ui.pref_zoom_entry_small=کیچیک
 android.ui.rate_dialog_msg_1=فایدالانماقدان لذت آپارسانیز،
 android.ui.rate_dialog_msg_2=لۆطفاً بیر لحظه رۆتبه‌لندیرمک اۆچون واخت قوْیون. حیمایتینیز اۆچون تشکور ائدیریک!
 android.ui.rate_dialog_negative=یوْخ، تشکورلر
@@ -53,6 +45,7 @@ android.ui.rate_dialog_title=لۆطفاً بیزی رۆتبه‌لندیرین
 android.ui.request_storage=آفلاین فایل‌لارینا چاتماق اۆچون، آنبارینیزا ال تاپمالی‌ییق.
 android.ui.rescan_fs_warning=اندیریلن فایللاری آختاریلیر، لوطفا گؤزله‌یین...
 android.ui.save_media_error=بۇ مِدیانی ذخیره ائدنده بیر خطا باش وئردی!
+# Fuzzy
 android.ui.save_media_saved=مدیا Android/media/org.kiwix.../ فولدرینیزده ذخیره اولوندو.
 android.ui.tts_lang_not_supported=بۇ صفحه‌نین دیلی ساپوْرتلانماییر٬ یا دا موناسیب دیل دئیتاسی نصب اوْلونماییبدیر. مقاله احتیماللا اوْخونولماز اوْلا بیلر.
 ui.main.about=برئندی حاقیندا. قیسا  برئند آدی؛

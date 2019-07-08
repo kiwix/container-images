@@ -5,30 +5,24 @@
 # Author: VASANTH S.N.
 # Author: Vishwanatha Badikana
 
-android.ui.add_bookmark=ಬುಕ್ ಮಾರ್ಕ್ ಸೇರಾಲೆ.
-android.ui.articlesearch_hint=ತೂಪಿನ ಲೇಕನೊಲೆನ್ ಟೈಪ್ ಮಲ್ಪಿ
 android.ui.button_backtotop=ಪಿರ ಮಿತ್ತ್ ತೂಲೆ
 android.ui.clear_all_history_dialog_title=ಇತಿಹಾಸೊನ್ ಮಾಜಾಲೆ
 android.ui.delete=ಮಾಜಾಲೆ
 android.ui.deleted_message=ಮಾಜಾಯಿನ
 android.ui.did_you_know=ಈರೆಗ್ ಗೊತ್ತುಂಡೇ?
-android.ui.download_close=ಮುಚ್ಚಿಲೆ
 android.ui.download_pause=ವಂತೆ ಪೋರ್ತು ಉಂತಲೇ
 android.ui.download_stop=ಉಂತಾಲೆ
 android.ui.external_storage=ಪಿದಾಯಿತ
 android.ui.go_to_play_store=Play Store ಗ್ ಪೋಲೆ
 android.ui.got_it=ಗೊತ್ತಂಡ್
 android.ui.internal_storage=ಉಲಾಯಿತಾ
-android.ui.menu_back=ಪಿರವು
 android.ui.menu_bookmarks=ಗುರ್ತು ಪಾಡಿನ ಪುಟಕುಲು
 android.ui.menu_bookmarks_list=ಗುರ್ತು ಪಾಡಿನ ಪುಟಕುಲು
-android.ui.menu_forward=ದುಂಬು
 android.ui.menu_fullscreen=ಪೂರ್ಣೊ ಪರದೆ
 android.ui.menu_help=ಸಕಾಯ
 android.ui.menu_home=ಮುಖ್ಯಪುಟ
 android.ui.menu_read_aloud=ಗಟ್ಟಿಯಾದ್ ಓದ್
 android.ui.menu_read_aloud_stop=ಗಟ್ಟಿಯಾದ್ ಓದುನೆನ್ ಉಂತಾಲ
-android.ui.menu_rescan_fs=ಎಸ್‍ಡಿ ಕಾರ್ಡ್‌ನ್ ಪಿರ ಸ್ಕ್ಯಾನ್ ಮಾಲ್ಪುಲೆ.
 android.ui.menu_search=ಲೇಕನೊ ನಾಡ್ಲೆ
 android.ui.menu_searchintext=ಪುಟೊಟು ನಾಡ್ಲೆ.
 android.ui.menu_settings=ಸಂಯೋಜನೆಲು
@@ -49,10 +43,6 @@ android.ui.pref_language_title=ಬಾಸೆ
 android.ui.pref_nightmode=ಕತ್ತಲೆದ ಕ್ರಮೊ
 android.ui.pref_zoom_dialog=ದೂರೊ ಕೈತಲ್ದ ಅಂತರೊ.
 android.ui.pref_zoom_enable=ದೂರೊ ಕೈತಲ್ದ ಸಮೀಕರನೊ
-android.ui.pref_zoom_entry_automatic=ತನ್ನಿಚ್ಚೆಗೆ
-android.ui.pref_zoom_entry_large=ಮಲ್ಲ
-android.ui.pref_zoom_entry_medium=ಮಾಧ್ಯಮೊ
-android.ui.pref_zoom_entry_small=ಎಲ್ಯ
 android.ui.pref_zoom_sub_title=ಮಲ್ಲೆ ಮಲ್ಪುಲೆ
 android.ui.previous=ದುಂಬುತಾ
 android.ui.proceed=ಮುಂದುವರಿಪುಲೆ

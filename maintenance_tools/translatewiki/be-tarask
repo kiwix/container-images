@@ -7,17 +7,13 @@
 # Author: Wizardist
 # Author: Zedlik
 
-android.ui.add_bookmark=Дадаць закладку
 android.ui.all_history_cleared_toast=Уся гісторыя ачышчаная
-android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
 android.ui.bookmark_removed=Закладка выдаленая
-android.ui.bookmarks_restored=Закладкі адноўленыя
 android.ui.button_backtotop=Вярнуцца ўверх
 android.ui.choose_file=Абярыце файл зьместу (*.zim)
 android.ui.clear_all_history_dialog_title=Ачысьціць усю гісторыю
 android.ui.clear_recent_and_tabs_history_dialog=Вы сапраўды хочаце выдаліць гісторыю пошуку і скінуць усе актыўныя закладкі?
-android.ui.clear_recent_history_dialog=Вы ўпэўненыя, што жадаеце выдаліць Вашую гісторыю пошуку?
 android.ui.confirm_stop_download_msg=Вы ўпэўненыя, што хочаце спыніць гэтую загрузку?
 android.ui.confirm_stop_download_title=Спыніць загрузку?
 android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а потым усталяваць яе наноў з Play Store.
@@ -31,11 +27,8 @@ android.ui.delete_zim_failed=Выбачайце, мы не змаглі выда
 android.ui.deleted_message=выдалена
 android.ui.did_you_know=Ці ведалі вы?
 android.ui.do_not_ask_anymore=Болей не пытаць
-android.ui.download_close=Закрыць
 android.ui.download_complete_snackbar=Загрузка завершаная
-android.ui.download_play=Граць
 android.ui.download_stop=Спыніць
-android.ui.error_articlenotfound=Памылка: загрузка артыкула \«%1$s\» не атрымалася.
 android.ui.error_articleurlnotfound=Памылка: загрузка артыкула (Url: %1$s) не атрымалася.
 android.ui.error_fileinvalid=Памылка: абраны файл не зьяўляецца слушным ZIM-файлам.
 android.ui.error_filenotfound=Памылка: абраны ZIM-файл ня знойдзены.
@@ -49,7 +42,6 @@ android.ui.language_count=(%1$d)
 android.ui.local_zims=Прылада
 android.ui.menu_read_aloud=Чытаць уголас
 android.ui.menu_read_aloud_stop=Спыніць чытаньне ўголас
-android.ui.menu_rescan_fs=Перасканаваць SD-картку
 android.ui.no_bookmarks=Няма закладак
 android.ui.no_reader_application_installed=Ня знойдзеныя ўсталяваныя праграмы для гэтага тыпу файлу
 android.ui.no_section_info=Ня знойдзеныя загалоўкі зьместу
@@ -69,10 +61,6 @@ android.ui.pref_nightmode=Начны рэжым
 android.ui.pref_nightmode_summary=Паказваць артыкулы ў інвэртаваных колерах
 android.ui.pref_zoom_dialog=Узровень маштабаваньня
 android.ui.pref_zoom_enable=Кіраваньне маштабам
-android.ui.pref_zoom_entry_automatic=Аўтаматычна
-android.ui.pref_zoom_entry_large=Вялікі
-android.ui.pref_zoom_entry_medium=Сярэдні
-android.ui.pref_zoom_entry_small=Дробны
 android.ui.rate_dialog_msg_1=Калі вам падабаецца карыстацца
 android.ui.rate_dialog_msg_2=, калі ласка, знайдзіце час, каб ацаніць. Дзякуем за вашую падтрымку!
 android.ui.rate_dialog_negative=Не, дзякуй
@@ -82,6 +70,7 @@ android.ui.rate_dialog_title=Калі ласка, ацаніце нас
 android.ui.request_storage=Каб атрымаць доступ да зьместу оф-лайн, нам трэба мець доступ да вашага сховішча
 android.ui.rescan_fs_warning=Пошук зьместу для спампоўваньня, калі ласка, пачакайце…
 android.ui.save_media_error=Узьнікла памылка пры захаваньні мэдыяфайлу!
+# Fuzzy
 android.ui.save_media_saved=Мэдыя-файл захаваны як %s у Android/media/org.kiwix.../
 android.ui.tts_lang_not_supported=Мова гэтай старонкі не падтрымліваецца або адпаведныя зьвесткі мовы не былі ўсталяваныя. Артыкул можа быць няправільна прачытаны.
 ui.main.about=Пра &brand.brandShortName;

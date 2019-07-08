@@ -5,7 +5,6 @@
 # Author: Macofe
 # Author: Rgaudin
 
-android.ui.articlesearch_hint=I ka kunnafoni ɲinintaw sɛbɛn yan.
 # Fuzzy
 android.ui.choose_file=I mago bɛ fisiye min na ZIMU kɔnɔ, o suganti yan.
 android.ui.error_articleurlnotfound=Fili: Kunnafoni (Url: %1$s)  sariziyeli tigɛra sira la.

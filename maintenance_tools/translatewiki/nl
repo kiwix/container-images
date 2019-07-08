@@ -10,16 +10,13 @@
 # Author: Siebrand
 # Author: Southparkfan
 
-android.ui.articlesearch_hint=Voer tekst in om pagina's te zoeken
 android.ui.bookmark_added=Bladwijzer toegevoegd
-android.ui.bookmarks_restored=Bladwijzers hersteld
 # Fuzzy
 android.ui.button_backtotop=Terug naar boven
 # Fuzzy
 android.ui.choose_file=Selecteer een ZIM inhoudsbestand (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Uw programma is beschadigd.\nDit kan gebeuren als u bestanden van de SD-kaart verwijdert.\nU moet de App verwijderen opnieuw installeren uit de Play Store.
-android.ui.error_articlenotfound=Fout: Het laden van de pagina \"%1$s\" is mislukt.
 android.ui.error_articleurlnotfound=Fout: Het laden van de pagina (URL: %1$s) is mislukt.
 android.ui.error_fileinvalid=Fout: het geselecteerde bestand is geen geldig ZIM-bestand.
 android.ui.error_filenotfound=Fout: het geselecteerde ZIM-bestand kon niet gevonden worden.
@@ -30,8 +27,6 @@ android.ui.help_6=Onze inhoud is ondergebracht op de Kiwix website
 android.ui.language_count=(%1$d)
 android.ui.menu_read_aloud=Voorlezen
 android.ui.menu_read_aloud_stop=Stoppen met voorlezen
-# Fuzzy
-android.ui.menu_rescan_fs=SD-kaart opnieuw scannen
 # Fuzzy
 android.ui.no_bookmarks=Geen favorieten!
 android.ui.no_reader_application_installed=Kon geen geïnstalleerde applicatie vinden voor dit type bestand
@@ -53,10 +48,6 @@ android.ui.pref_nightmode_summary=Pagina's weergeven met omgekeerde kleuren
 # Fuzzy
 android.ui.pref_zoom_dialog=Zoomniveau
 android.ui.pref_zoom_enable=Besturingselementen voor zoomen
-android.ui.pref_zoom_entry_automatic=Automatisch
-android.ui.pref_zoom_entry_large=Groot
-android.ui.pref_zoom_entry_medium=Gemiddeld
-android.ui.pref_zoom_entry_small=Klein
 android.ui.rate_dialog_msg_1=Als u geniet van het gebruik van
 android.ui.rate_dialog_msg_2=, geef dan even een beoordeling. Dank u wel voor uw steun!
 android.ui.rate_dialog_negative=Nee, bedankt

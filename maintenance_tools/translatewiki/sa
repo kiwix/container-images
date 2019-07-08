@@ -6,12 +6,10 @@
 # Author: Macofe
 # Author: NehalDaveND
 
-android.ui.articlesearch_hint=लिखम् अन्वेषितुं लिखतु
 # Fuzzy
 android.ui.button_backtotop=साक्षात् उपरि गच्छतु
 # Fuzzy
 android.ui.choose_file=एतस्याः ZIM पूर्वलिखितसञ्चिकायाः चयनं करोतु (*.zim)
-android.ui.error_articlenotfound=दोषः : \"%1$s\" लेखस्य अवारोपणं विफलम् अभवत् ।
 android.ui.error_articleurlnotfound=दोषः : (Url: %1$s) लेखस्य अवारोपणं विफलम् अभवत् ।
 android.ui.error_fileinvalid=दोषः : चितसञ्चिका योग्या ZIM-सञ्चिका नस्ति ।
 android.ui.error_filenotfound=दोषः : चितसञ्चिका ZIM न प्राप्ता ।
@@ -20,8 +18,6 @@ android.ui.error_nozimfilesfound=भवतः/भवत्याः यन्त
 android.ui.go_to_play_store=प्ले-आपणं गच्छतु
 android.ui.menu_read_aloud=उच्चैः पठ्यताम्
 android.ui.menu_read_aloud_stop=उच्चैः पठनं स्थगयतु
-# Fuzzy
-android.ui.menu_rescan_fs=SD-पत्रं पुनः परिक्ष्यताम्
 # Fuzzy
 android.ui.no_bookmarks=पृष्ठस्मारकं नास्ति!
 # Fuzzy
@@ -40,10 +36,6 @@ android.ui.pref_nightmode_summary=विपरितरङ्गैः लेख
 # Fuzzy
 android.ui.pref_zoom_dialog=वीक्षणस्य (zoom) स्तरम्
 android.ui.pref_zoom_enable=वीक्षण(zoom)नियन्त्रकानि
-android.ui.pref_zoom_entry_automatic=स्वचालितम्
-android.ui.pref_zoom_entry_large=बृहत्
-android.ui.pref_zoom_entry_medium=माध्यमम्
-android.ui.pref_zoom_entry_small=लघु
 android.ui.rate_dialog_msg_1=यदि त्वया उपयोगन लाभः स्वीकृतः
 android.ui.rate_dialog_msg_2=, कृपया क्षणमात्रं मूल्याङ्कनं कुरु. तव प्रतिस्पन्दार्थं कृतज्ञता !
 android.ui.rate_dialog_negative=न, कृतज्ञताः

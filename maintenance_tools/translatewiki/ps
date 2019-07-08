@@ -5,16 +5,13 @@
 # Author: Baloch Khan
 # Author: Kelson
 
-android.ui.articlesearch_hint=د ليکنو موندلو لپاره وټاپئ
 android.ui.bookmark_added=کتاب نښه ورگډه شوه
-android.ui.bookmarks_restored=کتاب نښه بياپرځايول
 # Fuzzy
 android.ui.button_backtotop=بېرته سر ته
 # Fuzzy
 android.ui.choose_file=د ZIM مېنځپانگې يوه دوتنه ټاکل (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=ستاسې کاريال ناکارنده دی.\nدا کېدای شي هغه وخت راپېښ شي کله چې تاسې د SD کارت څخه دوتنې وغورځوئ.\nتاسې بايد ځانگړی کاريال له پلې سټور څخه نانصب او بيانصب کړئ.
-android.ui.error_articlenotfound=تېروتنه: ليکنه برسېرېدنه \"%1$s\" نابريالئ شوه.
 android.ui.error_articleurlnotfound=تېروتنه: ليکنه برسېرېدنه (يو آر ال: %1$s) نابريالئ شوه.
 android.ui.error_fileinvalid=تېروتنه: ستاسې ټاکلې دوتنه يوه کره ZIM دوتنه نه ده.
 android.ui.error_filenotfound=تېروتنه: ستاسې ټاکلې ZIM دوتنه و نه موندل شوه.
@@ -25,8 +22,6 @@ android.ui.menu_help=مرسته
 android.ui.menu_home=کور
 android.ui.menu_read_aloud=په جگ غږ لوستل
 android.ui.menu_read_aloud_stop=په جگ غږ لوستل درول
-# Fuzzy
-android.ui.menu_rescan_fs=SD کارت بياځيرڅارل
 # Fuzzy
 android.ui.no_bookmarks=بې کتاب نښو!
 android.ui.no_reader_application_installed=د دې ډول دوتنې لپاره يو نصب شوی کاريال و نه موندل شو
@@ -46,10 +41,6 @@ android.ui.pref_nightmode_summary=رنگ اړول شوې ليکنې ښکاره �
 # Fuzzy
 android.ui.pref_zoom_dialog=لوډېرولو کچه
 android.ui.pref_zoom_enable=لوډېرولو مهارونې
-android.ui.pref_zoom_entry_automatic=اتوماتيک
-android.ui.pref_zoom_entry_large=لوی
-android.ui.pref_zoom_entry_medium=منځوی
-android.ui.pref_zoom_entry_small=وړوکی
 android.ui.rate_dialog_msg_1=که تاسې يې په کارولو خوند اخيستی وي
 android.ui.rate_dialog_msg_2=، نو مهرباني وکړئ يوه شېبه وخت مو د دې په ارزولو کې ولگوئ. ستاسې له ملاتړ څخه مننه!
 android.ui.rate_dialog_negative=نه، مننه

@@ -27,10 +27,6 @@ android.ui.pref_nightmode_summary=Ցույց տալ հոդվածները «գի�
 # Fuzzy
 android.ui.pref_zoom_dialog=Մասշտաբի չափս
 android.ui.pref_zoom_enable=Մասշտաբի կարգավորումներ
-android.ui.pref_zoom_entry_automatic=Ավտոմատ
-android.ui.pref_zoom_entry_large=Մեծ
-android.ui.pref_zoom_entry_medium=Միջին
-android.ui.pref_zoom_entry_small=Փոքր
 android.ui.your_languages=Ընտրեք լեզուներ.
 android.ui.zim_manager=Գրադարան
 android.ui.zim_novid=Տեսանյութ չկա

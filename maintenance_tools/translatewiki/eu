@@ -7,17 +7,13 @@
 # Author: Subi
 # Author: Xabier Armendaritz
 
-android.ui.add_bookmark=Orri-markatzailea gehitu
 android.ui.all_history_cleared_toast=Historial osoa garbitu da.
-android.ui.articlesearch_hint=Idatzi artikuluak bilatzeko
 android.ui.bookmark_added=Liburu-marka gehitu da
 android.ui.bookmark_removed=Orri-markatzailea ezabatuta
-android.ui.bookmarks_restored=Liburu-markak berrezarri dira
 android.ui.button_backtotop=Gora itzuli
 android.ui.choose_file=Eduki Artxibo bat Aukeratu (*.zim)
 android.ui.clear_all_history_dialog_title=Historial osoa garbitu?
 android.ui.clear_recent_and_tabs_history_dialog=Ziur zaude historiala ezabatu eta aktibatutako erailtz guztiak berrabiarazi nahi dituzula?
-android.ui.clear_recent_history_dialog=Ziur zaude zure azken bilaketen historia garbitu nahi duzula?
 android.ui.confirm_stop_download_msg=Ziur zaude deskarga eten nahi duzula?
 android.ui.confirm_stop_download_title=Deskarga geldiarazi?
 android.ui.customapp_missing_content=Zure aplikazioa hondatuta dago.\nArtxiboak SD Txartelan ezabatzen dituzunean gerta daiteke.\nAplikazioa ezabatu eta berriro instalatu behar duzu Play Storeren bidez.
@@ -32,16 +28,12 @@ android.ui.deleted_message=ezabatua
 android.ui.did_you_know=Ba al zenekien?
 android.ui.do_not_ask_anymore=Ez galdetu berriz
 android.ui.download_change_storage=Memoria hautatzaile gailua
-android.ui.download_close=Itxi
 android.ui.download_complete_snackbar=Deskarga bete da
 android.ui.download_no_space=Ez dago espaziorik artxibo hau jaisteko.
-android.ui.download_over_network=Ziur zaude WiFi gabe hasi nahi duzula deskargatzen?
 android.ui.download_pause=Gelditu
 android.ui.download_paused=pausatua
-android.ui.download_play=Erreproduzitu
 android.ui.download_started_library=Deskarga hasi da...
 android.ui.download_stop=Gelditu
-android.ui.error_articlenotfound=Akatsa: \"%1$s\" artikuluaren kargatzea eten da.
 android.ui.error_articleurlnotfound=Akatsa: (Url: %1$s) artikuluaren kargatzea eten da.
 android.ui.error_fileinvalid=Akatsa: Hautatutako artikulua ez da baliozko ZIM artxiboa.
 android.ui.error_filenotfound=Akatsa: Hautatutako ZIM artxiboa ezin izan da aurkitu.
@@ -52,21 +44,25 @@ android.ui.external_storage=Kanpokoa
 android.ui.get_library_over_network=Sarea erabili eduki zerrenda deskargatzeko. (6MB inguru)
 android.ui.go_to_play_store=Play Store-ra joan
 android.ui.got_it=Ulertu dut
+# Fuzzy
 android.ui.help_10=ZIM artxiboak in-app-aren bidez jaitsi ditzakezu edo aukeratu deskargatu nahi dituzunak eta ordengailuan egin, ZIM artxiboak SD-ra aldatu baino lehen.
 android.ui.help_11=In-app-eko jaitsitako ZIM artxiboak kanpoko memorian daude, Kiwix deritzon karpeta batean.
 android.ui.help_12=Nola erabili ZIM artxibo handiak?
 android.ui.help_13=Zure ZIM artxiboa 4GB baino handiagoa bada, agian ezin izango duzu zure memorian gorde sistemaren mugaketengatik.
+# Fuzzy
 android.ui.help_14=Automatikoki artxibo handiagoak deskargatzen ditu aplikazioan, hauek zuretzat banatzen ditu.
 android.ui.help_15=Beste gailuren batean jaisten bazabiltza, ZIM artxiboa banatu beharko duzu hurrengo softwarea erabiltzen:
 android.ui.help_16=\u2022 On Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 Apple Macen OSX: Banatu eta Kontaktua
 android.ui.help_18=\u2022 On GNU/Linux and with the console: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Oharra: zure artxiboen izena my_big_file.zimaa, my_big_file.zimab... izan behar dute.
+# Fuzzy
 android.ui.help_1=Kiwix-ek webgunean konexiorik gabe sartzeko baimena ematen dizut, esate baterako, Wikipedia modu oso laburtuan.
 android.ui.help_20=Eskerrik asko Kiwik aukeratzeagatik!
 android.ui.help_21=Pozten gara zu gurekin izateaz eta eskertuko genizuke iradokizunak bidaliko bazenigu hurrengo helbidera: android@kiwix.org.
 android.ui.help_2=Zer egiten du Kiwix-ek?
 android.ui.help_3=Kiwix konexio gabeko eduki irakurlea da. Nabigatzaile baten moduan erabiltzen da, baina sarean dauden web orrialdeetan sartu beharrean, ZIM formatoko edukia irakurtzen du.
+# Fuzzy
 android.ui.help_4=Nahiz eta, Kiwix, berez, Wikipedia konexiorik gabe erabiltzeko sortu, beste edukiak ere eskeintzen ditu.
 android.ui.help_5=Non dago edukia?
 android.ui.help_6=Kiwik webgunean dago gure edukia.
@@ -77,19 +73,15 @@ android.ui.hint_contents_drawer_message=Ezkerrerantz eginez artikulu honen eduki
 android.ui.internal_storage=Barneko
 android.ui.language_count=(%1$d)
 android.ui.local_zims=Gailua
-android.ui.menu_back=Atzera
 android.ui.menu_bookmarks=Lastermarkak
 android.ui.menu_bookmarks_list=Lastermarkak
 android.ui.menu_exitfullscreen=Irten pantaila osotik
-android.ui.menu_forward=Aurrera
 android.ui.menu_fullscreen=Pantaila osoa
 android.ui.menu_help=Laguntza
 android.ui.menu_home=Hasiera
-android.ui.menu_library=Artxiboaren edukia jaitsi
 android.ui.menu_randomarticle=Ausazko artikulua
 android.ui.menu_read_aloud=Irakurri ozenki
 android.ui.menu_read_aloud_stop=Ozen irakurtzeari utzi
-android.ui.menu_rescan_fs=SD txartela berreskaneatu
 android.ui.menu_search=Artikulua bilatu
 android.ui.menu_searchintext=Aurkitu orrialdean
 android.ui.menu_settings=Ezarpenak
@@ -101,12 +93,10 @@ android.ui.no_bookmarks=Lastermarkarik ez
 android.ui.no_downloads_here=Hemen ez dago jaitsitako artxiborik
 android.ui.no_files_here=Artxiborik ez hemen
 android.ui.no_network_connection=Ez dago konexiorik
-android.ui.no_network_msg=Ez dago konexiorik
 android.ui.no_reader_application_installed=Ezin izan da aurkitu mota honetako artxiborako instalatutako aplikazioa
 android.ui.no_section_info=Ez da edukiaren goibururik aurkitu
 android.ui.open=Ireki
 android.ui.open_in_new_tab=Ireki lotura fitxa berri batean?
-android.ui.open_partial_zim=Artxibo hau osatugabe egon daiteke. Irekitzen saiatu nahi duzu?
 android.ui.other_languages=Beste hizkuntzak:
 android.ui.path_not_writable=Ezin da nahi den direktoriora sartu, erabilitako bolereekin. Hau konpontzeko hautatu nahi den direktorioa app-eko doikuntza atalean.
 android.ui.pref_autonightmode=Gaueko modo automatikoa
@@ -124,9 +114,9 @@ android.ui.pref_display_title=Erakutsi
 android.ui.pref_external_link_popup_summary=Gaitu popup-a gastu gehigarriez edo konexiorik gabe funtzionatzen ez duten estekez abisatzeko
 android.ui.pref_external_link_popup_title=Kanpo esteketara sartzerakoan ohartarazi
 android.ui.pref_extras=Gehigarriak
-android.ui.pref_full_text_search_summary=Applikazioari baimena eman testua artikuluetan bilatzeko. Kontuz, honek bilaketa moteldu dezake.
-android.ui.pref_full_text_search_title=Testu osoa bilatu
+# Fuzzy
 android.ui.pref_hidetoolbar=Tresna-barra ezkutatu desplazatzean
+# Fuzzy
 android.ui.pref_hidetoolbar_summary=\u2022 On GNU/Linux and with the console: split --bytes=4000M my_big_file.zim
 android.ui.pref_info_title=Informazioa
 android.ui.pref_info_version=Bertsioa
@@ -142,10 +132,6 @@ android.ui.pref_storage=Biltegia
 android.ui.pref_wifi_only=Edukia WiFi-arekin baino ez deskargatu.
 android.ui.pref_zoom_dialog=Zoom maila
 android.ui.pref_zoom_enable=Zoom kontrola
-android.ui.pref_zoom_entry_automatic=Automatikoa
-android.ui.pref_zoom_entry_large=Handia
-android.ui.pref_zoom_entry_medium=Ertaina
-android.ui.pref_zoom_entry_small=Txikia
 android.ui.pref_zoom_sub_title=Zooma
 android.ui.previous=Aurrekoa
 android.ui.proceed=Jarraitu
@@ -157,12 +143,12 @@ android.ui.rate_dialog_positive=Puntuatu!
 android.ui.rate_dialog_title=Mesedez, puntua gaitzazu
 android.ui.reboot_message=Android 6.0ko bug batengatik gailua berabiarazi behar da, guk baimenik ez izateko zure biltegian sartzen jarraitzeko. Sentitzen dugu arazo honek sortu ditzakenengatik.
 android.ui.remote_zims=Konektatuta
-android.ui.remove_bookmark=Orri-markadorea kendu
 android.ui.request_storage=Konexiorik gabeko edukian sartzeko zure biltegira sartu behar gara.
 android.ui.request_storage_custom=Pantailaren bat oharpenekin ikusten baduzu, berriro piztu zure gailua konpontzeko.
 android.ui.rescan_fs_warning=Deskargatu daiteken edukia eskaneatzen, itxaron mesedez...
 android.ui.save_media=Media gorde
 android.ui.save_media_error=Akats bat gertatu da media gordetzen zen bitartean!
+# Fuzzy
 android.ui.save_media_saved=Media %s to Android/media/org.kiwix.../ bezala gordeta
 android.ui.search_label=Bilatu
 android.ui.search_widget_text=Kiwix bilatu

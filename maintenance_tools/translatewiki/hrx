@@ -3,19 +3,15 @@
 # Author: Macofe
 # Author: Paul Beppler
 
-android.ui.articlesearch_hint=Zum Suche von Artikle tippe
 # Fuzzy
 android.ui.button_backtotop=Zurück noh uwe hin
 # Fuzzy
 android.ui.choose_file=Wähl en ZIM-Inhaltsdatei aus (*.zim)
-android.ui.error_articlenotfound=Fehler: Das Loode von dem Artikel \"%1$s\" ist fehlgeschloohn.
 android.ui.error_articleurlnotfound=Fehler: Das Loode von der Artikel (URL: %1$s) ist fehlgeschloohn.
 android.ui.error_fileinvalid=Fehler: Die ausgewählte Datei ist ken gültiche ZIM-Datei.
 android.ui.error_filenotfound=Fehler: Die ausgewählte ZIM-Datei konnt net gefund sin.
 # Fuzzy
 android.ui.error_nozimfilesfound=DO worre ken ZIM-Dateie uff deinem Gerät gefund.\nSchau uff den Hillefseite noh, um Lösunge zu dem Loode von Inhalt in Kiwix zu erhalte.\nFalls sich en ZIM-Datei uff deinem Gerät/externe Speicher befindt, kannst du das in en Minut erneit versuche orrer dein Gerät nei starte (oonfänge).
-# Fuzzy
-android.ui.menu_rescan_fs=SD-Karte nei einlese
 android.ui.open_in_new_tab=Link in neier Registerkart uff mache?
 android.ui.pref_backtotop=Zurück noh uwe hin
 android.ui.pref_backtotop_summary=Zeicht en Button am Seitend an, um zum Oonfang hochzuscrolle.
@@ -27,8 +23,6 @@ android.ui.pref_nightmode_summary=Artikel mit umgekehrte Farbe oonsiehn
 # Fuzzy
 android.ui.pref_zoom_dialog=Vergrößerungsstufe
 android.ui.pref_zoom_enable=Zoom-Steierung
-android.ui.pref_zoom_entry_large=Gross
-android.ui.pref_zoom_entry_small=Klen
 # Fuzzy
 android.ui.rescan_fs_warning=Scannierung für ZIM-Dateie. Bittschön woorte …
 ui.main.about=Üwer &brand.brandShortName;

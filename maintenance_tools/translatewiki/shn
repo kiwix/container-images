@@ -3,16 +3,13 @@
 # Author: Saimawnkham
 # Author: Saosukham
 
-android.ui.articlesearch_hint=ပေႃႉသႂ်ႇ တွၼ်ႈတႃႇ သွၵ်ႈႁႃ ပွင်ႈလိၵ်ႈ
 android.ui.bookmark_added=လွင်ႈမၢႆဝႆႉ ထႅမ်သႂ်ႇယဝ်ႉယဝ်ႈ
-android.ui.bookmarks_restored=ၶိုၼ်းဢဝ်ၶိုၼ်း လွင်ႈမၢႆဝႆႉ
 # Fuzzy
 android.ui.button_backtotop=ႁူၼ်ၸူးၽၢႆႇၼိူဝ်သုတ်း
 # Fuzzy
 android.ui.choose_file=လိူၵ်ႈပၼ် ၾၢႆႇလမ်းၼႂ်း ZIM (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=ဢႅပ်ႉၽရီႇၶေးသျိၼ်းၸဝ်ႈၵဝ်ႇ လူႉလႅဝ်ဝႆႉ။ မၼ်းတေၸၢင်ႈပဵၼ် ၽွင်းမိူဝ်ႈၸဝ်ႈၵဝ်ႇ ထွၼ်ပႅတ်ႈၾၢႆႇ တီႈၼိူဝ် ၶႅပ်း SD ၼၼ်ႉဢေႃႈ။ ၸဝ်ႈၵဝ်ႇ တေလႆႈၶိုၼ်း ဢူၼ်းဢွၵ်ႇပႅတ်ႈသေ ​လူဝ်ႇလႆႈၶိုၼ်း ဢူၼ်းသႂ်ႇ ဢႅပ်ႉ ၵႃႈတီႈ Play Store ​ယဝ်ႉ။
-android.ui.error_articlenotfound=လွင်ႈၽိတ်းပိူင်ႈ : လွင်ႈထုတ်ႇပိုတ်ႇ ပွင်ႈလိၵ်ႈ \"%1$s\" ၼႆႉ ၽိတ်းပိူင်ႈဝႆႉ။
 android.ui.error_articleurlnotfound=လွင်ႈၽိတ်းပိူင်ႈ : လွင်ႈထုတ်ႇပိုတ်ႇ ပွင်ႈလိၵ်ႈ (Url: %1$s) ၼႆႉ ၽိတ်းပိူင်ႈဝႆႉ။
 android.ui.error_fileinvalid=လွင်ႈၽိတ်းပိူင်ႈ : ၾၢႆႇဢၼ်လိူၵ်ႈဝႆႉၼၼ်ႉ ဢမ်ႇၸႂ်ႈ ၾၢႆႇ ZIM ဢၼ်ၸႂ်ႉလႆႈ။
 android.ui.error_filenotfound=လွင်ႈၽိတ်းပိူင်ႈ : ၾၢႆႇ ZIM ဢၼ်လိူၵ်ႈဝႆႉၼၼ်ႉ သွၵ်ႈႁႃဢမ်ႇႁၼ်။
@@ -21,8 +18,6 @@ android.ui.error_nozimfilesfound=တီႈၶိူင်ႈၸၢၵ်ႈၸ�
 android.ui.go_to_play_store=ၵႂႃႇၸူး Play Store
 android.ui.menu_read_aloud=လူလင်လင်
 android.ui.menu_read_aloud_stop=ၵိုတ်းလွင်ႈလူလင်လင်
-# Fuzzy
-android.ui.menu_rescan_fs=ၶိုၼ်းၵူတ်ႇလူ ၶႅပ်း SD
 # Fuzzy
 android.ui.no_bookmarks=ဢမ်ႇမီး ဢၼ်မၢႆဝႆႉ!
 android.ui.no_reader_application_installed=ဢမ်ႇၸၢင်ႈသွၵ်ႈႁႃႁၼ် ဢႅပ်ႉၽရီႇၶေးသျိၼ်း ဢၼ်ဢူၼ်းသႂ်ႇဝႆႉ တွၼ်ႈတႃႇ မဵဝ်းၾၢႆႇဢၼ်ၼႆႉ
@@ -42,10 +37,6 @@ android.ui.pref_nightmode_summary=ၼႄပွင်ႈလိၵ်ႈၼင်�
 # Fuzzy
 android.ui.pref_zoom_dialog=ၸၼ်ႉၶႂၢၵ်ႈတူၺ်း
 android.ui.pref_zoom_enable=လွင်ႈၵုမ်းၵၢၼ်ၶႂၢၵ်ႈတူၺ်း
-android.ui.pref_zoom_entry_automatic=ႁင်းတူဝ်
-android.ui.pref_zoom_entry_large=ယႂ်ႇ
-android.ui.pref_zoom_entry_medium=ပၢၼ်ၵၢင်
-android.ui.pref_zoom_entry_small=လဵၵ်ႉ
 android.ui.rate_dialog_msg_1=ပေႃႈဝႃႈၸဝ်ႈၵဝ်ႇ ႁၢၼ်ႉၸႂ်ၸႂ်ႉတိုဝ်းၼႆ
 android.ui.rate_dialog_msg_2=၊ ၶႅၼ်းတေႃႈ ဢဝ်ၶၢဝ်းယၢမ်းတွၼ်ႈတႃႇ ပၼ်ၸၼ်ႉမၢႆၼၼ်ႉၶႃႈလႄႈ။ ငိၼ်းၸူမ်း ၶွပ်ႈၸႂ်တႃႇ လွင်ႈၵမ်ႉထႅမ်ၸဝ်ႈၵဝ်ႇယူႇၶႃႈ။
 android.ui.rate_dialog_negative=ပႆႇၵွၼ်ႇ

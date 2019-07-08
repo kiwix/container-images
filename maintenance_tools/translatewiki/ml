@@ -7,12 +7,10 @@
 # Author: Praveenp
 # Author: Vaikoovery
 
-android.ui.articlesearch_hint=ലേഖനങ്ങൾ കണ്ടെത്താൻ ടൈപ്പ് ചെയ്യൂ.
 # Fuzzy
 android.ui.button_backtotop=മുകളിലേക്ക്
 # Fuzzy
 android.ui.choose_file=ഒരു സിം കണ്ടന്റ് ഫയൽ (*.zim) തിരഞ്ഞെടുക്കൂ
-android.ui.error_articlenotfound=പിഴവ്:  \"%1$s\" -  ലോഡ് ചെയ്യൽ പരാജയം
 android.ui.error_articleurlnotfound=പിഴവ്: (Url: %1$s) എന്ന ലേഖനം ലോഡ് ചെയ്യുന്നത് പരാജയപ്പെട്ടു.
 android.ui.error_fileinvalid=പിഴവ്: തിരഞ്ഞെടുത്ത സിം ഫയൽ സാധുവല്ല.
 android.ui.error_filenotfound=പിഴവ്: തിരഞ്ഞെടുത്ത സിം ഫയൽ കണ്ടെത്താനായില്ല
@@ -20,8 +18,6 @@ android.ui.error_filenotfound=പിഴവ്: തിരഞ്ഞെടുത്
 android.ui.error_nozimfilesfound=താങ്കളുടെ ഉപകരണത്തിൽ സിം ഫയലുകളൊന്നുമില്ല. \nസഹായം താളുകൾ ഉപയോഗപ്പെടുത്തി കിവിക്സിൽ എങ്ങനെ ഉള്ളടക്കം ചേർക്കണമെന്ന് മനസ്സിലാക്കൂ. താങ്കൾ ഒരു സിം ഫയൽ താങ്കളുടെ ഉപകരണത്തിൽ/ബാഹ്യ സ്റ്റോറേജിൽ ഉൾപ്പെടുത്തിയെങ്കിൽ ദയവായി ഒരു മിനിറ്റ് കാത്തിരിക്കുകയോ ഉപകരണം റീസ്റ്റാർട്ട് ചെയ്യുകയോ വേണം.
 android.ui.go_to_play_store=പ്ലേ സ്റ്റോറിൽ പോകുക
 android.ui.menu_read_aloud=ഉച്ചത്തിൽ വായിക്കുക
-# Fuzzy
-android.ui.menu_rescan_fs=എസ്.ഡി. കാർഡിൽ സ്കാൻ ചെയ്യുക
 android.ui.open_in_new_tab=കണ്ണി പുതിയ ടാബിൽ തുറക്കണോ?
 android.ui.pref_backtotop=തിരികെ മുകളിലേക്ക്
 android.ui.pref_backtotop_summary=താളിനു താഴെയായി മുകളിലേക്ക് തിരികെ പോകാനുള്ള ബട്ടൺ കാണിക്കുക.
@@ -34,10 +30,6 @@ android.ui.pref_nightmode_summary=ലേഖനങ്ങളുടെ നിറം
 # Fuzzy
 android.ui.pref_zoom_dialog=സൂം നിലവാരം
 android.ui.pref_zoom_enable=സൂം നിയന്ത്രണങ്ങൾ
-android.ui.pref_zoom_entry_automatic=സ്വയം പ്രവർത്തിതം
-android.ui.pref_zoom_entry_large=വലുത്
-android.ui.pref_zoom_entry_medium=ഇടത്തരം
-android.ui.pref_zoom_entry_small=ചെറുത്
 android.ui.rate_dialog_negative=വേണ്ട, നന്ദി
 android.ui.rate_dialog_neutral=പിന്നീട്
 # Fuzzy

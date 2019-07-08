@@ -3,12 +3,10 @@
 # Author: Hosseinblue
 # Author: Lakzon
 
-android.ui.articlesearch_hint=برای یافتن مقاله‌ها تایپ کنید
 # Fuzzy
 android.ui.button_backtotop=بازگشت به بالای صفحه
 # Fuzzy
 android.ui.choose_file=یک پروندهٔ محتوایی ZIM را انتخاب کنید (*.zim)
-android.ui.error_articlenotfound=حطا: بارگیری مقالهٔ «%1$s» شکست خورد.
 android.ui.error_articleurlnotfound=حطا: بارگیری مقالهٔ (نشانی: %1$s) شکست خورد.
 android.ui.error_fileinvalid=خطا: پروندهٔ انتخاب‌شده یک پروندهٔ ZIM معتبر نیست.
 android.ui.error_filenotfound=خطا: پروندهٔ ZIM انتخاب شده پیدا نشد.
@@ -16,8 +14,6 @@ android.ui.error_filenotfound=خطا: پروندهٔ ZIM انتخاب شده پ�
 android.ui.error_nozimfilesfound=هیچ پروندهٔ ZIM در دستگاه شما یافت نشد.\nنگاهی به صفحهٔ کمک برای گرفتن جهت‌هایی به بارگذاری محتویات به Kiwix نگاهی بیندازید.\nاگر شما پروندهٔ ZIM در دستگاه/حافظهٔ خارجی خود قرار دهید، شما چند دقیقه دیگر مجدداً سعی کنید یا دستگاه خود را ری‌استارت کنید.
 android.ui.menu_read_aloud=خووەنن وە دەنگ کەڵنگ(قؤین)
 android.ui.menu_read_aloud_stop=توقف خواندن با صدای بلند
-# Fuzzy
-android.ui.menu_rescan_fs=جستجوی مجدد کارت SD
 android.ui.open_in_new_tab=بازکردن پیوند در زبانهٔ جدید؟
 android.ui.pref_backtotop=بازگشت به بالای صفحه
 android.ui.pref_backtotop_summary=نمایش دکمه در پایان صفحه برای انتقال به بالا
@@ -30,10 +26,6 @@ android.ui.pref_nightmode_summary=نمایش مقاله‌ها با رنگ‌ه�
 # Fuzzy
 android.ui.pref_zoom_dialog=سطح بزرگ/کوچک‌نمایی
 android.ui.pref_zoom_enable=کنترل‌های بزرگ/کوچک‌نمایی
-android.ui.pref_zoom_entry_automatic=خودکار
-android.ui.pref_zoom_entry_large=بزرگ/کةڵِنگ
-android.ui.pref_zoom_entry_medium=متوسط
-android.ui.pref_zoom_entry_small=گؤجةر
 # Fuzzy
 android.ui.rescan_fs_warning=چستچو برای پرونده‌های ZIM، لطفاً صبر کنید...
 # Fuzzy

@@ -4,17 +4,13 @@
 # Author: គីមស៊្រុន
 # Author: វ័ណថារិទ្ធ
 
-android.ui.articlesearch_hint=វាយបញ្ចូលដើម្បីរកមើលអត្ថបទ
 # Fuzzy
 android.ui.button_backtotop=ត្រឡប់ទៅលើ
 # Fuzzy
 android.ui.choose_file=ជ្រើសរើសឯកសារមាតិកា ZIM (*.zim)
-android.ui.error_articlenotfound=កំហុស៖ ទាញយកអត្ថបទ  \"%1$s\" បានបរាជ័យ។
 android.ui.error_articleurlnotfound=កំហុស៖ ទាញយកអត្ថបទ (Url: %1$s) បានបរាជ័យ។
 android.ui.error_fileinvalid=កំហុស៖ ឯកសារ ZIM ដែលបានជ្រើសនេះ មិនមែនជាឯកសារ ZIM ត្រឹមត្រូវ។
 android.ui.error_filenotfound=កំហុស៖ ឯកសារ ZIM ដែលបានជ្រើសនេះ រកមិនឃើញទេ។
-# Fuzzy
-android.ui.menu_rescan_fs=ស្កេន​កាត​អេសឌី​ម្ដង​ទៀត
 android.ui.open_in_new_tab=បើក​តំណ​ក្នុង​ផ្ទាំង​ថ្មី?
 android.ui.pref_backtotop=ត្រឡប់ទៅលើ
 android.ui.pref_info_title=ព័ត៌មាន

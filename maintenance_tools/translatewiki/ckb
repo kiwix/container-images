@@ -9,12 +9,9 @@
 # Author: Sarchia
 # Author: Épine
 
-android.ui.add_bookmark=زیادکردنی بووکمارک
 android.ui.all_history_cleared_toast=ھەموو مێژووەکە سڕدرایەوە
-android.ui.articlesearch_hint=بنووسە بۆ گەڕان بەدوای وتاردا
 android.ui.bookmark_added=بووکمارک زیادکرا
 android.ui.bookmark_removed=بووکمارک سڕدرایەوە
-android.ui.bookmarks_restored=بووکمارکەکان ھێنرانەوە
 android.ui.button_backtotop=گەڕانەوە بۆ سەرەوە
 android.ui.clear_all_history_dialog_title=خاوێنکردنەوەی مێژوو
 android.ui.confirm_stop_download_title=داگرتن ڕابگیرێت؟
@@ -43,10 +40,6 @@ android.ui.pref_newtab_background_title=تابێکی نوێ لە پشتینەد�
 android.ui.pref_nightmode=بەکەرهێنانی شەو
 # Fuzzy
 android.ui.pref_nightmode_summary=وتارەکان بیشان بدە بە ڕەنگی پێچەوانە
-android.ui.pref_zoom_entry_automatic=خۆکار
-android.ui.pref_zoom_entry_large=گەورە
-android.ui.pref_zoom_entry_medium=مامناوەند
-android.ui.pref_zoom_entry_small=بچووک
 android.ui.previous=پێشوو
 android.ui.proceed=بەردەوامبوون
 android.ui.rate_dialog_negative=نا، سپاس

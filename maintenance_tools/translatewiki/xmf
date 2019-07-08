@@ -3,18 +3,14 @@
 # Author: David1010
 # Author: Silovan
 
-android.ui.articlesearch_hint=გენშიონით სტატიეფიშ ოგორალო
 # Fuzzy
 android.ui.button_backtotop=დაჭყაფშა დორთა
 # Fuzzy
 android.ui.choose_file=გეგშაგორით ZIM-ფაილი (*.zim)
-android.ui.error_articlenotfound=ჩილათა: სტატიაქ \"%1$s\" ვეხარგჷ.
 android.ui.error_fileinvalid=ჩილათა: გიშაგორილ ფაილი ვარე თინი ZIM-ფაილი.
 android.ui.error_filenotfound=ჩილათა: გიშაგორილ ZIM-ფაილქ ვეგორჷ.
 android.ui.menu_read_aloud=ხმამაღლა კითხვა
 android.ui.menu_read_aloud_stop=ხმამაღლა კითხვის შეჩერება
-# Fuzzy
-android.ui.menu_rescan_fs=SD ბარათიშ კინ მაჟირაშა სკანირებაფა
 android.ui.pref_backtotop=თავში დაბრუნება
 android.ui.pref_backtotop_summary=ხასჷლაშ ბოლოს ჟილე დორთაშ კონჭიშ ძირაფა
 android.ui.pref_info_title=ინფორმაცია
@@ -26,10 +22,6 @@ android.ui.pref_nightmode_summary=სტატიის შებრუნებ
 # Fuzzy
 android.ui.pref_zoom_dialog=მასშტაბირების დონე
 android.ui.pref_zoom_enable=მასშტაბირების კონტროლი
-android.ui.pref_zoom_entry_automatic=ავტომატური
-android.ui.pref_zoom_entry_large=დიდი
-android.ui.pref_zoom_entry_medium=საშუალო
-android.ui.pref_zoom_entry_small=პატარა
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM-ფაილეფიშ გორუა, ქორთხინთ, ქჷმიცალით…
 # Fuzzy

@@ -15,10 +15,6 @@ android.ui.pref_backtotop=Жогоруга кайтуу
 android.ui.pref_info_title=Маалымат
 android.ui.pref_info_version=Версия
 android.ui.pref_language_chooser=Тилин тандаңыз
-android.ui.pref_zoom_entry_automatic=Автоматтуу түрдө
-android.ui.pref_zoom_entry_large=Чоң
-android.ui.pref_zoom_entry_medium=Орточо
-android.ui.pref_zoom_entry_small=Кичине
 # Fuzzy
 android.ui.save_media_error=Медиафайлды сактоодо катачылыктар кетти!
 # Fuzzy

@@ -7,19 +7,12 @@
 # Author: Ykhwong
 # Author: 아라
 
-android.ui.error_articlenotfound=오유: \"%1$s\" 문서를 불러오는데 실패했습니다.
 android.ui.error_articleurlnotfound=오유: 문서(Url: %1$s)를 불러오는데 실패했습니다.
 android.ui.menu_read_aloud=소리내여 읽기
 android.ui.menu_read_aloud_stop=그만 소리내여 읽기
-# Fuzzy
-android.ui.menu_rescan_fs=SD 카드를 다시 검색
 android.ui.pref_nightmode=야간 모드
 # Fuzzy
 android.ui.pref_zoom_dialog=확대수준
-android.ui.pref_zoom_entry_automatic=자동
-android.ui.pref_zoom_entry_large=크게
-android.ui.pref_zoom_entry_medium=보통
-android.ui.pref_zoom_entry_small=작게
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM파일을 검색중입니다. 잠시 기다려주세요...
 ui.main.about=&brand.brandShortName;에 대하여

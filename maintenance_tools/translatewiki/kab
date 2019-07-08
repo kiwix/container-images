@@ -5,16 +5,12 @@
 # Author: Mezgoug
 # Author: Sayem AtVkm
 
-android.ui.add_bookmark=Rnu anurif
 android.ui.all_history_cleared_toast=Akk amazray yettwasfeḍ
-android.ui.articlesearch_hint=Aru akken ad tnadiḍ imagraden
 android.ui.bookmark_added=Anurif yettwarna
 android.ui.bookmark_removed=Anurif yettwakkes
-android.ui.bookmarks_restored=Anurif yuɣal-d
 android.ui.button_backtotop=Uɣal d asawen
 android.ui.choose_file=Fren afaylu n umiḍan (*.zim)
 android.ui.clear_all_history_dialog_title=Sfeḍ akk amazray
-android.ui.clear_recent_history_dialog=Tebɣiḍ ad tsefḍeḍ amazray-ik n unadi?
 android.ui.confirm_stop_download_title=Seḥbes asider?
 android.ui.delete=Kkes
 android.ui.delete_recent_search_item=Ad kksed aferdis-agi?
@@ -23,7 +19,6 @@ android.ui.delete_specific_zim_toast=Afaylu yettwakkes
 android.ui.delete_tab=Sefsex icer
 android.ui.deleted_message=yettwakkes
 android.ui.did_you_know=Tezram?
-android.ui.download_close=Mdel
 android.ui.download_complete_snackbar=Asider yemmed
 android.ui.download_pause=Serǧu
 android.ui.download_paused=yettraǧu
@@ -35,7 +30,6 @@ android.ui.help_20=Tanmirt imi tferned Kiwix!
 android.ui.help_5=Anida-t ugbur?
 android.ui.internal_storage=Agensan
 android.ui.language_count=(%1$d)
-android.ui.menu_back=Uɣal
 android.ui.menu_exitfullscreen=Ffeɣ seg uskar n ugdil ačuran
 android.ui.menu_fullscreen=Agdil ačuṛan
 android.ui.menu_help=Tallalt
@@ -60,14 +54,10 @@ android.ui.pref_language_chooser=Fren tutlayt
 android.ui.pref_language_title=Tutlayt
 android.ui.pref_newtab_background_title=Ldi iccer amaynut deg ugilal
 android.ui.pref_storage=Aklas
-android.ui.pref_zoom_entry_automatic=Awurman
-android.ui.pref_zoom_entry_large=Ahrawan
-android.ui.pref_zoom_entry_medium=Alemmas
 android.ui.previous=Γer deffir
 android.ui.rate_dialog_negative=Ala, tanemmirt
 android.ui.rate_dialog_neutral=Ticki
 android.ui.remote_zims=Iqqen
-android.ui.remove_bookmark=Kkes Tacreṭ n usebter
 android.ui.search_label=Nadi
 android.ui.search_widget_text=Nadi di Kiwix
 android.ui.tab_closed=iccer yemdel

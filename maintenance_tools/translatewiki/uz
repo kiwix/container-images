@@ -6,8 +6,6 @@
 
 android.ui.pref_info_title=Axborot
 android.ui.pref_info_version=Versiya
-android.ui.pref_zoom_entry_large=Katta
-android.ui.pref_zoom_entry_small=Kichik
 ui.main.about=&brand.brandShortName; haqida
 ui.main.audible=Tovush bilan
 ui.main.back=Orqaga

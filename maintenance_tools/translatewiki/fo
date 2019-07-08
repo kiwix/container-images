@@ -6,9 +6,6 @@
 android.ui.pref_info_title=Kunning
 android.ui.pref_info_version=Versjón
 android.ui.pref_language_chooser=Vel eitt mál
-android.ui.pref_zoom_entry_large=Stórur
-android.ui.pref_zoom_entry_medium=Miðal
-android.ui.pref_zoom_entry_small=Lítil
 ui.main.about=Um &brand.brandShortName;
 ui.main.audible=Hoyrist
 ui.main.back=Aftur

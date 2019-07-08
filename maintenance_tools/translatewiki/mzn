@@ -2,14 +2,11 @@
 # Exported from translatewiki.net
 # Author: محک
 
-android.ui.articlesearch_hint=مقاله‌ئون ِپیدا هاکردن وسّه تایپ هاکنین.
 android.ui.bookmark_added=دلوست اضافه بیّه
-android.ui.bookmarks_restored=دلوست ره دگاردنی
 # Fuzzy
 android.ui.button_backtotop=بالا دَگِردِستِن
 # Fuzzy
 android.ui.choose_file=اتا ZIM ره انتخاب هاکن (*.zim)
-android.ui.error_articlenotfound=خطا: «%1$s» لؤدینگ انجام نیّه.
 android.ui.error_articleurlnotfound=خطا: لؤدینگ این مقاله وسّه (Url: %1$s) ناموفق بی‌یه.
 android.ui.error_fileinvalid=خطا: اینتا ZIM معتبر نیّه.
 android.ui.error_filenotfound=خطا: انتخاب بَیی ZIM پیدا نیّه.
@@ -18,8 +15,6 @@ android.ui.error_nozimfilesfound=شمه دستگاه دله هچِّی ZIM دَ�
 android.ui.go_to_play_store=بور پلی‌استور دله
 android.ui.menu_read_aloud=بلند-بلند بخوندِستِن
 android.ui.menu_read_aloud_stop=بستا بَیِّن
-# Fuzzy
-android.ui.menu_rescan_fs=اس‌دی ِکارت ِچرخه‌تو
 # Fuzzy
 android.ui.no_bookmarks=دلوست صفحه ندارنی!
 android.ui.open_in_new_tab=این لینک جدید ِصفحه دله وا بَواشه؟
@@ -36,10 +31,6 @@ android.ui.pref_nightmode_summary=مقاله‌ئون ِسِراق هِدائن�
 # Fuzzy
 android.ui.pref_zoom_dialog=زووم
 android.ui.pref_zoom_enable=زووم ِکنترل
-android.ui.pref_zoom_entry_automatic=اتوماتیک
-android.ui.pref_zoom_entry_large=گت
-android.ui.pref_zoom_entry_medium=متوسط
-android.ui.pref_zoom_entry_small=پچوک
 android.ui.rate_dialog_msg_1=اگه امه برنومه جه ته ره خش بمو
 android.ui.rate_dialog_msg_2=، لطفاً اما ره امتیاز هاده. ته خنابدون!
 android.ui.rate_dialog_negative=نا

@@ -9,19 +9,15 @@
 # Author: Shanmugamp7
 # Author: கௌசிக் பிரபு
 
-android.ui.articlesearch_hint=கட்டுரைகளில் தேட தட்டச்சு செய்க
 # Fuzzy
 android.ui.button_backtotop=மீண்டும் மேலே
 # Fuzzy
 android.ui.choose_file=ZIM கோப்பை தேர்வு செய் (*.zim)
-android.ui.error_articlenotfound=பிழை: \"%1$s\" கட்டுரையை ஏற்றித்துவங்க தவறிவிட்டது
 android.ui.error_articleurlnotfound=பிழை: (Url: %1$s) கட்டுரையை ஏற்றித்துவங்க தவறிவிட்டது
 android.ui.error_fileinvalid=பிழை: தேர்வு செய்யப்பட்ட கோப்பு, ஏற்புடைய ZIM கோப்பு அல்ல
 android.ui.error_filenotfound=பிழை: தேர்வு செய்யப்பட்ட ZIM கோப்பு காணப்படவில்லை
 # Fuzzy
 android.ui.error_nozimfilesfound=தங்கள் சாதனத்தில் ZIM கோப்புகள் எதுவும் காணப்படவில்லை. Kiwix-னுள், உட்பொருளை எவ்வாறு ஏற்றுவது என்பதற்கான வழிகாட்டுதல்களைப்பெற, உதவிப் பக்கத்‌தைக் காண்க.\nநீங்கள் ZIM கோப்பினை, தங்களுடைய இந்த சாதனத்தில் அல்லது வெளிசேமிப்பில் வைத்திருந்தீர்கள் என்றால்,\nமீண்டும் ஒருநிமிட இடைவெளியில் முயற்சி செய்யுங்கள் அல்லது சாதனத்தை அணைத்து, மறுதுவக்கம் செய்யுங்கள்.
-# Fuzzy
-android.ui.menu_rescan_fs=SD அட்டையை மீண்டும் துருவி நோக்கு
 android.ui.open_in_new_tab=இணைப்பை புதிய தாவலில் திறக்கவேண்டுமா?
 android.ui.pref_backtotop=மேலே செல்லவும்
 android.ui.pref_backtotop_summary=மேற்பகுதிக்குச் செல்ல, பக்கத்‌தின் அடியில் ஒரு பொத்தானை காண்பி
@@ -34,10 +30,6 @@ android.ui.pref_nightmode_summary=கட்டுரைகளை தலைகீ
 # Fuzzy
 android.ui.pref_zoom_dialog=உரு அளவு நிலை
 android.ui.pref_zoom_enable=உரு அளவு கட்டுப்படுத்திகள்
-android.ui.pref_zoom_entry_automatic=தன்னியக்கம்
-android.ui.pref_zoom_entry_large=பெரிய
-android.ui.pref_zoom_entry_medium=நடுத்தரம்
-android.ui.pref_zoom_entry_small=சிறிய
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM கோப்புகளுக்காக துருவி நோக்கிக்கொண்டிருக்கிறது,தயவுசெய்து காத்‌திருக்கவும்
 # Fuzzy

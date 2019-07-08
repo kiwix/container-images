@@ -10,7 +10,6 @@ android.ui.menu_read_aloud=Pročitaj naglas
 android.ui.pref_info_title=Informacije
 android.ui.pref_info_version=Verzija
 android.ui.pref_language_chooser=Odaberite jezik
-android.ui.pref_zoom_entry_automatic=Automatski
 ui.main.about=O &brand.brandShortName;
 ui.main.audible=Čujno
 ui.main.back=Natrag

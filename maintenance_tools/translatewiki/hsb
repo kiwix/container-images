@@ -3,16 +3,13 @@
 # Author: Macofe
 # Author: Michawiki
 
-android.ui.articlesearch_hint=Zapisaj, zo by nastawki pytał
 android.ui.bookmark_added=Zapołožka je přidata
-android.ui.bookmarks_restored=Zapołožki su wobnowjene
 # Fuzzy
 android.ui.button_backtotop=Wróćo horje
 # Fuzzy
 android.ui.choose_file=Wobsahowu dataju ZIM wubrać (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Twoje nałoženje je wobškodźene.\nTo móže so stać, hdyž daty na SD-karće wotstronjeće.\nDyrbiš nałoženje wotinstalować a potom zaso z Play Store instalować
-android.ui.error_articlenotfound=Zmylk: Nastawk \"%1$s\" njeda so začitać.
 android.ui.error_articleurlnotfound=Zmylk: Nastawk (Url: %1$s) njeda so začitać.
 android.ui.error_fileinvalid=Zmylk: Wubrana dataja płaćiwa ZIM-dataja njeje.
 android.ui.error_filenotfound=Zmylk? Wubrana ZIM-dataja njeda so namakać.
@@ -21,8 +18,6 @@ android.ui.error_nozimfilesfound=ZIM-dataje njejsu so na twojim graće namakali.
 android.ui.go_to_play_store=K Play Store
 android.ui.menu_read_aloud=Předčitać
 android.ui.menu_read_aloud_stop=Předčitanje zastajić
-# Fuzzy
-android.ui.menu_rescan_fs=SD-kartu znowa zaskanować
 # Fuzzy
 android.ui.no_bookmarks=Žane zapołožki!
 android.ui.no_reader_application_installed=Njeda so instalowane nałoženje za tutón datajowy typ namakać
@@ -42,10 +37,6 @@ android.ui.pref_nightmode_summary=Nastawki z wobroćenymi barbami sej wobhladać
 # Fuzzy
 android.ui.pref_zoom_dialog=Skalowanski schodźenk
 android.ui.pref_zoom_enable=Skalowanske elementy
-android.ui.pref_zoom_entry_automatic=Awtomatiski
-android.ui.pref_zoom_entry_large=Wulki
-android.ui.pref_zoom_entry_medium=Medij
-android.ui.pref_zoom_entry_small=Mały
 android.ui.rate_dialog_msg_1=Jeli jón rady wužiwaš
 android.ui.rate_dialog_msg_2=,  bjer sej za pohódnoćenje wokomik časa. Wulki dźak za twoju podpěru!
 android.ui.rate_dialog_negative=Ně, dźakuju so

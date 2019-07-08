@@ -6,7 +6,7 @@
 # Author: Papuass
 # Author: Silraks
 
-android.ui.add_bookmark=Pievienot grāmatzīmi
+android.ui.add_note=Pievienot piezīmi
 # Fuzzy
 android.ui.button_backtotop=Atpakaļ uz augšu
 android.ui.clear_all_history_dialog_title=Notīrīt visu vēsturi
@@ -16,22 +16,19 @@ android.ui.delete_specific_zim=Dzēst šo failu?
 android.ui.delete_specific_zim_toast=Fails dzēsts
 android.ui.did_you_know=Vai tu zināji?
 android.ui.download_complete_snackbar=Lejupielāde pabeigta
+android.ui.failed_http_code=HTTP kods %s
 android.ui.got_it=Sapratu
-android.ui.menu_back=Atpakaļ
 android.ui.menu_help=Palīdzība
 android.ui.menu_randomarticle=Nejaušs raksts
 android.ui.menu_zim_manager=Iegūt saturu
 android.ui.no=Nē
+android.ui.note=Piezīme
 android.ui.open=Atvērt
 android.ui.pref_info_title=Informācija
 android.ui.pref_info_version=Versija
 android.ui.pref_language_chooser=Izvēlies valodu
 android.ui.pref_language_title=Valoda
 android.ui.pref_nightmode=Nakts režīms
-android.ui.pref_zoom_entry_automatic=Automātiskā
-android.ui.pref_zoom_entry_large=Liels
-android.ui.pref_zoom_entry_medium=Vidējs
-android.ui.pref_zoom_entry_small=Mazs
 android.ui.search_label=Meklēt
 android.ui.search_widget_text=Meklēt Kiwix
 android.ui.tts_resume=turpināt

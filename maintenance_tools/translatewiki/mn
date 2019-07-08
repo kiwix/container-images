@@ -5,19 +5,15 @@
 # Author: Wisdom
 # Author: Zorigt
 
-android.ui.articlesearch_hint=Нийтлэлийг хайх төрөл
 # Fuzzy
 android.ui.button_backtotop=Хамгийн дээр Очих
 # Fuzzy
 android.ui.choose_file=ZIM  агуулгын файлыг сонгох (*.zim)
-android.ui.error_articlenotfound=Алдаа: \"%1$s\" нийтлэлийг уншихад алдаа.
 android.ui.error_articleurlnotfound=Алдаа: (Url: %1$s) нийтлэлийг уншихад алдаа.
 android.ui.error_fileinvalid=Алдаа: Сонгосон ZIM файл алдаатай байна.
 android.ui.error_filenotfound=Алдаа: Сонгосон ZIM файл олдсонгүй.
 # Fuzzy
 android.ui.error_nozimfilesfound=Эндээс ZIM файл олдсонгүй. \nKiwix -ын агуулгыг хэрхэн оруулах талаар Help Page -ээс харна уу.\nТа ZIM файлаа хуулсандаа итгэлтэй байгаа бол хэдэн минутын дараа ахин оролд, эсвэл төхөөрөмжөө унтрааж асаагаарай.
-# Fuzzy
-android.ui.menu_rescan_fs=SD card -ыг ахин унших
 android.ui.open_in_new_tab=Холбоосыг өөр табд нээ
 android.ui.pref_backtotop=Хамгийн дээр оч
 android.ui.pref_backtotop_summary=Товчийг хуудасны сүүлд байршуулж дээш оч
@@ -30,10 +26,6 @@ android.ui.pref_nightmode_summary=Нийтлэлийн үсгийн өнгийг
 # Fuzzy
 android.ui.pref_zoom_dialog=Татах ойр хол
 android.ui.pref_zoom_enable=Ойртуулах, холдуулах тохиргоо
-android.ui.pref_zoom_entry_automatic=Автомат
-android.ui.pref_zoom_entry_large=Том
-android.ui.pref_zoom_entry_medium=дунд
-android.ui.pref_zoom_entry_small=Жижиг
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM файлыг шүүж байна, түр хүлээнэ үү...
 ui.main.about=&brand.brandShortName; -ы тухай

@@ -4,12 +4,9 @@
 # Author: Macofe
 # Author: Uchup19
 
-android.ui.add_bookmark=Tambah markah
 android.ui.all_history_cleared_toast=Sakum Jujutan Dibersihkeun
-android.ui.articlesearch_hint=Ketik pikeun néangan artikel
 android.ui.bookmark_added=Markah ditambahkeun
 android.ui.bookmark_removed=Markah dipupus
-android.ui.bookmarks_restored=Markah dipulangkeun
 android.ui.button_backtotop=Balik ka Luhur
 android.ui.choose_file=Pilih Berkas Kontén (*.zim)
 android.ui.clear_all_history_dialog_title=Bersihkeun Sakum Markah
@@ -22,16 +19,12 @@ android.ui.delete_zim_failed=Hampura kami teu bisa mupus ieu berkas. Anjeun alus
 android.ui.deleted_message=dipupus
 android.ui.did_you_know=Nyaho teu anjeun?
 android.ui.download_change_storage=Pamilih parangkat panyimpenan
-android.ui.download_close=Tutup
 android.ui.download_complete_snackbar=Undeuran anggeus
 android.ui.download_no_space=Rohang teu nyukupan pikeun ngundeur ieu berkas.
-android.ui.download_over_network=Anjeun yakin rék mitembeyan undeuran tanpa WIFI?
 android.ui.download_pause=Tunda
 android.ui.download_paused=ditunda
-android.ui.download_play=Maénkeun
 android.ui.download_started_library=Undeur dikawit...
 android.ui.download_stop=Eureun
-android.ui.error_articlenotfound=Kasalahan: Pamuatan artikel \"%1$s\" gagal.
 android.ui.error_articleurlnotfound=Kasalahan: Pamuatan artikel (Url: %1$s) gagal.
 android.ui.error_fileinvalid=Kasalahan: Berkas nu dipilih lain berkas ZIM nu sah.
 android.ui.no=Teu
@@ -39,11 +32,9 @@ android.ui.no_bookmarks=Euweuh markah
 android.ui.no_downloads_here=Euweuh undeuran di dieu
 android.ui.no_files_here=Euweuh berkas di dieu
 android.ui.no_network_connection=Euweuh sambungan jaringan
-android.ui.no_network_msg=Euweuh sambungan jaringan
 android.ui.open=Buka
 android.ui.pref_info_title=Émbaran
 android.ui.pref_info_version=Vérsi
-android.ui.pref_zoom_entry_small=Leutik
 ui.main.about=Ngeunaan &brand.brandShortName;
 ui.main.audible=Bisa didéngé
 ui.main.back=Balik deui

@@ -7,10 +7,6 @@
 android.ui.pref_info_title=Teave
 android.ui.pref_info_version=Versioon
 android.ui.pref_language_chooser=Vali keel
-android.ui.pref_zoom_entry_automatic=Automaatne
-android.ui.pref_zoom_entry_large=Suur
-android.ui.pref_zoom_entry_medium=Keskmine
-android.ui.pref_zoom_entry_small=Väike
 ui.main.about=Programmi &brand.brandShortName; kohta
 ui.main.back=Tagasi
 ui.main.bmkLabel=Järjehoidjad:

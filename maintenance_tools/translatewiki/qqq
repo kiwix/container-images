@@ -17,16 +17,13 @@
 
 android.ui.button_backtotop={{Identical|Back to top}}
 android.ui.delete={{Identical|Delete}}
-android.ui.download_close={{Identical|Close}}
 android.ui.download_pause={{Identical|Pause}}
 android.ui.download_stop={{Identical|Stop}}
 android.ui.external_storage={{Identical|External}}
-android.ui.menu_back={{Identical|Back}}
 android.ui.menu_bookmarks={{Identical|Bookmark}}
 android.ui.menu_bookmarks_list={{Identical|Bookmark}}
 android.ui.menu_help={{Identical|Help}}
 android.ui.menu_home={{Identical|Home}}
-android.ui.menu_rescan_fs=Used as menu item.
 android.ui.menu_settings={{Identical|Settings}}
 android.ui.menu_zim_manager=Displayed in application menu
 android.ui.no={{Identical|No}}
@@ -38,10 +35,6 @@ android.ui.pref_info_title={{Identical|Information}}
 android.ui.pref_info_version={{Identical|Version}}
 android.ui.pref_language_chooser={{Identical|Choose language}}
 android.ui.pref_language_title={{Identical|Language}}
-android.ui.pref_zoom_entry_automatic={{Identical|Automatic}}
-android.ui.pref_zoom_entry_large={{Identical|Large}}
-android.ui.pref_zoom_entry_medium={{Identical|Medium}}
-android.ui.pref_zoom_entry_small={{Identical|Small}}
 android.ui.pref_zoom_sub_title={{Identical|Zoom}}
 android.ui.previous={{Identical|Previous}}
 android.ui.rate_dialog_negative={{Identical|No thanks}}

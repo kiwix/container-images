@@ -3,7 +3,6 @@
 # Author: Babanwalia
 # Author: Tow
 
-android.ui.articlesearch_hint=ਲੇਖ ਵੇਖਣ ਵਾਸਤੇ ਲਿਖੋ
 # Fuzzy
 android.ui.button_backtotop=ਸਿਖਰ ਵੱਲ ਵਾਪਸ
 android.ui.go_to_play_store=ਪ੍ਲੇ ਸ੍ਟੋਰ ਤੇ ਜਾਓ
@@ -23,10 +22,6 @@ android.ui.pref_nightmode_summary=ਲੇਖਾਂ ਨੂੰ ਵਾਪਸ ਕੀ�
 # Fuzzy
 android.ui.pref_zoom_dialog=ਜ਼ੂਮ ਪੱਧਰ
 android.ui.pref_zoom_enable=ਜ਼ੂਮ ਨਿਯੰਤਰਣ
-android.ui.pref_zoom_entry_automatic=ਆਟੋਮੈਟਿਕ
-android.ui.pref_zoom_entry_large=ਵੱਡਾ
-android.ui.pref_zoom_entry_medium=ਦਰਮਿਆਨਾ
-android.ui.pref_zoom_entry_small=ਛੋਟਾ
 android.ui.rate_dialog_negative=ਨਹੀਂ, ਸ਼ੁਕਰੀਆ
 android.ui.rate_dialog_neutral=ਬਾਅਦ ਵਿਚ
 android.ui.rate_dialog_positive=ਮੁਲਾਂਕਣ ਕਰੋ!

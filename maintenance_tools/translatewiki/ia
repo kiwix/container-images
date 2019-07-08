@@ -3,12 +3,10 @@
 # Author: Karmwiki
 # Author: McDutchie
 
-android.ui.articlesearch_hint=Dactylographar pro cercar articulos
 # Fuzzy
 android.ui.button_backtotop=Initio del pagina
 android.ui.choose_file=Selige un file de contento ZIM (*.zim)
 android.ui.do_not_ask_anymore=Non demandar plus
-android.ui.error_articlenotfound=Error: Le cargamento del articulo \"%1$s\" ha fallite.
 android.ui.error_articleurlnotfound=Error: Le cargamento del articulo (Url: %1$s) ha fallite.
 android.ui.error_fileinvalid=Error: Le file seligite non es un file ZIM valide.
 android.ui.error_filenotfound=Error: Le file ZIM seligite non poteva esser trovate.
@@ -16,8 +14,6 @@ android.ui.error_filenotfound=Error: Le file ZIM seligite non poteva esser trova
 android.ui.error_nozimfilesfound=Nulle file ZIM trovate in vostre dispositivo.\nIn le pagina de adjuta se trova instructiones pro cargar contento in Kiwix.\nSi vos ha de facto mittite un file ZIM in vostre dispositivo o spatio de immagazinage externe, vos pote essayar de novo post un minuta o reinitiar vostre dispositivo.
 android.ui.menu_read_aloud=Leger a voce alte
 android.ui.menu_read_aloud_stop=Cessar de leger a voce alte
-# Fuzzy
-android.ui.menu_rescan_fs=Rescannar carta SD
 android.ui.open_in_new_tab=Aperir ligamine in nove scheda?
 android.ui.pref_backtotop=Initio del pagina
 android.ui.pref_backtotop_summary=Monstrar un button al fin del pagina pro retornar al initio
@@ -30,10 +26,6 @@ android.ui.pref_nightmode_summary=Monstrar articulos in colores invertite
 # Fuzzy
 android.ui.pref_zoom_dialog=Nivello de zoom
 android.ui.pref_zoom_enable=Controlos de zoom
-android.ui.pref_zoom_entry_automatic=Automatic
-android.ui.pref_zoom_entry_large=Grande
-android.ui.pref_zoom_entry_medium=Medie
-android.ui.pref_zoom_entry_small=Micre
 android.ui.request_storage=Pro acceder a files ZIM, nos require accesso a tu immagazinage.
 android.ui.rescan_fs_warning=Cerca files ZIM, per favor attende...
 android.ui.save_media_error=Un error occurreva durante le salveguarda del file multimedial!

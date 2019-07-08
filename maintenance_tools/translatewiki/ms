@@ -3,14 +3,12 @@
 # Author: Anakmalaysia
 # Author: Kelson
 
-android.ui.articlesearch_hint=Taip untuk mencari rencana
 # Fuzzy
 android.ui.button_backtotop=Kembali ke Atas
 # Fuzzy
 android.ui.choose_file=Pilih Fail Kandungan ZIM (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Aplikasi anda tercemar.\nIni mungkin berlaku apabila anda mengalihkan keluar fail pada kad SD.\nAnda perlu menyahpasang lalu memasang semula aplikasi berkenaan dari App Store.
-android.ui.error_articlenotfound=Ralat: Rencana \"%1$s\" gagal dimuatkan.
 android.ui.error_articleurlnotfound=Ralat: Rencana (Url: %1$s) gagal dimuatkan.
 android.ui.error_fileinvalid=Ralat: Fail yang terpilih bukan fail ZIM yang sah.
 android.ui.error_filenotfound=Ralat: Fail ZIM yang terpilih tidak dapat ditemui.
@@ -19,8 +17,6 @@ android.ui.error_nozimfilesfound=Tidak terdapat fail ZIM di dalam peranti anda.\
 android.ui.go_to_play_store=Pergi ke Play Store
 android.ui.menu_read_aloud=Bacakan
 android.ui.menu_read_aloud_stop=Berhenti bacakan
-# Fuzzy
-android.ui.menu_rescan_fs=Imbas semula kad SD
 # Fuzzy
 android.ui.no_bookmarks=Tiada bookmark!
 android.ui.no_reader_application_installed=Tidak terjumpa aplikasi yang dipasang untuk jenis fail ini
@@ -38,10 +34,6 @@ android.ui.pref_nightmode_summary=Paparkan rencana yang diterbalikkan warnanya
 # Fuzzy
 android.ui.pref_zoom_dialog=Takat zum
 android.ui.pref_zoom_enable=Kawalan zum
-android.ui.pref_zoom_entry_automatic=Automatik
-android.ui.pref_zoom_entry_large=Besar
-android.ui.pref_zoom_entry_medium=Sederhana
-android.ui.pref_zoom_entry_small=Kecil
 # Fuzzy
 android.ui.request_storage=Untuk mencapai fail ZIM kami memerlukan akses kepada storan anda
 # Fuzzy

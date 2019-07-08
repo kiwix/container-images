@@ -3,19 +3,15 @@
 # Author: Crox
 # Author: Gion-andri
 
-android.ui.articlesearch_hint=Scriver insatge per tschertgar artitgels
 # Fuzzy
 android.ui.button_backtotop=Enavos a l'entschatta
 # Fuzzy
 android.ui.choose_file=Selecziunar ina datoteca da cuntegn ZIM (*.zim)
-android.ui.error_articlenotfound=Errur: chargiar il artitgel \"%1$s\" n'a betg funcziunà.
 android.ui.error_articleurlnotfound=Errur: chargiar il artitgel (Url: %1$s) n'a betg funcziunà.
 android.ui.error_fileinvalid=Errur: la datoteca selecziunada è betg ina datoteca ZIM valida.
 android.ui.error_filenotfound=Errur: la datoteca ZIM selecziunada è betg vegnida chattada.
 # Fuzzy
 android.ui.error_nozimfilesfound=Nagina datoteca ZIM chattada sin vos apparat.\nConsultai la pagina d'agid per instrucziuns davart chargiar cuntegn en Kiwix.\nSche vus avais mess ina datoteca ZIM sin il apparat/la memoria externa, pudais vus pruvar danovamain en ina minuta u reaviar il apparat.
-# Fuzzy
-android.ui.menu_rescan_fs=Scannar danovamain la carta SD
 android.ui.open_in_new_tab=Avrir il link en in nov tab?
 android.ui.pref_backtotop=Enavos a l'entschatta
 android.ui.pref_backtotop_summary=Mussar in buttun a la fin da la pagina per ir enavos a l'entschatta

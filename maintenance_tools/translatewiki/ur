@@ -7,9 +7,6 @@
 android.ui.pref_info_title=معلومات
 android.ui.pref_info_version=ورژن
 android.ui.pref_language_chooser=ایک زبان کا انتخاب کریں
-android.ui.pref_zoom_entry_large=بڑا
-android.ui.pref_zoom_entry_medium=درمیانے
-android.ui.pref_zoom_entry_small=چھوٹا
 ui.main.about=متعلق
 ui.main.audible=قابل سماعت
 ui.main.back=پیچھے

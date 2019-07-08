@@ -5,16 +5,13 @@
 # Author: Дзяніс Тутэйшы
 # Author: Хомелка
 
-android.ui.articlesearch_hint=Увядзіце для пошуку артыкулаў
 android.ui.bookmark_added=Закладка дададзеная
-android.ui.bookmarks_restored=Закладкі адноўленыя
 # Fuzzy
 android.ui.button_backtotop=Вярнуцца ўверх
 # Fuzzy
 android.ui.choose_file=Абярыце ZIM-файл (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Вашая праграма пашкоджаная.\nГэта можа адбывацца, калі вы выдаляеце файлы з SD-карткі.\nВам трэба выдаліць праграму, а пасля пераўсталяваць яе з Play Store.
-android.ui.error_articlenotfound=Памылка: не атрымалася загрузіць артыкул \"%1$s\".
 android.ui.error_articleurlnotfound=Памылка: загрузка артыкула не атрымалася (Url: %1$s).
 android.ui.error_fileinvalid=Памылка: абраны файл не з'яўляецца слушным ZIM-файлам.
 android.ui.error_filenotfound=Памылка: абраны ZIM-файл ня знойдзены.
@@ -23,8 +20,6 @@ android.ui.error_nozimfilesfound=ZIM-файлы не знойдзеныя на �
 android.ui.go_to_play_store=Перайсці ў Play Store
 android.ui.menu_read_aloud=Чытаць уголас
 android.ui.menu_read_aloud_stop=Спыніць чытанне ўголас
-# Fuzzy
-android.ui.menu_rescan_fs=Перасканаваць SD-картку
 # Fuzzy
 android.ui.no_bookmarks=Няма закладак!
 android.ui.no_reader_application_installed=Не ўдалося знайсці ўсталяваную праграму для гэтага тыпу файлаў
@@ -44,10 +39,6 @@ android.ui.pref_nightmode_summary=Паказаць артыкулы з «пав�
 # Fuzzy
 android.ui.pref_zoom_dialog=Маштаб
 android.ui.pref_zoom_enable=Кіраванне маштабам
-android.ui.pref_zoom_entry_automatic=Аўтаматычна
-android.ui.pref_zoom_entry_large=Вялікі
-android.ui.pref_zoom_entry_medium=Сярэдні
-android.ui.pref_zoom_entry_small=Дробны
 android.ui.rate_dialog_msg_1=Калі вам падабаецца
 android.ui.rate_dialog_msg_2=, калі ласка, знайдзіце час, каб ацаніць. Дзякуем за Вашу падтрымку!
 android.ui.rate_dialog_negative=Не, дзякуй

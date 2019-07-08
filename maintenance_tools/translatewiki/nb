@@ -8,16 +8,13 @@
 # Author: Nghtwlkr
 # Author: SuperPotato
 
-android.ui.articlesearch_hint=Skriv for å finne artikler
 android.ui.bookmark_added=Bokmerke lagt til
-android.ui.bookmarks_restored=Bokmerker gjenopprettet
 # Fuzzy
 android.ui.button_backtotop=Tilbake til toppen
 # Fuzzy
 android.ui.choose_file=Velg en ZIM-innholdsfil (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Appen din er korrupt.\nDette kan skje når du fjerner filer på SD-kortet.\nDu må avinstallere og installere appen igjen fra Play Butikk.
-android.ui.error_articlenotfound=Feil: Kunne ikke laste inn artikkelen \"%1$s\".
 android.ui.error_articleurlnotfound=Feil: Kunne ikke laste inn artikkelen (Url: %1$s).
 android.ui.error_fileinvalid=Feil: Den valgte filen er ikke en gyldig ZIM-fil
 android.ui.error_filenotfound=Feil: Den valgte ZIM-filen ble ikke funnet
@@ -26,8 +23,6 @@ android.ui.error_nozimfilesfound=Ingen ZIM-filer ble funnet på din enhet. Ta en
 android.ui.go_to_play_store=Gå til Play Butikk
 android.ui.menu_read_aloud=Les høyt
 android.ui.menu_read_aloud_stop=Stopp høytlesning
-# Fuzzy
-android.ui.menu_rescan_fs=Søk gjennom SD-kortet igjen
 # Fuzzy
 android.ui.no_bookmarks=Ingen bokmerker!
 android.ui.no_reader_application_installed=Kunne ikke finne en installert app for denne typen fil
@@ -47,10 +42,6 @@ android.ui.pref_nightmode_summary=Vis artikler med inverterte farger
 # Fuzzy
 android.ui.pref_zoom_dialog=Zoom-nivå
 android.ui.pref_zoom_enable=Zoom-kontroller
-android.ui.pref_zoom_entry_automatic=Automatisk
-android.ui.pref_zoom_entry_large=Stor
-android.ui.pref_zoom_entry_medium=Medium
-android.ui.pref_zoom_entry_small=Liten
 android.ui.rate_dialog_msg_1=Om du liker å bruke
 android.ui.rate_dialog_msg_2=, ta noen minutter til å rangere oss. Takk for støtten din!
 android.ui.rate_dialog_negative=Nei takk

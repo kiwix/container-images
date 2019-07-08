@@ -13,17 +13,13 @@
 # Author: SMP
 # Author: Solde
 
-android.ui.add_bookmark=Afegeix marcador
 android.ui.all_history_cleared_toast=Esborrat tot l'historial
-android.ui.articlesearch_hint=Escriviu per buscar articles
 android.ui.bookmark_added=Marcador afegit
 android.ui.bookmark_removed=Marcador eliminat
-android.ui.bookmarks_restored=Marcadors restaurats
 android.ui.button_backtotop=Tornar a dalt
 android.ui.choose_file=Seleccioneu un fitxer de contingut ZIM (*.zim)
 android.ui.clear_all_history_dialog_title=Esborra tot l'historial
 android.ui.clear_recent_and_tabs_history_dialog=Segur que vols esborrar l'historial de cerques i restablir totes les pestanyes actives?
-android.ui.clear_recent_history_dialog=Segur que vols esborrar l'historial de cerques?
 android.ui.confirm_stop_download_msg=Segur que vols aturar aquesta descàrrega?
 android.ui.confirm_stop_download_title=Aturar la descàrrega?
 android.ui.customapp_missing_content=L'aplicació està espatllada.\nAixò pot passar quan s'esborren fitxers de la targeta SD.\nHas de desinstal·lar i tornar a instal·lar l'aplicació des del Play Store.
@@ -38,16 +34,12 @@ android.ui.deleted_message=esborrat
 android.ui.did_you_know=Sabies que...?
 android.ui.do_not_ask_anymore=No tornar a preguntar
 android.ui.download_change_storage=Selector de dispositiu d'emmagatzematge
-android.ui.download_close=Tancar
 android.ui.download_complete_snackbar=Descàrrega completa
 android.ui.download_no_space=Espai insuficient per descarregar aquest fitxer.
-android.ui.download_over_network=Segur que vols iniciar la descàrrega sense Wifi?
 android.ui.download_pause=Aturar
 android.ui.download_paused=Aturat
-android.ui.download_play=Reprodueix
 android.ui.download_started_library=Descàrrega iniciada...
 android.ui.download_stop=Detenir
-android.ui.error_articlenotfound=Error: no s'ha pogut carregar l'article \"%1$s\".
 android.ui.error_articleurlnotfound=Error: no s'ha pogut carregar l'article (Url: %1$s).
 android.ui.error_fileinvalid=Error: el fitxer seleccionat no és un fitxer ZIM vàlid.
 android.ui.error_filenotfound=Error: no s'ha trobat el fitxer ZIM.
@@ -58,21 +50,25 @@ android.ui.external_storage=Extern
 android.ui.get_library_over_network=Utilitzar la xarxa per descarregar la llista de contingut. (Aproximadament 6MB)
 android.ui.go_to_play_store=Anar a la Play Store
 android.ui.got_it=Entesos
+# Fuzzy
 android.ui.help_10=Pots descarregar els arxius ZIM triats a l'aplicació, o bé seleccionar acuradament els que vulguis, descarregar-los des d'un ordinador i transferir-los a la targeta SD.
 android.ui.help_11=Els fitxers ZIM descarregats en l'aplicació es troben al directori d'emmagatzematge extern, en una carpeta anomenada Kiwix.
 android.ui.help_12=Com utilitzar fitxers ZIM grans?
 android.ui.help_13=Si el teu fitxer ZIM és més gran de 4GB, pot ser que no puguis emmagatzemar-lo en la teva targeta SD per limitacions en el sistema de fitxers.
+# Fuzzy
 android.ui.help_14=La descàrrega en l'aplicació gestiona els fitxers grans automàticament, i els parteix per a tu.
 android.ui.help_15=No obstant això, si estàs descarregant-lo en un altre dispositiu, pot ser que necessitis dividir el fitxer ZIM amb el següent programari:
 android.ui.help_16=\u2022 En Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 En Apple Mac OSX: Split i Concat
 android.ui.help_18=\u2022 En GNU/Linux i amb la consola: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Nota: cal que els fitxers resultants siguin anomenats fitxer_gran.zimaa, fitxer_gran.zimab, etc.
+# Fuzzy
 android.ui.help_1=Kiwix et permet accedir sense connexió a llocs web com la Viquipèdia d'una manera molt compacta.
 android.ui.help_20=Gràcies per triar Kiwix!
 android.ui.help_21=Estem molt feliços de tenir-te a bord i valorem qualsevol comentari o suggeriment a android@kiwix.org.
 android.ui.help_2=Què fa Kiwix?
 android.ui.help_3=Kiwix és un lector de contingut sense connexió. Actua molt semblant a un navegador però en comptes d'accedir a pàgines web en línia, llegeix el contingut d'un fitxer en format ZIM.
+# Fuzzy
 android.ui.help_4=Si bé Kiwix es va dissenyar originalment per a proporcionar una Wikipedia sense connexió, també pot llegir altres continguts.
 android.ui.help_5=On està el contingut?
 android.ui.help_6=El nostre contingut està allotjat en el lloc web de Kiwix
@@ -83,19 +79,15 @@ android.ui.hint_contents_drawer_message=Podeu lliscar el dit cap a l'esquerra pe
 android.ui.internal_storage=Intern
 android.ui.language_count=(%1$d)
 android.ui.local_zims=Dispositiu
-android.ui.menu_back=Tornar
 android.ui.menu_bookmarks=Marcadors
 android.ui.menu_bookmarks_list=Marcadors
 android.ui.menu_exitfullscreen=Sortir de pantalla completa
-android.ui.menu_forward=Endavant
 android.ui.menu_fullscreen=Pantalla completa
 android.ui.menu_help=Ajuda
 android.ui.menu_home=Inici
-android.ui.menu_library=Descarregar fitxers de contingut
 android.ui.menu_randomarticle=Article aleatori
 android.ui.menu_read_aloud=Llegir en veu alta
 android.ui.menu_read_aloud_stop=Deixar de llegir en veu alta
-android.ui.menu_rescan_fs=Tornar a escanejar la targeta SD
 android.ui.menu_search=Cercar article
 android.ui.menu_searchintext=Cercar a la pàgina
 android.ui.menu_settings=Configuració
@@ -107,12 +99,10 @@ android.ui.no_bookmarks=No hi ha marcadors
 android.ui.no_downloads_here=Cap descàrrega aquí
 android.ui.no_files_here=Cap fitxer aquí
 android.ui.no_network_connection=Cap connexió de xarxa
-android.ui.no_network_msg=Cap connexió de xarxa
 android.ui.no_reader_application_installed=No s'ha pogut trobar una aplicació instal·lada per a aquest tipus de fitxer
 android.ui.no_section_info=No es van trobar capçaleres de contingut
 android.ui.open=Obrir
 android.ui.open_in_new_tab=Obrir l'enllaç en una pestanya nova?
-android.ui.open_partial_zim=Pot ser que aquest fitxer estigui incomplet. Vols intentar obrir-lo?
 android.ui.other_languages=Altres idiomes:
 android.ui.path_not_writable=No s'ha pogut accedir al directori desitjat, s'usa el predeterminat. Per solucionar això, torna a seleccionar el directori desitjat en les preferències de l'aplicació.
 android.ui.pref_autonightmode=Mode nocturn automatitzat
@@ -128,10 +118,6 @@ android.ui.pref_nightmode_summary=Mostrar els articles amb colors invertits
 # Fuzzy
 android.ui.pref_zoom_dialog=Nivell de zoom
 android.ui.pref_zoom_enable=Controls de zoom
-android.ui.pref_zoom_entry_automatic=Automàtic
-android.ui.pref_zoom_entry_large=Gran
-android.ui.pref_zoom_entry_medium=Mitjà
-android.ui.pref_zoom_entry_small=Petit
 # Fuzzy
 android.ui.rescan_fs_warning=Buscant arxius ZIM. Espereu...
 # Fuzzy

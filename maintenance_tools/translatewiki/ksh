@@ -2,16 +2,13 @@
 # Exported from translatewiki.net
 # Author: Purodha
 
-android.ui.articlesearch_hint=Tippe, öm noh Atikelle ze söhke
 android.ui.bookmark_added=Lässezeijsche derbei jedonn
-android.ui.bookmarks_restored=Lässezeijsche zerök jehollt
 # Fuzzy
 android.ui.button_backtotop=Returr aan der Sigge_Aanfang
 # Fuzzy
 android.ui.choose_file=Söhg_en ZIM-Dattei för der Enhalld_uß (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Ding Projramm et kappott.\nDat kann dervun kumme, wam_mer Datteije vun SD-Kaate fott määt. Dat Projramm moß mer fott donn un neuj vum Play Store enschtallehre.
-android.ui.error_articlenotfound=Fähler: Dä Atikel \"%1$s\" kunnt nit jelaade wääde.
 android.ui.error_articleurlnotfound=Fähler: Dä Atikel (Url: %1$s) kunnt nit jelaade wääde.
 android.ui.error_fileinvalid=Fähler: Dat es kein jöltijje ZIM-Dattei.
 android.ui.error_filenotfound=Fähler: De ZIM-Dattei wohr nit ze fenge.
@@ -21,8 +18,6 @@ android.ui.error_nozimfilesfound=Mer han kein ZIM-Datteije op Dingem Jeräät fe
 android.ui.go_to_play_store=Jangk nohm  Play Store.
 android.ui.menu_read_aloud=Lout lässe
 android.ui.menu_read_aloud_stop=Nit mih lout lässe
-# Fuzzy
-android.ui.menu_rescan_fs=De SD-Kaat nrr_ens lässe
 # Fuzzy
 android.ui.no_bookmarks=Mer han keijn Lässezeijsche!
 android.ui.no_reader_application_installed=Mer kunnte keij Projramm fenge, wat för di Zoot Datteij enschtallehrt woode wöhr.
@@ -42,10 +37,6 @@ android.ui.pref_nightmode_summary=Donn de Atikelle met ömjedrieht Färve aanzei
 # Fuzzy
 android.ui.pref_zoom_dialog=et Zoom-Nivoh
 android.ui.pref_zoom_enable=de Zoom-Schtüürong
-android.ui.pref_zoom_entry_automatic=Automattesch
-android.ui.pref_zoom_entry_large=Jruhß
-android.ui.pref_zoom_entry_medium=Meddel
-android.ui.pref_zoom_entry_small=Klein
 # Fuzzy
 android.ui.rate_dialog_msg_1=Wann De Spaß häs aan/aam <!--  https://translatewiki.net/wiki/Thread:Support/About_Kiwix:Android.ui.rate_dialog_msg_1/qqq -->
 android.ui.rate_dialog_negative=Danke. Nää.

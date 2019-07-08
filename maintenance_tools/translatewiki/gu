@@ -9,17 +9,13 @@
 # Author: Macofe
 # Author: Tanmay
 
-android.ui.articlesearch_hint=લેખો શોધવા માટે લખો
 # Fuzzy
 android.ui.button_backtotop=ટોપ પર પાછા જાઓ
 # Fuzzy
 android.ui.choose_file=ZIM માહિતી ફાઇલ (*.zim) પસંદ કરો
-android.ui.error_articlenotfound=ક્ષતિ: લેખ \"%1$s\" લાવવાનું નિષ્ફળ ગયું.
 android.ui.error_articleurlnotfound=ક્ષતિ: લેખ (Url: %1$s) લાવવાનું નિષ્ફળ થયું.
 android.ui.error_fileinvalid=ક્ષતિ: પસંદ કરેલ ફાઇલ યોગ્ય ZIM ફાઇલ નથી.
 android.ui.error_filenotfound=ક્ષતિ: પસંદ કરેલ ZIM ફાઇલ મળી શકી નહી.
-# Fuzzy
-android.ui.menu_rescan_fs=SD કાર્ડ ફરી ચકાસો
 android.ui.open_in_new_tab=કડી નવી ટેબમાં ખોલશો?
 android.ui.pref_backtotop=ટોપ પર પાછા જાઓ
 android.ui.pref_info_title=માહિતી
@@ -28,10 +24,6 @@ android.ui.pref_language_chooser=ભાષા પસંદ કરો
 android.ui.pref_nightmode=રાત્રિ સ્થિતિ
 # Fuzzy
 android.ui.pref_nightmode_summary=ઉલ્ટા રંગો વડે લેખો દર્શાવો
-android.ui.pref_zoom_entry_automatic=આપોઆપ
-android.ui.pref_zoom_entry_large=મોટો
-android.ui.pref_zoom_entry_medium=માધ્યમ
-android.ui.pref_zoom_entry_small=નાનો
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM ફાઇલ્સ શોધો છે, મહેરબાની કરી થોડી રાહ જુઓ...
 ui.main.about=વિશે &brand.brandShortName;

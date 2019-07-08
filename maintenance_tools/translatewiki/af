@@ -4,19 +4,15 @@
 # Author: Naudefj
 # Author: SPQRobin
 
-android.ui.articlesearch_hint=Tik om artikels te soek
 # Fuzzy
 android.ui.button_backtotop=Terug na bo
 # Fuzzy
 android.ui.choose_file=Kies 'n ZIM-inhoudslêer (*.zim)
-android.ui.error_articlenotfound=Fout: Laai van bladsy \"%1$s\" het gefaal.
 android.ui.error_articleurlnotfound=Fout: Laai van bladsy (URL: %1$s) het gefaal.
 android.ui.error_fileinvalid=Fout: die geselekteerde lêer is nie 'n geldige ZIM-lêer nie.
 android.ui.error_filenotfound=Fout: die geselekteerde ZIM-lêer kon nie gevind word nie.
 # Fuzzy
 android.ui.error_nozimfilesfound=Geen ZIM-lêers op u toestel nie.\nKyk na die Hulpbladsy vir instruksies oor hoe om inhoud in Kiwix te laai.\nAs u 'n ZIM-lêer op u toestel/eksterne kaart gesit het, probeer na 'n paar sekondes weer of herlaai u toestel.
-# Fuzzy
-android.ui.menu_rescan_fs=Herskandeer SD-kaart
 android.ui.open_in_new_tab=Open skakel in nuwe oortjie?
 android.ui.pref_backtotop=Terug na bo
 android.ui.pref_backtotop_summary=Wys 'n knop onder die bladsy om na bo terug te spring
@@ -29,10 +25,6 @@ android.ui.pref_nightmode_summary=Wys artikels met omgekeerde kleure
 # Fuzzy
 android.ui.pref_zoom_dialog=Zoom-vlak
 android.ui.pref_zoom_enable=Zoom-instellings
-android.ui.pref_zoom_entry_automatic=Outomaties
-android.ui.pref_zoom_entry_large=Groot
-android.ui.pref_zoom_entry_medium=Medium
-android.ui.pref_zoom_entry_small=Klein
 # Fuzzy
 android.ui.rescan_fs_warning=Soek ZIM-lêers. Wag asb...
 ui.main.about=Oor &brand.brandShortName;

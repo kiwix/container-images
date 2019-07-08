@@ -3,19 +3,15 @@
 # Author: Rgaudin
 # Author: Songhay
 
-android.ui.articlesearch_hint=Harfey dam ka dii hantumey
 # Fuzzy
 android.ui.button_backtotop=Willi beene
 # Fuzzy
 android.ui.choose_file=ZIM gundekuna tuku (*.zim) foo suuba
-android.ui.error_articlenotfound=Firka: Hantum kaŋ ti \"%1$s\" mana hin ka zunbu.
 android.ui.error_articleurlnotfound=Firka: Hantum kaŋ goo (Url: %1$s) mana hin ka zunbu.
 android.ui.error_fileinvalid=Firka: Tukoo kaŋ suubandi manti ZIM tuku boryo.
 android.ui.error_filenotfound=Firka: ZIM kaŋ suubandi mana hin ka duwandi.
 # Fuzzy
 android.ui.error_nozimfilesfound=ZIM tuku kul ši duwandi war jinaa ga.\nMoo fur ir faaba moɲoo ga ka faham taka kaŋ nda gundekuna zumandi Kiwix ra. Nda war bay ka ZIM tuku fam war jinaa/tarayhere jišidoo ga, war ga hin k'a tee koyne miniti foo ra wala wa jinaa tunandi taaga.
-# Fuzzy
-android.ui.menu_rescan_fs=SD kattaa koroši taaga
 android.ui.open_in_new_tab=Doboo feeri nor loku taaga ra?
 android.ui.pref_backtotop=Willi beene
 android.ui.pref_backtotop_summary=Butoŋoo cebe moɲoo benantaa ka k'a cendi beene
@@ -28,10 +24,6 @@ android.ui.pref_nightmode_summary=Hantumey cebe nda noone berantey
 # Fuzzy
 android.ui.pref_zoom_dialog=Azzaati alkadar
 android.ui.pref_zoom_enable=Azzaati barmayyan juwaley
-android.ui.pref_zoom_entry_automatic=Ga dira nga boŋ se
-android.ui.pref_zoom_entry_large=Beeri
-android.ui.pref_zoom_entry_medium=Sasawante
-android.ui.pref_zoom_entry_small=Kayna
 # Fuzzy
 android.ui.rescan_fs_warning=Goo ma ZIM tukey koroši, batu taare…
 # Fuzzy

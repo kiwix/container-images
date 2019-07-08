@@ -3,12 +3,10 @@
 # Author: Amangeldy
 # Author: Arystanbek
 
-android.ui.articlesearch_hint=Мақалаларды іздеу үшін теріңіз
 # Fuzzy
 android.ui.button_backtotop=Жоғарыға қайту
 # Fuzzy
 android.ui.choose_file=(*.zim) ZIM контент файлын таңдаңыз
-android.ui.error_articlenotfound=Қате: \"%1$s\" мақаланы жүктеу сәтсіз болды.
 android.ui.error_articleurlnotfound=Қате: (Url: %1$s) мақаланы жүктеу сәтсіз болды.
 android.ui.error_fileinvalid=Қате: Таңдалған ZIM Файл жарамды емес.
 android.ui.error_filenotfound=Қате: Таңдалған ZIM Файл табылмады.
@@ -16,8 +14,6 @@ android.ui.error_filenotfound=Қате: Таңдалған ZIM Файл табы
 android.ui.error_nozimfilesfound=Сіздің құрылғыңыздан ZIM файл табылмады. \nKiwix-те қалай контентті жүктеу туралы бағыттарды алу үшін анықтама бетінен қараңыз. Егер сіз ZIM файлды құрылғыңызға/сыртқы сақтау орнына қойған болсаңыз, бір минуттан соң қайта көріңіз немесе құрылғыңызды қайтадан қосыңыз.
 android.ui.menu_read_aloud=Дауыстап оқу
 android.ui.menu_read_aloud_stop=Дауыстап оқуды тоқтату
-# Fuzzy
-android.ui.menu_rescan_fs=SD картты қайта сканнерлеу
 android.ui.open_in_new_tab=Сілтемені жаңа қойылымға ашасыз ба?
 android.ui.pref_backtotop=Жоғарыға қайту
 android.ui.pref_backtotop_summary=Беттің басына көтерілу үшін беттің төменгі жағындағы батырманы көрсету
@@ -30,10 +26,6 @@ android.ui.pref_nightmode_summary=Мақалаларды ауыстырылға�
 # Fuzzy
 android.ui.pref_zoom_dialog=Масштабтау деңгейі
 android.ui.pref_zoom_enable=Масштабтау басқарулары
-android.ui.pref_zoom_entry_automatic=Автоматты
-android.ui.pref_zoom_entry_large=Үлкен
-android.ui.pref_zoom_entry_medium=Орташа
-android.ui.pref_zoom_entry_small=Кішкене
 # Fuzzy
 android.ui.rescan_fs_warning=ZIM файлдарды сканнерлеуде, күте тұрыңыз...
 # Fuzzy

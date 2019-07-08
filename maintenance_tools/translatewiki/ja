@@ -11,16 +11,12 @@
 # Author: SkyDaisy9
 # Author: 青子守歌
 
-android.ui.add_bookmark=ブックマークに追加
 android.ui.all_history_cleared_toast=全履歴を削除しました
-android.ui.articlesearch_hint=記事の検索
 android.ui.button_backtotop=トップに戻る
 android.ui.do_not_ask_anymore=これ以上聞かないでください
-android.ui.error_articlenotfound=エラー: 記事「%1$s」を読み込めませんでした。
 android.ui.error_articleurlnotfound=エラー: 記事 (URL: %1$s) を読み込めませんでした。
 android.ui.error_fileinvalid=エラー: 選択したファイルは有効な ZIM ファイルではありません。
 android.ui.error_filenotfound=エラー: 選択した ZIM ファイルが見つかりませんでした。
-android.ui.menu_rescan_fs=SD カードを再スキャン
 android.ui.open_in_new_tab=リンクを新しいタブで開きますか?
 android.ui.other_languages=その他の言語:
 android.ui.pref_backtotop=トップに戻る
@@ -31,10 +27,6 @@ android.ui.pref_nightmode=夜モード
 android.ui.pref_nightmode_summary=記事を反転色で表示する
 android.ui.pref_zoom_dialog=ズーム レベル
 android.ui.pref_zoom_enable=ズーム コントロール
-android.ui.pref_zoom_entry_automatic=自動
-android.ui.pref_zoom_entry_large=大
-android.ui.pref_zoom_entry_medium=標準
-android.ui.pref_zoom_entry_small=小
 android.ui.rescan_fs_warning=ダウンロード可能なコンテンツをスキャンしています。お待ちください...
 android.ui.save_media_error=メディアを保存しようとした際にエラーが発生しました!
 android.ui.zim_manager=ライブラリ

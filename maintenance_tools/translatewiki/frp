@@ -4,9 +4,6 @@
 # Author: Macofe
 
 android.ui.pref_info_version=Vèrsion
-android.ui.pref_zoom_entry_large=Grant
-android.ui.pref_zoom_entry_medium=Moyena
-android.ui.pref_zoom_entry_small=Petiôt
 ui.main.about.accesskey=P
 ui.main.about=Sur &brand.brandShortName;
 ui.main.audible=Ôdiblo

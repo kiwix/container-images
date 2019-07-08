@@ -10,17 +10,13 @@
 # Author: Patsagorn Y.
 # Author: Villagescience
 
-android.ui.add_bookmark=เพิ่มบุ๊คมาร์ค
 android.ui.all_history_cleared_toast=ลบประวัติทั้งหมดแล้ว
-android.ui.articlesearch_hint=ชนิดในการดูบทความ
 android.ui.bookmark_added=เพิ่มบุ๊คมาร์คแล้ว
 android.ui.bookmark_removed=ลบบุ๊คมาร์คแล้ว
-android.ui.bookmarks_restored=นำบุ๊คมาร์คกลับคืน
 android.ui.button_backtotop=กลับขึ้นด้านบน
 android.ui.choose_file=เลือกไฟล์เนื้อหา (*.zim)
 android.ui.clear_all_history_dialog_title=ลบประวัติทั้งหมด
 android.ui.clear_recent_and_tabs_history_dialog=คุณแน่ใจหรือไม่ว่าต้องการที่จะลบประวัติการค้นหาทั้งหมดและรีเซ็ตแท็บที่ใช้งานอยู่ทั้งหมด?
-android.ui.clear_recent_history_dialog=คุณแน่ใจหรือไม่ว่าต้องการลบประวัติการค้นหาทั้งหมด?
 android.ui.confirm_stop_download_msg=คุณแน่ใจหรือไม่ว่าต้องการหยุดดาวน์โหลดนี้?
 android.ui.confirm_stop_download_title=หยุดดาวน์โหลดหรือไม่?
 android.ui.customapp_missing_content=แอปพลิเคชันของคุณเสียหาย ซึ่งอาจเกิดขึ้นเมื่อคุณลบไฟล์ใน SD การ์ด คุณต้องถอนการติดตั้งแล้วติดตั้งแอปใหม่อีกครั้งจากเพลสโตร์
@@ -35,16 +31,12 @@ android.ui.deleted_message=ลบแล้ว
 android.ui.did_you_know=คุณรู้หรือไม่?
 android.ui.do_not_ask_anymore=อย่าถามอีก
 android.ui.download_change_storage=ตัวเลือกอุปกรณ์จัดเก็บข้อมูล
-android.ui.download_close=ปิด
 android.ui.download_complete_snackbar=ดาวน์โหลดเสร็จสมบูรณ์
 android.ui.download_no_space=พื้นที่ไม่เพียงพอในการดาวน์โหลดไฟล์นี้
-android.ui.download_over_network=คุณแน่ใจหรือไม่ว่าต้องการเริ่มการดาวน์โหลดโดยไม่ใช้ WiFi?
 android.ui.download_pause=หยุดชั่วคราว
 android.ui.download_paused=หยุดชั่วคราว
-android.ui.download_play=เล่นต่อ
 android.ui.download_started_library=เริ่มดาวน์โหลด...
 android.ui.download_stop=หยุด
-android.ui.error_articlenotfound=ข้อผิดพลาด:ไม่สามารถดาวน์โหลดบทความ \"%1$s\" ได้
 android.ui.error_articleurlnotfound=ข้อผิดพลาด:ไม่สามารถดาวน์โหลดบทความได้ (URL:%1$s)
 android.ui.error_fileinvalid=ข้อผิดพลาด:ไฟล์ที่เลือกไม่ได้เป็นไฟล์ ZIM ที่ถูกต้อง
 android.ui.error_filenotfound=ข้อผิดพลาด:ไม่พบไฟล์ ZIM ที่เลือก
@@ -55,11 +47,11 @@ android.ui.external_storage=ภายนอก
 android.ui.get_library_over_network=ใช้เครือข่ายเพื่อดาวน์โหลดรายการเนื้อหา (ประมาณ 6 เมกะไบต์)
 android.ui.go_to_play_store=ไปที่เพลย์สโตร์
 android.ui.got_it=เข้าใจแล้ว
+# Fuzzy
 android.ui.help_10=คุณสามารถดาวน์โหลดไฟล์ ZIM ที่คุณเลือกในแอพหรือเลือกไฟล์ที่คุณต้องการและดาวน์โหลดจากคอมพิวเตอร์เดสก์ท็อปอย่างระมัดระวังก่อนที่จะถ่ายโอนไฟล์ ZIM ไปยังเอสดีการ์ดของคุณ
 android.ui.help_11=การดาวน์โหลดไฟล์ ZIM ในแอพจะอยู่ในไดเรกทอรีจัดเก็บข้อมูลภายนอกในโฟลเดอร์ชื่อ Kiwix
 android.ui.help_12=จะใช้ไฟล์ ZIM ขนาดใหญ่ได้อย่างไร ?
 android.ui.pref_info_version=รุ่น
-android.ui.pref_zoom_entry_small=เล็ก
 android.ui.rate_dialog_negative=ไม่ ขอบคุณ
 android.ui.rate_dialog_neutral=ทีหลัง
 android.ui.rate_dialog_title=โปรดให้คะแนนเรา

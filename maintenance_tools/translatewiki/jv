@@ -6,9 +6,6 @@
 android.ui.pref_info_title=Informasi
 android.ui.pref_info_version=Vèrsi
 android.ui.pref_language_chooser=Pilih basa
-android.ui.pref_zoom_entry_automatic=Otomatis
-android.ui.pref_zoom_entry_large=Gedhé
-android.ui.pref_zoom_entry_small=Cilik
 ui.main.about=Bab &brand.brandShortName;
 ui.main.audible=Bisa krungu
 ui.main.back=Balik

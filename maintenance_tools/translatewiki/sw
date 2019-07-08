@@ -9,15 +9,12 @@
 # Author: Stephenwanjau
 # Author: Yasen igra
 
-android.ui.articlesearch_hint=Andika ili kutafuta makala
 # Fuzzy
 android.ui.button_backtotop=Rudi Juu
 # Fuzzy
 android.ui.choose_file=Chagua Faili ya Makala ya ZIM (*.zim)
 android.ui.delete=Futa
 android.ui.deleted_message=imefutwa
-android.ui.download_close=Funga
-android.ui.error_articlenotfound=Hitilafu: Upakuzi wa makala umefeli \"%1$s\"
 android.ui.error_articleurlnotfound=Hitilafu:Upakiaji wa makala umefeli (Url: %1$s)
 android.ui.error_fileinvalid=Hitilafu:Faili iliyochaguliwa sio faili sahihi ya ZIM.
 android.ui.error_filenotfound=Hitilafu: Faili ya ZIM iliyochaguliwa haija patikana.
@@ -27,19 +24,15 @@ android.ui.external_storage=Nje
 android.ui.go_to_play_store=Enda kwa Play Store
 android.ui.got_it=Nimeipata
 android.ui.internal_storage=Ndani
-android.ui.menu_back=Rudi
 android.ui.menu_bookmarks=Maalamisho
 android.ui.menu_bookmarks_list=Maalamisho
 android.ui.menu_exitfullscreen=Toka kwa modi ya Skrini nzima
-android.ui.menu_forward=Pelekea
 android.ui.menu_fullscreen=Skrini nzima
 android.ui.menu_help=Msaada
 android.ui.menu_home=Mwanzo
 android.ui.menu_randomarticle=Ukurasa wa bahati
 android.ui.menu_read_aloud=Soma kwa sauti
 android.ui.menu_read_aloud_stop=Simama kusoma kwa sauti
-# Fuzzy
-android.ui.menu_rescan_fs=Pekua tena kadi ya SD
 android.ui.menu_search=Tafuta makala
 android.ui.menu_searchintext=Tafuta katika ukurasa
 android.ui.menu_settings=Mipangilio
@@ -60,10 +53,6 @@ android.ui.pref_nightmode_summary=Onyesha makala yakiwa na rangi kubatilishwa
 # Fuzzy
 android.ui.pref_zoom_dialog=Kiwango cha ukuzi
 android.ui.pref_zoom_enable=Vidhibiti vya ukuzi
-android.ui.pref_zoom_entry_automatic=otomatiki
-android.ui.pref_zoom_entry_large=kubwa
-android.ui.pref_zoom_entry_medium=ya kati
-android.ui.pref_zoom_entry_small=ndogo
 android.ui.pref_zoom_sub_title=Vuta karibu/mbali
 # Fuzzy
 android.ui.rescan_fs_warning=Tafadhali subiri, faili za ZIM zatafutwa

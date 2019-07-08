@@ -6,17 +6,14 @@
 # Author: Robin Owain
 # Author: Xxglennxx
 
-android.ui.articlesearch_hint=Teipiwch i chwilio am erthyglau
 android.ui.button_backtotop=Nôl i'r brig
 android.ui.choose_file=Dewisiwch Ffeil Gynnwys (*.zim)
-android.ui.error_articlenotfound=Gwall: Methwyd a llwytho'r erthygl: \"%1$s\".
 android.ui.error_articleurlnotfound=Gwall: Methwyd a llwytho'r erthygl: (Url: %1$s).
 android.ui.error_fileinvalid=Gwall: Dydy'r ffeil dan sylw ddim yn ffeil ZIM dilys.
 android.ui.error_filenotfound=Gwall: Doedd dim modd canfod y ffeil ZIM dan sylw.
 android.ui.error_nozimfilesfound=Dim ffeiliau ar eich dyfais.\nCymrwch gip ar y Ddalen Gymorth i gael cyfarwyddiadau sut i lwytho cynnwys i Kiwix.\nOs y rhoesoch ffeil ZIM yn eich dyfais/storws allanol gallech ailgynnig mewn munud neu ailgychwyn eich dyfais.
 android.ui.menu_read_aloud=Darllenwch yn uchel
 android.ui.menu_read_aloud_stop=Stopiwch ddarllen yn uchel
-android.ui.menu_rescan_fs=Ailsganio'r cerdyn SD
 android.ui.open_in_new_tab=Agor y ddolen mewn tab newydd?
 android.ui.pref_backtotop=Nôl i'r brig
 android.ui.pref_backtotop_summary=Arddangos botwm ar waelod y dudalen i sgrolio hyd at y brig
@@ -27,12 +24,9 @@ android.ui.pref_nightmode=Modd nos
 android.ui.pref_nightmode_summary=Dangos erthyglau gyda lliwiau croes
 android.ui.pref_zoom_dialog=Lefel pellhau
 android.ui.pref_zoom_enable=Rheolaeth pellter
-android.ui.pref_zoom_entry_automatic=Otomatig
-android.ui.pref_zoom_entry_large=Mawr
-android.ui.pref_zoom_entry_medium=Canolig
-android.ui.pref_zoom_entry_small=Bach
 android.ui.rescan_fs_warning=Sganio am ffeiliau i'w lawrlwytho, dal dy ddŵr...
 android.ui.save_media_error=Gwall wrth geisio cadw'r cyfrwng!
+# Fuzzy
 android.ui.save_media_saved=Arbedwyd cyfryngau fel  %1$s  yn Android/media/org.kiwix.../
 ui.main.about=Am &brand.brandShortName;
 ui.main.audible=Sain

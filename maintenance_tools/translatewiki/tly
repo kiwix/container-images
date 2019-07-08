@@ -3,7 +3,6 @@
 # Author: Erdemaslancan
 # Author: Гусейн
 
-android.ui.articlesearch_hint=Бынывыштән бо мәғолә нәве
 # Fuzzy
 android.ui.button_backtotop=Бә пе огардеј
 # Fuzzy
@@ -15,10 +14,6 @@ android.ui.pref_info_title=Мәлумот
 android.ui.pref_info_version=Рәвојәт
 android.ui.pref_language_chooser=Зывон бывыжнән
 android.ui.pref_nightmode=Шәви режим
-android.ui.pref_zoom_entry_automatic=Автомәтик
-android.ui.pref_zoom_entry_large=Дыжд
-android.ui.pref_zoom_entry_medium=Мијонә
-android.ui.pref_zoom_entry_small=Гәдәли
 ui.main.about=Чыми бәрәдә &brand.brandShortName;
 ui.main.audible=Де ванги
 ui.main.back=Бә думо

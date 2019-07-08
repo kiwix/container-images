@@ -4,16 +4,13 @@
 # Author: Johary
 # Author: Macofe
 
-android.ui.articlesearch_hint=Manorata eto raha hikaroka lahatsoratra
 android.ui.bookmark_added=Mari-boky nampiana
-android.ui.bookmarks_restored=Mari-boky naverina
 # Fuzzy
 android.ui.button_backtotop=Tampon-pejy
 # Fuzzy
 android.ui.choose_file=Hisafidy rakitra misy votoatiny (*.zim)
 # Fuzzy
 android.ui.customapp_missing_content=Simba ny fampiharanao.\nMety mitranga izany rehefa manala rakitra amin'ny karatra SD.\nMila manala sy mamerina manetraka ilay fampiharana avy amin'ny Play Store ianao.
-android.ui.error_articlenotfound=Hadisoana: Tsy nahafahana ilay lahatsoratra "%1$s".
 android.ui.error_articleurlnotfound=Hadisoana: tsy nahafahana ilay lahatsoratra (Url: %1$s).
 android.ui.error_fileinvalid=Hadisoana: Rakitra ZIM tsy azo raisina ilay voafidinao.
 android.ui.error_filenotfound=Hadisoana: Tsy nahita ilay rakitra ZIM voafidinao.
@@ -22,8 +19,6 @@ android.ui.error_nozimfilesfound=Tsy nahitana rakitra ZIM tao amin'ny fitaovanao
 android.ui.go_to_play_store=Handeha any amin'ny Play Stor
 android.ui.menu_read_aloud=Vakiana ho heno
 android.ui.menu_read_aloud_stop=Hijanona tsy hamaky ho heno
-# Fuzzy
-android.ui.menu_rescan_fs=Handinika ny karatra SD
 # Fuzzy
 android.ui.no_bookmarks=Tsy misy marika
 android.ui.no_reader_application_installed=Tsy nahita fampiaharana napetraka ho an'ity karazan-drakitra ity
@@ -43,10 +38,6 @@ android.ui.pref_nightmode_summary=Haneho lahatsoratra amin'ny loko mivadika
 # Fuzzy
 android.ui.pref_zoom_dialog=Lentan'ny zoom
 android.ui.pref_zoom_enable=Famehezana zoom
-android.ui.pref_zoom_entry_automatic=Ho azy
-android.ui.pref_zoom_entry_large=Lehibe
-android.ui.pref_zoom_entry_medium=Antonony
-android.ui.pref_zoom_entry_small=Kely
 android.ui.rate_dialog_msg_1=Raha tianao ny mampiasa
 android.ui.rate_dialog_msg_2=, makà fotoana kely dia kely hanomezana naoty an'ilay izy. Misaotra anao manohana!
 android.ui.rate_dialog_negative=Aoka fa misaotra

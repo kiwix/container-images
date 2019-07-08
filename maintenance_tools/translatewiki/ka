@@ -8,14 +8,11 @@
 # Author: Macofe
 # Author: Otogi
 
-android.ui.articlesearch_hint=შეიყვანეთ სტატიების მოსაძებნად
 android.ui.bookmark_added=სანიშნი დამატებულია
-android.ui.bookmarks_restored=სანიშნეები აღდგენილია
 # Fuzzy
 android.ui.button_backtotop=თავში დაბრუნება
 # Fuzzy
 android.ui.choose_file=აირჩიეთ ZIM-ფაილი (*.zim)
-android.ui.error_articlenotfound=შეცდომა: სტატია \"%1$s\" ვერ ჩაიტვირთა.
 android.ui.error_articleurlnotfound=შეცდომა: სტატია (Url: %1$s) ვერ ჩაიტვირთა.
 android.ui.error_fileinvalid=შეცდომა: არჩეული ფაილი არ არის სწორი ZIM ფაილი.
 android.ui.error_filenotfound=შეცდომა: არჩეული ZIM ფაილი ვერ მოიძებნა.
@@ -24,8 +21,6 @@ android.ui.error_nozimfilesfound=თქვენს მოწყობილო�
 android.ui.go_to_play_store=Play მარკეტში გადასვლა
 android.ui.menu_read_aloud=ხმამაღლა კითხვა
 android.ui.menu_read_aloud_stop=ხმამაღლა კითხვის შეჩერება
-# Fuzzy
-android.ui.menu_rescan_fs=SD ბარათის ხელმეორედ სკანირება
 # Fuzzy
 android.ui.no_bookmarks=სანიშნები არ არის!
 android.ui.open_in_new_tab=ბმული ახალ ჩანართში გაიხსნას?
@@ -40,10 +35,6 @@ android.ui.pref_nightmode_summary=სტატიის შებრუნებ
 # Fuzzy
 android.ui.pref_zoom_dialog=მასშტაბირების დონე
 android.ui.pref_zoom_enable=მასშტაბირების კონტროლი
-android.ui.pref_zoom_entry_automatic=ავტომატური
-android.ui.pref_zoom_entry_large=დიდი
-android.ui.pref_zoom_entry_medium=საშუალო
-android.ui.pref_zoom_entry_small=პატარა
 android.ui.rate_dialog_msg_1=თუ თქვენ მოგწონთ
 android.ui.rate_dialog_negative=არა, გმადლობთ
 android.ui.rate_dialog_neutral=მოგვიანებით

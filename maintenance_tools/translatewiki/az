@@ -7,20 +7,16 @@
 # Author: Macofe
 # Author: Mjbmr
 
-android.ui.articlesearch_hint=Məqalədə axtarmaq istədiyiniz sözü daxil edin.
 # Fuzzy
 android.ui.button_backtotop=Əvvələ qayıt
 # Fuzzy
 android.ui.choose_file=ZIM məzmunlu fayl seç (*.zim)
-android.ui.error_articlenotfound=Xəta:\"%1$s\" adlı məqalənin yüklənməsi alınmadı.
 android.ui.error_articleurlnotfound=Xəta: Məqalənin (Url: %1$s) yüklənməsi alınmadı.
 android.ui.error_fileinvalid=Xəta: Seçilmiş ZIM faylı yararlı deyil.
 android.ui.error_filenotfound=Xəta: Seçilmiş ZIM fayl mövcud deyil.
 # Fuzzy
 android.ui.error_nozimfilesfound=Sizin qurğunuzda ZIM-faylları tapılmadı. Kiwix tərkibinin necə yüklənilməsi barədə göstərişlər\nməlumat səhifəsində yerləşdirilmişdir.\nƏgər siz, cihaz və ya daşıyıcı yaddaş qurğusunda ZIM-fayl yerləşdirmisinzə, proqramı və ya cihazı yenidən başladın.
 android.ui.go_to_play_store=Play Store keç
-# Fuzzy
-android.ui.menu_rescan_fs=SD kartda axtarışı təkrarla
 # Fuzzy
 android.ui.no_section_info=Məzmunun heç bir başlıqı tapılmadı.
 android.ui.open_in_new_tab=Linki yeni pəncərədə aç?
@@ -35,10 +31,6 @@ android.ui.pref_nightmode_summary=Məqalələri "gecə rejimində" göstər
 # Fuzzy
 android.ui.pref_zoom_dialog=Miqyas səviyyəsi
 android.ui.pref_zoom_enable=Miqyas quraşdırılmaları
-android.ui.pref_zoom_entry_automatic=Avtomatik
-android.ui.pref_zoom_entry_large=Geniş
-android.ui.pref_zoom_entry_medium=Orta
-android.ui.pref_zoom_entry_small=Kiçik
 android.ui.rate_dialog_msg_1=Əgər, istifadədən xoşlandınızsa
 android.ui.rate_dialog_msg_2=xahiş edirik, dəyərləndirmək üçün bir az vaxt ayırın. Dəstəklədiyiniz üçün təşəkkür edirik!
 android.ui.rate_dialog_negative=Yox, sağ olun
