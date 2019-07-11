@@ -8,6 +8,7 @@
 # Author: Parabaik
 
 android.ui.all_history_cleared_toast=ရာဇဝင်အားလုံး ရှင်းလင်းပြီး
+android.ui.articleCount=%s ဆောင်းပါးများ
 android.ui.bookmark_added=စာညှပ်မှတ် ထည့်ပေါင်းပြီး
 android.ui.button_backtotop=ထိပ်ဆုံးသို့ ပြန်သွားရန်
 android.ui.choose_file=အကြောင်းအရာဖိုင်တစ်ခုကို ရွေးချယ်ပါ (*.zim)
@@ -34,6 +35,7 @@ android.ui.external_storage=ပြင်ပ
 android.ui.go_to_play_store=Play စတိုးသို့ သွားရန်
 android.ui.got_it=ရပြီဟေ့
 android.ui.help_5=အကြောင်းအရာ ဘယ်မှာနည်း?
+android.ui.history=ရာဇဝင်
 android.ui.language_count=(%1$d)
 android.ui.local_zims=စက်ပစ္စည်း
 android.ui.menu_help=အ​ကူ​အ​ညီ​
@@ -85,6 +87,8 @@ android.ui.time_hour=နာရီ
 android.ui.time_left=ကျန်ရှိ
 android.ui.time_minute=မိနစ်
 android.ui.time_second=စက္ကန့်
+android.ui.time_today=ယနေ့
+android.ui.time_yesterday=မနေ့
 android.ui.tts_lang_not_supported=ဤစာမျက်နှာ၏ ဘာသာစကားကို မထောက်ပံ့ထားပါ၊ သို့မဟုတ် သင့်လျော်သော ဘာသာစကားဒေတာကို သွင်းမထားပါ။ ဆောင်းပါးကို မှန်ကန်စွာ ဖတ်နိုင်မည်မဟုတ်ပါ။
 android.ui.tts_pause=ခေတ္တရပ်
 android.ui.tts_stop=ရပ်

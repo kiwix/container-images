@@ -11,6 +11,7 @@ android.ui.add_note=Pievienot piezīmi
 android.ui.button_backtotop=Atpakaļ uz augšu
 android.ui.clear_all_history_dialog_title=Notīrīt visu vēsturi
 android.ui.delete=Dzēst
+android.ui.delete_notes_confirmation_msg=Dzēst visas piezīmes?
 android.ui.delete_recent_search_item=Dzēst šo vienumu?
 android.ui.delete_specific_zim=Dzēst šo failu?
 android.ui.delete_specific_zim_toast=Fails dzēsts

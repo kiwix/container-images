@@ -5,9 +5,11 @@
 # Author: Leducthn
 # Author: Max20091
 # Author: Minh Nguyen
+# Author: Tuanminh01
 # Author: Withoutaname
 # Author: පසිඳු කාවින්ද
 
+android.ui.add_note=Thêm ghi chú
 android.ui.all_history_cleared_toast=Đã xoá hết lịch sử
 android.ui.bookmark_added=Đã thêm dấu trang
 android.ui.bookmark_removed=Đã xóa dấu trang

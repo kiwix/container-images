@@ -22,6 +22,7 @@ android.ui.clear_all_history_dialog_title=Esborra tot l'historial
 android.ui.clear_recent_and_tabs_history_dialog=Segur que vols esborrar l'historial de cerques i restablir totes les pestanyes actives?
 android.ui.confirm_stop_download_msg=Segur que vols aturar aquesta descàrrega?
 android.ui.confirm_stop_download_title=Aturar la descàrrega?
+android.ui.crash_button_decline=NO, MERCÈS
 android.ui.customapp_missing_content=L'aplicació està espatllada.\nAixò pot passar quan s'esborren fitxers de la targeta SD.\nHas de desinstal·lar i tornar a instal·lar l'aplicació des del Play Store.
 android.ui.delete=Esborrar
 android.ui.delete_recent_search_item=Esborrar aquest element?
@@ -62,8 +63,7 @@ android.ui.help_16=\u2022 En Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 En Apple Mac OSX: Split i Concat
 android.ui.help_18=\u2022 En GNU/Linux i amb la consola: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Nota: cal que els fitxers resultants siguin anomenats fitxer_gran.zimaa, fitxer_gran.zimab, etc.
-# Fuzzy
-android.ui.help_1=Kiwix et permet accedir sense connexió a llocs web com la Viquipèdia d'una manera molt compacta.
+android.ui.help_1=El Kiwix us ofereix accés sense connexió a llocs web com la Viquipèdia en un format d’alta compressió.
 android.ui.help_20=Gràcies per triar Kiwix!
 android.ui.help_21=Estem molt feliços de tenir-te a bord i valorem qualsevol comentari o suggeriment a android@kiwix.org.
 android.ui.help_2=Què fa Kiwix?
@@ -124,6 +124,7 @@ android.ui.rescan_fs_warning=Buscant arxius ZIM. Espereu...
 android.ui.save_media_error=S'ha produït un error en mirar de desar el fitxer!
 # Fuzzy
 android.ui.save_media_saved=El fitxer s'ha desat amb el nom %1$s a la vostra carpeta d'imatges
+android.ui.table_of_contents=Taula
 android.ui.undo=Desfer
 android.ui.yes=Sí
 android.ui.your_languages=Idiomes seleccionats:

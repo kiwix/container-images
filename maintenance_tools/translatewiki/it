@@ -50,8 +50,7 @@ android.ui.external_storage=Esterno
 android.ui.get_library_over_network=Usa un network per scaricare la lista dei contenuti. (Circa 6 MB)
 android.ui.go_to_play_store=Vai al Play Store
 android.ui.got_it=Capito
-# Fuzzy
-android.ui.help_10=Puoi sia scaricare i tuoi file ZIM in-app selezionati o selezionare attentamente quello/i che desideri e scaricarli attraverso il Desktop di un computer prima di trasferire i file ZIM sulla tua memoria SD.
+android.ui.help_10=Puoi sia scaricare i tuoi file ZIM in-app scelti o selezionare attentamente quello/i che desideri e scaricarli attraverso un computer Desktop prima di trasferire i file ZIM sulla tua memoria SD.
 android.ui.help_11=I file ZIM scaricati nell'applicazione sono localizzati nella directory di archiviazione esterna in una cartella chiamata Kiwix.
 android.ui.help_12=Come utilizzare file ZIM di grandi dimensioni?
 android.ui.help_13=Se il tuo file ZIM è superiore a 4GB potresti non essere in grado di archiviarlo nella tua scheda SD a causa di limitazioni nel sistema.
@@ -102,8 +101,7 @@ android.ui.rate_dialog_title=Valutaci
 android.ui.request_storage=Per accedere al contenuto offline è necessario l'accesso al tuo spazio di archiviazione
 android.ui.rescan_fs_warning=Scansione dei contenuti scaricabili, attendi...
 android.ui.save_media_error=Si è verificato un errore durante il salvataggio del file multimediale!
-# Fuzzy
-android.ui.save_media_saved=Salvato file multimediale come %s in Android/media/org.kiwix.../
+android.ui.save_media_saved=Salvato file multimediale come %s in Android/media/org.kiwix…/
 android.ui.space_available=Spazio disponibile:
 android.ui.time_day=giorno
 android.ui.tts_lang_not_supported=La lingua di questa pagina non è supportata, o i dati per il linguaggio appropriato non sono stati installati. La voce non può essere letta correttamente.

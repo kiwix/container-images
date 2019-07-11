@@ -16,6 +16,7 @@
 # Author: Wehwei
 
 android.ui.all_history_cleared_toast=所有歷史記錄已清除
+android.ui.articleCount=%s 個條目
 android.ui.bookmark_added=書籤已增加
 android.ui.bookmark_removed=書籤已移除
 android.ui.button_backtotop=返回頂部
@@ -24,6 +25,8 @@ android.ui.clear_all_history_dialog_title=清除所有歷史記錄
 android.ui.clear_recent_and_tabs_history_dialog=您確定要刪除您的搜尋歷史記錄，並且重新設定所有啟用的分頁嗎？
 android.ui.confirm_stop_download_msg=您確定要取消此次下載？
 android.ui.confirm_stop_download_title=停止下載？
+android.ui.crash_button_decline=不必了，謝謝
+android.ui.crash_checkbox_language=您的語言設定
 android.ui.customapp_missing_content=你的應用程式已經受損。\n這可能在你從 SD 卡中移除檔案時發生。\n你需要從 Play Store 中卸載並重新安裝應用程式。
 android.ui.delete=刪除
 android.ui.delete_recent_search_item=刪除此項目？
@@ -52,25 +55,21 @@ android.ui.external_storage=外部
 android.ui.get_library_over_network=使用網路來下載內容清單（大約 6MB）。
 android.ui.go_to_play_store=前往 Play Store
 android.ui.got_it=了解
-# Fuzzy
 android.ui.help_10=您可以從應用程式來下載您挑選的 ZIM 檔案，或者是仔細選擇從您桌上型電腦所下載 ZIM 檔案來傳輸到您的 SD 記憶卡。
 android.ui.help_11=在應用程式下載的 ZIM 檔案會存放在名為「Kiwix」的外部儲存目錄。
 android.ui.help_12=如何使用較大的 ZIM 檔案？
 android.ui.help_13=如果您的 ZIM 檔案大於 4GB，您可能會因為檔案系統限制而無法儲存在您的 SD 卡裡。
-# Fuzzy
 android.ui.help_14=在應用程式下載會自動處理較大的檔案，並會替您切分開來。
 android.ui.help_15=然而如果您在另一裝置上進行下載，您可能會需要使用以下軟體來分割 ZIM 檔案：
 android.ui.help_16=\u2022 在微軟視窗系統：HJ-Split
 android.ui.help_17=\u2022 在蘋果 Mac OSX 系統：Split&Concat
 android.ui.help_18=\u2022 在帶有終端機的 GNU/Linux 系統：split --bytes=4000M my_big_file.zim
 android.ui.help_19=註：您產生的檔案必須命名為 my_big_file.zimaa、my_big_file.zimab 等等。
-# Fuzzy
 android.ui.help_1=Kiwix 透過高壓縮形式內容來讓您能離線存取如維基百科之類的網站。
 android.ui.help_20=感謝您選擇使用 Kiwix！
 android.ui.help_21=我們很高興與您一同攜手，並感謝發給 android@kiwix.org 的任何反饋或建議。
 android.ui.help_2=Kiwix 是在做什麼？
 android.ui.help_3=Kiwix 是個離線用內容閱讀器。它的行為很像瀏覽器；但不是存取網路上的網頁，它所讀取內容是包含在以 ZIM 為格式的檔案。
-# Fuzzy
 android.ui.help_4=雖然 Kiwix 最初設計目標是提供在離線狀態下瀏覽維基百科，它也可以讀取其它的內容。
 android.ui.help_5=內容在哪裡？
 android.ui.help_6=我們的內容託管在 Kiwix 網站上。
@@ -79,7 +78,9 @@ android.ui.help_8=\u2022 維基百科可用於任一語言
 android.ui.help_9=\u2022 其它內容如維基解密、或維基文庫也同樣可用
 android.ui.hint_contents_drawer_message=您可以向左滑動來檢視此條目內容
 android.ui.internal_storage=內部
+android.ui.kiwi=Kiwi
 android.ui.language_count=(%1$d)
+android.ui.language_localized=（%s）
 android.ui.local_zims=裝置
 android.ui.menu_bookmarks=書籤
 android.ui.menu_bookmarks_list=書籤
@@ -94,6 +95,8 @@ android.ui.menu_search=搜尋條目
 android.ui.menu_searchintext=於頁面中尋找
 android.ui.menu_settings=設定
 android.ui.menu_zim_manager=獲得內容
+android.ui.new_tab=新分頁
+android.ui.new_tab_shortcut_label=新分頁
 android.ui.new_tab_snackbar=條目已開啟在新分頁裡
 android.ui.next=下一個
 android.ui.no=否
@@ -122,10 +125,8 @@ android.ui.pref_display_title=顯示
 android.ui.pref_external_link_popup_summary=顯示彈跳項目來警告有關額外的耗費或不運作在離線連結上。
 android.ui.pref_external_link_popup_title=當輸入外部連結時警告
 android.ui.pref_extras=額外
-# Fuzzy
-android.ui.pref_hidetoolbar=當滾動時隱藏工具列
-# Fuzzy
-android.ui.pref_hidetoolbar_summary=當頁面向下滾動時隱藏工具列
+android.ui.pref_hidetoolbar=維持工具列可見
+android.ui.pref_hidetoolbar_summary=當瀏覽內容時，讓工具列不會滾動出檢視內容之外
 android.ui.pref_info_title=資訊
 android.ui.pref_info_version=版本
 android.ui.pref_language_chooser=選擇語言
@@ -156,19 +157,25 @@ android.ui.request_storage_custom=如果您的螢幕被覆蓋警告訊息，只�
 android.ui.rescan_fs_warning=正在掃描可下載內容，請稍候…
 android.ui.save_media=儲存媒體
 android.ui.save_media_error=嘗試儲存該媒體時出錯！
-# Fuzzy
-android.ui.save_media_saved=已將媒體以 %1$s 儲存到 Android/media/org.kiwix.../
+android.ui.save_media_saved=已將媒體以 %1$s 儲存到 Android/media/org.kiwix…/
+android.ui.search_history=搜尋歷史
 android.ui.search_label=搜尋
 android.ui.search_widget_text=搜尋 Kiwix
+android.ui.select_languages=選擇語言
+android.ui.share=分享
 android.ui.space_available=可用空間：
 android.ui.speech_not_supported=很抱歉！您的裝置不支援語音輸入
 android.ui.speech_prompt_text=語音搜尋%s
+android.ui.successful_state=完成
+android.ui.switch_tabs=切換分頁
 android.ui.tab_closed=分頁已關閉
 android.ui.time_day=日
 android.ui.time_hour=時
 android.ui.time_left=左
 android.ui.time_minute=分
 android.ui.time_second=秒
+android.ui.time_today=今日
+android.ui.time_yesterday=昨日
 android.ui.tts_lang_not_supported=本頁面不支援這個語言，或是未安裝合適的語言數據。條目可能無法正確讀取。
 android.ui.tts_not_enabled=轉換為語音的文字無法用在 ZIM 檔案上
 android.ui.tts_pause=暫停

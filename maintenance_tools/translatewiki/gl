@@ -54,7 +54,6 @@ android.ui.help_16=\u2022 En Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 En Apple Mac OSX: Split e Concat
 android.ui.help_18=\u2022 En GNU/Linux e coa consola: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Nota: os ficheiros resultantes deben nomearse meu_gran_ficheiro.zimaa, meu_gran_ficheiro.zimab, etc.
-# Fuzzy
 android.ui.help_1=Kiwix permítelle acceder sen conexión a sitios web como Wikipedia dunha maneira moi compacta.
 android.ui.help_20=Grazas por escoller Kiwix!
 android.ui.help_21=Estamos felices de telo a bordo e agradeceríamos calquera comentario ou suxestión en android@kiwix.org.

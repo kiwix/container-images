@@ -9,6 +9,7 @@
 # Author: Macofe
 # Author: Overlaet
 # Author: Peter Alberti
+# Author: Saederup92
 # Author: Tjernobyl
 
 android.ui.all_history_cleared_toast=Al historik fjernet
@@ -18,8 +19,10 @@ android.ui.button_backtotop=Tilbage til toppen
 android.ui.choose_file=Vælg en indholdsfil (*.zim)
 android.ui.clear_all_history_dialog_title=Ryd al historik
 android.ui.clear_recent_and_tabs_history_dialog=Er du sikker på, at du ønsker at slette sige søgehistorik og nulstille alle aktive faneblade?
+android.ui.close_all_tabs=Luk alle faner
 android.ui.confirm_stop_download_msg=Er du sikker på, at du ønsker at stoppe denne overførsel?
 android.ui.confirm_stop_download_title=Stop overførsel
+android.ui.crash_button_decline=NEJ TAK
 android.ui.customapp_missing_content=Dit program er ødelagt.\nDette kan ske hvis du fjerner filer på SD-kortet.\nDu skal afinstallere og så installere programmet igen fra Play Store.
 android.ui.delete=Slet
 android.ui.delete_recent_search_item=Slet dette element?
@@ -42,10 +45,14 @@ android.ui.error_articleurlnotfound=Fejl: Indlæsning af artikel (Url: %1$s) mis
 android.ui.error_fileinvalid=Fejl: Den valgte fil er ikke en gyldig ZIM fil.
 android.ui.error_filenotfound=Fejl: Den valgte ZIM fil blev ikke fundet.
 android.ui.error_nozimfilesfound=Intet indhold fundet på enheden.\nTag et kig på hjælpesiden for at få anvisninger om, hvordan man indlæser indhold i Kiwix.\nHvis du har puttet en ZIM-fil på din enhed/dit eksterne lager, så kan du prøve igen om et minut eller genstarte din enhed.
+android.ui.expand=Udvid
 android.ui.external_link_popup_dialog_message=Du er på vej mod en ekstern henvisning. Det kan medføre ekstra omkostninger til dataoverførsel eller vil bare ikke fungere når du ikke er på nettet. Ønsker du at fortsætte?
 android.ui.external_link_popup_dialog_title=Gå til ekstern henvisning
 android.ui.external_storage=Eksternt lager
+android.ui.failed_file_already_exists=Filen findes allerede
+android.ui.failed_unknown=Ukendt
 android.ui.get_library_over_network=Brug netværk til at hente indholdsliste. (Cirka 6 MB)
+android.ui.get_started=Kom igang
 android.ui.go_to_play_store=Gå til Play Store
 android.ui.got_it=O.k.
 # Fuzzy
@@ -74,6 +81,7 @@ android.ui.help_7=De er tilgængelige som ZIM-filer. Der er en masse af dem:
 android.ui.help_8=\u2022 Wikipedia er tilgængelig separat for hvert sprog
 android.ui.help_9=\u2022 Andet indhold såsom Wikileaks eller Wikisource er også tilgængeligt
 android.ui.hint_contents_drawer_message=Du kan stryge mod venstre for at se indholdet af denne artikel
+android.ui.history=Historik
 android.ui.internal_storage=Intern lager
 android.ui.language_count=(%1$d)
 android.ui.local_zims=Enhed
@@ -103,6 +111,7 @@ android.ui.open=Åbn
 android.ui.open_in_new_tab=Åbn link i nyt faneblad?
 android.ui.other_languages=Andre sprog:
 android.ui.path_not_writable=Kan ikke tilgå ønsket mappe, bruger standarden. For at rette dette så vælg på ny den ønskede mappe under indstillinger.
+android.ui.paused_unknown=Ukendt
 android.ui.pref_autonightmode=Automatisk nattilstand
 android.ui.pref_autonightmode_summary=Skift automatisk mellem dag- og nattilstand.
 android.ui.pref_backtotop=Tilbage til toppen
@@ -150,21 +159,30 @@ android.ui.remote_zims=På nettet
 android.ui.request_storage=For at tilgå indholdet lokalt skal vi bruge adgang til dit lager
 android.ui.request_storage_custom=Hvis du ser en skærmadvarsel, så genstart din enhed for at klare problemet.
 android.ui.rescan_fs_warning=Søger efter indhold, vent venligst ...
+android.ui.running_state=Igang
+android.ui.save=Gem
 android.ui.save_media=Gem medie
 android.ui.save_media_error=Der opstod en fejl under forsøg på at gemme mediet!
 # Fuzzy
 android.ui.save_media_saved=Gemte medie som %s til Android/media/org.kiwix.../
+android.ui.search_bookmarks=Søg i bogmærker
 android.ui.search_label=Søg
 android.ui.search_widget_text=Søg i Kiwix
+android.ui.send_feedback=Giv en tilbagemelding
+android.ui.share=Del
+android.ui.smiling_face=:D
 android.ui.space_available=Ledig plads:
 android.ui.speech_not_supported=Beklager! Din enhed understøtter ikke tale
 android.ui.speech_prompt_text=Tal for at søge %s
 android.ui.tab_closed=Faneblad lukket
+android.ui.table_of_contents=Indholdsfortegnelse
 android.ui.time_day=dag
 android.ui.time_hour=t
 android.ui.time_left=tilbage
 android.ui.time_minute=min
 android.ui.time_second=s
+android.ui.time_today=I dag
+android.ui.time_yesterday=I går
 android.ui.tts_lang_not_supported=Sproget på denne side er ikke understøttet, eller passende sprogdata blev ikke installeret. Artiklen kan måske ikke læses korrekt.
 android.ui.tts_not_enabled=Tekst til tale er ikke aktiveret for denne ZIM-fil
 android.ui.tts_pause=pause
