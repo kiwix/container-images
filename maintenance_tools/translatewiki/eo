@@ -32,6 +32,7 @@ android.ui.crash_checkbox_exception=Detaloj pri la Fiasko
 android.ui.crash_checkbox_language=Viaj Agordoj pri Lingvoj
 android.ui.crash_checkbox_logs=Protokoloj de la Aplikaĵo
 android.ui.crash_checkbox_zimfiles=Listo de Viaj Zim-Dosieroj
+android.ui.crash_description=Ŝajne ni fiaskis.\n\nĈu vi povas helpi la korektadon de ĉi tiu problemo per sendado de la jena informo?
 android.ui.crash_title=Nu… Tio estas Hontinda
 android.ui.customapp_missing_content=Via aplikaĵo estas koruptita.\nTio eble okazis ĉar dosieroj en la SD-karto estis forigitaj.\nVi devas malistali kaj reinstali la Aplikaĵon el Play-Vendejo.
 android.ui.delete=Forigi
@@ -86,25 +87,21 @@ android.ui.go_to_next_page=Iri al sekva paĝo
 android.ui.go_to_play_store=Iri al Play Store
 android.ui.go_to_previous_page=Iri al antaŭa paĝo
 android.ui.got_it=Komprenite
-# Fuzzy
 android.ui.help_10=Vi povas aŭ elŝuti vian elektitajn ZIM-dosierojn per ĉi tiu aplikaĵo, aŭ zorge elekti tiu(j)n kiu(j) vi deziras kaj elŝuti ilin per surtabla komputilo, antaŭ transigi la ZIM-dosierojn per SD-karto.
 android.ui.help_11=ZIM-dosieroj elŝutitaj per ĉi tiu aplikaĵo estas en la dosierujo nomita Kiwix en ekstera konservejo.
 android.ui.help_12=Kiel uzi grandan ZIM-dosieron?
 android.ui.help_13=Se via ZIM-dosiero estas pli granda ol 4 GB, vi eble ne povas konservi ĝin en via SD-karto pro dosiersistemaj limoj.
-# Fuzzy
 android.ui.help_14=Elŝutado per la aplikaĵo aŭtomate traktas grandajn dosierojn por vi per disfendado.
 android.ui.help_15=Se, tamen, vi elŝutas per alia aparato, vi eble devas disfendi la ZIM-dosieron per unu el la jenaj programaroj:
 android.ui.help_16=\2022 Je Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 Je Apple macOS: Split kaj Concat
 android.ui.help_18=\u2022 Je GNU/Linux, konzole: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Noto: viaj rezultaj dosieroj nomiĝu mia_dosierego.zimaa, mia_dosierego.zimab, ktp.
-# Fuzzy
 android.ui.help_1=Kiwix ebligas vin senkonekte legi retejojn kiel Vikipedion en tre kunpremita formo.
 android.ui.help_20=Dankon pro via elekto de Kiwix!
 android.ui.help_21=Ni ĝojas ke vi uzas nian aplikaĵon; plaĉus al ni ajnaj komenoj aŭ sugestoj, senditaj al android@kiwix.org.
 android.ui.help_2=Kion faras Kiwix?
 android.ui.help_3=Kiwix estas senkonekta legilo de enhavo. Ĝi estas simila al TTT-legilo, sed anstataŭ legi retpaĝojn konektite, ĝi legas enhavon en ZIM-dosiero.
-# Fuzzy
 android.ui.help_4=Kiwix estis originale farita por senkonekta legado de Vikipedio, sed ĝi povas legi alian enhavon.
 android.ui.help_5=Kie estas la enhavo?
 android.ui.help_6=La Kiwix-retejo gastigas nian enhavon.
@@ -157,6 +154,8 @@ android.ui.note_share_error_file_missing=Notodosiero ne ekzistas
 android.ui.notes_deletion_none_found=Neniu noto troviĝis por forigo
 android.ui.notes_deletion_successful=La tuta dosierujo da notoj foriĝis
 android.ui.notes_deletion_unsuccessful=Iuj dosieroj ne foriĝis
+android.ui.ongoing_download_channel_desc=Kategorio pri daŭrantaj elŝutoj de ZIM-dosieroj.
+android.ui.ongoing_download_channel_name=Daŭrantaj Elŝutoj
 android.ui.open=Malfermi
 android.ui.open_in_new_tab=Ĉu malfermi ligilon en nova langeto?
 android.ui.other_languages=Aliaj Lingvoj:
@@ -183,10 +182,8 @@ android.ui.pref_display_title=Montrado
 android.ui.pref_external_link_popup_summary=Montri averton pri plia kosto aŭ nefunkciado pri eksteraj ligiloj.
 android.ui.pref_external_link_popup_title=Averti pri aliro al eksteraj ligiloj
 android.ui.pref_extras=Kromaĵoj
-# Fuzzy
-android.ui.pref_hidetoolbar=Kaŝi ilobreton dum rulumado
-# Fuzzy
-android.ui.pref_hidetoolbar_summary=Kaŝi ilobreton post rulumado malsupren
+android.ui.pref_hidetoolbar=Ĉiam Montri Ilobreton
+android.ui.pref_hidetoolbar_summary=Malhelpas la forrulumadon de la ilobreto dum foliumado de enhavo
 android.ui.pref_info_title=Informo
 android.ui.pref_info_version=Versio
 android.ui.pref_language_chooser=Elektu lingvon

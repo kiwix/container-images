@@ -11,9 +11,11 @@
 # Author: Mykola Swarnyk
 # Author: Piramidion
 # Author: Probil
+# Author: Vlad5250
 # Author: Ypryima
 # Author: Дар'я Козлова
 
+android.ui.add_note=Додати примітку
 android.ui.all_history_cleared_toast=Всю історію очищено
 android.ui.bookmark_added=Додано закладку
 android.ui.bookmark_removed=Закладку вилучено
@@ -21,10 +23,12 @@ android.ui.button_backtotop=Повернутись угору
 android.ui.choose_file=Виберіть файл вмісту (*.zim)
 android.ui.clear_all_history_dialog_title=Очистити всю історію
 android.ui.clear_recent_and_tabs_history_dialog=Ви впевнені, що хочете вилучити свою історію пошуку і скинути всі активні вкладки?
+android.ui.close_all_tabs=Закрити усі вкладки
 android.ui.confirm_stop_download_msg=Ви впевнені, що хочете зупинити це завантаження?
 android.ui.confirm_stop_download_title=Зупинити завантаження?
 android.ui.customapp_missing_content=Ваш застосунок пошкоджено.\nЦе могло статись коли Ви вилучали файли з SD-картки.\nВам потрібно деінсталювати та перевстановити застосунок з Play Store.
 android.ui.delete=Вилучити
+android.ui.delete_notes_confirmation_msg=Видалити всі нотатки?
 android.ui.delete_recent_search_item=Вилучити цей елемент?
 android.ui.delete_specific_search_toast=Нещодавній пошук вилучено
 android.ui.delete_specific_zim=Вилучити цей файл?
@@ -48,6 +52,7 @@ android.ui.error_nozimfilesfound=На Вашому пристрої не вия�
 android.ui.external_link_popup_dialog_message=Ви вказали зовнішнє посилання. Будь ласка пам'ятайте, що якщо ви офлайн, то воно не буде відкрито. Також зауважте, що відкриття цього посилання може призвести до зняття грошей мобільним оператором. Дійсно бажаєте відкрити зовнішнє посилання?
 android.ui.external_link_popup_dialog_title=Введіть зовнішнє посилання
 android.ui.external_storage=Зовнішні
+android.ui.failed_storage_not_found=Неможливо знайти зберігання
 android.ui.get_library_over_network=Скористатись мережею, щоб завантажити список контенту (приблизно 6MБ)
 android.ui.go_to_play_store=Перейти до Play Store
 android.ui.got_it=Зрозуміло
@@ -159,6 +164,7 @@ android.ui.save_media_error=Сталася помилка при спробі з
 android.ui.save_media_saved=Медіафайл збережено як %$ до Android/media/org.kiwix.../
 android.ui.search_label=Пошук
 android.ui.search_widget_text=Пошук у Kiwix
+android.ui.send_feedback=Надіслати відгук
 android.ui.space_available=Доступний простір:
 android.ui.speech_not_supported=Вибачте! Ваш пристрій не підтримує голосове управління
 android.ui.speech_prompt_text=Промовте, щоб здійснити пошук %s

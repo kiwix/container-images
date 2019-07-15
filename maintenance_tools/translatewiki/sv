@@ -8,6 +8,7 @@
 # Author: Warrakkk
 # Author: WikiPhoenix
 
+android.ui.add_note=Lägg till anteckning
 android.ui.all_history_cleared_toast=All historik rensades
 android.ui.bookmark_added=Bokmärke lades till
 android.ui.bookmark_removed=Bokmärke togs bort
@@ -15,10 +16,12 @@ android.ui.button_backtotop=Tillbaka till början
 android.ui.choose_file=Välj en innehållsfil (*.zim)
 android.ui.clear_all_history_dialog_title=Rensa all historik
 android.ui.clear_recent_and_tabs_history_dialog=Är du säker på att du vill radera din sökhistorik och återställa alla aktiva flikar?
+android.ui.close_all_tabs=Stäng alla flikar
 android.ui.confirm_stop_download_msg=Är du säker på att du vill stoppa denna nedladdning?
 android.ui.confirm_stop_download_title=Stoppa nedladdning?
 android.ui.customapp_missing_content=Din app är skadad.\nDetta kan hända när du tar bort filer på SD-kortet.\nDu måste avinstallera och sedan installera om appen från Play Store.
 android.ui.delete=Radera
+android.ui.delete_notes_confirmation_msg=Radera alla anteckningar?
 android.ui.delete_recent_search_item=Radera detta objekt?
 android.ui.delete_specific_search_toast=Senaste sökning togs bort
 android.ui.delete_specific_zim=Radera denna fil?
@@ -42,6 +45,8 @@ android.ui.error_nozimfilesfound=Inget innehåll hittades på din enhet.\nTa en 
 android.ui.external_link_popup_dialog_message=Du går till en extern länk. Detta kan leda till ytterligare dataöverföringskostnader eller kommer helt enkelt inte fungera när du är offline. Vill du fortsätta?
 android.ui.external_link_popup_dialog_title=Går till extern länk
 android.ui.external_storage=Extern
+android.ui.failed_http_error=HTTP-datafel
+android.ui.failed_storage_not_found=Kunde inte hitta lagring
 android.ui.get_library_over_network=Använd nätverket för att ladda ned innehållslistan. (Uppskattningsvis 6MB)
 android.ui.go_to_play_store=Gå till Play Store
 android.ui.got_it=Jag förstår
@@ -153,6 +158,7 @@ android.ui.save_media_error=Ett fel uppstod när media skulle sparas!
 android.ui.save_media_saved=Sparade media som %s i Android/media/org.kiwix.../
 android.ui.search_label=Sök
 android.ui.search_widget_text=Sök Kiwix
+android.ui.send_feedback=Skicka återkoppling
 android.ui.space_available=Tillgängligt utrymme:
 android.ui.speech_not_supported=Tyvärr! Din enhet stöder inte tal-till-text.
 android.ui.speech_prompt_text=Tala för att söka %s
