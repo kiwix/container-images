@@ -14,6 +14,7 @@
 # Author: Solde
 
 android.ui.all_history_cleared_toast=Esborrat tot l'historial
+android.ui.articleCount=%s articles
 android.ui.bookmark_added=Marcador afegit
 android.ui.bookmark_removed=Marcador eliminat
 android.ui.button_backtotop=Tornar a dalt
@@ -22,7 +23,9 @@ android.ui.clear_all_history_dialog_title=Esborra tot l'historial
 android.ui.clear_recent_and_tabs_history_dialog=Segur que vols esborrar l'historial de cerques i restablir totes les pestanyes actives?
 android.ui.confirm_stop_download_msg=Segur que vols aturar aquesta descàrrega?
 android.ui.confirm_stop_download_title=Aturar la descàrrega?
+android.ui.crash_button_confirm=ENVIA LES DADES
 android.ui.crash_button_decline=NO, MERCÈS
+android.ui.crash_checkbox_device=Detalls de l’aparell
 android.ui.customapp_missing_content=L'aplicació està espatllada.\nAixò pot passar quan s'esborren fitxers de la targeta SD.\nHas de desinstal·lar i tornar a instal·lar l'aplicació des del Play Store.
 android.ui.delete=Esborrar
 android.ui.delete_recent_search_item=Esborrar aquest element?
@@ -48,6 +51,7 @@ android.ui.error_nozimfilesfound=No s'ha trobat cap contingut al vostre disposit
 android.ui.external_link_popup_dialog_message=Estàs entrant a un enllaç extern. Això podria ocasionar-te costos addicionals per transferència de dades o, senzillament, no funcionarà si no tens connexió. Vols continuar?
 android.ui.external_link_popup_dialog_title=Accés a enllaç extern
 android.ui.external_storage=Extern
+android.ui.failed_unknown=Desconegut
 android.ui.get_library_over_network=Utilitzar la xarxa per descarregar la llista de contingut. (Aproximadament 6MB)
 android.ui.go_to_play_store=Anar a la Play Store
 android.ui.got_it=Entesos
@@ -91,6 +95,8 @@ android.ui.menu_search=Cercar article
 android.ui.menu_searchintext=Cercar a la pàgina
 android.ui.menu_settings=Configuració
 android.ui.menu_zim_manager=Obtenir contingut
+android.ui.new_tab=Pestanya nova
+android.ui.new_tab_shortcut_label=Pestanya nova
 android.ui.new_tab_snackbar=Article obert en una pestanya nova
 android.ui.next=Següent
 android.ui.no=No
@@ -100,10 +106,13 @@ android.ui.no_files_here=Cap fitxer aquí
 android.ui.no_network_connection=Cap connexió de xarxa
 android.ui.no_reader_application_installed=No s'ha pogut trobar una aplicació instal·lada per a aquest tipus de fitxer
 android.ui.no_section_info=No es van trobar capçaleres de contingut
+android.ui.note=Nota
+android.ui.note_share_error_file_missing=El fitxer de la nota no existeix
 android.ui.open=Obrir
 android.ui.open_in_new_tab=Obrir l'enllaç en una pestanya nova?
 android.ui.other_languages=Altres idiomes:
 android.ui.path_not_writable=No s'ha pogut accedir al directori desitjat, s'usa el predeterminat. Per solucionar això, torna a seleccionar el directori desitjat en les preferències de l'aplicació.
+android.ui.paused_unknown=Desconegut
 android.ui.pref_autonightmode=Mode nocturn automatitzat
 android.ui.pref_backtotop=Tornar a dalt
 android.ui.pref_backtotop_summary=Mostrar un botó al final de la pàgina per a desplaçar-se cap a la part superior
@@ -119,6 +128,8 @@ android.ui.pref_zoom_dialog=Nivell de zoom
 android.ui.pref_zoom_enable=Controls de zoom
 # Fuzzy
 android.ui.rescan_fs_warning=Buscant arxius ZIM. Espereu...
+android.ui.running_state=En curs
+android.ui.save=Desa
 # Fuzzy
 android.ui.save_media_error=S'ha produït un error en mirar de desar el fitxer!
 # Fuzzy

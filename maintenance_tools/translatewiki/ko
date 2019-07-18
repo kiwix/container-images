@@ -69,25 +69,21 @@ android.ui.get_started=시작하기
 android.ui.go_to_play_store=플레이 스토어로 이동
 android.ui.go_to_previous_page=이전 페이지로 이동
 android.ui.got_it=알겠습니다
-# Fuzzy
 android.ui.help_10=앱 안에서 선택한 ZIM 파일을 다운로드하거나 원하는 항목을 주의하여 선택한 다음 ZIM 파일을 SD 카드로 전송하기 전에 데스크톱 컴퓨터로부터 다운로드할 수 있습니다.
 android.ui.help_11=앱 안에서 다운로드되는 ZIM 파일들은 Kiwix라는 이름의 폴더의 외부 저장 디렉터리에 위치합니다.
 android.ui.help_12=크기가 큰 ZIM 파일을 사용하는 방법?
 android.ui.help_13=ZIM 파일이 4GB를 초과하면 파일 시스템 제한으로 인해 SD 카드에 저장하지 못할 수 있습니다.
-# Fuzzy
 android.ui.help_14=앱 안에서 다운로드하면 자동으로 큰 파일들을 관리하여 분할해 줍니다.
 android.ui.help_15=그러나 다른 장치에서 다운로드하는 경우 다음의 소프트웨어를 사용하여 ZIM 파일을 여러 개로 나누어야 할 수 있습니다:
 android.ui.help_16=\u2022 마이크로소프트 윈도우: HJ-Split
 android.ui.help_17=\u2022 애플 맥 OSX: Split, Concat
 android.ui.help_18=\u2022 GNU/리눅스, 콘솔: split --bytes=4000M my_big_file.zim
 android.ui.help_19=참고: 결과 파일의 이름은 my_big_file.zimaa, my_big_file.zimab 등으로 되어야 합니다.
-# Fuzzy
 android.ui.help_1=Kiwix는 고압축 형태로 위키백과와 같은 웹사이트에 대한 오프라인 접근을 허용합니다.
 android.ui.help_20=Kiwix를 선택해 주셔서 감사합니다!
 android.ui.help_21=만나서 반가워요. 피드백이나 제안이 있으면 android@kiwix.org 로 보내주시면 감사하겠습니다.
 android.ui.help_2=Kiwix의 역할이 무엇입니까?
 android.ui.help_3=Kiwix는 오프라인 콘텐츠 리더입니다. 브라우저와 매우 비슷하게 동작하지만 온라인 웹 페이지에 접근하는 대신 ZIM 포맷의 파일로부터 내용을 읽습니다.
-# Fuzzy
 android.ui.help_4=Kiwix가 본래 오프라인 상태에서 위키백과를 제공하도록 설계되었으나 다른 콘텐츠도 읽을 수 있습니다.
 android.ui.help_5=내용이 어디에 있습니까?
 android.ui.help_6=저희 콘텐츠는 Kiwix 웹사이트에서 호스팅됩니다.
@@ -149,7 +145,6 @@ android.ui.pref_external_link_popup_summary=추가 비용 또는 오프라인 �
 android.ui.pref_external_link_popup_title=외부 링크에 진입할 때 경고합니다
 android.ui.pref_extras=기타
 android.ui.pref_hidetoolbar=도구 모음을 계속 보이기
-# Fuzzy
 android.ui.pref_hidetoolbar_summary=페이지를 아래로 스크롤할 때 도구 모음 숨기기
 android.ui.pref_info_title=정보
 android.ui.pref_info_version=버전
