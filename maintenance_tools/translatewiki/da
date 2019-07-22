@@ -67,7 +67,6 @@ android.ui.help_16=\u2022 På Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 På Apple Mac OSX: Split and Concat
 android.ui.help_18=\u2022 På GNU/Linux og med konsollen: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Bemærk: Dine filer skal navngives min_store_fil.zimmaa, min_store_fil.zimab etc.
-# Fuzzy
 android.ui.help_1=Kiwix giver dig lokal adgang til hjemmesider såsom Wikipedia på en ekstrem komprimeret form.
 android.ui.help_20=Tak fordi du valgte Kiwix!
 android.ui.help_21=Vi er glade for at have dig ombord og siger tak for enhver tilbagemelding eller forslag på android@kiwix.org.
