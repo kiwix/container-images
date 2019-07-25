@@ -126,8 +126,7 @@ android.ui.pref_display_title=Дисплей
 android.ui.pref_external_link_popup_summary=Відображати попередження щодо проблем із зовнішніми посиланнями, як от зняття додаткових грошей або неспрацювання посилань в офлайні.
 android.ui.pref_external_link_popup_title=Попереджувати, коли введено зовнішнє посилання
 android.ui.pref_extras=Додаткові послуги
-# Fuzzy
-android.ui.pref_hidetoolbar=Приховувати панель інструментів при прокручуванні
+android.ui.pref_hidetoolbar=Залишати панель інструментів видимою
 # Fuzzy
 android.ui.pref_hidetoolbar_summary=Приховувати панель інструментів, коли виконується прокручування сторінки
 android.ui.pref_info_title=Інформація

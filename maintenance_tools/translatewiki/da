@@ -10,6 +10,7 @@
 # Author: Overlaet
 # Author: Peter Alberti
 # Author: Saederup92
+# Author: Tinamalmgren
 # Author: Tjernobyl
 
 android.ui.all_history_cleared_toast=Al historik fjernet
@@ -158,7 +159,7 @@ android.ui.remote_zims=På nettet
 android.ui.request_storage=For at tilgå indholdet lokalt skal vi bruge adgang til dit lager
 android.ui.request_storage_custom=Hvis du ser en skærmadvarsel, så genstart din enhed for at klare problemet.
 android.ui.rescan_fs_warning=Søger efter indhold, vent venligst ...
-android.ui.running_state=Igang
+android.ui.running_state=I gang
 android.ui.save=Gem
 android.ui.save_media=Gem medie
 android.ui.save_media_error=Der opstod en fejl under forsøg på at gemme mediet!
