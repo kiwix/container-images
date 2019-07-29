@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Ajdar
 # Author: Kelson
+# Author: Ерней
 # Author: Ильнар
 
 ui.main.about=&brand.brandShortName; турында
@@ -44,7 +45,7 @@ ui.main.library.searchZimFiles=ZIM-файлларны эзләү
 ui.main.library.sortBy.author=Автор
 ui.main.library.sortBy.date=Дата
 ui.main.library.sortBy.publisher=Нәшрият
-ui.main.library.sortBy.size=Үлчәм
+ui.main.library.sortBy.size=Зурлык
 ui.main.library.sortBy.title=Башлам
 ui.main.library.sortBy=Сирәкләү төре:
 ui.main.loadbmk=Кыстыргычлар төпчеген импортлау
@@ -112,7 +113,7 @@ ui.messages.newContentAvailableInvitation=Яңа контент йөкләү ө�
 ui.messages.no=юк
 ui.messages.noActiveZimFile=Актив булган ZIM файл юк, зинһар аны яңадан йөкләгез.
 ui.messages.noResultsError=Сорау буенча нәтиҗәләр юк.
-ui.messages.ok=OK
+ui.messages.ok=Ярар
 ui.messages.preparingContentDownload=Йөкләүгә әзерле...
 ui.messages.quitFullscreen=Тулы экран режимыннан чыгу
 ui.messages.removeProfileConfirm=Сез үз профилегезне бетермәкче буласызмы?

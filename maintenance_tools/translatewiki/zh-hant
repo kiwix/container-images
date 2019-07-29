@@ -14,6 +14,7 @@
 # Author: Shirayuki
 # Author: Simon Shek
 # Author: Wehwei
+# Author: Winston Sung
 
 android.ui.add_note=新增註釋
 android.ui.all_history_cleared_toast=所有歷史記錄已清除
@@ -347,7 +348,7 @@ ui.main.searchFor=搜尋
 ui.main.searchPlaceholder=在這裡輸入要搜尋的文字...
 ui.main.selectall=全選
 ui.main.server=伺服器
-ui.main.skin=外觀
+ui.main.skin=佈景主題
 ui.main.statusbar=狀態欄
 ui.main.tabs=分頁
 ui.main.tools=工具
