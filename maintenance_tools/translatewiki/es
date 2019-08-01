@@ -157,6 +157,7 @@ android.ui.open=Abrir
 android.ui.open_in_new_tab=¿Abrir enlace en una nueva pestaña?
 android.ui.other_languages=Otros idiomas:
 android.ui.path_not_writable=No se pudo acceder al directorio deseado; se usa el predeterminado. Para solucionar esto, vuelve a seleccionar el directorio deseado en las preferencias de la aplicación.
+android.ui.paused_connectivity=A la espera de una conexión de red
 android.ui.paused_state=En pausa: %s
 android.ui.paused_unknown=Desconocido
 android.ui.paused_wifi=A la espera de wifi

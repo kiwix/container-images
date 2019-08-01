@@ -8,6 +8,7 @@
 # Author: Muhammed taha
 # Author: Sarchia
 # Author: Épine
+# Author: ئارام بکر
 
 android.ui.all_history_cleared_toast=ھەموو مێژووەکە سڕدرایەوە
 android.ui.bookmark_added=بووکمارک زیادکرا
@@ -18,18 +19,38 @@ android.ui.confirm_stop_download_title=داگرتن ڕابگیرێت؟
 android.ui.delete=سڕینەوە
 android.ui.delete_recent_search_item=بسڕدرێتەوە؟
 android.ui.delete_specific_zim_toast=پەڕگە سڕدرایەوە
+android.ui.delete_tab=سڕینەوەی تاب
 android.ui.deleted_message=سڕدرایەوە
 android.ui.did_you_know=زانیبووت؟
+android.ui.download_books=داگرتنی کتێبەکان
 android.ui.download_pause=ڕاگرتن
 android.ui.download_paused=ڕاگیرا
 android.ui.download_started_library=داگرتن دەستیپێکرد...
 android.ui.download_stop=وەستاندن
 # Fuzzy
 android.ui.error_nozimfilesfound=ھیچ پەڕگەیەکی ZIM نەدۆزرایەوە لەسەر دیڤایسەکەت.
+android.ui.expand=فراوان بکەوە
+android.ui.external_storage=دەرەکی
+android.ui.failed_unknown=نەزانراو
+android.ui.internal_storage=ناوەکی
+android.ui.local_zims=ئامێر
+android.ui.menu_help=یارمەتی
 android.ui.menu_home=ماڵەوە
+android.ui.menu_randomarticle=وتاری هەڕەمەکی
 android.ui.menu_read_aloud=بە بەرزی بیخوێنەوە
 android.ui.menu_read_aloud_stop=بووستە لە خوێندنەوە
+android.ui.menu_search=گەڕانی وتار
+android.ui.menu_searchintext=دۆزینەوە لەنێو پەڕە
+android.ui.menu_settings=ڕێکخستنەکان
+android.ui.menu_support_kiwix=پشتگیریی کیویکس بکە
+android.ui.new_tab=تابی نوێ
+android.ui.new_tab_shortcut_label=تابی نوێ
+android.ui.new_tab_snackbar=وتارەکە لە تابێکی نوێ کرایەوە
+android.ui.next=دواتر
+android.ui.no=نەخێر
+android.ui.note=تێبینی
 android.ui.open_in_new_tab=بەستەرەکە لە تابێکی نوێدا بکرێتەوە؟
+android.ui.paused_unknown=نەزانراو
 android.ui.pref_backtotop=گەڕانەوە بۆ سەرەوە
 android.ui.pref_info_title=زانیاری
 android.ui.pref_info_version=وەشان

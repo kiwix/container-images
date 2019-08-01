@@ -4,6 +4,7 @@
 # Author: InsomniHat
 # Author: Miroslav35232
 # Author: StanProg
+# Author: Stoyan
 # Author: Termininja
 # Author: Vladimir Penov
 # Author: Vodnokon4e
@@ -58,14 +59,12 @@ android.ui.help_16=\u2022 Под Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 Под Apple Mac OSX: Split and Concat
 android.ui.help_18=\u2022 On GNU/Linux и под конзолен режим: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Забележка: файловете, които са в резултат на разделянето трябва да са наименувани по следния начин - my_big_file.zimaa, my_big_file.zimab, и т.н.
-# Fuzzy
-android.ui.help_1=Kiwix ви позволява офлайн достъп до уебсайтове като Уикипедия в силно компресиран вид.
+android.ui.help_1=Kiwix ви позволява достъп извън мрежата до сайтове като Уикипедия в силно компресиран вид.
 android.ui.help_20=Благодарим Ви, че избрахте Kiwix!
 android.ui.help_21=Радваме се че сте с нас и бихме оценили всякакви отзиви и предложения на адрес android@kiwix.org
 android.ui.help_2=Какво прави Kiwix?
 android.ui.help_3=Kiwix е офлайн четец на съдържание. Той действа като браузър, но вместо да зарежда съдържанието от онлайн уеб страници, той зарежда съдържанието от файл в ZIM формат.
-# Fuzzy
-android.ui.help_4=Въпреки че Kiwix е проектиран първоначално, да предоставя достъп до Уикипедия офлайн, той е способен, да предоставя достъп и до друго съдържание.
+android.ui.help_4=Въпреки че Kiwix е проектиран първоначално, да предоставя достъп извън мрежа до Уикипедия, той е способен, да предоставя достъп и до друго съдържание.
 android.ui.help_5=Къде е съдържанието?
 android.ui.help_6=Нашето съдържание се хоства на сайта на Kiwix.
 android.ui.help_7=Те са достъпни като ZIM файлове. Съществуват много от тях:
@@ -115,8 +114,7 @@ android.ui.pref_display_title=Покажете
 android.ui.pref_external_link_popup_summary=Показва попъп, за да предупреди за допълнителни разходи или неработещи в офлайн режим препратки.
 android.ui.pref_external_link_popup_title=При зареждане на външни препратки
 android.ui.pref_extras=Екстри
-# Fuzzy
-android.ui.pref_hidetoolbar=Скривайте туулбара, когато скролирате
+android.ui.pref_hidetoolbar=Лентата с инструменти винаги видима
 # Fuzzy
 android.ui.pref_hidetoolbar_summary=Скривайте туулбара, когато скролирате страницата надолу
 android.ui.pref_info_title=Информация
@@ -149,8 +147,7 @@ android.ui.request_storage_custom=Ако виждате предупрежден
 android.ui.rescan_fs_warning=Сканиране на файлове за изтегляне, моля, изчакайте...
 android.ui.save_media=Запази медията
 android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
-# Fuzzy
-android.ui.save_media_saved=Медийният файл е съхранен под името %s в Android/media/org.kiwix.../
+android.ui.save_media_saved=Медийният файл е запазен под името %s в Android/media/org.kiwix.../
 android.ui.search_label=Търсене
 android.ui.search_widget_text=Търсене в Kiwix
 android.ui.space_available=Налично пространство:
