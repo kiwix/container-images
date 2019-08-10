@@ -27,9 +27,8 @@ else
  QUARDIR=`dirname $QUARFILE`
 fi
 
-LOGFILE=$5$ZIMPATH
-LOGDIR=`dirname $LOGFILE`
-
+LOGFILE=$(echo "$5$ZIMPATH" | cut -f 1 -d '.').log
+LOGDIR=`dirname $5$ZIMPATH`
 
 function moveZim () {
    mkdir -p $1
