@@ -6,22 +6,29 @@
 #
 
 ZIMCHECK=/usr/local/bin/zimcheck
+
 ZIMFILE=$1
 ZIMSRCDIR=$2
+ZIMCHECK_OPTION=$6
+OPTION=$7
+
 
 ZIMPATH=`echo $ZIMFILE | sed "s:$ZIMSRCDIR::"`
 
 DESTFILE=$3$ZIMPATH
 DESTDIR=`dirname $DESTFILE`
 
-QUARFILE=$4$ZIMPATH
-QUARDIR=`dirname $QUARFILE`
+if [ "$OPTION" = "NO_QUARANTINE" ]
+then
+ QUARDIR=$DESTDIR 
+ QUARFILE=$DESTFILE
+else
+ QUARFILE=$4$ZIMPATH
+ QUARDIR=`dirname $QUARFILE`
+fi
 
 LOGFILE=$5$ZIMPATH
 LOGDIR=`dirname $LOGFILE`
-
-ZIMCHECK_OPTION=$6
-OPTION=$7
 
 
 function moveZim () {
@@ -35,12 +42,13 @@ then
   moveZim $DESTDIR $DESTFILE
 else
   mkdir -p $LOGDIR
-  if [ "$OPTION" = "NO_QUARANTINE" ] || $ZIMCHECK $ZIMCHECK_OPTION $ZIMFILE > $LOGFILE
+
+  if $ZIMCHECK $ZIMCHECK_OPTION $ZIMFILE > $LOGFILE 2>&1
   then
-   echo "$ZIMFILE is valid, move to $DESTFILE"
+   echo "$ZIMFILE is valid" >> $LOGFILE 
    moveZim $DESTDIR $DESTFILE
   else
-   echo "$ZIMFILE is not valid, quarantine to $QUARFILE"
+   echo "$ZIMFILE is not valid" >> $LOGFILE 
    moveZim $QUARDIR $QUARFILE
   fi
 fi
