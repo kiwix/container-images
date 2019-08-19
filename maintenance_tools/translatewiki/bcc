@@ -3,10 +3,15 @@
 # Author: Baloch Afghanistan
 # Author: Sultanselim baloch
 
-# Fuzzy
-android.ui.button_backtotop=بازگشت به بالای صفحه
-# Fuzzy
-android.ui.choose_file=یک پروندهٔ محتوایی ZIM را انتخاب کنید (*.zim)
+android.ui.add_note=یادداشتے ھۏر کن
+android.ui.all_history_cleared_toast=دراھیگݔں گوَستانک پاک بیت
+android.ui.articleCount=%s نبشتانکان
+android.ui.bookmark_added=نشانگ ھۏر بیت
+android.ui.bookmark_removed=نشانگ پاک بیت
+android.ui.button_backtotop=بُرز روَگ
+android.ui.choose_file=یک ZIMئے گچین کن اݔت (*.zim)
+android.ui.clear_all_history_dialog_title=دراھیگݔں گوَستانکان پاک کن
+android.ui.clear_all_notes=دراھیگݔں یادداشتان پاک کن
 android.ui.error_articleurlnotfound=حطا: بارگیری مقالهٔ (نشانی: %1$s) شکست خورد.
 android.ui.error_fileinvalid=خطا: پروندهٔ انتخاب‌شده یک پروندهٔ ZIM معتبر نیست.
 android.ui.error_filenotfound=خطا: پروندهٔ ZIM انتخاب شده پیدا نشد.

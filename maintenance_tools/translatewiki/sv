@@ -76,6 +76,7 @@ android.ui.failed_too_many_redirects=För många omdirigeringar
 android.ui.failed_unhandled_http_code=Okänd HTTP-kod togs emot
 android.ui.failed_unknown=Okänd
 android.ui.failed_unknown_file_error=Okänt filsystemfel
+android.ui.favicon=Flikikon
 android.ui.get_content_shortcut_label=Hämta innehåll
 android.ui.get_library_over_network=Använd nätverket för att ladda ned innehållslistan. (Uppskattningsvis 6MB)
 android.ui.get_started=Kom igång
