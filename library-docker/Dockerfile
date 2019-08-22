@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 3.0.0
+ENV VERSION_KIWIX_TOOLS 3.0.1
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget cron libfindbin-libs-perl libxml-dom-xpath-perl libdatetime-perl liblocales-perl libnumber-bytes-human-perl libxml-simple-perl libgetargs-long-perl libxml2-utils python3 python3-pip
