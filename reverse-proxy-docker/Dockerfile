@@ -13,8 +13,10 @@ RUN { \
 RUN { \
     echo "gzip on;" ; \
     echo "gzip_proxied any;" ; \
-    echo "gzip_types text/plain text/css application/json application/x-javascript application/javascript text/xml application/xml application/rss+xml text/javascript image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype application/atom+xml text/html;" ; \
+    echo "gzip_types text/plain text/css application/json application/x-javascript application/javascript text/xml application/xml application/rss+xml text/javascript image/svg+xml application/vnd.ms-fontobject application/x-font-ttf font/opentype application/atom+xml text/html text/yaml;" ; \
 } > /etc/nginx/conf.d/05gzip.conf
+
+RUN sed -i '4i \    text/yaml                                        yml;' /etc/nginx/mime.types
 
 COPY sites/* /etc/nginx/sites-enabled/
 
