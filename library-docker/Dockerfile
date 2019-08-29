@@ -7,7 +7,10 @@ LABEL maintainer="kiwix"
 ENV VERSION_KIWIX_TOOLS 3.0.1
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 
-RUN apt-get update && apt-get install -y --no-install-recommends wget cron libfindbin-libs-perl libxml-dom-xpath-perl libdatetime-perl liblocales-perl libnumber-bytes-human-perl libxml-simple-perl libgetargs-long-perl libxml2-utils python3 python3-pip
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends wget cron libfindbin-libs-perl libxml-dom-xpath-perl libdatetime-perl liblocales-perl libnumber-bytes-human-perl libxml-simple-perl libgetargs-long-perl libxml2-utils python3 python3-pip && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install -U pip setuptools
 RUN pip3 install pycountry==18.2.23 PyYAML==3.12 requests==2.18.4
