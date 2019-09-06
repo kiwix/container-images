@@ -23,10 +23,10 @@ manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zi
 
 service cron start
 
-while [ 42 ]
-do
+while [ 42 ] 
+do 
   echo "Start kiwix-serve ..."
-  kiwix-serve --port=80 --library --threads=32 --verbose --nodatealias library.kiwix.org.xml
+  kiwix-serve --port=80 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
   sleep 1
 done
 
