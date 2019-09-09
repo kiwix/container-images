@@ -12,12 +12,15 @@
 # Author: Liuxinyu970226
 # Author: Qiyue2001
 # Author: Shirayuki
+# Author: VulpesVulpes825
 # Author: Xiaomingyan
 # Author: Yanmiao liu
 # Author: Yfdyh000
 # Author: Zjzengdongyang
 
+android.ui.add_note=添加注释
 android.ui.all_history_cleared_toast=已清空所有历史
+android.ui.articleCount=%s个条目
 android.ui.bookmark_added=书签已添加
 android.ui.bookmark_removed=书签已移除
 android.ui.button_backtotop=返回顶端
@@ -26,6 +29,13 @@ android.ui.clear_all_history_dialog_title=清空所有历史
 android.ui.clear_recent_and_tabs_history_dialog=您确定要删除您的搜索历史，并重置所有活跃标签么？
 android.ui.confirm_stop_download_msg=您确定要停止此次下载么？
 android.ui.confirm_stop_download_title=停止下载？
+android.ui.confirmation_alert_dialog_message=丢弃没保存的更改？
+android.ui.crash_button_confirm=发送详情
+android.ui.crash_button_decline=不需要
+android.ui.crash_checkbox_device=设备细节
+android.ui.crash_checkbox_exception=崩溃详情
+android.ui.crash_checkbox_language=您的语言设置
+android.ui.crash_checkbox_logs=应用程序日志
 android.ui.customapp_missing_content=您的应用程序已受损。这可能在您SD卡中移除文件时发生。您需要从Play Store中卸载并重新安装应用程序。
 android.ui.delete=删除
 android.ui.delete_recent_search_item=删除此项？
@@ -51,6 +61,7 @@ android.ui.error_nozimfilesfound=未在您的设备找到内容。\n请访问我
 android.ui.external_link_popup_dialog_message=您正在输入外部链接。这可能导致额外数据转移费用，或当您离线时不能工作。您是否要继续？
 android.ui.external_link_popup_dialog_title=正在进入外部链接
 android.ui.external_storage=外部
+android.ui.failed_unknown=未知
 android.ui.get_library_over_network=使用网络下载内容列表。（大约6MB）
 android.ui.go_to_play_store=前往Play Store
 android.ui.got_it=明白了
