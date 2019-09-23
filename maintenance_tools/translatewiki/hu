@@ -12,18 +12,25 @@
 # Author: Tacsipacsi
 # Author: Urbalazs
 
+android.ui.add_note=Megjegyzés hozzáadása
 android.ui.all_history_cleared_toast=Az összes előzmény törölve
 android.ui.bookmark_added=Könyvjelző hozzáadva
 android.ui.bookmark_removed=Könyvjelző eltávolítva
 android.ui.button_backtotop=Vissza a lap tetejére
 android.ui.choose_file=Tartalomfájl kiválasztása (*.zim)
 android.ui.clear_all_history_dialog_title=Az összes előzmény törlése
+android.ui.clear_all_notes=Minden megjegyzés törlése
 android.ui.clear_recent_and_tabs_history_dialog=Biztosan törölni szeretnéd a keresési előzményeidet és visszaállítani az összes aktív lapot?
+android.ui.close_all_tabs=Az összes lap bezárása
 android.ui.confirm_stop_download_msg=Biztosan le szeretnéd állítani ezt a letöltést?
 android.ui.confirm_stop_download_title=Letöltés megállítása?
-android.ui.customapp_missing_content=Az alkalmazás sérült.\nEz megtörténhet olyankor, ha eltávolítsz fájlokat az SD-kártyán.\nEl kell távolítanod, majd újra kell telepítened az alkalmazást a Play Áruházból.
+android.ui.crash_button_confirm=RÉSZLETEK KÜLDÉSE
+android.ui.crash_button_decline=KÖSZÖNÖM NEM
+android.ui.crash_checkbox_device=Az eszköz részletei
+android.ui.customapp_missing_content=Az alkalmazás sérült.\nEz megtörténhet olyankor, ha eltávolítsz fájlokat az SD-kártyáról.\nEl kell távolítanod, majd újra kell telepítened az alkalmazást a Play Áruházból.
 android.ui.delete=Törlés
-android.ui.delete_recent_search_item=Törli ezt az elemet?
+android.ui.delete_notes_confirmation_msg=Törölsz minden jegyzetet?
+android.ui.delete_recent_search_item=Törlöd ezt az elemet?
 android.ui.delete_specific_search_toast=Legutóbbi keresés eltávolítva
 android.ui.delete_specific_zim=Törli ezt a fájlt?
 android.ui.delete_specific_zim_toast=Fájl törölve
@@ -32,9 +39,10 @@ android.ui.delete_zim_failed=Sajnos nem tudjuk ezt a fájlt törölni. Próbáld
 android.ui.deleted_message=törölve
 android.ui.did_you_know=Tudtad?
 android.ui.do_not_ask_anymore=Ne kérdezz többször
+android.ui.download_books=Könyvek letöltése
 android.ui.download_change_storage=Tároló eszköz kiválasztó
 android.ui.download_complete_snackbar=Letöltés kész
-android.ui.download_no_space=Elégtelen mennyiségü tárhely a fájl letöltéséhez.
+android.ui.download_no_space=Nincs elég hely a fájl letöltéséhez.
 android.ui.download_pause=Szünet
 android.ui.download_paused=szüneteltetve
 android.ui.download_started_library=Letöltés elkezdve...
@@ -52,7 +60,7 @@ android.ui.got_it=Értettem
 # Fuzzy
 android.ui.help_10=Letöltheted a kiválasztott ZIM fájljaidat alkalmazáson belül vagy kiválaszthatod és letöltheted ezeket egy asztali számítógépről mielőtt átküldenéd a ZIM fájlokat az SD-kártyádra.
 android.ui.help_11=Az alkalmazáson belül letöltött ZIM fájlok a külső tároló könyvtár Kiwix nevű mappájában vannak elhelyezve.
-android.ui.help_12=Hogyan használnak nagy ZIM fájlokat?
+android.ui.help_12=Hogyan használj nagy ZIM fájlokat?
 android.ui.help_13=Ha a ZIM fájlod nagyobb, mint 4GB, lehet, hogy nem leszel képes tárolni az SD-kártyádon a fájlrendszer korlátozásai miatt.
 # Fuzzy
 android.ui.help_14=Az alkalmazáson belüli letöltések automatikusan kezelik a nagyobb fájlokat, felosztva ezt neked.
@@ -66,7 +74,7 @@ android.ui.help_1=A Kiwix offline hozzáférést enged meg olyan weboldalakhoz, 
 android.ui.help_20=Köszönjük, hogy a Kiwixet választottad!
 android.ui.help_21=Örülünk, hogy jelen vagy és bármilyen visszajelzést vagy javaslatot nagyra értékelnénk az android@kiwix.org címen.
 android.ui.help_2=Mit csinál a Kiwix?
-android.ui.help_3=A Kiwix egy offline tartalom olvasó. Úgy viselkedik, mint egy böngésző, de az online weboldalak betöltése helyett a tartalmát egy ZIM formátumú fájlból olvassa.
+android.ui.help_3=A Kiwix egy offline tartalom olvasó. Úgy viselkedik, mint egy böngésző, de az online weboldalak betöltése helyett a tartalmakat egy ZIM formátumú fájlból olvassa.
 # Fuzzy
 android.ui.help_4=Bár a Kiwix eredetileg az offline Wikipédia megvalósítására lett tervezve, más tartalmakat is olvas.
 android.ui.help_5=Hol van a tartalom?
@@ -153,7 +161,6 @@ android.ui.request_storage_custom=Ha látsz egy képernyőt lefedő figyelmeztet
 android.ui.rescan_fs_warning=Letölthető tartalom pásztázása, kis türelmet...
 android.ui.save_media=Média mentése
 android.ui.save_media_error=Hiba történt a média mentése közben!
-# Fuzzy
 android.ui.save_media_saved=Média elmentve %s néven ide: Android/media/org.kiwix.../
 android.ui.search_label=Keresés
 android.ui.search_widget_text=Kiwix keresése
