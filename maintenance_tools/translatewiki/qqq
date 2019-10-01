@@ -142,4 +142,4 @@ ui.preferences.tabs=Option (checkbox) to remember the tabs
 ui.server.close=<gallery>\nFile:Kiwix-ui.server.start-0.png\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Close}}
 ui.server.load={{Identical|Load}}
 ui.server.start=Clicking on the "Start" button launches the Kiwix server. This server allows to share the Kiwix local library on the LAN with the HTTP protocol.\n\n<gallery>\nFile:Kiwix-ui.server.start-0.png\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Start}}
-ui.server.stop=<gallery>\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Stop}}
+ui.server.stop=Clicking on the "Stop" button shutdowns the Kiwix server. This server allows to stop sharing the Kiwix local library on the LAN with the HTTP protocol.\n\n<gallery>\nFile:Kiwix-ui.server.start-0.png\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Stop}}

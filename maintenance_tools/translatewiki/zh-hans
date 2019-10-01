@@ -6,6 +6,7 @@
 # Author: Breawycker
 # Author: Hydra
 # Author: Hzy980512
+# Author: Josephine W.
 # Author: Kelson
 # Author: Kuailong
 # Author: Liangent
@@ -27,7 +28,9 @@ android.ui.bookmark_removed=书签已移除
 android.ui.button_backtotop=返回顶端
 android.ui.choose_file=选择一个内容文件（*.zim）
 android.ui.clear_all_history_dialog_title=清空所有历史
+android.ui.clear_all_notes=清空所有备注
 android.ui.clear_recent_and_tabs_history_dialog=您确定要删除您的搜索历史，并重置所有活跃标签么？
+android.ui.close_all_tabs=关闭所有标签
 android.ui.confirm_stop_download_msg=您确定要停止此次下载么？
 android.ui.confirm_stop_download_title=停止下载？
 android.ui.confirmation_alert_dialog_message=丢弃没保存的更改？
@@ -69,6 +72,7 @@ android.ui.expand=展开
 android.ui.external_link_popup_dialog_message=您正在输入外部链接。这可能导致额外数据转移费用，或当您离线时不能工作。您是否要继续？
 android.ui.external_link_popup_dialog_title=正在进入外部链接
 android.ui.external_storage=外部
+android.ui.failed_file_already_exists=文件已经存在
 android.ui.failed_unknown=未知
 android.ui.get_content_shortcut_label=获取内容
 android.ui.get_library_over_network=使用网络下载内容列表。（大约6MB）
