@@ -3,9 +3,11 @@
 # Author: 1917 Ekim Devrimi
 # Author: Alidemirtas
 # Author: Article1
+# Author: BaRaN6161 TURK
 # Author: Captantrips
 # Author: Cekli829
 # Author: Emperyan
+# Author: Grkn gll
 # Author: Hedda
 # Author: Joseph
 # Author: Kumkumuk
@@ -20,17 +22,33 @@
 # Author: Vito Genovese
 # Author: Watermelon juice
 
+android.ui.add_note=Not Ekle
 android.ui.all_history_cleared_toast=Tüm geçmiş temizlendi
+android.ui.articleCount=%s makale
 android.ui.bookmark_added=Yer imi eklendi
 android.ui.bookmark_removed=Yer imi kaldırıldı
+android.ui.bookmarks_from_current_book=Mevcut kitaptaki yer imleri
 android.ui.button_backtotop=Başa dön
 android.ui.choose_file=Bir İçerik Dosyası seçin (*.zim)
 android.ui.clear_all_history_dialog_title=Tüm geçmişi temizle
+android.ui.clear_all_notes=Tüm Notları Temizle
 android.ui.clear_recent_and_tabs_history_dialog=Tüm aktif sekmeleri sıfırlamak ve arama geçmişinizi silmek istediğinize emin misiniz?
+android.ui.close_all_tabs=Tüm sekmeleri kapat
 android.ui.confirm_stop_download_msg=Bu indirmeyi durdurmak istediğinize emin misiniz?
 android.ui.confirm_stop_download_title=İndirme durdurulsun mu?
+android.ui.confirmation_alert_dialog_message=Kaydedilmemiş değişiklikleri silinsin mi?
+android.ui.crash_button_confirm=DETAYLARI GÖNDER
+android.ui.crash_button_decline=HAYIR TEŞEKKÜRLER
+android.ui.crash_checkbox_device=Cihaz Detayları
+android.ui.crash_checkbox_exception=Çökme Detayları
+android.ui.crash_checkbox_language=Dil Ayarlarınız
+android.ui.crash_checkbox_logs=Uygulama Günlükleri
+android.ui.crash_checkbox_zimfiles=Zim Dosyalarınızın Listesi
+android.ui.crash_description=Düşmüş gibiyiz.\n\nAşağıdaki bilgileri göndererek bu sorunu çözmemize yardımcı olur musunuz?
+android.ui.crash_title=Peki… Bu utanç verici.
 android.ui.customapp_missing_content=Uygulamanız bozuk. Bu durum SD Kartınızdaki dosyaları kaldırmış olmanızdan kaynaklı olabilir. Uygulamayı kaldırıp Play Store'dan yeniden indirmeniz gerekmektedir.
 android.ui.delete=Sil
+android.ui.delete_notes_confirmation_msg=Tüm notları silinsin mi?
 android.ui.delete_recent_search_item=Bu öğe silinsin mi?
 android.ui.delete_specific_search_toast=Yakın arama geçmişi kaldırıldı
 android.ui.delete_specific_zim=Bu dosya silinsin mi?
@@ -40,51 +58,77 @@ android.ui.delete_zim_failed=Üzgünüz, bu dosyayı silemedik. Bir dosya yönet
 android.ui.deleted_message=silindi
 android.ui.did_you_know=Bunları biliyor muydunuz?
 android.ui.do_not_ask_anymore=Artık sorma
+android.ui.download_books=Kitapları indir
+android.ui.download_books_message=Kitapları indirin ve nerede olursanız olun okuyun.
 android.ui.download_change_storage=Depolama aygıtı seçicisi
 android.ui.download_complete_snackbar=İndirme tamamlandı
 android.ui.download_no_space=Bu dosyanın indirilebilmesi için yeterli alan yok.
 android.ui.download_pause=Duraklat
 android.ui.download_paused=duraklatıldı
+android.ui.download_resume=Devam et
 android.ui.download_started_library=İndirme başlatıldı...
 android.ui.download_stop=Durdur
 android.ui.error_articleurlnotfound=Hata: (Url: %1$s) makalesinin yüklemesi başarısız.
 android.ui.error_fileinvalid=Hata: Seçili dosya geçerli bir ZIM dosyası değil.
 android.ui.error_filenotfound=Hata: Seçili ZIM dosyası bulunamadı.
 android.ui.error_nozimfilesfound=Cihazınızda içerik bulunamadı.\nKiwix'e içerik yükleme talimatlarını görmek için Yardım Sayfası'na bir göz atın.\nEğer cihazınıza/harici depolama kaynağınıza bir ZIM dosyası koyduysanız, birkaç dakika içerisinde yeniden deneyebilir veya cihazınızı yeniden başlatabilirsiniz.
-android.ui.external_link_popup_dialog_message=Bir dış bağlantı giriyorsunuz. Bu, veri aktarımı için ilave ücretlendirmeye neden olabilir veya çevrimdışı olduğunuzda çalışmaz. Devam etmek istiyor musunuz?
+android.ui.expand=Genişlet
+android.ui.ext_storage_permission_not_granted=Hata: Depolama izinleri verilmemiş
+android.ui.ext_storage_permission_rationale_add_note=Notlar için depolama erişimi gerekir
+android.ui.ext_storage_write_permission_denied_add_note=Notlar depolama erişimi olmadan kullanılamaz
+android.ui.external_link_popup_dialog_message=Bir harici bağlantı giriyorsunuz. Bu, veri aktarımı için ilave ücretlendirmeye neden olabilir veya çevrimdışı olduğunuzda çalışmaz. Devam etmek istiyor musunuz?
 android.ui.external_link_popup_dialog_title=Harici bağlantıya giriliyor
 android.ui.external_storage=Harici
+android.ui.failed_cannot_resume=Bilinmeyen bir nedenden dolayı devam edilemiyor
+android.ui.failed_file_already_exists=Dosya zaten mevcut
+android.ui.failed_http_code=HTTP kodu %s
+android.ui.failed_http_error=HTTP veri hatası
+android.ui.failed_insufficient_space=Depolamada yeterli alan yok
+android.ui.failed_state=Başarısız: %s
+android.ui.failed_storage_not_found=Depolama bulunamadı
+android.ui.failed_too_many_redirects=Çok fazla yönlendirme
+android.ui.failed_unhandled_http_code=Bilinmeyen HTTP kodu alındı
+android.ui.failed_unknown=Bilinmiyor
+android.ui.failed_unknown_file_error=Bilinmeyen dosya sistemi hatası
+android.ui.favicon=Favicon
+android.ui.find_offline_books_and_enjoy_reading=Çevrimdışı kitapları bulun ve okumanın tadını çıkarın.
+android.ui.get_content_shortcut_label=İçerik alın
 android.ui.get_library_over_network=İçerik listesini indirmek için ağı kullan. (Yaklaşık 6MB)
+android.ui.get_started=Başla
+android.ui.go_to_next_page=Sonraki sayfaya git
 android.ui.go_to_play_store=Play Store'a git
+android.ui.go_to_previous_page=Önceki sayfaya git
 android.ui.got_it=Anladım
-# Fuzzy
-android.ui.help_10=Seçtiğiniz ZIM dosyalarını uygulama içerisinden indirebilir veya istediklerinizi seçerek SD kartınıza aktarmadan önce bir Masaüstü bilgisayarından indirebilirsiniz.
+android.ui.help_10=Seçtiğiniz ZIM dosyalarını uygulama içinde indirebilir veya ZIM dosyalarını SD kartınıza aktarmadan önce istediğiniz birini seçip bir Masaüstü bilgisayardan indirebilirsiniz.
 android.ui.help_11=Uygulama içinden indirilen ZIM dosyaları harici depolama aygıtındaki Kiwix başlıklı bir klasördedir.
 android.ui.help_12=Büyük ZIM dosyaları nasıl kullanılır?
 android.ui.help_13=Eğer ZIM dosyanız 4GB'tan büyükse, dosya sistemi kısıtlamalarından dolayı SD kartınıza depolayamayabilirsiniz.
-# Fuzzy
-android.ui.help_14=Uygulama içinde indirme yapmak büyük dosyaları sizin için otomatik olarak bölmeyi sağlar.
+android.ui.help_14=Uygulama içi indirme, daha büyük dosyaları otomatik olarak işler ve bunları sizin için ayırır.
 android.ui.help_15=Yine de başka bir cihaza indirme yapıyorsanız, ZIM dosyasını bölmek için aşağıdaki yazılımı kullanmanız gerekebilir:
 android.ui.help_16=\u2022 Microsoft Windows için : HJ-Split
 android.ui.help_17=\u2022 Apple Mac OSX için: Split and Concat
 android.ui.help_18=\u2022 GNU/Linux için konsola: split --bytes=4000M my_big_file.zim
 android.ui.help_19=Not: çıkış dosyalarınız my_big_file.zimaa, my_big_file.zimab, vs. gibi isimlendirilmiş olmalı.
-# Fuzzy
-android.ui.help_1=Kiwix, Vikipedi gibi web sitelerine çok yüksek boyutta sıkıştırılmış bir formda çevrimdışı olarak erişmenizi sağlar.
+android.ui.help_1=Kiwix, Vikipedi gibi web sitelerine yüksek oranda sıkıştırılmış biçimde çevrimdışı erişim sağlar.
 android.ui.help_20=Kiwix'i tercih ettiğiniz için teşekkür ederiz!
 android.ui.help_21=Sizi de aramızda görmekten çok mutlu olduk ve tüm geri bildirim ve önerilerinizi android@kiwix.org adresine göndermenizden memnuniyet duyacağız.
 android.ui.help_2=Kiwix ne yapar?
 android.ui.help_3=Kiwix bir çevrimdışı içerik okuyucusudur. Aynı bir ağ tarayıcısı gibi çalışır ama web sayfalarına çevrimiçi erişmek yerine içeriği ZIM formatındaki bir dosyadan okur.
-# Fuzzy
-android.ui.help_4=Kiwix orijinalde Vikipedi'yi çevrimdışı olarak okuması için tasarlanmış olsa da diğer içerikleri de okuyabilir.
+android.ui.help_4=Kiwix aslen Vikipedi'yi çevrimdışı sağlamak için tasarlanmış olsa da, diğer içerikleri de okuyor.
 android.ui.help_5=İçerik nerededir?
 android.ui.help_6=İçeriğimiz Kiwix web sayfasındadır.
 android.ui.help_7=ZIM dosyaları olarak kullanılabilir durumdadırlar. Onlardan çok sayıda vardır:
 android.ui.help_8=\u2022 Vikipedi her dil için ayrı ayrı kullanılabilir durumdadır.
 android.ui.help_9=\u2022 Wikileaks veya Vikikaynak gibi diğer kaynaklarımız da kullanılabilir durumdadır
 android.ui.hint_contents_drawer_message=Bu makalenin içeriğini görüntülemek için sola hızlıca kaydırabilirsiniz
+android.ui.history=Geçmiş
+android.ui.history_from_current_book=Mevcut kitaptan tarih
+android.ui.human_kind_knowledge=İnsan türünün bilgisi, telefonunuzda.
 android.ui.internal_storage=Dahili
+android.ui.kiwi=Kiwi
 android.ui.language_count=(%1$d)
+android.ui.language_localized=(%s)
+android.ui.languages_saved=Diller kaydedildi
 android.ui.local_zims=Cihaz
 android.ui.menu_bookmarks=Yer imleri
 android.ui.menu_bookmarks_list=Yer imleri
@@ -98,20 +142,43 @@ android.ui.menu_read_aloud_stop=Yüksek sesle okumayı sonlandır
 android.ui.menu_search=Makale ara
 android.ui.menu_searchintext=Sayfada bul
 android.ui.menu_settings=Ayarlar
+android.ui.menu_support_kiwix=Kiwix'i destekle
 android.ui.menu_zim_manager=İçerik al
+android.ui.new_tab=Yeni sekme
+android.ui.new_tab_shortcut_label=Yeni sekme
 android.ui.new_tab_snackbar=Makale yeni bir sekmede açıldı
 android.ui.next=İleri
 android.ui.no=Hayır
 android.ui.no_bookmarks=Yer imi yok
 android.ui.no_downloads_here=İndirme yok
 android.ui.no_files_here=Dosya yok
+android.ui.no_items_available=İndirilecek öğe yok
+android.ui.no_items_msg=Kullanılabilir öğe yok
 android.ui.no_network_connection=Ağ bağlantısı yok
 android.ui.no_reader_application_installed=Bu dosya türü için yüklü bir uygulama bulunamadı
 android.ui.no_section_info=İçerik başlığı bulunamadı
+android.ui.note=Not
+android.ui.note_save_error_storage_not_writable=Not kaydedilirken hata oluştu: Depolama yazdırılamıyor
+android.ui.note_save_successful=Not kaydedildi
+android.ui.note_save_unsuccessful=Not kaydetme başarısız oldu
+android.ui.note_share_app_chooser_title=Not dosyasını şununla paylaş:
+android.ui.note_share_error_file_missing=Not dosyası mevcut değil
+android.ui.notes_deletion_none_found=Silme için not bulunamadı
+android.ui.notes_deletion_successful=Tüm notlar klasörü silindi
+android.ui.notes_deletion_unsuccessful=Bazı dosyalar silinmedi
+android.ui.ongoing_download_channel_desc=Devam eden zim dosyası indirmeleri için kategori.
+android.ui.ongoing_download_channel_name=Devam Eden İndirmeler
 android.ui.open=Aç
 android.ui.open_in_new_tab=Bağlantı yeni sekmede açılsın mı?
 android.ui.other_languages=Diğer diller:
 android.ui.path_not_writable=Varsayılan kullanılarak istenen dizine erişilemiyor. Bu durumu çözmek için uygulama ayarlarından istenen dizini yeniden seçin.
+android.ui.paused_connectivity=Bir ağa bağlanmak için bekleniyor
+android.ui.paused_retry=Yeniden denemek için bekleniyor
+android.ui.paused_state=Durduruldu: %s
+android.ui.paused_unknown=Bilinmiyor
+android.ui.paused_wifi=Wifi Bekleniyor
+android.ui.pending_state=Beklemede
+android.ui.pic=Resim
 android.ui.pref_autonightmode=Otomatik gece modu
 android.ui.pref_autonightmode_summary=Gece ve gündüz modu arasında otomatik geçiş.
 android.ui.pref_backtotop=Başa dön
@@ -127,10 +194,8 @@ android.ui.pref_display_title=Görüntüle
 android.ui.pref_external_link_popup_summary=Ek ücretlendirmelerde veya çevrimdışı bağlantılarla çalışılmadığında açılır pencere göstererek uyar.
 android.ui.pref_external_link_popup_title=Harici bağlantı girilirken uyarı ver
 android.ui.pref_extras=Ekstralar
-# Fuzzy
-android.ui.pref_hidetoolbar=Kaydırma yaparken araç çubuğunu gizle
-# Fuzzy
-android.ui.pref_hidetoolbar_summary=Sayfa kaydırılırken araç çubuğunu gizle
+android.ui.pref_hidetoolbar=Araç Çubuğunu Görünür Tutun
+android.ui.pref_hidetoolbar_summary=İçeriğe göz atarken araç çubuğunun görünmemesini sağlar.
 android.ui.pref_info_title=Bilgi
 android.ui.pref_info_version=Sürüm
 android.ui.pref_language_chooser=Bir dil seçin
@@ -159,30 +224,51 @@ android.ui.remote_zims=Çevrimiçi
 android.ui.request_storage=Çevrimdışı içeriğe erişmek için belleğinize erişmemiz gerekmektedir.
 android.ui.request_storage_custom=Ekranın üstünde bir uyarı görürseniz çözüm için cihazınızı yeniden başlatın.
 android.ui.rescan_fs_warning=İndirilebilir içerik aranıyor, lütfen bekleyin...
+android.ui.running_state=Devam Ediyor
+android.ui.save=Kaydet
+android.ui.save_books_offline=Kitapları çevrimdışı kaydet
+android.ui.save_languages=Dilleri kaydet
 android.ui.save_media=Ortam dosyasını kaydet
 android.ui.save_media_error=Medya kaydedilmeye çalışılırken bir hata oluştu!
-# Fuzzy
-android.ui.save_media_saved=Medyayı %s olarak şuraya kaydet Android/media/org.kiwix.../
+android.ui.save_media_saved=Medyayı %s olarak şuraya kaydet Android/media/org.kiwix…/
+android.ui.search_bookmarks=Yer imlerini ara
+android.ui.search_history=Geçmişi ara
 android.ui.search_label=Ara
 android.ui.search_widget_text=Kiwix'i ara
+android.ui.select_languages=Dilleri seç
+android.ui.selected_file_cab_app_chooser_title=ZIM dosyalarını şu kişilerle paylaş:
+android.ui.selected_items=%1$d seçili
+android.ui.send_feedback=Geri bildirim gönder
+android.ui.share=Paylaş
+android.ui.shortcut_disabled_message=Kısayol mevcut değil
+android.ui.smiling_face=:D
 android.ui.space_available=Kullanılabilir alan:
 android.ui.speech_not_supported=Üzgünüz! Cihazınız konuşma girdisini desteklemiyor
 android.ui.speech_prompt_text=%s aramak için konuşun
+android.ui.successful_state=Tamamlandı
+android.ui.switch_tabs=Sekmeleri değiştir
 android.ui.tab_closed=Sekme kapatıldı
+android.ui.table_of_contents=İçindekiler
 android.ui.time_day=gün
 android.ui.time_hour=sa
 android.ui.time_left=kaldı
 android.ui.time_minute=dk
 android.ui.time_second=sn
+android.ui.time_today=Bugün
+android.ui.time_yesterday=Dün
 android.ui.tts_lang_not_supported=Bu sayfanın dili desteklenmiyor veya uygun dil verisi yüklenmemiş. Makale düzgün okunamayabilir.
 android.ui.tts_not_enabled=Bu ZIM dosyası için metin okuma uygulanabilir değil
 android.ui.tts_pause=duraklat
 android.ui.tts_resume=devam et
 android.ui.tts_stop=dur
+android.ui.unable_to_add_to_bookmarks=Yer imlerine eklenemiyor
 android.ui.undo=Geri al
+android.ui.vid=Video
 android.ui.wait_for_load=İçerik hâlâ yükleniyor
+android.ui.welcome_to_the_family=Aileye hoş geldiniz
 android.ui.wifi_only_msg=Eğer "Evet"i seçerseniz ileride uyarı almayacaksınız. Ancak Ayarlar kısmından her zaman bunu değiştirebilirsiniz
 android.ui.wifi_only_title=İçeriğin mobil ağ kullanılarak indirilmesine izin verilsin mi?
+android.ui.wiki_article_title=Wiki Makale Başlığı
 android.ui.yes=Evet
 android.ui.your_languages=Seçilen diller:
 android.ui.zim_already_downloading=Zim zaten indiriliyor

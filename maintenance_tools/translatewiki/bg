@@ -47,13 +47,11 @@ android.ui.external_storage=Външни
 android.ui.get_library_over_network=Използвайте мрежата за даунлоуд на списъка със съдържанието.\n(Приблизително 6MB)
 android.ui.go_to_play_store=Към Play Store
 android.ui.got_it=Разбрано
-# Fuzzy
 android.ui.help_10=Вие можете или да смъкнете избраните от вас ZIM файлове, докато сте в мобилното приложение, или да изберете внимателно желаните от вас и да ги смъкнете от десктоп компютър, след което да прехвърлите ZIM файловете във вашата SD карта.
 android.ui.help_11=ZIM файловете, които са смъкнати в мобилното приложение, се намират във външната памет, в папка с име Kiwix.
 android.ui.help_12=Как да използвате големи ZIM файлове?
 android.ui.help_13=В случай, че вашият ZIM файл е по-голям от 4GB, е възможно да бъдете възпрепятствани да го съхраните на вашата SD  карта поради ограничения на файловата система.
-# Fuzzy
-android.ui.help_14=Даунлоуда в мобилното приложение автоматично обработва по-големите файлове, разделяйки ги на по-малки парчета.
+android.ui.help_14=Изтеглянето в мобилното приложение автоматично обработва по-големите файлове, разделяйки ги на по-малки части.
 android.ui.help_15=В случай обаче, че извършвате даунлоуда на друго устройство, може да се наложи да разделите ZIM файла на по-малки парчета, като за целта използвате следния софтуер:
 android.ui.help_16=\u2022 Под Microsoft Windows: HJ-Split
 android.ui.help_17=\u2022 Под Apple Mac OSX: Split and Concat
@@ -115,8 +113,7 @@ android.ui.pref_external_link_popup_summary=Показва попъп, за да
 android.ui.pref_external_link_popup_title=При зареждане на външни препратки
 android.ui.pref_extras=Екстри
 android.ui.pref_hidetoolbar=Лентата с инструменти винаги видима
-# Fuzzy
-android.ui.pref_hidetoolbar_summary=Скривайте туулбара, когато скролирате страницата надолу
+android.ui.pref_hidetoolbar_summary=Предпазва лентата с инструменти от превъртане извън видимата област, при преглеждане на съдържание
 android.ui.pref_info_title=Информация
 android.ui.pref_info_version=Версия
 android.ui.pref_language_chooser=Избиране на език
