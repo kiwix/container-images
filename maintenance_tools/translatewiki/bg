@@ -142,6 +142,7 @@ android.ui.remote_zims=Онлайн
 android.ui.request_storage=За достъп до офлайн съдържание, ни е нужен достъп до файловото Ви хранилище
 android.ui.request_storage_custom=Ако виждате предупреждение за припокриване на екрана, просто рестартирайте своето устройство, за да коригирате проблема.
 android.ui.rescan_fs_warning=Сканиране на файлове за изтегляне, моля, изчакайте...
+android.ui.save=Съхраняване
 android.ui.save_media=Запази медията
 android.ui.save_media_error=Възникна грешка при опита за съхранение на медийния файл!
 android.ui.save_media_saved=Медийният файл е запазен под името %s в Android/media/org.kiwix.../
