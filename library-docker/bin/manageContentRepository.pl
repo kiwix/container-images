@@ -295,13 +295,33 @@ sub writeHtaccess {
         # Write normal entry
         $content .= writeEntryHtaccess($entry, $entries);
 
-        # Redirect _all to _all_novid if _all does not exist
-        if ($key =~ /_novid/) {
-            my $all_key = $key =~ s/_novid//gr;
+        # [BACKWARD COMPATIBILITY] Redirect _all to _all_maxi if _all does not exist
+        if ($key =~ /_maxi/) {
+            my $all_key = $key =~ s/_maxi//gr;
             unless (exists($sortedContent{$all_key})) {
                 my $all_entry = dclone($entry);
-                $all_entry->{core} =~ s/_novid//g;
+                $all_entry->{core} =~ s/_maxi//g;
                 $content .= writeEntryHtaccess($all_entry, $entries);
+            }
+        }
+
+        # [BACKWARD COMPATIBILITY] Redirect _novid to _maxi if _novid does not exist
+        if ($key =~ /_maxi/) {
+            my $novid_key = $key =~ s/_maxi/_novid/gr;
+            unless (exists($sortedContent{$novid_key})) {
+                my $novid_entry = dclone($entry);
+                $novid_entry->{core} =~ s/_maxi/_novid/g;
+                $content .= writeEntryHtaccess($novid_entry, $entries);
+            }
+        }
+
+        # [BACKWARD COMPATIBILITY] Redirect _nodet to _mini if _nodet does not exist
+        if ($key =~ /_mini/) {
+            my $nodet_key = $key =~ s/_mini/_nodet/gr;
+            unless (exists($sortedContent{$nodet_key})) {
+                my $nodet_entry = dclone($entry);
+                $nodet_entry->{core} =~ s/_mini/_nodet/g;
+                $content .= writeEntryHtaccess($nodet_entry, $entries);
             }
         }
     }
