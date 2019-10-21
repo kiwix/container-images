@@ -251,13 +251,13 @@ sub writeHtaccess {
     $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
     # Folder description
-    $content .= "AddDescription \"Deprectated stuff kept only for historical purpose\" archive\n";
+    $content .= "AddDescription \"Deprecated stuff kept only for historical purpose\" archive\n";
     $content .= "AddDescription \"All versions of Kiwix, the software (no content is in there)\" release\n";
     $content .= "AddDescription \"Development stuff (tools & dependencies), for developers\" dev\n";
     $content .= "AddDescription \"Binaries and source code tarballs compiled auto. one time a day, for developers\" nightly\n";
     $content .= "AddDescription \"Random stuff, mostly mirrored for third party projects\" other\n";
-    $content .= "AddDescription \"Kiwix-Plug Raspberry Pi images\" plug\n";
-    $content .= "AddDescription \"XML files describing all the content available, for developers\" library\n";
+    $content .= "AddDescription \"Kiwix Hotspot Raspberry Pi images\" hotspots\n";
+    $content .= "AddDescription \"XML and YAML files describing all the content available, for developers\" library\n";
     $content .= "AddDescription \"Kiwix source code tarballs, for developers only\" src\n";
     $content .= "AddDescription \"Wikipedia articles key indicators for the WP.10 project\" wp1\n";
     $content .= "AddDescription \"ZIM files, content dumps for offline usage (to be read with Kiwix)\" zim\n";
