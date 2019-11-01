@@ -281,6 +281,7 @@ sub writeHtaccess {
 
         my $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim ".substr($entry->{zim}, length($contentDirectory))."\n";
         $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
+        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.meta4 ".substr($entry->{zim}, length($contentDirectory)).".meta4\n";
         $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
         $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
         $content .= "\n";
