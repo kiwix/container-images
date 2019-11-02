@@ -1,3 +1,9 @@
+map_hash_max_size 2048;
+map_hash_bucket_size 256;
+map $uri $wp1_uri {
+    include /etc/nginx/maps/wp1.map;
+}
+
 server {
   listen *:80;
   server_name download.openzim.org;
@@ -5,6 +11,10 @@ server {
   root /var/www/download.openzim.org/;
   default_type application/octet-stream;
   autoindex on;
-  
+
+  if ($wp1_uri) {
+    rewrite ^ $wp1_uri redirect;
+  }
+
   include /etc/nginx/vhost.d/default;
 }

@@ -18,6 +18,9 @@ RUN { \
 
 RUN sed -i '4i \    text/yaml                                        yml;' /etc/nginx/mime.types
 
+RUN mkdir /etc/nginx/maps
+RUN touch /etc/nginx/maps/wp1.map
+
 COPY sites/* /etc/nginx/sites-enabled/
 
 COPY docker-entrypoint.sh /app/
