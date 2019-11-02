@@ -1,0 +1,16 @@
+#/bin/sh
+
+WP1_DIR=/var/www/download.openzim.org/wp1
+WP1_MAP=/etc/nginx/maps/wp1.map
+
+cat /dev/null > $WP1_MAP
+cd $WP1_DIR
+for TARGET in $(find . -mindepth 1 -maxdepth 1 -type d | sed -e 's/.\///' | sort -r)
+do
+  REDIRECT=$(echo $TARGET | sed -e 's/_.*//')
+
+  if ! grep "/wp1/$REDIRECT" $WP1_MAP > /dev/null
+  then
+    echo "~^/wp1/$REDIRECT(.*)\$ /wp1/$TARGET\$1;" >> $WP1_MAP
+  fi
+done

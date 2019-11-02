@@ -53,7 +53,7 @@ fi
 { \
   echo "#!/bin/sh" ; \
   echo "service nginx reload" ; \
-} > /etc/cron.hourly/10reloadNginx && chmod 0500 /etc/cron.hourly/10reloadNginx
+} > /etc/cron.hourly/20reloadNginx && chmod 0500 /etc/cron.hourly/20reloadNginx
 
 service cron start
 
