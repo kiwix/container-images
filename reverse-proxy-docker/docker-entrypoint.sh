@@ -49,7 +49,12 @@ fi
   echo "}" ; \
 } > /etc/nginx/vhost.d/library.kiwix.org_location
 
-#CRON is needed to start logrotate on nginx log files
+# Cron is needed to start logrotate on nginx log files
+{ \
+  echo "#!/bin/sh" ; \
+  echo "service nginx reload" ; \
+} > /etc/cron.hourly/10reloadNginx && chmod 0500 /etc/cron.hourly/10reloadNginx
+
 service cron start
 
 exec "$@"
