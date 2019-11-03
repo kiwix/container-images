@@ -11,6 +11,6 @@ do
 
   if ! grep "/wp1/$REDIRECT" $WP1_MAP > /dev/null
   then
-    echo "~^/wp1/$REDIRECT(.*)\$ /wp1/$TARGET\$1;" >> $WP1_MAP
+    echo "~^/wp1/$REDIRECT(|[^_].*)\$ /wp1/$TARGET\$1;" >> $WP1_MAP
   fi
 done
