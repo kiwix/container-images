@@ -49,6 +49,9 @@ fi
   echo "}" ; \
 } > /etc/nginx/vhost.d/library.kiwix.org_location
 
+# Create WP1 redirects
+/etc/cron.hourly/10createWp1Redirects
+
 # Cron is needed to start logrotate on nginx log files
 { \
   echo "#!/bin/sh" ; \
