@@ -2,7 +2,7 @@ FROM httpd
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
-# Based on instructions from http://mirrorbrain.org/docs/installation/source/
+# Based on instructions from https://mirrorbrain.org/docs/installation/source/
 #
 LABEL maintainer="kiwix"
 
@@ -46,7 +46,7 @@ RUN { \
 #Install MirrorBrain from sources
 COPY patch/mod_form.c mod_form.c.patch
 RUN { \
-  wget -qO - http://mirrorbrain.org/files/releases/mirrorbrain-$MB_VERSION.tar.gz | tar -xz ; \
+  wget --no-check-certificate -qO - https://mirrorbrain.org/files/releases/mirrorbrain-$MB_VERSION.tar.gz | tar -xz ; \
   cd mirrorbrain-$MB_VERSION/mod_mirrorbrain ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c ; \
