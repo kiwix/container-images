@@ -19,8 +19,6 @@ my %content;
 # Configuration variables
 my $contentDirectory = "/var/www/download.kiwix.org";
 
-my $wp1DirectoryName = "wp1";
-my $wp1Directory = $contentDirectory."/".$wp1DirectoryName;
 my $zimDirectoryName = "zim";
 my $zimDirectory = $contentDirectory."/".$zimDirectoryName;
 my $releaseDirectoryName = "release";
@@ -258,22 +256,7 @@ sub writeHtaccess {
     $content .= "AddDescription \"Random stuff, mostly mirrored for third party projects\" other\n";
     $content .= "AddDescription \"Kiwix Hotspot Raspberry Pi images\" hotspots\n";
     $content .= "AddDescription \"XML and YAML files describing all the content available, for developers\" library\n";
-    $content .= "AddDescription \"Kiwix source code tarballs, for developers only\" src\n";
-    $content .= "AddDescription \"Wikipedia articles key indicators for the WP.10 project\" wp1\n";
     $content .= "AddDescription \"ZIM files, content dumps for offline usage (to be read with Kiwix)\" zim\n";
-
-    # WP1 redirects
-    my @wp1s = split /\n/, `find $wp1Directory -maxdepth 1 -type d | sort -r`;
-    my %wp1_done;
-    for my $wp1 (@wp1s) {
-        if ($wp1 =~ /^.*\/([^\/]+)(_\d{4}-\d{2})$/) {
-            my $core = $1;
-            my $dir = $1.$2;
-            next if $wp1_done{$core};
-            $wp1_done{$core} = $dir;
-            $content .= "RedirectPermanent /".$wp1DirectoryName."/".$core." /".$wp1DirectoryName."/".$dir."\n";
-        }
-    }
 
     sub writeEntryHtaccess {
         my ($entry, $entries) = @_;
