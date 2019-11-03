@@ -41,7 +41,7 @@ if [ ! -z $HTTPD ]
 then
   service cron start
   echo "Start HTTPD ..."
-  httpd-foreground -D
+  httpd-foreground
 else
   if [ ! -z $UPDATE_HASH ] ||  [ ! -z $UPDATE_DB ]
   then
