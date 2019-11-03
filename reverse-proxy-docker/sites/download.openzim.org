@@ -4,6 +4,10 @@ map $uri $wp1_uri {
     include /etc/nginx/maps/wp1.map;
 }
 
+types {
+   text/tab-separated-values tsv;
+}
+
 server {
   listen *:80;
   server_name download.openzim.org;
