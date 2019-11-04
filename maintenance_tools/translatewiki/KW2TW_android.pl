@@ -24,14 +24,14 @@ GetOptions(
 if (!$path) {
     print STDERR "usage: ./KW2TW_android.pl --path=./ [--language=fr] [--allLanguages]\n";
     exit;
-} elsif (! -d $path || ! -d $path."/app/src/main/res") {
+} elsif (! -d $path || ! -d $path."/core/src/main/res") {
     print STDERR "'$path' does not exists or is not a kiwix-android directory.\n";
     exit;
 }
 
 # Get all languages if necessary
 if ($allLanguages) {
-    opendir(DIR, $path."/app/src/main/res") || die("Cannot open directory.");
+    opendir(DIR, $path."/core/src/main/res") || die("Cannot open directory.");
     foreach my $language (readdir(DIR)) {
         if ($language =~ '^values-([a-z]{2,3})$') {
             push(@languages, $1);
@@ -42,7 +42,7 @@ if ($allLanguages) {
 # Generate TW file for each language
 foreach my $language (@languages) {
     my $txt = "";
-    my $mainPath = $path."/app/src/main/res/values/strings.xml";
+    my $mainPath = $path."/core/src/main/res/values/strings.xml";
 
     # Put everything which is not android in
     my $old = readFile($language) || "";
