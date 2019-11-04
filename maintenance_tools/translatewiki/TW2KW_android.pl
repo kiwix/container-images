@@ -17,33 +17,6 @@ my $path;
 # Duplicates, are responsible to find one translation in differents
 # files. The key, is the target
 my $duplicates = {
-    "ui.messages.browseLibrary" => "ui.main.browseLibrary",
-    "ui.messages.hideLibrary" => "ui.main.hideLibrary",
-    "ui.messages.fullscreen" => "ui.main.fullscreen",
-    "android.ui.menu_openfile" => "ui.main.openFile",
-    "android.ui.menu_back" => "ui.main.back",
-    "android.ui.menu_fullscreen" => "ui.main.fullscreen",
-    "android.ui.menu_exitfullscreen" => "ui.messages.quitFullscreen",
-    "android.ui.menu_forward" => "ui.main.forward",
-    "android.ui.menu_home" => "ui.main.home",
-    "android.ui.menu_randomarticle" => "ui.main.randomArticle",
-    "android.ui.menu_help" => "ui.main.help",
-    "android.ui.save_media" => "ui.main.saveMediaAs",
-    "android.ui.menu_search" => "ui.main.search",
-    "android.ui.search_label" => "ui.main.search",
-    "android.ui.menu_searchintext" => "ui.main.findInText",
-    "android.ui.menu_settings" => "ui.preferences.preferences",
-    "android.ui.pref_display_title" => "ui.main.display",
-    "android.ui.pref_language_title" => "ui.main.language",
-    "android.ui.pref_info_title" => "ui.messages.information",
-    "android.ui.pref_zoom_dialog" => "android.ui.pref_zoom_title",
-    "android.ui.menu_exit" => "ui.main.quit",
-    "android.ui.menu_bookmarks" => "ui.main.bookmarks",
-    "android.ui.add_bookmark" => "ui.main.mark",
-    "android.ui.remove_bookmark" => "ui.main.unmark",
-    "android.ui.menu_bookmarks_list" => "ui.main.bookmarks",
-    "android.ui.menu_rescan_fs" =>  "android.ui.rescan_fs",
-    "android.ui.zim_manager" => "ui.messages.library"
 };
 
 # Get console line arguments
