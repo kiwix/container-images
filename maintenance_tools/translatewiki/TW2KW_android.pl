@@ -55,7 +55,7 @@ GetOptions('path=s' => \$path,
 if (!$path) {
     print STDERR "usage: ./TW2KW_android.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
     exit;
-} elsif (! -d $path || ! -d $path."/app/src/main/res") {
+} elsif (! -d $path || ! -d $path."/core/src/main/res") {
     print STDERR "'$path' does not exist or is not a kiwix-android directory.\n";
     exit;
 }
@@ -68,7 +68,7 @@ if ($allLanguages eq "tw" || $allLanguages eq "kw") {
     if ($allLanguages eq "tw") {
         opendir(DIR, "./") || die("Cannot open directory.");
     } else {
-        opendir(DIR, $path."/app/src/main/res") || die("Cannot open directory.");
+        opendir(DIR, $path."/core/src/main/res") || die("Cannot open directory.");
     }
     foreach my $language (readdir(DIR)) {
         if ($allLanguages eq "kw" && $language =~ '^values-([a-z]{2,3})$' ||
@@ -79,7 +79,7 @@ if ($allLanguages eq "tw" || $allLanguages eq "kw") {
 }
 
 # Initialize master files to use as template
-my $languageAndroidSourceMaster = readFile($path."/app/src/main/res/values/strings.xml");
+my $languageAndroidSourceMaster = readFile($path."/core/src/main/res/values/strings.xml");
 my $masterTranslationsCount = countLinesInFile("en");
 
 # Update Kiwix locales
@@ -95,7 +95,7 @@ foreach my $language (@languages) {
     my $content = readFile($language);
     my $globalHash = getLocaleHash($content, "|");
 
-    my $localePath = $path."/app/src/main/res/values-".$language;
+    my $localePath = $path."/core/src/main/res/values-".$language;
     if (length($language) <= 2 && ($languageTranslationCompletion > $threshold || -d $localePath)) {
         print STDERR "Creating locale file in $language for Kiwix for Android\n";
 
