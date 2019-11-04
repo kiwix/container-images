@@ -48,10 +48,9 @@ my $duplicates = {
 
 # Get console line arguments
 GetOptions('path=s' => \$path,
-	   'language=s' => \@languages, 
-	   'allLanguages=s' => \$allLanguages,
-	   'threshold=s' => \$threshold
-	   );
+           'language=s' => \@languages,
+           'allLanguages=s' => \$allLanguages,
+           'threshold=s' => \$threshold);
 
 if (!$path) {
     print STDERR "usage: ./TW2KW_android.pl --path=./ [--language=fr] [--allLanguages=[kw|tw]] [--threshold=$threshold]\n";
@@ -67,15 +66,15 @@ $allLanguages = lc($allLanguages);
 # Get all languages if necessary
 if ($allLanguages eq "tw" || $allLanguages eq "kw") {
     if ($allLanguages eq "tw") {
-	opendir(DIR, "./") || die("Cannot open directory."); 
+        opendir(DIR, "./") || die("Cannot open directory.");
     } else {
-	opendir(DIR, $path."/app/src/main/res") || die("Cannot open directory."); 
+        opendir(DIR, $path."/app/src/main/res") || die("Cannot open directory.");
     }
     foreach my $language (readdir(DIR)) {
-	if ($allLanguages eq "kw" && $language =~ '^values-([a-z]{2,3})$' ||
-	    $allLanguages eq "tw" && $language =~ '^([a-z]{2})$' && $language ne "en") {
-	    push(@languages, $1);
-	}
+        if ($allLanguages eq "kw" && $language =~ '^values-([a-z]{2,3})$' ||
+            $allLanguages eq "tw" && $language =~ '^([a-z]{2})$' && $language ne "en") {
+            push(@languages, $1);
+        }
     }
 }
 
@@ -98,52 +97,52 @@ foreach my $language (@languages) {
 
     my $localePath = $path."/app/src/main/res/values-".$language;
     if (length($language) <= 2 && ($languageTranslationCompletion > $threshold || -d $localePath)) {
-	print STDERR "Creating locale file in $language for Kiwix for Android\n";
+        print STDERR "Creating locale file in $language for Kiwix for Android\n";
 
-	my $androidHash = getLocaleHash($content, "android\.ui\.|");
-	my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
-	my $languageAndroidSource = $languageAndroidSourceMaster;
-	
-	while ($tmpLanguageAndroidSource =~ /<(string|item)([^\-]*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/)(string|item)>/sg) {
-	    my $tag = $1;
-	    my $middle1 = $2;
-	    my $name = $3;
-	    my $middle2 = $4;
-	    my $value = $5;
-	    my $last = $6.$7;
-	    my $original_entry = "$1$2$3$4$5$6$7";
-	    my $master_value = $value;
+        my $androidHash = getLocaleHash($content, "android\.ui\.|");
+        my $tmpLanguageAndroidSource = $languageAndroidSourceMaster;
+        my $languageAndroidSource = $languageAndroidSourceMaster;
 
-	    if (exists($androidHash->{$name})) {
-		$value = $androidHash->{$name};
-		$value =~ s/'/\\'/gm;
-	    } elsif (exists($duplicates->{"android.ui.".$name}) && 
-		     exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
-		$value = $globalHash->{$duplicates->{"android.ui.".$name}};
-		$value =~ s/'/\\'/gm;
-	    }
+        while ($tmpLanguageAndroidSource =~ /<(string|item)([^\-]*?name=['|"])([^'|^"]+)(['|"][^>]*?>)(.*?)(<\/)(string|item)>/sg) {
+            my $tag = $1;
+            my $middle1 = $2;
+            my $name = $3;
+            my $middle2 = $4;
+            my $value = $5;
+            my $last = $6.$7;
+            my $original_entry = "$1$2$3$4$5$6$7";
+            my $master_value = $value;
 
-	    # XML escape the vlaue
-	    $value =~ s/</&lt;/sg;
-	    $value =~ s/>/&gt;/sg;
-	    $value =~ s/&/&amp;/sg;
+            if (exists($androidHash->{$name})) {
+                $value = $androidHash->{$name};
+                $value =~ s/'/\\'/gm;
+            } elsif (exists($duplicates->{"android.ui.".$name}) &&
+                     exists($globalHash->{$duplicates->{"android.ui.".$name}})) {
+                $value = $globalHash->{$duplicates->{"android.ui.".$name}};
+                $value =~ s/'/\\'/gm;
+            }
 
-	    if ($value ne $master_value) {
-		$languageAndroidSource =~ s/\Q$original_entry\E/$tag$middle1$name$middle2$value$last/;
-	    } else {
-		$languageAndroidSource =~ s/[ ]*\Q<$original_entry>\E//;
-	    }
-	}
+            # XML escape the vlaue
+            $value =~ s/</&lt;/sg;
+            $value =~ s/>/&gt;/sg;
+            $value =~ s/&/&amp;/sg;
 
-	# Remove all empty lines
-	$languageAndroidSource =~ s/[\n]+/\n/mg;
-	
-	if (! -d $localePath) {
-	    mkdir($localePath);
-	}
-	writeFile($localePath."/strings.xml", $languageAndroidSource);
+            if ($value ne $master_value) {
+                $languageAndroidSource =~ s/\Q$original_entry\E/$tag$middle1$name$middle2$value$last/;
+            } else {
+                $languageAndroidSource =~ s/[ ]*\Q<$original_entry>\E//;
+            }
+        }
+
+        # Remove all empty lines
+        $languageAndroidSource =~ s/[\n]+/\n/mg;
+
+        if (! -d $localePath) {
+            mkdir($localePath);
+        }
+        writeFile($localePath."/strings.xml", $languageAndroidSource);
     } else {
-	print STDERR "Skipping locale file in $language for Kiwix for Android\n";
+        print STDERR "Skipping locale file in $language for Kiwix for Android\n";
     }
 }
 
@@ -153,7 +152,7 @@ sub getLocaleHash {
 
     my %translationHash;
     while ($content =~ /$prefixEx($prefixInc.*)=(.*)/g ) {
-	$translationHash{$1} = $2;
+        $translationHash{$1} = $2;
     }
 
     return \%translationHash;
@@ -162,7 +161,7 @@ sub getLocaleHash {
 sub writeFile {
     my $file = shift;
     my $data = shift;
-    
+
     open (FILE, ">:utf8", "$file") or die "Couldn't open file: $file";
     print FILE $data;
     close (FILE);
@@ -173,11 +172,11 @@ sub readFile {
     my $data = "";
 
     if (-f $path) {
-	open FILE, "<:utf8", $path or die "Couldn't open file: $path";
-	while (<FILE>) {
-	    $data .= $_;
-	}
-	close FILE;
+        open FILE, "<:utf8", $path or die "Couldn't open file: $path";
+        while (<FILE>) {
+            $data .= $_;
+        }
+        close FILE;
     }
 
     return $data;
@@ -188,13 +187,13 @@ sub countLinesInFile {
     my $count = 0;
 
     if (-f $path) {
-	open FILE, "<:utf8", $path or die "Couldn't open file: $path";
-	while (<FILE>) {
-	    if ($_ !~ ".accesskey" && $_ =~ "android.ui") {
-		$count += 1;
-	    }
-	}
-	close FILE;
+        open FILE, "<:utf8", $path or die "Couldn't open file: $path";
+        while (<FILE>) {
+            if ($_ !~ ".accesskey" && $_ =~ "android.ui") {
+                $count += 1;
+            }
+        }
+        close FILE;
     }
 
     return $count;
