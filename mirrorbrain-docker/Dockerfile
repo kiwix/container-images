@@ -80,7 +80,7 @@ COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
 #Install start script
 COPY bin/* /usr/local/bin/
-RUN chmod 0500 /usr/local/bin/* 
+RUN chmod 0500 /usr/local/bin/*
 
 #Start !
 CMD start.sh
