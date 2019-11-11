@@ -19,6 +19,7 @@
 # Author: Yanmiao liu
 # Author: Yfdyh000
 # Author: Zjzengdongyang
+# Author: 沈澄心
 
 android.ui.all_history_cleared_toast=已清空所有历史
 android.ui.articleCount=%s个条目
@@ -69,6 +70,7 @@ android.ui.get_started=入门
 android.ui.go_to_next_page=下一楼
 android.ui.go_to_play_store=前往Play Store
 android.ui.go_to_previous_page=楼上
+android.ui.go_to_settings_label=转到设置
 android.ui.got_it=明白了
 # Fuzzy
 android.ui.help_10=您可以在应用中下载您选择的ZIM文件，也可以在电脑端下载您想要的文件，并在稍后将其转移至您的SD卡中。
@@ -122,6 +124,7 @@ android.ui.open=打开
 android.ui.open_in_new_tab=在新标签页打开链接?
 android.ui.other_languages=其他语言：
 android.ui.path_not_writable=不能访问要求的目录，使用默认目录。要修复这一问题，请在应用设置中重新选择要求的目录。
+android.ui.paused_state=暂停
 android.ui.paused_unknown=未知
 android.ui.pref_auto_night_mode=自动化夜间模式
 android.ui.pref_auto_night_mode_summary=在白天和夜间模式之间自动切换。
@@ -129,7 +132,6 @@ android.ui.pref_back_to_top=返回顶端
 android.ui.pref_back_to_top_summary=在页底显示一个按钮以供返回顶端
 android.ui.pref_clear_all_history_summary=清空最近搜索及标签历史
 android.ui.pref_clear_all_history_title=清空历史
-# Fuzzy
 android.ui.pref_clear_all_notes_title=清空所有备注
 android.ui.pref_credits=贡献者和授权
 android.ui.pref_credits_title=制作人员
@@ -179,7 +181,7 @@ android.ui.share=分享
 android.ui.space_available=可用空间：
 android.ui.speech_not_supported=对不起！您的设备不支持语音输入
 android.ui.speech_prompt_text=讲话来搜索%s
-# Fuzzy
+android.ui.status=状态
 android.ui.stop_hotspot_button=停止
 android.ui.successful_state=完成
 android.ui.tab_closed=标签已关闭

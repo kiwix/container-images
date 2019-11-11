@@ -85,8 +85,7 @@ android.ui.menu_read_aloud_stop=Stop med at læse højt
 android.ui.menu_search=Søg i artikel
 android.ui.menu_search_in_text=Søg på siden
 android.ui.menu_settings=Indstillinger
-# Fuzzy
-android.ui.menu_zim_manager=Hent indhold
+android.ui.menu_zim_manager=Bibliotek
 android.ui.new_tab_snack_bar=Artikel åbnet i nyt faneblad
 android.ui.next=Næste
 android.ui.no=Nej
@@ -155,8 +154,7 @@ android.ui.smiling_face=:D
 android.ui.space_available=Ledig plads:
 android.ui.speech_not_supported=Beklager! Din enhed understøtter ikke tale
 android.ui.speech_prompt_text=Tal for at søge %s
-# Fuzzy
-android.ui.stop_hotspot_button=Stop
+android.ui.stop_hotspot_button=STOP
 android.ui.tab_closed=Faneblad lukket
 android.ui.table_of_contents=Indholdsfortegnelse
 android.ui.time_day=dag
