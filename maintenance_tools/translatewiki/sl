@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Dbc334
 # Author: Eleassar
+# Author: Fitoschido
 # Author: HairyFotr
 # Author: Janezdrilc
 # Author: Kelson
@@ -209,8 +210,7 @@ android.ui.smiling_face=:D
 android.ui.space_available=Prostor na voljo:
 android.ui.speech_not_supported=Žal vaša naprava ne podpira vnosa govora
 android.ui.speech_prompt_text=Govori za iskanje %s
-# Fuzzy
-android.ui.stop_hotspot_button=Ustavi
+android.ui.stop_hotspot_button=USTAVI
 android.ui.successful_state=Končano
 android.ui.switch_tabs=Preklopi zavihke
 android.ui.tab_closed=Zavihek je zaprt

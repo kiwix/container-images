@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Athena in Wonderland
 # Author: Elisardojm
+# Author: Fitoschido
 # Author: Kelson
 # Author: Toliño
 
@@ -133,8 +134,7 @@ android.ui.search_widget_text=Procurar en Kiwix
 android.ui.space_available=Espazo dispoñible:
 android.ui.speech_not_supported=Sentímoloǃ O seu dispositivo non admite entrada de voz
 android.ui.speech_prompt_text=Fale para procurar %s
-# Fuzzy
-android.ui.stop_hotspot_button=Deter
+android.ui.stop_hotspot_button=DETER
 android.ui.tab_closed=Lapela pechada
 android.ui.time_day=día
 android.ui.time_hour=h

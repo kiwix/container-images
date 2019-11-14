@@ -3,6 +3,7 @@
 # Author: Airon90
 # Author: Amire80
 # Author: Blahma
+# Author: Fitoschido
 # Author: KuboF
 # Author: Metraduk
 # Author: Mirin
@@ -210,8 +211,7 @@ android.ui.smiling_face=:D
 android.ui.space_available=Havebla Spaco:
 android.ui.speech_not_supported=Domaĝe, via aparato ne subtenas voĉan enigon
 android.ui.speech_prompt_text=Paroli por serĉi %s
-# Fuzzy
-android.ui.stop_hotspot_button=Halti
+android.ui.stop_hotspot_button=HALTI
 android.ui.successful_state=Kompleta
 android.ui.switch_tabs=Ŝanĝi langetojn
 android.ui.tab_closed=Fermis langeton

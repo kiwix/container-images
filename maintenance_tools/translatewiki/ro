@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Banica
 # Author: Firilacroco
+# Author: Fitoschido
 # Author: Kelson
 # Author: MSClaudiu
 # Author: Minisarm
@@ -135,8 +136,7 @@ android.ui.search_widget_text=Caută Kiwix
 android.ui.space_available=Spațiu disponibil:
 android.ui.speech_not_supported=Ne pare rău! Dispozitivul tău nu susține opțiunea de vorbire
 android.ui.speech_prompt_text=Vorbește pentru a căuta %s
-# Fuzzy
-android.ui.stop_hotspot_button=Oprește
+android.ui.stop_hotspot_button=OPREȘTE
 android.ui.tab_closed=Filă închisă
 android.ui.time_day=zi
 android.ui.time_hour=h

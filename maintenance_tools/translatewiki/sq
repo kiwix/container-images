@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Besnik b
 # Author: FatosMorina
+# Author: Fitoschido
 # Author: Kelson
 # Author: Kosovastar
 # Author: Marinari
@@ -136,8 +137,7 @@ android.ui.search_widget_text=Kërkoni në Kiwix
 android.ui.space_available=Hapësirë e Përdorshme:
 android.ui.speech_not_supported=Na ndjeni! Pajisja juaj nuk mbulon input përmes të folurës
 android.ui.speech_prompt_text=Flisni që të kërkohet '%s'
-# Fuzzy
-android.ui.stop_hotspot_button=Ndale
+android.ui.stop_hotspot_button=NDALE
 android.ui.tab_closed=Skeda u mbyll
 android.ui.time_day=ditë
 android.ui.time_hour=h

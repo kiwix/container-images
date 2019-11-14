@@ -182,6 +182,7 @@ android.ui.pref_zoom_enable=Controles de ampliación
 android.ui.pref_zoom_sub_title=Ampliación
 android.ui.preparing_files=Preparando archivos para su transferencia…
 android.ui.previous=Anterior
+android.ui.progress_dialog_starting_server=Iniciando el servidor
 android.ui.rate_dialog_msg_1=Si disfrutas usar
 android.ui.rate_dialog_msg_2=, toma un momento para calificarla. ¡Gracias por tu apoyo!
 android.ui.rate_dialog_negative=No, gracias

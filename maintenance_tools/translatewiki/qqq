@@ -1,6 +1,7 @@
 # Messages for Message documentation (Message documentation)
 # Exported from translatewiki.net
 # Author: EugeneZelenko
+# Author: Fitoschido
 # Author: Kelson
 # Author: Liuxinyu970226
 # Author: Nike
@@ -44,7 +45,7 @@ android.ui.rate_dialog_neutral={{Identical|Later}}
 android.ui.rate_dialog_positive={{Identical|Rate}}
 android.ui.save={{Identical|Save}}
 android.ui.search_label={{Identical|Search}}
-android.ui.stop_hotspot_button=Clicking on the "Stop" button shutdowns the Kiwix server. This server allows to stop sharing the Kiwix local library on the LAN with the HTTP protocol.\n\n<gallery>\nFile:Kiwix-ui.server.start-0.png\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Stop}}
+android.ui.stop_hotspot_button=Clicking on the "Stop" button shuts down the Kiwix server. This server allows to stop sharing the Kiwix local library on the LAN with the HTTP protocol.\n\n<gallery>\nFile:Kiwix-ui.server.start-0.png\nFile:Kiwix-ui.server.start-1.png\n</gallery>\n{{Identical|Stop}}
 android.ui.time_left=This is the past participle of the verb "to leave" (meaning "quitted" or "exited"). This is used in a context of "X minutes left" to finish a download.
 android.ui.time_yesterday={{Identical|Yesterday}}
 android.ui.tts_stop={{Identical|Stop}}

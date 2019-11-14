@@ -18,6 +18,7 @@
 # Author: Xiaomingyan
 # Author: Yanmiao liu
 # Author: Yfdyh000
+# Author: Ywang
 # Author: Zjzengdongyang
 # Author: 沈澄心
 
@@ -71,6 +72,7 @@ android.ui.go_to_next_page=下一楼
 android.ui.go_to_play_store=前往Play Store
 android.ui.go_to_previous_page=楼上
 android.ui.go_to_settings_label=转到设置
+android.ui.go_to_wifi_settings_label=转到WIFI设置
 android.ui.got_it=明白了
 # Fuzzy
 android.ui.help_10=您可以在应用中下载您选择的ZIM文件，也可以在电脑端下载您想要的文件，并在稍后将其转移至您的SD卡中。
@@ -111,6 +113,7 @@ android.ui.menu_search_in_text=在页面中查找
 android.ui.menu_settings=设置
 # Fuzzy
 android.ui.menu_zim_manager=获取内容
+android.ui.nearby_devices=附近的设备
 android.ui.new_tab_snack_bar=条目已在新标签中打开
 android.ui.next=下一页
 android.ui.no=否

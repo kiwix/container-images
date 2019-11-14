@@ -142,7 +142,6 @@ android.ui.search_widget_text=किवीक्स खोजें
 android.ui.space_available=उपलब्ध जगह:
 android.ui.speech_not_supported=माफ़ कीजिये! आपका उपकरण भाषण इनपुट का समर्थन नहीं करता है
 android.ui.speech_prompt_text=%s को खोजने के लिए बोलें
-# Fuzzy
 android.ui.stop_hotspot_button=रोकें
 android.ui.tab_closed=टैब बंद कर दिया गया
 android.ui.time_day=दिन

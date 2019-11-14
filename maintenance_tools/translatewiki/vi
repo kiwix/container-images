@@ -2,6 +2,7 @@
 # Exported from translatewiki.net
 # Author: Baonguyen21022003
 # Author: Dinhxuanduyet
+# Author: Fitoschido
 # Author: Leducthn
 # Author: Max20091
 # Author: Minh Nguyen
@@ -134,8 +135,7 @@ android.ui.search_widget_text=Tìm kiếm Kiwix
 android.ui.space_available=Dung lượng trống còn lại:
 android.ui.speech_not_supported=Xin lỗi! Thiết bị của bạn không hỗ trợ nhập bằng guọng nói
 android.ui.speech_prompt_text=Nói để tìm %s
-# Fuzzy
-android.ui.stop_hotspot_button=Ngừng
+android.ui.stop_hotspot_button=NGỪNG
 android.ui.tab_closed=Thẻ đã đóng
 android.ui.time_day=ngày
 android.ui.time_hour=giờ

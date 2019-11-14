@@ -1,6 +1,7 @@
 # Messages for Occitan (occitan)
 # Exported from translatewiki.net
 # Author: Cedric31
+# Author: Fitoschido
 # Author: Jfblanc
 
 android.ui.all_history_cleared_toast=Tot l’istoric es escafat
@@ -87,8 +88,7 @@ android.ui.search_label=Recercar
 android.ui.search_widget_text=Recercar dins Kiwix
 android.ui.space_available=Espaci disponible :
 android.ui.speech_prompt_text=Parlar per recercar %s
-# Fuzzy
-android.ui.stop_hotspot_button=Arrèst
+android.ui.stop_hotspot_button=ARRÈST
 android.ui.tab_closed=Onglet tampat
 android.ui.time_day=jorn
 android.ui.time_hour=h

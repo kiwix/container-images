@@ -1,6 +1,7 @@
 # Messages for Portuguese (português)
 # Exported from translatewiki.net
 # Author: Athena in Wonderland
+# Author: Fitoschido
 # Author: Freeedusoft
 # Author: Giro720
 # Author: Gusta
@@ -148,8 +149,7 @@ android.ui.search_widget_text=Procurar no Kiwix
 android.ui.space_available=Espaço disponível:
 android.ui.speech_not_supported=Desculpe! O seu dispositivo não suporta entrada de voz
 android.ui.speech_prompt_text=Falar para pesquisar %s
-# Fuzzy
-android.ui.stop_hotspot_button=Parar
+android.ui.stop_hotspot_button=PARAR
 android.ui.tab_closed=Separador fechado
 android.ui.time_day=dia
 android.ui.time_hour=h

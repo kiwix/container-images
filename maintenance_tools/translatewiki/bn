@@ -144,7 +144,6 @@ android.ui.search_widget_text=কিউইক্স অনুসন্ধান
 android.ui.space_available=উপলব্ধ খালিস্থান:
 android.ui.speech_not_supported=দুঃখিত! আপনার ডিভাইস কথ্য ইনপুট সমর্থন করে না
 android.ui.speech_prompt_text=%s অনুসন্ধান করতে কথা বলুন
-# Fuzzy
 android.ui.stop_hotspot_button=থামুন
 android.ui.tab_closed=ট্যাব বন্ধ করা হয়েছে
 android.ui.time_day=দিন

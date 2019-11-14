@@ -93,7 +93,6 @@ android.ui.save_media_error=خطایی در حین ذخیره‌سازی این 
 android.ui.save_media_saved=ذخیره کردن رسانه  با عنوان %1$s در پوشه تصویر شما
 android.ui.search_label=جستجو
 android.ui.space_available=فضای موجود:
-# Fuzzy
 android.ui.stop_hotspot_button=توقف
 android.ui.tab_closed=زبانه بسته شد
 android.ui.time_day=روز
