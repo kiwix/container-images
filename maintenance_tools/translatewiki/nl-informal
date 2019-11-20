@@ -1,6 +1,0 @@
-# Messages for Nederlands (informeel)‎ (Nederlands (informeel)‎)
-# Exported from translatewiki.net
-# Author: Effeietsanders
-
-ui.messages.loadZimFileError="%1" kan niet geladen worden. Weet je zeker dat dit een ZIM-bestand is?
-ui.messages.restartConfirm=%1 moet opnieuw gestart worden. Wil je dit nu doen?

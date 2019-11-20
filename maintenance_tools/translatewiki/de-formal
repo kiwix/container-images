@@ -1,5 +1,0 @@
-# Messages for German (formal address) (Deutsch (Sie-Form)‎)
-# Exported from translatewiki.net
-# Author: Jan Luca
-
-ui.messages.loadZimFileError=„%1“ kann nicht geladen werden. Sind Sie sicher, dass dies eine ZIM-Datei ist?
