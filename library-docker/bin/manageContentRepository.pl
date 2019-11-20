@@ -228,25 +228,25 @@ sub writeHtaccess {
     $content .= "RewriteEngine On\n\n";
 
     # Release redirects
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools.tar.xz ".getLastRelease($releaseDirectory, "kiwix-tools-*.tar.xz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-armhf.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-armhf-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-i586.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-i586-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-x86_64.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-x86_64-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_win-i686.zip ".getLastRelease($releaseDirectory, "kiwix-tools_win-i686-*.zip")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-tools/kiwix-tools.tar.xz ".getLastRelease($releaseDirectory, "kiwix-tools-*.tar.xz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-armhf.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-armhf-*.tar.gz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-i586.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-i586-*.tar.gz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_linux-x86_64.tar.gz ".getLastRelease($releaseDirectory, "kiwix-tools_linux-x86_64-*.tar.gz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-tools/kiwix-tools_win-i686.zip ".getLastRelease($releaseDirectory, "kiwix-tools_win-i686-*.zip")."\n";
 
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop.tar.gz ".getLastRelease($releaseDirectory, "kiwix-desktop-*.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_windows_x64.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_x86_64.appimage ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop.tar.gz ".getLastRelease($releaseDirectory, "kiwix-desktop-*.tar.gz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_windows_x64.zip ".getLastRelease($releaseDirectory, "kiwix-desktop_windows_x64_*.zip")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-desktop/kiwix-desktop_x86_64.appimage ".getLastRelease($releaseDirectory, "kiwix-desktop_x86_64_*.appimage")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-desktop/org.kiwix.desktop.flatpak ".getLastRelease($releaseDirectory, "org.kiwix.desktop.*.flatpak")."\n";
 
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-desktop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-desktop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
 
-    $content .= "RedirectPermanent /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
+    $content .= "Redirect /".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
     # Folder description
     $content .= "AddDescription \"Deprecated stuff kept only for historical purpose\" archive\n";
@@ -262,11 +262,11 @@ sub writeHtaccess {
         my ($entry, $entries) = @_;
         my $core = $entry->{core};
 
-        my $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim ".substr($entry->{zim}, length($contentDirectory))."\n";
-        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
-        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.meta4 ".substr($entry->{zim}, length($contentDirectory)).".meta4\n";
-        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
-        $content .= "RedirectPermanent /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
+        my $content .= "Redirect /".$zimDirectoryName."/".$core.".zim ".substr($entry->{zim}, length($contentDirectory))."\n";
+        $content .= "Redirect /".$zimDirectoryName."/".$core.".zim.torrent ".substr($entry->{zim}, length($contentDirectory)).".torrent\n";
+        $content .= "Redirect /".$zimDirectoryName."/".$core.".zim.meta4 ".substr($entry->{zim}, length($contentDirectory)).".meta4\n";
+        $content .= "Redirect /".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
+        $content .= "Redirect /".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
         $content .= "\n";
     }
 
