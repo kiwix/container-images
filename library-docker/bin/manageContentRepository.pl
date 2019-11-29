@@ -23,7 +23,6 @@ my $zimDirectoryName = "zim";
 my $zimDirectory = $contentDirectory."/".$zimDirectoryName;
 my $releaseDirectoryName = "release";
 my $releaseDirectory = $contentDirectory."/".$releaseDirectoryName;
-my $srcDirectoryName = "src";
 my $devDirectoryName = "dev";
 my $htaccessPath = $contentDirectory."/.htaccess";
 my $libraryDirectoryName = "library";
@@ -313,7 +312,7 @@ sub writeHtaccess {
 
     # Write a few .htaccess files in sub-directories
     $content = "AddDescription \" \" *\n";
-    foreach my $subDirectory ("archive", "release", "dev", "nightly", "other", "src", "zim", "library") {
+    foreach my $subDirectory ("archive", "release", "dev", "nightly", "other", "zim", "library") {
         my $htaccessPath = $contentDirectory."/".$subDirectory."/.htaccess";
         writeFile($htaccessPath, $content);
     }
