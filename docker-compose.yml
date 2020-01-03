@@ -2,7 +2,7 @@ version: '3.5'
 services:
 
   db:
-    image: postgres
+    image: postgres:11
     container_name: mirrorbrain-db
     volumes:
       - "/data/db:/var/lib/postgresql/data"
@@ -80,8 +80,8 @@ services:
     labels:
       - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     networks:
       default:
         aliases:
@@ -121,7 +121,7 @@ services:
     image: kiwix/rsyncd
     container_name: rsyncd
     ports:
-      - 873:873
+      - "873:873"
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
@@ -139,7 +139,7 @@ services:
     environment:
       - VALIDATION_OPTION=NO_QUARANTINE
     ports:
-      - 1522:22
+      - "1522:22"
     restart: always
 
   matomo-download:
@@ -168,6 +168,35 @@ services:
     secrets:
       - matomo-token
     restart: always
+
+  cardshop-warehouse-private:
+    image: kiwix/cardshop-warehouse
+    container_name: cardshop-warehouse-private
+    ports:
+      - "2121:21"
+      - "29111-29190:29111-29190"
+    volumes:
+      - "/data/cardshop-warehouse:/files"
+    environment:
+      - FTP_DATA_PORT_RANGE=29111-29190
+      - TOKEN_VALIDATION_URL="https://api.cardshop.hotspot.kiwix.org/auth/validate"
+      - MASQUERADE_ADDRESS="195.154.156.115"
+    restart: always
+
+  cardshop-warehouse-download:
+    image: kiwix/cardshop-warehouse
+    container_name: cardshop-warehouse-download
+    ports:
+      - "2221:21"
+      - "29211-29290:29211-29290"
+    volumes:
+      - "/data/cardshop-download:/files"
+    environment:
+      - FTP_DATA_PORT_RANGE=29211-29290
+      - TOKEN_VALIDATION_URL="https://api.cardshop.hotspot.kiwix.org/auth/validate"
+      - MASQUERADE_ADDRESS="195.154.156.115"
+    restart: always
+
 volumes:
   vhost:
 secrets:
