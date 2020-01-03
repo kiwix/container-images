@@ -127,16 +127,19 @@ services:
       - "/data/tmp:/var/www/tmp.kiwix.org"
     restart: always
 
-  zimquarantine:
-    image: kiwix/zimquarantine
-    container_name: zimquarantine
+  zimfarm-receiver:
+    image: openzim/zimfarm-receiver
+    container_name: zimfarm-receiver
     volumes:
-      - "/data/zimfarm-warehouse/zim:/zim_to_check"
-      - "/data/download/zim:/zim"
-      - "/data/quarantine/zim:/zim_quarantine"
-      - "/data/log/zimquarantine:/zim_log"
+      - "/data/zimfarm-warehouse/logs:/jail/logs:rw"
+      - "/data/zimfarm-warehouse/zim:/jail/zim:rw"
+      - "/data/log/zimquarantine:/mnt/check_logs:rw"
+      - "/data/quarantine/zim:/mnt/quarantine:rw"
+      - "/data/download/zim:/mnt/zim:rw"
     environment:
       - VALIDATION_OPTION=NO_QUARANTINE
+    ports:
+      - 1522:22
     restart: always
 
   matomo-download:
