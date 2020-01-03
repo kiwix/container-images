@@ -139,7 +139,7 @@ services:
     environment:
       - VALIDATION_OPTION=NO_QUARANTINE
     ports:
-      - 1522:22
+      - "1522:22"
     restart: always
 
   matomo-download:
