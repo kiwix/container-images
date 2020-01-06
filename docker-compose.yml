@@ -179,7 +179,7 @@ services:
       - "/data/cardshop-warehouse:/files"
     environment:
       - FTP_DATA_PORT_RANGE=29111-29190
-      - TOKEN_VALIDATION_URL="https://api.cardshop.hotspot.kiwix.org/auth/validate"
+      - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
       - MASQUERADE_ADDRESS="195.154.156.115"
     restart: always
 
@@ -193,7 +193,7 @@ services:
       - "/data/cardshop-download:/files"
     environment:
       - FTP_DATA_PORT_RANGE=29211-29290
-      - TOKEN_VALIDATION_URL="https://api.cardshop.hotspot.kiwix.org/auth/validate"
+      - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
       - MASQUERADE_ADDRESS="195.154.156.115"
     restart: always
 
