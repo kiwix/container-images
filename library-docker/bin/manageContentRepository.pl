@@ -421,8 +421,23 @@ sub findBinary {
 
 sub getLastRelease {
     my ($directory, $regex) = @_;
+
+    # Get list of files matching the regex
     my @files = split /\n/, `find "$directory" -name "$regex"`;
-    my $file = (sort @files)[-1];
+
+    # Version regex
+    my $version_regex = $regex =~ s/\*/(.*)/r;
+
+    # Last veraion
+    my $file = (sort {
+        $a =~ /$version_regex/;
+        my $aa = $1 // $a;
+        $b =~ /$version_regex/;
+        my $bb = $1 // $b;
+        $aa cmp $bb;
+    } @files)[-1];
+
+    # Not full path
     substr($file, length($contentDirectory))
 }
 
