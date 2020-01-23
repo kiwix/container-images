@@ -180,7 +180,7 @@ services:
     environment:
       - FTP_DATA_PORT_RANGE=29111-29190
       - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
-      - MASQUERADE_ADDRESS="195.154.156.115"
+      - MASQUERADE_ADDRESS=195.154.156.115
     restart: always
 
   cardshop-warehouse-download:
@@ -194,7 +194,7 @@ services:
     environment:
       - FTP_DATA_PORT_RANGE=29211-29290
       - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
-      - MASQUERADE_ADDRESS="195.154.156.115"
+      - MASQUERADE_ADDRESS=195.154.156.115
     restart: always
 
 volumes:
