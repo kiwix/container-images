@@ -45,11 +45,9 @@ for (my $i = 0; $i < $nodes->getLength; $i++) {
 
     # Set path
     my $path = $node->getAttributeNode("url")->getValue
-	=~ s/http:\/\/download.kiwix.org\///r =~ s/\.meta4//r;
+        =~ s/http:\/\/download.kiwix.org\///r =~ s/\.meta4//r;
     $node->setAttribute("path", $path);
 
-    # Remove tag
-    $node->removeAttribute("tags");
 }
 
 # Print to string
