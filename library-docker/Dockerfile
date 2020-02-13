@@ -4,7 +4,7 @@ FROM debian:stretch-slim
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 3.0.1-8
+ENV VERSION_KIWIX_TOOLS 3.0.2
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 
 RUN apt-get update && \
