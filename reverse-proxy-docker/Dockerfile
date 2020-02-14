@@ -2,6 +2,8 @@ FROM jwilder/nginx-proxy
 
 RUN apt-get update && apt-get install -y --no-install-recommends cron logrotate
 
+RUN usermod -a -G users nginx
+
 RUN { \
     echo "include /etc/nginx/sites-enabled/*;" ; \
 } > /etc/nginx/conf.d/10sites_alias.conf
