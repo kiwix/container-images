@@ -5,7 +5,6 @@ server {
   root /var/www/logs.warehouse.farm.openzim.org/;
   default_type application/octet-stream;
   autoindex off;
-  gzip off;
 
   location /home {
     add_header Content-Type "text/html; charset=UTF-8";
