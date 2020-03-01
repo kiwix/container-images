@@ -1,10 +1,11 @@
+
 FROM debian:stretch-slim
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 3.0.2
+ENV VERSION_KIWIX_TOOLS 3.0.3
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 
 RUN apt-get update && \
