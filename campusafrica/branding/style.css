@@ -1,0 +1,68 @@
+/* top-left logo is changed separatly (header-logo.png) */
+
+/* remove BSF logo on bottom-right */
+footer img { display: none; }
+footer .col.half { height: 97px; }
+
+/* make footer orange */
+footer { background-color: #f07d00;
+         background-image: url("kiwix.png");
+         background-repeat: no-repeat;
+         background-position: bottom right;
+         background-size: 65px;
+     }
+
+/* make buttons orange */
+input[type="submit"], .button {
+    background-color: #f07d00;
+}
+
+/* use Arial for fonts */
+font-family: 'arial', sans-serif;
+
+body,
+input,
+textarea { font:15px/20px 'Arial', sans-serif; }
+
+h1, h2, h3, h4, h5,
+strong,
+header .menu a,
+.menu-subtitle,
+#logout,
+.boxid {
+    font-family: 'Arial';
+    font-weight: bold;
+}
+
+.card .flatlist.active {
+    font-family: 'Arial';
+    font-weight: 400;
+}
+
+.pure-g,
+.pure-g [class*="pure-u"] { font-family: 'arial', sans-serif !important; }
+
+.dropdown-menu ul a { font-family: 'arial'; }
+
+/* book */
+.theme,
+.messages li { font-family: 'arial'; }
+
+/* Light */
+footer a,
+header a,
+.card h3 em,
+label.strip { font-family: 'arial'; }
+
+
+/* Light italic */
+[contenteditable=true]:empty:before  {
+    font-family: 'arial';
+    font-style: italic;
+}
+
+/* fix padding on theme for Arial */
+.theme { display: none; }
+
+.text-center { text-align: center; }
+.content ul li { font-size: 3rem; line-height: 4rem; }
