@@ -1,0 +1,136 @@
+version: '3.5'
+services:
+
+  kiwixservefr:
+    image: kiwix/kiwix-serve
+    container_name: kiwix-serve-fr
+    volumes:
+      - "/data/packages/fr:/data"
+    ports:
+      - "8001:80"
+    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    environment:
+      - VIRTUAL_HOST=zims-fr.kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=zims-fr.kiwix.campusafrica.gos.orange.com
+      - HTTPS_METHOD=noredirect
+    restart: always
+
+  kiwixserveen:
+    image: kiwix/kiwix-serve
+    container_name: kiwix-serve-en
+    volumes:
+      - "/data/packages/en:/data"
+    ports:
+      - "8002:80"
+    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    environment:
+      - VIRTUAL_HOST=zims-en.kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=zims-en.kiwix.campusafrica.gos.orange.com
+      - HTTPS_METHOD=noredirect
+    restart: always
+
+  kiwixservear:
+    image: kiwix/kiwix-serve
+    container_name: kiwix-serve-ar
+    volumes:
+      - "/data/packages/ar:/data"
+    ports:
+      - "8003:80"
+    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    environment:
+      - VIRTUAL_HOST=zims-ar.kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=zims-ar.kiwix.campusafrica.gos.orange.com
+      - HTTPS_METHOD=noredirect
+    restart: always
+
+  kalitefr:
+    build: ./kalite-docker
+    image: kalite:local
+    container_name: kalite-fr
+    volumes:
+      - "/data/kalite/fr:/data/kalite"
+      - "/data/kalite/shared:/data/shared"
+      - "/data/static:/data/static:ro"
+    environment:
+      - KALITE_LANGS=fr
+      - ADMIN_ACCOUNT=admin
+      - ADMIN_PASSWORD=default_password
+      - VIRTUAL_HOST=khan-fr.kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=khan-fr.kiwix.campusafrica.gos.orange.com
+      - HTTPS_METHOD=noredirect
+      - USE_NGINX=
+    depends_on:
+      - letsencrypt
+    secrets:
+      - kalite-password
+    restart: always
+
+  kaliteen:
+    build: ./kalite-docker
+    image: kalite:local
+    container_name: kalite-en
+    volumes:
+      - "/data/kalite/en:/data/kalite"
+      - "/data/kalite/shared:/data/shared"
+      - "/data/static:/data/static:ro"
+    environment:
+      - KALITE_LANGS=en
+      - ADMIN_ACCOUNT=admin
+      - ADMIN_PASSWORD=default_password
+      - VIRTUAL_HOST=khan-en.kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=khan-en.kiwix.campusafrica.gos.orange.com
+      - HTTPS_METHOD=noredirect
+      - USE_NGINX=
+    secrets:
+      - kalite-password
+    restart: always
+
+  home:
+    image: nginx
+    container_name: static-home
+    volumes:
+      - "/data/html:/usr/share/nginx/html"
+      - "/data/static:/usr/share/nginx/html/hotspot-static:ro"
+    environment:
+      - VIRTUAL_HOST=kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_HOST=kiwix.campusafrica.gos.orange.com
+      - LETSENCRYPT_EMAIL=reg@kiwix.org
+      - HTTPS_METHOD=noredirect
+
+  reverse-proxy:
+    image: jwilder/nginx-proxy
+    container_name: reverse-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - "/data/certs:/etc/nginx/certs:ro"
+      - "./vhost.d:/etc/nginx/vhost.d"
+      - "/data/www:/usr/share/nginx/html"
+      - "/data/logs:/var/log/nginx"
+      - "/data/kalite/fr:/data/kalite/fr:ro"
+      - "/data/kalite/en:/data/kalite/en:ro"
+    labels:
+      - com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy
+    restart: always
+
+  letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt
+    environment:
+      - DEFAULT_EMAIL=reg@kiwix.org
+    depends_on:
+      - reverse-proxy
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/data/certs:/etc/nginx/certs:rw"
+      - "./vhost.d:/etc/nginx/vhost.d"
+      - "/data/www:/usr/share/nginx/html"
+    restart: always
+
+volumes:
+  vhost:
+secrets:
+  kalite-password:
+    file: ./kalite-password.txt

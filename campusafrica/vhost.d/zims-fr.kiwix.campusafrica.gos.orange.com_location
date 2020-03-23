@@ -1,0 +1,2 @@
+# redirect kiwix-serve home to hotspot home
+rewrite ^/$ "$scheme://kiwix.campusafrica.gos.orange.com/fr" permanent;
