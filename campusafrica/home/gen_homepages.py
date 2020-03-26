@@ -143,6 +143,7 @@ def generate_homepage(name, language=None, fqdn=FQDN, **options):
     context = {
         "name": name,
         "cards": cards,
+        "language": language,
         "main_page": language is None,
         "languages": options.get("languages", []),
     }
@@ -182,7 +183,7 @@ def generate_homepages(data_dir, languages):
 
     for language in langs:
         print("homepage for", language)
-        html_content = generate_homepage("Campus Africa", language, **options[language])
+        html_content = generate_homepage("Campus", language, **options[language])
 
         html_dir = data_dir.joinpath("html", language)
         os.makedirs(html_dir, exist_ok=True)
@@ -204,9 +205,21 @@ def generate_homepages(data_dir, languages):
             src = pathlib.Path(__file__).parent.joinpath("khanacademy.png")
             khan_favicon.write_bytes(src.read_bytes())
 
+        # kiwix-serve external override
+        context = {
+            "name": "",
+            "external": True,
+            "language": language,
+        }
+        html_content = jinja_env.get_template("home_template.html").render(**context)
+        html_dir = data_dir.joinpath("html", language, "external")
+        os.makedirs(html_dir, exist_ok=True)
+        with open(html_dir.joinpath("index.html"), "w") as fp:
+            fp.write(html_content)
+
     # main homepage
     print("main homepage")
-    html_content = generate_homepage("Campus Africa", None, languages=languages)
+    html_content = generate_homepage("Campus", None, languages=languages)
     html_dir = data_dir.joinpath("html")
     os.makedirs(html_dir, exist_ok=True)
     with open(html_dir.joinpath("index.html"), "w") as fp:

@@ -6,11 +6,13 @@ footer .col.half { height: 97px; }
 
 /* make footer orange */
 footer { background-color: #f07d00;
-         background-image: url("kiwix.png");
+         background-image: url("kiwix.png?v1");
          background-repeat: no-repeat;
-         background-position: bottom right;
-         background-size: 65px;
+         background-position: bottom 10px right 15px;
+         background-size: 200px;
      }
+html[dir="rtl"] footer { background-position: bottom 10px left 15px; }
+html[dir="rtl"] header h1 { padding-right: 0; padding-left: 90px; }
 
 /* make buttons orange */
 input[type="submit"], .button {
@@ -33,6 +35,8 @@ header .menu a,
     font-family: 'Arial';
     font-weight: bold;
 }
+
+.boxid { display: none; }
 
 .card .flatlist.active {
     font-family: 'Arial';
