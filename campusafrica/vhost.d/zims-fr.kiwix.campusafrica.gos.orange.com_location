@@ -1,2 +1,4 @@
 # redirect kiwix-serve home to hotspot home
 rewrite ^/$ "$scheme://kiwix.campusafrica.gos.orange.com/fr" permanent;
+# redirect kiwix-serve external url blocker to custom one
+rewrite ^/catch/external$ "$scheme://kiwix.campusafrica.gos.orange.com/fr/external" permanent;
