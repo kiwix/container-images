@@ -2,13 +2,13 @@ version: '3.5'
 services:
 
   kiwixservefr:
-    image: kiwix/kiwix-serve
+    build: ./serve-docker
     container_name: kiwix-serve-fr
     volumes:
       - "/data/packages/fr:/data"
     ports:
       - "8001:80"
-    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    command: ["-b", "--threads=16", "--nodatealias", "/data/*.zim"]
     environment:
       - VIRTUAL_HOST=zims-fr.kiwix.campusafrica.gos.orange.com
       - LETSENCRYPT_HOST=zims-fr.kiwix.campusafrica.gos.orange.com
@@ -16,13 +16,13 @@ services:
     restart: always
 
   kiwixserveen:
-    image: kiwix/kiwix-serve
+    build: ./serve-docker
     container_name: kiwix-serve-en
     volumes:
       - "/data/packages/en:/data"
     ports:
       - "8002:80"
-    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    command: ["-b", "--threads=16", "--nodatealias", "/data/*.zim"]
     environment:
       - VIRTUAL_HOST=zims-en.kiwix.campusafrica.gos.orange.com
       - LETSENCRYPT_HOST=zims-en.kiwix.campusafrica.gos.orange.com
@@ -30,13 +30,13 @@ services:
     restart: always
 
   kiwixservear:
-    image: kiwix/kiwix-serve
+    build: ./serve-docker
     container_name: kiwix-serve-ar
     volumes:
       - "/data/packages/ar:/data"
     ports:
       - "8003:80"
-    command: ["--threads=16", "--nodatealias", "/data/*.zim"]
+    command: ["-b", "--threads=16", "--nodatealias", "/data/*.zim"]
     environment:
       - VIRTUAL_HOST=zims-ar.kiwix.campusafrica.gos.orange.com
       - LETSENCRYPT_HOST=zims-ar.kiwix.campusafrica.gos.orange.com

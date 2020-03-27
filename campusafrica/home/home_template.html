@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html{% if LANGUAGE_CODE|language_bidi %} dir="rtl"{% endif %}>
+<html{% if language|language_bidi %} dir="rtl"{% endif %}>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -13,7 +13,7 @@
             <link rel="stylesheet" type="text/css" href="/hotspot-static/purecss/pure-css-grids-min.css">
         <!--<![endif]-->
         <link rel="stylesheet" type="text/css" href="/hotspot-static/main.css" />
-        <link rel="stylesheet" type="text/css" href="/hotspot-static/branding/style.css" />
+        <link rel="stylesheet" type="text/css" href="/hotspot-static/branding/style.css?v1" />
         <style type="text/css">
             .card { padding-right: 64px; background-size: 48px; }
             html[dir='rtl'] .card { padding-right: 10px; padding-left: 140px; }
@@ -26,7 +26,7 @@
     <body class="home">
         <header>
             <section>
-              <a href="/"><h1><img src="/hotspot-static/branding/logo.png" /></h1></a>
+              <a href="/"><h1><img src="/hotspot-static/branding/logo{% if language|language_bidi %}-rtl{% endif %}.png?v1" /></h1></a>
               <span class="boxid">{{ name }}</span>
             </section>
         </header>
@@ -45,6 +45,21 @@
                 <li><a href="/{{ lang }}" {% if lang|language_bidi %} dir="rtl"{% endif %}>{{ name }}</a></li>
                 {% endfor %}
             </ul>
+            {% elif external %}
+                {% if language == "fr" %}
+                <h1>Lien externe bloqué</h1>
+                <p>Les liens vers des sites externe au campus Orange sont bloqués pour vous éviter des frais de connexion imprévus.</p>
+                <p>Si vous souhaitez tout de même y accèder, suivez le lien ci-dessous. Pour revenir sur le campus, <strong>faites <em>retour</em></strong>.</p>
+                {% elif language == "ar" %}
+                <h1>تم حظر الرابط الخارجي</h1>
+                <p>يتم حظر الروابط إلى مواقع الويب الخارجية في Orange Campus لمنع رسوم الربط غير المتوقعة.</p>
+                <p>إذا كنت ترغب في الوصول إليه على أي حال ، اتبع الرابط أدناه. للعودة إلى الحرم الجامعي ، <strong>عد</strong>.</p>
+                {% else %}
+                <h1>External link blocked</h1>
+                <p>Links to websites external to the Orange Campus are blocked to prevent unexpected connexion fees.</p>
+                <p>Should you want to access it anyway, follow the link below. To return to the Campus, <strong>Go <em>back</em></strong>.</p>
+                {% endif %}
+                <p id="link-placeholder"></p>
             {% else %}
             <div class="pure-g card-container">
                 {% for card in cards %}
@@ -65,5 +80,18 @@
                 <div class="col half"></div>
             </div>
         </footer>
+        <script type="text/javascript">
+            function getSearchParams(k){
+              var p={};
+              location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){p[k]=v})
+              return k?p[k]:p;
+            }
+            var source = getSearchParams("source");
+            if (source && source.length) {
+                try { source = decodeURI(source); } catch (err) {}
+                var p = document.getElementById("link-placeholder");
+                p.innerHTML = '<a class="button" href="' + source + '">' + source + ' <i class="fa fa-external-link"></i></a>';
+            }
+        </script>
     </body>
 </html>
