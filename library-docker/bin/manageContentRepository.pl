@@ -80,7 +80,7 @@ if ($showHelp) {
 }
 
 # Parse the "zim" directories
-my @files = split /\n/, `find "$zimDirectory" -name "*.zim"`;
+my @files = split /\n/, `find "$zimDirectory" -name "*.zim" | grep -v "/."`;
 for my $file (@files) {
     print "$file\n";
     if ($file =~ /^.*\/([^\/]+)\.zim$/i) {
