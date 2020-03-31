@@ -8,7 +8,7 @@ services:
       - "/data/matomo/mysql/conf:/etc/mysql/conf.d"
       - "/data/matomo/mysql/files:/var/lib/mysql"
     environment:
-      - MYSQL_ROOT_PASSWORD=root      
+      - MYSQL_ROOT_PASSWORD=root
     restart: always
 
   app:
@@ -22,14 +22,14 @@ services:
     environment:
       - MATOMO_URL=http://stats
     restart: always
-    
+
   web:
     image: nginx:latest
     container_name: matomo_web
     volumes:
       - "appdir:/var/www/html"
       - "/data/matomo/data:/var/www/html/misc/user"
-      - "/data/matomo/web/conf:/etc/nginx/conf.d"
+      - "./data/web/vhost.d:/etc/nginx/conf.d"
     links:
       - app
     environment:
@@ -42,7 +42,7 @@ services:
         aliases:
           - stats
     restart: always
-    
+
 volumes:
   appdir:
 
