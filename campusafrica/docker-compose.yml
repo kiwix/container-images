@@ -129,8 +129,28 @@ services:
       - "/data/www:/usr/share/nginx/html"
     restart: always
 
+  logger:
+    build: ./logger
+    container_name: logger
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/data/logs:/data/logs:rw"
+      - "./logger/rotate_logger:/etc/logrotate.d/logger:rw"
+      - "./logger/crontab:/etc/crontab:rw"
+    environment:
+      - MATOMO_URL=https://stats.kiwix.org
+      - MATOKO_SITE_ID=9
+      - NGINX_CONTAINER=reverse-proxy
+      - FQDN=kiwix.campusafrica.gos.orange.com
+      - LOG_FOLDER=/data/logs
+    secrets:
+      - matomo-token
+    restart: always
+
 volumes:
   vhost:
 secrets:
   kalite-password:
     file: ./kalite-password.txt
+  matomo-token:
+    file: ./matomo-token.txt

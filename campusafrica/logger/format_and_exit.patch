@@ -1,0 +1,22 @@
+diff --git i/import_logs.py w/import_logs.py
+index 35a0850..488cb4b 100755
+--- i/import_logs.py
++++ w/import_logs.py
+@@ -444,7 +444,10 @@ _OVH_FORMAT = (
+     r'\s+"(?P<referrer>.*?)"\s+"(?P<user_agent>.*?)"'
+ )
+ 
++_JWILDER_FORMAT = _HOST_PREFIX + _NCSA_EXTENDED_LOG_FORMAT
++
+ FORMATS = {
++    'jwilder': RegexFormat('jwilder', _JWILDER_FORMAT),
+     'common': RegexFormat('common', _COMMON_LOG_FORMAT),
+     'common_vhost': RegexFormat('common_vhost', _HOST_PREFIX + _COMMON_LOG_FORMAT),
+     'ncsa_extended': RegexFormat('ncsa_extended', _NCSA_EXTENDED_LOG_FORMAT),
+@@ -2640,4 +2643,5 @@ if __name__ == '__main__':
+         main()
+         sys.exit(0)
+     except KeyboardInterrupt:
+-        pass
++        print("Canceled via ^C, exiting")
++        sys.exit(1)
