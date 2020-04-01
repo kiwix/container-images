@@ -1,0 +1,16 @@
+/data/logs/access.log {
+    daily
+    size 100M
+    rotate 168
+    nocompress
+    missingok
+    notifempty
+    nodateext
+    nomail
+    olddir rotated
+    postrotate
+        reload-nginx
+        upload-logs
+    endscript
+    create 644 root root
+}

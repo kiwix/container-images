@@ -1,0 +1,15 @@
+SHELL=/bin/bash
+MAILTO=""
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user  command
+
+# periodically rotate nginx log
+5 *    * * *   root    /usr/sbin/logrotate -v /etc/logrotate.d/logger
+
+# periodically upload all rotated logs
+35 */2    * * *   root    /usr/local/bin/upload-logs
+
+# helps ensure cron is running fine
+#* * * * * root /bin/date >> /tmp/time.log
+
