@@ -100,6 +100,9 @@ If you'd like to customize the _title_ or _description_ of a ZIM, easiest way is
 * for each kiwix-serve domain, create a `<domain>_location` file in `./vhost.d` (see example). That allows the Kiwix-serve homepage to redirect to the main homepage.
 * For each Khan domain, you need to create a symlink to the `khan-<lang>` file in `./vhost.d`. Name your file `<domain>`. That allows the link to set the language appropriately and direct user to the learning area.
 * create a file named `kalite-password.txt` next to `docker-compose.yml` to store your desired admin password for KA-lite. Will be used for both EN and FR.
+* make sure to `chown root:root /data/logs` otherwise `logrotate` won't work.
+* make sure to `chown root ./logger/rotate_logger` otherwise `logrotate` won't work (or mount it `:rw`)
+* make sure to `chown root ./logger/crontab` otherwise `logrotate` won't work (or mount it `:rw`)
 
 **start-up**
 
