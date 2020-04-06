@@ -10,6 +10,8 @@ pip install -U pip Jinja2==2.10.1 PyYAML==4.2b4 requests==2.23.0
 import os
 import sys
 import json
+import copy
+import shutil
 import random
 import pathlib
 
@@ -19,6 +21,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 FQDN = os.getenv("FQDN", "kiwix.campusafrica.gos.orange.com")
 YAML_CATALOGS = None
+VIDEOS_ZIMS = ["les-fondamentaux_fr_all.fr"]
 
 
 def fetch_catalogs(catalog_path):
@@ -216,6 +219,24 @@ def generate_homepages(data_dir, languages):
         os.makedirs(html_dir, exist_ok=True)
         with open(html_dir.joinpath("index.html"), "w") as fp:
             fp.write(html_content)
+
+    # special french homepage without videos
+    special_options = copy.deepcopy(options["fr"])
+    special_options["kalite"] = False
+    special_options["packages"] = [
+        p for p in special_options["packages"] if p not in VIDEOS_ZIMS
+    ]
+    html_content = generate_homepage("Campus", "lfr", **special_options)
+    html_dir = data_dir.joinpath("html", "lfr")
+    os.makedirs(html_dir, exist_ok=True)
+    with open(html_dir.joinpath("index.html"), "w") as fp:
+        fp.write(html_content)
+    for package_id in special_options.get("packages", []):
+        package = get_package(package_id)
+        urlid = package.get("langid", package_id).rsplit(".", 1)[0]
+        favicon = html_dir.joinpath("zim_{}.png".format(urlid))
+        if not favicon.exists():
+            shutil.copyfile(favicon.parent.parent.joinpath("fr", favicon.name), favicon)
 
     # main homepage
     print("main homepage")
