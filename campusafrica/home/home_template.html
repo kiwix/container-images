@@ -26,7 +26,7 @@
     <body class="home">
         <header>
             <section>
-              <a href="/"><h1><img src="/hotspot-static/branding/logo{% if language|language_bidi %}-rtl{% endif %}.png?v1" /></h1></a>
+              <h1><img src="/hotspot-static/branding/logo{% if language|language_bidi %}-rtl{% endif %}.png?v1" /></h1>
               <span class="boxid">{{ name }}</span>
             </section>
         </header>
@@ -46,7 +46,7 @@
                 {% endfor %}
             </ul>
             {% elif external %}
-                {% if language == "fr" %}
+                {% if language in ("fr", "lfr")  %}
                 <h1>Lien externe bloqué</h1>
                 <p>Les liens vers des sites externe au campus Orange sont bloqués pour vous éviter des frais de connexion imprévus.</p>
                 <p>Si vous souhaitez tout de même y accèder, suivez le lien ci-dessous. Pour revenir sur le campus, <strong>faites <em>retour</em></strong>.</p>
