@@ -1,6 +1,6 @@
 /data/logs/access.log {
     daily
-    size 100M
+    #size 100M
     rotate 168
     nocompress
     missingok

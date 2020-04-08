@@ -20,7 +20,7 @@ services:
     container_name: kiwix-serve-lfr
     volumes:
       - "/data/packages/fr:/data"
-    command: ["-b", "--threads=16", "--nodatealias", "/data/gutenberg_fr_all_2018-10.zim", "/data/vikidia_fr_all_maxi_2018-10.zim", "/data/wikibooks_fr_all_maxi_2020-03.zim", "/data/wikipedia_fr_all_maxi_2019-12.zim", "/data/wikisource_fr_all_maxi_2020-03.zim", "/data/wiktionary_fr_all_maxi_2020-03.zim"]
+    command: ["-b", "--threads=16", "--nodatealias", "/data/gutenberg_fr_all_2018-10.zim", "/data/vikidia_fr_all_maxi_2018-10.zim", "/data/wikibooks_fr_all_maxi_2020-03.zim", "/data/wikipedia_fr_all_maxi_2020-03.zim", "/data/wikisource_fr_all_maxi_2020-03.zim", "/data/wiktionary_fr_all_maxi_2020-03.zim"]
     environment:
       - VIRTUAL_HOST=zims-lfr.kiwix.campusafrica.gos.orange.com
       - LETSENCRYPT_HOST=zims-lfr.kiwix.campusafrica.gos.orange.com
