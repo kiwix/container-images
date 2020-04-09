@@ -2,7 +2,8 @@ version: '3.5'
 services:
 
   kiwixservefr:
-    build: ./serve-docker
+    # build: ./serve-docker
+    image: kiwix/kiwix-serve:latest
     container_name: kiwix-serve-fr
     volumes:
       - "/data/packages/fr:/data"
@@ -16,7 +17,8 @@ services:
     restart: always
 
   kiwixservelfr:
-    build: ./serve-docker
+    # build: ./serve-docker
+    image: kiwix/kiwix-serve:latest
     container_name: kiwix-serve-lfr
     volumes:
       - "/data/packages/fr:/data"
@@ -28,7 +30,8 @@ services:
     restart: always
 
   kiwixserveen:
-    build: ./serve-docker
+    # build: ./serve-docker
+    image: kiwix/kiwix-serve:latest
     container_name: kiwix-serve-en
     volumes:
       - "/data/packages/en:/data"
@@ -42,7 +45,8 @@ services:
     restart: always
 
   kiwixservear:
-    build: ./serve-docker
+    # build: ./serve-docker
+    image: kiwix/kiwix-serve:latest
     container_name: kiwix-serve-ar
     volumes:
       - "/data/packages/ar:/data"
