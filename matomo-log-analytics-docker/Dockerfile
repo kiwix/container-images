@@ -1,16 +1,17 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
+
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
 LABEL maintainer="kiwix"
 
-WORKDIR /usr/local/libs
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates unzip wget patch python2 cron && \
+    apt-get clean -y && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates cron python
-
-RUN git clone --quiet --depth=1 https://github.com/matomo-org/matomo-log-analytics \
-  && cp -vr matomo-log-analytics/*.py  /usr/local/bin/ \
-  && chmod a+x /usr/local/bin/*.py
+RUN wget -O /tmp/3.x-dev.zip https://github.com/matomo-org/matomo-log-analytics/archive/3.x-dev.zip && unzip -d /tmp /tmp/3.x-dev.zip && mv /tmp/matomo-log-analytics-3.x-dev/import_logs.py /usr/local/bin/ && chmod a+x /usr/local/bin/import_logs.py && rm -f /tmp/3.x-dev.zip && rm -rf /tmp/matomo-log-analytics-3.x-dev
+COPY ignore_301.patch /tmp
+RUN patch /usr/local/bin/import_logs.py < /tmp/ignore_301.patch && rm /tmp/ignore_301.patch
 
 CMD { \
   echo "#!/bin/sh" ; \

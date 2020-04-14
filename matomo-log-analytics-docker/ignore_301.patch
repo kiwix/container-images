@@ -1,0 +1,19 @@
+diff --git i/import_logs.py w/import_logs.py
+index 35a0850..fc1551b 100755
+--- i/import_logs.py
++++ w/import_logs.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python2
+ # vim: et sw=4 ts=4:
+ # -*- coding: utf-8 -*-
+ #
+@@ -2158,7 +2158,7 @@ class Parser(object):
+ 
+     def check_http_redirect(self, hit):
+         if hit.status[0] == '3' and hit.status != '304':
+-            if config.options.enable_http_redirects:
++            if config.options.enable_http_redirects and hit.status != '301':
+                 hit.is_redirect = True
+                 return True
+             else:
