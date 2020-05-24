@@ -10,13 +10,27 @@ backup solution based on BorgBackup, BorgBase and Bitwarden.
   created to allow the container to create new remote Borg repository
   on demand and configure SSH access.
 
+* A BitWarden account for Business is needed. An entry needs to be
+  created with the BorgBase API token.
+
+* A new BitWarden collection needs to be created which will contain
+  the secrets to encrypt/decrypt the archives. An invited user needs to
+  be created with only the ability to access this specific collection in
+  read-only. The goal been to create one entry per backup container.
+
 * A local SSH key pair needs to be configured. This is necessary
   because Borg will use SSH to connect to
   BorgBase. `create_ssh_key_pair.sh` does that for you.
 
-* The SSH public key needs to be upload to BorgBase and a new
-  repository needs to be created
-  too. `create_new_borgbase_repository.py` allows to do that
+* The secrets to crypt/decrypt the Borg archives needs to be created
+  and uploaded to BitWarden. To the contrary of other operations, this
+  one-time operation needs the BitWarden master password. We will need
+  to upload the SSH keys together as well to avoid any need to
+  recreate them afterward which would be cumbersome.
+
+* The SSH public key needs to be uploaded to BorgBase. A new
+  repository needs to be created too with the SSH key to access it
+  (append-only). `create_new_borgbase_repository.py` allows to do that
   automatically.
 
 * Backup in itself is run by borgmatic which is an advanced command
@@ -24,7 +38,7 @@ backup solution based on BorgBackup, BorgBase and Bitwarden.
   `borg`. A default configuration is available at
   `conf/borgmatic.yaml` but one needs to be create by backup.
 
-* Before being able to get new backup, the remove repository needs to
+* Before being able to get new backup, the remote repository needs to
   be initialized. This is mostly to configure how the data (not the
   access) will be encrypted. A choice is still to be made here but
   https://borgbackup.readthedocs.io/en/stable/usage/init.html is worth
@@ -40,3 +54,7 @@ backup solution based on BorgBackup, BorgBase and Bitwarden.
 
 * To deal with databases, we need to read
   https://torsion.org/borgmatic/docs/how-to/backup-your-databases/
+
+* A verify operation should be implemented (and run automatically
+  every few weeks) to be able to verify that we can easily retrieve
+  things in the future.
