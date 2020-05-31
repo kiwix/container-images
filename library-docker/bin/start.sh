@@ -1,3 +1,27 @@
+#!/bin/bash
+
+SERVER_PID=
+SCRIPT_PID=$$
+echo "Script PID is $SCRIPT_PID"
+
+start () {
+  echo "Starting kiwix-serve..."
+  kiwix-serve --attachToProcess=$SCRIPT_PID --port=80 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
+  SERVER_PID=$!
+  return $SERVER_PID
+}
+
+stop () {
+  echo "Stopping kiwix-serve..."
+  kill -9 $SERVER_PID
+  return
+}
+
+is_alive () {
+  echo "Testing kiwix-serve..."
+  timeout 50 curl http://localhost/catalog/searchdescription.xml > /dev/null 2>&1
+  return $?
+}
 
 { \
   echo "User-agent: *" ; \
@@ -25,9 +49,6 @@ service cron start
 
 while [ 42 ]
 do
-  echo "Start kiwix-serve ..."
-  kiwix-serve --port=80 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
-  sleep 1
+  is_alive || start
+  sleep 60
 done
-
-
