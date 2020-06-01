@@ -24,8 +24,10 @@ is_alive () {
 }
 
 { \
+  #  echo "User-agent: *" ; \
+  #  echo "Crawl-delay: 3" ; \
   echo "User-agent: *" ; \
-  echo "Crawl-delay: 3" ; \
+  echo "Disallow: /" ; \
 } > /var/www/library.kiwix.org/robots.txt
 
 { \
