@@ -7,9 +7,9 @@ function die() {
     exit 1
 }
 
-if [ -f /var/run/secrets/kalite-password ]
+if [ -f /run/secrets/kalite-password ]
 then
-    ADMIN_PASSWORD=$(cat /var/run/secrets/kalite-password)
+    ADMIN_PASSWORD=$(cat /run/secrets/kalite-password)
 fi
 
 function importlangpack() {

@@ -2,10 +2,10 @@
 
 echo "Initializing logger container"
 
-if [ -f /var/run/secrets/matomo-token ]
+if [ -f /run/secrets/matomo-token ]
 then
     echo " .. reading matomo secret"
-    export MATOMO_TOKEN=$(cat /var/run/secrets/matomo-token)
+    export MATOMO_TOKEN=$(cat /run/secrets/matomo-token)
 fi
 
 echo " .. dumping envs to default"
