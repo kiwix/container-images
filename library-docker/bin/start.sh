@@ -3,7 +3,6 @@
 printf "
 # User-agent: *
 # Crawl-delay: 3
-User-agent: *
 Disallow: /
 " > /var/www/library.kiwix.org/robots.txt
 

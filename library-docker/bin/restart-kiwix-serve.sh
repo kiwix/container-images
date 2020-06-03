@@ -3,7 +3,7 @@
 export PATH=/usr/local/bin:/usr/sbin:$PATH
 
 start () {
-  stop  
+  stop
   echo "Starting kiwix-serve..."
   kiwix-serve --daemon --port=8000 --library --threads=16 --verbose --nodatealias library.kiwix.org.xml
 }

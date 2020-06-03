@@ -4,7 +4,7 @@ acl purge {
     "localhost";
 }
 
-backend default {  
+backend default {
     .host = "localhost";
     .port = "8000";
 
@@ -30,8 +30,8 @@ sub vcl_recv {
     # cache /skin/ (kiwix-serve toolbar)
     # cache /meta?content=xxxxxx&name=favicon (homepage favicons)
     # cache /catalog (OPDS)
-    if (req.url ~ "^/$" || 
-        req.url ~ "^/skin/" || 
+    if (req.url ~ "^/$" ||
+        req.url ~ "^/skin/" ||
         req.url ~ "^/meta\?content=[a-z0-9\-\_]+&name=favicon" ||
         req.url ~ "^/catalog/") {
         return(hash);
@@ -42,11 +42,10 @@ sub vcl_recv {
 }
 
 sub vcl_backend_response {
-    
     # kiwix-serve doesn't set cache-friendly headers (Cache-control: nocache)
     # caching toolbar, catalog and homepage for 1d
     if (bereq.url ~ "^/$" ||
-        bereq.url ~ "^/skin/" || 
+        bereq.url ~ "^/skin/" ||
         bereq.url ~ "^/catalog/") {
         unset beresp.http.set-cookie;
         unset beresp.http.Cache-Control;
