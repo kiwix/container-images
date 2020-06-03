@@ -54,7 +54,7 @@ is_alive () {
 
 is_loaded () {
   # check OPDS root for 5mn sleeping for 10s with a timeout of 30s
-  test_url_until "http://localhost:8000/catalog/root.xml" 30 30 10
+  test_url_until "http://localhost:8000/catalog/root.xml" 30 15 5
   return $?
 }
 
