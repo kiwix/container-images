@@ -7,15 +7,14 @@ Disallow: /
 " > /var/www/library.kiwix.org/robots.txt
 
 printf "#!/bin/sh
-/usr/bin/varnishreload
+/usr/sbin/varnishreload
 echo 'ban req.url ~ "^.*$"' | /usr/bin/varnishadm -T localhost:6082 -S /etc/varnish/secret
 " > /usr/local/bin/varnish-clear && chmod 0500 /usr/local/bin/varnish-clear
 
 printf "#!/bin/sh
 cd $LIBRARY_DIR
 manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml >library.kiwix.org.xml 2>>/dev/shm/libgen
-kill \`pidof kiwix-serve\`
-/usr/local/bin/varnish-clear
+/usr/local/bin/restart-kiwix-serve.sh restart
 " > /etc/cron.daily/80generateLibraryKiwixOrg && chmod 0500 /etc/cron.daily/80generateLibraryKiwixOrg
 
 printf "#!/bin/sh
@@ -29,7 +28,7 @@ manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zi
 
 echo "Generate crontab for kiwix-serve"
 printf "
-@reboot root /usr/local/bin/restart-kiwix-serve.sh
+@reboot root /usr/local/bin/restart-kiwix-serve.sh restart
 * * * * * root /usr/local/bin/restart-kiwix-serve.sh
 " > /etc/crontab
 
