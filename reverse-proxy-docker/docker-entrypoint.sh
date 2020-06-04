@@ -36,6 +36,12 @@ fi
 } > /etc/nginx/vhost.d/library.kiwix.org
 
 { \
+  echo "location /catalog/ {" ; \
+  echo "  proxy_pass http://library.kiwix.org;" ; \
+  echo "  gzip on;" ; \
+  echo "  gzip_proxied any;" ; \
+  echo '  gzip_types "*";' ; \
+  echo "}" ; \
   echo "location /robots.txt {" ; \
   echo "  alias /var/www/library.kiwix.org/robots.txt;" ; \
   echo "}" ; \
