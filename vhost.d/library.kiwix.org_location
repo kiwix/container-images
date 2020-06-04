@@ -1,6 +1,0 @@
-location /catalog/ {
-    proxy_pass http://library.kiwix.org;
-    gzip on;
-    gzip_proxied any;
-    gzip_types "*";
-}
