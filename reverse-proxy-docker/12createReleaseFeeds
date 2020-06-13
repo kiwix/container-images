@@ -1,0 +1,13 @@
+#/bin/bash
+
+feed () {
+  ROOT="$1"
+  for DIR in `find "$ROOT" -type d`
+  do
+    echo "Creating feed for $DIR..."
+    genRSS.py -C -r -e xz,gz,zip,apk,dmg,exe,appimage,appxbundle,flatpak,crx,xpi -d "$DIR" -o "$DIR/feed.xml"
+  done
+}
+
+feed "/var/www/download.kiwix.org/release/"
+feed "/var/www/download.openzim.org/release/"
