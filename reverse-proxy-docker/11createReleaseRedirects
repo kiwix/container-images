@@ -26,7 +26,7 @@ sub getLastRelease {
     # Version regex
     my $version_regex = $regex =~ s/\*/(.*)/r;
 
-    # Last veraion
+    # Last version
     my $file = (sort {
         $a =~ /$version_regex/;
         my $aa = $1 // $a;
