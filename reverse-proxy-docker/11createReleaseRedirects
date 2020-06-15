@@ -1,0 +1,52 @@
+#!/usr/bin/perl
+use utf8;
+use strict;
+use warnings;
+
+my $contentDirectoryPath = "/var/www/download.openzim.org";
+my $releaseDirectoryName = "release";
+my $releaseDirectoryPath = $contentDirectoryPath."/".$releaseDirectoryName;
+my $redirectsPath = "/etc/nginx/maps/openzim.map";
+
+my $content = "";
+$content .= "/".$releaseDirectoryName."/libzim/libzim.tar.xz ".getLastRelease("libzim-*.tar.xz").";\n";
+$content .= "/".$releaseDirectoryName."/libzim/libzim_linux-x86_64.tar.gz ".getLastRelease("libzim_linux-x86_64-*.tar.gz").";\n";
+$content .= "/".$releaseDirectoryName."/zim-tools/zim-tools.tar.xz ".getLastRelease("zim-tools-*.tar.xz").";\n";
+$content .= "/".$releaseDirectoryName."/zim-tools/zim-tools_linux-x86_64.tar.gz ".getLastRelease("zim-tools_linux-x86_64-*.tar.gz").";\n";
+$content .= "/".$releaseDirectoryName."/zimwriterfs/zimwriterfs.tar.gz ".getLastRelease("zimwriterfs-*.tar.gz").";\n";
+$content .= "/".$releaseDirectoryName."/zimwriterfs/zimwriterfs_linux-x86_64.tar.gz ".getLastRelease("zimwriterfs_linux-x86_64-*.tar.gz").";\n";
+writeFile($redirectsPath, $content);
+
+sub getLastRelease {
+    my ($regex) = @_;
+
+    # Get list of files matching the regex
+    my @files = split /\n/, `find "$releaseDirectoryPath" -name "$regex"`;
+
+    # Version regex
+    my $version_regex = $regex =~ s/\*/(.*)/r;
+
+    # Last version
+    my $file = (sort {
+        $a =~ /$version_regex/;
+        my $aa = $1 // $a;
+        $b =~ /$version_regex/;
+        my $bb = $1 // $b;
+        $aa cmp $bb;
+    } @files)[-1];
+
+    # Not full path
+    substr($file, length($contentDirectoryPath))
+}
+
+sub writeFile {
+    my ($file, $data) = @_;
+    utf8::encode($data);
+    utf8::encode($file);
+    open (FILE, ">", "$file") or die "Couldn't open file: $file";
+    print FILE $data;
+    close (FILE);
+}
+
+exit 0;
+

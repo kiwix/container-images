@@ -32,6 +32,7 @@ RUN touch /etc/nginx/maps/wp1.map
 COPY sites/* /etc/nginx/sites-enabled/
 
 COPY 10createWp1Redirects /etc/cron.hourly/
+COPY 11createReleaseRedirects /etc/cron.hourly/
 COPY 12createReleaseFeeds /etc/cron.hourly/
 
 COPY docker-entrypoint.sh /app/
