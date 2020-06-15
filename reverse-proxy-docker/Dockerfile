@@ -1,6 +1,6 @@
 FROM jwilder/nginx-proxy
 
-RUN apt-get update && apt-get install -y --no-install-recommends cron logrotate python3 curl
+RUN apt-get update && apt-get install -y --no-install-recommends cron logrotate python3 curl patch
 
 RUN usermod -a -G users nginx
 
@@ -20,7 +20,10 @@ RUN { \
 
 RUN sed -i '4i \    text/yaml                                        yml;' /etc/nginx/mime.types
 
-RUN curl "https://raw.githubusercontent.com/amsehili/genRSS/master/genRSS.py" > /usr/local/bin/genRSS.py
+# download and patch genRSS
+RUN curl "https://raw.githubusercontent.com/amsehili/genRSS/5c238fca244b0067fcc0d10b26506ef5d8eca804/genRSS.py" > /usr/local/bin/genRSS.py
+COPY genrss.patch /tmp/genrss.patch
+RUN patch /usr/local/bin/genRSS.py < /tmp/genrss.patch && rm /tmp/genrss.patch
 RUN chmod +x /usr/local/bin/genRSS.py
 
 RUN mkdir /etc/nginx/maps
