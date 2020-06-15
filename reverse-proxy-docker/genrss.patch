@@ -1,0 +1,17 @@
+--- genRSS.py   2020-06-15 13:25:26.000000000 +0000
++++ /usr/local/bin/genRSS.py    2020-06-15 13:29:37.000000000 +0000
+@@ -10,6 +10,7 @@
+ @deffield    updated: April 21st 2020
+ '''
+
++import re
+ import sys
+ import os
+ import glob
+@@ -301,6 +302,7 @@
+           </item>
+     '''
+
++    fname = re.sub(r"^./", "", fname)
+     fileURL = urllib.parse.quote(host + fname.replace("\\", "/"), ":/")
+     fileMimeType = mimetypes.guess_type(fname)[0]
