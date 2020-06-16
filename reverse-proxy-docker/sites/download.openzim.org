@@ -17,9 +17,11 @@ server {
   default_type application/octet-stream;
   autoindex on;
 
-  if ($redirect_uri) {
-    add_header Cache-Control "no-store, no-cache, must-revalidate";
-    rewrite ^ $redirect_uri permanent;
+  location / {
+    if ($redirect_uri) {
+      add_header Cache-Control "no-store, no-cache, must-revalidate";
+      rewrite ^ $redirect_uri permanent;
+    }
   }
 
   include /etc/nginx/vhost.d/default;
