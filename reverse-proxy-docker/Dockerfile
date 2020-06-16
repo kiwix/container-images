@@ -28,6 +28,7 @@ RUN chmod +x /usr/local/bin/genRSS.py
 
 RUN mkdir /etc/nginx/maps
 RUN touch /etc/nginx/maps/wp1.map
+RUN touch /etc/nginx/maps/openzim.map
 
 COPY sites/* /etc/nginx/sites-enabled/
 
