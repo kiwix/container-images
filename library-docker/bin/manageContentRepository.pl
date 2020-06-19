@@ -396,7 +396,7 @@ sub writeLibrary {
         my $permalink = "http://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
         my $cmd = "$kiwixManagePath $tmpZimLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
         system($cmd) == 0
-            or print STDERR "Unable to put $zimPath to XML library";
+            or print STDERR "Unable to put $zimPath to XML library: $cmd\n";
     }
 
     # Move the XML files to its final destination
