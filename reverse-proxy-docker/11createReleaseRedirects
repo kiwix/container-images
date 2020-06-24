@@ -11,6 +11,7 @@ my $redirectsPath = "/etc/nginx/maps/openzim.map";
 my $content = "";
 $content .= "/".$releaseDirectoryName."/libzim/libzim.tar.xz ".getLastRelease("libzim-*.tar.xz").";\n";
 $content .= "/".$releaseDirectoryName."/libzim/libzim_linux-x86_64.tar.gz ".getLastRelease("libzim_linux-x86_64-*.tar.gz").";\n";
+$content .= "/".$releaseDirectoryName."/libzim/libzim_macos-x86_64.tar.gz ".getLastRelease("libzim_macos-x86_64-*.tar.gz").";\n";
 $content .= "/".$releaseDirectoryName."/zim-tools/zim-tools.tar.xz ".getLastRelease("zim-tools-*.tar.xz").";\n";
 $content .= "/".$releaseDirectoryName."/zim-tools/zim-tools_linux-x86_64.tar.gz ".getLastRelease("zim-tools_linux-x86_64-*.tar.gz").";\n";
 $content .= "/".$releaseDirectoryName."/zimwriterfs/zimwriterfs.tar.gz ".getLastRelease("zimwriterfs-*.tar.gz").";\n";
