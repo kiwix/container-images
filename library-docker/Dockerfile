@@ -5,7 +5,7 @@ FROM debian:stretch-slim
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 3.1.1-4
+ENV VERSION_KIWIX_TOOLS 3.1.1-6
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 ENV VERSION_VARNISH 6.4.0-1~stretch_amd64
 ENV VARNISH_SECRET notset
