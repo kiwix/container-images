@@ -125,6 +125,7 @@ services:
       - "873:873"
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
+      - "/data/openzim:/var/www/download.openzim.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
     restart: always
 
