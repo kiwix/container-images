@@ -281,6 +281,8 @@ sub writeRedirects {
 
     $content .= "/".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
+    $content .= "/".$releaseDirectoryName."/kiwix-js-windows/kiwix-js-windows.appxbundle ".getLastRelease($releaseDirectory, "kiwix-js-windows_*.appxbundle")."\n";
+
     sub writeEntry {
         my ($entry, $entries) = @_;
         my $core = $entry->{core};
