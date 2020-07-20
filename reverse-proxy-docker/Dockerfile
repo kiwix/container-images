@@ -19,6 +19,7 @@ RUN { \
 } > /etc/nginx/conf.d/05gzip.conf
 
 RUN sed -i '4i \    text/yaml                                        yml;' /etc/nginx/mime.types
+RUN sed -i '4i \    application/vnd.android.package-archive          apk;' /etc/nginx/mime.types
 
 # download and patch genRSS
 RUN curl "https://raw.githubusercontent.com/amsehili/genRSS/5c238fca244b0067fcc0d10b26506ef5d8eca804/genRSS.py" > /usr/local/bin/genRSS.py
