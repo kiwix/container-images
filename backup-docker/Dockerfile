@@ -19,4 +19,6 @@ RUN pip3 install --user --upgrade borgmatic
 COPY bin/ /usr/local/bin/
 RUN chmod -R 0500 /usr/local/bin/*
 
+WORKDIR /root
+
 ENTRYPOINT ["entrypoint.sh"]
