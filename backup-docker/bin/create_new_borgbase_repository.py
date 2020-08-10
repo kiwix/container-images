@@ -55,7 +55,7 @@ if repo_exists(BACKUP_NAME):
 pp = pprint.PrettyPrinter(indent=4)
 new_key_vars = {
     'name': 'Key for ' + BACKUP_NAME,
-    'keyData': open('/storage/ssh/id_ed25519.pub').readline().strip()
+    'keyData': open('/root/.ssh/' + BACKUP_NAME + '_id.pub').readline().strip()
 }
 pp.pprint(new_key_vars)
 res = client.execute(SSH_ADD, new_key_vars)
