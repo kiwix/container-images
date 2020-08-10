@@ -14,7 +14,7 @@ RUN curl -Ls 'https://vault.bitwarden.com/download/?app=cli&platform=linux' -o b
     unzip bitwarden.zip && rm -f bitwarden.zip && chmod +x bw && mv bw /usr/local/bin/
 
 RUN git clone --depth=1 --branch=master https://github.com/borgbase/borgbase-api-client.git && \
-    mv borgbase-api-client/borgbase_api_client/ /root/ && \
+    mv borgbase-api-client/borgbase_api_client/ /usr/lib/python3/dist-packages/ && \
     rm -rf borgbase-api-client && \
     pip3 install requests
 
@@ -25,5 +25,7 @@ COPY bin/ /usr/local/bin/
 RUN chmod -R 0500 /usr/local/bin/*
 
 WORKDIR /root
+
+RUN mkdir -p .ssh .config/borgmatic/
 
 ENTRYPOINT ["entrypoint.sh"]
