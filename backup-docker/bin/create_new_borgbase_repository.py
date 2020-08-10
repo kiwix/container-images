@@ -9,8 +9,10 @@ TOKEN = os.environ.get("BORGBASE_KEY")
 #MYSQL_USER = os.environ.get("MYSQL_USER")
 #MYSQL_DB = os.environ.get("MYSQL_DB")
 BACKUP_NAME = os.environ.get("BORGBASE_NAME")
+CONFIG_DIR = "/root/"
 os.environ.get("BORGBASE_NAME")
 client = GraphQLClient(TOKEN)
+
 def repo_exists(name):
     query = """
     {
@@ -23,9 +25,9 @@ def repo_exists(name):
     res = client.execute(query)
     for repo in res['data']['repoList']:
         if repo['name'] == name:
-            return True
+            return repo['id']
 
-    return False
+    return ''
 
 def repo_hostname(repo_id):
     query = """
@@ -46,54 +48,66 @@ def repo_hostname(repo_id):
         if repo['id'] == repo_id:
             return repo['server']['hostname']
 
+def create_repo(name):
+    pp = pprint.PrettyPrinter(indent=4)
+    new_key_vars = {
+        'name': 'Key for ' + name,
+        'keyData': open(CONFIG_DIR+'.ssh/' + name + '_id.pub').readline().strip()
+    }
+    pp.pprint(new_key_vars)
+    res = client.execute(SSH_ADD, new_key_vars)
+    pp.pprint(res)
+    new_key_id = res['data']['sshAdd']['keyAdded']['id']
 
-if repo_exists(BACKUP_NAME):
-    print("Repo exists with name", BACKUP_NAME)
-    sys.exit(0) 
+    new_repo_vars = {
+        'name': BACKUP_NAME,
+        'quotaEnabled': False,
+        'appendOnlyKeys': [new_key_id],
+        'region': 'eu',
+        'alertDays': 1,
+        'quota': 2048,
+        'quotaEnabled': True
+    }
+    res = client.execute(REPO_ADD, new_repo_vars)
+    
+    pp.pprint(res)
+    
+    return res['data']['repoAdd']['repoAdded']['id']
 
+def main(name):
+    repo_id = repo_exists(BACKUP_NAME)
 
-pp = pprint.PrettyPrinter(indent=4)
-new_key_vars = {
-    'name': 'Key for ' + BACKUP_NAME,
-    'keyData': open('/root/.ssh/' + BACKUP_NAME + '_id.pub').readline().strip()
-}
-pp.pprint(new_key_vars)
-res = client.execute(SSH_ADD, new_key_vars)
-pp.pprint(res)
-new_key_id = res['data']['sshAdd']['keyAdded']['id']
+    if len(repo_id) > 0 :
+        print("Repo exists with name", BACKUP_NAME)
+    else:
+        print("Repo not exists with name", BACKUP_NAME, ", create it ...")
+        repo_id = create_repo(name)
 
-new_repo_vars = {
-    'name': BACKUP_NAME,
-    'quotaEnabled': False,
-    'appendOnlyKeys': [new_key_id],
-    'region': 'eu',
-    'alertDays': 1,
-    'quota': 2048,
-    'quotaEnabled': True
-}
-res = client.execute(REPO_ADD, new_repo_vars)
-pp.pprint(res)
-new_repo_id = res['data']['repoAdd']['repoAdded']['id']
-new_repo_path = new_repo_id + '@' + repo_hostname(new_repo_id) + ':repo'
-print('Added new repo with path:', new_repo_path)
-with open('/config/borgmatic/config.yaml', 'w') as FILE:
-    FILE.write("""
-location:
-    source_directories:
-        - /storage
-        - /config
-    repositories:
-        - """ + new_repo_path + """
-storage:
-    encryption_passphrase: ""
-    borg_base_directory: "/repo"
-    borg_cache_directory: "/cache"
-    archive_name_format: '""" + BACKUP_NAME + """__backup__{now}'
-retention:
-    keep_within: 48H
-    keep_daily: 7
-    keep_weekly: 4
-    keep_monthly: 12
-    keep_yearly: 1
-    prefix: """ + BACKUP_NAME + """__backup__
-""")
+    repo_path = repo_id + '@' + repo_hostname(repo_id) + ':repo'
+
+    print('Use repo path :', repo_path)
+
+    with open(CONFIG_DIR+'.config/borgmatic/config.yaml', 'w') as FILE:
+        FILE.write("""
+    location:
+        source_directories:
+            - /storage
+            - /config
+        repositories:
+            - """ + repo_path + """
+    storage:
+        encryption_passphrase: ""
+        borg_base_directory: "/repo"
+        borg_cache_directory: "/cache"
+        archive_name_format: '""" + name + """__backup__{now}'
+    retention:
+        keep_within: 48H
+        keep_daily: 7
+        keep_weekly: 4
+        keep_monthly: 12
+        keep_yearly: 1
+        prefix: """ + name + """__backup__
+    """)
+
+if __name__ == '__main__':
+    main(BACKUP_NAME)

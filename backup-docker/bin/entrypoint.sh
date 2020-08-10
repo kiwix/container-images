@@ -39,8 +39,6 @@ function save_key {
 }
 
 function init_ssh_config {
-    mkdir -p .ssh
-
     export BW_SESSION=`bw login --raw ${BW_EMAIL} ${BW_PASSWORD}`
 
     if bw get username ${BORGBASE_NAME} > ${SSH_PUB_KEY_FILE}
@@ -57,11 +55,12 @@ function init_ssh_config {
 
     create_ssh_config_file
 
-    /bin/bash
-
     bw logout
 }
 
 init_ssh_config
 
-#
+if create_new_borgbase_repository.py
+then
+    /bin/bash
+fi
