@@ -105,7 +105,6 @@ def main(name):
     location:
         source_directories:
             - /storage
-            - /config
         repositories:
             - """ + repo_path + """
     storage:

@@ -26,6 +26,8 @@ function create_ssh_config_file {
     "  IdentityFile ${SSH_PRIV_KEY_FILE}\n" \
     "  UserKnownHostsFile ${KNOWN_HOSTS_FILE}" \
     > ${CONFIG_FILE}
+
+    chmod 600 ${CONFIG_FILE} 
 }
 
 function generate_ssh_key {
@@ -50,7 +52,7 @@ function init_ssh_config {
         echo >> ${SSH_PUB_KEY_FILE}
         bw get password ${BORGBASE_NAME} > ${SSH_PRIV_KEY_FILE}
         echo >> ${SSH_PRIV_KEY_FILE}
-        chmod 600 ${SSH_PRIV_KEY_FILE}
+        chmod 600 ${SSH_PRIV_KEY_FILE} 
     else
         echo "Generate SSH key ..."
         generate_ssh_key
@@ -59,14 +61,20 @@ function init_ssh_config {
         save_key
     fi
 
+    bw logout
+
     create_ssh_config_file
 
-    bw logout
+    chown -R root ${SSH_DIR}
 }
 
 function start_cron {
     BORGMATIC_CRON="/etc/cron.hourly/borgmatic"
-    BORGMATIC_CMD="/root/.local/bin/borgmatic -c /root/.config/borgmatic/config.yaml  --verbosity 1 --files"
+    BORGMATIC_CONFIG="/root/.config/borgmatic/config.yaml"
+    BORGMATIC_CMD="/root/.local/bin/borgmatic -c ${BORGMATIC_CONFIG} --verbosity 1 --files"
+    
+    # Save borgmatic config
+    cp ${BORGMATIC_CONFIG} /config/borgmatic.yaml
 
     echo "Install Cron"
     { \
