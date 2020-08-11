@@ -26,6 +26,6 @@ RUN chmod -R 0500 /usr/local/bin/*
 
 WORKDIR /root
 
-RUN mkdir -p .ssh .config/borgmatic/
+RUN mkdir -p .ssh .config/borgmatic/ /config /storage
 
 ENTRYPOINT ["entrypoint.sh"]

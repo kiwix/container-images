@@ -4,13 +4,16 @@ from borgbase_api_client.mutations import *
 import os
 import sys
 import pprint
+import subprocess
 
 TOKEN = os.environ.get("BORGBASE_KEY")
 #MYSQL_USER = os.environ.get("MYSQL_USER")
 #MYSQL_DB = os.environ.get("MYSQL_DB")
 BACKUP_NAME = os.environ.get("BORGBASE_NAME")
 CONFIG_DIR = "/root/"
-os.environ.get("BORGBASE_NAME")
+BORGMATIC_CONFIG = CONFIG_DIR + ".config/borgmatic/config.yaml"
+KNOWN_HOSTS_FILE = os.environ.get("KNOWN_HOSTS_FILE")
+
 client = GraphQLClient(TOKEN)
 
 def repo_exists(name):
@@ -60,7 +63,7 @@ def create_repo(name):
     new_key_id = res['data']['sshAdd']['keyAdded']['id']
 
     new_repo_vars = {
-        'name': BACKUP_NAME,
+        'name': name,
         'quotaEnabled': False,
         'appendOnlyKeys': [new_key_id],
         'region': 'eu',
@@ -75,19 +78,25 @@ def create_repo(name):
     return res['data']['repoAdd']['repoAdded']['id']
 
 def main(name):
-    repo_id = repo_exists(BACKUP_NAME)
+    repo_id = repo_exists(name)
+    new_repo = False
 
     if len(repo_id) > 0 :
-        print("Repo exists with name", BACKUP_NAME)
+        print("Repo exists with name", name)
     else:
-        print("Repo not exists with name", BACKUP_NAME, ", create it ...")
+        print("Repo not exists with name", name, ", create it ...")
         repo_id = create_repo(name)
+        new_repo = True
 
-    repo_path = repo_id + '@' + repo_hostname(repo_id) + ':repo'
+    hostname = repo_hostname(repo_id)
+    repo_path = repo_id + '@' + hostname + ':repo'
+
+    with open(KNOWN_HOSTS_FILE, "w") as outfile:
+        subprocess.run(["/usr/bin/ssh-keyscan","-H", hostname], stdout=outfile)
 
     print('Use repo path :', repo_path)
 
-    with open(CONFIG_DIR+'.config/borgmatic/config.yaml', 'w') as FILE:
+    with open(BORGMATIC_CONFIG, 'w') as FILE:
         FILE.write("""
     location:
         source_directories:
@@ -108,6 +117,10 @@ def main(name):
         keep_yearly: 1
         prefix: """ + name + """__backup__
     """)
+
+    if (new_repo):
+        print("Init Borgmatic ...")
+        subprocess.call(["/root/.local/bin/borgmatic", "-c", BORGMATIC_CONFIG, "-v", "1", "init","--encryption","repokey"])
 
 if __name__ == '__main__':
     main(BACKUP_NAME)

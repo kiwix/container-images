@@ -15,7 +15,7 @@ SSH_TYPE_KEY=ed25519
 SSH_KDF=100
 
 function create_ssh_config_file {
-    KNOWN_HOSTS_FILE=${SSH_DIR}/known_hosts
+    export KNOWN_HOSTS_FILE=${SSH_DIR}/known_hosts
     CONFIG_FILE=${SSH_DIR}/config
 
     echo -e \
@@ -28,7 +28,7 @@ function create_ssh_config_file {
 function generate_ssh_key {
     COMMENT=backup@${BORGBASE_NAME}
     rm ${SSH_PRIV_KEY_FILE}* ${KNOWN_HOSTS_FILE} ${CONFIG_FILE}
-    ssh-keygen -t ${SSH_TYPE_KEY} -a ${SSH_KDF} -P '' -C ${COMMENT} -f ${SSH_PRIV_KEY_FILE}
+    ssh-keygen -t ${SSH_TYPE_KEY} -a ${SSH_KDF} -N '' -C ${COMMENT} -f ${SSH_PRIV_KEY_FILE}
 }
 
 function save_key {
@@ -44,7 +44,10 @@ function init_ssh_config {
     if bw get username ${BORGBASE_NAME} > ${SSH_PUB_KEY_FILE}
     then
         echo "SSH key retrieval success"
+        echo >> ${SSH_PUB_KEY_FILE}
         bw get password ${BORGBASE_NAME} > ${SSH_PRIV_KEY_FILE}
+        echo >> ${SSH_PRIV_KEY_FILE}
+        chmod 600 ${SSH_PRIV_KEY_FILE}
     else
         echo "Generate SSH key ..."
         generate_ssh_key
@@ -60,7 +63,6 @@ function init_ssh_config {
 
 init_ssh_config
 
-if create_new_borgbase_repository.py
-then
-    /bin/bash
-fi
+init_borgbase_repository.py
+
+.local/bin/borgmatic -c/root/.config/borgmatic/config.yaml  --verbosity 1 --files
