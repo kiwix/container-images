@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:buster-slim
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
@@ -6,7 +6,7 @@ LABEL maintainer="kiwix"
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl jq borgbackup vim python3 python3-pip python3-setuptools openssh-client unzip git && \
+    apt-get install -y --no-install-recommends curl jq borgbackup vim python3 python3-pip python3-setuptools openssh-client unzip git cron && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 

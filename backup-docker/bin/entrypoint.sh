@@ -14,6 +14,9 @@ SSH_PUB_KEY_FILE=${SSH_PRIV_KEY_FILE}.pub
 SSH_TYPE_KEY=ed25519
 SSH_KDF=100
 
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
+export BORG_PASSPHRASE=${BORGBASE_KEY}
+
 function create_ssh_config_file {
     export KNOWN_HOSTS_FILE=${SSH_DIR}/known_hosts
     CONFIG_FILE=${SSH_DIR}/config
@@ -61,8 +64,26 @@ function init_ssh_config {
     bw logout
 }
 
+function start_cron {
+    BORGMATIC_CRON="/etc/cron.hourly/borgmatic"
+    BORGMATIC_CMD="/root/.local/bin/borgmatic -c /root/.config/borgmatic/config.yaml  --verbosity 1 --files"
+
+    echo "Install Cron"
+    { \
+        echo "#!/bin/sh" ; \
+        echo "/usr/bin/flock -w 0 /dev/shm/cron.lock ${BORGMATIC_CMD} >> /dev/shm/borgmatic.log 2>&1" ; \
+    } > ${BORGMATIC_CRON} && chmod 0500 ${BORGMATIC_CRON}
+
+    echo "Initial backup ..."
+    ${BORGMATIC_CMD}
+
+    echo "Start Cron ..."
+    #cron -f
+    /bin/bash
+}
+
 init_ssh_config
 
 init_borgbase_repository.py
 
-.local/bin/borgmatic -c/root/.config/borgmatic/config.yaml  --verbosity 1 --files
+start_cron

@@ -79,14 +79,12 @@ def create_repo(name):
 
 def main(name):
     repo_id = repo_exists(name)
-    new_repo = False
 
     if len(repo_id) > 0 :
         print("Repo exists with name", name)
     else:
         print("Repo not exists with name", name, ", create it ...")
         repo_id = create_repo(name)
-        new_repo = True
 
     hostname = repo_hostname(repo_id)
     repo_path = repo_id + '@' + hostname + ':repo'
@@ -118,9 +116,9 @@ def main(name):
         prefix: """ + name + """__backup__
     """)
 
-    if (new_repo):
-        print("Init Borgmatic ...")
-        subprocess.call(["/root/.local/bin/borgmatic", "-c", BORGMATIC_CONFIG, "-v", "1", "init","--encryption","repokey"])
+
+    print("Init Borgmatic ...")
+    subprocess.call(["/root/.local/bin/borgmatic", "-c", BORGMATIC_CONFIG, "-v", "1", "init","--encryption","repokey-blake2"])
 
 if __name__ == '__main__':
     main(BACKUP_NAME)
