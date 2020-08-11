@@ -4,7 +4,7 @@ Kiwix/openZIM Backup Docker Image
 Kiwix and openZIM backup Docker image is a generic and easy to deploy
 backup solution based on BorgBackup, BorgBase and Bitwarden.
 
-== Principle ==
+## Principle
 
 * A BorgBase account is needed. An API create-only token needs to be
   created to allow the container to create new remote Borg repository
@@ -59,10 +59,10 @@ backup solution based on BorgBackup, BorgBase and Bitwarden.
   every few weeks) to be able to verify that we can easily retrieve
   things in the future.
   
-  == Usage ==
+## Usage
   
-  To backup files of `<barckupdir>` hourly with a new container :
-  
-  ```
-  docker run -d -v /<barckupdir>:/storage  -e BW_EMAIL=<your_bitwarden_login_mail> -e BW_PASSWORD=<your_bitwarden_master_password> -e BORGBASE_NAME=test_borg -e BORGBASE_KEY=<borgbase_api_token> -ti backup-docker
-  ```
+To backup files of `<barckupdir>` hourly with a new container :
+
+```
+docker run -d -v /<barckupdir>:/storage  -e BW_EMAIL=<your_bitwarden_login_mail> -e BW_PASSWORD=<your_bitwarden_master_password> -e BORGBASE_NAME=test_borg -e BORGBASE_KEY=<borgbase_api_token> -ti backup-docker
+```
