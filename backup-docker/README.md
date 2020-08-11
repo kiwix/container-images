@@ -58,3 +58,11 @@ backup solution based on BorgBackup, BorgBase and Bitwarden.
 * A verify operation should be implemented (and run automatically
   every few weeks) to be able to verify that we can easily retrieve
   things in the future.
+  
+  == Usage ==
+  
+  To backup files of `<barckupdir>` hourly with a new container :
+  
+  ```
+  docker run -d -v /<barckupdir>:/storage  -e BW_EMAIL=<your_bitwarden_login_mail> -e BW_PASSWORD=<your_bitwarden_master_password> -e BORGBASE_NAME=test_borg -e BORGBASE_KEY=<borgbase_api_token> -ti backup-docker
+  ```
