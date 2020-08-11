@@ -14,8 +14,8 @@ SSH_PUB_KEY_FILE=${SSH_PRIV_KEY_FILE}.pub
 SSH_TYPE_KEY=ed25519
 SSH_KDF=100
 
-export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes
-export BORG_PASSPHRASE=${BORGBASE_KEY}
+export BORG_UNKNOWN_UNENCRYPTED_REPO_ACCESS_IS_OK=yes 
+export BORG_RELOCATED_REPO_ACCESS_IS_OK=yes
 
 function create_ssh_config_file {
     export KNOWN_HOSTS_FILE=${SSH_DIR}/known_hosts
@@ -78,8 +78,7 @@ function start_cron {
     ${BORGMATIC_CMD}
 
     echo "Start Cron ..."
-    #cron -f
-    /bin/bash
+    cron -f
 }
 
 init_ssh_config

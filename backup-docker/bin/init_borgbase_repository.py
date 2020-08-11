@@ -5,14 +5,20 @@ import os
 import sys
 import pprint
 import subprocess
+import time
 
 TOKEN = os.environ.get("BORGBASE_KEY")
 #MYSQL_USER = os.environ.get("MYSQL_USER")
 #MYSQL_DB = os.environ.get("MYSQL_DB")
 BACKUP_NAME = os.environ.get("BORGBASE_NAME")
-CONFIG_DIR = "/root/"
-BORGMATIC_CONFIG = CONFIG_DIR + ".config/borgmatic/config.yaml"
 KNOWN_HOSTS_FILE = os.environ.get("KNOWN_HOSTS_FILE")
+
+os.environ["BORG_PASSPHRASE"] = ""
+os.environ["BORG_NEW_PASSPHRASE"] = ""
+
+CONFIG_DIR = "/root/"
+BORG_ENCRYPTION = "repokey"
+BORGMATIC_CONFIG = CONFIG_DIR + ".config/borgmatic/config.yaml"
 
 client = GraphQLClient(TOKEN)
 
@@ -104,6 +110,8 @@ def main(name):
             - """ + repo_path + """
     storage:
         encryption_passphrase: ""
+        relocated_repo_access_is_ok: true
+        unknown_unencrypted_repo_access_is_ok: true
         borg_base_directory: "/repo"
         borg_cache_directory: "/cache"
         archive_name_format: '""" + name + """__backup__{now}'
@@ -116,9 +124,9 @@ def main(name):
         prefix: """ + name + """__backup__
     """)
 
-
     print("Init Borgmatic ...")
-    subprocess.call(["/root/.local/bin/borgmatic", "-c", BORGMATIC_CONFIG, "-v", "1", "init","--encryption","repokey-blake2"])
+    time.sleep(2)
+    subprocess.call(["/root/.local/bin/borgmatic", "-c", BORGMATIC_CONFIG, "-v", "1", "init","--encryption", BORG_ENCRYPTION])
 
 if __name__ == '__main__':
     main(BACKUP_NAME)
