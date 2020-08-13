@@ -26,11 +26,11 @@ updateWikiPage.py wiki.kiwix.org LibraryBot `cat /run/secrets/wiki-password` 'Te
 echo "Generate library.kiwix.org.xml file"
 manageLibraryKiwixOrg.pl --source=/var/www/download.kiwix.org/library/library_zim.xml > library.kiwix.org.xml
 
-echo "Generate crontab for kiwix-serve"
+echo "Update crontab for kiwix-serve"
 printf "
 @reboot root /usr/local/bin/restart-kiwix-serve.sh restart
 * * * * * root /usr/local/bin/restart-kiwix-serve.sh
-" > /etc/crontab
+" >> /etc/crontab
 
 service cron start && crontab /etc/crontab
 
