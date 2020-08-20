@@ -39,6 +39,8 @@ COPY lib/Mediawiki/Mediawiki.pm /usr/share/perl5/Mediawiki/Mediawiki.pm
 # Copy varnish config
 COPY varnish/default.vcl /etc/varnish/default.vcl
 
+RUN printf "* soft nofile 42000\n" > /etc/security/limits.conf
+
 # Install start script
 COPY bin/ /usr/local/bin/
 RUN chmod -R 0500 /usr/local/bin/*
