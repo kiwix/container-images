@@ -68,14 +68,13 @@ services:
       - "/data/openzim:/var/www/download.openzim.org"
       - "/data/download:/var/www/download.kiwix.org"
       - "/data/library:/var/www/library.kiwix.org"
-      - "/data/cardshop-download:/var/www/download.cardshop.hotspot.kiwix.org"
       - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
       - "/data/zimfarm-warehouse/logs:/var/www/logs.warehouse.farm.openzim.org"
     environment:
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,download.cardshop.hotspot.kiwix.org,logs.warehouse.farm.openzim.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,download.cardshop.hotspot.kiwix.org,logs.warehouse.farm.openzim.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,logs.warehouse.farm.openzim.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,logs.warehouse.farm.openzim.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
@@ -88,7 +87,6 @@ services:
         aliases:
           - mirror.download
           - tmp
-          - download.cardshop.hotspot
           - logs.warehouse.farm.openzim.org
     restart: always
 
@@ -169,34 +167,6 @@ services:
       - HOST=download.openzim.org
     secrets:
       - matomo-token
-    restart: always
-
-  cardshop-warehouse-private:
-    image: kiwix/cardshop-warehouse
-    container_name: cardshop-warehouse-private
-    ports:
-      - "2121:21"
-      - "29111-29190:29111-29190"
-    volumes:
-      - "/data/cardshop-warehouse:/files"
-    environment:
-      - FTP_DATA_PORT_RANGE=29111-29190
-      - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
-      - MASQUERADE_ADDRESS=195.154.156.115
-    restart: always
-
-  cardshop-warehouse-download:
-    image: kiwix/cardshop-warehouse
-    container_name: cardshop-warehouse-download
-    ports:
-      - "2221:21"
-      - "29211-29290:29211-29290"
-    volumes:
-      - "/data/cardshop-download:/files"
-    environment:
-      - FTP_DATA_PORT_RANGE=29211-29290
-      - TOKEN_VALIDATION_URL=https://api.cardshop.hotspot.kiwix.org/auth/validate
-      - MASQUERADE_ADDRESS=195.154.156.115
     restart: always
 
 volumes:
