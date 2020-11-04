@@ -43,6 +43,17 @@ services:
           - stats
     restart: always
 
+  backup:
+    image: kiwix/borg-backup
+    container_name: matomo_backup
+    volumes:
+      - "/data/matomo/data:/storage:ro"
+    links:
+      - db
+    env_file:
+      - .env_backup
+    restart: always
+
 volumes:
   appdir:
 
