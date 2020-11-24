@@ -6,23 +6,23 @@ MB=/usr/local/bin/mb
 REPO="/var/www/download.kiwix.org/"
 ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
 ALLDIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
-WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikispecies*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"`
+WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"`
 ZIMDIRS=`find "$REPO" -type d | grep "${REPO}zim"| sed "s/$ESCREPO//"`
 
 function scanMirror() {
     MIRROR=$1
     DIRS=${!2}
-    
+
     for DIR in $DIRS
     do
-	echo "Scanning mirror '$MIRROR' at $DIR"
-	$MB scan -d "$DIR" $MIRROR 
+        echo "Scanning mirror '$MIRROR' at $DIR"
+        $MB scan -d "$DIR" $MIRROR
     done
 }
 
 # Clean up the db
 echo "Cleaning up the mirrorbrain database..."
-$MB db vacuum  
+$MB db vacuum
 
 # Scan the ftp.acc.umu.se mirror
 scanMirror ftp.acc.umu.se ZIMDIRS
