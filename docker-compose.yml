@@ -40,6 +40,27 @@ services:
       - db
     restart: always
 
+  download-backup:
+    image: kiwix/borg-backup
+    container_name: download-backup
+    volumes:
+      - "/data/openzim/README:/storage/openzim/README:ro"
+      - "/data/openzim/robots.txt:/storage/openzim/robots.txt:ro"
+      - "/data/openzim/archive:/storage/openzim/archive:ro"
+      - "/data/openzim/release:/storage/openzim/release:ro"
+      - "/data/openzim/wikifundi:/storage/openzim/wikifundi:ro"
+      - "/data/download/README:/storage/kiwix/README:ro"
+      - "/data/download/favicon.ico:/storage/kiwix/favicon.ico:ro"
+      - "/data/download/robots.txt:/storage/kiwix/robots.txt:ro"
+      - "/data/download/archive:/storage/kiwix/archive:ro"
+      - "/data/download/dev:/storage/kiwix/dev:ro"
+      - "/data/download/other:/storage/kiwix/other:ro"
+      - "/data/download/release:/storage/kiwix/release:ro"
+      - "/data/download/screenshots:/storage/kiwix/screenshots:ro"
+    env_file:
+      - .env_backup
+    restart: always
+
   update-db:
     image: kiwix/mirrorbrain
     container_name: mirrorbrain-update
