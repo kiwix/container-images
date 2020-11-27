@@ -8,7 +8,7 @@ services:
       - "/data/db:/var/lib/postgresql/data"
     restart: always
 
-  mirrorbrain-backup:
+  backup:
     image: kiwix/borg-backup
     container_name: mirrorbrain-backup
     links:
@@ -185,7 +185,6 @@ services:
     secrets:
       - matomo-token
     restart: always
-
   matomo-download_openzim:
     image: kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download_openzim
@@ -198,17 +197,6 @@ services:
       - HOST=download.openzim.org
     secrets:
       - matomo-token
-    restart: always
-
-  matomo-backup:
-    image: kiwix/borg-backup
-    container_name: matomo_backup
-    volumes:
-      - "/data/matomo/data:/storage:ro"
-    links:
-      - db
-    env_file:
-      - .env_backup
     restart: always
 
 volumes:
