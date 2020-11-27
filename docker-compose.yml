@@ -8,13 +8,13 @@ services:
       - "/data/db:/var/lib/postgresql/data"
     restart: always
 
-  backup:
+  mirrorbrain-backup:
     image: kiwix/borg-backup
     container_name: mirrorbrain-backup
     links:
       - db
     env_file:
-      - .env_backup
+      - .env_mirrorbrain_backup
     restart: always
 
   web:
@@ -58,7 +58,7 @@ services:
       - "/data/download/release:/storage/kiwix/release:ro"
       - "/data/download/screenshots:/storage/kiwix/screenshots:ro"
     env_file:
-      - .env_backup
+      - .env_download_backup
     restart: always
 
   update-db:
