@@ -34,7 +34,7 @@ scanMirror dotsrc.org ALLDIRS
 scanMirror mirror ALLDIRS
 
 # Scan Tunisian mirror
-scanMirror mirror.tn ZIMDIRS
+scanMirror mirror.tn ALLDIRS
 
 # Scan the Wikimedia mirror
 scanMirror wikimedia WMDIRS
