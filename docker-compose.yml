@@ -101,10 +101,9 @@ services:
       - "/data/tmp:/var/www/tmp.kiwix.org"
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
-      - "/data/zimfarm-warehouse/logs:/var/www/logs.warehouse.farm.openzim.org"
     environment:
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,logs.warehouse.farm.openzim.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,logs.warehouse.farm.openzim.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
@@ -117,7 +116,6 @@ services:
         aliases:
           - mirror.download
           - tmp
-          - logs.warehouse.farm.openzim.org
     restart: always
 
   letsencrypt:
