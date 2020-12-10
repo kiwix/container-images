@@ -1,0 +1,4 @@
+[mysqld]
+innodb_buffer_pool_size=16G
+innodb_lru_scan_depth=256
+max_allowed_packet=512M
