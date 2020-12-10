@@ -6,6 +6,7 @@ services:
     container_name: mirrorbrain-db
     volumes:
       - "/data/db:/var/lib/postgresql/data"
+    command: postgres -c shared_buffers=256MB -c max_connections=200
     restart: always
 
   mirrorbrain-backup:
