@@ -55,4 +55,4 @@ scanMirror mirrorservice.org WMDIRS
 scanMirror fau.de ALLDIRS
 
 # Generate HTML mirrors list
-mb mirrorlist -f xhtml | grep -v "href=\"\"" > /var/www/download.kiwix.org/mirrors.html
+mb mirrorlist -f xhtml | grep -v @ > /var/www/download.kiwix.org/mirrors.html
