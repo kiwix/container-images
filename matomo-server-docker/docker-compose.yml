@@ -5,7 +5,7 @@ services:
     image: mysql:5
     container_name: matomo_mysql
     volumes:
-      - "/data/matomo/mysql/conf:/etc/mysql/conf.d"
+      - "./data/mysql/conf:/etc/mysql/conf.d"
       - "/data/matomo/mysql/files:/var/lib/mysql"
     environment:
       - MYSQL_ROOT_PASSWORD=root
