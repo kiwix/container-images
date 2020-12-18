@@ -166,7 +166,7 @@ services:
       - "/data/quarantine/zim:/mnt/quarantine:rw"
       - "/data/download/zim:/mnt/zim:rw"
     environment:
-      - VALIDATION_OPTION=NO_QUARANTINE
+      - VALIDATION_OPTION=NO_CHECK
     ports:
       - "1522:22"
     restart: always
