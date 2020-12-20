@@ -1,7 +1,7 @@
 FROM debian:buster-slim
 MAINTAINER kiwix
 
-RUN apt-get update && apt-get install -y --no-install-recommends rsync
+RUN apt-get update && apt-get install -y --no-install-recommends rsync util-linux coreutils
 
 EXPOSE 873
 
