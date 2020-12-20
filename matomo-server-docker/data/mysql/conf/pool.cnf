@@ -2,3 +2,6 @@
 innodb_buffer_pool_size=16G
 innodb_lru_scan_depth=256
 max_allowed_packet=512M
+innodb_page_cleaners=8
+innodb_buffer_pool_instances=8
+innodb_io_capacity=100
