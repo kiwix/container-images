@@ -292,7 +292,7 @@ sub writeRedirects {
         $content .= "/".$zimDirectoryName."/".$core.".zim.meta4 ".substr($entry->{zim}, length($contentDirectory)).".meta4\n";
         $content .= "/".$zimDirectoryName."/".$core.".zim.magnet ".substr($entry->{zim}, length($contentDirectory)).".magnet\n";
         $content .= "/".$zimDirectoryName."/".$core.".zim.md5 ".substr($entry->{zim}, length($contentDirectory)).".md5\n";
-        $content .= "/".$zimDirectoryName."/".$core.".zim.sha256 ".substr($entry->{zim}, length($contentDirectory)).".sha256\n";  
+        $content .= "/".$zimDirectoryName."/".$core.".zim.sha256 ".substr($entry->{zim}, length($contentDirectory)).".sha256\n";
     }
 
     # Content redirects
