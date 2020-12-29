@@ -163,7 +163,7 @@ services:
       - "/data/zimfarm-warehouse/logs:/jail/logs:rw"
       - "/data/zimfarm-warehouse/zim:/jail/zim:rw"
       - "/data/log/zimquarantine:/mnt/check_logs:rw"
-      - "/data/quarantine/zim:/mnt/quarantine:rw"
+      - "/data/zimfarm-warehouse/quarantine:/mnt/quarantine:rw"
       - "/data/download/zim:/mnt/zim:rw"
     environment:
       - VALIDATION_OPTION=NO_CHECK
