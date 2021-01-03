@@ -10,6 +10,11 @@ proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"
 trusted_hosts[] = "stats.kiwix.org"
 salt = "6ec18ede240f7ff11fbfe7824eba62e3"
 assume_secure_protocol=1
+enable_processing_unique_visitors_day = 1
+enable_processing_unique_visitors_week = 1
+enable_processing_unique_visitors_month = 1
+enable_processing_unique_visitors_year = 1
+enable_processing_unique_visitors_range = 1
 
 [PluginsInstalled]
 PluginsInstalled[] = "Diagnostics"
