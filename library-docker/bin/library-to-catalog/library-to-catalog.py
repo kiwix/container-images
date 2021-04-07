@@ -73,6 +73,7 @@ def get_local_size(fpath):
 
 def get_zim_url(url):
     ''' convert .zim.meta4 url to .zim one '''
+    url = url.replace("://download.kiwix.org/", "://mirror.download.kiwix.org/")
     purl = urlparse(url)
     path = purl.path
     fname = os.path.basename(url)
