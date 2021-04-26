@@ -1,0 +1,97 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  library:
+    name: Deploy Library Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v5
+        with:
+          image-name: kiwix/library
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: library-docker
+          credentials:
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+  mirrorbrain:
+    name: Deploy mirrorbrain Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v5
+        with:
+          image-name: kiwix/mirrorbrain
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: mirrorbrain-docker
+          credentials:
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+  reverseproxy:
+    name: Deploy reverse-proxy Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v5
+        with:
+          image-name: kiwix/reverse-proxy
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: reverse-proxy-docker
+          credentials:
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+  rsyncd:
+    name: Deploy rsyncd Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v5
+        with:
+          image-name: kiwix/rsyncd
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: rsyncd-docker
+          credentials:
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+  matomologs:
+    name: Deploy matomo logs Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v5
+        with:
+          image-name: kiwix/matomo-log-analytics
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: matomo-log-analytics-docker
+          credentials:
+            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
