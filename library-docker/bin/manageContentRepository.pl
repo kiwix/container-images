@@ -279,6 +279,10 @@ sub writeRedirects {
     $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
     $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
 
+    # Kiwix Hotspot master images have been moved, see https://github.com/kiwix/kiwix-hotspot/issues/576
+    $content .= "/release/kiwix-hotspot/master-images/2021-04-20/hotspot-master_2021-04-20_80c5f8e.img.zip /release/kiwix-hotspot/master/kiwix-hostpot_master_2021-04-20.img.zip\n";
+    $content .= "/hotspots/base/hotspot-master_2019-08-24.img.zip /release/kiwix-hotspot/master/kiwix-hostpot_master_2019-08-24.img.zip\n";
+
     $content .= "/".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
     $content .= "/".$releaseDirectoryName."/kiwix-js-windows/kiwix-js-windows.appxbundle ".getLastRelease($releaseDirectory, "kiwix-js-windows_*.appxbundle")."\n";
