@@ -19,7 +19,7 @@ services:
     restart: always
 
   web:
-    image: kiwix/mirrorbrain
+    image: ghcr.io/kiwix/mirrorbrain
     container_name: mirrorbrain-web
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
@@ -63,7 +63,7 @@ services:
     restart: always
 
   update-db:
-    image: kiwix/mirrorbrain
+    image: ghcr.io/kiwix/mirrorbrain
     container_name: mirrorbrain-update
     volumes:
       - "/data/download:/var/www/download.kiwix.org"
@@ -75,7 +75,7 @@ services:
     restart: always
 
   library:
-    image: kiwix/library
+    image: ghcr.io/kiwix/library
     container_name: library
     volumes:
       - "/data/library:/var/www/library.kiwix.org"
@@ -90,7 +90,7 @@ services:
     restart: always
 
   reverse-proxy:
-    image: kiwix/reverse-proxy
+    image: ghcr.io/kiwix/reverse-proxy
     container_name: reverse-proxy
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
@@ -146,7 +146,7 @@ services:
     restart: always
 
   rsyncd:
-    image: kiwix/rsyncd
+    image: ghcr.io/kiwix/rsyncd
     container_name: rsyncd
     ports:
       - "873:873"
@@ -172,7 +172,7 @@ services:
     restart: always
 
   matomo-download:
-    image: kiwix/matomo-log-analytics
+    image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download
     volumes:
       - "/data/log/nginx:/var/log/nginx"
@@ -185,7 +185,7 @@ services:
       - matomo-token
     restart: always
   matomo-download_openzim:
-    image: kiwix/matomo-log-analytics
+    image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download_openzim
     volumes:
       - "/data/log/nginx:/var/log/nginx"

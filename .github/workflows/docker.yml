@@ -18,9 +18,8 @@ jobs:
           on-master: latest
           restrict-to: kiwix/maintenance
           context: library-docker
+          registries: ghcr.io
           credentials:
-            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
 
@@ -36,9 +35,8 @@ jobs:
           on-master: latest
           restrict-to: kiwix/maintenance
           context: mirrorbrain-docker
+          registries: ghcr.io
           credentials:
-            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
 
@@ -54,9 +52,8 @@ jobs:
           on-master: latest
           restrict-to: kiwix/maintenance
           context: reverse-proxy-docker
+          registries: ghcr.io
           credentials:
-            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
 
@@ -72,9 +69,8 @@ jobs:
           on-master: latest
           restrict-to: kiwix/maintenance
           context: rsyncd-docker
+          registries: ghcr.io
           credentials:
-            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
 
@@ -90,8 +86,7 @@ jobs:
           on-master: latest
           restrict-to: kiwix/maintenance
           context: matomo-log-analytics-docker
+          registries: ghcr.io
           credentials:
-            DOCKERIO_USERNAME=${{ secrets.DOCKERHUB_USERNAME }}
-            DOCKERIO_TOKEN=${{ secrets.DOCKERHUB_PASSWORD }}
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
