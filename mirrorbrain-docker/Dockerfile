@@ -1,4 +1,4 @@
-FROM httpd
+FROM httpd:2.4.43
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
