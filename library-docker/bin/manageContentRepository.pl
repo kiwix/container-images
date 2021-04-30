@@ -281,7 +281,8 @@ sub writeRedirects {
 
     # Kiwix Hotspot master images have been moved, see https://github.com/kiwix/kiwix-hotspot/issues/576
     $content .= "/release/kiwix-hotspot/master-images/2021-04-20/hotspot-master_2021-04-20_80c5f8e.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2021-04-22.img.zip\n";
-    $content .= "/hotspots/base/hotspot-master_2019-08-24.img.zip /release/kiwix-hotspot/master/kiwix-hostpot_master_2019-08-24.img.zip\n";
+    $content .= "/hotspots/base/hotspot-master_2019-08-24.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2019-08-24.img.zip\n";
+    $content .= "/release/kiwix-hotspot/master/kiwix-hostpot_master_2021-04-27.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2021-04-27.img.zip\n";
 
     $content .= "/".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
