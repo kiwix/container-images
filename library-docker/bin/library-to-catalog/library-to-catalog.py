@@ -12,6 +12,10 @@ import hashlib
 import xml.etree.ElementTree as ET
 
 import yaml
+try:
+    from yaml import CSafeDumper as Dumper
+except ImportError:
+    from yaml import SafeDumper as Dumper
 import requests
 import pycountry
 
@@ -35,6 +39,7 @@ logger.setLevel(logging.DEBUG)
 
 with_checksum = True  # debug only
 with_size = True  # debug only
+
 
 def get_remote_checksum(url):
     ''' retrieve SHA-256 checksum of download using special mirrorbrain url '''
@@ -70,6 +75,7 @@ def get_remote_size(url):
 def get_local_size(fpath):
     ''' size in bytes of a local file '''
     return os.path.getsize(fpath)
+
 
 def get_zim_url(url):
     ''' convert .zim.meta4 url to .zim one '''
@@ -225,13 +231,14 @@ def convert(library_fpath, catalog_fpath, local_repository=False):
             'type': "zim",
             'langid': langid,
         }
+        if "_sw:yes" in tags:
+            catalog[langid].update({"sw": "y"})
 
     logger.info("finished parsing {nb} entries".format(nb=len(catalog.keys())))
 
     logger.info("dumping yaml content to file `{}`".format(catalog_fpath))
     with open(catalog_fpath, 'w') as fd:
-        yaml.safe_dump({'all': catalog}, fd,
-                       default_flow_style=False)
+        yaml.dump({'all': catalog}, fd, default_flow_style=False, Dumper=Dumper)
 
     logger.info("done converting library to catalog.")
 
