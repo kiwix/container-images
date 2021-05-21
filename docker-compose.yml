@@ -171,6 +171,17 @@ services:
       - "1522:22"
     restart: always
 
+  zimfarm-watcher:
+    image: openzim/zimfarm-watcher
+    container_name: zimfarm-watcher
+    command: watcher --debug --dir /data --threads 10 --zimfarm-username stackwatcher --dont-schedule-on-update --every 1d
+    volumes:
+      - "/data/download/zimfarm-watcher:/data:rw"
+    secrets:
+      - s3_url
+      - zimfarm_password
+    restart: always
+
   matomo-download:
     image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download
@@ -205,6 +216,10 @@ secrets:
     file: ./matomo-token.txt
   wiki-password:
     file: ./wiki-password.txt
+  s3_url:
+    file: ./zimfarm-watcher-s3_url.txt
+  zimfarm_password:
+    file: ./zimfarm-watcher-zimfarm_password.txt
 networks:
   default:
     name: kiwix.org
