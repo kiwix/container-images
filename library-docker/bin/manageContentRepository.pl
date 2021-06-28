@@ -228,7 +228,7 @@ sub writeWiki {
     writeFile($zimDirectory."/.contentPage.wiki", $content);
 }
 
-# Write http://download.kiwix.org .htaccess for better html page
+# Write https://download.kiwix.org .htaccess for better html page
 # descriptions of permalinks (pointing always to the last up2date
 # content)
 sub writeHtaccess {
@@ -401,7 +401,7 @@ sub writeLibrary {
         my $core = $_;
         my $entry = $sortedContent{$core}->[$i];
         my $zimPath = $entry->{zim};
-        my $permalink = "http://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
+        my $permalink = "https://download.kiwix.org".substr($entry->{zim}, length($contentDirectory)).".meta4";
         my $cmd = "$kiwixManagePath $tmpZimLibraryPath add $zimPath --zimPathToSave=\"\" --url=$permalink";
         system($cmd) == 0
             or print STDERR "Unable to put $zimPath to XML library: $cmd\n";
