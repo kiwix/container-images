@@ -89,6 +89,19 @@ services:
       - wiki-password
     restart: always
 
+  dev-library:
+    image: kiwix/kiwix-tools
+    command: /bin/sh -c "kiwix-serve /data/*.zim"
+    container_name: dev-library
+    volumes:
+      - "/data/download/zim/.hidden/dev:/data:ro"
+    environment:
+      - VIRTUAL_HOST=dev.library.kiwix.org
+      - LETSENCRYPT_HOST=dev.library.kiwix.org
+      - LETSENCRYPT_EMAIL=contact@kiwix.org
+      - HTTPS_METHOD=noredirect
+    restart: always
+
   reverse-proxy:
     image: ghcr.io/kiwix/reverse-proxy
     container_name: reverse-proxy
