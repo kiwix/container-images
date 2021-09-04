@@ -90,7 +90,7 @@ services:
     restart: always
 
   dev-library:
-    image: kiwix/kiwix-tools
+    image: rgaudin/kiwix-tools:nightly
     command: /bin/sh -c "kiwix-serve /data/*.zim"
     container_name: dev-library
     volumes:
