@@ -204,6 +204,7 @@ services:
     secrets:
       - drive-password
     environment:
+      - HTTPS_METHOD=redirect
       - VIRTUAL_HOST=drive.farm.openzim.org
       - LETSENCRYPT_HOST=drive.farm.openzim.org
       - LETSENCRYPT_EMAIL=contact@openzim.org
