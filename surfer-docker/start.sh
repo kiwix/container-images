@@ -5,7 +5,6 @@ set -eu
 echo "Reading secrets"
 for secret in drive-password
 do
-
     if [ -f /run/secrets/$secret ]
     then
         varname=$(echo $secret | sed 's/.*-//' | tr a-z A-Z) # drive-password -> PASSWORD
