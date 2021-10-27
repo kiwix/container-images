@@ -21,7 +21,7 @@ RUN wget https://git.cloudron.io/cloudron/surfer/-/archive/master/surfer-master.
 RUN npm install \
   && npm run build
 
-ADD start.sh .config.json .users.json /app/
+ADD start.sh .config.json /app/
 
 EXPOSE 3000
 
