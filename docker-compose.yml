@@ -116,8 +116,8 @@ services:
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
     environment:
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org,drive.farm.openzim.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org,drive.farm.openzim.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
@@ -195,6 +195,21 @@ services:
       - zimfarm_password
     restart: always
 
+  zimfarm-drive:
+    image: ghcr.io/openzim/surfer
+    container_name: zimfarm-drive
+    volumes:
+      - "/data/zimfarm-drive:/data"
+    secrets:
+      - zimfarm-drive-password
+    environment:
+      - VIRTUAL_HOST=drive.farm.openzim.org
+      - LETSENCRYPT_HOST=drive.farm.openzim.org
+      - LETSENCRYPT_EMAIL=contact@openzim.org
+    ports:
+      - "3000:3000"
+    restart: always
+
   matomo-download:
     image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download
@@ -208,6 +223,7 @@ services:
     secrets:
       - matomo-token
     restart: always
+
   matomo-download_openzim:
     image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download_openzim
@@ -252,6 +268,8 @@ secrets:
     file: ./zimfarm-watcher-s3_url.txt
   zimfarm_password:
     file: ./zimfarm-watcher-zimfarm_password.txt
+  zimfarm-drive-password:
+    file: ./secrets/zimfarm-drive/password.txt
 networks:
   default:
     name: kiwix.org
