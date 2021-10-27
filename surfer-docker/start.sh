@@ -15,6 +15,7 @@ do
 done
 
 echo "Configure 'admin' credentials"
+rm -f .users.json
 ./admin user-add --username "admin" --password "$PASSWORD" || true
 
 echo "Start the server..."
