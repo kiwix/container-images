@@ -1,4 +1,5 @@
 FROM node:16-bullseye
+LABEL org.opencontainers.image.source https://github.com/kiwix/maintenance
 
 ENV PASSWORD "admin"
 
