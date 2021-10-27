@@ -7,7 +7,7 @@ Web user and WebDAV online drive to store files.
 
 Start a container with:
 ```bash
-docker run -p 3000:3000 -e "PASSWORD=foobar" ghcr.io/openzim/surfer
+docker run -p 80:3000 -e "PASSWORD=foobar" -v /my_data_dir:/data ghcr.io/openzim/surfer
 ```
 
 To connect to the admin dashboard use admin / PASSWORD credentials.

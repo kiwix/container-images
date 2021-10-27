@@ -1,7 +1,12 @@
+ARG VERSION=latest
+
 FROM node:16-bullseye
 
 RUN mkdir /app
 WORKDIR /app
+
+RUN mkdir /data
+VOLUME /data
 
 RUN wget https://git.cloudron.io/cloudron/surfer/-/archive/master/surfer-master.tar.gz \
   && tar -xvf surfer-master.tar.gz --strip=1 \
