@@ -202,7 +202,7 @@ services:
     volumes:
       - "/data/zimfarm-drive:/data"
     secrets:
-      - zimfarm-drive-password
+      - drive-password
     environment:
       - VIRTUAL_HOST=drive.farm.openzim.org
       - LETSENCRYPT_HOST=drive.farm.openzim.org
@@ -269,7 +269,7 @@ secrets:
     file: ./zimfarm-watcher-s3_url.txt
   zimfarm_password:
     file: ./zimfarm-watcher-zimfarm_password.txt
-  zimfarm-drive-password:
+  drive-password:
     file: ./zimfarm-drive-password.txt
 networks:
   default:
