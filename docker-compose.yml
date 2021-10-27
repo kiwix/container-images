@@ -270,7 +270,7 @@ secrets:
   zimfarm_password:
     file: ./zimfarm-watcher-zimfarm_password.txt
   zimfarm-drive-password:
-    file: ./secrets/zimfarm-drive/password.txt
+    file: ./zimfarm-drive-password.txt
 networks:
   default:
     name: kiwix.org

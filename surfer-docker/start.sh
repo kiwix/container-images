@@ -3,12 +3,12 @@
 set -eu
 
 echo "Reading secrets"
-for secret in password
+for secret in drive-password
 do
 
     if [ -f /run/secrets/$secret ]
     then
-        varname=$(echo $secret | tr a-z A-Z)
+        varname=$(echo $secret | sed 's/.*-//' | tr a-z A-Z) # drive-password -> PASSWORD
         echo "[entrypoint] exposing ${secret} secret as ${varname}"
         export $varname=$(cat /run/secrets/$secret)
     fi
