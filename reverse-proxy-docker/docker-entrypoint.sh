@@ -31,12 +31,13 @@ if [ "$socketMissing" = 1 -a "$1" = forego -a "$2" = start -a "$3" = '-r' ]; the
 fi
 
 { \
-   echo "client_max_body_size 8192m;" ; \
+  echo "client_max_body_size 8192m;" ; \
+  #echo "" ; \
 } > /etc/nginx/vhost.d/drive.farm.openzim.org
 
-
 { \
-   echo "limit_req zone=limit burst=100;" ; \
+  echo "limit_req zone=limit burst=100;" ; \
+  #echo "" ; \
 } > /etc/nginx/vhost.d/library.kiwix.org
 
 { \
