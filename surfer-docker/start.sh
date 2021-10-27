@@ -2,7 +2,6 @@
 
 set -eu
 
-echo "Reading secrets"
 for secret in drive-password
 do
     if [ -f /run/secrets/$secret ]
@@ -13,7 +12,14 @@ do
     fi
 done
 
-echo "Configure 'admin' credentials"
+if [ -z "${PASSWORD}" ] ;
+then
+    echo "PASSWORD environment variable missing."
+    exit 1
+fi
+
+
+echo "Adding 'admin' users"
 rm -f .users.json
 ./admin user-add --username "admin" --password "$PASSWORD" || true
 

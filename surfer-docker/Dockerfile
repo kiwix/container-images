@@ -1,11 +1,9 @@
-ARG VERSION=latest
-
 FROM node:16-bullseye
 
-RUN mkdir /app
-WORKDIR /app
+ENV PASSWORD "admin"
 
-RUN mkdir /data
+RUN mkdir /app /data
+WORKDIR /app
 VOLUME /data
 
 RUN wget https://git.cloudron.io/cloudron/surfer/-/archive/master/surfer-master.tar.gz \
@@ -21,13 +19,12 @@ RUN wget https://git.cloudron.io/cloudron/surfer/-/archive/master/surfer-master.
       surfer-master/package.json \
       surfer-master/package-lock.json \
   && rm surfer-master.tar.gz \
-  && sed -i '/chromedriver/d' package.json
+  && sed -i '/chromedriver/d' package.json \
+  && sed -i 's/listen(3000/listen(80/g' server.js
 
-RUN npm install \
-  && npm run build
-
+RUN npm install && npm run build
 ADD start.sh .config.json /app/
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD [ "/app/start.sh" ]

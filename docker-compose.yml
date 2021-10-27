@@ -207,8 +207,6 @@ services:
       - VIRTUAL_HOST=drive.farm.openzim.org
       - LETSENCRYPT_HOST=drive.farm.openzim.org
       - LETSENCRYPT_EMAIL=contact@openzim.org
-    ports:
-      - "3000:3000"
     restart: always
 
   matomo-download:

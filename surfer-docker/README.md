@@ -1,13 +1,11 @@
-Own network "drive" with Surfer
-===============================
+# Shared files access using Surfer
 
-This is a custom `Dockerfile` using
-[Surfer](https://git.cloudron.io/cloudron/surfer) providing a simple
-Web user and WebDAV online drive to store files.
+Custom [Surfer](https://git.cloudron.io/cloudron/surfer) container with configurable Admin password via docker secrets to share common files publicly for other tools such as [Zimfarm](https://github.com/openzim/zimfarm).
 
-Start a container with:
-```bash
-docker run -p 80:3000 -e "PASSWORD=foobar" -v /my_data_dir:/data ghcr.io/openzim/surfer
+## Usage
+
+```sh
+docker run -p 8080:80 -e "PASSWORD=foobar" -v /my_data_dir:/data ghcr.io/openzim/surfer
 ```
 
-To connect to the admin dashboard use admin / PASSWORD credentials.
+Connect to admin dashboard using admin / admin (default) or your specified password.
