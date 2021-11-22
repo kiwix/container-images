@@ -7,6 +7,10 @@ server {
     listen *:80;
     server_name monitoring.openzim.org;
 
+    root /usr/share/nginx/html/;
+
+    include /etc/nginx/vhost.d/default;
+
     location / {
         proxy_set_header X-Forwarded-Host $host;
         proxy_set_header X-Forwarded-Server $host;

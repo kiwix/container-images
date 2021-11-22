@@ -117,8 +117,8 @@ services:
       - "/data/certs:/etc/nginx/certs:ro"
       - "/data/log/nginx:/var/log/nginx"
     environment:
-      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org,drive.farm.openzim.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org,drive.farm.openzim.org
+      - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
@@ -134,7 +134,7 @@ services:
     restart: always
 
   letsencrypt:
-    image: jrcs/letsencrypt-nginx-proxy-companion
+    image: nginxproxy/acme-companion:v1.13
     container_name: letsencrypt
     depends_on:
       - reverse-proxy

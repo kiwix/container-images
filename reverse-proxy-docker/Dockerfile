@@ -1,4 +1,4 @@
-FROM jwilder/nginx-proxy:0.9.0
+FROM nginxproxy/nginx-proxy:0.9
 
 RUN apt-get update && apt-get install -y --no-install-recommends cron logrotate python3 curl patch
 
