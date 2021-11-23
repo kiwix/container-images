@@ -190,7 +190,7 @@ services:
     container_name: zimfarm-watcher
     command: watcher --debug --dir /data --threads 10 --zimfarm-username stackwatcher --dont-schedule-on-update --every 1d
     volumes:
-      - "/data/download/zimfarm-watcher:/data:rw"
+      - "/data/zimfarm-watcher:/data:rw"
     secrets:
       - s3_url
       - zimfarm_password
