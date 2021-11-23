@@ -13,7 +13,7 @@ services:
     image: kiwix/borg-backup
     container_name: mirrorbrain-backup
     links:
-      - db
+      - db:mirrorbrain-db
     env_file:
       - .env_mirrorbrain_backup
     restart: always
@@ -38,7 +38,7 @@ services:
         aliases:
           - download
     links:
-      - db
+      - db:mirrorbrain-db
     restart: always
 
   download-backup:
@@ -72,7 +72,7 @@ services:
     environment:
       - UPDATE_DB=1
     links:
-      - db
+      - db:mirrorbrain-db
     restart: always
 
   library:
