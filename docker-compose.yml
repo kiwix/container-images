@@ -210,6 +210,20 @@ services:
       - LETSENCRYPT_EMAIL=contact@openzim.org
     restart: always
 
+  offspot-drive:
+    image: ghcr.io/openzim/surfer
+    container_name: offspot-drive
+    volumes:
+      - "/data/offspot-drive:/data"
+    secrets:
+      - drive-password
+    environment:
+      - HTTPS_METHOD=redirect
+      - VIRTUAL_HOST=drive.offspot.it
+      - LETSENCRYPT_HOST=drive.offspot.it
+      - LETSENCRYPT_EMAIL=contact@openzim.org
+    restart: always
+
   matomo-download:
     image: ghcr.io/kiwix/matomo-log-analytics
     container_name: matomo-log-analytics_download
