@@ -59,6 +59,7 @@ services:
       - "/data/download/release:/storage/kiwix/release:ro"
       - "/data/download/screenshots:/storage/kiwix/screenshots:ro"
       - "/data/zimfarm-drive:/storage/zimfarm-drive:ro"
+      - "/data/offspot-drive:/storage/offspot-drive:ro"
     env_file:
       - .env_download_backup
     restart: always
