@@ -59,6 +59,7 @@ services:
       - "/data/download/release:/storage/kiwix/release:ro"
       - "/data/download/screenshots:/storage/kiwix/screenshots:ro"
       - "/data/zimfarm-drive:/storage/zimfarm-drive:ro"
+      - "/data/offspot-drive:/storage/offspot-drive:ro"
     env_file:
       - .env_download_backup
     restart: always
@@ -207,6 +208,20 @@ services:
       - HTTPS_METHOD=redirect
       - VIRTUAL_HOST=drive.farm.openzim.org
       - LETSENCRYPT_HOST=drive.farm.openzim.org
+      - LETSENCRYPT_EMAIL=contact@openzim.org
+    restart: always
+
+  offspot-drive:
+    image: ghcr.io/openzim/surfer
+    container_name: offspot-drive
+    volumes:
+      - "/data/offspot-drive:/data"
+    secrets:
+      - drive-password
+    environment:
+      - HTTPS_METHOD=redirect
+      - VIRTUAL_HOST=drive.offspot.it
+      - LETSENCRYPT_HOST=drive.offspot.it
       - LETSENCRYPT_EMAIL=contact@openzim.org
     restart: always
 
