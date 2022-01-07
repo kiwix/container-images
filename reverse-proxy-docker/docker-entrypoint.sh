@@ -36,6 +36,11 @@ fi
 } > /etc/nginx/vhost.d/drive.farm.openzim.org
 
 { \
+  echo "client_max_body_size 8192m;" ; \
+  #echo "" ; \
+} > /etc/nginx/vhost.d/drive.offspot.it
+
+{ \
   echo "limit_req zone=limit burst=100;" ; \
   #echo "" ; \
 } > /etc/nginx/vhost.d/library.kiwix.org
