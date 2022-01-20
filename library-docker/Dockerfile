@@ -4,7 +4,7 @@ FROM debian:buster-slim
 #
 LABEL maintainer="kiwix"
 
-ENV VERSION_KIWIX_TOOLS 3.1.2-4
+ENV VERSION_KIWIX_TOOLS 3.2.0
 ENV LIBRARY_DIR /var/www/library.kiwix.org
 ENV VERSION_VARNISH 6.4.0-1~buster_amd64
 ENV VARNISH_SECRET notset
