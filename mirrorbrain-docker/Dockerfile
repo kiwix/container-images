@@ -12,7 +12,7 @@ ENV GEOIP_VERSION 1.6.12
 ENV MOD_GEOPIP_VERSION 1.2.10
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl 
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl
 RUN pip install cmdln
 
 #Copy owned base config file for apache
@@ -46,7 +46,7 @@ RUN { \
 #Install MirrorBrain from sources
 COPY patch/mod_form.c mod_form.c.patch
 RUN { \
-  wget --no-check-certificate -qO - https://mirrorbrain.org/files/releases/mirrorbrain-$MB_VERSION.tar.gz | tar -xz ; \
+  wget --no-check-certificate -qO - https://github.com/poeml/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz ; \
   cd mirrorbrain-$MB_VERSION/mod_mirrorbrain ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c ; \
