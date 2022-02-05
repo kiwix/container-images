@@ -151,7 +151,7 @@ def convert(library_fpath, catalog_fpath, local_repository=False):
         version = ga('date')
         name = clean(ga('title'))
         description = clean(ga('description'))
-        meta_url = ga('url')  # URL to zim.meta4 file
+        meta_url = ga('url').replace("https://", "http://")  # URL to zim.meta4 file
         bid = ga('id') or "none_not-found-in-library.xml"  # unique book ID
 
         # update title for tags
