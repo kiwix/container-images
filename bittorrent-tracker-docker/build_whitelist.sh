@@ -31,3 +31,6 @@ cat /dev/shm/new_offline_whitelisted_files.tsv >> "${OFFLINE_WHITELISTED_FILES}"
 
 # Create Opentracker whitelist of hashes
 cat "${OFFLINE_WHITELISTED_FILES}" | cut -f 3 | sort -u > "${OPENTRACKER_WHITELIST}"
+
+# Request opentracker to reload list
+kill -s HUP `pidof opentracker`
