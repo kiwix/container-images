@@ -30,8 +30,9 @@ RUN apk add --no-cache \
 COPY ./opentracker.conf /etc/opentracker/opentracker.conf
 COPY ./whitelist.txt /etc/opentracker/whitelist.txt
 COPY ./blacklist.txt /etc/opentracker/blacklist.conf
-COPY ./build_whitelist.sh /usr/bin/build_whitelist.sh
+COPY ./build_whitelist.sh /etc/cron.hourly/build_whitelist.sh
+COPY ./start.sh /start.sh
 
 EXPOSE 6969
 
-CMD opentracker -f /etc/opentracker/opentracker.conf
+CMD /start.sh
