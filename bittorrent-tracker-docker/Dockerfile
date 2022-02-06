@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:3.15
 
-MAINTAINER Lednerb <code@lednerb.de>
+MAINTAINER Emmanuel Engelhart <kelson@kiwix.org>
 
 WORKDIR /tmp
 
