@@ -28,8 +28,9 @@ RUN apk add --no-cache \
 	&& rm -rf /var/cache/apk/* /tmp/* 
 
 COPY ./opentracker.conf /etc/opentracker/opentracker.conf
-COPY ./whitelist.txt	/etc/opentracker/whitelist.txt
-COPY ./blacklist.txt	/etc/opentracker/blacklist.conf
+COPY ./whitelist.txt /etc/opentracker/whitelist.txt
+COPY ./blacklist.txt /etc/opentracker/blacklist.conf
+COPY ./build_whitelist.sh /usr/bin/build_whitelist.sh
 
 EXPOSE 6969
 
