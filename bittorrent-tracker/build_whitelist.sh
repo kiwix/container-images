@@ -8,7 +8,7 @@ ONLINE_META4_URLS=`curl --silent https://library.kiwix.org/catalog/root.xml | xm
 echo "${ONLINE_META4_URLS}" | sort > /dev/shm/online_meta4_urls.tsv
 
 # Extract Metalink URLs from local list
-if [ ! -s "${OFFLINE_WHITELISTED_FILES}" ] ; then touch "${OFFLINE_WHITELISTED_FILES}" ; fi
+if [ ! -s "${OFFLINE_WHITELISTED_FILES}" ] ; then exit 1 ; fi
 cat "${OFFLINE_WHITELISTED_FILES}" | cut -f 2 | sort > /dev/shm/offline_meta4_urls.tsv
 
 # Extract new Metalink URLs, exit if empty
