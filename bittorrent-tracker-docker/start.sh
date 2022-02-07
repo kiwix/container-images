@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 echo "Starting cron..."
 service cron start
 
