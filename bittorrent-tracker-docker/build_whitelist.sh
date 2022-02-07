@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 OFFLINE_WHITELISTED_FILES=/etc/opentracker/offline_whitelisted_files.tsv
 OPENTRACKER_WHITELIST=/etc/opentracker/whitelist.txt
 
@@ -25,6 +27,7 @@ do
   CURRENT_TIME=`date +%s`
   echo "${CURRENT_TIME}\t${META4_URL}\t${BTIH_DATA}" >> /dev/shm/new_offline_whitelisted_files.tsv
 done
+if [ ! -s /dev/shm/new_offline_whitelisted_files.tsv ] ; then exit 0 ; fi
 
 # Concatenate with local list
 cat /dev/shm/new_offline_whitelisted_files.tsv >> "${OFFLINE_WHITELISTED_FILES}"
