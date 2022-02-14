@@ -119,7 +119,7 @@ services:
       - "/data/log/nginx:/var/log/nginx"
     environment:
       - VIRTUAL_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
-      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org,monitoring.openzim.org
+      - LETSENCRYPT_HOST=download.openzim.org,mirror.download.kiwix.org,tmp.kiwix.org
       - LETSENCRYPT_EMAIL=contact@kiwix.org
       - HTTPS_METHOD=noredirect
     labels:
