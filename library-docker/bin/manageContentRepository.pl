@@ -273,9 +273,9 @@ sub writeRedirects {
 
     $content .= "/".$releaseDirectoryName."/kiwix-desktop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux-*.tar.gz")."\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos-*.dmg")."\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64-*.exe")."\n";
 
     # Kiwix Hotspot master images have been moved, see https://github.com/kiwix/kiwix-hotspot/issues/576
     $content .= "/release/kiwix-hotspot/master-images/2021-04-20/hotspot-master_2021-04-20_80c5f8e.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2021-04-22.img.zip\n";
