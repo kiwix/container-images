@@ -89,7 +89,6 @@ if ($showHelp) {
 # Parse the "zim" directories
 my @files = split /\n/, `find "$zimDirectory" -name "*.zim" | grep -v "/\\."`;
 for my $file (@files) {
-    print "$file\n";
     if ($file =~ /^.*\/([^\/]+)\.zim$/i) {
         my $basename = $1;
         my $core = $basename;
@@ -274,15 +273,9 @@ sub writeRedirects {
 
     $content .= "/".$releaseDirectoryName."/kiwix-desktop-macos/kiwix-desktop-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-desktop-macos_*.dmg")."\n";
 
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
-
-    # Kiwix Hotspot master images have been moved, see https://github.com/kiwix/kiwix-hotspot/issues/576
-    $content .= "/release/kiwix-hotspot/master-images/2021-04-20/hotspot-master_2021-04-20_80c5f8e.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2021-04-22.img.zip\n";
-    $content .= "/hotspots/base/hotspot-master_2019-08-24.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2019-08-24.img.zip\n";
-    $content .= "/release/kiwix-hotspot/master/kiwix-hostpot_master_2021-04-27.img.zip /release/kiwix-hotspot/master/kiwix-hotspot_master_2021-04-27.img.zip\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux-*.tar.gz")."\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos-*.dmg")."\n";
+    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64-*.exe")."\n";
 
     $content .= "/".$releaseDirectoryName."/kiwix-android/kiwix.apk ".getLastRelease($releaseDirectory, "kiwix-*.apk")."\n";
 
