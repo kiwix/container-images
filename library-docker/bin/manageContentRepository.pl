@@ -275,7 +275,6 @@ sub writeRedirects {
 
     $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-linux.tar.gz ".getLastRelease($releaseDirectory, "kiwix-hotspot-linux.tar.gz")."\n";
     $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-macos.dmg ".getLastRelease($releaseDirectory, "kiwix-hotspot-macos.dmg")."\n";
-    $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win32.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win32.exe")."\n";
     $content .= "/".$releaseDirectoryName."/kiwix-hotspot/kiwix-hotspot-win64.exe ".getLastRelease($releaseDirectory, "kiwix-hotspot-win64.exe")."\n";
 
     # Kiwix Hotspot master images have been moved, see https://github.com/kiwix/kiwix-hotspot/issues/576
