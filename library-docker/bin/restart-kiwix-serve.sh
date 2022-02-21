@@ -5,7 +5,7 @@ export PATH=/usr/local/bin:/usr/sbin:$PATH
 start () {
   stop
   echo "Starting kiwix-serve..."
-  kiwix-serve --daemon --port=8000 --library --threads=16 --nodatealias /var/www/library.kiwix.org/library.kiwix.org.xml
+  kiwix-serve --daemon --port=8000 --library --monitorLibrary --threads=16 --nodatealias /var/www/library.kiwix.org/library.kiwix.org.xml
   is_loaded
   if [ $? -eq 0 ] ; then
     echo "kiwix-serve ready, clearing varnish cache"
