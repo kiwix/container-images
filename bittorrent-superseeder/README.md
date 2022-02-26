@@ -26,3 +26,7 @@ Refers to https://hub.docker.com/r/linuxserver/qbittorrent
 
 Launch companion
 ----------------
+
+```
+docker run --network="host" --name=qbittorrent-zim-superseeder openzim/qbittorrent-zim-superseeder
+```

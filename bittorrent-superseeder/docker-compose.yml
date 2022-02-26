@@ -1,0 +1,22 @@
+version: '3.5'
+services:
+
+  qbittorrent:
+    image: linuxserver/qbittorrent:4.4.1
+    container_name: qbittorrent
+    volumes:
+      - "/tmp/downloads:/downloads"
+    ports:
+      - "6881:6881/udp"
+      - "6881:6881/tcp"
+      - "8080:8080/tcp"
+    restart: always
+
+  qbittorrent-zim-superseeder:
+    image: openzim/qbittorrent-zim-superseeder
+    container_name: qbittorrent-zim-superseeder
+    restart: always
+
+networks:
+  default:
+    name: qbittorrent-zim-superseeder

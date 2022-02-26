@@ -9,4 +9,5 @@ printf "
 service cron start && crontab /etc/crontab
 
 echo "Listening to cron logs..."
+sleep 2
 tail -f /var/log/sync_superseeder.log

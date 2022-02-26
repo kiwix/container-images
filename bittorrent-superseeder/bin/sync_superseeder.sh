@@ -5,7 +5,7 @@ set -e
 FEED_URL="https://library.kiwix.org/catalog/search?count=20"
 CURL="curl -s"
 QBT="qbt"
-QBT_CREDENTIALS="--username admin --password adminadmin --url http://localhost:8080"
+QBT_CREDENTIALS="--username admin --password adminadmin --url http://qbittorrent:8080"
 
 ONLINE_ZIM_URLS="/dev/shm/online_zim_urls.tsv"
 ONLINE_ZIM_PATHS="/dev/shm/online_zim_paths.tsv"
