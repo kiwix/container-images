@@ -2,7 +2,7 @@
 
 set -e
 
-FEED_URL="https://library.kiwix.org/catalog/search?count=10"
+FEED_URL="https://library.kiwix.org/catalog/search?count=20"
 CURL="curl -s"
 QBT="qbt"
 QBT_CREDENTIALS="--username admin --password adminadmin --url http://localhost:8080"
