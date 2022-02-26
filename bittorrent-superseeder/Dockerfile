@@ -17,3 +17,8 @@ RUN apt update 2> /dev/null && \
     apt clean -y && \
     rm -rf /var/lib/apt/lists/*
 
+# Install start script
+COPY bin/ /usr/local/bin/
+RUN chmod -R 0500 /usr/local/bin/*
+
+ENTRYPOINT ["start.sh"]
