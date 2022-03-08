@@ -31,7 +31,7 @@ printf "
 * * * * * root /usr/local/bin/restart-kiwix-serve.sh
 " >> /etc/crontab
 
-service cron start && crontab /etc/crontab
+service cron start
 
 # record varnish secret if not on compose
 if [ -f /run/secrets/varnish ]
