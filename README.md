@@ -15,7 +15,7 @@ Remove containers
 
 `docker-compose -p kiwix down`
 
-List of avaible container
+List of available containers
 =========================
 
 - web
