@@ -16,7 +16,7 @@ start () {
 stop () {
   echo "Stopping kiwix-serve..."
   # kills all kiwix-serve instances if present. nothing if not
-  kill -9 $(pidof kiwix-serve) > /dev/null 2>&1
+  kill -TERM $(pidof kiwix-serve) > /dev/null 2>&1
 }
 
 test_url_until () {
