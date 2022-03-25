@@ -91,18 +91,18 @@ services:
       - wiki-password
     restart: always
 
-  dev-library:
-    image: rgaudin/kiwix-tools:nightly
-    command: /bin/sh -c "kiwix-serve /data/*.zim"
-    container_name: dev-library
-    volumes:
-      - "/data/download/zim/.hidden/dev:/data:ro"
-    environment:
-      - VIRTUAL_HOST=dev.library.kiwix.org
-      - LETSENCRYPT_HOST=dev.library.kiwix.org
-      - LETSENCRYPT_EMAIL=contact@kiwix.org
-      - HTTPS_METHOD=noredirect
-    restart: always
+  # dev-library:
+  #   image: rgaudin/kiwix-tools:nightly
+  #   command: /bin/sh -c "kiwix-serve /data/*.zim"
+  #   container_name: dev-library
+  #   volumes:
+  #     - "/data/download/zim/.hidden/dev:/data:ro"
+  #   environment:
+  #     - VIRTUAL_HOST=dev.library.kiwix.org
+  #     - LETSENCRYPT_HOST=dev.library.kiwix.org
+  #     - LETSENCRYPT_EMAIL=contact@kiwix.org
+  #     - HTTPS_METHOD=noredirect
+  #   restart: always
 
   reverse-proxy:
     image: ghcr.io/kiwix/reverse-proxy
@@ -197,33 +197,33 @@ services:
       - zimfarm_password
     restart: always
 
-  zimfarm-drive:
-    image: ghcr.io/openzim/surfer
-    container_name: zimfarm-drive
-    volumes:
-      - "/data/zimfarm-drive:/data"
-    secrets:
-      - drive-password
-    environment:
-      - HTTPS_METHOD=redirect
-      - VIRTUAL_HOST=drive.farm.openzim.org
-      - LETSENCRYPT_HOST=drive.farm.openzim.org
-      - LETSENCRYPT_EMAIL=contact@openzim.org
-    restart: always
+  # zimfarm-drive:
+  #   image: ghcr.io/openzim/surfer
+  #   container_name: zimfarm-drive
+  #   volumes:
+  #     - "/data/zimfarm-drive:/data"
+  #   secrets:
+  #     - drive-password
+  #   environment:
+  #     - HTTPS_METHOD=redirect
+  #     - VIRTUAL_HOST=drive.farm.openzim.org
+  #     - LETSENCRYPT_HOST=drive.farm.openzim.org
+  #     - LETSENCRYPT_EMAIL=contact@openzim.org
+  #   restart: always
 
-  offspot-drive:
-    image: ghcr.io/openzim/surfer
-    container_name: offspot-drive
-    volumes:
-      - "/data/offspot-drive:/data"
-    secrets:
-      - drive-password
-    environment:
-      - HTTPS_METHOD=redirect
-      - VIRTUAL_HOST=drive.offspot.it
-      - LETSENCRYPT_HOST=drive.offspot.it
-      - LETSENCRYPT_EMAIL=contact@openzim.org
-    restart: always
+  # offspot-drive:
+  #   image: ghcr.io/openzim/surfer
+  #   container_name: offspot-drive
+  #   volumes:
+  #     - "/data/offspot-drive:/data"
+  #   secrets:
+  #     - drive-password
+  #   environment:
+  #     - HTTPS_METHOD=redirect
+  #     - VIRTUAL_HOST=drive.offspot.it
+  #     - LETSENCRYPT_HOST=drive.offspot.it
+  #     - LETSENCRYPT_EMAIL=contact@openzim.org
+  #   restart: always
 
   matomo-download:
     image: ghcr.io/kiwix/matomo-log-analytics
@@ -253,24 +253,24 @@ services:
       - matomo-token
     restart: always
 
-  monitoring:
-    build: ./netdata
-    container_name: monitoring
-    volumes:
-      - "/data/monitoring/cache:/var/cache/netdata"
-      - "/etc/passwd:/host/etc/passwd:ro"
-      - "/etc/group:/host/etc/group:ro"
-      - "/proc:/host/proc:ro"
-      - "/sys:/host/sys:ro"
-      - "/etc/os-release:/host/etc/os-release:ro"
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-    ports:
-      - "19999:19999"
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - apparmor=unconfined
-    restart: always
+  # monitoring:
+  #   build: ./netdata
+  #   container_name: monitoring
+  #   volumes:
+  #     - "/data/monitoring/cache:/var/cache/netdata"
+  #     - "/etc/passwd:/host/etc/passwd:ro"
+  #     - "/etc/group:/host/etc/group:ro"
+  #     - "/proc:/host/proc:ro"
+  #     - "/sys:/host/sys:ro"
+  #     - "/etc/os-release:/host/etc/os-release:ro"
+  #     - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  #   ports:
+  #     - "19999:19999"
+  #   cap_add:
+  #     - SYS_PTRACE
+  #   security_opt:
+  #     - apparmor=unconfined
+  #   restart: always
 
 volumes:
   vhost:
