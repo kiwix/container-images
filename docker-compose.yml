@@ -232,7 +232,7 @@ services:
       - "/data/log/nginx:/var/log/nginx"
     environment:
       - ID_SITE=2
-      - URL=http://stats.kiwix.org
+      - URL=https://stats.kiwix.org
       - LOG=/var/log/nginx/access.log
       - HOST=download.kiwix.org
     secrets:
@@ -246,7 +246,7 @@ services:
       - "/data/log/nginx:/var/log/nginx"
     environment:
       - ID_SITE=6
-      - URL=http://stats.kiwix.org
+      - URL=https://stats.kiwix.org
       - LOG=/var/log/nginx/access.log
       - HOST=download.openzim.org
     secrets:
