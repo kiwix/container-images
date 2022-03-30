@@ -12,7 +12,7 @@ RUN apt-get update -y \
 # build and configure rssh
 # we are keeping source here as it's small and hosted on sourceforge
 WORKDIR /usr/src/
-RUN wget https://mirror.download.kiwix.org/dev/rssh-2.3.4.tar.gz && \
+RUN wget --progress=dot:giga https://mirror.download.kiwix.org/dev/rssh-2.3.4.tar.gz && \
     tar -xvf rssh-2.3.4.tar.gz
 WORKDIR /usr/src/rssh-2.3.4
 RUN ./configure --prefix=/ && make && make install && \
@@ -20,7 +20,7 @@ RUN ./configure --prefix=/ && make && make install && \
 
 WORKDIR /
 # setup a chroot jail at /jail, patching ini file
-RUN wget https://olivier.sessink.nl/jailkit/jailkit-2.21.tar.gz && \
+RUN wget --progress=dot:giga https://olivier.sessink.nl/jailkit/jailkit-2.21.tar.gz && \
     tar xf jailkit-2.21.tar.gz && \
     cd jailkit-2.21 && \
     ./configure && \
