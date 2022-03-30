@@ -33,8 +33,9 @@ RUN wget --progress=dot:giga https://olivier.sessink.nl/jailkit/jailkit-2.21.tar
 COPY motd /etc/motd
 
 # create and prepare user, fixing shell
-RUN jk_init -v -j /jail rssh ssh scp sftp && \
-    useradd -M -N -r -s /bin/rssh ci && \
+RUN groupadd -g 1000 -r ci && \
+    jk_init -v -j /jail rssh ssh scp sftp && \
+    useradd -g ci -u 1000 -M -N -r -s /bin/rssh ci && \
     jk_jailuser -m -j /jail -s /bin/rssh ci && \
     sed -i 's/usr\/sbin\/jk_chrootsh/bin\/rssh/' /etc/passwd && \
     mkdir -p /jail/data
@@ -45,7 +46,7 @@ COPY sshd_config /etc/ssh/sshd_config
 RUN mkdir -p /etc/ssh/authorized-keys/
 
 # mount target dir anywhere under /jail (except for existing tree: bin dev etc lib lib64 usr)
-# each volume you want to allow uploads to must be owned by ci:users (999:100)
+# each volume you want to allow uploads to must be owned by ci:ci (1000:1000)
 # with a write-appropriate mode
 VOLUME /jail/data
 
