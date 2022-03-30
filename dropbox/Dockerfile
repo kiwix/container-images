@@ -59,7 +59,7 @@ if [ ! -d /run/sshd ]; then\n\
   mkdir /run/sshd\n\
   chmod 0755 /run/sshd\n\
 fi\n\
-echo \$PUBKEYS >> /etc/ssh/authorized-keys/ci\n\
+printf \"\$PUBKEYS\" >> /etc/ssh/authorized-keys/ci\n\
 nbkeys=\$(wc -l < /etc/ssh/authorized-keys/ci)\n\
 echo \"User “ci” has \${nbkeys} public keys allowed\"\n\
 echo \"Starting OpenBSD Secure Shell server...\"\n\
