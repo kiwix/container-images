@@ -22,6 +22,7 @@ The instance can be configurd via environnment variables:
 * `DOWNLOAD_DIRECTORY_PATH`: directory path you want to have the ZIM files stored
 * `DATA_PORT`: TCP & UDP ports for the data exchanges
 * `ADMIN_PORT`: TCP admin port for qBittorrent
+* `DOWNLOAD_DIRECTORY_MODE=ro` if the ZIM files are already downloaded and you don't want any data to be downloaded from qBittorrent.
 
 You can gather this conf in an environment file for example and run for example:
 ```bash

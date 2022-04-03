@@ -5,7 +5,7 @@ services:
     image: linuxserver/qbittorrent:4.4.1
     container_name: qbittorrent
     volumes:
-      - "${DOWNLOAD_DIRECTORY_PATH:?Specify a DOWNLOAD_DIRECTORY_PATH environment value}:/downloads"
+      - "${DOWNLOAD_DIRECTORY_PATH:?Specify a DOWNLOAD_DIRECTORY_PATH environment value}:/downloads:${DOWNLOAD_DIRECTORY_MODE:-rw}"
     ports:
       - "${DATA_PORT:-6881}:6881/udp"
       - "${DATA_PORT:-6881}:6881/tcp"
