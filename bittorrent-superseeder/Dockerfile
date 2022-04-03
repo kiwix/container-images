@@ -2,6 +2,8 @@ FROM debian:buster-slim
 
 MAINTAINER Emmanuel Engelhart <kelson@kiwix.org>
 
+ENV QBITTORRENT_PORT=8080
+
 WORKDIR /tmp
 
 # All-in-One RUN for a very small image size (< 5 MB)
@@ -21,4 +23,4 @@ RUN apt update 2> /dev/null && \
 COPY bin/ /usr/local/bin/
 RUN chmod -R 0500 /usr/local/bin/*
 
-ENTRYPOINT ["start.sh"]
+ENTRYPOINT start.sh "$QBITTORRENT_PORT"

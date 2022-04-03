@@ -1,10 +1,12 @@
 #!/bin/bash
 
+QBITTORRENT_PORT=$1
+
 echo "Update crontab for ZIM synchronisation"
 printf "
-@reboot root /usr/local/bin/sync_superseeder.sh >> /var/log/sync_superseeder.log
-0 * * * * root /usr/local/bin/sync_superseeder.sh >> /var/log/sync_superseeder.log
-" >> /etc/crontab
+@reboot root /usr/local/bin/sync_superseeder.sh ${QBITTORRENT_PORT} >> /var/log/sync_superseeder.log
+0 * * * * root /usr/local/bin/sync_superseeder.sh ${QBITTORRENT_PORT} >> /var/log/sync_superseeder.log
+" > /etc/crontab
 
 service cron start
 

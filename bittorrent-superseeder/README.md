@@ -18,6 +18,16 @@ upstream https://library.kiwix.org/zim.
 
 ### Configure
 
+The instance can be configurd via environnment variables:
+* `DOWNLOAD_DIRECTORY_PATH`: directory path you want to have the ZIM files stored
+* `DATA_PORT`: TCP & UDP ports for the data exchanges
+* `ADMIN_PORT`: TCP admin port for qBittorrent
+
+You can gather this conf in an environment file for example and run for example:
+```bash
+env $(env .env) docker-compose ...
+```
+
 ### Run
 
 The easiest solution to run the solution is to use
@@ -26,12 +36,12 @@ be able with a simple command to start/stop the two Docker containers
 (qBittorrent and the super-seeder companion).
 
 To launch the service:
-```
+```bash
 docker-compose up -d
 ```
 
 To stop it:
-```
+```bash
 docker-compose stop
 ```
 
@@ -46,12 +56,12 @@ Refers to https://hub.docker.com/r/linuxserver/qbittorrent
 
 #### Companion
 
-To launch the companion locally:
-```
+To launch the companion:
+```bash
 docker run --network="host" --name=qbittorrent-zim-superseeder openzim/qbittorrent-zim-superseeder
 ```
 
 To build the companion from the source code:
-```
+```bash
 docker build -t openzim/qbittorrent-zim-superseeder .
 ```

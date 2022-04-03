@@ -2,10 +2,11 @@
 
 set -e
 
+QBT_PORT=$1
 FEED_URL="https://library.kiwix.org/catalog/search?count=20"
 CURL="curl -s"
 QBT="qbt"
-QBT_CREDENTIALS="--username admin --password adminadmin --url http://qbittorrent:8080"
+QBT_CREDENTIALS="--username admin --password adminadmin --url http://qbittorrent:${QBT_PORT}"
 
 ONLINE_ZIM_URLS="/dev/shm/online_zim_urls.tsv"
 ONLINE_ZIM_PATHS="/dev/shm/online_zim_paths.tsv"
@@ -25,7 +26,7 @@ for FILE in ${ONLINE_ZIM_URLS} ${ONLINE_ZIM_PATHS} ${LOCAL_ZIMS} ${LOCAL_ZIM_PAT
 do
   rm -f ${FILE}
   touch ${FILE}
-done    
+done
 
 # Retrieve online ZIMs
 ${CURL} ${FEED_URL} | xml2 | grep '^/feed/entry/link/@href=.*\.zim.*$' | sed 's/\.meta4$//' | sed 's/\/feed\/entry\/link\/@href=//' | sort > ${ONLINE_ZIM_URLS}
@@ -46,18 +47,18 @@ do
     echo "${ZIM_URL}.torrent" >> ${DOWNLOAD_ZIM_URLS}
   fi
 done
-    
+
 # Download ZIMs
 for URL in `cat ${DOWNLOAD_ZIM_URLS}`
 do
   echo "Downloading ${URL}..."
-  ZIM_PATH=`echo ${URL} | sed 's/^http.*:\/\/[^/]*//' | sed 's/[^/]*$//'`  
+  ZIM_PATH=`echo ${URL} | sed 's/^http.*:\/\/[^/]*//' | sed 's/[^/]*$//'`
   ${QBT} torrent add url ${URL} --folder="${DOWNLOAD_PATH}${ZIM_PATH}" ${QBT_CREDENTIALS}
 done
 
 # Compute ZIMs to delete
 comm -23 ${LOCAL_ZIM_PATHS} ${ONLINE_ZIM_PATHS} > ${LOCAL_ONLY_ZIM_PATHS}
-	   
+
 # Delete old ZIMs
 for ZIM in `cat ${LOCAL_ONLY_ZIM_PATHS}`
 do
