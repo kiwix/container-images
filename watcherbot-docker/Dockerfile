@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 
 MAINTAINER Kelson <kelson@kiwix.org>
 
