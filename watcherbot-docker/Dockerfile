@@ -2,8 +2,13 @@ FROM ubuntu:latest
 
 MAINTAINER Kelson <kelson@kiwix.org>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # Install necessary packages
-RUN apt-get update && apt-get install -y nodejs npm
+RUN echo "UTC" > /etc/timezone && \
+    ln -fs /usr/share/zoneinfo/UTC /etc/localtime && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends nodejs npm
 
 # Copy necessary files
 COPY watcherbot.js watcherbot.js
