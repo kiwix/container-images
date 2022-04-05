@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/library
           on-master: latest
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/mirrorbrain
           on-master: latest
@@ -63,7 +63,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/reverse-proxy
           on-master: latest
@@ -80,7 +80,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/rsyncd
           on-master: latest
@@ -97,7 +97,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/matomo
           on-master: latest
@@ -115,7 +115,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/matomo-log-analytics
           on-master: latest
@@ -132,7 +132,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: openzim/surfer
           on-master: latest
@@ -149,12 +149,29 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v8
         with:
           image-name: kiwix/bittorrent-tracker
           on-master: latest
           restrict-to: kiwix/maintenance
           context: bittorrent-tracker-docker
+          registries: ghcr.io
+          credentials:
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+  watcherbot:
+    name: Deploy Watcherbot Image
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v8
+        with:
+          image-name: kiwix/watcherbot
+          on-master: latest
+          restrict-to: kiwix/maintenance
+          context: watcherbot-docker
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
