@@ -1,5 +1,5 @@
 FROM netdata/netdata:latest
-LABEL org.opencontainers.image.source https://github.com/kiwix/maintenance
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV DO_NOT_TRACK 1
 ENV NETDATA_HOSTNAME monitoring.openzim.org

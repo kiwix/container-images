@@ -1,5 +1,5 @@
 FROM debian:11-slim
-LABEL org.opencontainers.image.source https://github.com/kiwix/maintenance
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 # system dependencies
 RUN apt-get update -y \

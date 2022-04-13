@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/kiwix/maintenance/badge)](https://www.codefactor.io/repository/github/kiwix/maintenance)
+[![CodeFactor](https://www.codefactor.io/repository/github/kiwix/container-images/badge)](https://www.codefactor.io/repository/github/kiwix/container-images)
 
 Create or update the containers
 ===============================
