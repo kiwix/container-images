@@ -20,12 +20,11 @@ RUN wget https://git.cloudron.io/cloudron/surfer/-/archive/master/surfer-master.
       surfer-master/package.json \
       surfer-master/package-lock.json \
   && rm surfer-master.tar.gz \
-  && sed -i '/chromedriver/d' package.json \
-  && sed -i 's/listen(3000/listen(80/g' server.js
+  && sed -i '/chromedriver/d' package.json
 
 RUN npm install && npm run build
 ADD start.sh .config.json /app/
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD [ "/app/start.sh" ]
