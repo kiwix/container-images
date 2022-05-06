@@ -33,7 +33,7 @@ RUN apt update 2> /dev/null && \
     rm -rf /var/lib/apt/lists/*
 
 COPY ./build_whitelist.sh /etc/cron.hourly/build_whitelist.sh
-COPY ./start.sh /usr/sbin/entrypoint
+COPY ./entrypoint.sh /usr/sbin/entrypoint
 
 EXPOSE 6969
 
