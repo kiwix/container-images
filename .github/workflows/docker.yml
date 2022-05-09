@@ -34,7 +34,7 @@ jobs:
           image-name: kiwix/library
           on-master: latest
           restrict-to: kiwix/container-images
-          context: library-docker
+          context: library
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -51,24 +51,7 @@ jobs:
           image-name: kiwix/mirrorbrain
           on-master: latest
           restrict-to: kiwix/container-images
-          context: mirrorbrain-docker
-          registries: ghcr.io
-          credentials:
-            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
-            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
-
-  reverseproxy:
-    name: Deploy reverse-proxy Image
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
-        with:
-          image-name: kiwix/reverse-proxy
-          on-master: latest
-          restrict-to: kiwix/container-images
-          context: reverse-proxy-docker
+          context: mirrorbrain
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -85,7 +68,7 @@ jobs:
           image-name: kiwix/rsyncd
           on-master: latest
           restrict-to: kiwix/container-images
-          context: rsyncd-docker
+          context: rsyncd
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -102,7 +85,7 @@ jobs:
           image-name: kiwix/matomo
           on-master: latest
           restrict-to: kiwix/container-images
-          context: matomo-server-docker
+          context: matomo-server
           dockerfile: Dockerfile-app
           registries: ghcr.io
           credentials:
@@ -120,7 +103,7 @@ jobs:
           image-name: kiwix/matomo-log-analytics
           on-master: latest
           restrict-to: kiwix/container-images
-          context: matomo-log-analytics-docker
+          context: matomo-log-analytics
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -137,7 +120,7 @@ jobs:
           image-name: openzim/surfer
           on-master: latest
           restrict-to: kiwix/container-images
-          context: surfer-docker
+          context: surfer
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -154,7 +137,7 @@ jobs:
           image-name: kiwix/bittorrent-tracker
           on-master: latest
           restrict-to: kiwix/container-images
-          context: bittorrent-tracker-docker
+          context: bittorrent-tracker
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
