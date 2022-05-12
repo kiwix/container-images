@@ -1,3 +1,0 @@
-[mysqld]
-net_read_timeout    = 43200 
-net_write_timeout   = 43200

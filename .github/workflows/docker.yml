@@ -12,29 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Dropbox Docker Image
-        uses: openzim/docker-publish-action@v8
+        uses: openzim/docker-publish-action@v9
         with:
           image-name: kiwix/dropbox
           on-master: latest
           restrict-to: kiwix/container-images
           context: dropbox
-          registries: ghcr.io
-          credentials:
-            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
-            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
-
-  library:
-    name: Deploy Library Image
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
-        with:
-          image-name: kiwix/library
-          on-master: latest
-          restrict-to: kiwix/container-images
-          context: library
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -46,47 +29,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v9
         with:
           image-name: kiwix/mirrorbrain
           on-master: latest
           restrict-to: kiwix/container-images
           context: mirrorbrain
-          registries: ghcr.io
-          credentials:
-            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
-            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
-
-  rsyncd:
-    name: Deploy rsyncd Image
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
-        with:
-          image-name: kiwix/rsyncd
-          on-master: latest
-          restrict-to: kiwix/container-images
-          context: rsyncd
-          registries: ghcr.io
-          credentials:
-            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
-            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
-
-  matomo:
-    name: Deploy matomo Image
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
-        with:
-          image-name: kiwix/matomo
-          on-master: latest
-          restrict-to: kiwix/container-images
-          context: matomo-server
-          dockerfile: Dockerfile-app
           registries: ghcr.io
           credentials:
             GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
@@ -98,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v9
         with:
           image-name: kiwix/matomo-log-analytics
           on-master: latest
@@ -115,7 +63,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v9
         with:
           image-name: openzim/surfer
           on-master: latest
@@ -132,7 +80,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v6
+        uses: openzim/docker-publish-action@v9
         with:
           image-name: kiwix/bittorrent-tracker
           on-master: latest
