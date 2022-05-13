@@ -1,4 +1,5 @@
 FROM httpd:2.4.43
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 #
 # Author : Florent Kaisser <florent.pro@kaisser.name>
 #
@@ -83,4 +84,4 @@ COPY bin/* /usr/local/bin/
 RUN chmod 0500 /usr/local/bin/*
 
 #Start !
-CMD start.sh
+CMD ["start.sh"]

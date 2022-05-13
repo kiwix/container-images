@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 MAINTAINER Kelson <kelson@kiwix.org>
 
@@ -14,4 +15,4 @@ COPY package.json  package.json
 RUN npm install && npm install -g slack-irc
 
 # Run bot
-CMD ./run.sh
+CMD ["./run.sh"]

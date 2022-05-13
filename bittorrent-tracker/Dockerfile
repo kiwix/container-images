@@ -1,4 +1,5 @@
 FROM debian:buster-slim
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 MAINTAINER Emmanuel Engelhart <kelson@kiwix.org>
 
