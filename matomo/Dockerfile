@@ -1,4 +1,5 @@
 FROM matomo:4.9.1-fpm
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LIBMMDBVERSION 1.6.0
 ENV MMDBREADERVERSION 1.11.0
