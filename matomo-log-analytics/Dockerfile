@@ -6,7 +6,7 @@ FROM debian:bullseye-slim
 LABEL maintainer="kiwix"
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
-RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates unzip wget patch python && \
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates unzip wget patch python3 && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
