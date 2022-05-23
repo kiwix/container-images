@@ -1,9 +1,4 @@
 FROM debian:bullseye-slim
-
-#
-# Author : Florent Kaisser <florent.pro@kaisser.name>
-#
-LABEL maintainer="kiwix"
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates unzip wget patch python3 && \
@@ -19,10 +14,15 @@ ENV MATOMO_URL "http://my-matomo"
 ENV MATOMO_SITE_ID "0"
 ENV MATOMO_TOKEN "abc"
 ENV LOG_PATH "/var/log/nginx/access.log"
+# enable to append today's date suffix to LOG_PATH (for use with logrotate's archive)
+ENV USE_SUFFIXED_LOG ""
 
 RUN { \
-  echo "#!/bin/sh" ; \
-  echo "import_logs.py --enable-http-redirects --include-host=$HOST --idsite=$MATOMO_SITE_ID --url=$MATOMO_URL --token-auth=$MATOMO_TOKEN $LOG_PATH" ; \
+  echo '#!/bin/sh' ; \
+  echo 'if [ ! -z "$USE_SUFFIXED_LOG" ] ; then' ; \
+  echo '    export LOG_PATH=$LOG_PATH-$(date +"%Y%m%d")' ; \
+  echo 'fi' ; \
+  echo 'import_logs.py --enable-http-redirects --include-host=$HOST --idsite=$MATOMO_SITE_ID --url=$MATOMO_URL --token-auth=$MATOMO_TOKEN $LOG_PATH' ; \
 } > /usr/local/bin/import-log && chmod +x /usr/local/bin/import-log
 
 CMD ["import-log"]
