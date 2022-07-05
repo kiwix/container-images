@@ -1,27 +1,42 @@
 #!/bin/bash
 
-# update stream allow from list using workers list on github
-WORKERS_URL=https://raw.githubusercontent.com/openzim/zimfarm/master/workers/contrib/workers.json
-IPS=$(echo -n $(curl -sS "${WORKERS_URL}" | jq --raw-output ".[]"))
-
-# write stream config
-read -d '' STREAM_CONF << EOF
-[${STREAM_KEY}]
- enabled = yes
- default history = 86400
- default memory = dbengine
- health enabled by default = auto
- multiple connections = allow
- allow from = ${IPS}
-EOF
-echo "${STREAM_CONF}" > /etc/netdata/stream.conf
-
-
 # setup custom hostname for node in netdata
 if [ ! -z "${NETDATA_HOSTNAME}" ]
 then
     printf "\n hostname = ${NETDATA_HOSTNAME}\n" >> /etc/netdata/netdata.conf
 fi
 
-# netdata's entrypoint
-/usr/sbin/run.sh
+# copy of netdata's entrypoint
+BALENA_PGID=$(stat -c %g /var/run/balena.sock 2>/dev/null || true)
+DOCKER_PGID=$(stat -c %g /var/run/docker.sock 2>/dev/null || true)
+
+re='^[0-9]+$'
+if [[ $BALENA_PGID =~ $re ]]; then
+  echo "Netdata detected balena-engine.sock"
+  DOCKER_HOST='/var/run/balena-engine.sock'
+  PGID="$BALENA_PGID"
+elif [[ $DOCKER_PGID =~ $re ]]; then
+  echo "Netdata detected docker.sock"
+  DOCKER_HOST="/var/run/docker.sock"
+  PGID="$DOCKER_PGID"
+fi
+export PGID
+export DOCKER_HOST
+
+if [ -n "${PGID}" ]; then
+  echo "Creating docker group ${PGID}"
+  addgroup -g "${PGID}" "docker" || echo >&2 "Could not add group docker with ID ${PGID}, its already there probably"
+  echo "Assign netdata user to docker group ${PGID}"
+  usermod -a -G "${PGID}" "${DOCKER_USR}" || echo >&2 "Could not add netdata user to group docker with ID ${PGID}"
+fi
+
+if mountpoint -q /etc/netdata && [ -z "$(ls -A /etc/netdata)" ]; then
+  echo "Copying stock configuration to /etc/netdata"
+  cp -a /etc/netdata.stock/. /etc/netdata
+fi
+
+# intial stream config
+/etc/periodic/15min/update-stream-whitelist
+
+# start cron to regen stream config every 15mn
+exec crond -f
