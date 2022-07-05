@@ -35,8 +35,5 @@ if mountpoint -q /etc/netdata && [ -z "$(ls -A /etc/netdata)" ]; then
   cp -a /etc/netdata.stock/. /etc/netdata
 fi
 
-# intial stream config
-/etc/periodic/15min/update-stream-whitelist
-
 # start cron to regen stream config every 15mn
 exec crond -f
