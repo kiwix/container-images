@@ -100,7 +100,7 @@ jobs:
         uses: openzim/docker-publish-action@v9
         with:
           image-name: kiwix/matomo
-          on-master: 4.10.0-fpm
+          on-master: 4.10.1-fpm
           restrict-to: kiwix/container-images
           context: matomo
           registries: ghcr.io
