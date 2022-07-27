@@ -10,7 +10,7 @@ import requests
 API_URL = os.getenv("ZIMFARM_API_URL", "https://api.farm.openzim.org/v1")
 TEMPLATE = """[__KEY__]
  enabled = yes
- default history = 86400
+ default history = 2592000
  default memory = dbengine
  health enabled by default = auto
  timeout seconds = 60
