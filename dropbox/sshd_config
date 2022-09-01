@@ -111,7 +111,7 @@ MaxStartups 10:30:60
 
 #PermitTunnel no
 #ChrootDirectory none
-ChrootDirectory /jail
+ChrootDirectory /jails/%u
 #VersionAddendum none
 
 # no default banner path
