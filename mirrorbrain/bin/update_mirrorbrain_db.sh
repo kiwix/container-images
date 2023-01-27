@@ -24,35 +24,38 @@ function scanMirror() {
 echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum
 
+# scan all mirrors
+$MB scan --all
+
 # Scan the ftp.acc.umu.se mirror
-scanMirror ftp.acc.umu.se ZIMDIRS
+# scanMirror mirror.accum.se ZIMDIRS
 
 # Scan the dotsrc.org mirror
-scanMirror dotsrc.org ALLDIRS
+# scanMirror dotsrc.org ALLDIRS
 
 # scan the Kiwix mirrors
-scanMirror mirror ALLDIRS
+# scanMirror mirror.kiwix ALLDIRS
 
 # Scan Tunisian mirror
-scanMirror mirror.tn ALLDIRS
+# scanMirror mirror.tn ALLDIRS
 
 # Scan the Wikimedia mirror
-scanMirror wikimedia WMDIRS
+# scanMirror wikimedia WMDIRS
 
 # Scan the ISOC Israel mirror
-scanMirror isoc.il WMDIRS
+# scanMirror isoc.il WMDIRS
 
 # Scan the Your.org mirror
-scanMirror your.org WMDIRS
+# scanMirror your.org WMDIRS
 
 # Scan the nluug.nl mirror
-scanMirror nluug.nl ALLDIRS
+# scanMirror nluug.nl ALLDIRS
 
 # Scan the Mirrorservice.org mirror
-scanMirror mirrorservice.org WMDIRS
+# scanMirror mirrorservice.org WMDIRS
 
 # Scan the fau.de mirror
-scanMirror fau.de ALLDIRS
+# scanMirror fau.de ALLDIRS
 
 # Generate HTML mirrors list
 mb mirrorlist -f xhtml | grep -v @ > /var/www/download.kiwix.org/mirrors.html
