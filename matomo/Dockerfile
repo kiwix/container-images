@@ -1,7 +1,7 @@
-FROM matomo:4.11-fpm
+FROM matomo:4.13.2-fpm
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
-ENV LIBMMDBVERSION 1.6.0
+ENV LIBMMDBVERSION 1.7.1
 ENV MMDBREADERVERSION 1.11.0
 
 # install libmaxmindb for GeoIP2
