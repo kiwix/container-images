@@ -51,5 +51,7 @@ scanMirror mirrorservice.org WMDIRS
 # Scan the fau.de mirror
 scanMirror fau.de ALLDIRS
 
+scanMirror md.mirrors.hacktegic.com ALLDIRS
+
 # Generate HTML mirrors list
 mb mirrorlist -f xhtml | grep -v @ > /var/www/download.kiwix.org/mirrors.html
