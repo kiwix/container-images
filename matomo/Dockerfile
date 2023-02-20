@@ -1,4 +1,4 @@
-FROM matomo:4.13.2-fpm
+FROM matomo:4.13.3-fpm
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LIBMMDBVERSION 1.7.1
