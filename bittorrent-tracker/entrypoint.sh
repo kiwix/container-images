@@ -3,7 +3,7 @@
 set -e
 
 echo "Building whitelist…"
-/etc/cron.hourly/build_whitelist.sh
+/etc/cron.hourly/build-whitelist
 
 echo "Starting cron..."
 service cron start
