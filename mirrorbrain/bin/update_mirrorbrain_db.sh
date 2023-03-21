@@ -24,8 +24,9 @@ function scanMirror() {
 echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum
 
-# Scan the ftp.acc.umu.se mirror
+# Scan the ftp.acc.umu.se mirror (two offloaders)
 scanMirror mirror.accum.se ZIMDIRS
+scanMirror laotzu-mirror.accum.se ZIMDIRS
 
 # Scan the dotsrc.org mirror
 scanMirror dotsrc.org ALLDIRS
