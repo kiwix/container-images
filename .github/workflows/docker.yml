@@ -8,11 +8,11 @@ on:
 jobs:
   dropbox:
     name: Deploy Dropbox Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Dropbox Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/dropbox
           on-master: latest
@@ -25,11 +25,11 @@ jobs:
 
   mirrorbrain:
     name: Deploy mirrorbrain Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/mirrorbrain
           on-master: latest
@@ -42,11 +42,11 @@ jobs:
 
   matomologs:
     name: Deploy matomo logs Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/matomo-log-analytics
           on-master: latest
@@ -59,11 +59,11 @@ jobs:
 
   surfer:
     name: Deploy Surfer Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: openzim/surfer
           on-master: latest
@@ -76,11 +76,11 @@ jobs:
 
   bittorrent-tracker:
     name: Deploy BitTorrent Tracker Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/bittorrent-tracker
           on-master: latest
@@ -93,11 +93,11 @@ jobs:
 
   matomo:
     name: Deploy Matomo Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/matomo
           on-master: 4.13.3-fpm
@@ -110,11 +110,11 @@ jobs:
 
   netdata:
     name: Deploy netdata Image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.4.0
       - name: Publish Docker Image
-        uses: openzim/docker-publish-action@v9
+        uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/netdata
           on-master: latest
