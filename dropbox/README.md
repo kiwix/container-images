@@ -5,7 +5,7 @@ OpenSSH server with configurable, independent jailed users
 ## Usage
 
 ```sh
-docker run -v /some/path:/jails/john/data -p 8022:22 -e USERS='[{"id": 1010, "name": "john", "keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAxxxx me@myhost"]}]' kiwix/dropbox
+docker run -v /some/path:/jails/john/data -p 8022:22 -e USERS='[{"id": 1010, "name": "john", "keys": ["ssh-rsa AAAAB3NzaC1yc2EAAAxxxx me@myhost"]}]' ghcr.io/kiwix/dropbox
 ```
 
 ### ⚠️ Note

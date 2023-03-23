@@ -1,4 +1,4 @@
-FROM netdata/netdata:v1.35
+FROM ghcr.io/netdata/netdata:v1.38
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV DO_NOT_TRACK 1
