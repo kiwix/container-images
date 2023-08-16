@@ -45,13 +45,13 @@ RUN { \
 }
 
 #Install MirrorBrain from sources
-COPY patch/mod_form.c mod_form.c.patch
+COPY patch /tmp
 RUN { \
   wget --no-check-certificate -qO - https://github.com/poeml/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz ; \
   cd mirrorbrain-$MB_VERSION/mod_mirrorbrain ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h ; \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c ; \
-  mv ../../mod_form.c.patch ./ ; \
+  mv /tmp/mod_form.c.patch ./ ; \
   apxs -cia -lm mod_form.c ; \
   apxs -e -n dbd -a modules/mod_dbd.so ; \
   apxs -e -n rewrite -a modules/mod_rewrite.so ; \
@@ -68,6 +68,8 @@ RUN { \
   install -m 755 scanner.pl            /usr/bin/scanner ; \
   cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe ; \
   cd ../mb && python setup.py install ; \
+  patch /usr/bin/scanner /tmp/scanner.patch ; \
+  rm /tmp/scanner.patch ; \
 }
 
 #Copy files configuration

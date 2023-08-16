@@ -1,0 +1,11 @@
+--- /usr/bin/scanner    2023-08-16 11:46:25.000000000 +0000
++++ /tmp/scanner        2023-08-16 12:48:19.069937453 +0000
+@@ -1202,7 +1202,7 @@
+   alarm 600;
+   sysread(S, $buf, 4096);
+   alarm 0;
+-  die("$identifier: protocol error [$buf]\n") if $buf !~ /^\@RSYNCD: ([\d.]+)\n/s;
++  die("$identifier: protocol error [$buf]\n") if $buf !~ /^\@RSYNCD: ([\d.]+).*\n/s;
+   $peer->{rsync_protocol} = $1;
+   $peer->{rsync_protocol} = 28 if $peer->{rsync_protocol} > 28;
+   swrite(*S, "$module\n");
