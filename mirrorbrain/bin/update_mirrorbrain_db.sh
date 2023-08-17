@@ -52,12 +52,13 @@ scanMirror mirrorservice.org WMDIRS
 # Scan the fau.de mirror
 scanMirror fau.de ALLDIRS
 
+# Scan the hacktegic mirror
 scanMirror md.mirrors.hacktegic.com ALLDIRS
 
-# Scan MB Group mirrors (disabled until rsync issue is solved)
-# scanMirror mirror-sites-fr.mblibrary.info ALLDIRS
-# scanMirror mirror-sites-ca.mblibrary.info ALLDIRS
-# scanMirror mirror-sites-in.mblibrary.info ALLDIRS
+# Scan MB Group mirrors
+scanMirror mirror-sites-fr.mblibrary.info ALLDIRS
+scanMirror mirror-sites-ca.mblibrary.info ALLDIRS
+scanMirror mirror-sites-in.mblibrary.info ALLDIRS
 
 # Generate HTML mirrors list
 mb mirrorlist -f xhtml | grep -v @ > /var/www/download.kiwix.org/mirrors.html
