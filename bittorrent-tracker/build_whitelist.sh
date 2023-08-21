@@ -42,8 +42,7 @@ do
     echo ".... Skipping $META4_URL (not ready)"
     continue
   fi
-  BTIH_DATA=$(echo $BTIH | sed 's/  /\t/')
-  echo $BTIH_DATA
+  BTIH_DATA=$(echo $BTIH_DATA | sed 's/  /\t/')
   CURRENT_TIME=$(date +%s)
   retrieved=$((retrieved+1))
   echo "\e[1A\e[K> retrieved… $retrieved"
