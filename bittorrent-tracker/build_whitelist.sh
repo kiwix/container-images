@@ -56,7 +56,7 @@ cat $NEW_OFFLINE_WHITELISTED_FILES >> "${OFFLINE_WHITELISTED_FILES}"
 echo "> Creating Opentracker Whitelist of hashes"
 cat "${OFFLINE_WHITELISTED_FILES}" | cut -f 3 | sort -u > "${OPENTRACKER_WHITELIST}"
 
-tpid=$(pidof opentracker) | true
+tpid=$(pidof opentracker) || true
 if [ ! -z "$tpid" ]; then
   echo "> Requesting opentracker to reload whitelist"
   kill -s HUP $tpid
