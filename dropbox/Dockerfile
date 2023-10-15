@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 # system dependencies
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-    wget build-essential make ca-certificates python python3 \
+    wget build-essential make ca-certificates python python3 fail2ban \
     openssh-sftp-server openssh-server  \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
