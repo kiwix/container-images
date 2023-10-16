@@ -5,9 +5,9 @@ echo "Setting up variables..."
 MB=/usr/local/bin/mb
 REPO="/var/www/download.kiwix.org/"
 ESCREPO=`echo "$REPO" | sed -e 's/[\\/&]/\\\\&/g'`
-ALLDIRS=`find "$REPO" -type d | sed "s/$ESCREPO//"`
-WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//" | grep -v -e "^archive/"`
-ZIMDIRS=`find "$REPO" -type d | grep "${REPO}zim"| sed "s/$ESCREPO//" | grep -v -e "^archive/"`
+ALLDIRS=`find "$REPO" -maxdepth 1 -type d | sed "s/$ESCREPO//"`
+WMDIRS=`find "$REPO" -type d -name "*wikinews*" -o -type d -name "*wikipedia*" -o -type d -name "*wiktionary*" -o -type d -name "*wikisource*" -o -type d -name "*wikibooks*" -o -type d -name "*wikivoyage*" -o -type d -name "*wikiquote*" -o -type d -name "*wikinews*" -o -type d -name "*wikiversity*" -o -type d -name "*0.9*" | sed "s/$ESCREPO//"
+ZIMDIRS="zim"
 
 function scanMirror() {
     MIRROR=$1
