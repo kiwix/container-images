@@ -1,0 +1,36 @@
+services:
+  postgresdb:
+    image: postgres:11
+    container_name: mb_postgresdb
+    ports:
+      - 127.0.0.1:5433:5432
+    volumes:
+      - pg_data_mirrorbrain:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=mirrorbrain
+      - POSTGRES_USER=mirrorbrain
+      - POSTGRES_PASSWORD=mirrorbrain
+  web:
+    build: ../
+    command: ["start.sh"]
+    container_name: mb_web
+    ports:
+      - 127.0.0.1:8100:80
+    environment:
+      - GEOIPUPDATE=1
+      - HTTPD_ONLY=1
+    volumes:
+      - ./mirrorbrain.conf:/etc/mirrorbrain.conf
+      - ./httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ./download.kiwix.org:/var/www/download.kiwix.org
+      - ./GeoIP.conf:/etc/GeoIP.conf
+      # - /home/benoit/Repos/poeml/mirrorbrain/mb/mb:/usr/local/lib/python3.11/dist-packages/mb/
+      # - /home/benoit/Repos/poeml/mirrorbrain/tools/null-rsync:/usr/bin/null-rsync
+      - geoip:/usr/share/GeoIP
+    depends_on:
+      - postgresdb
+
+volumes:
+  pg_data_mirrorbrain:
+  geoip:
