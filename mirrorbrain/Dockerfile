@@ -1,76 +1,69 @@
-FROM httpd:2.4.43
+FROM httpd:2.4.57
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
-#
-# Author : Florent Kaisser <florent.pro@kaisser.name>
-#
-# Based on instructions from https://mirrorbrain.org/docs/installation/source/
-#
 LABEL maintainer="kiwix"
 
 #Set software versions
-ENV MB_VERSION 2.18.1
-ENV GEOIP_VERSION 1.6.12
-ENV MOD_GEOPIP_VERSION 1.2.10
+ENV MB_VERSION 3.0.0-dev0
+ENV MB_USER_OR_ORG benoit74
+
+ENV LIBMAXMINDDB_VERSION 1.7.1
+ENV MOD_MAXMINDDB_VERSION 1.2.0
+ENV GEOIPUPDATE_VERSION 6.0.0
+ENV GEOIPUPDATE_ARCH amd64
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev python python-dev python-pip python-setuptools python-sqlobject python-formencode python-psycopg2 libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl
-RUN pip install cmdln
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl libaprutil1-dev python3-setuptools python3-pip python3-sqlobject python3-psycopg2 python3-pip python3-dev python3-geoip2
+#Install cmdln manually since it is not packaged
+RUN pip install cmdln --break-system-packages
 
 #Copy owned base config file for apache
 COPY config/apache/httpd.conf conf/httpd.conf
 
 #Install Geolocalisation
-RUN { \
-  cd /tmp ; \
-  wget -q -O GeoIP-$GEOIP_VERSION.tar.gz  https://github.com/maxmind/geoip-api-c/releases/download/v$GEOIP_VERSION/GeoIP-$GEOIP_VERSION.tar.gz && \
-  tar xzf GeoIP-$GEOIP_VERSION.tar.gz -C /usr/local/src && \
-  cd /usr/local/src/GeoIP-$GEOIP_VERSION/ &&  \
-  aclocal && autoconf && automake --add-missing && ./configure --prefix=/usr/local/geoip && make && make install ; \
-  cd /tmp ; \
-  mkdir -p /usr/local/geoip/share/GeoIP/ ; \
-#  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-City-CSV.zip && \
-#  unzip GeoLite2-City-CSV.zip  && cp GeoLite2-City-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-City-* ; \
-#  wget -q https://geolite.maxmind.com/download/geoip/database/GeoLite2-Country-CSV.zip && \
-#  unzip GeoLite2-Country-CSV.zip && cp GeoLite2-Country-*/*.csv /usr/local/geoip/share/GeoIP/ && rm -rf GeoLite2-Country-* ; \
-}
-
-#Install Geolocalisation for Apache
-RUN { \
-  cd /tmp ; \
-  wget -q -O mod_geoip2.tar.gz  https://github.com/maxmind/geoip-api-mod_geoip2/archive/$MOD_GEOPIP_VERSION.tar.gz && \
-  tar xzf mod_geoip2.tar.gz -C /usr/local/src && \
-  cd /usr/local/src/geoip-api-mod_geoip2-$MOD_GEOPIP_VERSION/ && \
-  sed s/remote_ip/client_ip/g  -i  mod_geoip.c && \
-  apxs -i -a -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP -c mod_geoip.c ; \
-}
-
+RUN \
+  cd /tmp && \
+  wget -q -O libmaxminddb-${LIBMAXMINDDB_VERSION}.tar.gz https://github.com/maxmind/libmaxminddb/releases/download/${LIBMAXMINDDB_VERSION}/libmaxminddb-${LIBMAXMINDDB_VERSION}.tar.gz && \
+  tar xzf libmaxminddb-${LIBMAXMINDDB_VERSION}.tar.gz -C /usr/local/src && \
+  rm libmaxminddb-${LIBMAXMINDDB_VERSION}.tar.gz && \
+  cd /usr/local/src/libmaxminddb-${LIBMAXMINDDB_VERSION} && \
+  ./configure && \
+  make && \
+  make check && \
+  make install && \
+  ldconfig && \
+  cd /tmp && \
+  wget -q -O geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIPUPDATE_VERSION}/geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
+  apt install -y ./geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
+  rm /tmp/geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
+  cd /tmp && \
+  wget -q -O mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz https://github.com/maxmind/mod_maxminddb/releases/download/${MOD_MAXMINDDB_VERSION}/mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz && \
+  tar xzf mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz -C /usr/local/src && \
+  rm mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz && \
+  cd /usr/local/src/mod_maxminddb-${MOD_MAXMINDDB_VERSION} && \
+  ./configure && \
+  make install
+          
 #Install MirrorBrain from sources
-COPY patch /tmp
-RUN { \
-  wget --no-check-certificate -qO - https://github.com/poeml/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz ; \
-  cd mirrorbrain-$MB_VERSION/mod_mirrorbrain ; \
-  wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h ; \
-  wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c ; \
-  mv /tmp/mod_form.c.patch ./ ; \
-  apxs -cia -lm mod_form.c ; \
-  apxs -e -n dbd -a modules/mod_dbd.so ; \
-  apxs -e -n rewrite -a modules/mod_rewrite.so ; \
-  apxs -cia -lm mod_mirrorbrain.c ; \
-  cd ../mod_autoindex_mb ; \
-  apxs -cia mod_autoindex_mb.c ; \
-  cd ../tools ; \
-  gcc -Wall -o geoiplookup_continent geoiplookup_continent.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
-  gcc -Wall -o geoiplookup_city geoiplookup_city.c -L/usr/local/geoip/lib -I/usr/local/geoip/include -lGeoIP ; \
-  install -m 755 geoiplookup_continent /usr/bin/geoiplookup_continent ; \
-  install -m 755 geoiplookup_city      /usr/bin/geoiplookup_city ; \
-  install -m 755 geoip-lite-update     /usr/bin/geoip-lite-update ; \
-  install -m 755 tnull-rsync            /usr/bin/null-rsync ; \
-  install -m 755 scanner.pl            /usr/bin/scanner ; \
-  cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe ; \
-  cd ../mb && python setup.py install ; \
-  patch /usr/bin/scanner /tmp/scanner.patch ; \
-  rm /tmp/scanner.patch ; \
-}
+RUN \
+  wget --no-check-certificate -qO - https://github.com/$MB_USER_OR_ORG/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz && \
+  cd mirrorbrain-$MB_VERSION/mod_mirrorbrain && \
+  wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h && \
+  wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c && \
+  apxs -cia -lm mod_form.c && \
+  apxs -e -n dbd -a modules/mod_dbd.so && \
+  apxs -e -n rewrite -a modules/mod_rewrite.so && \
+  apxs -cia -lm mod_mirrorbrain.c && \
+  cd ../mod_autoindex_mb && \
+  apxs -cia mod_autoindex_mb.c && \
+  cd ../tools && \
+  install -m 755 null-rsync            /usr/bin/null-rsync && \
+  install -m 755 scanner.pl            /usr/bin/scanner && \
+  cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe && \
+  cd ../mb && pip install . --break-system-packages && \
+  cd ../assets && \
+  mkdir -p /var/www/static/flags && \
+  cp famfamfam_flag_icons/png/*.png /var/www/static/flags && \
+  cp mirrorbrain.css /var/www/static
 
 #Copy files configuration
 RUN groupadd -r mirrorbrain && useradd -r -g mirrorbrain -s /bin/bash -c "MirrorBrain user" -d /home/mirrorbrain mirrorbrain
