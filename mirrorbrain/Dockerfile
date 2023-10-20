@@ -14,7 +14,7 @@ ENV GEOIPUPDATE_ARCH amd64
 #Install needed packages
 RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl libaprutil1-dev python3-setuptools python3-pip python3-sqlobject python3-psycopg2 python3-pip python3-dev python3-geoip2
 #Install cmdln manually since it is not packaged
-RUN pip install cmdln --break-system-packages
+RUN pip install --no-cache-dir --break-system-packages cmdln 
 
 #Copy owned base config file for apache
 COPY config/apache/httpd.conf conf/httpd.conf
@@ -33,7 +33,7 @@ RUN \
   ldconfig && \
   cd /tmp && \
   wget -q -O geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIPUPDATE_VERSION}/geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
-  apt install -y ./geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
+  apt-get install -y ./geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
   rm /tmp/geoipupdate_${GEOIPUPDATE_VERSION}_linux_${GEOIPUPDATE_ARCH}.deb && \
   cd /tmp && \
   wget -q -O mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz https://github.com/maxmind/mod_maxminddb/releases/download/${MOD_MAXMINDDB_VERSION}/mod_maxminddb-${MOD_MAXMINDDB_VERSION}.tar.gz && \
@@ -59,7 +59,7 @@ RUN \
   install -m 755 null-rsync            /usr/bin/null-rsync && \
   install -m 755 scanner.pl            /usr/bin/scanner && \
   cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe && \
-  cd ../mb && pip install . --break-system-packages && \
+  cd ../mb && pip install --no-cache-dir --break-system-packages . && \
   cd ../assets && \
   mkdir -p /var/www/static/flags && \
   cp famfamfam_flag_icons/png/*.png /var/www/static/flags && \
