@@ -1,263 +1,28 @@
+insert into server (id, identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, region, country, asn, prefix, ipv6_only, score, scan_fpm, last_scan, comment, operator_name, operator_url, public_notes, admin, admin_email, lat, lng, country_only, region_only, as_only, prefix_only, other_countries, file_maxsize)
+values  (3, 'mirror2', 'http://mirror2.kiwix.org', 'ftp://mirror2.kiwix.org', '', false, true, '', '', 0, '', false, 3, 0, null, 'Added - Mon Apr 30 15:05:32 2012', '', '', '', '', 'contact@kiwix.org', 46.000, 2.000, false, false, false, false, '', 0),
+        (9, 'fau.de', 'https://ftp.fau.de/kiwix/', 'ftp://ftp.fau.de/kiwix/', '', true, true, 'eu', 'de', 0, '', false, 5000, 636, '2023-01-27 15:40:24.841509 +00:00', 'Added - Thu Mar 12 17:53:10 2015', 'Friedrich-Alexander-Universität', 'https://www.fau.de/', '', 'Michael Meier', 'rrze-ftp-admins@fau.de', 0.000, 0.000, false, false, false, false, '', 0),
+        (6, 'kiwix', 'http://mirror.kiwix.org', 'ftp://mirror.kiwix.org', '', false, true, '', '', 0, '', false, 1, 512, null, 'Added - Thu Jul 28 12:04:35 2011', '', '', '', '', 'contact@kiwix.org', 46.000, 2.000, false, false, false, false, '', 0),
+        (7, 'mirror3', 'http://mirror3.kiwix.org', 'ftp://mirror3.kiwix.org', '', false, false, 'eu', 'fr', 0, '', false, 10, 845, null, 'Added - Thu Jan  9 20:16:22 2014', '', '', '', '', 'contact@kiwix.org', 0.000, 0.000, false, false, false, false, '', 0),
+        (8, 'netcologne.de', 'http://mirror.netcologne.de/kiwix/', 'ftp://mirror.netcologne.de/kiwix/', '', false, true, 'eu', 'de', 0, '', false, 5000, 300, null, 'Added - Fri Jul 31 11:22:47 2015 \n\n*** scanned and enabled at Fri Jul 31 11:27:04 2015.', '', '', '', 'Christian Rohmann', 'crohmann@netcologn.de', 0.000, 0.000, false, false, false, false, '', 0),
+        (1, 'dotsrc.org', 'https://mirrors.dotsrc.org/kiwix/', 'ftp://mirrors.dotsrc.org/kiwix/', 'rsync://mirrors.dotsrc.org/kiwix/', true, true, 'eu', 'dk', 0, '', false, 5000, 0, '2023-01-27 15:40:21.219324 +00:00', 'Added - Wed Mar  1 11:22:34 2017', 'dotsrc', 'https://dotsrc.org', '', 'Anders Trier Olesen', 'staff@dotsrc.org', 55.676, 12.568, false, false, false, false, '', 0),
+        (4, 'mirror.tn', 'https://mirror.ati.tn/wiki/', '', '', false, true, 'af', 'tn', 0, '', false, 5000, 0, '2019-05-25 17:59:54.125823 +00:00', 'Added - Sat Sep 19 20:25:51 2015
 
---
--- generated on Sun Oct 21 14:20:20 2018
---
-
---
--- dotsrc.org
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'dotsrc.org', 'https://mirrors.dotsrc.org/kiwix/', 'ftp://mirrors.dotsrc.org/kiwix/', 'rsync://mirrors.dotsrc.org/kiwix/', 'True', 'True', 
-  'eu', 'dk', '0', '',
-  '5000', $QUOTE$Added - Wed Mar  1 11:22:34 2017$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Anders Trier Olesen$QUOTE$, $QUOTE$anders.trier.olesen@gmail.com$QUOTE$, '55.676', '12.568',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- ftp.acc.umu.se
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'ftp.acc.umu.se', 'https://ftp.acc.umu.se/mirror/kiwix.org/', '', '', 'True', 'True', 
-  'eu', 'se', '0', '',
-  '3000', $QUOTE$Added - Wed Jun  7 11:34:05 2017$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Niklas Edmundsson$QUOTE$, $QUOTE$nikke@acc.umu.se$QUOTE$, '59.329', '18.069',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- mirror2
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'mirror2', 'http://mirror2.kiwix.org', 'ftp://mirror2.kiwix.org', '', 'False', 'True', 
-  '', '', '0', '',
-  '3', $QUOTE$Added - Mon Apr 30 15:05:32 2012$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$contact@kiwix.org$QUOTE$, '46.000', '2.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- mirror.tn
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'mirror.tn', 'http://wiki.mirror.tn/', '', '', 'True', 'True', 
-  'af', 'tn', '0', '',
-  '5000', $QUOTE$Added - Sat Sep 19 20:25:51 2015$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Zied Dridi$QUOTE$, $QUOTE$dridi@ati.tn$QUOTE$, '0.000', '0.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- mirror
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'mirror', 'http://mirror.download.kiwix.org/', 'ftp://mirror.download.kiwix.org/', '', 'True', 'True', 
-  'eu', 'fr', '0', '',
-  '1', $QUOTE$Added - Wed Mar  8 15:11:24 2017$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$$QUOTE$, '48.860', '2.350',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- kiwix
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'kiwix', 'http://mirror.kiwix.org', 'ftp://mirror.kiwix.org', '', 'False', 'True', 
-  '', '', '0', '',
-  '1', $QUOTE$Added - Thu Jul 28 12:04:35 2011$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$contact@kiwix.org$QUOTE$, '46.000', '2.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '512');
-
---
--- mirror3
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'mirror3', 'http://mirror3.kiwix.org', 'ftp://mirror3.kiwix.org', '', 'False', 'False', 
-  'eu', 'fr', '0', '',
-  '10', $QUOTE$Added - Thu Jan  9 20:16:22 2014$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$contact@kiwix.org$QUOTE$, '0.000', '0.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '845');
-
---
--- netcologne.de
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'netcologne.de', 'http://mirror.netcologne.de/kiwix/', 'ftp://mirror.netcologne.de/kiwix/', '', 'False', 'True', 
-  'eu', 'de', '0', '',
-  '5000', $QUOTE$Added - Fri Jul 31 11:22:47 2015 \n\n*** scanned and enabled at Fri Jul 31 11:27:04 2015.$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Christian Rohmann$QUOTE$, $QUOTE$crohmann@netcologn.de$QUOTE$, '0.000', '0.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '300');
-
---
--- fau.de
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'fau.de', 'https://ftp.fau.de/kiwix/', 'ftp://ftp.fau.de/kiwix/', '', 'True', 'True', 
-  'eu', 'de', '0', '',
-  '5000', $QUOTE$Added - Thu Mar 12 17:53:10 2015$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Michael Meier$QUOTE$, $QUOTE$rrze-ftp-admins@fau.de$QUOTE$, '0.000', '0.000',
-  'False', 'True', 'False', 'False',
-  '', '0', '0');
-
---
--- isoc.il
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'isoc.il', 'http://mirror.isoc.org.il/pub/kiwix/', '', '', 'True', 'True', 
-  'EU', 'IL', '0', '',
-  '100', $QUOTE$Added - Sun Jul 17 14:22:46 2011$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$$QUOTE$, '31.500', '34.750',
-  'True', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- wikimedia
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'wikimedia', 'https://download.wikimedia.org/kiwix/', '', '', 'True', 'True', 
-  'na', 'us', '0', '',
-  '3000', $QUOTE$Added - Sun May 15 09:58:02 2011$QUOTE$, $QUOTE$Ariel (ariel@wikimedia.org)$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$$QUOTE$, '37.770', '-122.393',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- nluug.nl
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'nluug.nl', 'https://ftp.nluug.nl/pub/kiwix/', 'ftp://ftp.nluug.nl/pub/kiwix/', '', 'True', 'True', 
-  'eu', 'nl', '0', '',
-  '3000', $QUOTE$Added - Tue Feb 28 14:18:32 2017$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Mike Hulsman$QUOTE$, $QUOTE$ftpmirror-beheer@nluug.nl$QUOTE$, '52.094', '5.119',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
---
--- mirrorservice.org
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'mirrorservice.org', 'https://www.mirrorservice.org/sites/download.kiwix.org/', 'ftp://ftp.mirrorservice.org/sites/download.kiwix.org/', '', 'True', 'True', 
-  'eu', 'gb', '0', '',
-  '5000', $QUOTE$Added - Sat Nov  9 16:34:19 2013 
+*** reenabled by mirrorprobe at Sat May 25 17:47:28 2019.', '', '', '', 'Mourad Melliti', 'mourad@ati.tn', 0.000, 0.000, false, false, false, false, '', 0),
+        (15, 'md.mirrors.hacktegic.com', 'https://md.mirrors.hacktegic.com/kiwix-md/', '', 'rsync://md.mirrors.hacktegic.com/kiwix-md/', true, true, 'eu', 'md', 0, '', false, 3000, 0, null, 'Added - Mon Feb 13 09:41:46 2023', 'md.mirrors.hacktegic.com', 'https://md.mirrors.hacktegic.com/', '', 'Artiom Mocrenco', 'amocrenco@protonmail.com', 46.940, 28.916, false, false, false, false, '', 0),
+        (19, 'mirror-sites-in.mblibrary.info', 'https://mirror-sites-in.mblibrary.info/mirror-sites/download.kiwix.org/', '', 'rsync://mirror-sites-in.mblibrary.info/download.kiwix.org/', true, true, 'as', 'in', 0, '', false, 100, 0, null, 'Added - Wed Aug 16 09:49:41 2023', 'MB Group', 'https://www.mbgroup.global/', '', 'Dr. Mamdouh Barakat', 'mb@mbgroup.global', 0.000, 0.000, false, false, false, false, '', 0),
+        (17, 'mirror-sites-fr.mblibrary.info', 'https://mirror-sites-fr.mblibrary.info/mirror-sites/download.kiwix.org/', '', 'rsync://mirror-sites-fr.mblibrary.info/download.kiwix.org/', true, true, 'eu', 'fr', 0, '', false, 100, 0, null, 'Added - Wed Aug 16 09:36:48 2023', 'MB Group', 'https://www.mbgroup.global/', '', 'Dr. Mamdouh Barakat', 'mb@mbgroup.global', 0.000, 0.000, false, false, false, false, '', 0),
+        (11, 'wikimedia', 'https://dumps.wikimedia.org/kiwix/', '', '', true, true, 'na', 'us', 0, '', false, 3000, 0, '2023-01-27 15:40:26.346657 +00:00', 'Added - Sun May 15 09:58:02 2011', 'Wikimedia Foundation', 'https://wikimedia.org', '', 'Ariel', 'ariel@wikimedia.org', 37.770, -122.393, false, false, false, false, '', 0),
+        (12, 'nluug.nl', 'https://ftp.nluug.nl/pub/kiwix/', 'ftp://ftp.nluug.nl/pub/kiwix/', 'rsync://ftp.nluug.nl/kiwix/', true, true, 'eu', 'nl', 0, '', false, 3000, 494, '2023-01-27 15:40:27.225187 +00:00', 'Added - Tue Feb 28 14:18:32 2017', 'NLUUG', 'https://nluug.nl', '', 'Mike Hulsman', 'ftpmirror-beheer@nluug.nl', 52.094, 5.119, false, false, false, false, '', 0),
+        (5, 'mirror.kiwix', 'https://mirror.download.kiwix.org/', 'ftp://mirror.download.kiwix.org/', 'rsync://rsyncd-service/self.download.kiwix.org/', true, true, 'eu', 'fr', 0, '', false, 500, 473, '2023-01-27 15:44:17.793550 +00:00', 'Added - Wed Mar  8 15:11:24 2017', 'Kiwix', 'https://www.kiwix.org', '', 'reg', 'reg@kiwix.org', 48.860, 2.350, false, false, false, false, '', 0),
+        (13, 'mirrorservice.org', 'https://www.mirrorservice.org/sites/download.kiwix.org/', 'ftp://ftp.mirrorservice.org/sites/download.kiwix.org/', 'rsync://ftp.mirrorservice.org/download.kiwix.org/', true, true, 'eu', 'gb', 0, '', false, 5000, 0, '2023-01-27 15:40:22.308850 +00:00', 'Added - Sat Nov  9 16:34:19 2013 
 
 *** scanned and enabled at Sat Nov  9 16:41:26 2013. 
 
-*** scanned and enabled at Sat Nov  9 16:42:27 2013.$QUOTE$, $QUOTE$$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$Tim Bishop$QUOTE$, $QUOTE$help@mirrorservice.org$QUOTE$, '0.000', '0.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
+*** scanned and enabled at Sat Nov  9 16:42:27 2013.', 'University of Kent', 'https://www.kent.ac.uk/computing', '', 'Tim Bishop', 'help@mirrorservice.org', 0.000, 0.000, false, false, false, false, '', 0),
+        (10, 'isoc.org.il', 'https://mirror.isoc.org.il/pub/kiwix/', '', '', true, true, 'EU', 'IL', 0, '', false, 100, 0, '2023-01-27 15:40:28.352437 +00:00', 'Added - Sun Jul 17 14:22:46 2011', 'Israel Internet Association', 'https://isoc.org.il', '', '', 'mirrormaster@isoc.org.il', 31.500, 34.750, true, false, false, false, '', 0),
+        (16, 'laotzu-mirror.accum.se', 'https://laotzu.ftp.acc.umu.se/mirror/kiwix.org/', 'ftp://mirror.accum.se/mirror/kiwix.org/', 'rsync://mirror.accum.se/mirror/kiwix.org/', true, true, 'eu', 'se', 0, '', false, 3000, 0, null, 'Added - Tue Mar 21 11:01:30 2023', 'Academic Computer Club in Umeå', 'https://www.accum.se', '', 'Niklas Edmundsson', 'ftp-adm@accum.se', 59.329, 18.069, false, false, false, false, '', 0),
+        (2, 'mirror.accum.se', 'https://saimei.ftp.acc.umu.se/mirror/kiwix.org/', 'ftp://mirror.accum.se/mirror/kiwix.org/', 'rsync://mirror.accum.se/mirror/kiwix.org/', true, true, 'eu', 'se', 0, '', false, 3000, 83, '2023-01-27 15:40:24.117866 +00:00', 'Added - Wed Jun  7 11:34:05 2017', 'Academic Computer Club in Umeå', 'https://www.accum.se', '', 'Niklas Edmundsson', 'ftp-adm@accum.se', 59.329, 18.069, false, false, false, false, '', 0),
+        (18, 'mirror-sites-ca.mblibrary.info', 'https://mirror-sites-ca.mblibrary.info/mirror-sites/download.kiwix.org/', '', 'rsync://mirror-sites-ca.mblibrary.info/download.kiwix.org/', true, true, 'na', 'ca', 0, '', false, 100, 0, null, 'Added - Wed Aug 16 09:43:38 2023', 'MB Group', 'https://www.mbgroup.global/', '', 'Dr. Mamdouh Barakat', 'mb@mbgroup.global', 0.000, 0.000, false, false, false, false, '', 0),
+        (14, 'your.org', 'https://ftpmirror.your.org/pub/kiwix/', 'ftp://ftpmirror.your.org/pub/kiwix/', 'rsync://ftpmirror.your.org/pub/kiwix/', true, true, 'na', 'us', 0, '', false, 5000, 0, '2023-01-27 15:40:31.488837 +00:00', 'Added - Wed Oct  9 10:52:56 2013 
 
---
--- your.org
---
-INSERT INTO server (
-  identifier, baseurl, baseurl_ftp, baseurl_rsync, enabled, status_baseurl, 
-  region, country, asn, prefix,
-  score, comment, operator_name, operator_url, public_notes,
-  admin, admin_email, lat, lng,
-  country_only, region_only, as_only, prefix_only, 
-  other_countries, file_maxsize, scan_fpm)
-VALUES (
-  'your.org', 'https://ftpmirror.your.org/pub/kiwix/', 'ftp://ftpmirror.your.org/pub/kiwix/', '', 'True', 'True', 
-  'na', 'us', '0', '',
-  '5000', $QUOTE$Added - Wed Oct  9 10:52:56 2013 
-
-*** scanned and enabled at Sat Nov  9 16:45:16 2013.$QUOTE$, $QUOTE$kevin (kevin@your.org)$QUOTE$, '', $QUOTE$$QUOTE$,
-  $QUOTE$$QUOTE$, $QUOTE$$QUOTE$, '0.000', '0.000',
-  'False', 'False', 'False', 'False',
-  '', '0', '0');
-
+*** scanned and enabled at Sat Nov  9 16:45:16 2013.', 'Your.org', 'https://your.org', '', 'Ryan Steinmetz', 'noc@your.org', 0.000, 0.000, false, false, false, false, '', 0);
