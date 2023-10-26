@@ -25,6 +25,8 @@ services:
       - ./httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
       - ./download.kiwix.org:/var/www/download.kiwix.org
       - ./GeoIP.conf:/etc/GeoIP.conf
+      - ./init_mirrorbrain_db_dev.sh:/usr/local/apache2/init_mirrorbrain_db_dev.sh
+      - ../sql/mirrors-postgresql.sql:/usr/local/apache2/mirrors-postgresql.sql
       # - /home/benoit/Repos/poeml/mirrorbrain/mb/mb:/usr/local/lib/python3.11/dist-packages/mb/
       # - /home/benoit/Repos/poeml/mirrorbrain/tools/null-rsync:/usr/bin/null-rsync
       - geoip:/usr/share/GeoIP

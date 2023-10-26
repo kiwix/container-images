@@ -4,7 +4,7 @@ LABEL maintainer="kiwix"
 
 #Set software versions
 ENV MB_VERSION 3.0.0-dev0
-ENV MB_USER_OR_ORG benoit74
+ENV MB_USER_OR_ORG kiwix
 
 ENV LIBMAXMINDDB_VERSION 1.7.1
 ENV MOD_MAXMINDDB_VERSION 1.2.0
@@ -12,7 +12,7 @@ ENV GEOIPUPDATE_VERSION 6.0.0
 ENV GEOIPUPDATE_ARCH amd64
 
 #Install needed packages
-RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl libaprutil1-dev python3-setuptools python3-pip python3-sqlobject python3-psycopg2 python3-pip python3-dev python3-geoip2
+RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl libaprutil1-dev python3-setuptools python3-pip python3-sqlobject python3-psycopg2 python3-pip python3-dev python3-geoip2 rsync
 #Install cmdln manually since it is not packaged
 RUN pip install --no-cache-dir --break-system-packages cmdln 
 
