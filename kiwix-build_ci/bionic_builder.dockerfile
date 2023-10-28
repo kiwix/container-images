@@ -1,4 +1,5 @@
 FROM ubuntu:bionic
+LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LANG C.UTF-8
 ENV OS_NAME bionic

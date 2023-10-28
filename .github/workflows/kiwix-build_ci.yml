@@ -1,4 +1,4 @@
-name: Container images CD
+name: Kiwix-build container images
 
 on:
   push:
