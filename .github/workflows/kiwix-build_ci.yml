@@ -1,0 +1,44 @@
+name: Container images CD
+
+on:
+  push:
+    paths:
+      - 'kiwix-build_ci/**'
+
+env:
+  IMAGE_PREFIX: ghcr.io/kiwix/kiwix-build_ci_
+
+jobs:
+  Container:
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [f35, focal, bionic, alpine]
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Get current date
+        run: echo "::set-output name=DATE::$(date +'%Y-%m-%d')"
+
+      - name: Retrieve the code
+        uses: actions/checkout@v3
+
+      - name: Setup container image name
+        id: env
+        run: |
+          echo "IMAGE_NAME=${{ env.IMAGE_PREFIX }}${{ matrix.variant }}" >> $GITHUB_OUTPUT
+
+      - name: Build container image
+        run: |
+          docker build -t ${{ steps.env.outputs.IMAGE_NAME }}:dev - < kiwix-build_ci/${{ matrix.variant }}_builder.dockerfile
+
+      - name: Tag release container image
+        if: github.event.ref == 'refs/heads/main'
+        run: |
+          docker tag ${{ steps.env.outputs.IMAGE_NAME }}:dev ${{ steps.env.outputs.IMAGE_NAME }}:${{ steps.date.outputs.DATE }}
+          docker tag ${{ steps.env.outputs.IMAGE_NAME }}:dev ${{ steps.env.outputs.IMAGE_NAME }}:latest
+
+      - name: Upload container image
+        run: |
+          echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
+          docker push --all-tags ${{ steps.env.outputs.IMAGE_NAME }}
