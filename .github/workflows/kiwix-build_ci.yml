@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'kiwix-build_ci/**'
+  workflow_dispatch:
 
 env:
   IMAGE_PREFIX: ghcr.io/kiwix/kiwix-build_ci_
@@ -18,7 +19,7 @@ jobs:
 
     steps:
       - name: Get current date
-        run: echo "::set-output name=DATE::$(date +'%Y-%m-%d')"
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Retrieve the code
         uses: actions/checkout@v3
@@ -26,19 +27,21 @@ jobs:
       - name: Setup container image name
         id: env
         run: |
-          echo "IMAGE_NAME=${{ env.IMAGE_PREFIX }}${{ matrix.variant }}" >> $GITHUB_OUTPUT
+          echo "IMAGE_NAME=${{ env.IMAGE_PREFIX }}${{ matrix.variant }}" >> $GITHUB_ENV
 
       - name: Build container image
         run: |
-          docker build -t ${{ steps.env.outputs.IMAGE_NAME }}:dev - < kiwix-build_ci/${{ matrix.variant }}_builder.dockerfile
+          docker build -t ${{ env.IMAGE_NAME }}:dev - < kiwix-build_ci/${{ matrix.variant }}_builder.dockerfile
 
-      - name: Tag release container image
-        if: github.event.ref == 'refs/heads/main'
-        run: |
-          docker tag ${{ steps.env.outputs.IMAGE_NAME }}:dev ${{ steps.env.outputs.IMAGE_NAME }}:${{ steps.date.outputs.DATE }}
-          docker tag ${{ steps.env.outputs.IMAGE_NAME }}:dev ${{ steps.env.outputs.IMAGE_NAME }}:latest
-
-      - name: Upload container image
+      - name: Upload container image to :dev
         run: |
           echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USERNAME }}" --password-stdin
-          docker push --all-tags ${{ steps.env.outputs.IMAGE_NAME }}
+          docker push ${{ env.IMAGE_NAME }}:dev
+
+      - name: Update production tags
+        if: github.event.ref == 'refs/heads/main'
+        run: |
+          docker tag ${{ env.IMAGE_NAME }}:dev ${{ env.IMAGE_NAME }}:${{ env.DATE }}
+          docker push ${{ env.IMAGE_NAME }}:${{ env.DATE }}
+          docker tag ${{ env.IMAGE_NAME }}:dev ${{ env.IMAGE_NAME }}:latest
+          docker push ${{ env.IMAGE_NAME }}:latest
