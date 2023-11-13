@@ -1,0 +1,27 @@
+name: Docker
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'mirrorbrain/**'
+
+jobs:
+
+  mirrorbrain:
+    name: Deploy mirrorbrain Image
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3.4.0
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v10
+        with:
+          image-name: kiwix/mirrorbrain
+          on-master: latest
+          restrict-to: kiwix/container-images
+          context: mirrorbrain
+          registries: ghcr.io
+          credentials:
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
