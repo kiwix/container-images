@@ -15,3 +15,4 @@ RUN curl -L -o /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz \
     tar -C /tmp -xf /tmp/MaxMind-DB-Reader-php-$MMDBREADERVERSION.tar.gz && \
     cd /tmp/MaxMind-DB-Reader-php-$MMDBREADERVERSION/ext && phpize && ./configure && \
     make && make install && docker-php-ext-enable maxminddb
+
