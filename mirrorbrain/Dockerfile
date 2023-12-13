@@ -84,6 +84,12 @@ COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 #Install start script
 COPY bin/* /usr/local/bin/
 RUN chmod 0500 /usr/local/bin/*
+# Hack: change scanner variable $gig2 from 2GiB to 256GiB
+# this is used as a threshold on rsync scans
+# Files larger than it trigger a Range-Request HTTP download.
+# If the request fails a warning is printed
+# Those requests are not necessary and create load on mirrors
+RUN sed -i 's/gig2 = 1<<31;/gig2 = 1<<38; # HACKED --/' /usr/bin/scanner
 
 #Start !
 CMD ["start.sh"]
