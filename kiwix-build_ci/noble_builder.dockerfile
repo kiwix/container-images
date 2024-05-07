@@ -2,7 +2,7 @@ FROM ubuntu:noble
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LANG C.UTF-8
-ENV OS_NAME numbat
+ENV OS_NAME noble
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update -q \
@@ -13,7 +13,7 @@ RUN apt update -q \
     wget unzip ninja-build openssh-client curl libgl-dev \
 # Packaged dependencies
     libbz2-dev libmagic-dev uuid-dev zlib1g-dev \
-    libmicrohttpd-dev aria2 libgtest-dev libgl-dev \ 
+    libmicrohttpd-dev aria2 libgtest-dev libgl-dev \
 # Devel package to compile python modules
     libxml2-dev libxslt-dev python3-dev \
 # Qt packages
