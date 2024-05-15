@@ -26,8 +26,6 @@ RUN apt update -q \
     g++-mingw-w64-i686 gcc-mingw-w64-i686 gcc-mingw-w64-base mingw-w64-tools \
 # Cross compile i586
     libc6-dev-i386 lib32stdc++6 gcc-multilib g++-multilib \
-# Other tools (to remove)
-    vim less grep \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
   && pip3 install meson pytest gcovr requests distro --break-system-packages
