@@ -1,11 +1,11 @@
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates unzip wget patch python3 && \
     apt-get clean -y && \
     rm -rf /var/lib/apt/lists/*
 
-RUN wget -O /tmp/4.x-dev.zip https://github.com/matomo-org/matomo-log-analytics/archive/4.x-dev.zip && unzip -d /tmp /tmp/4.x-dev.zip && mv /tmp/matomo-log-analytics-4.x-dev/import_logs.py /usr/local/bin/ && chmod a+x /usr/local/bin/import_logs.py && rm -f /tmp/3.x-dev.zip && rm -rf /tmp/matomo-log-analytics-3.x-dev
+RUN wget -O /tmp/5.x-dev.zip https://github.com/matomo-org/matomo-log-analytics/archive/5.x-dev.zip && unzip -d /tmp /tmp/5.x-dev.zip && mv /tmp/matomo-log-analytics-5.x-dev/import_logs.py /usr/local/bin/ && chmod a+x /usr/local/bin/import_logs.py && rm -f /tmp/3.x-dev.zip && rm -rf /tmp/matomo-log-analytics-3.x-dev
 COPY ignore_301.patch /tmp
 RUN patch /usr/local/bin/import_logs.py < /tmp/ignore_301.patch && rm /tmp/ignore_301.patch
 
