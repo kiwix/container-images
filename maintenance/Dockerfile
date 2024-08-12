@@ -10,6 +10,7 @@ RUN apt-get update -y \
         vim \
         cron \
         libmagic1 \
+        libcairo2 \
         curl \
         openssh-server \
     && apt-get clean \
