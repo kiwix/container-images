@@ -1,0 +1,27 @@
+name: WebDAV
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'nginx-webdav/**'
+
+jobs:
+
+  nginx-webdav:
+    name: Deploy WebDAV Image
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v10
+        with:
+          image-name: kiwix/nginx-webdav
+          on-master: latest
+          restrict-to: kiwix/container-images
+          context: nginx-webdav
+          registries: ghcr.io
+          credentials:
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
