@@ -1,20 +1,20 @@
-FROM httpd:2.4.57
+FROM httpd:2.4.62
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 LABEL maintainer="kiwix"
 
 #Set software versions
-ENV MB_VERSION 3.0.0-dev0
+ENV MB_VERSION 3.0.0
 ENV MB_USER_OR_ORG kiwix
 
-ENV LIBMAXMINDDB_VERSION 1.7.1
+ENV LIBMAXMINDDB_VERSION 1.11.0
 ENV MOD_MAXMINDDB_VERSION 1.2.0
-ENV GEOIPUPDATE_VERSION 6.0.0
+ENV GEOIPUPDATE_VERSION 7.0.1
 ENV GEOIPUPDATE_ARCH amd64
 
 #Install needed packages
 RUN mkdir -p /usr/share/man/man1/ /usr/share/man/man7/ &&  apt-get update && apt-get install -y --no-install-recommends wget cron automake libtool unzip  libaprutil1-dbd-pgsql postgresql-client build-essential libz-dev libconfig-inifiles-perl libwww-perl libdbd-pg-perl libtimedate-perl libdigest-md4-perl libaprutil1-dev python3-setuptools python3-pip python3-sqlobject python3-psycopg2 python3-pip python3-dev python3-geoip2 rsync
 #Install cmdln manually since it is not packaged
-RUN pip install --no-cache-dir --break-system-packages cmdln 
+RUN pip install --no-cache-dir --break-system-packages cmdln
 
 #Copy owned base config file for apache
 COPY config/apache/httpd.conf conf/httpd.conf
@@ -42,7 +42,7 @@ RUN \
   cd /usr/local/src/mod_maxminddb-${MOD_MAXMINDDB_VERSION} && \
   ./configure && \
   make install
-          
+
 #Install MirrorBrain from sources
 RUN \
   wget --no-check-certificate -qO - https://github.com/$MB_USER_OR_ORG/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz && \

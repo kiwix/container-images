@@ -18,7 +18,7 @@ jobs:
         uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/mirrorbrain
-          on-master: latest
+          on-master: bookworm
           restrict-to: kiwix/container-images
           context: mirrorbrain
           registries: ghcr.io
