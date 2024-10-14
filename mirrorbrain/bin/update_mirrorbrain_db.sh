@@ -61,4 +61,4 @@ scanMirror mirror-sites-ca.mblibrary.info ALLDIRS
 scanMirror mirror-sites-in.mblibrary.info ALLDIRS
 
 # Generate HTML mirrors list
-mb mirrorlist -f xhtml | grep -v @ > /var/www/download.kiwix.org/mirrors.html
+mb mirrorlist -f xhtml --html-header /etc/mirrorlist_header.txt | grep -v @ > /var/www/download.kiwix.org/mirrors.html

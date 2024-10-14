@@ -49,3 +49,13 @@ else
     cron -f
   fi
 fi
+
+if [ ! -z $GEOIPUPDATE ]
+then
+  geoipupdate -v
+fi
+
+if [ ! -z $HTTPD_ONLY ]
+then
+  httpd-foreground
+fi
