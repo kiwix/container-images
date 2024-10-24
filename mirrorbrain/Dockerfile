@@ -4,7 +4,6 @@ LABEL maintainer="kiwix"
 
 #Set software versions
 ENV MB_VERSION 3.0.0
-ENV MB_USER_OR_ORG kiwix
 
 ENV LIBMAXMINDDB_VERSION 1.11.0
 ENV MOD_MAXMINDDB_VERSION 1.2.0
@@ -45,7 +44,7 @@ RUN \
 
 #Install MirrorBrain from sources
 RUN \
-  wget --no-check-certificate -qO - https://github.com/$MB_USER_OR_ORG/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz && \
+  wget --no-check-certificate -qO - https://github.com/kiwix/mirrorbrain/archive/refs/tags/$MB_VERSION.tar.gz | tar -xz && \
   cd mirrorbrain-$MB_VERSION/mod_mirrorbrain && \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.h && \
   wget -q http://apache.webthing.com/svn/apache/forms/mod_form.c && \
@@ -59,6 +58,7 @@ RUN \
   install -m 755 null-rsync            /usr/bin/null-rsync && \
   install -m 755 scanner.pl            /usr/bin/scanner && \
   cd ../mirrorprobe/ && install -m 755 mirrorprobe.py  /usr/bin/mirrorprobe && \
+  cd ../zsync/ && pip install --no-cache-dir --break-system-packages . && \
   cd ../mb && pip install --no-cache-dir --break-system-packages . && \
   cd ../assets && \
   mkdir -p /var/www/static/flags && \
@@ -72,7 +72,7 @@ RUN chmod 0640 /etc/mirrorbrain.conf &&  chown root:mirrorbrain /etc/mirrorbrain
 COPY config/apache/httpd-vhosts.conf conf/extra/httpd-vhosts.conf
 
 #Copy SQL dumps
-COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
+# COPY ./sql/* mirrorbrain-$MB_VERSION/sql/
 
 #Install start script
 COPY bin/* /usr/local/bin/
