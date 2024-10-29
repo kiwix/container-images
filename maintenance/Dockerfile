@@ -1,5 +1,5 @@
 
-FROM docker.io/library/python:3.12-slim-bookworm
+FROM docker.io/library/python:3.12-bookworm
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 # debian-slim based python container with libzim
@@ -12,6 +12,7 @@ RUN apt-get update -y \
         libmagic1 \
         libcairo2 \
         curl \
+        patch \
         openssh-server \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
