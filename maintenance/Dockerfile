@@ -2,8 +2,6 @@
 FROM docker.io/library/python:3.12-bookworm
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
-# debian-slim based python container with libzim
-
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
         locales \
