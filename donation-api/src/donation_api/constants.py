@@ -7,8 +7,14 @@ import requests
 @dataclass
 class Constants:
     stripe_on_prod: bool = bool(os.getenv("STRIPE_USE_LIVE") == "1")
-    stripe_test_key: str = os.getenv("STRIPE_TEST_KEY") or "notset"
-    stripe_live_key: str = os.getenv("STRIPE_LIVE_KEY") or "notset"
+    stripe_test_secret_key: str = os.getenv("STRIPE_TEST_SECRET_KEY") or "notset"
+    stripe_live_secret_key: str = os.getenv("STRIPE_LIVE_SECRET_KEY") or "notset"
+    stripe_test_publishable_key: str = (
+        os.getenv("STRIPE_TEST_PUBLISHABLE_KEY") or "notset"
+    )
+    stripe_live_publishable_key: str = (
+        os.getenv("STRIPE_LIVE_PUBLISHABLE_KEY") or "notset"
+    )
     stripe_webhook_secret: str = os.getenv("STRIPE_WEBHOOK_SECRET") or ""
     stripe_webhook_sender_ips: list[str] = field(default_factory=list)
     stripe_webhook_testing_ips: list[str] = field(default_factory=list)
@@ -36,10 +42,16 @@ class Constants:
             raise OSError("No Stripe Webhook IPs!")
 
     @property
-    def stripe_api_key(self) -> str:
+    def stripe_secret_api_key(self) -> str:
         if self.stripe_on_prod:
-            return self.stripe_live_key
-        return self.stripe_test_key
+            return self.stripe_live_secret_key
+        return self.stripe_test_secret_key
+
+    @property
+    def stripe_publishable_api_key(self) -> str:
+        if self.stripe_on_prod:
+            return self.stripe_live_publishable_key
+        return self.stripe_test_publishable_key
 
 
 conf = Constants()

@@ -12,4 +12,6 @@ def test_default_to_test():
 def test_check_config(client: TestClient):
     resp = client.get("/v1/stripe/health-check")
     assert resp.status_code == HTTPStatus.INTERNAL_SERVER_ERROR
-    assert resp.json().get("detail") == "Missing Test API Key"
+    reason = resp.json().get("detail")
+    assert "Missing Test API Key" in reason
+    assert "Missing Test Publishable API Key" in reason

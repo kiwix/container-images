@@ -11,7 +11,7 @@ from stripe import Event, StripeError, Webhook
 from donation_api.constants import conf
 
 logger = logging.getLogger("uvicorn.error")
-stripe.api_key = conf.stripe_api_key
+stripe.api_key = conf.stripe_secret_api_key
 
 router = APIRouter(
     prefix="/stripe",
@@ -30,6 +30,10 @@ class PaymentIntent(BaseModel):
     """Our response to PaymentIntent request"""
 
     secret: str
+
+
+class PublicConfigResponse(BaseModel):
+    publishable_key: str
 
 
 class StripeWebhookPayload(BaseModel):
@@ -73,6 +77,20 @@ def can_send_webhook(ip_addr: str) -> bool:
 
 
 @router.get(
+    "/config",
+    status_code=HTTPStatus.OK,
+    responses={
+        HTTPStatus.OK: {
+            "model": PublicConfigResponse,
+            "description": "Health Check passed",
+        },
+    },
+)
+async def get_config():
+    return {"publishable_key": conf.stripe_publishable_api_key}
+
+
+@router.get(
     "/health-check",
     status_code=HTTPStatus.OK,
     responses={
@@ -87,11 +105,22 @@ def can_send_webhook(ip_addr: str) -> bool:
 )
 async def check_config():
     errors: list[str] = []
+
     if conf.stripe_on_prod and not str(stripe.api_key).startswith("sk_live_"):
         errors.append("Missing Live API Key")
 
     if not conf.stripe_on_prod and not str(stripe.api_key).startswith("sk_test_"):
         errors.append("Missing Test API Key")
+
+    if conf.stripe_on_prod and not conf.stripe_publishable_api_key.startswith(
+        "pk_live_"
+    ):
+        errors.append("Missing Live Publishable API Key")
+
+    if not conf.stripe_on_prod and not conf.stripe_publishable_api_key.startswith(
+        "pk_test_"
+    ):
+        errors.append("Missing Test Publishable API Key")
 
     if not conf.stripe_webhook_sender_ips:
         errors.append("Missing Stripe IPs")
