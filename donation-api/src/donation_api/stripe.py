@@ -1,0 +1,212 @@
+import logging
+import re
+from http import HTTPStatus
+from typing import Annotated, Any
+
+import stripe
+from fastapi import APIRouter, Depends, Header, HTTPException, Request
+from pydantic import BaseModel, ConfigDict
+from stripe import Event, StripeError, Webhook
+
+from donation_api.constants import conf
+
+logger = logging.getLogger("uvicorn.error")
+stripe.api_key = conf.stripe_api_key
+
+router = APIRouter(
+    prefix="/stripe",
+    tags=["stripe"],
+)
+
+
+class PaymentIntentRequest(BaseModel):
+    """Request Payload for a PaymentIntent creation"""
+
+    amount: int
+    currency: str
+
+
+class PaymentIntent(BaseModel):
+    """Our response to PaymentIntent request"""
+
+    secret: str
+
+
+class StripeWebhookPayload(BaseModel):
+    """Stripe-sent payload during the webhook call
+    https://stripe.com/docs/webhooks"""
+
+    model_config = ConfigDict(extra="allow")
+
+    id: str
+    object: str
+    api_version: str
+    created: int
+    data: dict[str, Any]  # at this point that's enough
+    livemode: bool
+    pending_webhooks: int
+    request: dict[str, Any]
+    type: str
+
+
+class StripeWebhookResponse(BaseModel):
+    """Response to Stripe from the Webhook so Stripe is able to record whether
+    processing went fine or not"""
+
+    status: str
+
+
+async def get_body(request: Request):
+    """raw request body"""
+    return await request.body()
+
+
+def can_send_webhook(ip_addr: str) -> bool:
+    """whether an IP is allowed to submit webhook requests"""
+    if not conf.stripe_on_prod:
+        return ip_addr in [
+            *conf.stripe_webhook_sender_ips,
+            *conf.stripe_webhook_testing_ips,
+            "127.0.0.1",
+        ]
+    return ip_addr in conf.stripe_webhook_sender_ips
+
+
+@router.get(
+    "/health-check",
+    status_code=HTTPStatus.OK,
+    responses={
+        HTTPStatus.INTERNAL_SERVER_ERROR: {
+            "description": "Health check failed",
+        },
+        HTTPStatus.OK: {
+            "model": str,
+            "description": "Health Check passed",
+        },
+    },
+)
+async def check_config():
+    errors: list[str] = []
+    if conf.stripe_on_prod and not str(stripe.api_key).startswith("sk_live_"):
+        errors.append("Missing Live API Key")
+
+    if not conf.stripe_on_prod and not str(stripe.api_key).startswith("sk_test_"):
+        errors.append("Missing Test API Key")
+
+    if not conf.stripe_webhook_sender_ips:
+        errors.append("Missing Stripe IPs")
+
+    if errors:
+        raise HTTPException(
+            status_code=HTTPStatus.INTERNAL_SERVER_ERROR, detail="\n".join(errors)
+        )
+    return "OK"
+
+
+@router.post(
+    "/payment-intent",
+    responses={
+        HTTPStatus.BAD_REQUEST: {
+            "description": "PaymentIntent request was not understood",
+        },
+        HTTPStatus.CREATED: {
+            "model": PaymentIntent,
+            "description": "Stripe-created PaymentIntent",
+        },
+    },
+    status_code=HTTPStatus.CREATED,
+)
+async def create_payment_intent(pi_payload: PaymentIntentRequest):
+    """API endpoint to receive Book addition requests and add to database"""
+    if not re.match(r"[a-z]{3}", pi_payload.currency.lower()):
+        logger.error("Currency doesnt look like a currency")
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST,
+            detail="Currency doesnt look like a currency",
+        )
+
+    if (
+        pi_payload.amount < conf.stripe_minimal_amount
+        or pi_payload.amount > conf.stripe_maximum_amount
+    ):
+        logger.error("Amount not within range")
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST,
+            detail="Amount not within range",
+        )
+    logger.info(f"PI for {pi_payload.amount} {pi_payload.currency}")
+    try:
+        intent = stripe.PaymentIntent.create(
+            amount=pi_payload.amount,
+            currency=pi_payload.currency.lower(),
+            use_stripe_sdk=True,
+        )
+        return {"secret": intent.client_secret}, HTTPStatus.CREATED
+    except StripeError as exc:
+        logger.error(repr(exc))
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST, detail=str(exc)
+        ) from exc
+    except Exception as exc:
+        logger.error(repr(exc))
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST, detail=str(exc)
+        ) from exc
+
+
+@router.post(
+    "/webhook",
+    responses={
+        HTTPStatus.BAD_REQUEST: {
+            "description": "Webhook request was not understood",
+        },
+        HTTPStatus.OK: {
+            "model": StripeWebhookResponse,
+            "description": "Webhook processing went fine",
+        },
+    },
+    status_code=HTTPStatus.OK,
+)
+def webhook_received(
+    webhook_payload: StripeWebhookPayload,
+    request: Request,
+    body: bytes = Depends(get_body),
+    stripe_signature: Annotated[str | None, Header()] = None,
+):
+    client_host = request.client.host if request.client else ""
+    if not can_send_webhook(client_host):
+        logger.error(f"Not from a Strip Webhook IP: {client_host}")
+        raise HTTPException(
+            status_code=HTTPStatus.FORBIDDEN, detail="Not from a Strip Webhook IP"
+        )
+    # retrieve the event by verifying the signature using the raw body
+    # and secret if webhook signing is configured.
+    if conf.stripe_webhook_secret and stripe_signature:
+        try:
+            event: Event = (
+                Webhook.construct_event(  # pyright: ignore [ reportUnknownMemberType]
+                    payload=body.decode("UTF-8"),
+                    sig_header=stripe_signature,
+                    secret=conf.stripe_webhook_secret,
+                )
+            )
+            data = event["data"]
+        except Exception as exc:
+            logger.error(exc)
+            raise HTTPException(
+                status_code=HTTPStatus.INTERNAL_SERVER_ERROR,
+                detail=f"Event construct failed: {exc!r}",
+            ) from exc
+        event_type = event["type"]
+    else:
+        data = webhook_payload.data
+        event_type = webhook_payload.type
+    data_object = data["object"]
+
+    if event_type == "payment_intent.succeeded":
+        logger.info("💰 Payment received!")
+        logger.debug(data_object)
+    elif event_type == "payment_intent.payment_failed":
+        logger.info("❌ Payment failed.")
+
+    return {"status": "success"}
