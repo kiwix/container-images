@@ -33,6 +33,15 @@ def create_app() -> FastAPI:
                 conf.merchantid_domain_association, status_code=HTTPStatus.OK
             )
 
+    if conf.merchantid_domain_association_txt:
+
+        @app.get("/.well-known/apple-developer-merchantid-domain-association.txt")
+        async def _():
+            """Used to validate domain ownership with apple"""
+            return PlainTextResponse(
+                conf.merchantid_domain_association_txt, status_code=HTTPStatus.OK
+            )
+
     api = FastAPI(
         title=__title__,
         description=__description__,

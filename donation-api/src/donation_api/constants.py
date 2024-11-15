@@ -22,6 +22,9 @@ class Constants:
     merchantid_domain_association: str = (
         os.getenv("MERCHANTID_DOMAIN_ASSOCIATION") or ""
     )
+    merchantid_domain_association_txt: str = (
+        os.getenv("MERCHANTID_DOMAIN_ASSOCIATION_TXT") or ""
+    )
 
     stripe_minimal_amount: int = int(os.getenv("STRIPE_MINIMAL_AMOUNT") or "5")
     stripe_maximum_amount: int = int(os.getenv("STRIPE_MAXIMUM_AMOUNT") or "999999")
