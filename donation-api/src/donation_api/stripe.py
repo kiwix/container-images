@@ -178,7 +178,7 @@ async def create_payment_intent(pi_payload: PaymentIntentRequest):
             currency=pi_payload.currency.lower(),
             use_stripe_sdk=True,
         )
-        return {"secret": intent.client_secret}, HTTPStatus.CREATED
+        return {"secret": intent.client_secret}
     except StripeError as exc:
         logger.error(repr(exc))
         raise HTTPException(
