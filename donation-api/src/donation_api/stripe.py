@@ -96,6 +96,9 @@ async def check_config():
     if not conf.stripe_webhook_sender_ips:
         errors.append("Missing Stripe IPs")
 
+    if not conf.alllowed_currencies:
+        errors.append("Missing currencies list")
+
     if errors:
         raise HTTPException(
             status_code=HTTPStatus.INTERNAL_SERVER_ERROR, detail="\n".join(errors)
@@ -123,6 +126,11 @@ async def create_payment_intent(pi_payload: PaymentIntentRequest):
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail="Currency doesnt look like a currency",
+        )
+    if pi_payload.currency not in conf.alllowed_currencies:
+        raise HTTPException(
+            status_code=HTTPStatus.BAD_REQUEST,
+            detail="Currency not supported",
         )
 
     if (

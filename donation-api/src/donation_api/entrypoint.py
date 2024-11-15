@@ -2,10 +2,11 @@ from http import HTTPStatus
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import RedirectResponse
+from fastapi.responses import PlainTextResponse, RedirectResponse
 
 from donation_api import stripe
 from donation_api.__about__ import __description__, __title__, __version__
+from donation_api.constants import conf
 
 PREFIX = "/v1"
 
@@ -21,6 +22,16 @@ def create_app() -> FastAPI:
     async def _():
         """Redirect to root of latest version of the API"""
         return RedirectResponse(f"{PREFIX}/", status_code=HTTPStatus.PERMANENT_REDIRECT)
+
+    # could be done on infra ; this is a handy shortcut
+    if conf.merchantid_domain_association:
+
+        @app.get("/.well-known/apple-developer-merchantid-domain-association")
+        async def _():
+            """Used to validate domain ownership with apple/stripe"""
+            return PlainTextResponse(
+                conf.merchantid_domain_association, status_code=HTTPStatus.OK
+            )
 
     api = FastAPI(
         title=__title__,

@@ -12,11 +12,19 @@ class Constants:
     stripe_webhook_secret: str = os.getenv("STRIPE_WEBHOOK_SECRET") or ""
     stripe_webhook_sender_ips: list[str] = field(default_factory=list)
     stripe_webhook_testing_ips: list[str] = field(default_factory=list)
+    alllowed_currencies: list[str] = field(default_factory=list)
+    merchantid_domain_association: str = (
+        os.getenv("MERCHANTID_DOMAIN_ASSOCIATION") or ""
+    )
 
-    stripe_minimal_amount: float = 1.0
-    stripe_maximum_amount: float = 1000000
+    stripe_minimal_amount: int = int(os.getenv("STRIPE_MINIMAL_AMOUNT") or "5")
+    stripe_maximum_amount: int = int(os.getenv("STRIPE_MAXIMUM_AMOUNT") or "999999")
 
     def __post_init__(self):
+        self.alllowed_currencies = (
+            os.getenv("ALLOWED_CURRENCIES") or "USD|EUR|CHF"
+        ).split("|")
+
         self.stripe_webhook_testing_ips = os.getenv(
             "STRIPE_WEBHOOK_TESTING_IPS", ""
         ).split("|")
