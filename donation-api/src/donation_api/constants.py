@@ -1,4 +1,5 @@
 import os
+import pathlib
 from dataclasses import dataclass, field
 
 import requests
@@ -26,6 +27,20 @@ class Constants:
         os.getenv("MERCHANTID_DOMAIN_ASSOCIATION_TXT") or ""
     )
 
+    applepay_merchant_identifier: str = os.getenv("APPLEPAY_MERCHANT_IDENTIFIER") or ""
+    applepay_displayname: str = os.getenv("APPLEPAY_DISPLAYNAME") or ""
+    applepay_payment_session_initiative: str = (
+        os.getenv("APPLEPAY_PAYMENT_SESSION_INITIATIVE") or ""
+    )
+    applepay_payment_session_initiative_context: str = (
+        os.getenv("APPLEPAY_PAYMENT_SESSION_INITIATIVE_CONTEXT") or ""
+    )
+    applepay_merchant_certificate_path: pathlib.Path = pathlib.Path("/missing")
+    applepay_merchant_certificate_key_path: pathlib.Path = pathlib.Path("/missing")
+    applepay_payment_session_request_timeout: int = int(
+        os.getenv("APPLEPAY_PAYMENT_SESSION_REQ_TIMEOUT_SEC") or "5"
+    )
+
     stripe_minimal_amount: int = int(os.getenv("STRIPE_MINIMAL_AMOUNT") or "5")
     stripe_maximum_amount: int = int(os.getenv("STRIPE_MAXIMUM_AMOUNT") or "999999")
 
@@ -43,6 +58,25 @@ class Constants:
         self.stripe_webhook_sender_ips = resp.text.strip().split("\n")
         if not self.stripe_webhook_sender_ips:
             raise OSError("No Stripe Webhook IPs!")
+
+        if (
+            self.applepay_payment_session_initiative
+            and self.applepay_payment_session_initiative not in ("web", "in_app")
+        ):
+            raise OSError("ApplePay Payment Session Initiative in invalid")
+
+        if (
+            self.applepay_payment_session_initiative
+            and not self.applepay_payment_session_initiative_context
+        ):
+            raise OSError("Missing ApplePay Payment Initiative Context")
+
+        certpath = os.getenv("APPLEPAY_MERCHANT_CERTIFICATE_PATH") or ""
+        if certpath:
+            self.applepay_merchant_certificate_path = pathlib.Path(certpath)
+        certkeypath = os.getenv("APPLEPAY_MERCHANT_CERTIFICATE_KEY_PATH") or ""
+        if certkeypath:
+            self.applepay_merchant_certificate_key_path = pathlib.Path(certpath)
 
     @property
     def stripe_secret_api_key(self) -> str:

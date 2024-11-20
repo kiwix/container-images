@@ -9,7 +9,8 @@ description = "A simple Stripe relay endpoint"
 readme = "README.md"
 dependencies = [
     "stripe==11.2.0",
-    "fastapi[standard]==0.115.5"
+    "fastapi[standard]==0.115.5",
+    "requests==2.32.3",
 ]
 dynamic = ["authors", "classifiers", "keywords", "license", "version", "urls"]
 

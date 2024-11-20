@@ -3,6 +3,7 @@ import re
 from http import HTTPStatus
 from typing import Annotated, Any
 
+import requests
 import stripe
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
 from pydantic import BaseModel, ConfigDict
@@ -58,6 +59,10 @@ class StripeWebhookResponse(BaseModel):
     processing went fine or not"""
 
     status: str
+
+
+class OpaqueApplePayPaymentSession(BaseModel):
+    model_config = ConfigDict(extra="allow")
 
 
 async def get_body(request: Request):
@@ -127,6 +132,24 @@ async def check_config():
 
     if not conf.alllowed_currencies:
         errors.append("Missing currencies list")
+
+    if not conf.applepay_merchant_identifier:
+        errors.append("Missing ApplePay merchantIdentifier")
+
+    if not conf.applepay_displayname:
+        errors.append("Missing ApplePay displayName")
+
+    if not conf.applepay_payment_session_initiative:
+        errors.append("Missing ApplePay session initiative")
+
+    if not conf.applepay_payment_session_initiative_context:
+        errors.append("Missing ApplePay session initiative context")
+
+    if not conf.applepay_merchant_certificate_path.read_text():
+        errors.append("Missing ApplePay merchant certificate")
+
+    if not conf.applepay_merchant_certificate_key_path.read_text():
+        errors.append("Missing ApplePay merchant certificate key")
 
     if errors:
         raise HTTPException(
@@ -247,3 +270,47 @@ def webhook_received(
         logger.info("❌ Payment failed.")
 
     return {"status": "success"}
+
+
+@router.post(
+    "/payment-session",
+    responses={
+        HTTPStatus.BAD_REQUEST: {
+            "description": "Request for a Payment Session from ApplePay failed",
+        },
+        HTTPStatus.OK: {
+            "model": OpaqueApplePayPaymentSession,
+            "description": "ApplePay Server returned an Opaque Payment Session",
+        },
+    },
+    status_code=HTTPStatus.OK,
+)
+async def create_payment_session():
+    payload = {
+        "merchantIdentifier": conf.applepay_merchant_identifier,
+        "displayName": conf.applepay_displayname,
+        "initiative": conf.applepay_payment_session_initiative,
+        "initiativeContext": conf.applepay_payment_session_initiative_context,
+    }
+
+    data: dict[str, Any] = {}
+    resp = requests.post(
+        url="https://apple-pay-gateway.apple.com/paymentservices/paymentSession",
+        cert=(
+            str(conf.applepay_merchant_certificate_path),
+            str(conf.applepay_merchant_certificate_key_path),
+        ),
+        json=payload,
+        timeout=conf.applepay_payment_session_request_timeout,
+    )
+    try:
+        data = resp.json()
+    except Exception:
+        ...
+    if resp.status_code != HTTPStatus.OK:
+        raise HTTPException(
+            status_code=resp.status_code,
+            detail=data.get("statusMessage") or "Failed to request payment session",
+        )
+
+    return data
