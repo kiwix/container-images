@@ -61,8 +61,16 @@ class StripeWebhookResponse(BaseModel):
     status: str
 
 
+class ApplePayPaymentSessionRequest(BaseModel):
+    # defaulting to test gateway
+    validation_url: str = "apple-pay-gateway-cert.apple.com"
+
+
 class OpaqueApplePayPaymentSession(BaseModel):
     model_config = ConfigDict(extra="allow")
+
+    initiative: str
+    initiativeContext: str
 
 
 async def get_body(request: Request):
@@ -285,7 +293,23 @@ def webhook_received(
     },
     status_code=HTTPStatus.OK,
 )
-async def create_payment_session():
+async def create_payment_session(ps_payload: ApplePayPaymentSessionRequest):
+    allowed_domains: list[str] = [
+        # Global
+        "apple-pay-gateway.apple.com",
+        # China
+        "cn-apple-pay-gateway.apple.com",
+        # Testing (Global)
+        "apple-pay-gateway-cert.apple.com",
+        # Testing (China)
+        "cn-apple-pay-gateway-cert.apple.com",
+    ]
+    if ps_payload.validation_url not in allowed_domains:
+        raise HTTPException(
+            status_code=HTTPStatus.FORBIDDEN,
+            detail="Validation URL is not in Apple's whitelist",
+        )
+
     payload = {
         "merchantIdentifier": conf.applepay_merchant_identifier,
         "displayName": conf.applepay_displayname,
@@ -295,7 +319,7 @@ async def create_payment_session():
 
     data: dict[str, Any] = {}
     resp = requests.post(
-        url="https://apple-pay-gateway.apple.com/paymentservices/paymentSession",
+        url=f"https://{ps_payload.validation_url}/paymentservices/paymentSession",
         cert=(
             str(conf.applepay_merchant_certificate_path),
             str(conf.applepay_merchant_certificate_key_path),

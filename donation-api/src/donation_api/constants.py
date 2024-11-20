@@ -76,7 +76,7 @@ class Constants:
             self.applepay_merchant_certificate_path = pathlib.Path(certpath)
         certkeypath = os.getenv("APPLEPAY_MERCHANT_CERTIFICATE_KEY_PATH") or ""
         if certkeypath:
-            self.applepay_merchant_certificate_key_path = pathlib.Path(certpath)
+            self.applepay_merchant_certificate_key_path = pathlib.Path(certkeypath)
 
     @property
     def stripe_secret_api_key(self) -> str:
