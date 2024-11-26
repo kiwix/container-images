@@ -181,13 +181,13 @@ async def check_config():
 )
 async def create_payment_intent(pi_payload: PaymentIntentRequest):
     """API endpoint to receive Book addition requests and add to database"""
-    if not re.match(r"[a-z]{3}", pi_payload.currency.lower()):
+    if not re.match(r"[A-Z]{3}", pi_payload.currency.upper()):
         logger.error("Currency doesnt look like a currency")
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail="Currency doesnt look like a currency",
         )
-    if pi_payload.currency not in conf.alllowed_currencies:
+    if pi_payload.currency.upper() not in conf.alllowed_currencies:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail="Currency not supported",

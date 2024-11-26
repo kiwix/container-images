@@ -45,9 +45,12 @@ class Constants:
     stripe_maximum_amount: int = int(os.getenv("STRIPE_MAXIMUM_AMOUNT") or "999999")
 
     def __post_init__(self):
-        self.alllowed_currencies = (
-            os.getenv("ALLOWED_CURRENCIES") or "USD|EUR|CHF"
-        ).split("|")
+        self.alllowed_currencies = [
+            currency.upper()
+            for currency in (os.getenv("ALLOWED_CURRENCIES") or "USD|EUR|CHF").split(
+                "|"
+            )
+        ]
 
         self.stripe_webhook_testing_ips = os.getenv(
             "STRIPE_WEBHOOK_TESTING_IPS", ""
