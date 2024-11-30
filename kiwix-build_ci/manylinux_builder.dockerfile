@@ -1,4 +1,4 @@
-FROM quay.io/pypa/manylinux_2_28_x86_64
+FROM quay.io/pypa/manylinux_2_28_x86_64:2024.11.30-1
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LANG C.UTF-8
@@ -15,7 +15,7 @@ RUN dnf install -y --nodocs \
   && dnf clean all \
   && python3.12 -m pip install meson pytest requests distro
 
-ENV PATH /opt/_internal/cpython-3.12.3/bin:$PATH
+ENV PATH /opt/_internal/cpython-3.12.7/bin:$PATH
 
 # Create user
 RUN groupadd --gid 121 runner
