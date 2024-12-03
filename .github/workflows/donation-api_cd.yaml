@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - 'donation-api/**'
+  workflow_dispatch:
 
 jobs:
 

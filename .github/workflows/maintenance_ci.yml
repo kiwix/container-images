@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - 'maintenance/**'
+  workflow_dispatch:
 
 jobs:
 

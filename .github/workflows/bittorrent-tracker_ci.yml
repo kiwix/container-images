@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - 'bittorrent-tracker/**'
+    workflow_dispatch:
 
 jobs:
 
