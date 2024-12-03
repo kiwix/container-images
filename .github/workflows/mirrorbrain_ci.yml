@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
       - 'mirrorbrain/**'
+  workflow_dispatch:
 
 jobs:
 
