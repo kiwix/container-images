@@ -25,32 +25,29 @@ echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum
 
 # Scan the ftp.acc.umu.se mirror (two offloaders)
-scanMirror mirror.accum.se ZIMDIRS
-scanMirror laotzu-mirror.accum.se ZIMDIRS
+scanMirror saimei.ftp.acc.umu.se ALLDIRS
+scanMirror laotzu.ftp.acc.umu.se ALLDIRS
 
 # Scan the dotsrc.org mirror
-scanMirror dotsrc.org ALLDIRS
+scanMirror mirrors.dotsrc.org ALLDIRS
 
 # scan the Kiwix mirrors
-scanMirror mirror.kiwix ALLDIRS
-
-# Scan the Wikimedia mirror
-scanMirror wikimedia WMDIRS
+scanMirror mirror.download.kiwix.org ALLDIRS
 
 # Scan the ISOC Israel mirror
-scanMirror isoc.org.il WMDIRS
+scanMirror mirror.isoc.org.il ZIMDIRS
 
 # Scan the Your.org mirror
-scanMirror your.org WMDIRS
+scanMirror ftpmirror.your.org WMDIRS
 
 # Scan the nluug.nl mirror
-scanMirror nluug.nl ALLDIRS
+scanMirror ftp.nluug.nl ALLDIRS
 
 # Scan the Mirrorservice.org mirror
-scanMirror mirrorservice.org WMDIRS
+scanMirror www.mirrorservice.org ALLDIRS
 
 # Scan the fau.de mirror
-scanMirror fau.de ALLDIRS
+scanMirror ftp.fau.de ALLDIRS
 
 # Scan the hacktegic mirror
 scanMirror md.mirrors.hacktegic.com ALLDIRS
@@ -60,5 +57,9 @@ scanMirror mirror-sites-fr.mblibrary.info ALLDIRS
 scanMirror mirror-sites-ca.mblibrary.info ALLDIRS
 scanMirror mirror-sites-in.mblibrary.info ALLDIRS
 
+# Scan the Wikimedia mirror
+scanMirror dumps.wikimedia.org WMDIRS
+
 # Generate HTML mirrors list
 mb mirrorlist -f xhtml --html-header /etc/mirrorlist_header.txt | grep -v @ > /var/www/download.kiwix.org/mirrors.html
+
