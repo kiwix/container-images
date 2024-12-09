@@ -40,7 +40,7 @@ def expand_url(url):
     if uri.scheme == "github":
         path = pathlib.Path(uri.path[1:])
         repo = f"{uri.netloc}/{path.parts[0]}"
-        branch = get_main_branch(repo)
+        branch = dict(urllib.parse.parse_qsl(uri.query)).get("branch", get_main_branch(repo))
         return (
             f"https://raw.githubusercontent.com/{repo}/{branch}"
             f"/{'/'.join(path.parts[1:])}"
