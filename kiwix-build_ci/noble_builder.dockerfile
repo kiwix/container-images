@@ -4,6 +4,8 @@ LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 ENV LANG C.UTF-8
 ENV OS_NAME noble
 ENV DEBIAN_FRONTEND noninteractive
+# QT_SELECT=qt6 with qtchooser allows building with 'qmake' instead of 'qmake6'
+ENV QT_SELECT=qt6
 
 RUN apt update -q \
   && apt install -q -y --no-install-recommends \
@@ -17,7 +19,7 @@ RUN apt update -q \
 # Devel package to compile python modules
     libxml2-dev libxslt-dev python3-dev \
 # Qt packages
-    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 \
+    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 qtchooser \
 # To create the appimage of kiwix-desktop
     libfuse3-3 fuse3 patchelf \
 # Flatpak tools
@@ -28,7 +30,8 @@ RUN apt update -q \
     libc6-dev-i386 lib32stdc++6 gcc-multilib g++-multilib \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
-  && pip3 install meson pytest gcovr requests distro --break-system-packages
+  && pip3 install meson pytest gcovr requests distro --break-system-packages \
+  && qtchooser -install qt6 $(which qmake6)
 
 # Create user
 RUN groupadd --gid 121 runner
