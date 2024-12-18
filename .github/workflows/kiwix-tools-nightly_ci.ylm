@@ -1,0 +1,42 @@
+name: kiwix-tools nightly
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'kiwix-tools-nightly/**'
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 8 * * *'
+
+jobs:
+
+  kiwix-tools-nightly:
+    name: Deploy kiwix-tools nightly Image
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish Docker Image
+        uses: openzim/docker-publish-action@v10
+        with:
+          image-name: kiwix/kiwix-tools-nightly
+          on-master: latest
+          restrict-to: kiwix/container-images
+          context: kiwix-tools-nightly
+          registries: ghcr.io
+          credentials:
+            GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
+            GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+          platforms: |
+            linux/amd64
+            linux/arm64
+            linux/arm/v7
+            linux/arm/v6
+            linux/386
+      - name: Restart dev-library
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: rollout restart deployments dev-library-deployment -n zim
