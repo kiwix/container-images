@@ -5,7 +5,7 @@ multiple GNU/Linux systems.
 These prepared environments include: compilers, binary toolchains and
 any third-party tool necessary to run the compilation toolchain. They
 don't contain pre-compiled library dependencies build by kiwix-build,
-(like Xapian, Libicu, Libmicrohttps, ...) but it contains dependencies
+(like Xapian, Libicu, Libmicrohttps, ...) but they contain dependencies
 installed with package manager.
 
 These container images are necessary and intended to be used by Kiwix
