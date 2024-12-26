@@ -32,6 +32,9 @@ RUN apt update -q \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
   && pip3 install meson pytest gcovr requests distro
 
+# QT_SELECT has to be set to Qt5 so Kiwix Linux/Windows compiles
+ENV QT_SELECT qt5
+
 # Create user
 RUN groupadd --gid 121 runner
 RUN useradd --uid 1001 --gid 121 --create-home runner
