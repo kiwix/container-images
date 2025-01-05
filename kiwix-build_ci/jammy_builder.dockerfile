@@ -16,8 +16,10 @@ RUN apt update -q \
     libmicrohttpd-dev aria2 libgtest-dev libgl-dev \
 # Devel package to compile python modules
     libxml2-dev libxslt-dev python3-dev \
-# Qt packages
+# Qt5 packages
     libqt5gui5 qtbase5-dev qtwebengine5-dev libqt5svg5-dev qt5-image-formats-plugins \
+# Qt6 packages
+    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 \
 # To create the appimage of kiwix-desktop
     libfuse2 fuse patchelf \
 # Flatpak tools
@@ -32,8 +34,9 @@ RUN apt update -q \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
   && pip3 install meson pytest gcovr requests distro
 
-# QT_SELECT has to be set to Qt5 so Kiwix Linux/Windows compiles
-ENV QT_SELECT qt5
+# Set Qt6 per default (QT_SELECT has to be set to Qt5 so Kiwix Linux/Windows compiles)
+RUN qtchooser -install qt6 $(which qmake6)
+ENV QT_SELECT qt6
 
 # Create user
 RUN groupadd --gid 121 runner
