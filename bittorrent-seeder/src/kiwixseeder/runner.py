@@ -119,7 +119,9 @@ class Runner:
             logger.debug(f"* {self.manager.get(btih)!s}")
 
         self.fetch_catalog()
-        self.reduce_catalog()
+        if self.reduce_catalog():
+            # requested exit
+            return
         self.remove_outdated_torrents()
 
         self.ensure_storage()
@@ -158,7 +160,7 @@ class Runner:
         self.catalog.ensure_fresh()
         logger.info(f"Catalog contains {self.catalog.nb_books} ZIMs")
 
-    def reduce_catalog(self):
+    def reduce_catalog(self) -> bool:
         # build books with our filters
         self.books = list(filter(self.matches, self.catalog.all_books))
 
@@ -178,12 +180,14 @@ class Runner:
                 != "Y"
             ):
                 logger.info("OK, exiting.")
-                return
+                return True
 
         logger.info(f"Filters matches {len(self.books)} ZIMs")
         if len(self.books) <= 15:  # noqa: PLR2004
             for book in self.books:
                 logger.debug(f"* {book!s}")
+
+        return False
 
     def remove_outdated_torrents(self):
         if not self.manager.btihs:

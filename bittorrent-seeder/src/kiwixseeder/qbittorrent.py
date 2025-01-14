@@ -45,6 +45,7 @@ class TorrentInfo:
 class TorrentManager:
 
     def __init__(self) -> None:
+        # maps {ident: str} to {btih: str}
         self.btihs: dict[str, str] = {}
 
     def is_connected(self) -> tuple[bool, str | Exception]:
