@@ -243,6 +243,9 @@ class Runner:
             raise OSError("Total size exceeds max-storage")
 
     def add_books(self):
+        logger.info(
+            "Reconciling books and torrents (may require btih endpoint requests)"
+        )
         to_add = [book for book in self.books if book.btih not in self.manager.btihs]
         if not to_add:
             logger.info("No ZIM to add.")
