@@ -7,6 +7,7 @@
 
 CONTAINER_NAME="seeder"                             # name of docker container
 IMAGE="ghcr.io/kiwix/bittorrent-seeder:latest"      # docker image to use
+QBT_MODE=BG                                         # when not in NO_DAEMON, value is BG (default) or FG. if FG, qbt is the process and kiwix-seeder must be ran manually using exec commands
 
 DATA_PATH=$(pwd)/kiwix-seeder                       # path to store ZIM files (and incomplete .!qB ones) in (there's no hierarchy)
 MAX_STORAGE="10GiB"                                 # maximum disk-space to use
@@ -23,6 +24,7 @@ QBT_MAX_CONNECTIONS=500
 QBT_MAX_CONNECTIONS_PER_TORRENT=100
 QBT_MAX_UPLOADS=20
 QBT_MAX_UPLOADS_PER_TORRENT=5
+QBT_MAX_ACTIVE_CHECKING_TORRENTS=1
 # END OF CONFIG
 
 if [ -f /etc/seeder.config ]; then
@@ -47,6 +49,7 @@ echo ">starting seeder container"
 docker run \
     --name $CONTAINER_NAME \
     -v $DATA_PATH:/data \
+    -v $DATA_PATH/cache:/root/.config/kiwix-seeder \
     -p $QBT_TORRENTING_PORT:$QBT_TORRENTING_PORT \
     -p $QBT_TORRENTING_PORT:$QBT_TORRENTING_PORT/udp \
     -p $WEBUI_PORT:80 \
@@ -57,6 +60,8 @@ docker run \
     -e QBT_MAX_CONNECTIONS_PER_TORRENT=$QBT_MAX_CONNECTIONS_PER_TORRENT \
     -e QBT_MAX_UPLOADS=$QBT_MAX_UPLOADS \
     -e QBT_MAX_UPLOADS_PER_TORRENT=$QBT_MAX_UPLOADS_PER_TORRENT \
+    -e QBT_MAX_ACTIVE_CHECKING_TORRENTS=$QBT_MAX_ACTIVE_CHECKING_TORRENTS \
+    -e QBT_MODE=$QBT_MODE \
     -e MAX_STORAGE=$MAX_STORAGE \
     -e SLEEP_INTERVAL=$SLEEP_INTERVAL \
     --restart unless-stopped \

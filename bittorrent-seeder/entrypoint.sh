@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function start_qbt {
+function configure_qbt {
 	echo "Starting a qbittorrent-nox process (set NO_DAEMON if you dont want to)"
 
 	QBT_HOST="${QBT_HOST:-localhost}"
@@ -12,6 +12,7 @@ function start_qbt {
 	QBT_MAX_CONNECTIONS_PER_TORRENT="${QBT_MAX_CONNECTIONS_PER_TORRENT:-100}"
 	QBT_MAX_UPLOADS="${QBT_MAX_UPLOADS:-20}"
 	QBT_MAX_UPLOADS_PER_TORRENT="${QBT_MAX_UPLOADS_PER_TORRENT:-5}"
+	QBT_MAX_ACTIVE_CHECKING_TORRENTS="${QBT_MAX_ACTIVE_CHECKING_TORRENTS:-1}"
 
 	if [ "x${QBT_PASSWORD}" = "x" ]; then
 		QBT_PASSWORD=$(gen-password)
@@ -34,6 +35,7 @@ Session\Port=${QBT_TORRENTING_PORT}
 Session\Preallocation=true
 Session\QueueingSystemEnabled=false
 Session\SSL\Port=30154
+Session\MaxActiveCheckingTorrents=${QBT_MAX_ACTIVE_CHECKING_TORRENTS}
 
 [LegalNotice]
 Accepted=true
@@ -61,7 +63,7 @@ FileLogger\Backup=true
 FileLogger\DeleteOld=true
 FileLogger\Enabled=true
 FileLogger\MaxSizeBytes=1048576
-FileLogger\Path=/var/log
+FileLogger\Path=/data/log
 GUI\Notifications\TorrentAdded=false
 
 EOF
@@ -82,16 +84,15 @@ max_active_downloads = 2      # set max active downloads
 EOF
 
 	mkdir -p ~/.config/qbt && touch ~/.config/qbt/.qbt.toml
-
-
-	# qbittorrent-nox --help
-	qbittorrent-nox --save-path=/data --daemon
-	rc=$?
-	echo "rc=${rc}"
 }
 
 if [ "x${NO_DAEMON}" = "x" ]; then
-	start_qbt
+	configure_qbt
+	if [ "${QBT_MODE}" = "FG" ]; then
+		exec qbittorrent-nox
+	else
+		qbittorrent-nox --daemon
+	fi
 fi
 
 exec "$@"
