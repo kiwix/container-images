@@ -99,6 +99,7 @@ def prepare_context(raw_args: list[str]) -> None:
         "--debug",
         dest="debug",
         help="Enable debug-level logs",
+        default=Context.debug,
         action="store_true",
     )
 

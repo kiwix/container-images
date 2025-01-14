@@ -27,9 +27,7 @@ DEFAULT_SLEEP_INTERVAL: float = humanfriendly.parse_timespan(
     os.getenv("SLEEP_INTERVAL") or "5m"
 )
 
-DEFAULT_DB_PATH = os.getenv(
-    "KIWIXSEEDER_DB",
-)
+DEFAULT_DEBUG: bool = bool(os.getenv("DEBUG"))
 
 
 # avoid debug-level logs of 3rd party deps
@@ -137,7 +135,7 @@ class Context:
     _instance: "Context | None" = None
 
     # debug flag
-    debug: bool = False
+    debug: bool = DEFAULT_DEBUG
 
     run_forever: bool = False
     sleep_interval: float = DEFAULT_KEEP_DURATION
