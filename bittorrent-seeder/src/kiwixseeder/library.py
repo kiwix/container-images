@@ -6,7 +6,8 @@ import urllib.parse
 from collections.abc import Generator
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, ClassVar
+from uuid import UUID
 
 import iso639
 import requests
@@ -15,7 +16,7 @@ from iso639.exceptions import DeprecatedLanguageValue, InvalidLanguageValue
 
 from kiwixseeder.context import Context
 from kiwixseeder.download import get_btih_from_url
-from kiwixseeder.utils import format_size
+from kiwixseeder.utils import format_size, get_cache_path
 
 UPDATE_EVERY_SECONDS: int = int(os.getenv("UPDATE_EVERY_SECONDS", "3600"))
 
@@ -30,8 +31,58 @@ def to_human_id(name: str, publisher: str | None = "", flavour: str | None = "")
     return f"{publisher}:{name}:{flavour}"
 
 
+class BookBtihMapper:
+    """ Disk-cached mapping of Book UUID to BT Info Hash
+
+        Required since btih is not a Catalog metadata but necessary to reconcile
+        torrents with books uniquely"""
+
+    # maps {uuid: str} to {btih: str}
+    data: ClassVar[dict[str, str]] = {}
+    last_read: datetime.datetime = datetime.datetime(2000, 1, 1, tzinfo=datetime.UTC)
+
+    @classmethod
+    def read(cls, *, force: bool = False):
+        if not force and cls.last_read + datetime.timedelta(
+            60
+        ) >= datetime.datetime.now(tz=datetime.UTC):
+            return
+        folder = get_cache_path("zim-btih-maps")
+        folder.mkdir(parents=True, exist_ok=True)
+        data = {
+            fpath.name.split(":", 1)[0]: fpath.name.split(":", 1)[1]
+            for fpath in folder.iterdir()
+            if ":" in fpath.name
+        }
+        cls.data = data
+
+    @classmethod
+    def write(cls):
+        folder = get_cache_path("zim-btih-maps")
+        folder.mkdir(parents=True, exist_ok=True)
+        for uuid, btih in cls.data:
+            folder.joinpath(f"{uuid}:{btih}").touch()
+
+    @classmethod
+    def get(cls, uuid: UUID) -> str | None:
+        cls.read()
+        return cls.data.get(uuid.hex)
+
+    @classmethod
+    def add(cls, uuid: UUID, btih: str):
+        uuids = uuid.hex
+        if uuids in cls.data:
+            return
+        cls.data[uuids] = btih
+        folder = get_cache_path("zim-btih-maps")
+        folder.mkdir(parents=True, exist_ok=True)
+        folder.joinpath(f"{uuids}:{btih}").touch()
+
+
+
 @dataclass(kw_only=True)
 class Book:
+    uuid: UUID
     ident: str
     name: str
     title: str
@@ -107,11 +158,16 @@ class Book:
     @property
     def btih(self) -> str:
         if not self._btih:
-            self._btih = get_btih_from_url(self.torrent_url)
+            if btih := BookBtihMapper.get(self.uuid):
+                self._btih = btih
+            else:
+                # use setter so it gets cached
+                self.btih = get_btih_from_url(self.torrent_url)
         return self._btih
 
     @btih.setter
     def btih(self, value: str):
+        BookBtihMapper.add(self.uuid, value)
         self._btih = value
 
     def to_dict(self) -> dict[str, Any]:
@@ -133,6 +189,7 @@ class Catalog:
         self.updated_on: datetime.datetime = datetime.datetime(
             1970, 1, 1, tzinfo=datetime.UTC
         )
+        BookBtihMapper.read(force=True)
 
     def __contains__(self, ident: str) -> bool:
         return ident in self.get_all_ids()
@@ -231,6 +288,7 @@ class Catalog:
                 if not links.get("image/png;width=48;height=48;scale=1"):
                     logger.warning(f"Book has no illustration: {ident}")
                 books[ident] = Book(
+                    uuid=UUID(entry["id"]),
                     ident=ident,
                     name=entry["name"],
                     title=entry["title"],
