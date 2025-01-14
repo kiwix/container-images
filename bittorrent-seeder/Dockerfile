@@ -1,4 +1,5 @@
 FROM alpine:edge
+LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
 ENV SHELL=bash
 
@@ -19,6 +20,11 @@ ENV QBT_HOST=localhost
 ENV QBT_PORT=80
 ENV QBT_USERNAME=admin
 ENV QBT_PASSWORD=
+
+ENV QBT_MAX_CONNECTIONS=500
+ENV QBT_MAX_CONNECTIONS_PER_TORRENT=100
+ENV QBT_MAX_UPLOADS=20
+ENV QBT_MAX_UPLOADS_PER_TORRENT=5
 
 
 COPY entrypoint.sh /usr/local/bin/entrypoint
