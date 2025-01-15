@@ -7,15 +7,15 @@ RUN set -e \
     # add testing repo for qbittorrent-cli
     && echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk update \
-    && apk --no-cache add dumb-init bash \
+    && apk --no-cache add dumb-init bash curl \
     && apk --no-cache add python3 py3-pip \
     # the daemon with webui \
     && apk --no-cache add qbittorrent-nox \
     # for convenience
     && apk --no-cache add qbittorrent-cli \
     # to setup a DNS cache
-    && curl -L -o dnsproxy.tar.gz https://github.com/AdguardTeam/dnsproxy/releases/download/0.74.1/dnsproxy-linux-amd64-0.74.1.tar.gz \
-    && tar xf --strip-components=1 dnsproxy.tar.gz \
+    && curl -L -o dnsproxy.tar.gz https://github.com/AdguardTeam/dnsproxy/releases/download/v0.74.1/dnsproxy-linux-amd64-v0.74.1.tar.gz \
+    && tar x -f dnsproxy.tar.gz --strip-components 2 \
     && mv dnsproxy /usr/bin/
 
 ENV NO_DAEMON=""
