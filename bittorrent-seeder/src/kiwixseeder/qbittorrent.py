@@ -6,7 +6,7 @@ from typing import Self
 import qbittorrentapi
 
 from kiwixseeder.context import QBT_CAT_NAME, Context
-from kiwixseeder.download import get_btih_from_url, url_is_working
+from kiwixseeder.download import get_btih_from_url
 from kiwixseeder.library import Book
 from kiwixseeder.utils import format_size
 
@@ -86,8 +86,6 @@ class TorrentManager:
         # seeding_time_limit
         # download_path
         try:
-            if not url_is_working(url):
-                raise OSError(f"Torrent URL is not working: {url}")
             btih = btih or get_btih_from_url(url)
             if client.torrents.add(
                 urls=url, category=QBT_CAT_NAME
@@ -108,7 +106,7 @@ class TorrentManager:
     ) -> TorrentInfo | None:
         """Torrent dict from its hash or None"""
         if with_patience:
-            attempts = 10
+            attempts = 100
             duration = 0.1
         else:
             attempts = 1

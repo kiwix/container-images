@@ -10,12 +10,11 @@ from typing import Any, ClassVar
 from uuid import UUID
 
 import iso639
-import requests
 import xmltodict
 from iso639.exceptions import DeprecatedLanguageValue, InvalidLanguageValue
 
 from kiwixseeder.context import Context
-from kiwixseeder.download import get_btih_from_url
+from kiwixseeder.download import get_btih_from_url, session
 from kiwixseeder.utils import format_size, get_cache_path
 
 UPDATE_EVERY_SECONDS: int = int(os.getenv("UPDATE_EVERY_SECONDS", "3600"))
@@ -258,7 +257,7 @@ class Catalog:
         books: dict[str, Book] = {}
         langs: dict[str, list[str]] = {}
         try:
-            resp = requests.get(
+            resp = session.get(
                 f"{context.catalog_url}/entries", params={"count": "-1"}, timeout=30
             )
             resp.raise_for_status()

@@ -45,7 +45,7 @@ def get_online_rsc_size(url: str) -> int:
         resp = session.head(url, allow_redirects=True, timeout=60)
         # some servers dont offer HEAD
         if resp.status_code != HTTPStatus.OK:
-            resp = requests.get(
+            resp = session.get(
                 url,
                 allow_redirects=True,
                 timeout=60,
