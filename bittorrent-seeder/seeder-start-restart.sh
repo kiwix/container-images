@@ -51,6 +51,8 @@ docker run \
     --name $CONTAINER_NAME \
     -v $DATA_PATH:/data \
     -v $DATA_PATH/cache:/root/.config/kiwix-seeder \
+    -v $DATA_PATH/qbittorent-cache:/root/.cache/qBittorrent \
+    -v $DATA_PATH/qbittorent-share:/root/.local/share/qBittorrent \
     -p $QBT_TORRENTING_PORT:$QBT_TORRENTING_PORT \
     -p $QBT_TORRENTING_PORT:$QBT_TORRENTING_PORT/udp \
     -p $WEBUI_PORT:80 \
@@ -69,4 +71,3 @@ docker run \
     --detach \
     $IMAGE \
     kiwix-seeder --loop --all-good
-
