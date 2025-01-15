@@ -252,8 +252,8 @@ class Runner:
             return
 
         logger.info(f"Adding {len(to_add)} torrents…")
-        for book in to_add:
+        for num, book in enumerate(to_add):
             if self.manager.add(book):
-                logger.info(f"Added {book!s}")
+                logger.info(f"{num}. Added {book!s}")
             else:
                 logger.error(f"Failed to add {book!s}")
