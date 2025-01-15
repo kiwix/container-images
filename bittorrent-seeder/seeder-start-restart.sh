@@ -13,6 +13,7 @@ DATA_PATH=$(pwd)/kiwix-seeder                       # path to store ZIM files (a
 MAX_STORAGE="10GiB"                                 # maximum disk-space to use
 SLEEP_INTERVAL="5m"                                 # how long to pause in-between catalog checks when using --loop
 DEBUG=""                                            # whether to print debug logs (set to 1 to enable)
+USE_DNS_CACHE=                                      # in-container dns-cache that use DoH to circumvent DNS issues (dont use unless resolution failures)
 
 # the following applies to those using the in-container qBittorrent
 # If using a remote qBittorrent instance, see NO_DEAMON below

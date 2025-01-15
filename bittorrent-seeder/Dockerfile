@@ -12,7 +12,11 @@ RUN set -e \
     # the daemon with webui \
     && apk --no-cache add qbittorrent-nox \
     # for convenience
-    && apk --no-cache add qbittorrent-cli
+    && apk --no-cache add qbittorrent-cli \
+    # to setup a DNS cache
+    && curl -L -o dnsproxy.tar.gz https://github.com/AdguardTeam/dnsproxy/releases/download/0.74.1/dnsproxy-linux-amd64-0.74.1.tar.gz \
+    && tar xf --strip-components=1 dnsproxy.tar.gz \
+    && mv dnsproxy /usr/bin/
 
 ENV NO_DAEMON=""
 ENV QBT_TORRENTING_PORT=6901
@@ -20,6 +24,7 @@ ENV QBT_HOST=localhost
 ENV QBT_PORT=80
 ENV QBT_USERNAME=admin
 ENV QBT_PASSWORD=
+ENV USE_DNS_CACHE=
 
 ENV QBT_MAX_CONNECTIONS=500
 ENV QBT_MAX_CONNECTIONS_PER_TORRENT=100
@@ -27,7 +32,6 @@ ENV QBT_MAX_UPLOADS=20
 ENV QBT_MAX_UPLOADS_PER_TORRENT=5
 ENV QBT_MAX_ACTIVE_CHECKING_TORRENTS=1
 ENV QBT_MODE=BG
-
 
 COPY entrypoint.sh /usr/local/bin/entrypoint
 COPY pyproject.toml README.md tasks.py /src/

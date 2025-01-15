@@ -1,5 +1,20 @@
 #!/bin/sh
 
+function use_dns_cache {
+	echo "Starting local DNS cache"
+	dnsproxy \
+		--cache \
+		--cache-min-ttl=3600 \
+		--cache-size=256 \
+		--hosts-file-enabled \
+		--ipv6-disabled \
+		--listen=127.0.0.1 \
+		--port=53 \
+		--upstream='https://1.1.1.1/dns-query'
+
+	echo "nameserver 127.0.0.1" > /etc/resolv.conf
+}
+
 function configure_qbt {
 	echo "Starting a qbittorrent-nox process (set NO_DAEMON if you dont want to)"
 
@@ -85,6 +100,10 @@ EOF
 
 	mkdir -p ~/.config/qbt && touch ~/.config/qbt/.qbt.toml
 }
+
+if [ ! "x${USE_DNS_CACHE}" = "x" ]; then
+	use_dns_cache
+fi
 
 if [ "x${NO_DAEMON}" = "x" ]; then
 	configure_qbt
