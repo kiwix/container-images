@@ -282,6 +282,7 @@ def main() -> int:
         runner = Runner()
 
         def exit_gracefully(signum: int, frame: FrameType | None):  # noqa: ARG001
+            print("\n", flush=True)  # noqa: T201
             logger.info(f"Received {signal.Signals(signum).name}/{signum}. Exiting")
             runner.stop()
 

@@ -27,7 +27,7 @@ def main(args: list[str]) -> int:
     def exit_gracefully(signum: int, frame: FrameType | None):  # noqa: ARG001
         exit_requested = True  # noqa: F841 # pyright: ignore [reportUnusedVariable]
         logger.info(
-            f"[forever] rReceived {signal.Signals(signum).name}/{signum}. Exiting"
+            f"[forever] Received {signal.Signals(signum).name}/{signum}. Exiting"
         )
         sys.exit(-signum)
 

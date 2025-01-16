@@ -43,6 +43,9 @@ test = [
   "pytest==8.3.4",
   "coverage==7.6.10",
 ]
+build = [
+  "nuitka==2.5.9",
+]
 dev = [
   "pre-commit==4.0.1",
   "ipython==8.31.0",
@@ -102,6 +105,12 @@ features = ["scripts", "check"]
 [tool.hatch.envs.check.scripts]
 pyright = "inv check-pyright --args '{args}'"
 all = "inv checkall --args '{args}'"
+
+[tool.hatch.envs.build]
+features = ["scripts", "build"]
+
+[tool.hatch.envs.build.scripts]
+binary = "inv binary {args}"
 
 [tool.black]
 line-length = 88

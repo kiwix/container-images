@@ -1,8 +1,13 @@
 # pyright: strict, reportUntypedFunctionDecorator=false
 import os
+import pathlib
+import shlex
+import sys
 
 from invoke.context import Context
 from invoke.tasks import task  # pyright: ignore [reportUnknownVariableType]
+
+from kiwixseeder.__about__ import __version__
 
 use_pty = not os.getenv("CI", "")
 
@@ -108,3 +113,45 @@ def fixall(ctx: Context, args: str = "."):
     fix_black(ctx, args)
     fix_ruff(ctx, args)
     lintall(ctx, args)
+
+
+@task(
+    optional=["filename", "compress"],
+    help={
+        "filename": "output filename or fullname for the output binary",
+        "no-compress": "dont zstd-compress binary (faster startup on macOS)",
+    },
+)
+def binary(ctx: Context, filename: str = "", *, no_compress: bool = False):
+    """build a standalone binary executable with nuitka"""
+    fpath = (
+        pathlib.Path(
+            filename or f"kiwix-seeder_{__version__}{'-nc' if no_compress else ''}"
+        )
+        .expanduser()
+        .resolve()
+    )
+    fpath.parent.mkdir(parents=True, exist_ok=True)
+    pyexe = shlex.quote(sys.executable)
+
+    command = [
+        str(pyexe),
+        "-m",
+        "nuitka",
+        "--onefile",
+        "--python-flag=no_site,no_asserts,no_docstrings",
+        "--include-package=kiwixseeder",
+        "--user-package-configuration-file=kiwixseeder.config.yml",
+        "--show-modules",
+        "--warn-implicit-exceptions",
+        "--warn-unusual-code",
+        "--assume-yes-for-downloads",
+        f'--output-dir="{fpath.parent!s}"',
+        f'--output-filename="{fpath.name}"',
+        "--remove-output",
+        "--no-progressbar",
+    ]
+    if no_compress:
+        command.append("--onefile-no-compression")
+    command.append("src/kiwixseeder/")
+    ctx.run(" ".join(command))
