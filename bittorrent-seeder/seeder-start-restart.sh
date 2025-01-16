@@ -7,7 +7,6 @@
 
 CONTAINER_NAME="seeder"                             # name of docker container
 IMAGE="ghcr.io/kiwix/bittorrent-seeder:latest"      # docker image to use
-QBT_MODE=BG                                         # when not in NO_DAEMON, value is BG (default) or FG. if FG, qbt is the process and kiwix-seeder must be ran manually using exec commands
 
 DATA_PATH=$(pwd)/kiwix-seeder                       # path to store ZIM files (and incomplete .!qB ones) in (there's no hierarchy)
 MAX_STORAGE="10GiB"                                 # maximum disk-space to use
@@ -69,5 +68,4 @@ docker run \
     -e SLEEP_INTERVAL=$SLEEP_INTERVAL \
     --restart unless-stopped \
     --detach \
-    $IMAGE \
-    kiwix-seeder --loop --all-good
+    $IMAGE

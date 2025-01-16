@@ -54,6 +54,7 @@ dev = [
 
 [project.scripts]
 kiwix-seeder = "kiwixseeder.entrypoint:entrypoint"
+kiwix-seeder-loop = "kiwixseeder.forever:entrypoint"
 
 [tool.hatch.version]
 path = "src/kiwixseeder/__about__.py"

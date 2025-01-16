@@ -277,7 +277,6 @@ def main() -> int:
     try:
         prepare_context(sys.argv[1:])
         # late import as to have an initialized Context
-        from kiwixseeder.context import Context
         from kiwixseeder.runner import Runner
 
         runner = Runner()
@@ -290,16 +289,11 @@ def main() -> int:
         signal.signal(signal.SIGINT, exit_gracefully)
         signal.signal(signal.SIGQUIT, exit_gracefully)
 
-        if Context.get().run_forever:
-            runner.run_forever()
-        else:
-            runner.run()
+        return runner.run()
     except Exception as exc:
         logger.error(f"General failure: {exc!s}")
         logger.exception(exc)
         return 1
-
-    return 0
 
 
 def entrypoint():

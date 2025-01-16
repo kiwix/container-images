@@ -1,6 +1,8 @@
 FROM python:3.12-slim-bookworm
 LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
+ENV SHELL=bash
+
 RUN set -e \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -13,31 +15,34 @@ RUN set -e \
     && apt-get update \
     && apt-get install -y --no-install-recommends qbittorrent-cli
 
-ENV SHELL=bash
-ENV NO_DAEMON=""
+ENV NO_QBT=""
 ENV QBT_TORRENTING_PORT=6901
 ENV QBT_HOST=localhost
 ENV QBT_PORT=80
 ENV QBT_USERNAME=admin
 ENV QBT_PASSWORD=
-ENV USE_DNS_CACHE=
 
 ENV QBT_MAX_CONNECTIONS=500
 ENV QBT_MAX_CONNECTIONS_PER_TORRENT=100
 ENV QBT_MAX_UPLOADS=20
 ENV QBT_MAX_UPLOADS_PER_TORRENT=5
 ENV QBT_MAX_ACTIVE_CHECKING_TORRENTS=1
-ENV QBT_MODE=BG
 
-COPY entrypoint.sh /usr/local/bin/entrypoint
+# pyproject.toml and its dependencies
+COPY README.md /src/
 COPY pyproject.toml README.md tasks.py /src/
-COPY src/ /src/src
-COPY gen-password.py /usr/local/bin/gen-password
-COPY get-pbkdf2.py /usr/local/bin/get-pbkdf2
+COPY src/kiwixseeder/__about__.py /src/src/kiwixseeder/__about__.py
+# install python dependencies
+RUN pip install --no-cache-dir --break-system-packages /src/
 
+COPY src/ /src/src
 RUN set -e \
     && pip install --break-system-packages /src/ \
     && kiwix-seeder --help
+
+COPY entrypoint.sh /usr/local/bin/entrypoint
+COPY gen-password.py /usr/local/bin/gen-password
+COPY get-pbkdf2.py /usr/local/bin/get-pbkdf2
 
 EXPOSE 80
 EXPOSE 6901
@@ -45,4 +50,4 @@ VOLUME /data
 WORKDIR /data
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/usr/local/bin/entrypoint"]
-CMD ["kiwix-seeder", "--loop"]
+CMD ["kiwix-seeder-loop"]

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function configure_qbt {
-	echo "Starting a qbittorrent-nox process (set NO_DAEMON if you dont want to)"
+	echo "Starting a qbittorrent-nox process (set NO_QBT if you dont want to)"
 
 	QBT_HOST="${QBT_HOST:-localhost}"
 	QBT_PORT="${QBT_PORT:-80}"
@@ -76,13 +76,9 @@ EOF
 }
 
 
-if [ "x${NO_DAEMON}" = "x" ]; then
+if [ "x${NO_QBT}" = "x" ]; then
 	configure_qbt
-	if [ "${QBT_MODE}" = "FG" ]; then
-		exec qbittorrent-nox
-	else
-		qbittorrent-nox --daemon
-	fi
+	qbittorrent-nox --daemon
 fi
 
 exec "$@"
