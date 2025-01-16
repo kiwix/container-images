@@ -17,8 +17,6 @@ from kiwixseeder.context import NAME, Context
 from kiwixseeder.download import get_btih_from_url, session
 from kiwixseeder.utils import format_size
 
-UPDATE_EVERY_SECONDS: int = int(os.getenv("UPDATE_EVERY_SECONDS", "3600"))
-
 context = Context.get()
 logger = context.logger
 
@@ -261,10 +259,8 @@ class Catalog:
         )
 
     def ensure_fresh(self):
-        # only refresh library if it reachs a configured age
-        if self.updated_on < datetime.datetime.now(datetime.UTC) - datetime.timedelta(
-            seconds=UPDATE_EVERY_SECONDS
-        ):
+        """ make sure catalog is loaded"""
+        if not self._books:
             self.do_refresh()
 
     def do_refresh(self):
