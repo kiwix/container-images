@@ -32,20 +32,18 @@ DEFAULT_SLEEP_INTERVAL: float = humanfriendly.parse_timespan(
 )
 
 DEFAULT_DEBUG: bool = bool(os.getenv("DEBUG"))
-
+SEED_WHOLE_CATALOG: bool = bool(os.getenv("SEED_WHOLE_CATALOG"))
 
 # avoid debug-level logs of 3rd party deps
 for module in ("urllib3", "qbittorrentapi.request"):
     logging.getLogger(module).setLevel(logging.INFO)
 
 
-def format_size(value: int) -> str:
-    """human friendly representation of size (in binary form)"""
-    return humanfriendly.format_size(value, binary=True)
-
-
 @dataclass(kw_only=True)
 class QbtConnection:
+    """ Abstraction over qBittorrent Connection
+
+    Supports input as URI or individual parts and exposes them"""
     username: str | None
     password: str | None
     host: str
@@ -53,8 +51,9 @@ class QbtConnection:
 
     @classmethod
     def using(cls, string: str) -> Self:
+        """ Init from a qbt-schemed URI"""
         uri = urlparse(string)
-        if uri.scheme != "qsl":
+        if uri.scheme != "qbt":
             raise ValueError(f"Malformed qbt:// URI: {string}")
         return cls(
             username=uri.username,
@@ -65,7 +64,7 @@ class QbtConnection:
 
     def __str__(self) -> str:
         return ParseResult(
-            scheme="qsl",
+            scheme="qbt",
             netloc=f"{self.username or ''}"
             f"{':' if self.password else ''}{self.password or ''}"
             f"@{self.host}:{self.port}",
@@ -90,10 +89,12 @@ DEFAULT_QBT_CONN = str(
 
 @dataclass(kw_only=True)
 class SizeRange:
+    """ Size Range calculator ensuring min and max are usable (both optional)"""
     minimum: int = -1
     maximum: int = -1
 
     def is_valid(self) -> bool:
+        """ whether range is usable or not"""
         if self.minimum == self.maximum == -1:
             return True
         # maximum is either not set or positive
@@ -102,14 +103,17 @@ class SizeRange:
         return True
 
     def is_above_min(self, value: int) -> bool:
+        """ whether value is greater-or-equal than our minimum"""
         return value >= max(self.minimum, 0)
 
     def is_below_max(self, value: int) -> bool:
+        """ whether value is lower-or-equal than our maximum"""
         if self.maximum == -1:
             return True
         return value <= self.maximum
 
     def match(self, value: int) -> bool:
+        """ whether value is within the bounds of the range"""
         # not valid, not matching.
         if not self.is_valid():
             return False
@@ -142,7 +146,7 @@ class Context:
     debug: bool = DEFAULT_DEBUG
 
     run_forever: bool = False
-    sleep_interval: float = DEFAULT_KEEP_DURATION
+    sleep_interval: float = DEFAULT_SLEEP_INTERVAL
 
     is_mac: bool = platform.system() == "Darwin"
     is_win: bool = platform.system() == "Windows"
@@ -152,6 +156,7 @@ class Context:
     download_url: str = DOWNLOAD_URL
     qbt: qbittorrentapi.Client
 
+    # filters
     filenames: set[str] = field(default_factory=set)
     languages: set[str] = field(default_factory=set)
     categories: set[str] = field(default_factory=set)
@@ -160,9 +165,11 @@ class Context:
     authors: set[str] = field(default_factory=set)
     publishers: set[str] = field(default_factory=set)
     filesizes: SizeRange = field(default_factory=SizeRange)
+
+    # general options
     max_storage: int = DEFAULT_MAX_STORAGE
     keep_for: float = DEFAULT_KEEP_DURATION
-    all_good: bool = False
+    all_good: bool = SEED_WHOLE_CATALOG
 
     logger: logging.Logger = logging.getLogger(NAME)  # noqa: RUF009
     max_direct_online_resource_payload_size: int = 2048
