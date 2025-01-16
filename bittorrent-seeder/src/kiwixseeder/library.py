@@ -13,9 +13,9 @@ import iso639
 import xmltodict
 from iso639.exceptions import DeprecatedLanguageValue, InvalidLanguageValue
 
-from kiwixseeder.context import Context
+from kiwixseeder.context import NAME, Context
 from kiwixseeder.download import get_btih_from_url, session
-from kiwixseeder.utils import format_size, get_cache_path
+from kiwixseeder.utils import format_size
 
 UPDATE_EVERY_SECONDS: int = int(os.getenv("UPDATE_EVERY_SECONDS", "3600"))
 
@@ -30,6 +30,19 @@ def to_human_id(name: str, publisher: str | None = "", flavour: str | None = "")
     return f"{publisher}:{name}:{flavour}"
 
 
+def get_cache_path(fname: str) -> Path:
+    """Path to save/read cache from/to"""
+    xdg_cache_home = os.getenv("XDG_CACHE_HOME")
+    # favor this env on any platform
+    if xdg_cache_home:
+        return Path(xdg_cache_home) / fname
+    if Context.is_mac:
+        return Path.home() / "Library" / "Caches" / NAME / fname
+    if Context.is_win:
+        return Path(os.getenv("APPDATA", "C:")) / NAME / fname
+    return Path.home() / ".config" / NAME / fname
+
+
 class BookBtihMapper:
     """ Disk-cached mapping of Book UUID to BT Info Hash
 
@@ -42,9 +55,10 @@ class BookBtihMapper:
 
     @classmethod
     def read(cls, *, force: bool = False):
+        now = datetime.datetime.now(tz=datetime.UTC)
         if not force and cls.last_read + datetime.timedelta(
             60
-        ) >= datetime.datetime.now(tz=datetime.UTC):
+        ) >= now:
             return
         folder = get_cache_path("zim-btih-maps")
         folder.mkdir(parents=True, exist_ok=True)
@@ -53,6 +67,7 @@ class BookBtihMapper:
             for fpath in folder.iterdir()
             if ":" in fpath.name
         }
+        cls.last_read = now
         cls.data = data
 
     @classmethod
@@ -286,8 +301,10 @@ class Catalog:
                 )
                 if not links.get("image/png;width=48;height=48;scale=1"):
                     logger.warning(f"Book has no illustration: {ident}")
+
+                uuid = UUID(entry["id"])
                 books[ident] = Book(
-                    uuid=UUID(entry["id"]),
+                    uuid=uuid,
                     ident=ident,
                     name=entry["name"],
                     title=entry["title"],
@@ -304,7 +321,7 @@ class Catalog:
                     ).get("@href", ""),
                     version=version,
                     last_seen_on=fetched_on,
-                    _btih="",
+                    _btih=BookBtihMapper.get(uuid) or "",
                 )
         except Exception as exc:
             logger.error(f"Unable to load catalog from OPDS: {exc}")

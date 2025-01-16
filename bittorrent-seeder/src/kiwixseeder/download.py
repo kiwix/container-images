@@ -138,6 +138,7 @@ def get_btih_from_url(url: str) -> str:
 
 
 def get_pathname_from_url(url: str) -> Path:
+    """ Path of target file (a ZIM) from a torrent URL on DOWNLOAD_URL"""
     uri = urlparse(url)
     if uri.netloc != urlparse(Context.download_url).netloc:
         raise ValueError(f"path from URL is reserved to {Context.download_url}")
