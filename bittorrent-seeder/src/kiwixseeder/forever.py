@@ -12,7 +12,7 @@ import sys
 import time
 from types import FrameType
 
-from kiwixseeder.context import RC_INSUFFISCIENT_STORAGE, RC_NOFILTER, Context
+from kiwixseeder.context import RC_INSUFFICIENT_STORAGE, RC_NOFILTER, Context
 from kiwixseeder.utils import format_duration
 
 Context.setup_logger()
@@ -38,7 +38,7 @@ def main(args: list[str]) -> int:
     while not exit_requested:
         ps = subprocess.run(["/usr/bin/env", "kiwix-seeder", *args], check=False)
 
-        if ps.returncode in (RC_NOFILTER, RC_INSUFFISCIENT_STORAGE):
+        if ps.returncode in (RC_NOFILTER, RC_INSUFFICIENT_STORAGE):
             logger.info("OK, there's a config issue here. Exiting forever loop")
             return ps.returncode
 

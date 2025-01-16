@@ -15,7 +15,7 @@ CLI_NAME = "kiwix-seeder"
 HUMAN_NAME = "Kiwix Seeder"
 QBT_CAT_NAME = "kiwix-seeder"  # name of category to group our torrents in
 RC_NOFILTER = 32               # exit-code when user has no filter and did not confirm
-RC_INSUFFISCIENT_STORAGE = 30  # exit-code when store is not enough for selection
+RC_INSUFFICIENT_STORAGE = 30   # exit-code when store is not enough for selection
 
 CATALOG_URL = os.getenv("CATALOG_URL", "https://library.kiwix.org/catalog/v2")
 DOWNLOAD_URL = os.getenv("DOWNLOAD_URL", "https://download.kiwix.org")

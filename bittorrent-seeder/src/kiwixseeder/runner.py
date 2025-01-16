@@ -1,8 +1,12 @@
 import datetime
 import fnmatch
-import time
 
-from kiwixseeder.context import QBT_CAT_NAME, Context
+from kiwixseeder.context import (
+    QBT_CAT_NAME,
+    RC_INSUFFICIENT_STORAGE,
+    RC_NOFILTER,
+    Context,
+)
 from kiwixseeder.library import Book, Catalog
 from kiwixseeder.qbittorrent import TorrentManager
 from kiwixseeder.utils import format_size
@@ -99,15 +103,7 @@ class Runner:
                 return False
         return True
 
-    def run_forever(self):
-        while not self.exit_requested:
-            self.run()
-            for _ in range(0, int(context.sleep_interval)):
-                if self.exit_requested:
-                    break
-                time.sleep(1)
-
-    def run(self):
+    def run(self) -> int:
 
         self.display_filters()
         self.connect_to_backend()
@@ -119,16 +115,34 @@ class Runner:
             logger.debug(f"* {self.manager.get(btih)!s}")
 
         self.fetch_catalog()
-        if self.reduce_catalog():
-            # requested exit
-            return
+        catalog_size = self.catalog.nb_books
+        self.reduce_catalog()
+
+        # make sure it's not an accidental no-param call
+        books_size = sum(book.size for book in self.books)
+        if len(self.books) == catalog_size and not context.all_good:
+            if (
+                input(
+                    f"You are about to seed {len(self.books)} torrents "
+                    f"accounting for {format_size(books_size)}. "
+                    "Do you want to continue? Y/[N] "
+                ).upper()
+                != "Y"
+            ):
+                logger.info("OK, exiting.")
+                return RC_NOFILTER
+
         self.remove_outdated_torrents()
 
-        self.ensure_storage()
+        self.reconcile_books_and_torrents()
+
+        if self.ensure_storage():
+            return RC_INSUFFICIENT_STORAGE
 
         self.add_books()
 
         logger.info(f"{QBT_CAT_NAME} has {self.manager.nb_torrents} torrents")
+        return 0
 
     def display_filters(self):
         logger.info("Starting super-seeder with filters:")
@@ -160,34 +174,17 @@ class Runner:
         self.catalog.ensure_fresh()
         logger.info(f"Catalog contains {self.catalog.nb_books} ZIMs")
 
-    def reduce_catalog(self) -> bool:
+    def reduce_catalog(self):
         # build books with our filters
         self.books = list(filter(self.matches, self.catalog.all_books))
 
         # drop catalog (we dont need any of it anymore)
-        catalog_size = self.catalog.nb_books
         self.catalog.reset()
-
-        # make sure it's not an accidental no-param call
-        books_size = sum(book.size for book in self.books)
-        if len(self.books) == catalog_size and not context.all_good:
-            if (
-                input(
-                    f"You are about to seed {catalog_size} torrents "
-                    f"accounting for {format_size(books_size)}. "
-                    "Do you want to continue? Y/[N] "
-                ).upper()
-                != "Y"
-            ):
-                logger.info("OK, exiting.")
-                return True
 
         logger.info(f"Filters matches {len(self.books)} ZIMs")
         if len(self.books) <= 15:  # noqa: PLR2004
             for book in self.books:
                 logger.debug(f"* {book!s}")
-
-        return False
 
     def remove_outdated_torrents(self):
         if not self.manager.btihs:
@@ -232,7 +229,7 @@ class Runner:
         total_size = torrents_size + books_size
         logger.info("Checking overall storage needs:")
         logger.debug(f"- Existing torrents: {format_size(torrents_size)}")
-        logger.debug(f"- Requested torrents: {format_size(books_size)}")
+        logger.debug(f"- Requested new torrents: {format_size(books_size)}")
         logger.info(
             f"- Total torrents: {format_size(total_size)} "
             f"{'>' if torrents_size > context.max_storage else '<='} "
@@ -240,19 +237,20 @@ class Runner:
         )
 
         if total_size > context.max_storage:
-            raise OSError("Total size exceeds max-storage")
+            logger.error("Total size exceeds max-storage")
+            return True
 
-    def add_books(self):
+    def reconcile_books_and_torrents(self):
         logger.info(
             "Reconciling books and torrents (may require btih endpoint requests)"
         )
-        to_add = [book for book in self.books if book.btih not in self.manager.btihs]
-        if not to_add:
-            logger.info("No ZIM to add.")
-            return
+        self.books = [
+            book for book in self.books if book.btih not in self.manager.btihs
+        ]
 
-        logger.info(f"Adding {len(to_add)} torrents…")
-        for num, book in enumerate(to_add):
+    def add_books(self):
+        logger.info(f"Adding {len(self.books)} torrents…")
+        for num, book in enumerate(self.books):
             if self.manager.add(book):
                 logger.info(f"{num}. Added {book!s}")
             else:
