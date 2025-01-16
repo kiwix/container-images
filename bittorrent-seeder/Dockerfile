@@ -1,23 +1,19 @@
-FROM alpine:edge
+FROM python:3.12-slim-bookworm
 LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
-ENV SHELL=bash
-
 RUN set -e \
-    # add testing repo for qbittorrent-cli
-    && echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
-    && apk update \
-    && apk --no-cache add dumb-init bash curl \
-    && apk --no-cache add python3 py3-pip \
-    # the daemon with webui \
-    && apk --no-cache add qbittorrent-nox \
-    # for convenience
-    && apk --no-cache add qbittorrent-cli \
-    # to setup a DNS cache
-    && curl -L -o dnsproxy.tar.gz https://github.com/AdguardTeam/dnsproxy/releases/download/v0.74.1/dnsproxy-linux-amd64-v0.74.1.tar.gz \
-    && tar x -f dnsproxy.tar.gz --strip-components 2 \
-    && mv dnsproxy /usr/bin/
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        dumb-init curl apt-transport-https ca-certificates gnupg2 \
+        # the daemon with webui \
+        qbittorrent-nox \
+    # for convenience (qBittorrent-cli)
+    && curl -L https://dl.cloudsmith.io/public/qbittorrent-cli/qbittorrent-cli/gpg.F8756541ADDA2B7D.key | apt-key add - \
+    && curl -L -o /etc/apt/sources.list.d/qbittorrent-cli.list https://repos.fedarovich.com/debian/bookworm/qbittorrent-cli.list \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends qbittorrent-cli
 
+ENV SHELL=bash
 ENV NO_DAEMON=""
 ENV QBT_TORRENTING_PORT=6901
 ENV QBT_HOST=localhost

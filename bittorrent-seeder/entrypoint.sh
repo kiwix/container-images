@@ -1,19 +1,4 @@
-#!/bin/sh
-
-function use_dns_cache {
-	echo "Starting local DNS cache"
-	dnsproxy \
-		--cache \
-		--cache-min-ttl=3600 \
-		--cache-size=256 \
-		--hosts-file-enabled \
-		--ipv6-disabled \
-		--listen=127.0.0.1 \
-		--port=53 \
-		--upstream='https://1.1.1.1/dns-query'
-
-	echo "nameserver 127.0.0.1" > /etc/resolv.conf
-}
+#!/bin/bash
 
 function configure_qbt {
 	echo "Starting a qbittorrent-nox process (set NO_DAEMON if you dont want to)"
@@ -83,27 +68,13 @@ GUI\Notifications\TorrentAdded=false
 
 EOF
 
-	QBT_CONFIG_FILE=/root/.config/qbt/.qbt.toml
-	mkdir -p $(dirname $QBT_CONFIG_FILE)
-	cat <<EOF > $QBT_CONFIG_FILE
-[qbittorrent]
-addr       = "http://${QBT_HOST}:${QBT_PORT}" # qbittorrent webui-api hostname/ip
-login      = "${QBT_USERNAME}"                  # qbittorrent webui-api user
-password   = "${QBT_PASSWORD}"              # qbittorrent webui-api password
-#basicUser = "user"                  # qbittorrent webui-api basic auth user
-#basicPass = "password"              # qbittorrent webui-api basic auth password
+	# configure qbittorrent-cli (qbt)
+	qbt settings set url "http://${QBT_HOST}:${QBT_PORT}"
+	qbt settings set username "${QBT_USERNAME}"
+	echo "${QBT_PASSWORD}" | qbt settings set password -y
 
-[rules]
-enabled              = true   # enable or disable rules
-max_active_downloads = 2      # set max active downloads
-EOF
-
-	mkdir -p ~/.config/qbt && touch ~/.config/qbt/.qbt.toml
 }
 
-if [ ! "x${USE_DNS_CACHE}" = "x" ]; then
-	use_dns_cache
-fi
 
 if [ "x${NO_DAEMON}" = "x" ]; then
 	configure_qbt
