@@ -92,8 +92,28 @@ EOF
 
 if [ "x${NO_QBT}" = "x" ]; then
 	configure_qbt
+	qbt_command="/usr/bin/qbittorrent-nox --daemon"
+
 	echo "Starting a qbittorrent-nox process (set NO_QBT if you dont want to)"
-	qbittorrent-nox --daemon
+
+	$qbt_command
+
+	# start a monit daemon to check and restart qbittorrent automatically
+	# should it crash
+cat <<EOF > /etc/monitrc
+# nb of seconds between checks
+set daemon  30
+set log /dev/stdout
+
+CHECK PROCESS qbittorrent MATCHING qbittorrent-nox
+    start = "${qbt_command}" with timeout 20 seconds
+    if failed host localhost port 80 protocol http and request "/" then start
+
+
+EOF
+	chmod 700 /etc/monitrc
+	/usr/bin/monit -c /etc/monitrc
 fi
+
 
 exec "$@"

@@ -10,6 +10,10 @@ RUN set -e \
     # the daemon with webui \
     && curl -L -o /usr/bin/qbittorrent-nox https://github.com/userdocs/qbittorrent-nox-static/releases/download/release-5.0.3_v2.0.10/x86_64-qbittorrent-nox \
     && chmod +x /usr/bin/qbittorrent-nox \
+    && curl -L -o monit.tar.gz https://mmonit.com/monit/dist/binary/5.34.4/monit-5.34.4-linux-x64.tar.gz \
+    && tar xf monit.tar.gz \
+    && mv monit-5.34.4/bin/monit /usr/bin/monit \
+    && rm -rf monit.tar.gz monit-5.34.4 \
     # for convenience (qBittorrent-cli)
     && curl -L https://dl.cloudsmith.io/public/qbittorrent-cli/qbittorrent-cli/gpg.F8756541ADDA2B7D.key | apt-key add - \
     && curl -L -o /etc/apt/sources.list.d/qbittorrent-cli.list https://repos.fedarovich.com/debian/bookworm/qbittorrent-cli.list \
