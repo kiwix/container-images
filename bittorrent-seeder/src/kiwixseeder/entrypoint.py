@@ -96,6 +96,15 @@ def prepare_context(raw_args: list[str]) -> None:
     )
 
     parser.add_argument(
+        "--dry-run",
+        dest="dry_run",
+        help="Dry-run mode: no torrent will be added/removed to/from qBittorrent. "
+        "Use it to test filters matching",
+        default=Context.dry_run,
+        action="store_true",
+    )
+
+    parser.add_argument(
         "--all-good",
         dest="all_good",
         action="store_true",

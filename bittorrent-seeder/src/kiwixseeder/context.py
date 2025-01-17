@@ -118,6 +118,8 @@ class Context:
     # debug flag
     debug: bool = DEFAULT_DEBUG
 
+    dry_run: bool = False
+
     # forever mode: how much to sleep in-between runs
     sleep_interval: float = DEFAULT_SLEEP_INTERVAL
 
