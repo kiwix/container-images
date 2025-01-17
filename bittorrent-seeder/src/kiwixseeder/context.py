@@ -8,7 +8,12 @@ from urllib.parse import ParseResult, urlparse
 import humanfriendly
 import qbittorrentapi
 
-from kiwixseeder.utils import format_size
+from kiwixseeder.utils import SizeRange
+
+
+def set_from_env(name: str) -> set[str]:
+    """ set() from ENV"""
+    return {entry for entry in (os.getenv(name) or "").split("|") if entry}
 
 NAME = "kiwix-seeder"          # must be filesystem-friendly (technical)
 CLI_NAME = "kiwix-seeder"
@@ -19,6 +24,7 @@ RC_INSUFFICIENT_STORAGE = 30   # exit-code when store is not enough for selectio
 
 CATALOG_URL = os.getenv("CATALOG_URL", "https://library.kiwix.org/catalog/v2")
 DOWNLOAD_URL = os.getenv("DOWNLOAD_URL", "https://download.kiwix.org")
+
 DEFAULT_QBT_USERNAME: str | None = os.getenv("QBT_USERNAME")
 DEFAULT_QBT_PASSWORD: str | None = os.getenv("QBT_PASSWORD")
 DEFAULT_QBT_HOST: str = os.getenv("QBT_HOST") or "localhost"
@@ -30,6 +36,23 @@ DEFAULT_KEEP_DURATION: float = humanfriendly.parse_timespan(
 DEFAULT_SLEEP_INTERVAL: float = humanfriendly.parse_timespan(
     os.getenv("SLEEP_INTERVAL") or "5m"
 )
+
+DEFAULT_FILTER_FILENAMES: set[str] = set_from_env("FILENAMES")
+DEFAULT_FILTER_LANGUAGES: set[str] = set_from_env("LANGUAGES")
+DEFAULT_FILTER_CATEGORIES: set[str] = set_from_env("CATEGORIES")
+DEFAULT_FILTER_FLAVOURS: set[str] = set_from_env("FLAVOURS")
+DEFAULT_FILTER_TAGS: set[str] = set_from_env("TAGS")
+DEFAULT_FILTER_AUTHORS: set[str] = set_from_env("AUTHORS")
+DEFAULT_FILTER_PUBLISHERS: set[str] = set_from_env("PUBLISHERS")
+try:
+    min_size: int = int(os.getenv("MIN_SIZE") or "")
+except ValueError:
+    min_size: int = -1
+try:
+    max_size: int = int(os.getenv("MAX_SIZE") or "")
+except ValueError:
+    max_size: int = -1
+DEFAULT_FILTER_FILESIZES: SizeRange = SizeRange(minimum=min_size, maximum=max_size)
 
 DEFAULT_DEBUG: bool = bool(os.getenv("DEBUG"))
 SEED_WHOLE_CATALOG: bool = bool(os.getenv("SEED_WHOLE_CATALOG"))
@@ -88,55 +111,6 @@ DEFAULT_QBT_CONN = str(
 
 
 @dataclass(kw_only=True)
-class SizeRange:
-    """ Size Range calculator ensuring min and max are usable (both optional)"""
-    minimum: int = -1
-    maximum: int = -1
-
-    def is_valid(self) -> bool:
-        """ whether range is usable or not"""
-        if self.minimum == self.maximum == -1:
-            return True
-        # maximum is either not set or positive
-        if self.maximum != -1:
-            return max(self.maximum, 0) >= max(self.minimum, 0)
-        return True
-
-    def is_above_min(self, value: int) -> bool:
-        """ whether value is greater-or-equal than our minimum"""
-        return value >= max(self.minimum, 0)
-
-    def is_below_max(self, value: int) -> bool:
-        """ whether value is lower-or-equal than our maximum"""
-        if self.maximum == -1:
-            return True
-        return value <= self.maximum
-
-    def match(self, value: int) -> bool:
-        """ whether value is within the bounds of the range"""
-        # not valid, not matching.
-        if not self.is_valid():
-            return False
-        # no bound, always OK
-        if self.minimum == self.maximum == -1:
-            return True
-        return self.is_above_min(value) and self.is_below_max(value)
-
-    def __str__(self) -> str:
-        if not self.is_valid():
-            return f"Invalid range: min={self.minimum}, max={self.maximum}"
-        if self.minimum == self.maximum == -1:
-            return "all"
-        if self.minimum == self.maximum:
-            return f"exactly {format_size(self.maximum)}"
-        if self.minimum == -1:
-            return f"below {format_size(self.maximum)}"
-        if self.maximum == -1:
-            return f"above {format_size(self.minimum)}"
-        return f"between {format_size(self.minimum)} and {format_size(self.maximum)}"
-
-
-@dataclass(kw_only=True)
 class Context:
 
     # singleton instance
@@ -145,7 +119,7 @@ class Context:
     # debug flag
     debug: bool = DEFAULT_DEBUG
 
-    run_forever: bool = False
+    # forever mode: how much to sleep in-between runs
     sleep_interval: float = DEFAULT_SLEEP_INTERVAL
 
     is_mac: bool = platform.system() == "Darwin"
@@ -157,14 +131,14 @@ class Context:
     qbt: qbittorrentapi.Client
 
     # filters
-    filenames: set[str] = field(default_factory=set)
-    languages: set[str] = field(default_factory=set)
-    categories: set[str] = field(default_factory=set)
-    flavours: set[str] = field(default_factory=set)
-    tags: set[str] = field(default_factory=set)
-    authors: set[str] = field(default_factory=set)
-    publishers: set[str] = field(default_factory=set)
-    filesizes: SizeRange = field(default_factory=SizeRange)
+    filenames: set[str] = field(default_factory=lambda: DEFAULT_FILTER_FILENAMES)
+    languages: set[str] = field(default_factory=lambda: DEFAULT_FILTER_LANGUAGES)
+    categories: set[str] = field(default_factory=lambda: DEFAULT_FILTER_CATEGORIES)
+    flavours: set[str] = field(default_factory=lambda: DEFAULT_FILTER_FLAVOURS)
+    tags: set[str] = field(default_factory=lambda: DEFAULT_FILTER_TAGS)
+    authors: set[str] = field(default_factory=lambda: DEFAULT_FILTER_AUTHORS)
+    publishers: set[str] = field(default_factory=lambda: DEFAULT_FILTER_PUBLISHERS)
+    filesizes: SizeRange = field(default_factory=lambda: DEFAULT_FILTER_FILESIZES)
 
     # general options
     max_storage: int = DEFAULT_MAX_STORAGE

@@ -69,14 +69,6 @@ def prepare_context(raw_args: list[str]) -> None:
     )
 
     parser.add_argument(
-        "--loop",
-        dest="run_forever",
-        help="Run forever sleeping, "
-        f"executing every {format_duration(DEFAULT_SLEEP_INTERVAL)}",
-        action="store_true",
-    )
-
-    parser.add_argument(
         "--qbt",
         dest="qbt_uri",
         help="qBittorrent connection string. "
