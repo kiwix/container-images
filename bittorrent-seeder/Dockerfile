@@ -46,6 +46,8 @@ COPY get-pbkdf2.py /usr/local/bin/get-pbkdf2
 
 EXPOSE 80
 EXPOSE 6901
+VOLUME /root/.config/qBittorrent
+VOLUME /root/.local/share/qBittorrent
 VOLUME /data
 WORKDIR /data
 

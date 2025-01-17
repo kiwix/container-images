@@ -1,7 +1,13 @@
 #!/bin/bash
 
 function configure_qbt {
-	echo "Starting a qbittorrent-nox process (set NO_QBT if you dont want to)"
+	QBITTORRENT_CONFIG_FILE=/root/.config/qBittorrent/qBittorrent.conf
+
+	if [ -f "$QBITTORRENT_CONFIG_FILE" ] ; then
+		echo "Found existing qBittorrent config file at $QBITTORRENT_CONFIG_FILE"
+		echo "Assuming persistent installation ; skipping configuration."
+		return
+	fi
 
 	QBT_HOST="${QBT_HOST:-localhost}"
 	QBT_PORT="${QBT_PORT:-80}"
@@ -20,7 +26,6 @@ function configure_qbt {
 	fi
 	PKBF2_PASSWORD=$(get-pbkdf2 "${QBT_PASSWORD}")
 
-	QBITTORRENT_CONFIG_FILE=/root/.config/qBittorrent/qBittorrent.conf
 	mkdir -p $(dirname $QBITTORRENT_CONFIG_FILE)
 	cat <<EOF > $QBITTORRENT_CONFIG_FILE
 [BitTorrent]
@@ -78,6 +83,7 @@ EOF
 
 if [ "x${NO_QBT}" = "x" ]; then
 	configure_qbt
+	echo "Starting a qbittorrent-nox process (set NO_QBT if you dont want to)"
 	qbittorrent-nox --daemon
 fi
 
