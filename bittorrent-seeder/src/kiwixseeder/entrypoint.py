@@ -15,10 +15,10 @@ from rich_argparse import (  # pyright: ignore [reportMissingImports]
 from kiwixseeder.__about__ import __version__
 from kiwixseeder.context import (
     CLI_NAME,
+    DEFAULT_FILTER_FILESIZES,
     DEFAULT_KEEP_DURATION,
     DEFAULT_MAX_STORAGE,
     DEFAULT_QBT_CONN,
-    DEFAULT_SLEEP_INTERVAL,
     Context,
     QbtConnection,
     SizeRange,
@@ -188,7 +188,7 @@ def prepare_context(raw_args: list[str]) -> None:
         dest="min_size",
         help="Only seed ZIMs at least this size. Input is parsed for suffix",
         type=str,
-        default=None,
+        default=format_size(DEFAULT_FILTER_FILESIZES.minimum),
         required=False,
     )
 
@@ -197,7 +197,7 @@ def prepare_context(raw_args: list[str]) -> None:
         dest="max_size",
         help="Only seed ZIMs at most this size. Input is parsed for suffix",
         type=str,
-        default=None,
+        default=format_size(DEFAULT_FILTER_FILESIZES.maximum),
         required=False,
     )
 

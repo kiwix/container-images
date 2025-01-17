@@ -45,15 +45,14 @@ DEFAULT_FILTER_TAGS: set[str] = set_from_env("TAGS")
 DEFAULT_FILTER_AUTHORS: set[str] = set_from_env("AUTHORS")
 DEFAULT_FILTER_PUBLISHERS: set[str] = set_from_env("PUBLISHERS")
 try:
-    min_size: int = int(os.getenv("MIN_SIZE") or "")
-except ValueError:
-    min_size: int = -1
+    min_size: int = humanfriendly.parse_size(os.getenv("MIN_SIZE") or "0")
+except humanfriendly.InvalidSize:
+    min_size: int = 0
 try:
-    max_size: int = int(os.getenv("MAX_SIZE") or "")
-except ValueError:
-    max_size: int = -1
+    max_size: int = humanfriendly.parse_size(os.getenv("MAX_SIZE") or "")
+except humanfriendly.InvalidSize:
+    max_size: int = 0
 DEFAULT_FILTER_FILESIZES: SizeRange = SizeRange(minimum=min_size, maximum=max_size)
-
 DEFAULT_DEBUG: bool = bool(os.getenv("DEBUG"))
 SEED_WHOLE_CATALOG: bool = bool(os.getenv("SEED_WHOLE_CATALOG"))
 

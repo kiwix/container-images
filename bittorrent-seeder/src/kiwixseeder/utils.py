@@ -12,19 +12,20 @@ def format_duration(value: float) -> str:
     """human friendly duration"""
     return humanfriendly.format_timespan(value)
 
+nd = 0
 
 @dataclass(kw_only=True)
 class SizeRange:
     """ Size Range calculator ensuring min and max are usable (both optional)"""
-    minimum: int = -1
-    maximum: int = -1
+    minimum: int = nd
+    maximum: int = nd
 
     def is_valid(self) -> bool:
         """ whether range is usable or not"""
-        if self.minimum == self.maximum == -1:
+        if self.minimum == self.maximum == nd:
             return True
         # maximum is either not set or positive
-        if self.maximum != -1:
+        if self.maximum != nd:
             return max(self.maximum, 0) >= max(self.minimum, 0)
         return True
 
@@ -34,7 +35,7 @@ class SizeRange:
 
     def is_below_max(self, value: int) -> bool:
         """ whether value is lower-or-equal than our maximum"""
-        if self.maximum == -1:
+        if self.maximum == nd:
             return True
         return value <= self.maximum
 
@@ -44,19 +45,19 @@ class SizeRange:
         if not self.is_valid():
             return False
         # no bound, always OK
-        if self.minimum == self.maximum == -1:
+        if self.minimum == self.maximum == nd:
             return True
         return self.is_above_min(value) and self.is_below_max(value)
 
     def __str__(self) -> str:
         if not self.is_valid():
             return f"Invalid range: min={self.minimum}, max={self.maximum}"
-        if self.minimum == self.maximum == -1:
+        if self.minimum == self.maximum == nd:
             return "all"
         if self.minimum == self.maximum:
             return f"exactly {format_size(self.maximum)}"
-        if self.minimum == -1:
+        if self.minimum == nd:
             return f"below {format_size(self.maximum)}"
-        if self.maximum == -1:
+        if self.maximum == nd:
             return f"above {format_size(self.minimum)}"
         return f"between {format_size(self.minimum)} and {format_size(self.maximum)}"
