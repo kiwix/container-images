@@ -2,6 +2,18 @@
 
 function configure_qbt {
 	QBITTORRENT_CONFIG_FILE=/root/.config/qBittorrent/qBittorrent.conf
+	QBT_CONFIG_FILE=/root/.qbt/settings.json
+
+	QBT_HOST="${QBT_HOST:-localhost}"
+	QBT_PORT="${QBT_PORT:-80}"
+	QBT_USERNAME="${QBT_USERNAME:-admin}"
+
+	# configure qbittorrent-cli (qbt)
+	if [ ! -f "$QBT_CONFIG_FILE" ]; then
+		qbt settings set url "http://${QBT_HOST}:${QBT_PORT}"
+		qbt settings set username "${QBT_USERNAME}"
+		echo "${QBT_PASSWORD}" | qbt settings set password -y
+	fi
 
 	if [ -f "$QBITTORRENT_CONFIG_FILE" ] ; then
 		echo "Found existing qBittorrent config file at $QBITTORRENT_CONFIG_FILE"
@@ -9,9 +21,6 @@ function configure_qbt {
 		return
 	fi
 
-	QBT_HOST="${QBT_HOST:-localhost}"
-	QBT_PORT="${QBT_PORT:-80}"
-	QBT_USERNAME="${QBT_USERNAME:-admin}"
 	QBT_TORRENTING_PORT="${QBT_TORRENTING_PORT:-6901}"
 
 	QBT_MAX_CONNECTIONS="${QBT_MAX_CONNECTIONS:-500}"
