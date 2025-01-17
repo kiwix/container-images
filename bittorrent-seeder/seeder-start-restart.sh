@@ -13,6 +13,7 @@ MAX_STORAGE="10GiB"                                 # maximum disk-space to use
 SLEEP_INTERVAL="5m"                                 # how long to pause in-between catalog checks when using --loop
 DEBUG=""                                            # whether to print debug logs (set to 1 to enable)
 USE_DNS_CACHE=                                      # in-container dns-cache that use DoH to circumvent DNS issues (dont use unless resolution failures)
+SEED_WHOLE_CATALOG=									# whether to continue if filters (or lack of) end up seeding the whole catalog (prevents accidental no-filter launch)
 
 # the following applies to those using the in-container qBittorrent
 # If using a remote qBittorrent instance, see NO_DEAMON below
@@ -56,6 +57,7 @@ docker run \
     -p $QBT_TORRENTING_PORT:$QBT_TORRENTING_PORT/udp \
     -p $WEBUI_PORT:80 \
     -e DEBUG=$DEBUG \
+    -e SEED_WHOLE_CATALOG=$SEED_WHOLE_CATALOG \
     -e QBT_PASSWORD="$QBT_PASSWORD" \
     -e QBT_TORRENTING_PORT=$QBT_TORRENTING_PORT \
     -e QBT_MAX_CONNECTIONS=$QBT_MAX_CONNECTIONS \
