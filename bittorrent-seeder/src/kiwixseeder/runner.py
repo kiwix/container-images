@@ -121,14 +121,11 @@ class Runner:
         # make sure it's not an accidental no-param call
         books_size = sum(book.size for book in self.books)
         if len(self.books) == catalog_size and not context.all_good:
-            if (
-                input(
-                    f"You are about to seed {len(self.books)} torrents "
-                    f"accounting for {format_size(books_size)}. "
-                    "Do you want to continue? Y/[N] "
-                ).upper()
-                != "Y"
-            ):
+            logger.warning(
+                f"You are about to seed {len(self.books)} torrents "
+                f"accounting for {format_size(books_size)}. "
+            )
+            if input("Do you want to continue? Y/[N] ").upper() != "Y":
                 logger.info("OK, exiting.")
                 return RC_NOFILTER
 
