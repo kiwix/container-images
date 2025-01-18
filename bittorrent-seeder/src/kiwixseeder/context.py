@@ -2,6 +2,7 @@ import logging
 import os
 import platform
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Self
 from urllib.parse import ParseResult, urlparse
 
@@ -177,3 +178,16 @@ class Context:
         if not cls._instance:
             raise OSError("Uninitialized context")  # pragma: no cover
         return cls._instance
+
+    @staticmethod
+    def get_cache_path(fname: str) -> Path:
+        """Path to save/read cache from/to"""
+        xdg_cache_home = os.getenv("XDG_CACHE_HOME")
+        # favor this env on any platform
+        if xdg_cache_home:
+            return Path(xdg_cache_home) / fname
+        if Context.is_mac:
+            return Path.home() / "Library" / "Caches" / NAME / fname
+        if Context.is_win:
+            return Path(os.getenv("APPDATA", "C:")) / NAME / fname
+        return Path.home() / ".config" / NAME / fname

@@ -1,6 +1,5 @@
 import collections
 import datetime
-import os
 import re
 import urllib.parse
 from collections.abc import Generator
@@ -13,10 +12,12 @@ import iso639
 import xmltodict
 from iso639.exceptions import DeprecatedLanguageValue, InvalidLanguageValue
 
-from kiwixseeder.context import NAME, Context
+from kiwixseeder.context import Context
 from kiwixseeder.download import get_btih_from_url, session
 from kiwixseeder.utils import format_size
 
+ETAG_CACHE_FILE = "OPDS.etag"
+BTIH_CACHE_FOLDER = "zim-btih-maps"
 context = Context.get()
 logger = context.logger
 
@@ -26,19 +27,6 @@ def to_human_id(name: str, publisher: str | None = "", flavour: str | None = "")
     publisher = publisher or "openZIM"
     flavour = flavour or ""
     return f"{publisher}:{name}:{flavour}"
-
-
-def get_cache_path(fname: str) -> Path:
-    """Path to save/read cache from/to"""
-    xdg_cache_home = os.getenv("XDG_CACHE_HOME")
-    # favor this env on any platform
-    if xdg_cache_home:
-        return Path(xdg_cache_home) / fname
-    if Context.is_mac:
-        return Path.home() / "Library" / "Caches" / NAME / fname
-    if Context.is_win:
-        return Path(os.getenv("APPDATA", "C:")) / NAME / fname
-    return Path.home() / ".config" / NAME / fname
 
 
 class BookBtihMapper:
@@ -58,7 +46,7 @@ class BookBtihMapper:
             60
         ) >= now:
             return
-        folder = get_cache_path("zim-btih-maps")
+        folder = context.get_cache_path("zim-btih-maps")
         folder.mkdir(parents=True, exist_ok=True)
         data = {
             fpath.name.split(":", 1)[0]: fpath.name.split(":", 1)[1]
@@ -70,7 +58,7 @@ class BookBtihMapper:
 
     @classmethod
     def write(cls):
-        folder = get_cache_path("zim-btih-maps")
+        folder = context.get_cache_path(BTIH_CACHE_FOLDER)
         folder.mkdir(parents=True, exist_ok=True)
         for uuid, btih in cls.data:
             folder.joinpath(f"{uuid}:{btih}").touch()
@@ -86,7 +74,7 @@ class BookBtihMapper:
         if uuids in cls.data:
             return
         cls.data[uuids] = btih
-        folder = get_cache_path("zim-btih-maps")
+        folder = context.get_cache_path(BTIH_CACHE_FOLDER)
         folder.mkdir(parents=True, exist_ok=True)
         folder.joinpath(f"{uuids}:{btih}").touch()
 
@@ -192,16 +180,38 @@ class Book:
         )
 
 
+def read_etag_from_cache() -> str:
+    fpath = context.get_cache_path(ETAG_CACHE_FILE)
+    fpath.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        return fpath.read_text().strip()
+    except Exception:
+        return ""
+
+def write_etag_to_cache(value: str):
+    fpath = context.get_cache_path(ETAG_CACHE_FILE)
+    fpath.parent.mkdir(parents=True, exist_ok=True)
+    fpath.write_text(value)
+
+def query_etag() -> str:
+    try:
+        resp = session.head(
+            f"{context.catalog_url}/entries", params={"count": "-1"}, timeout=30
+        )
+        return resp.headers.get("etag") or ""
+    except Exception:
+        ...
+    return ""
+
+
 class Catalog:
     def __init__(self):
         # list of Book by ident
         self._books: dict[str, Book] = {}
         # list of book-idents by language (ISO-639-1)
         self._by_langs: dict[str, list[str]] = {}
-        self.updated_on: datetime.datetime = datetime.datetime(
-            1970, 1, 1, tzinfo=datetime.UTC
-        )
         BookBtihMapper.read(force=True)
+        self.etag: str = read_etag_from_cache()
 
     def __contains__(self, ident: str) -> bool:
         return ident in self.get_all_ids()
@@ -263,6 +273,8 @@ class Catalog:
         if not self._books:
             self.do_refresh()
 
+
+
     def do_refresh(self):
         logger.debug(f"refreshing catalog via {context.catalog_url}")
         books: dict[str, Book] = {}
@@ -272,6 +284,7 @@ class Catalog:
                 f"{context.catalog_url}/entries", params={"count": "-1"}, timeout=30
             )
             resp.raise_for_status()
+            self.etag = resp.headers.get("etag") or ""
             fetched_on = datetime.datetime.now(datetime.UTC)
             catalog = xmltodict.parse(resp.content)
             if "feed" not in catalog:

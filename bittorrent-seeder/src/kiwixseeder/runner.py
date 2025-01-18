@@ -7,7 +7,7 @@ from kiwixseeder.context import (
     RC_NOFILTER,
     Context,
 )
-from kiwixseeder.library import Book, Catalog
+from kiwixseeder.library import Book, Catalog, query_etag, write_etag_to_cache
 from kiwixseeder.qbittorrent import TorrentManager
 from kiwixseeder.utils import format_size
 
@@ -44,7 +44,9 @@ class Runner:
             else:
                 raise exc
 
-        self.fetch_catalog()
+        if self.fetch_catalog():
+            logger.info("Catalog has not changed since last run, exiting.")
+            return 0
         catalog_size = self.catalog.nb_books
         self.reduce_catalog()
 
@@ -112,7 +114,13 @@ class Runner:
 
     def fetch_catalog(self):
         logger.info("Fetching catalog…")
+        etag = query_etag()
+        # resources online is same as last time
+        if etag and self.catalog.etag and etag == self.catalog.etag:
+            return True
         self.catalog.ensure_fresh()
+        if not context.dry_run:
+            write_etag_to_cache(self.catalog.etag)
         logger.info(f"Catalog contains {self.catalog.nb_books} ZIMs")
 
     def reduce_catalog(self):
