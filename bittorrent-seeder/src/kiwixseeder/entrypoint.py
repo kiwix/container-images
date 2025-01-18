@@ -70,10 +70,10 @@ def prepare_context(raw_args: list[str]) -> None:
 
     parser.add_argument(
         "--qbt",
-        dest="qbt_uri",
+        dest="qbt_url",
         help="qBittorrent connection string. "
-        "Format: qbt://{user}:{password}@{host}:{port}. "
-        "Can be set via QBT_URI or parts via QBT_USER, QBT_PASSWORD, "
+        "Format: http://{user}:{password}@{host}:{port}. "
+        "Can be set via QBT_URL or parts via QBT_USER, QBT_PASSWORD, "
         f"QBT_HOST and QBT_PORT. Defaults to {DEFAULT_QBT_CONN}",
         type=str,
         default=DEFAULT_QBT_CONN,
@@ -262,14 +262,14 @@ def prepare_context(raw_args: list[str]) -> None:
     args_dict["keep_for"] = humanfriendly.parse_timespan(args_dict["keep_for"])
 
     # qbittorrent client
-    conn = QbtConnection.using(args_dict["qbt_uri"])
+    conn = QbtConnection.using(args_dict["qbt_url"])
     args_dict["qbt"] = qbittorrentapi.Client(
         host=conn.host,
         port=conn.port,
         username=conn.username,
         password=conn.password,
     )
-    del args_dict["qbt_uri"]
+    del args_dict["qbt_url"]
 
     Context.setup(**args_dict)
 

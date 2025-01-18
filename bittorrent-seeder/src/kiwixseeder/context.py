@@ -76,8 +76,8 @@ class QbtConnection:
     def using(cls, string: str) -> Self:
         """ Init from a qbt-schemed URI"""
         uri = urlparse(string)
-        if uri.scheme != "qbt":
-            raise ValueError(f"Malformed qbt:// URI: {string}")
+        if uri.scheme not in ("http", "https"):
+            raise ValueError(f"Malformed HHTP(s) URL: {string}")
         return cls(
             username=uri.username,
             password=uri.password,
@@ -99,8 +99,8 @@ class QbtConnection:
 
 
 DEFAULT_QBT_CONN = str(
-    QbtConnection.using(str(os.getenv("QBT_URI")))
-    if os.getenv("QBT_URI")
+    QbtConnection.using(str(os.getenv("QBT_URL")))
+    if os.getenv("QBT_URL")
     else QbtConnection(
         username=DEFAULT_QBT_USERNAME,
         password=DEFAULT_QBT_PASSWORD,
