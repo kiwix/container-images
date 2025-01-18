@@ -147,7 +147,12 @@ class Runner:
             btihs = [
                 btih
                 for btih, fname in self.manager.btihs.items()
-                if fname == book.filename
+                # having condition on name first is important and it allows
+                # us to only compare on btih if name matches.
+                # we cant direclty compare on btih as it would require getting the
+                # btih of all books otherwise which is resource intensive as it
+                # requires an HTTP GET for each
+                if fname == book.filename and book.btih == btih
             ]
             if btihs:
                 book.btih = btihs[0]
