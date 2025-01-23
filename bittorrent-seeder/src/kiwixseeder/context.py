@@ -87,7 +87,7 @@ class QbtConnection:
 
     def __str__(self) -> str:
         return ParseResult(
-            scheme="qbt",
+            scheme="http",
             netloc=f"{self.username or ''}"
             f"{':' if self.password else ''}{self.password or ''}"
             f"@{self.host}:{self.port}",
