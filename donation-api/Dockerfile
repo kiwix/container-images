@@ -46,4 +46,4 @@ ENV APPLEPAY_MERCHANT_CERTIFICATE_PATH=/etc/ssl/certs/applepay_merchant.pem
 ENV APPLEPAY_MERCHANT_CERTIFICATE_KEY_PATH=/etc/ssl/certs/applepay_merchant.key
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--", "/usr/local/bin/entrypoint"]
-CMD ["uvicorn", "donation_api.entrypoint:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "donation_api.entrypoint:app", "--host", "0.0.0.0", "--port", "80", "--proxy-headers", "--forwarded-allow-ips", "*"]
