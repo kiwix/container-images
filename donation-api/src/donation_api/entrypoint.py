@@ -64,6 +64,11 @@ def create_app() -> FastAPI:
             "name": "GNU General Public License v3.0",
             "url": "https://www.gnu.org/licenses/gpl-3.0.en.html",
         },
+        # trust any X-Forwarded-* headers from anyone
+        # this is assumed to be deployed behind a reverse proxy always
+        # and is used solely for (uvicorn's) logs
+        proxy_headers=True,
+        forwarded_allow_ips="*",
     )
 
     api.add_middleware(
