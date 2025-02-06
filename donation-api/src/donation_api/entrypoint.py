@@ -27,6 +27,7 @@ def create_app() -> FastAPI:
     if conf.merchantid_domain_association:
 
         @app.get("/.well-known/apple-developer-merchantid-domain-association")
+        @app.head("/.well-known/apple-developer-merchantid-domain-association")
         async def _():
             """Used to validate domain ownership with apple/stripe"""
             return PlainTextResponse(
@@ -36,6 +37,7 @@ def create_app() -> FastAPI:
     if conf.merchantid_domain_association_txt:
 
         @app.get("/.well-known/apple-developer-merchantid-domain-association.txt")
+        @app.head("/.well-known/apple-developer-merchantid-domain-association.txt")
         async def _():
             """Used to validate domain ownership with apple"""
             return PlainTextResponse(
