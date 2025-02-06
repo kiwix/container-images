@@ -1,8 +1,8 @@
 from http import HTTPStatus
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import PlainTextResponse, RedirectResponse
+from fastapi.responses import PlainTextResponse
 
 from donation_api import stripe
 from donation_api.__about__ import __description__, __title__, __version__
@@ -19,9 +19,26 @@ def create_app() -> FastAPI:
     )
 
     @app.get("/")
+    @app.head("/")
     async def _():
-        """Redirect to root of latest version of the API"""
-        return RedirectResponse(f"{PREFIX}/", status_code=HTTPStatus.PERMANENT_REDIRECT)
+        """HTML Redirect to root of latest version of the API
+
+        Purposedly not an HTTP redirect as Apple Pay verification system
+        doesnt like it (apparently)"""
+
+        return Response(
+            f"""<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={PREFIX}/" />
+<title>Donation API</title>
+</head>
+<body>
+<p>Current version is located at <a href="{PREFIX}/">{PREFIX}/</a></p>
+</body>
+</html>"""
+        )
 
     # could be done on infra ; this is a handy shortcut
     if conf.merchantid_domain_association:
