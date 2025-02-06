@@ -70,7 +70,7 @@ class OpaqueApplePayPaymentSession(BaseModel):
     model_config = ConfigDict(extra="allow")
 
     initiative: str
-    initiativeContext: str
+    initiativeContext: str  # noqa: N815
 
 
 async def get_body(request: Request):
