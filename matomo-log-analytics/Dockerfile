@@ -22,7 +22,17 @@ RUN { \
   echo 'if [ ! -z "$USE_SUFFIXED_LOG" ] ; then' ; \
   echo '    export LOG_PATH=$LOG_PATH-$(date +"%Y%m%d")' ; \
   echo 'fi' ; \
-  echo 'import_logs.py --enable-http-redirects --include-host=$HOST --idsite=$MATOMO_SITE_ID --url=$MATOMO_URL --token-auth=$MATOMO_TOKEN $LOG_PATH' ; \
+  echo 'import_logs.py --useragent-exclude qbittorrent --useragent-exclude libtorrent \
+  --useragent-exclude vuze --useragent-exclude deluge --useragent-exclude utorrent \
+  --useragent-exclude bittorrent --useragent-exclude biglybt \
+  --useragent-exclude bitcomet --useragent-exclude bitlord \
+  --useragent-exclude frostwire --useragent-exclude kget \
+  --useragent-exclude ktorrent --useragent-exclude limewire \
+  --useragent-exclude mldonkey --useragent-exclude rtorrent \
+  --useragent-exclude robert --useragent-exclude shareaza --useragent-exclude tixati \
+  --useragent-exclude tonido --useragent-exclude transmission \
+  --useragent-exclude tribler --useragent-exclude xunlei \
+  --enable-http-redirects --include-host=$HOST --idsite=$MATOMO_SITE_ID --url=$MATOMO_URL --token-auth=$MATOMO_TOKEN $LOG_PATH' ; \
 } > /usr/local/bin/import-log && chmod +x /usr/local/bin/import-log
 
 CMD ["import-log"]
