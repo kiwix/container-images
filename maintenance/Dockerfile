@@ -30,7 +30,7 @@ VOLUME /data
 
 RUN pip install --no-cache-dir -U \
         "zimscraperlib==4.0.0" "unidecode==1.3.8" "mwclient==0.11.0" "humanfriendly==10.0" \
-        "pyyaml==6.0.2" "pycountry==24.6.1" "jinja2==3.1.4" "pydantic==2.8.2" && \
+        "pyyaml==6.0.2" "pycountry==24.6.1" "jinja2==3.1.4" "pydantic==2.8.2" "psycopg2-binary==2.9.10" && \
     printf "#!/bin/bash\n\n\
 set -e\n\
 \
