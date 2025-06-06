@@ -19,7 +19,7 @@ RUN apt update -q \
 # Qt5 packages
     libqt5gui5 qtbase5-dev qtwebengine5-dev libqt5svg5-dev qt5-image-formats-plugins \
 # Qt6 packages
-    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 \
+    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6opengl6-dev libqt6webenginecore6-bin libqt6svg6 \
 # To create the appimage of kiwix-desktop
     libfuse2 fuse patchelf \
 # Flatpak tools
