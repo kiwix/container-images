@@ -20,5 +20,5 @@ RUN addgroup --gid 121 runner
 RUN adduser -u 1001 -G runner -h /home/runner -D runner
 USER runner
 ENV PATH /home/runner/.local/bin:$PATH
-RUN pip3 install meson ninja ; \
+RUN pip3 install meson==1.6.1 ninja ; \
     ln -s /usr/bin/python3 /home/runner/.local/bin/python

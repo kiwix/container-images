@@ -30,7 +30,7 @@ RUN apt update -q \
     libc6-dev-i386 lib32stdc++6 gcc-multilib g++-multilib \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
-  && pip3 install meson pytest gcovr requests distro --break-system-packages \
+  && pip3 install meson==1.6.1 pytest gcovr requests distro --break-system-packages \
   && qtchooser -install qt6 $(which qmake6)
 
 # Create user

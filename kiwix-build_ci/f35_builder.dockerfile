@@ -20,7 +20,7 @@ RUN dnf install -y --nodocs \
   && dnf remove -y "*-doc" \
   && dnf autoremove -y \
   && dnf clean all \
-  && pip3 install meson pytest requests distro
+  && pip3 install meson==1.6.1 pytest requests distro
 
 # Create user
 RUN groupadd --gid 121 runner
