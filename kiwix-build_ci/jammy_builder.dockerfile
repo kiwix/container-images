@@ -32,7 +32,7 @@ RUN apt update -q \
 #    vim less grep \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
-  && pip3 install meson pytest gcovr requests distro
+  && pip3 install meson==1.6.1 pytest gcovr requests distro
 
 # Set Qt6 per default (QT_SELECT has to be set to Qt5 so Kiwix Linux/Windows compiles)
 RUN qtchooser -install qt6 $(which qmake6)

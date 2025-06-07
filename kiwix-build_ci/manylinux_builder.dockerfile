@@ -13,7 +13,7 @@ RUN dnf install -y --nodocs \
   && dnf remove -y "*-doc" \
   && dnf autoremove -y \
   && dnf clean all \
-  && python3.12 -m pip install meson pytest requests distro
+  && python3.12 -m pip install meson==1.6.1 pytest requests distro
 
 ENV PATH /opt/_internal/cpython-3.12.7/bin:$PATH
 
