@@ -10,7 +10,7 @@ readme = "README.md"
 dependencies = [
     "stripe==11.2.0",
     "fastapi[standard]==0.115.5",
-    "requests==2.32.3",
+    "requests==2.32.4",
 ]
 dynamic = ["authors", "classifiers", "keywords", "license", "version", "urls"]
 
