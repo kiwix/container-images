@@ -31,6 +31,9 @@ scanMirror laotzu.ftp.acc.umu.se ALLDIRS
 # Scan the dotsrc.org mirror
 scanMirror mirrors.dotsrc.org ALLDIRS
 
+# Scan the triplebit.org mirror
+scanMirror mirror.triplebit.org ALLDIRS
+
 # scan the Kiwix mirrors
 scanMirror mirror.download.kiwix.org ALLDIRS
 
