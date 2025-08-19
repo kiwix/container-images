@@ -24,6 +24,10 @@ function scanMirror() {
 echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum
 
+# Scan the driftle.ss mirrors
+scanMirror ny.mirror.driftle.ss ALLDIRS
+scanMirror wi.mirror.driftle.ss ALLDIRS
+
 # Scan the ftp.acc.umu.se mirror (two offloaders)
 scanMirror saimei.ftp.acc.umu.se ALLDIRS
 scanMirror laotzu.ftp.acc.umu.se ALLDIRS
