@@ -28,9 +28,8 @@ $MB db vacuum
 scanMirror ny.mirror.driftle.ss ALLDIRS
 scanMirror wi.mirror.driftle.ss ALLDIRS
 
-# Scan the ftp.acc.umu.se mirror (two offloaders)
-scanMirror saimei.ftp.acc.umu.se ALLDIRS
-scanMirror laotzu.ftp.acc.umu.se ALLDIRS
+# Scan the mirror.accum.se mirror
+scanMirror mirror.accum.se ALLDIRS
 
 # Scan the dotsrc.org mirror
 scanMirror mirrors.dotsrc.org ALLDIRS
