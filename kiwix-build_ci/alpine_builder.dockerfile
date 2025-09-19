@@ -9,6 +9,7 @@ RUN apk update -q \
 # Base build tools
         bash build-base git py3-pip \
         automake autoconf cmake gettext-dev libtool openssl-dev \
+        openssl-libs-static \
 # Packaged dependencies
         xz-dev \
         zstd-dev \
