@@ -2,7 +2,7 @@ FROM quay.io/pypa/manylinux_2_28_x86_64:2025.11.02-1
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 ENV LANG C.UTF-8
-ENV OS_NAME manylinux
+ENV OS_NAME x86-64_manylinux
 
 RUN dnf install -y --nodocs \
 # Base build tools
