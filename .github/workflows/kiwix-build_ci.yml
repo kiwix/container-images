@@ -14,7 +14,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [f35, focal, jammy, x86-64_manylinux, aarch64_manylinux, alpine, noble, oracular]
+        platform: ['linux/amd64']
+        variant: [f35, focal, jammy, x86-64_manylinux, alpine, noble, oracular]
+        include:
+          - variant: aarch64_manylinux
+            platform: linux/arm64
     runs-on: ubuntu-22.04
 
     steps:
@@ -31,7 +35,7 @@ jobs:
 
       - name: Build container image
         run: |
-          docker build -t ${{ env.IMAGE_NAME }}:dev - < kiwix-build_ci/${{ matrix.variant }}_builder.dockerfile
+          docker build --platform ${{ matrix.platform }} -t ${{ env.IMAGE_NAME }}:dev - < kiwix-build_ci/${{ matrix.variant }}_builder.dockerfile
 
       - name: Upload container image to :dev
         run: |
