@@ -13,9 +13,8 @@ RUN dnf install -y --nodocs \
   && dnf remove -y "*-doc" \
   && dnf autoremove -y \
   && dnf clean all \
-  && python3.12 -m pip install meson==1.6.1 pytest requests distro
-
-ENV PATH /opt/_internal/cpython-3.12.7/bin:$PATH
+  && /usr/bin/env python3 -m ensurepip \
+  && /usr/bin/env python3 -m pip install meson==1.6.1 pytest requests distro
 
 # Create user
 RUN groupadd --gid 121 runner
@@ -24,5 +23,7 @@ USER runner
 WORKDIR /home/runner
 
 RUN mkdir -p /home/runner/.local/bin
-RUN ln -s /usr/local/bin/python3.12 /home/runner/.local/bin/python
+RUN ln -s $(which python3) /home/runner/.local/bin/python
 ENV PATH /home/runner/.local/bin:$PATH
+RUN printf '#!/bin/bash\n/usr/bin/env python3 -m pip $@\n' > /home/runner/.local/bin/pip3 \
+  && chmod +x /home/runner/.local/bin/pip3
