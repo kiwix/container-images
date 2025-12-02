@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         platform: ['linux/amd64']
-        variant: [f35, focal, jammy, x86-64_manylinux, alpine, noble]
+        variant: [f35, focal, jammy, x86-64_manylinux, alpine, noble, oracular]
         include:
           - variant: aarch64_manylinux
             platform: linux/arm64
