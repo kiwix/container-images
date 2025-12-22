@@ -1,5 +1,6 @@
 FROM debian:bookworm-slim
 
+COPY custom.conf /etc/nginx/snippets/custom.conf
 COPY webdav.conf /etc/nginx/conf.d/default.conf
 COPY entrypoint.sh /usr/local/bin/entrypoint
 
