@@ -1,6 +1,6 @@
 
 FROM docker.io/library/python:3.12-bookworm
-LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
+LABEL org.opencontainers.image.source="https://github.com/kiwix/container-images"
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
@@ -12,6 +12,7 @@ RUN apt-get update -y \
         curl \
         patch \
         openssh-server \
+        rsync \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /scripts \
@@ -19,12 +20,12 @@ RUN apt-get update -y \
     && chmod +x /sbin/dumb-init \
     && mkdir -p /data
 
-ENV TZ "UTC"
+ENV TZ="UTC"
 RUN echo "UTC" >  /etc/timezone \
     && sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && locale-gen
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
 
 VOLUME /data
 
@@ -56,9 +57,9 @@ RUN curl -sLo /usr/bin/kubectl \
     chmod +x /usr/bin/kubectl
 
 COPY install_scripts.py /usr/sbin/install-scripts
-ENV INSTALL_SCRIPTS_TO /usr/local/bin
-ENV INSTALL_SCRIPTS ""
-ENV PIP_INSTALL ""
+ENV INSTALL_SCRIPTS_TO=/usr/local/bin
+ENV INSTALL_SCRIPTS=""
+ENV PIP_INSTALL=""
 
 ENTRYPOINT ["dumb-init", "--", "entrypoint"]
 CMD ["cron", "-f"]
