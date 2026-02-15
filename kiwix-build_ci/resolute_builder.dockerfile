@@ -1,8 +1,8 @@
-FROM ubuntu:oracular
+FROM ubuntu:resolute
 LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
 ENV LANG=C.UTF-8
-ENV OS_NAME=oracular
+ENV OS_NAME=resolute
 ENV DEBIAN_FRONTEND=noninteractive
 # QT_SELECT=qt6 with qtchooser allows building with 'qmake' instead of 'qmake6'
 ENV QT_SELECT=qt6
@@ -21,7 +21,7 @@ RUN apt update -q \
 # Qt packages
     qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 qtchooser \
 # To create the appimage of kiwix-desktop
-    libfuse3-3 fuse3 patchelf \
+    libfuse3-4 fuse3 patchelf \
 # Flatpak tools
     elfutils flatpak flatpak-builder \
 # Cross win32 compiler
