@@ -1,0 +1,15 @@
+{
+  "oryUrl": "https://login.kiwix.org",
+  "apps": [
+    {
+      "name": "Kiwix CMS",
+      "url": "https://cms.kiwix.org",
+      "icon": "fas fa-edit"
+    },
+    {
+      "name": "Zimfarm",
+      "url": "https://farm.openzim.org",
+      "icon": "fas fa-tractor"
+    }
+  ]
+}
