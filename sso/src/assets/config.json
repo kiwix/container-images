@@ -2,7 +2,7 @@
   "oryUrl": "https://login.kiwix.org",
   "apps": [
     {
-      "name": "Kiwix CMS",
+      "name": "CMS",
       "url": "https://cms.kiwix.org",
       "icon": "fas fa-edit"
     },

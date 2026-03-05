@@ -10,9 +10,6 @@
     @json path *.json
     header @json Cache-Control "no-cache"
 
-    @assets path *.js *.css
-    header @assets Cache-Control "public, max-age=2592000, immutable"
-
     @images path *.png *.jpg *.jpeg *.gif *.webp *.ico *.svg
     header @images Cache-Control "public, max-age=2592000"
 }
