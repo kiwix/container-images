@@ -6,8 +6,21 @@
   --bg-color: #f4f6f8;
   --card-bg: #ffffff;
   --border-color: #e0e0e0;
+  --user-details-bg: #f9fbfd;
   --radius: 8px;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #f4f6f8;
+    --text-light: #a0a0a0;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #333333;
+    --user-details-bg: #2a2a2a;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
 }
 
 * {
@@ -76,7 +89,7 @@ h2 {
 }
 
 .user-details {
-  background-color: #f9fbfd;
+  background-color: var(--user-details-bg);
   border: 1px solid var(--border-color);
   padding: 15px 20px;
   border-radius: var(--radius);
