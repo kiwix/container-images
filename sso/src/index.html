@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwix Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="assets/images/kiwix-icon.svg" alt="Kiwix Logo" class="logo" />
+        <h1>Welcome to your Kiwix Account</h1>
+        <h2 id="subtitle">Checking authentication status...</h2>
+      </header>
+
+      <main>
+        <div id="spinner" class="spinner">
+          <i class="fas fa-spinner fa-spin fa-3x"></i>
+        </div>
+
+        <div id="content" class="hidden">
+          <div id="user-details" class="user-details hidden">
+            <p><strong>User:</strong> <span id="user-name"></span></p>
+            <p>
+              <strong>Status:</strong>
+              <span id="user-status"></span>
+            </p>
+          </div>
+
+          <div id="dashboard" class="dashboard">
+            <!-- Tiles will be injected here by JS -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+:80 {
+    root * /usr/share/caddy
+    file_server
+
+    # --- Cache Policies ---
+
+    @index path_regexp rootIndex ^/(|index\.html)$
+    header @index Cache-Control "no-cache"
+
+    @json path *.json
+    header @json Cache-Control "no-cache"
+
+    @images path *.png *.jpg *.jpeg *.gif *.webp *.ico *.svg
+    header @images Cache-Control "public, max-age=2592000"
+}
