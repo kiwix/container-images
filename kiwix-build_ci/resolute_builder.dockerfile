@@ -20,6 +20,8 @@ RUN apt update -q \
     libxml2-dev libxslt-dev python3-dev \
 # Qt packages
     qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6webenginecore6-bin libqt6svg6 qtchooser \
+# Temporary (until libtorrent is made a dependency in kiwix-build)
+    libtorrent-rasterbar-dev \
 # To create the appimage of kiwix-desktop
     libfuse3-4 fuse3 patchelf \
 # Flatpak tools
