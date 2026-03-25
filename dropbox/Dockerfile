@@ -1,37 +1,39 @@
-FROM debian:11-slim
+FROM debian:13-slim AS builder
 LABEL org.opencontainers.image.source https://github.com/kiwix/container-images
 
 # system dependencies
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-    wget build-essential make ca-certificates python python3 fail2ban \
-    openssh-sftp-server openssh-server  \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && wget --progress=dot:giga https://github.com/Yelp/dumb-init/releases/download/v1.2.5/dumb-init_1.2.5_x86_64 \
-    && mv dumb-init_1.2.5_x86_64 /usr/bin/dumb-init \
-    && chmod +x /usr/bin/dumb-init
+        wget ca-certificates build-essential make openssh-sftp-server openssh-server
 
 # build and configure rssh
 # we are keeping source here as it's small and hosted on sourceforge
 WORKDIR /usr/src/
-RUN wget --progress=dot:giga https://mirror.download.kiwix.org/dev/rssh-2.3.4.tar.gz && \
+RUN wget --progress=dot:giga https://dev.kiwix.org/rssh-2.3.4.tar.gz && \
     tar -xvf rssh-2.3.4.tar.gz
 WORKDIR /usr/src/rssh-2.3.4
 RUN ./configure --prefix=/ && make && make install && \
     printf "allowscp\nallowsftp\n" > /etc/rssh.conf
 
+FROM debian:13-slim
+
+RUN apt-get update -y \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates openssh-sftp-server openssh-server \
+        python3 fail2ban dumb-init jailkit \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p -- "/libexec"
+
+COPY --from=builder /bin/rssh /bin/rssh
+COPY --from=builder /libexec/rssh_chroot_helper /libexec/rssh_chroot_helper
+
 WORKDIR /
 # setup a chroot jail at /jail, patching ini file
-RUN wget --progress=dot:giga https://olivier.sessink.nl/jailkit/jailkit-2.21.tar.gz && \
-    tar xf jailkit-2.21.tar.gz && \
-    cd jailkit-2.21 && \
-    ./configure && \
-    make && make install && \
-    rm -rf /jailkit-2.21 && \
-    rm -f /jailkit-2.21.tar.gz && \sed -i.bak -e '116d' /etc/jailkit/jk_init.ini && \
-    printf "\n[rssh]\npaths = /bin/rssh, /etc/rssh.conf\n" >> /etc/jailkit/jk_init.ini && \
-    mkdir -p /jails && \chown root:root /jails
+RUN printf "\n[rssh]\npaths = /bin/rssh, /etc/rssh.conf\n" >> /etc/jailkit/jk_init.ini \
+    && printf "allowscp\nallowsftp\n" > /etc/rssh.conf \
+    && mkdir -p /jails \
+    && chown root:root /jails
 
 COPY motd /etc/motd
 COPY sshd_config /etc/ssh/sshd_config
