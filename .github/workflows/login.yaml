@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  dropbox:
+  login:
     name: Deploy Login Image
     runs-on: ubuntu-22.04
     steps:
@@ -24,3 +24,10 @@ jobs:
           registries: ghcr.io
           credentials: GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
+
+      - name: Deploy Login changes to login.kiwix.org
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.LOGIN_KUBE_CONFIG }}
+        with:
+          args: rollout restart deployments login -n login
