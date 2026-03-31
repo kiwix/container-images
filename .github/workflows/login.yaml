@@ -1,26 +1,26 @@
-name: SSO
+name: Login
 
 on:
   push:
     branches:
       - "main"
     paths:
-      - "sso/**"
+      - "login/**"
   workflow_dispatch:
 
 jobs:
   dropbox:
-    name: Deploy SSO Image
+    name: Deploy Login Image
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3.4.0
-      - name: Publish SSO Docker Image
+      - name: Publish Login Docker Image
         uses: openzim/docker-publish-action@v10
         with:
-          image-name: kiwix/sso
+          image-name: kiwix/login
           on-master: latest
           restrict-to: kiwix/container-images
-          context: sso
+          context: login
           registries: ghcr.io
           credentials: GHCRIO_USERNAME=${{ secrets.GHCR_USERNAME }}
             GHCRIO_TOKEN=${{ secrets.GHCR_TOKEN }}
