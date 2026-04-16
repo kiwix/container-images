@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #8cbe29;
-  --primary-hover: #75a022;
+  --primary-color: #000000;
+  --primary-hover: #333333;
   --text-color: #333333;
   --text-light: #666666;
   --bg-color: #f4f6f8;
@@ -116,7 +116,7 @@ h2 {
 
 .tile:hover {
   border-color: var(--primary-color);
-  box-shadow: 0 4px 8px rgba(140, 190, 41, 0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
@@ -136,7 +136,7 @@ h2 {
 }
 
 .tile.action-tile:hover i {
-  color: var(--primary-color);
+  color: var(--primary-hover);
 }
 
 @media (max-width: 600px) {
