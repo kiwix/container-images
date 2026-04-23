@@ -22,7 +22,12 @@ logger = logging.getLogger("retriever")
 
 
 def get_catalog_url() -> str:
-    return f"{CMS_API_URL}/collections/{CMS_COLLECTION_ID}/catalog.xml"
+    path = (
+        f"collections/{CMS_COLLECTION_ID}"
+        if CMS_COLLECTION_ID != "staging"
+        else CMS_COLLECTION_ID
+    )
+    return f"{CMS_API_URL}/{path}/catalog.xml"
 
 
 def save_data(data: bytes, target: Path) -> bool:
