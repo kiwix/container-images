@@ -14,6 +14,7 @@ PASSWD = pathlib.Path("/etc/passwd")
 JAILS_ROOT = pathlib.Path("/jails")
 KEYS_ROOT = pathlib.Path("/etc/ssh/authorized-keys")
 RE_USERNAME = re.compile(r"^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$")
+USERS_GID = 100
 
 
 def create_jail(ugid, name):
@@ -32,6 +33,8 @@ def create_jail(ugid, name):
             name,
             "-u",
             str(ugid),
+            "-G",
+            str(USERS_GID),
             "-M",
             "-N",
             "-r",
