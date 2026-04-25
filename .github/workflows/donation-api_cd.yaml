@@ -14,7 +14,7 @@ jobs:
     name: Deploy Donation API Image
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3.4.0
+      - uses: actions/checkout@v6
       - name: Publish Donation API Docker Image
         uses: openzim/docker-publish-action@v10
         with:

@@ -16,7 +16,7 @@ jobs:
     name: Deploy kiwix-tools nightly Image
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Publish Docker Image
         uses: openzim/docker-publish-action@v10
         with:
