@@ -30,10 +30,13 @@ COPY --from=builder /libexec/rssh_chroot_helper /libexec/rssh_chroot_helper
 
 WORKDIR /
 # setup a chroot jail at /jail, patching ini file
-RUN printf "\n[rssh]\npaths = /bin/rssh, /etc/rssh.conf\n" >> /etc/jailkit/jk_init.ini \
+RUN printf "\n[rssh]\npaths = /bin/rssh, /etc/rssh.conf\numask = 000\n" >> /etc/jailkit/jk_init.ini \
     && printf "allowscp\nallowsftp\n" > /etc/rssh.conf \
     && mkdir -p /jails \
-    && chown root:root /jails
+    && chown root:root /jails \
+    # set umask in common (prob useless)
+    && sed -i '8i umask = 000' /etc/jailkit/jk_init.ini \
+    && printf "# set umask for scp\nsession optional pam_umask.so umask=0000\n" >> /etc/pam.d/sshd
 
 COPY motd /etc/motd
 COPY sshd_config /etc/ssh/sshd_config
