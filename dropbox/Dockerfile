@@ -19,7 +19,7 @@ FROM debian:13-slim
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
-        ca-certificates openssh-sftp-server openssh-server \
+        ca-certificates openssh-sftp-server openssh-server acl \
         python3 fail2ban dumb-init jailkit \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
