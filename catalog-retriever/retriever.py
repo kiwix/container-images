@@ -78,7 +78,7 @@ def has_update(url: str, etag: str) -> bool:
         logger.error(f"Failed to retrieve catalog from {url}: {exc!s}")
         logger.debug(exc, exc_info=True)
         return True
-    return bool(new_etag) and new_etag == etag
+    return bool(new_etag) and new_etag != etag
 
 
 def sleep_for(seconds: int):
@@ -101,6 +101,7 @@ def main() -> int:
     while True:
         try:
             if bool(etag) and not has_update(url, etag=etag):
+                logger.debug(f"No update {etag=}")
                 continue
             payload, etag = get_data(url=url)
         except Exception as exc:
