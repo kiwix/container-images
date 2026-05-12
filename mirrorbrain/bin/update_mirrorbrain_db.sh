@@ -25,20 +25,20 @@ echo "Cleaning up the mirrorbrain database..."
 $MB db vacuum
 
 # Scan the driftle.ss mirrors
-scanMirror ny.mirror.driftle.ss ALLDIRS
-scanMirror wi.mirror.driftle.ss ALLDIRS
+scanMirror ny.mirror.driftle.ss ZIMDIRS
+scanMirror wi.mirror.driftle.ss ZIMDIRS
 
 # Scan the mirror.accum.se mirror
-scanMirror mirror.accum.se ALLDIRS
+scanMirror mirror.accum.se ZIMDIRS
 
 # Scan the dotsrc.org mirror
-scanMirror mirrors.dotsrc.org ALLDIRS
+scanMirror mirrors.dotsrc.org ZIMDIRS
 
 # Scan the triplebit.org mirror
-scanMirror mirror.triplebit.org ALLDIRS
+scanMirror mirror.triplebit.org ZIMDIRS
 
 # scan the Kiwix mirrors
-scanMirror mirror.download.kiwix.org ALLDIRS
+scanMirror mirror.download.kiwix.org ZIMDIRS
 
 # Scan the ISOC Israel mirror
 scanMirror mirror.isoc.org.il ZIMDIRS
@@ -47,25 +47,24 @@ scanMirror mirror.isoc.org.il ZIMDIRS
 scanMirror ftpmirror.your.org WMDIRS
 
 # Scan the nluug.nl mirror
-scanMirror ftp.nluug.nl ALLDIRS
+scanMirror ftp.nluug.nl ZIMDIRS
 
 # Scan the Mirrorservice.org mirror
-scanMirror www.mirrorservice.org ALLDIRS
+scanMirror www.mirrorservice.org ZIMDIRS
 
 # Scan the fau.de mirror
-scanMirror ftp.fau.de ALLDIRS
+scanMirror ftp.fau.de ZIMDIRS
 
 # Scan the hacktegic mirror
-scanMirror md.mirrors.hacktegic.com ALLDIRS
+scanMirror md.mirrors.hacktegic.com ZIMDIRS
 
 # Scan MB Group mirrors
-scanMirror mirror-sites-fr.mblibrary.info ALLDIRS
-scanMirror mirror-sites-ca.mblibrary.info ALLDIRS
-scanMirror mirror-sites-in.mblibrary.info ALLDIRS
+scanMirror mirror-sites-fr.mblibrary.info ZIMDIRS
+scanMirror mirror-sites-ca.mblibrary.info ZIMDIRS
+scanMirror mirror-sites-in.mblibrary.info ZIMDIRS
 
 # Scan the Wikimedia mirror
 scanMirror dumps.wikimedia.org WMDIRS
 
 # Generate HTML mirrors list
 mb mirrorlist -f xhtml --html-header /etc/mirrorlist_header.txt | grep -v @ > /var/www/download.kiwix.org/mirrors.html
-
