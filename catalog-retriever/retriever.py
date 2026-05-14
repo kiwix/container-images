@@ -21,6 +21,9 @@ CMS_COLLECTION_ID: str = os.getenv("CMS_COLLECTION_ID", "-")
 CMS_API_URL: str = os.getenv("CMS_API_URL", "-")
 REFRESH_EVERY_SECONDS: int = int(os.getenv("REFRESH_EVERY_SECONDS", "60"))
 
+# CATALOG-ONLY OPTS
+ADD_BOOK_PATH_TO_XML: bool = bool(os.getenv("ADD_BOOK_PATH_TO_XML", ""))
+
 # VARNISH/PURE OPTS
 PURGE_VARNISH_URL: str = os.getenv("PURGE_VARNISH_URL", "")
 KIWIX_SERVE_RELOAD_DELAY: int = int(os.getenv("KIWIX_SERVE_RELOAD_DELAY", "10"))
@@ -59,7 +62,23 @@ def get_catalog_url() -> str:
     return f"{CMS_API_URL}/{path}/catalog.xml"
 
 
-def save_data(data: bytes, target: Path) -> bool:
+def save_data_with_path(data: bytes, fpath: Path):
+    with open(fpath, "wb") as fh:
+        for line in data.split(b"\n"):
+            if not line.startswith(b"  <book "):
+                fh.write(line)
+                fh.write(b"\n")
+                continue
+            url = Path(get_url_from(line))
+            path = "/".join(url.parts[-2:])
+            fh.write(line[:-3])
+            fh.write(b' path="')
+            fh.write(path.encode("UTF-8"))
+            fh.write(line[-4:])  # include closing "
+            fh.write(b"\n")
+
+
+def save_data(data: bytes, target: Path, add_path: bool) -> bool:
     """whether data was saved correctly"""
     try:
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -67,7 +86,10 @@ def save_data(data: bytes, target: Path) -> bool:
             prefix="catalog_", suffix=".xml", dir=target.parent
         ) as fh:
             src = Path(fh.name)
-            src.write_bytes(data)
+            if add_path:
+                save_data_with_path(data=data, fpath=src)
+            else:
+                src.write_bytes(data)
 
             try:
                 src.rename(target)
@@ -105,12 +127,23 @@ def to_human_alias(fpath: Path) -> str:
     return without_period(to_human_id(fpath))
 
 
+def get_url_from(line: bytes) -> str:
+    """ZIM url from a raw catalog line
+
+    assumes line end with `url="xxx"/>` or `url="xxx" flavour="yyy"/>`"""
+    return (
+        line.removesuffix(b"/>")
+        .split(b'" flavour="', 1)[0][line.index(b'" url="https') + 7 :]
+        .rsplit(b'"', 1)[0]
+        .removesuffix(b".meta4")
+        .decode("UTF-8")
+    )
+
+
 def get_core_alias_from(line: bytes) -> tuple[BookAlias, BookCore]:
     """BookAlias and BookCore from a line of catalog xml data"""
 
-    line_ = line.decode("utf-8")
-    raw_url = line_[line_.index('" url="https') + 7 : -3]
-    url = Path(re.sub(r".meta4$", "", raw_url))
+    url = Path(get_url_from(line))
     return to_human_alias(url), to_core(url)
 
 
@@ -245,7 +278,7 @@ def main() -> int:
             logger.debug(exc, exc_info=True)
             continue
         else:
-            save_data(data=payload, target=SAVE_TO)
+            save_data(data=payload, target=SAVE_TO, add_path=ADD_BOOK_PATH_TO_XML)
             logger.info(f"Updated catalog with {etag=} ({format_size(len(payload))})")
             if PURGE_VARNISH_URL:
                 purge_vanish(data=payload, varnish_url=PURGE_VARNISH_URL)
