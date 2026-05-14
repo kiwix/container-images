@@ -1,24 +1,53 @@
 import logging
 import os
+import re
 import sys
 import tempfile
 import time
 import urllib.parse
 from pathlib import Path
+from typing import NamedTuple, Self, TypeAlias
 
 import requests
+import unidecode
+import xxhash
 from humanfriendly import format_size
 
-DEBUG = bool(os.getenv("DEBUG", ""))
+DEBUG: bool = bool(os.getenv("DEBUG", ""))
 
-SAVE_TO = Path(os.getenv("SAVE_TO", "/data/catalog.xml")).expanduser().resolve()
-CMS_COLLECTION_ID = os.getenv("CMS_COLLECTION_ID", "-")
+SAVE_TO: Path = Path(os.getenv("SAVE_TO", "/data/catalog.xml")).expanduser().resolve()
+CMS_COLLECTION_ID: str = os.getenv("CMS_COLLECTION_ID", "-")
 
-CMS_API_URL = os.getenv("CMS_API_URL", "-")
-REFRESH_EVERY_SECONDS = int(os.getenv("REFRESH_EVERY_SECONDS", "60"))
+CMS_API_URL: str = os.getenv("CMS_API_URL", "-")
+REFRESH_EVERY_SECONDS: int = int(os.getenv("REFRESH_EVERY_SECONDS", "60"))
+
+# VARNISH/PURE OPTS
+PURGE_VARNISH_URL: str = os.getenv("PURGE_VARNISH_URL", "")
+KIWIX_SERVE_RELOAD_DELAY: int = int(os.getenv("KIWIX_SERVE_RELOAD_DELAY", "10"))
+VARNISH_PURGE_HTTP_TIMEOUT: int = int(os.getenv("VARNISH_PURGE_HTTP_TIMEOUT", "10"))
 
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 logger = logging.getLogger("retriever")
+
+BookLineDigest: TypeAlias = str
+BookId: TypeAlias = str
+BookAlias: TypeAlias = str
+BookCore: TypeAlias = str
+UpdatedZim: TypeAlias = tuple[BookId, BookCore]
+
+
+class CatalogEntry(NamedTuple):
+    core: BookCore
+    alias: BookAlias
+    digest: BookLineDigest
+
+    @classmethod
+    def empty(cls) -> Self:
+        return cls("", "", "")
+
+
+class Catalog:
+    entries: dict[BookId, CatalogEntry] = {}
 
 
 def get_catalog_url() -> str:
@@ -54,6 +83,113 @@ def save_data(data: bytes, target: Path) -> bool:
         return False
 
     return True
+
+
+def to_core(fpath: Path) -> str:
+    """human identifier from ZIM filename"""
+    return fpath.stem
+
+
+def to_human_id(fpath: Path) -> str:
+    """libkiwix-compat human ID (used in path-prefix) for a ZIM file"""
+    return unidecode.unidecode(fpath.stem.replace(" ", "_").replace("+", "plus"))
+
+
+def without_period(text: str) -> str:
+    """text or filename without its ending _YYYY-MM period suffix"""
+    return re.sub(r"_\d{4}-\d{2}$", "", re.sub(r"\.zim$", "", text))
+
+
+def to_human_alias(fpath: Path) -> str:
+    """libkiwix --nodatealias equivalent from ZIM filename"""
+    return without_period(to_human_id(fpath))
+
+
+def get_core_alias_from(line: bytes) -> tuple[BookAlias, BookCore]:
+    """BookAlias and BookCore from a line of catalog xml data"""
+
+    line_ = line.decode("utf-8")
+    raw_url = line_[line_.index('" url="https') + 7 : -3]
+    url = Path(re.sub(r".meta4$", "", raw_url))
+    return to_human_alias(url), to_core(url)
+
+
+def parse_catalog_for_updates(payload: bytes) -> dict[BookAlias, UpdatedZim]:
+    """dict of book ident info for all books that changed or were removed"""
+
+    logger.info("[PARSE] reading new catalog")
+    # make a copy of current (now previous) catalog so we can compare which changed
+    previous_entries = Catalog.entries.copy()
+    # reset the catalog store (we'll rebuild from scratch)
+    Catalog.entries = {}
+
+    updated_zims: dict[BookAlias, UpdatedZim] = {}
+    for line in payload.split(b"\n"):
+        if not line.startswith(b"  <book "):
+            continue
+
+        # retrieve the info we need, leveraging the static xml format
+        # and without actual parsing
+        book_id: BookId = line[12:48].decode("ASCII")  # fmt is `  <book id="<md5>" xxx`
+        alias, core = get_core_alias_from(line)
+        digest: BookLineDigest = xxhash.xxh3_64_hexdigest(line)
+
+        # add entry to the catalog
+        Catalog.entries[book_id] = CatalogEntry(core=core, alias=alias, digest=digest)
+
+        # add to update list of line digest is different
+        previous_digest = previous_entries.get(book_id, CatalogEntry.empty()).digest
+        if previous_digest != digest:
+            is_new = previous_digest == ""
+            logger.debug(
+                "> {alias} ({book_id}) is different" + (" (new)" if is_new else "")
+            )
+            updated_zims[alias] = (book_id, core)
+
+    del previous_entries
+    return updated_zims
+
+
+def purge_vanish(data: bytes, varnish_url: str):
+    logger.info(f"Purging varnish in {KIWIX_SERVE_RELOAD_DELAY}s {varnish_url}")
+    sleep_for(KIWIX_SERVE_RELOAD_DELAY)
+    updated_zims = parse_catalog_for_updates(data)
+    logger.info(f"[PARSE] Found {len(updated_zims)} updates…")
+    pure_varnish_library(varnish_url=varnish_url)
+    purge_varnish_books(varnish_url=varnish_url, updated_zims=updated_zims)
+
+
+def pure_varnish_library(varnish_url: str):
+    logger.info(f"[PURGE] Requesting Library purge from {varnish_url}")
+    resp = requests.request(
+        method="PURGE",
+        url=varnish_url,
+        headers={"X-Purge-Type": "library"},
+        timeout=VARNISH_PURGE_HTTP_TIMEOUT,
+    )
+    if not resp.ok:
+        logger.error(f"[PURGE] > HTTP {resp.status_code}/{resp.reason}")
+
+
+def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str]]):
+    logger.info("[PURGE] Requesting Books purge for")
+    for book_alias in updated_zims.keys():
+        book_id, book_core = updated_zims[book_alias]
+        logger.debug(f"[PURGE] > {book_alias} / {book_core} / {book_id}")
+        resp = requests.request(
+            method="PURGE",
+            url=varnish_url,
+            headers={
+                "X-Purge-Type": "book",
+                "X-Book-Id": book_id,
+                "X-Book-Name": book_core,
+                # only account for new-style book name fmt (yolo)
+                "X-Book-Name-Nodate": book_alias,
+            },
+            timeout=VARNISH_PURGE_HTTP_TIMEOUT,
+        )
+        if not resp.ok:
+            logger.error(f"[PURGE] >> HTTP {resp.status_code}/{resp.reason}")
 
 
 def get_data(url: str) -> tuple[bytes, str]:
@@ -111,6 +247,8 @@ def main() -> int:
         else:
             save_data(data=payload, target=SAVE_TO)
             logger.info(f"Updated catalog with {etag=} ({format_size(len(payload))})")
+            if PURGE_VARNISH_URL:
+                purge_vanish(data=payload, varnish_url=PURGE_VARNISH_URL)
         finally:
             sleep_for(REFRESH_EVERY_SECONDS)
 

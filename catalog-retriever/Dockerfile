@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 RUN set -e \
     && apk update \
     && apk --no-cache add dumb-init \
-    && pip install requests==2.33.1 humanfriendly==10.0
+    && pip install requests==2.33.1 humanfriendly==10.0 xxhash==3.7.0 unidecode==1.4.0
 
 COPY retriever.py /src/
 
