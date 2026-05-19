@@ -23,7 +23,7 @@ REFRESH_EVERY_SECONDS: int = int(os.getenv("REFRESH_EVERY_SECONDS", "60"))
 
 # CATALOG-ONLY OPTS
 # value is added as prefix in front of the folder/fname from CMS
-ADD_BOOK_PATH_TO_XML: str = os.getenv("ADD_BOOK_PATH_TO_XML", "")
+ADD_BOOK_PATH_TO_XML: str | None = os.getenv("ADD_BOOK_PATH_TO_XML", None)
 
 # VARNISH/PURE OPTS
 PURGE_VARNISH_URL: str = os.getenv("PURGE_VARNISH_URL", "")
@@ -63,24 +63,7 @@ def get_catalog_url() -> str:
     return f"{CMS_API_URL}/{path}/catalog.xml"
 
 
-def save_data_with_path(data: bytes, fpath: Path, prefix: str = ""):
-    with open(fpath, "wb") as fh:
-        for line in data.split(b"\n"):
-            if not line.startswith(b"  <book "):
-                fh.write(line)
-                fh.write(b"\n")
-                continue
-            url = Path(get_url_from(line))
-            path = "/".join(url.parts[-2:])
-            fh.write(line[:-3])
-            fh.write(b' path="')
-            fh.write(prefix.encode("UTF-8"))
-            fh.write(path.encode("UTF-8"))
-            fh.write(line[-4:])  # include closing "
-            fh.write(b"\n")
-
-
-def save_data(data: bytes, target: Path, add_path: str) -> bool:
+def save_data(data: bytes, target: Path) -> bool:
     """whether data was saved correctly"""
     try:
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -88,11 +71,7 @@ def save_data(data: bytes, target: Path, add_path: str) -> bool:
             prefix="catalog_", suffix=".xml", dir=target.parent
         ) as fh:
             src = Path(fh.name)
-            if bool(add_path):
-                save_data_with_path(data=data, fpath=src, prefix=add_path)
-            else:
-                src.write_bytes(data)
-
+            src.write_bytes(data)
             try:
                 src.rename(target)
             except Exception as exc:
@@ -227,10 +206,10 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
             logger.error(f"[PURGE] >> HTTP {resp.status_code}/{resp.reason}")
 
 
-def get_data(url: str) -> tuple[bytes, str]:
+def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
     """full catalog data"""
     try:
-        resp = requests.get(url, allow_redirects=False)
+        resp = requests.get(url, allow_redirects=False, params={"path_prefix": add_path})
         resp.raise_for_status()
     except Exception as exc:
         logger.error(f"Failed to retrieve catalog from {url}: {exc!s}")
@@ -274,13 +253,13 @@ def main() -> int:
             if bool(etag) and not has_update(url, etag=etag):
                 logger.debug(f"No update {etag=}")
                 continue
-            payload, etag = get_data(url=url)
+            payload, etag = get_data(url=url, add_path=ADD_BOOK_PATH_TO_XML)
         except Exception as exc:
             logger.error(f"Failed to retrieve catalog from {url}: {exc!s}")
             logger.debug(exc, exc_info=True)
             continue
         else:
-            save_data(data=payload, target=SAVE_TO, add_path=ADD_BOOK_PATH_TO_XML)
+            save_data(data=payload, target=SAVE_TO)
             logger.info(f"Updated catalog with {etag=} ({format_size(len(payload))})")
             if PURGE_VARNISH_URL:
                 purge_vanish(data=payload, varnish_url=PURGE_VARNISH_URL)
