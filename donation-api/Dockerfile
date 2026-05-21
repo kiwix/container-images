@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 # check=skip=SecretsUsedInArgOrEnv
 
-FROM python:3.12-alpine
+FROM python:3.14-alpine
 LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
 # Copy pyproject.toml and its dependencies
