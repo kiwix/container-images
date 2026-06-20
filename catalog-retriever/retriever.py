@@ -72,6 +72,7 @@ def save_data(data: bytes, target: Path) -> bool:
         ) as fh:
             src = Path(fh.name)
             src.write_bytes(data)
+            src.chmod(0o644)
             try:
                 src.rename(target)
             except Exception as exc:
