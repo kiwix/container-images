@@ -16,10 +16,14 @@ RUN apt update -q \
     libmicrohttpd-dev aria2 libgtest-dev libgl-dev \
 # Devel package to compile python modules
     libxml2-dev libxslt-dev python3-dev \
-# Qt5 packages
-    libqt5gui5 qtbase5-dev qtwebengine5-dev libqt5svg5-dev qt5-image-formats-plugins \
-# Qt6 packages
-    qt6-base-dev qt6-base-dev-tools qt6-webengine-dev libqt6opengl6-dev libqt6webenginecore6-bin libqt6svg6 \
+# Needed by Qt 6.8.3 installed via aqtinstall
+    libfreetype6 libfontconfig1 libegl1 libnss3 libthai0 \
+    libxkbcommon0 libxkbcommon-x11-0 libxkbfile1 \
+    libasound2 libxrandr2 libxdamage1 libxcomposite1 \
+    libxtst6 libxi6 libwayland-dev libcups2 \
+    libxcb-icccm4 libxcb-shape0 libxcb-keysyms1 libxcb-xkb1 libxcb-cursor0 \
+# Temporary (until libtorrent is made a dependency in kiwix-build)
+    libtorrent-rasterbar-dev \
 # To create the appimage of kiwix-desktop
     libfuse2 fuse patchelf \
 # Flatpak tools
@@ -33,10 +37,6 @@ RUN apt update -q \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* /usr/share/doc/* /var/cache/debconf/* \
   && pip3 install meson==1.6.1 pytest gcovr requests distro
-
-# Set Qt6 per default (QT_SELECT has to be set to Qt5 so Kiwix Linux/Windows compiles)
-RUN qtchooser -install qt6 $(which qmake6)
-ENV QT_SELECT qt6
 
 # Create user
 RUN groupadd --gid 121 runner
