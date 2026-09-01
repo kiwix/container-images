@@ -20,6 +20,10 @@ that Ory merges into the access token:
   method (`password`, `oidc`, `code`, `passkey`) with at least one
   second-factor method (`webauthn`, `lookup_secrets`, `totp`).
 
+Both claims are best-effort: if the incoming ID token is missing the data a
+claim needs (e.g. no `ext.name`, or no ID token claims at all), the webhook
+still succeeds and simply omits that claim rather than failing the request.
+
 ### Note on PII
 
 `kiwix-name` is personally identifiable information. Putting it in the
@@ -35,13 +39,19 @@ across apps, which was judged worth the (limited) PII exposure.
   `API_KEY` environment variable) — the endpoint Ory calls. The request body
   is parsed with Pydantic models that only pick out the fields this service
   actually needs (`session.id_token.id_token_claims.{amr,ext.name}`);
-  everything else in the payload is ignored.
+  everything else in the payload is ignored. All of these fields are
+  optional — a session missing some or all of them still gets a `200`
+  response, just with the corresponding claim(s) left out of
+  `access_token`. A `422` is only returned for a genuinely malformed body
+  (e.g. non-JSON, or a field present with the wrong type, such as `amr` not
+  being a list).
 - `GET /healthz` — basic liveness check.
-- An HTTP middleware is always active and inspects every response. When a
-  request fails Pydantic validation (HTTP 422), it logs the offending field
-  and the full raw request payload, to make it easy to diagnose unexpected
-  payload shapes from Ory without logging anything on the normal/successful
-  path.
+- An HTTP middleware is always active and logs the full raw request body of
+  every request at `DEBUG` level, so unexpected payload shapes from Ory can
+  be inspected regardless of whether the request ultimately succeeded or
+  failed. Separately, a `422` (Pydantic validation failure) also logs a
+  `WARNING` naming the specific offending field, which is visible even at
+  the default log level.
 
 ## Operational usage
 
@@ -53,6 +63,7 @@ Environment variables:
   At the default level, a validation failure logs a short warning naming
   the offending field (e.g. `field 'session.id_token.id_token_claims.ext.name'
   - Field required`). Set `LOG_LEVEL=DEBUG` to additionally log the full raw
-  request payload for that failing request, which is useful when
-  troubleshooting but more verbose (and includes PII), so it should only be
-  enabled temporarily.
+  request payload of *every* request, valid or not — useful when
+  troubleshooting unexpected payload shapes from Ory, but more verbose (and
+  includes PII such as the display name), so it should only be enabled
+  temporarily.

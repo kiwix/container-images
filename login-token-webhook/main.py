@@ -11,22 +11,20 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-# --- Logging middleware (always active; only logs the whole payload when Pydantic
-# validation of the incoming body fails, i.e. the response is a 422) ---
+# --- Logging middleware ---
 
 @app.middleware("http")
 async def log_request_body(request: Request, call_next):
     body = await request.body()
     response = await call_next(request)
 
-    if response.status_code == 422:
-        try:
-            parsed = json.loads(body)
-            logger.debug("Validation failed for %s %s:\n%s",
-                         request.method, request.url.path, json.dumps(parsed, indent=2))
-        except json.JSONDecodeError:
-            logger.debug("Validation failed for %s %s (non-JSON body):\n%r",
-                         request.method, request.url.path, body)
+    try:
+        parsed = json.loads(body)
+        logger.debug("Request received for %s %s:\n%s",
+                        request.method, request.url.path, json.dumps(parsed, indent=2))
+    except json.JSONDecodeError:
+        logger.debug("Request received for %s %s (non-JSON body):\n%r",
+                        request.method, request.url.path, body)
 
     return response
 
@@ -52,28 +50,34 @@ def verify_api_key(x_api_key: str = Header(...)):
 
 
 # --- Request models (only the fields we actually need) ---
+#
+# Every field below is optional: the ID token Ory sends us is not guaranteed
+# to carry the claims we rely on (e.g. a session created without the
+# expected identity schema). Rather than failing the whole request in that
+# case, missing fields are simply left out of the response - see the
+# webhook endpoint below.
 
 class IdTokenExt(BaseModel):
     model_config = ConfigDict(extra="ignore")
-    name: str
+    name: str | None = None
 
 class IdTokenClaims(BaseModel):
     model_config = ConfigDict(extra="ignore")
     amr: list[str] | None = None
-    ext: IdTokenExt
+    ext: IdTokenExt | None = None
 
 class IdToken(BaseModel):
     model_config = ConfigDict(extra="ignore")
-    id_token_claims: IdTokenClaims
+    id_token_claims: IdTokenClaims | None = None
 
 class Session(BaseModel):
     model_config = ConfigDict(extra="ignore")
-    id_token: IdToken
+    id_token: IdToken | None = None
 
 class WebhookRequest(BaseModel):
     model_config = ConfigDict(extra="ignore")  # ignore "request", "client_id", etc.
 
-    session: Session
+    session: Session | None = None
 
 
 # --- AAL computation ---
@@ -98,20 +102,15 @@ def compute_aal(amr: list[str] | None) -> str:
 
 @app.post("/token-webhook", dependencies=[Depends(verify_api_key)])
 async def webhook(payload: WebhookRequest):
-    claims = payload.session.id_token.id_token_claims
-    name = claims.ext.name
-    amr = claims.amr
+    claims = payload.session.id_token.id_token_claims if payload.session and payload.session.id_token else None
 
-    aal = compute_aal(amr)
+    access_token = {}
+    if claims is not None:
+        access_token["kiwix-aal"] = compute_aal(claims.amr)
+        if claims.ext is not None and claims.ext.name is not None:
+            access_token["kiwix-name"] = claims.ext.name
 
-    return {
-        "session": {
-            "access_token": {
-                "kiwix-aal": aal,
-                "kiwix-name": name,
-            }
-        }
-    }
+    return {"session": {"access_token": access_token}}
 
 @app.get("/healthz")
 def health():
