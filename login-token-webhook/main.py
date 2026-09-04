@@ -6,6 +6,9 @@ from fastapi.exception_handlers import request_validation_exception_handler
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, ConfigDict
 
+RESTRICTED_CLIENT_IDS_RAW = os.environ.get("RESTRICTED_CLIENT_IDS","")
+RESTRICTED_CLIENT_IDS = RESTRICTED_CLIENT_IDS_RAW.split(",")  if RESTRICTED_CLIENT_IDS_RAW else []
+
 logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO").upper())
 logger = logging.getLogger(__name__)
 
@@ -110,7 +113,7 @@ async def webhook(payload: WebhookRequest):
         access_token["kiwix-aal"] = compute_aal(claims.amr)
         if claims.ext is not None and claims.ext.name is not None:
             access_token["kiwix-name"] = claims.ext.name
-        for restricted_client_id in ["d4ee6d1e-e4d3-48a6-8d1a-de93278f231d"]:
+        for restricted_client_id in RESTRICTED_CLIENT_IDS:
             if claims.aud and restricted_client_id in claims.aud and access_token["kiwix-aal"] != "aal2":
                 raise HTTPException(status_code=422, detail="2FA is mandatory for this app")
 
