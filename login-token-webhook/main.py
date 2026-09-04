@@ -111,7 +111,7 @@ async def webhook(payload: WebhookRequest):
         if claims.ext is not None and claims.ext.name is not None:
             access_token["kiwix-name"] = claims.ext.name
         for restricted_client_id in ["d4ee6d1e-e4d3-48a6-8d1a-de93278f231d"]:
-            if restricted_client_id in claims.aud and access_token["kiwix-aal"] != "aal2":
+            if claims.aud and restricted_client_id in claims.aud and access_token["kiwix-aal"] != "aal2":
                 raise HTTPException(status_code=422, detail="2FA is mandatory for this app")
 
 
