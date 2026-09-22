@@ -14,6 +14,7 @@ import xxhash
 from humanfriendly import format_size
 
 DEBUG: bool = bool(os.getenv("DEBUG", ""))
+USER_AGENT: str = os.getenv("USER_AGENT", "kiwix-catalog-retriever/1.0")
 
 SAVE_TO: Path = Path(os.getenv("SAVE_TO", "/data/catalog.xml")).expanduser().resolve()
 CMS_COLLECTION_ID: str = os.getenv("CMS_COLLECTION_ID", "-")
@@ -179,7 +180,7 @@ def pure_varnish_library(varnish_url: str):
     resp = requests.request(
         method="PURGE",
         url=varnish_url,
-        headers={"X-Purge-Type": "library"},
+        headers={"X-Purge-Type": "library", "User-Agent": USER_AGENT},
         timeout=VARNISH_PURGE_HTTP_TIMEOUT,
     )
     if not resp.ok:
@@ -188,7 +189,7 @@ def pure_varnish_library(varnish_url: str):
 
 def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str]]):
     logger.info("[PURGE] Requesting Books purge for")
-    for book_alias in updated_zims.keys():
+    for book_alias in updated_zims:
         book_id, book_core = updated_zims[book_alias]
         logger.debug(f"[PURGE] > {book_alias} / {book_core} / {book_id}")
         resp = requests.request(
@@ -200,6 +201,7 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
                 "X-Book-Name": book_core,
                 # only account for new-style book name fmt (yolo)
                 "X-Book-Name-Nodate": book_alias,
+                "User-Agent": USER_AGENT,
             },
             timeout=VARNISH_PURGE_HTTP_TIMEOUT,
         )
@@ -210,7 +212,12 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
 def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
     """full catalog data"""
     try:
-        resp = requests.get(url, allow_redirects=False, params={"path_prefix": add_path})
+        resp = requests.get(
+            url,
+            allow_redirects=False,
+            params={"path_prefix": add_path},
+            headers={"User-Agent": USER_AGENT},
+        )
         resp.raise_for_status()
     except Exception as exc:
         logger.error(f"Failed to retrieve catalog from {url}: {exc!s}")
@@ -222,7 +229,7 @@ def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
 def has_update(url: str, etag: str) -> bool:
     """whether data should be downloaded again"""
     try:
-        resp = requests.head(url)
+        resp = requests.head(url, headers={"User-Agent": USER_AGENT})
         resp.raise_for_status()
         new_etag = resp.headers.get("etag", "")
     except Exception as exc:
