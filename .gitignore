@@ -2,3 +2,7 @@
 *.pyc
 matomo-token.txt
 wiki-password.txt
+/mirrorbrain/
+/secrets/
+/bittorrent-seeder/
+catalog.xml
