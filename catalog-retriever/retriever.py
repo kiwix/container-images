@@ -1,3 +1,13 @@
+# WARN: dependencies are in Dockerfile
+# /// script
+# dependencies = [
+#   "requests==2.33.1",
+#   "humanfriendly==10.0",
+#   "unidecode==1.4.0",
+#   "xxhash==3.7.0",
+# ]
+# ///
+
 import logging
 import os
 import re
