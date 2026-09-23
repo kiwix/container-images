@@ -1,3 +1,4 @@
+import datetime
 import logging
 import os
 import re
@@ -6,12 +7,18 @@ import tempfile
 import time
 import urllib.parse
 from pathlib import Path
-from typing import NamedTuple, Self
+from typing import Any, NamedTuple, Self, TypedDict
 
 import requests
+import requests.adapters
 import unidecode
 import xxhash
 from humanfriendly import format_size
+from oauthlib.oauth2 import BackendApplicationClient
+from requests import PreparedRequest
+from requests.adapters import HTTPAdapter
+from requests.auth import HTTPBasicAuth
+from requests_oauthlib import OAuth2Session
 
 DEBUG: bool = bool(os.getenv("DEBUG", ""))
 USER_AGENT: str = os.getenv("USER_AGENT", "kiwix-catalog-retriever/1.0")
@@ -31,6 +38,12 @@ PURGE_VARNISH_URL: str = os.getenv("PURGE_VARNISH_URL", "")
 KIWIX_SERVE_RELOAD_DELAY: int = int(os.getenv("KIWIX_SERVE_RELOAD_DELAY", "10"))
 VARNISH_PURGE_HTTP_TIMEOUT: int = int(os.getenv("VARNISH_PURGE_HTTP_TIMEOUT", "10"))
 
+USE_OAUTH: bool = bool(os.getenv("USE_OAUTH", ""))
+OAUTH_AUDIENCE: str = os.getenv("OAUTH_AUDIENCE", "-")
+OAUTH_CLIENT_ID: str = os.getenv("OAUTH_CLIENT_ID", "-")
+OAUTH_CLIENT_SECRET: str = os.getenv("OAUTH_CLIENT_SECRET", "-")
+OAUTH_TOKEN_RENEWAL_WINDOW: datetime.timedelta = datetime.timedelta(minutes=1)
+
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 logger = logging.getLogger("retriever")
 
@@ -40,6 +53,74 @@ type BookId = str
 type BookAlias = str
 type BookCore = str
 type UpdatedZim = tuple[BookId, BookCore]
+
+
+class OAuth2Token(TypedDict):
+    access_token: str
+    expires_in: int
+    scope: str
+    token_type: str
+    expires_at: int
+
+
+class KiwixLoginOAuthAdapter(HTTPAdapter):
+    def _init_token(self):
+        """setup our instance vars (hack to not override __init__)"""
+        if not hasattr(self, "_access_token"):
+            self._access_token: str = ""
+            self._token_expires_on: datetime.datetime = datetime.datetime.fromtimestamp(
+                0, tz=datetime.UTC
+            )
+
+    def check_token(self) -> None:
+        """checks if token expired and renews if not"""
+        self._init_token()
+
+        if not self._access_token or datetime.datetime.now(tz=datetime.UTC) >= (
+            self.token_expires_on - OAUTH_TOKEN_RENEWAL_WINDOW
+        ):
+            self.fetch_token()
+        if not self._access_token:
+            raise OSError("Failed to fetch access token.")
+
+    def fetch_token(self) -> None:
+        """Authenticates via OAuth and stores received bearer token"""
+        client = BackendApplicationClient(client_id=OAUTH_CLIENT_ID)
+        oauth_session = OAuth2Session(client=client)
+        oauth_session.headers["User-Agent"] = USER_AGENT
+        payload: OAuth2Token = oauth_session.fetch_token(  # type: ignore
+            token_url="https://ory.login.kiwix.org/oauth2/token",
+            client_id=OAUTH_CLIENT_ID,
+            client_secret=OAUTH_CLIENT_SECRET,
+            auth=HTTPBasicAuth(OAUTH_CLIENT_ID, OAUTH_CLIENT_SECRET),
+            audience=OAUTH_AUDIENCE,
+        )
+        self._access_token = payload["access_token"]
+        self._token_expires_on = datetime.datetime.fromtimestamp(
+            timestamp=payload["expires_at"], tz=datetime.UTC
+        )
+
+    @property
+    def access_token(self) -> str:
+        """actual access token, refreshed first if expired"""
+        self.check_token()
+        return self._access_token
+
+    @property
+    def token_expires_on(self) -> datetime.datetime:
+        """token expiration"""
+        return self._token_expires_on
+
+    def add_headers(self, request: PreparedRequest, **kwargs: Any) -> None:
+        """Adds Authorization header (called by requests itself)"""
+        self._init_token()
+        request.headers["Authorization"] = f"Bearer {self.access_token}"
+
+
+session: requests.Session = requests.Session()
+session.headers.update({"User-Agent": USER_AGENT})
+cms_adapter = KiwixLoginOAuthAdapter() if USE_OAUTH else HTTPAdapter()
+session.mount(CMS_API_URL, cms_adapter)
 
 
 class CatalogEntry(NamedTuple):
@@ -181,10 +262,10 @@ def purge_vanish(data: bytes, varnish_url: str):
 
 def pure_varnish_library(varnish_url: str):
     logger.info(f"[PURGE] Requesting Library purge from {varnish_url}")
-    resp = requests.request(
+    resp = session.request(
         method="PURGE",
         url=varnish_url,
-        headers={"X-Purge-Type": "library", "User-Agent": USER_AGENT},
+        headers={"X-Purge-Type": "library"},
         timeout=VARNISH_PURGE_HTTP_TIMEOUT,
     )
     if not resp.ok:
@@ -195,7 +276,7 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
     logger.info("[PURGE] Requesting Books purge for")
     for book_alias, (book_id, book_core) in updated_zims.items():
         logger.debug(f"[PURGE] > {book_alias} / {book_core} / {book_id}")
-        resp = requests.request(
+        resp = session.request(
             method="PURGE",
             url=varnish_url,
             headers={
@@ -204,7 +285,6 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
                 "X-Book-Name": book_core,
                 # only account for new-style book name fmt (yolo)
                 "X-Book-Name-Nodate": book_alias,
-                "User-Agent": USER_AGENT,
             },
             timeout=VARNISH_PURGE_HTTP_TIMEOUT,
         )
@@ -215,11 +295,10 @@ def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str
 def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
     """full catalog data"""
     try:
-        resp = requests.get(
+        resp = session.get(
             url,
             allow_redirects=False,
             params={"path_prefix": add_path},
-            headers={"User-Agent": USER_AGENT},
         )
         resp.raise_for_status()
     except Exception as exc:
@@ -232,7 +311,7 @@ def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
 def has_update(url: str, etag: str) -> bool:
     """whether data should be downloaded again"""
     try:
-        resp = requests.head(url, headers={"User-Agent": USER_AGENT})
+        resp = session.head(url)
         resp.raise_for_status()
         new_etag = resp.headers.get("etag", "")
     except Exception as exc:
