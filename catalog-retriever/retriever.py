@@ -1,13 +1,3 @@
-# WARN: dependencies are in Dockerfile
-# /// script
-# dependencies = [
-#   "requests==2.33.1",
-#   "humanfriendly==10.0",
-#   "unidecode==1.4.0",
-#   "xxhash==3.7.0",
-# ]
-# ///
-
 import logging
 import os
 import re
@@ -16,7 +6,7 @@ import tempfile
 import time
 import urllib.parse
 from pathlib import Path
-from typing import NamedTuple, Self, TypeAlias
+from typing import NamedTuple, Self
 
 import requests
 import unidecode
@@ -44,11 +34,12 @@ VARNISH_PURGE_HTTP_TIMEOUT: int = int(os.getenv("VARNISH_PURGE_HTTP_TIMEOUT", "1
 logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 logger = logging.getLogger("retriever")
 
-BookLineDigest: TypeAlias = str
-BookId: TypeAlias = str
-BookAlias: TypeAlias = str
-BookCore: TypeAlias = str
-UpdatedZim: TypeAlias = tuple[BookId, BookCore]
+
+type BookLineDigest = str
+type BookId = str
+type BookAlias = str
+type BookCore = str
+type UpdatedZim = tuple[BookId, BookCore]
 
 
 class CatalogEntry(NamedTuple):
@@ -62,7 +53,10 @@ class CatalogEntry(NamedTuple):
 
 
 class Catalog:
-    entries: dict[BookId, CatalogEntry] = {}
+    entries: dict[BookId, CatalogEntry]
+
+    def __init__(self) -> None:
+        self.entries = {}
 
 
 def get_catalog_url() -> str:
@@ -199,8 +193,7 @@ def pure_varnish_library(varnish_url: str):
 
 def purge_varnish_books(varnish_url: str, updated_zims: dict[str, tuple[str, str]]):
     logger.info("[PURGE] Requesting Books purge for")
-    for book_alias in updated_zims:
-        book_id, book_core = updated_zims[book_alias]
+    for book_alias, (book_id, book_core) in updated_zims.items():
         logger.debug(f"[PURGE] > {book_alias} / {book_core} / {book_id}")
         resp = requests.request(
             method="PURGE",
@@ -232,7 +225,7 @@ def get_data(url: str, add_path: str | None = None) -> tuple[bytes, str]:
     except Exception as exc:
         logger.error(f"Failed to retrieve catalog from {url}: {exc!s}")
         logger.debug(exc, exc_info=True)
-        raise exc
+        raise
     return resp.content, resp.headers.get("etag", "")
 
 

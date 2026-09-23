@@ -3,10 +3,11 @@ LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
 RUN set -e \
     && apk update \
-    && apk --no-cache add dumb-init \
-    && pip install requests==2.33.1 humanfriendly==10.0 xxhash==3.7.0 unidecode==1.4.0
+    && apk --no-cache add dumb-init
 
-COPY retriever.py /src/
+COPY pyproject.toml retriever.py /src/
+
+RUN pip install /src/
 
 ENV SAVE_TO="/data/catalog.xml"
 ENV CMS_API_URL="http://api-service.cms.svc.cluster.local/v1"

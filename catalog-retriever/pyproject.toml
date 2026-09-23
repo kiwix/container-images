@@ -1,0 +1,21 @@
+[project]
+name = "catalog-retriever"
+version = "1.0.0"
+requires-python = ">=3.14"
+dependencies = [
+  "requests==2.34.2",
+  "types-requests==2.33.0.20260906",
+  "requests-oauthlib==2.0.0",
+  "humanfriendly==10.0",
+  "types-humanfriendly==10.0.1.20250319",
+  "unidecode==1.4.0",
+  "xxhash==4.0.1",
+]
+
+
+[tool.pyright]
+include = ["retrievers.py"]
+exclude = [".venv/**"]
+pythonVersion = "3.14"
+typeCheckingMode="strict"
+disableBytesTypePromotions = true
