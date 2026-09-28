@@ -12,14 +12,14 @@ jobs:
 
   matomo:
     name: Deploy Matomo Image
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: actions/checkout@v6
       - name: Publish Docker Image
         uses: openzim/docker-publish-action@v10
         with:
           image-name: kiwix/matomo
-          on-master: 5.13.0-fpm
+          on-master: 5.14.0-fpm
           restrict-to: kiwix/container-images
           context: matomo
           registries: ghcr.io
