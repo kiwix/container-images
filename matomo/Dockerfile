@@ -5,7 +5,10 @@ ENV LIBMMDBVERSION 1.7.1
 ENV MMDBREADERVERSION 1.11.0
 
 # install libmaxmindb for GeoIP2
-RUN curl -L -o /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz https://github.com/maxmind/libmaxminddb/releases/download/$LIBMMDBVERSION/libmaxminddb-$LIBMMDBVERSION.tar.gz \
+RUN \
+    # install nginx in image (limited impact) so it can be used as reverse-proxy
+    apt update && apt install -y nginx \
+    && curl -L -o /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz https://github.com/maxmind/libmaxminddb/releases/download/$LIBMMDBVERSION/libmaxminddb-$LIBMMDBVERSION.tar.gz \
     && tar -C /tmp/ -xf /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz \
     && cd /tmp/libmaxminddb-$LIBMMDBVERSION \
     && ./configure && make && make install && ldconfig \
