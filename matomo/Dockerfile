@@ -14,4 +14,9 @@ RUN curl -L -o /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz https://github.com/maxmi
     && tar -C /tmp -xf /tmp/MaxMind-DB-Reader-php-$MMDBREADERVERSION.tar.gz \
     && cd /tmp/MaxMind-DB-Reader-php-$MMDBREADERVERSION/ext \
     && phpize && ./configure && make && make install \
-    && docker-php-ext-enable maxminddb
+    && docker-php-ext-enable maxminddb \
+    # [TEMP] use kiwix fork of device-detector
+    && curl -L -o /tmp/device-detector.tar.gz https://github.com/kiwix/device-detector/archive/refs/heads/master.tar.gz \
+    && tar -C /tmp/ -xf /tmp/device-detector.tar.gz \
+    && rm -rf /usr/src/matomo/vendor/matomo/device-detector/ \
+    && mv /tmp/device-detector-master/ /usr/src/matomo/vendor/matomo/device-detector
