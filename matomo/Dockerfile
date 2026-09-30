@@ -19,4 +19,8 @@ RUN curl -L -o /tmp/libmaxminddb-$LIBMMDBVERSION.tar.gz https://github.com/maxmi
     && curl -L -o /tmp/device-detector.tar.gz https://github.com/kiwix/device-detector/archive/refs/heads/master.tar.gz \
     && tar -C /tmp/ -xf /tmp/device-detector.tar.gz \
     && rm -rf /usr/src/matomo/vendor/matomo/device-detector/ \
-    && mv /tmp/device-detector-master/ /usr/src/matomo/vendor/matomo/device-detector
+    && mv /tmp/device-detector-master/ /usr/src/matomo/vendor/matomo/device-detector \
+    && curl -L -o /tmp/matomo-icons.tar.gz https://github.com/kiwix/matomo-icons/archive/refs/heads/master.tar.gz \
+    && tar -C /tmp/ -xf /tmp/matomo-icons.tar.gz \
+    && rm -rf /usr/src/matomo/plugins/Morpheus/icons/dist \
+    && mv /tmp/matomo-icons-master/dist /usr/src/matomo/plugins/Morpheus/icons/dist
