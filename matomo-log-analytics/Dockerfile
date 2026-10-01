@@ -32,7 +32,7 @@ RUN { \
   --useragent-exclude robert --useragent-exclude shareaza --useragent-exclude tixati \
   --useragent-exclude tonido --useragent-exclude transmission \
   --useragent-exclude tribler --useragent-exclude xunlei \
-  --add-download-extensions=zim \
+  --add-download-extensions=zim,meta4,torrent,magnet \
   --enable-http-redirects --include-host=$HOST --idsite=$MATOMO_SITE_ID --url=$MATOMO_URL --token-auth=$MATOMO_TOKEN $LOG_PATH' ; \
 } > /usr/local/bin/import-log && chmod +x /usr/local/bin/import-log
 
