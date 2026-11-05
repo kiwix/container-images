@@ -7,7 +7,7 @@ import tempfile
 import time
 import urllib.parse
 from pathlib import Path
-from typing import Any, NamedTuple, Self, TypedDict
+from typing import Any, ClassVar, NamedTuple, Self, TypedDict
 
 import requests
 import requests.adapters
@@ -134,10 +134,7 @@ class CatalogEntry(NamedTuple):
 
 
 class Catalog:
-    entries: dict[BookId, CatalogEntry]
-
-    def __init__(self) -> None:
-        self.entries = {}
+    entries: ClassVar[dict[BookId, CatalogEntry]] = {}
 
 
 def get_catalog_url() -> str:
@@ -222,7 +219,7 @@ def parse_catalog_for_updates(payload: bytes) -> dict[BookAlias, UpdatedZim]:
     # make a copy of current (now previous) catalog so we can compare which changed
     previous_entries = Catalog.entries.copy()
     # reset the catalog store (we'll rebuild from scratch)
-    Catalog.entries = {}
+    Catalog.entries.clear()
 
     updated_zims: dict[BookAlias, UpdatedZim] = {}
     for line in payload.split(b"\n"):
