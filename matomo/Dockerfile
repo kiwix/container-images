@@ -1,4 +1,4 @@
-FROM docker.io/library/matomo:5.14.2-fpm
+FROM docker.io/library/matomo:5.14.3-fpm
 LABEL org.opencontainers.image.source=https://github.com/kiwix/container-images
 
 ENV LIBMMDBVERSION 1.7.1
