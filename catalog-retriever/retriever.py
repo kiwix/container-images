@@ -21,12 +21,12 @@ from requests.auth import HTTPBasicAuth
 from requests_oauthlib import OAuth2Session
 
 DEBUG: bool = bool(os.getenv("DEBUG", ""))
-USER_AGENT: str = os.getenv("USER_AGENT", "kiwix-catalog-retriever/1.0")
+USER_AGENT: str = os.getenv("USER_AGENT", "kiwix-catalog-retriever/1.1")
 
-SAVE_TO: Path = Path(os.getenv("SAVE_TO", "/data/catalog.xml")).expanduser().resolve()
-CMS_COLLECTION_ID: str = os.getenv("CMS_COLLECTION_ID", "-")
+SAVE_TO: Path = Path(os.getenv("SAVE_TO", "opds.xml")).expanduser().resolve()
+CMS_COLLECTION_ID: str = os.getenv("CMS_COLLECTION_ID", "")
 
-CMS_API_URL: str = os.getenv("CMS_API_URL", "-")
+CMS_API_URL: str = os.getenv("CMS_API_URL", "https://api.cms.openzim.org/v1")
 REFRESH_EVERY_SECONDS: int = int(os.getenv("REFRESH_EVERY_SECONDS", "60"))
 
 # CATALOG-ONLY OPTS
@@ -48,7 +48,7 @@ logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 logger = logging.getLogger("retriever")
 
 
-type BookLineDigest = str
+type BookEntryDigest = str
 type BookId = str
 type BookAlias = str
 type BookCore = str
@@ -126,7 +126,7 @@ session.mount(CMS_API_URL, cms_adapter)
 class CatalogEntry(NamedTuple):
     core: BookCore
     alias: BookAlias
-    digest: BookLineDigest
+    digest: BookEntryDigest
 
     @classmethod
     def empty(cls) -> Self:
@@ -143,7 +143,7 @@ def get_catalog_url() -> str:
         if CMS_COLLECTION_ID != "staging"
         else CMS_COLLECTION_ID
     )
-    return f"{CMS_API_URL}/{path}/catalog.xml"
+    return f"{CMS_API_URL}/{path}/opds.xml"
 
 
 def save_data(data: bytes, target: Path) -> bool:
@@ -151,7 +151,7 @@ def save_data(data: bytes, target: Path) -> bool:
     try:
         target.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.NamedTemporaryFile(
-            prefix="catalog_", suffix=".xml", dir=target.parent
+            prefix="opds_", suffix=".xml", dir=target.parent
         ) as fh:
             src = Path(fh.name)
             src.write_bytes(data)
@@ -192,23 +192,21 @@ def to_human_alias(fpath: Path) -> str:
     return without_period(to_human_id(fpath))
 
 
-def get_url_from(line: bytes) -> str:
-    """ZIM url from a raw catalog line
+def get_url_from(link_line: bytes) -> str:
+    """ZIM url from an OPDS <link/> line
 
-    assumes line end with `url="xxx"/>` or `url="xxx" flavour="yyy"/>`"""
-    return (
-        line.removesuffix(b"/>")
-        .split(b'" flavour="', 1)[0][line.index(b'" url="https') + 7 :]
-        .rsplit(b'"', 1)[0]
-        .removesuffix(b".meta4")
-        .decode("UTF-8")
-    )
+    Assumes regular chars in URL and type attr after href one"""
+
+    needle = b' href="http'
+    href_s = link_line.index(needle)
+    type_s = link_line.index(b'" type="')
+    return link_line[href_s + len(needle) : type_s].decode("UTF-8")
 
 
-def get_core_alias_from(line: bytes) -> tuple[BookAlias, BookCore]:
-    """BookAlias and BookCore from a line of catalog xml data"""
+def get_core_alias_from(link_line: bytes) -> tuple[BookAlias, BookCore]:
+    """BookAlias and BookCore from a <link/> line of OPDS xml data"""
 
-    url = Path(get_url_from(line))
+    url = Path(get_url_from(link_line))
     return to_human_alias(url), to_core(url)
 
 
@@ -222,15 +220,50 @@ def parse_catalog_for_updates(payload: bytes) -> dict[BookAlias, UpdatedZim]:
     Catalog.entries.clear()
 
     updated_zims: dict[BookAlias, UpdatedZim] = {}
+
+    # whether feeding an entry (multi-lines) or in-between
+    currently_feeding: bool = False
+    entry: list[bytes] = []
     for line in payload.split(b"\n"):
-        if not line.startswith(b"  <book "):
+        # build the entry var with lines for this entry
+        if not currently_feeding and line.strip() == b"<entry>":
+            currently_feeding = True
+        if currently_feeding and line.strip() != b"</entry>":
+            entry.append(line.strip())
+            continue
+        elif currently_feeding:
+            currently_feeding = False
+
+        # non-entry content: headers, etc
+        if not entry:
             continue
 
-        # retrieve the info we need, leveraging the static xml format
-        # and without actual parsing
-        book_id: BookId = line[12:48].decode("ASCII")  # fmt is `  <book id="<md5>" xxx`
-        alias, core = get_core_alias_from(line)
-        digest: BookLineDigest = xxhash.xxh3_64_hexdigest(line)
+        # we now have retrieved the entry lines
+        # extract the info we need, leveraging the static xml format, without actual parsing
+        book_id: BookId = ""
+        alias: str = ""
+        core: str = ""
+        digest: BookEntryDigest = ""
+        id_needle = b"<id>urn:uuid:"
+        for line in entry:
+            # fmt is `<id>urn:uuid:xxx<id>`
+            if line.startswith(id_needle):
+                book_id = line[len(id_needle) : -len(b"</id>")].decode("ASCII")
+                continue
+            # fmt: <kiwix:titleid>xxx</kiwix:titleid>
+            # <link rel="yyy" href="xxx" type="yyy" length="yyy" />
+            if line.startswith(b"<link") and b' type="application/x-zim" ' in line:
+                alias, core = get_core_alias_from(line)
+                break
+        digest = xxhash.xxh3_64_hexdigest(b"\n".join(entry))
+        entry.clear()  # reset entry for next one
+
+        if not all((book_id, alias, core, digest)):
+            logger.error(
+                "Reached end of entry without required data: "
+                f"{book_id=}, {alias=}, {core=}, {digest=}"
+            )
+            raise ValueError(f"Parsing error on {line=}")
 
         # add entry to the catalog
         Catalog.entries[book_id] = CatalogEntry(core=core, alias=alias, digest=digest)
@@ -240,9 +273,14 @@ def parse_catalog_for_updates(payload: bytes) -> dict[BookAlias, UpdatedZim]:
         if previous_digest != digest:
             is_new = previous_digest == ""
             logger.debug(
-                "> {alias} ({book_id}) is different" + (" (new)" if is_new else "")
+                f"> {alias} ({book_id}) is different" + (" (new)" if is_new else "")
             )
             updated_zims[alias] = (book_id, core)
+
+    # add removed book_ids to updated_zims
+    for book_id, prev_entry in previous_entries.items():
+        if book_id not in Catalog.entries:
+            updated_zims[prev_entry.alias] = (book_id, prev_entry.core)
 
     del previous_entries
     return updated_zims
@@ -327,13 +365,15 @@ def sleep_for(seconds: int):
 
 
 def main() -> int:
+    if not CMS_COLLECTION_ID or not CMS_API_URL:
+        raise OSError(f"Missing mandatory data {CMS_API_URL=}, {CMS_COLLECTION_ID=}")
     url = get_catalog_url()
     url_p = urllib.parse.urlparse(url)
     logger.info(
         f"starting catalog-retriever for “{CMS_COLLECTION_ID}” from {url_p.netloc}"
     )
 
-    etag = ""  # start empty so we always re-fectch on start
+    etag = ""  # start empty so we always re-fetch on start
 
     while True:
         try:
