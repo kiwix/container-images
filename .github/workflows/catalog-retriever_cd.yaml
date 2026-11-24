@@ -20,6 +20,7 @@ jobs:
         with:
           image-name: kiwix/catalog-retriever
           on-master: latest
+          manual-tag: kiwix-catalog
           restrict-to: kiwix/container-images
           context: catalog-retriever
           registries: ghcr.io
